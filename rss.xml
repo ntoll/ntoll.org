@@ -3,7 +3,69 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 01 Apr 2020 12:48:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sponsorship</title><link>https://ntoll.org/article/sponsorship/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;The majority of the code I write is given away for free for the benefit of
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 01 Apr 2020 18:02:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2020 Changes</title><link>https://ntoll.org/article/2020-changes/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I've spent today updating everything to do with ntoll.org. Many
+thanks to my buddy &lt;a href="https://kushaldas.in/"&gt;Kushal Das&lt;/a&gt; for the invaluable
+advice on various technical matters.&lt;/p&gt;
+&lt;p&gt;Here's what I've done:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The website is run using &lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; ~ a Python based
+   static site generator. It was &lt;em&gt;very&lt;/em&gt; easy to migrate away from my previous
+   hand-coded solution made with a custom
+   &lt;a href="https://palletsprojects.com/p/flask/"&gt;Flask&lt;/a&gt; script and HTML.&lt;/li&gt;
+&lt;li&gt;It's hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; which is both free
+   and makes it very easy to manage code and deployment.&lt;/li&gt;
+&lt;li&gt;I've switched email hosting to &lt;a href="https://www.fastmail.com/"&gt;Fastmail&lt;/a&gt;, who 
+   made the whole migration process extraordinarily easy. &lt;/li&gt;
+&lt;li&gt;I've archived the code for the old website for "safe keeping", even though
+   all the content has moved over to the new site.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lots of things have changed in addition to my own technical infrastructure.&lt;/p&gt;
+&lt;p&gt;I've just finished a very busy period of freelance work with two clients -
+the &lt;a href="https://freedom.press/"&gt;Freedom of the Press Foundation&lt;/a&gt; for whom I
+contributed Python code to an
+&lt;a href="https://securedrop.org/"&gt;application for journalists&lt;/a&gt;, and
+&lt;a href="https://digital.nhs.uk/"&gt;NHSDigital&lt;/a&gt; for whom I fulfilled the remote role of a
+code mentor / developer coach (like an agile coach, but much more technical).
+I was collaborating with a team of Java developers who were learning Python and
+Django while building APIs for internal customers and users. I also provided
+Python training, which was very rewarding since I love teaching and the
+NHSDigital folks were already technically very strong and lots of fun. Both
+teams were exceptionally talented and friendly. I had a blast and made lots of
+new friends.&lt;/p&gt;
+&lt;p&gt;In just over a week I'll be starting a new gig with the
+&lt;a href="https://mojdigital.blog.gov.uk/"&gt;Ministry of Justice&lt;/a&gt; as a senior Python
+engineer. I'm &lt;em&gt;really&lt;/em&gt; looking forward to this since the work is useful,
+interesting and challenging. I'm looking forward to learning from my new
+colleagues and making contributions to our collective effort.&lt;/p&gt;
+&lt;p&gt;What does this mean for all my other projects (for instance
+&lt;a href="https://codegrades.com/"&gt;CodeGrades&lt;/a&gt; or &lt;a href="https://codewith.mu/"&gt;Mu&lt;/a&gt;)..?
+Ironically, I believe I'll have more rhythm to my day and so my work on these
+projects will continue in my own time, but at a more predictable pace. Watch
+this space. :-)&lt;/p&gt;
+&lt;p&gt;Finally, the current Corona virus pandemic is affecting life in rather
+unforeseen ways: my daughter and older son have had their summer exams
+cancelled. Apparently, their results will be based upon their predicted grades.
+It means my daughter is going to read Mathematics at university with a
+scholarship (dependent on her achieving her target grades, which she will in
+light of the current situation) and my son will have the grades needed to go
+onto study Physics, Maths, Music and Design Technology at "A" level (his
+current plan is to read engineering at university). My youngest son continues
+school lessons, completed at home via an online platform.&lt;/p&gt;
+&lt;p&gt;We've also had to purchase some home-studio equipment (mics, pre-amp, monitor
+speakers, midi keyboard and related audio software). Mary, my wife, uses this
+to teach her many instrumental students remotely via video calls. It soon
+became apparent that laptop or mobile phone mics are not great for cello
+or piano teaching. Happily, the new equipment is proving to be a great success
+and Mary is able to continue teaching most students without disruption and from
+the comfort of our own music room:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Our home studio" src="https://ntoll.org/images/studio.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;It also means &lt;em&gt;I&lt;/em&gt; have the equipment available to produce my own (Python)
+training materials and the kids are having a great time mixing all sorts of
+different types of music.&lt;/p&gt;
+&lt;p&gt;Here's hoping you stay safe and remain healthy during this challenging time.
+Since most of us are in lock-down, don't hesitate to get in touch if you fancy
+a chat..! Social distancing rules don't mean you have to be anti-social.&lt;/p&gt;
+&lt;p&gt;:-)&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/2020-changes/</guid><pubDate>Wed, 01 Apr 2020 18:00:00 GMT</pubDate></item><item><title>Sponsorship</title><link>https://ntoll.org/article/sponsorship/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;The majority of the code I write is given away for free for the benefit of
 others. This is unsustainable so I often think about how such voluntary work
 could be supported. One solution is related to my
 &lt;a href="http://codegrades.com/"&gt;CodeGrades&lt;/a&gt; idea. But this is a slow
@@ -434,7 +496,7 @@ following aria for counter-tenor (the highest natural voice for a man to
 sing). The title means, "What shall I do without Euridice?".&lt;/p&gt;
 
 &lt;blockquote&gt;What will I do without Euridice&lt;br&gt;
-Where will I go without my wonderul one.&lt;br&gt;
+Where will I go without my wonderful one.&lt;br&gt;
 Euridice, oh God, answer&lt;br&gt;
 I am entirely your loyal one.&lt;br&gt;
 Euridice! Ah, it doesn´t give me&lt;br&gt;
@@ -1540,87 +1602,4 @@ and never doubt that I'll be pleased to hear from you. If you
 find yourself wondering if you should get in touch with me, the answer is
 always, "yes, you should definitely get in touch".&lt;/p&gt;
 
-&lt;p&gt;I look forward to hearing from you soon... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/antisocial-media/</guid><pubDate>Sun, 17 Dec 2017 21:30:00 GMT</pubDate></item><item><title>Advice for a Beginner Coder</title><link>https://ntoll.org/article/advice/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;Last week was &lt;a href="http://2017.pyconuk.org/"&gt;PyCon UK 2017&lt;/a&gt;. It was
-perhaps the best PyCon yet and, as usual, I met many old friends and made
-plenty of new ones. Many thanks to Peter Inglesby (chair) and the other
-volunteers who put so much work into making this such a wonderful space for
-bringing together a community.&lt;/p&gt;
-
-&lt;p&gt;A highlight of the conference for me was the number of young people who were
-&lt;strong&gt;not part of the young coders' day&lt;/strong&gt; but who were attending the
-conference as regular attendees (and accompanied by ever-supportive
-parents). I got chatting to one such combination of young person and
-accompanying parent and they asked for advice on how to develop as
-a beginner programmer in the Python community.&lt;/p&gt;
-
-&lt;p&gt;What follows is based upon my response:&lt;/p&gt;
-
-&lt;p&gt;What you get out of the Python community is directly related to how
-much you put in. The Python community has a huge number of interesting projects
-with which you could engage and learn from.&lt;/p&gt;
-
-&lt;p&gt;Put simply, look for a project that you find interesting and start to
-contribute.&lt;/p&gt;
-
-&lt;p&gt;Don't dive in and submit thousands of lines of code - rather, do something
-small, easy and/or trivial. It'll introduce you to the current maintainers of
-the project and demonstrate you're competent while allowing you to get used to
-their modus operandi. Be polite and ask questions that demonstrate you've read
-their documentation.&lt;/p&gt;
-
-&lt;p&gt;Don't be afraid to ask questions - good developers are
-always asking questions. Knowing how to ask and what the right questions are is
-an essential skill to develop. &lt;strong&gt;Asking questions is NOT a sign you
-don't know what you're doing&lt;/strong&gt;. To good developers it's evidence
-that you're exploring the problem and a signal that you're engaged and
-interested.&lt;/p&gt;
-
-&lt;p&gt;To be clear, it takes time to get involved in a project and the quickest
-way is often to take small (but secure) steps. Your collaborators, if they're
-any good, will provide advice about your contributions. This is invaluable
-mentorship and it also means you'll get to know people in the community. When
-you go to conferences, you'll have allies and colleagues!&lt;/p&gt;
-
-&lt;p&gt;Be careful to separate criticism of your code from criticism of you. The
-very best developers are humble, listen to advice and understand that code can
-always be improved. Sometimes it's hard to hear that your code is not very
-good, but this also helps us to appreciate how to give good (constructive)
-advice.&lt;/p&gt;
-
-&lt;p&gt;Nevertheless, if you don't get support, if people are rude or there's a bad
-smell around the project, just leave. Life is too short to have to deal with
-idiots, and if you have no choice, find experienced, thoughtful and
-conscientious allies to help support you (you'll find plenty of them in the
-Python community).&lt;/p&gt;
-
-&lt;p&gt;A good project will have a code of conduct that sets expectations of how
-collaborators are to interact. &lt;strong&gt;This is far more important than
-you may at first realise&lt;/strong&gt; and, happily, many in the Python community
-take this aspect of programming very seriously.&lt;/p&gt;
-
-&lt;p&gt;In a similar vein, one of the best activities to help you learn new things
-is to teach. Being able to explain things indicates you know the craft of
-programming at a deep level. For example, you appreciate what to leave in or
-how much to leave out of an explanation. You have clear enough mental models
-of the concepts of programming that you can accurately analogize and
-summarise. Furthermore, to explain yourself in simple and easy-to-understand
-language demonstrates your own clarity of thought. Perhaps most importantly,
-finding the opportunities to practice the skill of teaching is a sign of
-moral and professional value: you're putting something back into the wider
-community and you have shown initiative.&lt;/p&gt;
-
-&lt;p&gt;Our community is at its best when people take the time to create a space
-where others, no matter their background or differences, can flourish
-together. You should endeavour to follow this example. Why? Because inclusion
-that celebrates difference and diversity exercises our capacity for empathy
-and understanding of others' lives, problems and interests. As a developer,
-how can you be sure what people need from your software? Only by listening to
-others, reflecting, evaluating and experimenting is such valuable knowledge
-revealed. Only then will you know what important problems to solve.
-&lt;strong&gt;This is (also) far more important than you may at first
-realise&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Finally, make sure you're having fun. Writing code is often a very
-frustrating activity, but when you make something work, the elation at seeing
-something you've created solve a problem makes all the hours of frustration
-worth it.&lt;/p&gt;</description><guid>https://ntoll.org/article/advice/</guid><pubDate>Wed, 01 Nov 2017 12:30:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;I look forward to hearing from you soon... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/antisocial-media/</guid><pubDate>Sun, 17 Dec 2017 21:30:00 GMT</pubDate></item></channel></rss>

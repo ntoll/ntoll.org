@@ -10,6 +10,12 @@ toptranslations ul li {
 	margin-right: 0.6em;
 }
 
+pre code {
+    font-family: monospace;
+    display: block;
+    overflow-x: auto;
+}
+
 footer {
     text-align: center;
 }
