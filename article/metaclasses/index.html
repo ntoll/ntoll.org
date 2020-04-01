@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Metaclasses | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/metaclasses/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../europython-2012/" title="Europython 2012" type="text/html">
+<link rel="next" href="../nhsitfubar/" title="A Deadly Equation of Acronyms - NHS+IT=FUBAR" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Metaclasses">
+<meta property="og:url" content="https://ntoll.org/article/metaclasses/">
+<meta property="og:description" content="Python is an easy-to-learn modern
+programming language with a simple yet elegant implementation of object
+orientation. This post explains one dark corner of Python's implementation of
+object orientati">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-08-27T01:00:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Metaclasses</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2012-08-27T01:00:00Z" itemprop="datePublished" title="2012-08-27 01:00">2012-08-27 01:00</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><a href="http://python.org/">Python</a> is an easy-to-learn modern
+programming language with a simple yet elegant implementation of object
+orientation. This post explains one dark corner of Python's implementation of
+object orientation: metaclasses (but does so as if explaining the <a href="http://www.bbc.co.uk/blogs/learningenglish/2011/09/howzat.shtml">rules
+of cricket</a>).</p>
+
+<p>Objects represent things. Type, <code>type(my_object)</code> to find out
+what type of thing your object is. The type of thing an object represents is
+defined by its "type". Classes define types of things to be instantiated as
+objects. To be absolutely clear, objects represent types of things defined by
+classes.</p>
+
+<p>Now, listen carefully!</p>
+
+<p>In Python, classes <strong>are also</strong> objects. This raises
+an important question: what type of thing is a class?</p>
+
+<p>The answer is that a class is a type of thing that can instantiate objects.
+This type of thing (a class's class) is a class's metaclass which, incidently,
+in Python defaults to a special class called <code>type</code> ~ whose type
+is, circularly, <code>type</code> (i.e. itself).</p>
+
+<p>You can change the metaclass of a class by setting it's
+<code>__metaclass__</code> attribute to a class that inherits from the
+<code>type</code> class. With this sleight-of-hand you can control how classes
+instantiate objects.</p>
+
+<p>How? I'm so pleased you asked!</p>
+
+<p>Override the new metaclass's <code>__new__</code> method.
+Remember, this <code>__new__</code> method must return the return of a call
+to the <code>type</code> class's <code>__new__</code> method so your new class
+correctly instantiates a new object of the correct type.</p>
+
+<p>Got it? Good!</p>
+
+<p>:-)</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../europython-2012/" rel="prev" title="Europython 2012">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../nhsitfubar/" rel="next" title="A Deadly Equation of Acronyms - NHS+IT=FUBAR">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

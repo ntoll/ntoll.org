@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Learning Erlang..? Why...? | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/learning-erlang-why/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../wordle-play/" title="Wordle Play" type="text/html">
+<link rel="next" href="../concerto-review/" title="Concerto Review" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Learning Erlang..? Why...?">
+<meta property="og:url" content="https://ntoll.org/article/learning-erlang-why/">
+<meta property="og:description" content="I spent last week at two events:
+
+	
+
+		A beginners Erlang course given by Richard Carlsson on Monday to Wednesday, and
+
+		The Erlang eXchange conference (sic) for the rest of the week.
+
+	
+
+	As the Erl">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2008-06-30T14:03:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Learning Erlang..? Why...?</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2008-06-30T14:03:00Z" itemprop="datePublished" title="2008-06-30 14:03">2008-06-30 14:03</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><img src="../../static/images/53.jpg" alt=""></p>
+
+	<p>I spent last week at two events:</p>
+
+	<ol>
+<li>A <a href="http://www.erlang-exchange.com/university">beginners Erlang course</a> given by <a href="http://user.it.uu.se/~richardc/home-en.shtml">Richard Carlsson</a> on Monday to Wednesday, and</li>
+
+		<li>The <a href="http://erlang-exchange.com/">Erlang eXchange</a> conference (sic) for the rest of the week.</li>
+
+	</ol>
+<p><a href="http://erlang.org/white_paper.html">As the Erlang site states</a> Erlang is a functional programming language with an emphasis on concurrency, distribution, robustness, "soft" real-time (where response times are required within milliseconds), hot code upgrades, incremental code loading and external interfaces to connect to the outside world.</p>
+
+	<p>Why am I, someone who writes C# code for an investment bank, interested in this? There are three reasons:</p>
+
+	<ol>
+<li>
+<em>Self improvement</em>: I'm always trying to expand my horizons, learn new things and challenge my own habits and world view. Erlang is an exploration of a completely new style of programming – think of it as personal development for the software developer in me.</li>
+
+		<li>
+<em>The next big thing™</em>: What everyone is looking for… It seems to me that Erlang is where <a href="http://ruby-lang.org/">Ruby</a> was four years or so ago (pre-<a href="http://rubyonrails.com/">Rails</a>) – on the cusp of transforming from a niche language to something mainstream and "in demand". What is the reason for this transformation? From my newbie perspective I can see that:
+
+	<ul>
+<li>Because of the way the Erlang language is designed, source code is relatively short and easy to understand (compared to my experience of writing C-like programming languages) and is thus faster to write and easier to maintain (and therefore cheaper and more fun).</li>
+
+		<li>The move to multi-core architectures to speed things up means concurrency is now a very big issue. Erlang has an excellent and easy to understand means of dealing with concurrency (based on the so-called "actor" model, isolation and message passing). This is in contrast to most other languages that use threading, locks and shared resources – a methodology that is harder to get right and a nightmare to debug (I know this from bitter experience). As Erlang gets this sort of thing right I want to exploit concurrency in the simplest and most effective way possible.</li>
+
+		<li>You get a lot for "free". The OTP libraries and other modules that come with the Erlang language provide lots of re-usable functionality – meaning developers don't have to constantly write so-called "boiler-plate" code before implementing the functionality the software was actually designed to fulfill. As most languages have large and feature rich libraries associated with them this aspect of Erlang isn't a differentiator – rather evidence that it is a mature and actively maintained language.</li>
+
+		<li>Buzz. There is a <a href="http://www.pragprog.com/titles/jaerlang/programming-erlang">book</a>, a <a href="http://www.youtube.com/watch?v=uKfKtXYLG78">movie</a> and lots of articles, blogs and websites out on the net. Erlang is starting to get noticed and I think it only a matter of time until a "killer" application arrives (a la "Rails" on Ruby) to suck more developers into using it. </li>
+
+	</ul>
+</li>
+
+		<li>
+<em>Free Software / Open Source</em>: My interest in programming started after I installed Redhat 5 on an old 486 PC my father-in-law gave me back in the day… My commercial experience is completely within the proprietary world of .NET. I'd like to get commercial experience using free software (not the oxymoron it might look).</li>
+
+	</ol>
+<p>The course I mentioned at the start was great fun and Richard is an excellent teacher and obviously an expert in the field. All of us went away enthused and wanting more. Luckily there was more… the <a href="http://erlang-exchange.com/">Erlang eXchange</a>. </p>
+
+	<p>This was a relatively small affair but I got to meet lots of interesting people and see some of the cool things that have been done with Erlang. Richard took some photos that can be found <a href="http://www.flickr.com/photos/rich_4711/sets/72157605907903911/">here</a> and Podcasts can be found at the <a href="http://erlang-exchange.com/">Erlang eXchange website</a>.</p>
+
+	<p>So what happens next..? </p>
+
+	<p>As those of us on the beginners track soon realised, we need to keep learning and practice our newly acquired skills. As a result, I'm devouring Joe Armstrong's book whilst on the train into work and we've organised ourselves a site on Google and intend to set projects for each other to keep us motivated and on track.</p>
+
+	<p>My first challenge to the rest of the group is to create a simple IRC-bot server:</p>
+
+	<ul>
+<li>Start a bot server with a particular name. For example: bot:start("Frank").</li>
+
+		<li>Connect with a username to the bot and talk and be ignored (as if in a regular IRC chan).</li>
+
+		<li>The bot only pays attention when any input starts with its name. E.g.: "Frank, blah blah blah blah"</li>
+
+		<li>You teach the bot new things by saying "Frank, learn Erlang is a cool language about Erlang". The pattern being: botname, learn X about Y.</li>
+
+		<li>The bot responds to questions of the form "Frank, tell me about Erlang" with "Nicholas, Erlang is a cool language". The pattern being: botname, tell username/me about Y. And the response being: Username, X.</li>
+
+		<li>The bot returns a list of all it knows by responding to "Frank, what do you know?" with "Nicholas, I can tell you about Erlang." The pattern being: Username, I can tell you about [list of all X's].</li>
+
+		<li>Asking "Frank, help." returns a summary such as this one.</li>
+
+	</ul>
+<p>Why do an IRC bot? I can think of several good reasons:</p>
+
+	<ul>
+<li>It should be a good challenge to write the core functionality described above using the skills we already have.</li>
+
+		<li>At its heart, an IRC bot is pattern matching – something Erlang is supposed to be good at so we'd better explore what works and what doesn't.</li>
+
+		<li>We can build upon this core to help learn other aspects of the language: 
+
+	<ul>
+<li>Using ETS/DETS/Mnesia for data storage. This is a common requirement in Erlang projects so we might as well try doing it in this project.</li>
+
+		<li>Using OTP to create the server architecture for the bot.</li>
+
+		<li>Network programming so we can connect to a real IRC server to play.</li>
+
+	</ul>
+</li>
+
+	</ul>
+<p>I'll keep you posted how I get on.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../wordle-play/" rel="prev" title="Wordle Play">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../concerto-review/" rel="next" title="Concerto Review">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+---
+title: The World Wide Web ~ Concise and Simple
+slug: the-web-concise-and-simple
+date: 2012-12-21 20:30:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+<p>(As with all "<a href="/article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p>The World Wide Web (or just "the web") is a global hypertext
+system invented by <a href="http://www.w3.org/People/Berners-Lee/">Sir Tim
+Berners-Lee</a> in 1989. The web is <strong>not</strong>
+<a href="/article/internet-concise-and-simple">the Internet</a>. Rather, it
+is an application that sends messages via the Internet. You're using it
+now!</p>
+
+<p><img src="/static/images/internet.png" alt="A map of the Internet"/></p>
+
+<p>Hypertext is <em>the</em> core concept of the web: pages
+containing text and other media reference each other via so-called
+hyperlinks. In this way, pages connect to form a nebulous web of
+relationships. Hypertext was coined in the 1960s by
+<a href="http://ted.hyperland.com/">Ted Nelson</a> although the basic concept
+dates back to
+<a href="https://en.wikipedia.org/wiki/Vannevar_Bush">Vannevar Bush's</a> 1945
+article,
+<a href="http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/?single_page=true">As We May Think</a>
+where he describes an intriguing device called the
+<a href="https://en.wikipedia.org/wiki/Memex">Memex</a>
+(MEMory indEX). Various pre-web hypertext systems were developed in the 1960s,
+70s and 80s, but it was only until the early 1990s that Berners-Lee's version
+of hypertext became popular.</p>
+
+<p>The web is made with these concepts:</p>
+
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/Web_page">Page</a> - a document
+    on the web. Web pages can contain text, images, sound, video and forms
+    (to facilitate limited interactivity).</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/Hyperlink">Hyperlink</a> -
+    something in a page that, when activated, takes the user
+    to another page on the web. Often abbreviated to "link".</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/Url">URL</a> - a uniform
+    resource location identifies a page or other resource on the web.</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/Web_browser">Browser</a> -
+    software on the user's computer that downloads web pages, displays them
+    and handles user interactions (such as filling in a form or clicking a
+    link).</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/Server_(computing)">Server</a> -
+    a device on the Internet that runs software to deliver web pages and other
+    resources to browsers.</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/HTTP">HTTP</a> - HyperText
+    Transfer Protocol describes how browsers and servers interact.</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> - HyperText
+    Markup Language defines the structure of web pages identifying such things
+    as paragraphs, links and headings.</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a>
+    - Cascading Style Sheets describe how a page should look by defining
+    layout, colour scheme, typesetting and other presentation information.</li>
+
+    <li><a href="https://en.wikipedia.org/wiki/Javascript">Javascript</a> -
+    a ubiquitous programming language for browsers. It defines the behaviour
+    of a page beyond the basics of clicking links or submitting forms.</li>
+</ul>
+
+<p>In the early days of the web HTML was the only way to create pages (CSS
+and Javascript were later developments). The essence of HTML has not changed
+over the years:</p>
+
+<p>HTML is written as a series of <em>elements</em>. Elements are defined with
+named <em>tags</em> between less-than (&lt;) and greater-than
+(&gt;) symbols. The scope of an element is defined by an opening and
+closing tag. For example, a heading is defined by the
+<code>h1</code> element:</p>
+
+<p><pre><code class="html">&lt;h1&gt;Hello&lt;/h1&gt;</code></pre></p>
+
+<p>The closing tag is just like the opening one apart from the prepended
+back-slash (/). The tags are a balanced pair: the scope
+of the heading element is defined as the text "Hello" and displayed as:</p>
+
+<h1>Hello</h1>
+
+<p>Elements can contain other elements but are not allowed to overlap:</p>
+
+<p><pre><code class="html">&lt;p&gt;this is &lt;strong&gt;valid&lt;/strong&gt;&lt;/p&gt;</code></pre></p>
+
+<p>but,</p>
+
+<p><pre><code class="html">&lt;p&gt;this is &lt;strong&gt;not&lt;/p&gt;&lt;/strong&gt;</code></pre></p>
+
+<p>HTML has a certain structure: two elements, <code>head</code> and
+<code>body</code>, are contained within an <code>html</code> element.
+Information about the document is expressed by elements within the
+<code>head</code> tags. Elements within the <code>body</code>
+tags define the structure of the page. For example:</p>
+
+<p><pre><code class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/static/css/styles.css"/&gt;
+    &lt;meta name="author" content="Nicholas H.Tollervey"/&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    &lt;p&gt;This is some text enclosed within a paragraph tag.
+    I can link to &lt;a href="http://ntoll.org/"&gt;other docs&lt;/a&gt;
+    using an anchor tag.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></p>
+
+<p>HTML is currently at version five (HTML5). Actually, HTML5 is
+a collection of standards. Some add capabilities for embedding media while
+others add new tags. HTML5 colloquially refers to specifications for new
+browser behaviour too, such as local data storage.</p>
+
+<p>Browsers were originally simple and merely text based applications, as
+shown in the screenshot below. Despite these shortcomings the structure of the
+page is very clear and easy to read (hyperlinks are green).</p>
+
+<p><img src="/static/images/lynx.png" alt="Old skool web"/></p>
+
+<p>The web "happens" in two places: the client's browser and the website's
+server.</p>
+
+<p>Clicking a link or typing in a URL makes your browser send a request
+over the Internet using HTTP (as
+<a href="/article/internet-concise-and-simple">described here</a>).
+The server identified within the URL responds with HTML for the web page, CSS
+describing how to display it and any Javascript needed for the page to function
+correctly.</p>
+
+<p>Before rendering the page to the screen the browser transforms the HTML
+in to the
+<a href="https://en.wikipedia.org/wiki/Document_Object_Model">document object
+model</a> (DOM). The DOM is a data structure used to match HTML elements
+with CSS rules. Furthermore, snippets of Javascript run at certain points
+in the page's existence and manipulate the DOM as events occur (such
+as when the page finishes loading, a button is clicked or a form is
+submitted).</p>
+
+<p>As you interact with the browser it repeats this process to fetch new pages
+from the websites you visit. Sometimes your browser <em>posts</em> information
+back to a website (when you fill in a form). The website responds
+with a page that reflects the information you submitted.</p>
+
+<p>This happens within the realm of your "client" computer. However, an
+equally interesting story happens on the server.</p>
+
+<p>In the simplest case web pages are static so the server responds with
+pre-existing content. However, many websites are dynamic and allow you to
+change them on-the-fly. For example, as you browse a shopping website you may
+click buttons that add items to a virtual shopping basket. If you visit the
+web page that represents your basket you expect it to be up-to-date and list
+the correct number of items.</p>
+
+<p>For this to happen several things must be in place.</p>
+
+<p><em>The server should know who you are</em>. You are authenticated in
+some way, usually with a username and secret password, and authorised to
+interact with certain pages. For example, only you should be able to view and
+change your settings. Furthermore, the server must not confuse you with other
+users, so your interaction with the website is associated with a unique
+<a href="https://en.wikipedia.org/wiki/Session_(computer_science)">session</a>
+linked to your identity so the server can track who is making requests.</p>
+
+<p><em>The server should keep track of state</em>. When you add an item to a
+shopping cart this should be reflected in the way the website behaves. Such
+state is stored in a
+<a href="https://en.wikipedia.org/wiki/Database">database</a> "backend".</p>
+
+<p><em>The HTML should reflect the state stored in the database</em>. This is
+achieved with
+<a href="https://en.wikipedia.org/wiki/Template_processor">templates</a>:
+snippets of HTML combined with data specific to the client.
+Rendering templates to HTML is "frontend".
+The following snippet is for a simple shopping basket (anything enclosed
+within <code>{% raw %}{% %}{% endraw %}</code> is replaced):</p>
+
+<p><pre><code class="html">{% raw %}&lt;h1&gt;Hi, {% user.username %}!&lt;/h1&gt;
+&lt;p&gt;Your shopping cart contains:&lt;/p&gt;
+&lt;ul&gt;
+{% for item in user.cart %}
+  &lt;li&gt;{{item.name}} - {{item.description}}&lt;/li&gt;
+{% endfor %}{% endraw %}
+&lt;/ul&gt;
+</code></pre></p>
+
+<p><em>The server should be reliable</em>. Between the front and back ends
+is a <em>logic</em> layer checking requests, interacting
+with the database and ensuring the correct HTML is served. This needs to work
+correctly (imagine if, when clicking a "buy this item" button, a
+website added two items rather than one).</p>
+
+<p><em>The server should perform well</em>. A website should quickly
+handle a great many requests at once. Two common ways to achieve good
+performance are
+<a href="https://en.wikipedia.org/wiki/Cache_(computing)">caching</a> (store
+and re-use things that take time to compute but don't change that much over
+time) and
+<a href="https://en.wikipedia.org/wiki/Load_balancing_(computing)">load
+balancing</a> (route incoming calls to a pool of servers so the
+workload is shared). Popular websites consist of many servers
+handling specific tasks (such as the database, rendering templates or
+the logic) hidden behind layers of load balancers and caches.</p>
+
+<p>If this sounds complicated, that's because it is. However, the description
+given above is a simplification of the amazing engineering that takes place
+to display a web page on your screen.</p>
+
+<p>However, all is not well.</p>
+
+<p>Browsers implement web-standards in different ways:
+<a href="https://en.wikipedia.org/wiki/Internet_Explorer">Internet Explorer</a>
+is famous for getting things wrong. HTML and CSS are more complex
+with each revision - gone are the days of a beautifully simple hypertext
+system. Competing technical standards are promoted for commercial rather than
+engineering reasons and some are so complex they're practically useless. Alas,
+Javascript is <a href="https://www.destroyallsoftware.com/talks/wat">hopelessly
+unintuitive</a> and provides developers with plenty of rope with which to hang
+themselves.</p>
+
+<p>Finally, there are political problems.</p>
+
+<p>You can't publish on the web unless you know how to
+set up a website or you use a third party service such as a social
+network. Social networks are hugely popular but turn the
+web into a handful of walled gardens - the antithesis of the decentralised
+early web. Furthermore, such websites track and analyse user
+behaviour and sell it (via advertising). They also provide services for
+storing user's digital assets (in order to harvest yet more data to
+sell). As has been
+<a href="http://www.wired.com/opinion/2012/11/feudal-security/">pointed out
+before</a>, this is deeply worrying.</p>
+
+<p>Ultimately, it is a question of who controls the infrastructure.
+Many users are happy to sacrifice privacy and control for ease of use and
+convenience. Yet I wonder how many realise that they are tracked and
+influenced by only a handful of very powerful technology companies.</p>
+
+<p><img src="http://imgs.xkcd.com/comics/infrastructures.png" alt="Infrastructure"/></p>
+
+<p>What of the future? I like to think that
+<a href="https://en.wikipedia.org/wiki/William_Gibson">William Gibson</a> was
+right when, in 1996
+<a href="http://www.nytimes.com/1996/07/14/magazine/the-net-is-a-waste-of-time.html?pagewanted=all&src=pm">he said</a>,</p>
+
+<blockquote>[T]he World Wide Web [is] the test pattern for whatever will become the dominant global medium.</blockquote>
+
+<p>(Who knows what will happen next?)</p>
+
+<small>1486 words. Image credit: &copy; 2005
+<a href="http://www.opte.org/">opte.org</a> under a Creative Commons
+license. Image of Lynx browser &copy; 2012 by the author. "Infrastructure"
+cartoon &copy; <a href="http://xkcd.com/743/">Randall Munroe</a> under a
+Creative Commons license.</small>

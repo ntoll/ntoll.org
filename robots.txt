@@ -1,0 +1,4 @@
+Sitemap: https://ntoll.org/sitemapindex.xml
+
+User-Agent: *
+Host: ntoll.org

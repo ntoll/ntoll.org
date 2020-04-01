@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Everything I say is false...">
+<meta name="viewport" content="width=device-width">
+<title>ntoll.org (old posts, page 2) | ntoll.org</title>
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://ntoll.org/index-2.html">
+<link rel="prev" href="index-3.html" type="text/html">
+<link rel="next" href="index-1.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href=".">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="presentations">Presentations</a></li>
+                <li><a href="cv">CV</a></li>
+                <li><a href="contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/a-web-based-expert-system/" class="u-url">A Web-Based Expert System</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/a-web-based-expert-system/" rel="bookmark">
+            <time class="published dt-published" datetime="2006-11-06T11:57:00Z" itemprop="datePublished" title="2006-11-06 11:57">2006-11-06 11:57</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>An expert system is a program that uses a set of rules to analyse information about a specific subject with a view to solving problems or giving advice. It emulates a human expert's problem solving ability by performing relevant tasks as well as, or better than, the expert. Often, the expert system will explain and justify its output and provide a measure of certainty in the appropriateness of the output. Furthermore, the output given by an expert system is, as is the case with humans, <em>heuristic</em> (a rule of thumb) rather than <em>algorithmic</em> (guaranteed to succeed).</p>
+
+	<p>Expert systems are incredibly useful tools. Traditional tasks have included:</p>
+
+	<ul>
+<li>Data interpretation – such as responding to business "intelligence" like key performance indicators.</li>
+
+		<li>Problem diagnosis – such as advising on equipment failure or human diseases.</li>
+
+		<li>Configuration of complex systems – such as guiding the set-up of computer software.</li>
+
+		<li>Planning actions – such as advising on business strategy or suggesting robotic manoeuvres.</li>
+
+	</ul>
+<p>I have already written an expert system in a previous role as Artitificial Intelligence developer for a (now out-of-business) software start-up. It was built to meet a very specific need in an even more specific way and made use of custom "in-house" tools for doing so.</p>
+
+	<p>This was a mistake that I do not intend repeating. The expert system I am about to write will be generic in scope and standards based. Delivered as a web-service via a simple <acronym title="Application Programming Interface">API</acronym> (Application Programming Interface) and a web-based user-interface I aim to make it a classic example of software as a service.</p>
+
+	<h2>Who will use it? </h2>
+
+	<p>I envisage two types of users – providers and consumers:</p>
+
+	<ul>
+<li>
+<em>Providers</em> disseminate and sell their expertise through the tool. They might be consultants, companies, teachers or any other person or organisation that wishes to market and deliver expertise.</li>
+
+		<li>
+<em>Consumers</em> pay for and make use of the expertise as well as provide feedback. They might be clients of a provider or simply persons or organisations that wish to "buy-in" expertise. </li>
+
+	</ul>
+<p>The feedback I mention above will work in the same way as the review system on <a href="http://www.amazon.com">Amazon</a>. It exists because consumers will need as much information as possible about the expertise they are buying without actually accessing the expertise itself.</p>
+
+	<p>The expert system will make money by charging a percentage of the payment from the consumer to the provider. </p>
+
+	<p>Various models for providers to sell expertise will be made available: large one-off payments for unlimited access to a provider's expertise, rental (monthly or annual) access and even cheap one-off "shots". The providers set the pricing for their expertise and the open-market and customer feedback does the rest.</p>
+
+	<h2>How will it work?</h2>
+
+	<p>Providers will administer their account through an easy-to-use web-site that also provides information concerning the usage of their expertise. This is so they can view (for example) usage trends, popular areas of expertise, basic customer profiling and feedback on their offerings enabling them to concentrate on the most valuable areas of the market.</p>
+
+	<p>Consumers will be able to access expertise in various ways to reflect their individual requirements. This includes both forward chaining (data driven) and backward chaining (goal driven) interrogation strategies. </p>
+
+	<p>Consumers will also be able to interact with the system in one of two ways:</p>
+
+	<ul>
+<li>Through the expert system's own simple, easy-to-use web-based interface.</li>
+
+		<li>Through bespoke <a href="http://www.businessweek.com/@@76IH*ocQ34AvyQMA/magazine/content/05_30/b3944108_mz063.htm">mash-ups</a> developed by third parties that access the expert system's web-services <acronym title="Application Programming Interface">API</acronym> mentioned earlier.</li>
+
+	</ul>
+<h2>When will it be ready?</h2>
+
+	<p>I have already spent a lot of time designing the expert-system "engine" – the piece of software at the heart of the system. There is still a lot to do in order to make it more efficient and flexible and I still need to make extensive tests. </p>
+
+	<p>I have yet to start on both the web-services <acronym title="Application Programming Interface">API</acronym> and the web-site but I hope to get initial mock-ups for the user interface and specifications for the web-services completed in the not-too-distant future. This will, of course, involve discussions with potential end users (encompassing providers, consumers and potential third party software developers).</p>
+
+	<p>Finally, as with all my other projects described on this site, I need to spend some time writing a business and marketing plan.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/the-worlds-easiest-candidate-management-system/" class="u-url">The World's Easiest Candidate Management System</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/the-worlds-easiest-candidate-management-system/" rel="bookmark">
+            <time class="published dt-published" datetime="2006-11-02T15:48:00Z" itemprop="datePublished" title="2006-11-02 15:48">2006-11-02 15:48</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><a href="http://www.economist.com/">The Economist</a> magazine recently contained a survey of current trends in the Human Resources (HR) field. One article, <em>"Everybody's doing it"</em>, examined how companies organise and manage "talent". The authors explained that <em>"[c]ompanies are also trying to give their people-managers better tools"</em> and that <em>"the market [for talent-management technology] will nearly double by 2009."</em> They make it explicit that companies of all sizes are focusing more resources on attracting, retaining and managing "talent".</p>
+
+	<p>Why is this interesting? Well, for the past twelve months I have been contracted to produce bespoke vacancy / applicant management systems. My impression of this market (as a technologist on the inside) is that the products on offer are overly complex, difficult to use, expensive and cumbersome. Informal conversations with various HR professionals confirm this opinion.</p>
+
+	<p>So an opportunity presents itself: there exists a relatively large yet growing market, serviced by immature or inappropriate applications that users don't feel meet their needs.</p>
+
+	<p>As a result I'm going to develop a web-based candidate management system that is:</p>
+
+	<ul>
+<li>Simple and elegant in form and function</li>
+
+		<li>Easy to use and learn</li>
+
+		<li>Competitively priced</li>
+
+		<li>Agile and adaptable to user's requirements</li>
+
+	</ul>
+<p>The desire for simplicity and elegance should come as no surprise to those who are familiar with <a href="http://ntoll.org/article/getting-things-done">my development philosophy</a>. However, it is important to understand that simplicity does not mean lacking in features. Rather, that the most useful features are easy to use and do exactly what the user expects in a well presented manner.</p>
+
+	<p>Simplicity also brings about ease of use and the need for little (if any) training. There is nothing worse than an unintuitive application that requires an incomprehensible manual and various training days (when users should be getting on with ‘real' work).</p>
+
+	<p>That companies won't have to pay for training will save money. That the application will be web-based means there won't be distribution costs. That updates and patches will be applied instantly means there won't be expensive re-deployments. That the software will be delivered as a service means customers will only pay for it when it is required.</p>
+
+	<p>Simplicity also leads to agility and adaptability. Most companies have very different recruitment processes – yet these all derive from two simple generic processes; the standard funnel and reverse funnel. Implementing only these processes in a flexible way means that customers build upon the application's features rather than battle against them. In other words, the system is designed so users can extend and define their own requirements for the recruitment process.</p>
+
+	<p>So without further ado, let me introduce…</p>
+
+	<h2>TalentTool.com</h2>
+
+	<p>TalentTool.com is a tool for managing talent (where "talent" represents potential candidates and the ".com" identifies it as a web-based application). The name is also the project's customer facing web-site.</p>
+
+	<p>TalentTool.com will organise and manage the various important pieces of information required for recruiting candidates by utilising the two most common processes for recruitment: the afore mentioned standard funnel and reverse funnel.</p>
+
+	<h3>Standard Funnel</h3>
+
+	<p>A specific need is identified and a vacancy is created with matching requirements. The cohort of applicants is reduced in size by a series of generic filtering processes until a final candidate is chosen. The need is considered fulfilled when the final candidate is placed in role.</p>
+
+	<p>The filtering processes are usually of the following three types falling in the following order:</p>
+
+	<ol>
+<li>
+<em>Shortlisting</em> – involves filtering the raw application forms / CVs against the vacancy's requirements.</li>
+
+		<li>
+<em>Assessment</em> – in the form of tests and other means of measuring performance against the vacancy's requirements.</li>
+
+		<li>
+<em>Interview</em> – where candidates are invited for face-to-face assessment and possible trial work activities matching the vacancy's requirements.</li>
+
+	</ol>
+<h3>Reverse Funnel</h3>
+
+	<p>HR professionals pro-actively recruit candidates with in-demand skill-sets that are required to meet an anticipated need or match general roles or specific current positions. Candidates are:</p>
+
+	<ol>
+<li>
+<em>Profiled</em> – usually by examining experience, qualifications, career interests and availability.</li>
+
+		<li>
+<em>Interviewed</em> – often using a structured format or general behavioural model.</li>
+
+		<li>
+<em>Assessed</em> – in the form of tests and other means of measuring performance against their profiled skills.</li>
+
+	</ol>
+<p>If successful, a list of roles that the candidate is interested in and qualified to fulfil is drawn up.</p>
+
+	<p>If they are interested in immediate work then they are matched to current vacancies. If they show an interest in career development then further analysis is undertaken and a training curriculum devised to meet the mutual needs and goals of the company and candidate.</p>
+
+	<h3>Information</h3>
+
+	<p>The two most important types of information that a candidate management system is concerned with relate to <em>vacancies</em> and <em>candidates</em>.</p>
+
+	<h3>Vacancy Information</h3>
+
+	<p>In addition to the job-title, description of duties, location and salary/benefits package a vacancy will have the following details associated with it:</p>
+
+	<ul>
+<li>
+<em>Requirements</em> – A list of the specific skills, qualifications, attributes and experience needed to fulfil the role on offer.</li>
+
+		<li>
+<em>Adverts</em> – The means by which potential candidates are made aware of the vacancy.</li>
+
+		<li>
+<em>Events</em> – Deadlines, appointments, activities and meetings that make up the roadmap for the life of a vacancy.</li>
+
+		<li>
+<em>Administrators</em> – Who, within the hiring company, is allowed to administer this vacancy. Other roles with "view only" privileges may also be available.</li>
+
+		<li>
+<em>Reports</em> – Statistics, facts and figures concerning the vacancy and the candidates.</li>
+
+	</ul>
+<h3>Candidate Information</h3>
+
+	<p>Candidates obviously have personal and contact information. In addition, the following details provide a fuller picture of their capabilites:</p>
+
+	<ul>
+<li>
+<em>Skill-set</em> – A list of specific skills, usually with an indication of level of achievement that a candidate can offer.</li>
+
+		<li>
+<em>Education</em> – The qualifications and training that a candidate has achieved.</li>
+
+		<li>
+<em>CV</em> – Also known as a resumé. The document that the candidate produced to support their application.</li>
+
+		<li>
+<em>References</em> – Persons who are qualified to comment on the candidate's suitability for the role based upon previous experience.</li>
+
+		<li>
+<em>Experience</em> – A list containing the candidate's employment history and other activities related to the requirements of the vacancy.</li>
+
+	</ul>
+<h3>Conclusion</h3>
+
+	<p>The essence of TalentTool.com is to match candidates and vacancies by utilising one of the two "tunnel" processes in the simplest and most elegant way possible. </p>
+
+	<p>What measure do I use to know that I am developing a tool that will be a success? Well, the root of the application's success depends on how easy and useful the end users find it.</p>
+
+	<p>As a result, the primary concerns during the development process are the needs of the user and their interaction with the application. To them the user interface (UI) <strong>is</strong> the application. It enables how the user usefully uses the capabilities of the system. It is also the part of the system that projects elegance and simplicity. With this in mind, the roadmap for developing this application involves the following steps:</p>
+
+	<ol>
+<li>Initial requirements analysis – complete and summarised above.</li>
+
+		<li>Application mock-up and testing – the creation of easily modifiable screen-shots organised as a "story board" of the application. Feedback sought from target users and a focus group of interested parties.</li>
+
+		<li>Development / Testing cycle – using the final version of the Application mock-ups as the basis of the technical specification. Throughout this stage development will be shared with the focus group so feed back and changes can be implemented. </li>
+
+		<li>Beta-testing – feedback sought from target users after "real-world" usage. No new features to be added at this stage (project to be branched into development and release versions). </li>
+
+		<li>Release and maintenance cycle of version one.</li>
+
+		<li>Development of version two to integrate most popular requested features.</li>
+
+	</ol>
+<p>In addition to the above steps, a business plan that encompasses the marketing strategy, costs and pricing structure will need writing. I'll deal with that aspect of the project in a future article.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/a-musical-biography/" class="u-url">A Musical Biography</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/a-musical-biography/" rel="bookmark">
+            <time class="published dt-published" datetime="2006-10-23T14:28:00Z" itemprop="datePublished" title="2006-10-23 14:28">2006-10-23 14:28</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Both my wife and I play with the <a href="http://www.nso.org.uk/newindex.htm">Northampton Symphony Orchestra</a>, a very good local amateur group.</p>
+
+	<p>Every season they include short (often humorous) biographies of selected members of the orchestra in the programme notes. The selection criteria for this changes each year but is currently families who play in the orchestra. </p>
+
+	<p>This is the biography we submitted to be printed in the programme for the next concert:</p>
+
+	<blockquote>
+
+		<p>"Mary and Nicholas first met as students at that well known dating agency for musicians, the <a href="http://www.rcm.ac.uk">Royal College of Music</a>. This was in keeping with Mary's family tradition (she is the third generation of her family to attend the RCM). Since leaving the RCM both Mary and Nicholas have worked as professional musicians although they now make a living doing other things (both teach music and Nicholas went on to read for degrees in Philosophy and then Computing – he now works in IT). Music continues to play a significant role in their lives and playing with the NSO affords them the opportunity to make eyes at each other in rehearsals just like they used to when they were courting." </p>
+
+	</blockquote>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/getting-things-done/" class="u-url">Getting Things Done</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/getting-things-done/" rel="bookmark">
+            <time class="published dt-published" datetime="2006-10-19T22:46:00Z" itemprop="datePublished" title="2006-10-19 22:46">2006-10-19 22:46</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>When I explain my <a href="http://ntoll.org/article/all-change">plans for the month of November</a> to my friends, family and (soon-to-be-former) colleagues they inevitably comment on how I'll (not) find the time to do all the tasks I have set myself to a standard that I will be happy with.</p>
+
+	<p>However, in my favour:</p>
+
+	<ul>
+<li>I always set myself unrealistic work-loads and high targets.</li>
+
+		<li>I understand that I do so because I know how to be lazy.</li>
+
+	</ul>
+<p>These are positive character traits for the following reasons:</p>
+
+	<p>By setting unrealistic work-loads I am forced to brutally prioritise and deal with my work in the most efficient way possible. I know that I won't get everything done in the time I have allotted; but what I will get done will have been done in the most efficient way possible to give me a maximum "return" on my time and effort. Think of it as a kind of anti-<a href="http://en.wikipedia.org/wiki/Parkinson's_law">Parkinson's law</a> used in order  to overcome <a href="http://en.wikipedia.org/wiki/Hofstadter%27s_law">Hofstadter's Law</a>.</p>
+
+	<p>This promotes a certain sort of laziness: I'm not going to waste my time doing things I don't need or have to do. If possible, I'll either automate what I want to avoid (with a computer program) or I'll find ways to re-use either my own or others' work to my own advantage (by using freely available software libraries and tools such as the <a href="http://www.textpattern.com">Textpattern</a> content management system that runs this site).</p>
+
+	<p>With these points in mind, my software-development philosophy is encapsulated in the following quote:</p>
+
+	<blockquote>
+
+		<p>"<em>As simple as possible, but no simpler.</em>" (Albert Einstein).</p>
+
+	</blockquote>
+
+	<p>My intention is always to implement <em>only</em> the minimum of required features in the simplest, easiest and most helpful way possible.</p>
+
+	<p>Why?</p>
+
+	<ul>
+<li>The lack of complexity means the code performs better (i.e. there is less for it to do).</li>
+
+		<li>The lack of complexity means that I and any other developer working on the code understand it quicker, making it easier to maintain and modify.</li>
+
+		<li>The lack of complexity makes it less prone to hidden bugs.</li>
+
+		<li>The analytical approach required to implement something as <em>simply as possible</em> demands a thorough understanding of the problem being considered.</li>
+
+	</ul>
+<p>Aiming at a seemingly unrealistic high target is also a means of discovering what one is capable of. This is best illustrated with advice received from a music teacher I once knew: </p>
+
+	<p>I had only recently started playing the Tuba. I was going to audition for a very good local youth orchestra and I wasn't sure if I was good enough to join. His advice was that I wouldn't know unless I auditioned and that, more importantly, if I didn't attend the audition I'd always regret excluding myself from this opportunity. </p>
+
+	<p>Since then I have always had an "<em>if I don't try I'll never find out</em>" attitude and this has worked to my advantage on so many occasions. (I was successful in the audition, too!) </p>
+
+	<p>Finally, seriously considering the possibility of such work, targets, aims and objectives demonstrates a positive outlook, energy, imagination and creativity tempered with a healthy dose of realism and cunning.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/aiml-evolved-aims-and-objectives/" class="u-url">AIML Evolved - Aims and Objectives</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/aiml-evolved-aims-and-objectives/" rel="bookmark">
+            <time class="published dt-published" datetime="2006-10-12T14:21:00Z" itemprop="datePublished" title="2006-10-12 14:21">2006-10-12 14:21</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <h2>Program#</h2>
+
+	<p>My <a href="http://ntoll.org/article/project-an-aiml-chatterbot-in-c">original .NET chat-bot</a> was written over three years ago and is based upon the <a href="http://www.alicebot.org/">AIML</a> specifications. It was also my first project in C# and became a vehicle for me to learn about the .NET platform. </p>
+
+	<p>Now that I have extensive experience and knowledge of .NET, I am re-designing this library to include several modifications and improvements. The <em>definite</em> modifications will be (in no particular order):</p>
+
+	<ul>
+<li>Better cross-platform compatibility: .NET 1.1 and 2.0 as well as MONO support.</li>
+
+		<li>A significant change in the architecture of the library (more modular to make it easier for developers to extend and add functionality).</li>
+
+		<li>Better (i.e. more efficient and standards-compliant) AIML support.</li>
+
+		<li>A simpler and more logical API.</li>
+
+	</ul>
+<p>I also <em>aim</em> (but no promises) to include the following features (in order of priority):</p>
+
+	<ul>
+<li>A means of saving the bot's "brain" as a binary file. Loading a binary file into memory will be significantly faster than having to re-load and process the AIML every time the software starts up.</li>
+
+		<li>The option to run the library with at least two different types of backend: 
+
+	<ul>
+<li>The regular in-memory "brain" built from the AIML or binary file described above.</li>
+
+		<li>A relational database (initially SQL Server2000/2005, MySql and PostgreSQL) and associated code to import and process the AIML into a relational structure.</li>
+
+	</ul>
+</li>
+
+		<li>The implementation of some non-AIML compliant learning algorithms so the bot's vocabulary and scope for conversation grows.</li>
+
+		<li>User profiling for better awareness of conversational context. </li>
+
+		<li>Some simple code snippets and examples for developers to get started.</li>
+
+	</ul>
+<h2>ProgramR</h2>
+
+	<p>In addition to the work on Program#, I have been in touch with the developers of a Ruby version of the standard AIML bot (<a href="http://projects.dottorsi.com/programr">ProgramR</a>). </p>
+
+	<p>By their own admission, the project is very much "<em>alpha</em>" code. I am going to spend time contributing to this project as both a bug fixer and implementer of new features. </p>
+
+	<p>My reasons for doing this are to:</p>
+
+	<ul>
+<li>
+<em>Deepen</em> my understanding of the capabilities and stylistic conventions of the <a href="http://www.ruby-lang.org/">Ruby programming language</a>.</li>
+
+		<li>
+<em>Advance</em> ProgramR to the same level of maturity as Program#.</li>
+
+		<li>
+<em>Help</em> bring into existence something insanely useful.</li>
+
+		<li>
+<em>Create</em> a platform upon which new chat-bot techniques can be easily tried and tested.</li>
+
+	</ul>
+<p>Ultimately, both Program# and ProgramR will implement only the minimum of required features in the simplest, easiest and most helpful way possible and become solid foundations upon which bespoke systems can be built.</p>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-3.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

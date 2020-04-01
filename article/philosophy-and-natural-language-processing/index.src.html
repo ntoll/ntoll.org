@@ -1,0 +1,94 @@
+---
+title: Philosophy and Natural Language Processing
+slug: philosophy-and-natural-language-processing
+date: 2006-12-22 21:55:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+
+	<p>Engaging in philosophical analysis is an essential (and difficult) activity for shedding light on those aspects of a problem that do not obviously fall within the realm of software engineering. This is especially true when trying to understand concepts such as "meaning", "understanding" and "thinking". </p>
+
+	<p>This article provides a flavour of philosophical analysis by engaging with two chat-bot related problems. </p>
+
+	<h2>Can Machines Think?</h2>
+
+	<p>Most people assume that my motivation for developing chat-bot technology is to create a "thinking" AI  such as can be found in <a href="http://en.wikipedia.org/wiki/Blade_Runner">many</a> <a href="http://en.wikipedia.org/wiki/AI_(film)">a</a> <a href="http://en.wikipedia.org/wiki/HAL9000">Sci-Fi</a> <a href="http://en.wikipedia.org/wiki/Droids">movie</a>. I'm afraid nothing could be further from the truth. I am simply perpetrating a trick and attempting to pull the wool over user's eyes. Unfortunately, the trick demands great skill to pull-off and (as yet) no one has ever performed it successfully. </p>
+
+	<p>The trick is called the <em>Turing Test</em> and is named after <a href="http://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>, the British mathematician who first devised how it should work:</p>
+
+	<p>A human judge engages in a natural language conversation via a computer terminal with two other parties, one a human and the other a machine; if the judge cannot reliably tell which is which, then the machine is said to pass the test and the trick is a success.</p>
+
+	<p>It is proposed as a means of deciding the question, <a href="http://www.abelard.org/turpap/turpap.htm#the_imitation_game"><em>&#8216;Can machines think?'</em></a> Unfortunately, passing the test only proves one thing: that humans can be fooled by computers. That there is an absence of "thought" is often illustrated by the famous <em>Chinese Room</em> argument proposed by the American philosopher, <a href="http://socrates.berkeley.edu/~jsearle/">John Searle</a>.</p>
+
+	<p>Put succinctly, Searle claims that minds cannot be identified with computer programs because computer programs are defined syntactically in terms of the manipulation of formal symbols whereas the mental world has meaningful semantic content. As Searle explains:</p>
+
+	<blockquote>
+
+		<p><em>"Imagine that I, a non-Chinese speaker, am locked in a room with a lot of Chinese symbols in boxes. I am given an instruction book in English for matching Chinese symbols with other Chinese symbols and for giving back bunches of Chinese symbols in response to bunches of Chinese symbols put into the room through a small window. Unknown to me, the symbols put in through the window are called questions. The symbols I give out are called answers to the questions. The boxes of symbols I have are called a database, and the instruction book in English is called a program. The people who give me instructions and designed the instruction book in English are called programmers, and I am called the computer. We imagine that I get so good at shuffling the symbols, and the programmers get so good at writing the program, that eventually my &#8216;answers' to the &#8216;questions' are indistinguishable from those of a native Chinese speaker. [...] I don't understand a word of Chinese and &#8211; this is the point of the parable &#8211; if I don't understand Chinese on the basis of implementing the program for understanding Chinese, then neither does any digital computer solely on that basis because no digital computer has anything that I do not have."</em> [From Searle's autobiographical entry in "A Companion to the Philosophy of Mind"]</p>
+
+	</blockquote>
+
+	<p>One need only replace the processing of Chinese characters with the text processing of ALICE or any other chatter-bot currently in existence to accurately describe how these systems work: they are no more than formal symbol manipulators without any meaningful or coherent understanding of the world in which they are placed nor do they have any understanding of the content or meaning of the symbols and data that they are manipulating.</p>
+
+	<p>It is certainly hard to argue with Searle's conclusion unless it can be shown beyond reasonable doubt that:</p>
+
+	<ol>
+
+		<li>The physical structure of the brain is sufficiently understood to explain how mental processes arise, and</li>
+
+		<li>The means by which this structure is modelled artificially does not reduce to formal symbol manipulation, OR</li>
+
+		<li>The way the physical structure of the brain gives rise to mental processes is, in fact, shown to be reducible to formal symbol manipulation (i.e. Searle was wrong). </li>
+
+	</ol>
+
+	<p>However, the power of this argument diminishes if one introduces what I shall call "<em>scope</em>". In computer science "scope" denotes the context and visibility of an identifier (the name of some sort of asset that the program is using). An identifier is created within an enclosing block of code (that may contain inner blocks). The identifier is visible (usable) within the enclosing block (and any inner blocks). Outside the enclosing block the identifier is said to be out of scope; meaning that it is not available to the rest of the program (i.e. it is invisible). Interestingly, "scope" also signifies an instrument for observing something with a particular focus (microscope, telescope etc). When I use "scope" I mean something like the two definitions mentioned above: focusing on an object or concept within a specific context with clear boundaries. </p>
+
+	<p>Scope can be applied to Searle's Chinese Room in the following way: the context is the room (which certainly has very clear boundaries) and the focus is specifically on the person in the room. </p>
+
+	<p>Now, problems arise because although the person in the room does not understand Chinese, Searle does not address the view that the "system" taken as a whole and composed of the person, rules, symbols and so on appears to understand Chinese. </p>
+
+	<p>With this view the scope has changed in the following way: the context is the world containing Chinese speakers and the focus is the hatch relaying meaningful Chinese characters in and out of the room. In fact, the original person in the room is now "out of scope" (to borrow liberally from computer science). This means that it doesn't matter what is inside the room to a Chinese speaker on the outside. The room might contain an instance of Searle's experiment <em>or</em> a very shy Chinese speaker. A person conversing "with" the room won't be able to tell and probably won't care.</p>
+
+	<p>To turn this example upside down one might argue that individual neurons are no more than electro-chemical relays with no meaningful or coherent understanding of the world in which they are placed nor do they have any understanding of the content or meaning of the signals they are transmitting. Yet the "system", taken as a whole brain and nervous system seems to be capable of understanding and producing meaningful conversation. The physical world "out there" remains exactly the same but the scope (how we choose to look at the physical world) changes the way we describe it.</p>
+
+	<p>In both examples above, due to a change in "scope" meaningful conversation arises. How such conversation comes about might be different, but one cannot deny that there is conversation.</p>
+
+	<h2>Meaning</h2>
+
+	<p>Generating (at least) the appearance of a meaningful conversation is central to fooling a human user conversing with a chat-bot.</p>
+
+	<p>How does one tackle the problem of meaning? What is it? How does it arise? How might one devise strategies to bring about the appearance of meaningful conversation?</p>
+
+	<p>Engaging with this area certainly opens a huge philosophical can of worms (that I hope to explore in later articles). Nevertheless, for the sake of providing an example, I will examine one potential strategy for tackling these issues suggested by Ludwig Wittgenstein and succinctly introduced in a quote from the opening remark of his <em>Philosophical Investigations</em>:</p>
+
+	<blockquote>
+
+		<p> <em>"Now think of the following use of language: I send someone shopping.  I give him a slip marked &#8216;five red apples'.  He takes the slip to the shopkeeper, who opens the drawer marked &#8216;apples', then he looks up the word &#8216;red' in a table and finds a colour sample opposite it; then he says the series of cardinal numbers&#8212;I assume that he knows them by heart&#8212;up to the word &#8216;five' and for each number he takes an apple of the same colour as the sample out of the drawer.&#8212;It is in this and similar ways that one operates with words&#8212;"But how does he know where and how he is to look up the word &#8216;red' and what he is to do with the word &#8216;five'?"&#8212;Well, I assume that he <em>acts</em> as I have described.  Explanations come to an end somewhere.&#8212;But what is the meaning of the word &#8216;five'?&#8212;No such thing was in question here, only how the word &#8216;five' is used."</em></p>
+
+	</blockquote>
+
+	<p>Wittgenstein is claiming that to discover the meaning of a word one simply examines how it is used in ordinary conversation. Put another way, words are not defined by reference to the external objects or things which they designate nor by the internal thoughts, ideas, or mental representations that are associated with them, but rather by how they are used in effective, ordinary communication as part of our everyday life.</p>
+
+	<p>This way of thinking about meaning generates some interesting implications for current chat-bot technology:</p>
+
+	<p>AIML based bots such as <a href="http://ntoll.org/article/program-20">Program#</a> are severely limited in potential as they don't include a mechanism for  the bot to "learn" new examples of meaningful conversation from respondent's use of language in previous conversations. The bot will always only generate meaningful responses for the limited set of situations that the bot's administrator has accounted for (although <a href="http://en.wikipedia.org/wiki/Zipf's_law">Zipf's Law</a> and the original <a href="http://www.alicebot.org/">Alice bot</a> show that this isn't as limited as it might first appear).</p>
+
+	<p>Any bots that implement learning algorithms (such as <a href="http://megahal.alioth.debian.org/">MegaHAL</a> or <a href="http://www.jabberwacky.com/">Jabberwacky</a>) are limited because the source for learning new meaningful conversation is limited to a one-dimensional stream of characters (i.e. typed sentences). The bot is simply processing new patterns of characters rather than experiencing a man counting five red apples and seeing how certain words have meaning in such a situation (to continue Wittgenstein's example).</p>
+
+	<h2>Conclusions</h2>
+
+	<p>Machines cannot think &#8211; they can merely give the appearance of meaningful conversation. </p>
+
+	<p>On reflection, wondering if machines can think is like asking "<em>do snowflakes dream?</em>" It is a nonsensical question because thought is not an attribute of machines. Only humans "think" when one considers humans within a particular scope.</p>
+
+	<p>The problem is that "<em>can machines think?</em>" is a grammatically correct sentence and our culture is full of examples of imagined "thinking" machines (Hal9000 and friends). As a result, the question seems both legitimate and important. </p>
+
+	<p>However, I can imagine talking mice, a frightened teddy bear and a Gruffalo with a wart on the end of his nose. I can discuss these imagined things with grammatically correct sentences that make perfect sense yet I don't take them seriously because I understand that they are simply figments of my own or other's imagination. Philosophical analysis confirms that "thinking machines" are a figment of my own and other's imagination. Nevertheless, the potential for a machine to produce the impression of meaningful conversation is certainly possible &#8211; although we'll probably have to invent a new term to describe what it is doing when it is generating such meaningful conversation (not thinking). </p>
+
+	<p>Finally, with regard to understanding "<em>meaning</em>": perhaps the solution is simply to examine and pin-point how the word "meaning" is used in everyday conversation (i.e. use Wittgenstein's strategy to discover the meaning of "<em>meaning</em>" itself).</p>
+
+
+
+ 

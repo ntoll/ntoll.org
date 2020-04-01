@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Everything I say is false...">
+<meta name="viewport" content="width=device-width">
+<title>ntoll.org (old posts, page 10) | ntoll.org</title>
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://ntoll.org/index-10.html">
+<link rel="prev" href="index-11.html" type="text/html">
+<link rel="next" href="index-9.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href=".">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="presentations">Presentations</a></li>
+                <li><a href="cv">CV</a></li>
+                <li><a href="contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/how-to-run-an-awesome-code-dojo/" class="u-url">How to Run an Awesome Code Dojo</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/how-to-run-an-awesome-code-dojo/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-01-25T13:34:00Z" itemprop="datePublished" title="2012-01-25 13:34">2012-01-25 13:34</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><img src="static/images/100.png" alt="Python Code Dojo" style="padding-left: 8px" align="right"></p>
+
+<p><a href="https://twitter.com/#!/atroche">Alistair Roche</a> recently <a href="https://twitter.com/#!/atroche/status/161775174604173312">tweeted</a> the following question:</p>
+
+<blockquote>@ntoll Hey Nicholas, any chance I could get some advice from you on how to run an awesome coding dojo?</blockquote>
+
+<p>This blog post is my answer.</p>
+
+<p>I helped start the London Python Code Dojo with <a href="https://twitter.com/#!/tartley">Jonathan Hartley</a> and <a href="https://twitter.com/#!/otfrom">Bruce Durling</a> because I was learning Python and wanted to meet people I could learn from. Therein lies the essence of the dojo: a place to learn with/from other people.</p>
+
+<p>The original dojo concept is explained at the <a href="http://codingdojo.org/">codingdojo.org</a> website. We started out with every intention of following the instructions. However, we've let our imaginations run and evolved the meetings to our group's dynamics and interests. If you run a dojo, so should you too (adapt).</p>
+
+<p>Whereas codingdojo.org is quite formal and focussed on test-driven development (TDD) we have changed things in three major ways:</p>
+
+<ol>
+<li>expand the pair programming "randori" to encompass groups of no more than five participants</li>
+
+<li>drop the TDD dogma, and</li>
+
+<li>encouraged noise, debate and creativity.</li>
+
+</ol>
+<p>Working in groups was suggested by <a href="https://twitter.com/#!/ciaranmooney">Ciarán</a> and makes the dojo a software version of <a href="http://en.wikipedia.org/wiki/Scrapheap_Challenge">Scrapheap Challenge</a>. Every group is given about an hour and a half to solve the same problem, at the end of the evening each group does a show and tell which ends up being a public code review cum question and answer session.</p>
+
+<p>Although I practice TDD I personally dislike pushing any "one true" methodology on people. There are times when TDD is the worst thing to do (I'll explain why in another blog post) and I personally feel it's important to let people discover so-called good practice for themselves by observing it in use rather than being told to do it.</p>
+
+<p>It soon became clear that encouraging noise, debate and "creativity" leads to a buzz in the room and lots of energetic intellectual interaction between participants. I once overheard someone (it might have been <a href="https://twitter.com/#!/tomviner">Tom Viner</a> but I might be wrong) explain that the London Python code dojo is to the original dojo concept as an improvisation in a jazz club is to a string quartet recital.</p>
+
+<p>So here's the London dojo recipe:</p>
+
+<ul>
+<li>We limit the number of tickets to around thirty to make the evening easier to manage (it's like herding cats).</li>
+
+<li>Start with a social element. For us it's pizza and beer. Not only is it a good way to welcome new members but it is also a great community building mechanism. Several people have found jobs via the connections made in the pre-code social.</li>
+
+<li>During the social element we encourage people to write ideas for the evening's problem on a white/black-board or flip chart. Good ideas are usually algorithmic in nature and very specific. Recent examples include:
+
+<ul>
+<li>Game solving algorithms: Boggle, Mastermind and Tic-Tac-Toe.</li>
+
+<li>Creating a simple game: Hunt the Wumpus clone.</li>
+
+<li>Problem solving: Maze navigation.</li>
+
+<li>An adventure game where each month we create a new aspect of the game: world representation, parser, keeping game state, puzzles and so on.</li>
+
+</ul>
+
+Sometimes we start the evening with a presentation of some sort of problem or Python module and we use that as the basis of the group coding. For example, we all created animated Christmas cards with PyGame.
+
+</li>
+
+<li>The "organiser" convenes the coding session by calling for a vote on the problems suggested during the social part of the evening. We usually work out the top three ideas then take a second vote to decide a winner.</li>
+
+<li>The "organiser" randomly assigns everyone a group.</li>
+
+<li>There follows one and a half hours of furious coding with the organiser calling out half-hour intervals.</li>
+
+<li>Finally, once the time is up every group does a show and tell where we need to see their code running (or not as the case may be) followed by a code review. For me, this is the best (and funniest) part of the evening.</li>
+
+</ul>
+<p>If you want to know more, come to a dojo! Alternatively, you may be interested in the slides from a presentation I gave at Europython in 2011 on running the code dojo:</p>
+
+<div style="width:425px" id="__ss_8434980"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/ntoll/the-london-python-code-dojo-an-education-in-developer-education" title="The London Python Code Dojo - An Education in Developer Education" target="_blank">The London Python Code Dojo – An Education in Developer Education</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/8434980" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/ntoll" target="_blank">Nicholas Tollervey</a> </div> </div>
+
+<p>Last, but definitely not least, many thanks to my co-dojo-cat-herders <a href="https://twitter.com/#!/tomviner">Tom Viner</a>, <a href="https://twitter.com/#!/tjguk">Tim Golden</a>, <a href="https://twitter.com/#!/tartley">Jonathan Hartley</a> and <a href="https://twitter.com/#!/otfrom">Bruce Durling</a></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/baking-with-raspberrypipy/" class="u-url">Baking with Raspberry[Pi/Py]</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/baking-with-raspberrypipy/" rel="bookmark">
+            <time class="published dt-published" datetime="2011-09-23T15:02:00Z" itemprop="datePublished" title="2011-09-23 15:02">2011-09-23 15:02</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><a href="http://raspberrypi.org"><img src="static/images/98.jpg" alt="Raspberry Pi[e]" align="right" style="padding-left: 8px;"></a></p>
+
+	<p>This weekend is <a href="http://pyconuk.org/">PyconUK</a> and I'll be bringing along an alpha version of the <a href="http://raspberrypi.org/">RaspberryPi</a> device. As the RaspberryPi foundation's website <a href="http://www.raspberrypi.org/sample-page/">explains</a>, they "exist to promote the study of computer science and related topics, especially at school level, and to put the fun back into learning computing". They go on to mention that the device will run "open" software and lists <a href="http://python.org">Python</a> as being part of their software stack. </p>
+
+	<p>Given that RaspberryPi is based in the UK I thought it'd be good if the UK's Python community found out about it with a view to community contributions. As a result, I emailed RaspberryPi to ask if they'd like to send someone to PyconUK. Unfortunately no-one from the foundation was available but they did offer to send us the alpha-board so we could play with it during the sprints and hacking that takes place at these types of conference. </p>
+
+	<p>So I have a RaspberryPi device sitting on my desk. I've spent a couple of hours playing to ensure we have something that works which we can hack on/with. What follows is the story of what I've done and what attendees can expect to see at PyconUK.</p>
+
+	<p>The device arrived on Monday and my very first impression was that kids find it fascinating. <strong>My</strong> kids were intrigued when I unpacked it (although I didn't switch it on). Just the look of the board seems to be intrinsically interesting to children (a fact that is often lost on us adults) and they wanted to prod, poke and switch it on. Unfortunately for them, I didn't have the right leads to connect the thing to a monitor. They had to wait. :-(</p>
+
+	<p>I took some photos (see below) and decided to try the device out at Monday's <a href="http://northackton.stdin.co.uk/blog/">NortHACKton</a> meeting since there's quite a number of hardware-hacker types who attend (I'm most definitely a software-hacker type) and they could offer sage advice in the event of a problem.</p>
+
+	<p><img src="static/images/99.jpg" alt="Raspberry Pi alpha board" align="center"></p>
+
+	<p>Given the correct monitor leads and an excited crowd of geeks we booted the device into the <a href="http://wiki.debian.org/DebianSqueeze">Debian Squeeze</a> flavour of Linux, discovered the framebuffer resolution was set to something really weird (so we had the left and right hand sides of the display chopped off) and realised we didn't have a username and password with which to log in. In any case, when the login prompt appeared there were spontaneous "Ooohs" and "Ahhhs" from the assembled geeks (as if they'd never seen a Linux box boot up). </p>
+
+	<p>So my second impression of the RaspberryPi device is that it's a good candidate as the next "shiny" thing to obsess geeks. It's always a good sign if just booting the device up produces a positive response.</p>
+
+	<p>After a bit of head scratching, password guessing and general faffing about with the monitor we switched the device off, removed the <a href="http://en.wikipedia.org/wiki/Secure_Digital">SD card</a> and mounted it on one of our laptops in order to add a user <em>by hand</em>. Unfortunately, we forgot to examine the sudoers file so although we could log in, we couldn't really do anything "dangerous" (i.e. interesting).</p>
+
+	<p>Fast forward to today: now that I've purchased the required leads and other gubbins I've booted the device this afternoon, created a "pyconuk" user, made sure it has a home directory and is in the sudoers list (actually, that just means adding it to the appropriate group).</p>
+
+	<p>Remembering back to my first explorations with Linux back in 1997 I also hesitantly typed <code>startx</code> and waited for things to blow up. Amazingly the thing worked and a desktop appeared (at the rather amazing resolution of 1920×1080). It appears that the window manager is <a href="http://openbox.org/">OpenBox</a> and IceWeasel (Firefox) is also installed.</p>
+
+	<p>I also decided to check out Python support. Turns out Python 2.6.6 is installed. I've made sure we have <code>pip</code> and <code>virtualenv</code> installed, <code>apt-got</code> a whole bunch of other Python related packages and <code>GIT</code> (to allow us to grab code). I even managed to get <a href="http://pygame.org">PyGame</a> working in a stuttery sort of a way. Sound appears <strong>not</strong> to work though. Not sure why and my focus this afternoon has been to get a passable Python environment working rather than investigate hardware problems and configuration issues.</p>
+
+	<p>Finally, I noticed <a href="http://www.raspberrypi.org/2011/09/kidsruby-on-raspberry-pi-another-video-demo/">this post about a bunch of Ruby guys</a> who've managed to get <a href="http://www.kidsruby.com/">KidsRuby</a> running on the device. One of my aims for this weekend is to get something similar done for Python. Hey look, I've even <a href="https://github.com/ntoll/RaspberryPy">got a Github repository</a> set up where we can coordinate.</p>
+
+	<p>Can the UK's Python community create an interactive set of programming lessons for Python, written in Python for the RaspberryPi?</p>
+
+	<p>I'll keep you posted.</p>
+
+	<p><small>Raspberry image credit: <a href="http://www.flickr.com/photos/veganfeast/4295739041">http://www.flickr.com/photos/veganfeast/4295739041</a> used under a <a href="http://creativecommons.org/licenses/by/2.0/deed.en_GB">Creative Commons</a> license.</small></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/teach-our-kids-to-code-or-not/" class="u-url">Teach our kids to code (or not)?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/teach-our-kids-to-code-or-not/" rel="bookmark">
+            <time class="published dt-published" datetime="2011-09-14T13:55:00Z" itemprop="datePublished" title="2011-09-14 13:55">2011-09-14 13:55</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Three things have prompted me to write my first blog post in over almost year:</p>
+
+	<ol>
+<li>
+<a href="http://epetitions.direct.gov.uk/petitions/15081">This petition</a> encouraging the government to mandate the teaching of software development to ten year old kids in the UK.</li>
+
+		<li>The <a href="http://www.raspberrypi.org/">RaspberryPi</a> project who are creating a cheap (£20) computer to encourage kids to tinker.</li>
+
+		<li>Digging out my old <a href="http://en.wikipedia.org/wiki/BBC_Micro">BBC Micro</a> for my kids on a recent trip to my parent's house (see the picture below).</li>
+
+	</ol>
+<p><img src="static/images/97.jpg" title="Programming" alt="Programming"></p>
+
+	<p>All three points are related to the question: how do we encourage children to engage in programming? Before continuing I want to make it unambiguously clear that <strong>I believe children should be encouraged to program</strong>.</p>
+
+	<p>When I first saw the <a href="http://epetitions.direct.gov.uk/petitions/15081">petition</a> on Twitter my first reaction was, "yeah, right on! I'll sign up" and duly signed.</p>
+
+	<p>However, my experience as both a professional computer programmer and former senior teacher in the UK's state sector leads me to believe I've made a mistake when signing the petition.</p>
+
+	<p>It states,</p>
+
+	<blockquote>
+
+		<p>"Start teaching coding as a part of the curriculum in Yr 5. If it can be introduced as a part of the central curriculum in Year 5, then by the time those kids are drawn up through the education system, there would be far less of a disparity between the sexes - and maybe even an increased number of young people with an ability to manipulate open data, relate to code and challenge each other to design and build the digital products that we have not even begun to imagine. Year 8 is too late, we are losing the female coders and we need this generation to help us code a better country."</p>
+
+	</blockquote>
+
+	<p>All laudable aims.</p>
+
+	<p>However, if the UK's Department of Education becomes involved and tells teachers to "start teaching coding as part of the curriculum in Yr 5" then we're doomed. Here's why…</p>
+
+	<p>First of all, where do you put such lessons in an already crowded curriculum? Secondly, who should teach "coding"? Thirdly (and most importantly), who decides what to teach? </p>
+
+	<p>The first problem is a question of priority. It has been my experience that in the UK priorities are directly linked to school results. For primary schools (who teach Yr 5) it means the SAT results for English, Maths and Science for the year 6 cohort leaving to embark on their secondary education. All through years 3, 4, 5 and 6 the priority seems to be focussed on getting the kids prepared for these tests (in years 1 and 2 the priority is for the SAT tests taken at the end of year 2). I suspect that if "coding" became part of the year 6 school results then schools would pay attention. Otherwise it'd be something the kids did on a Friday afternoon between P.E. and Music after a morning full of English, Numeracy (not Maths) and Science.</p>
+
+	<p>The second problem concerns skills and resources. Teaching is the hardest job I've ever had (I was a secondary head of music). Teaching in key stages 1 and 2 (Primary) strikes me as being <strong>even harder</strong> than teaching in key stages 3 and 4 (Secondary). You have to know how to do so much (which is why good teachers are so rare). Add all the bureaucracy, fads and government directives then you get a well-meaning unholy mess that works sometimes but more often than not fails spectacularly. Can you imagine the reaction from teachers when "coding" is introduced into this pot of educational stew? If you think teachers have lots of holidays in which they could learn how to program then think again: when do you think they do their planning, re-organisation of classrooms and marking of course-work? The only reasonable solution I can see would be for a specialist teacher of programming to take a lesson each week. But then the school would have to pay for them and it becomes a question of what each individual school sees as being a priority (see point one).</p>
+
+	<p>The third problem is the most interesting: Who decides what to teach? In the UK we have a national curriculum that tells teachers what they should teach so it's the government who decides. This has the advantage of ensuring all schools teach a worked out basic curriculum. It also has the <em>disadvantage</em> that all schools teach a worked out basic curriculum. Given the rapid change in the technology world and the slow rate of change in the educational world, is it possible that a worked out national curriculum would be any good? I have my doubts. I also worry that <em>making</em> kids have programming lessons is a great way to dissuade the next generation. Perhaps it should be like learning a musical instrument, everyone should have the opportunity to learn but only <strong>if they want to</strong>. Programming is not everyone's cup of tea.</p>
+
+	<p>This leads me to <a href="http://raspberrypi.org/">RaspberryPi</a> – a cheap computer for kids to tinker with. I personally think this is a far superior way to engage kids in programming. To my (musician's) eyes the RaspberryPi device is like giving kids musical instruments. They're fun, kids can play with them and make them their own with nothing more than a chance to experiment without adult intervention. This builds upon what kids do naturally and is exactly what happened when I found my old BBC at the weekend: my kids had a go themselves and were, within minutes, playing around and having fun <strong>programming</strong>.</p>
+
+	<p>Does this require a change in the national curriculum? Of course not.</p>
+
+	<p>Finally there is the essential consideration of kids who don't have access to introductory books on programming, a computer or supportive parents.</p>
+
+	<p>Perhaps a better petition would call for a RaspberryPi to be given to every child in year 5 along with pre-installed self-paced software that teaches programming.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/new-features-in-fluiddb/" class="u-url">New Features in FluidDB</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/new-features-in-fluiddb/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-11-15T13:01:00Z" itemprop="datePublished" title="2010-11-15 13:01">2010-11-15 13:01</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><img src="static/images/94.png" align="right" title="Dune" alt="Dune" style="padding-left: 8px;"></p>
+
+	<p>I now work for <a href="http://fluidinfo.com">Fluidinfo</a> the company behind FluidDB. I'm employee number three. Actually <a href="http://sethgodin.typepad.com/seths_blog/2009/06/guy-3.html">Guy #3</a> is an excellent job title and description of what I'm doing at Fluidinfo. (The lack of any posts to this blog is also an indication of how busy we are at Fluidinfo).</p>
+
+	<p>The fruits of our work are a new version of FluidDB that comes with several enhancements to the API. I want to describe two of them in this blog post: the addition of "/about" and "/values" based paths.</p>
+
+	<h2>/about</h2>
+
+	<p>Up until now, the only way to reference an object in a URL was through its ID (a rather hard-to-remember value called a <a href="http://www.ietf.org/rfc/rfc4122.txt">uuid</a>) similar to this: </p>
+
+	<p><a href="https://fluiddb.fluidinfo.com/objects/6ba88bfa-df44-4338-8380-f513f27f22b7/ntoll/comment">https://fluiddb.fluidinfo.com/objects/6ba88bfa-df44-4338-8380-f513f27f22b7/ntoll/comment</a></p>
+
+	<p>As the example shows, remembering the URL to get specific tag values is difficult.</p>
+
+	<p>The addition of /about based paths allows you to reference an object using its unique fluiddb/about value (<a href="http://en.wikipedia.org/wiki/Percent-encoding">percent encoded</a> in the URL). This means URLs suddenly become more meaningful and easy to remember. For example: </p>
+
+	<p><a href="https://fluiddb.fluidinfo.com/about/an-example/ntoll/comment">https://fluiddb.fluidinfo.com/about/an-example/ntoll/comment</a></p>
+
+	<p>as an alternative to the previous example.</p>
+
+	<p>Of course, it's possible to use all the usual HTTP methods to manipulate resources in much the same way as the existing /objects based API.</p>
+
+	<p>Full details can be found <a href="http://ntoll.org/api/html/api.html#about">in the FluidDB API documentation</a>.</p>
+
+	<h2>/values</h2>
+
+	<p>Until now, if you wanted to get, delete or update a set of values in FluidDB you had to do a request for each tag-value. This was a severe limitation.</p>
+
+	<p>For example, to return six fields on a result set of, say, 100 objects resulted in 601 requests to FluidDB (one initial query request to retrieve the result set and another 600 to get all the values). Not only did this make FluidDB work harder but is meant the client has to wait for all the requests to travel over the network introducing a painfully large amount of <a href="http://en.wikipedia.org/wiki/Latency_(engineering)">latency</a>.</p>
+
+	<p>Happily, the new /values based API turns the example given above into a single request. Here's how:</p>
+
+	<h3>GET</h3>
+
+	<p>Those of you familiar with queries specified in the <a href="http://en.wikipedia.org/wiki/Sql">SQL</a> language of conventional relational databases will know that they take the form:</p>
+
+<pre>
+
+SELECT column_name(s) FROM table_name WHERE column_name operator value
+
+</pre>
+
+	<p>where a concrete example might be:</p>
+
+<pre>
+
+SELECT firstname, lastname, email FROM users WHERE group_id = 2
+
+</pre>
+
+	<p>that returns a result similar to this:</p>
+
+	<table>
+<tr>
+<td> <strong>firstname</strong> </td>
+
+			<td> <strong>lastname</strong> </td>
+
+			<td> <strong>email</strong> </td>
+
+		</tr>
+<tr>
+<td> Terry </td>
+
+			<td> Jones </td>
+
+			<td> terry@acme.com </td>
+
+		</tr>
+<tr>
+<td> Esteve </td>
+
+			<td> Fernandez </td>
+
+			<td> esteve@acme.com </td>
+
+		</tr>
+<tr>
+<td> Nicholas </td>
+
+			<td> Tollervey </td>
+
+			<td> nicholas@acme.com</td>
+
+		</tr>
+</table>
+<p>This demonstrates that to return multiple results you need to select values that belong to a record that matches some sort of constraint. </p>
+
+	<p>Here's how to do a similar query using an HTTP GET request to FluidDB's new /values api.</p>
+
+	<p><a href="https://fluiddb.fluidinfo.com/values?query=has+fluidinfo%2Femployee&amp;tag=fluiddb/about&amp;tag=fluiddb/users/username&amp;tag=fluiddb/users/name&amp;tag=fluidinfo/staffpic">https://fluiddb.fluidinfo.com/values?query=has+fluidinfo%2Femployee&amp;tag=fluiddb/about&amp;tag=fluiddb/users/username&amp;tag=fluiddb/users/name&amp;tag=fluidinfo/staffpic</a></p>
+
+	<p>Obviously, since this is an HTTP GET request we're passing all the important arguments in the URL. Lets break down what each segment means:</p>
+
+	<ul>
+<li>
+<strong>https://fluiddb.fluidinfo.com/values</strong> – indicates we're using the new /values api.</li>
+
+		<li>
+<strong>?query=has+fluidinfo%2Femployee</strong> – is the constraint used to identify the result set. The constraint is written in FluidDB's <a href="http://doc.fluidinfo.com/fluidDB/queries.html">über-minimalist query language</a>. Notice how the query has been <a href="http://en.wikipedia.org/wiki/Percent-encoding">percent encoded</a>.</li>
+
+		<li>
+<strong>&amp;tag=fluiddb/about&amp;tag=fluiddb/users/username&amp;tag=fluiddb/users/name&amp;tag=fluidinfo/staffpic</strong> – for each object in the result set return the values associated with the following tags:
+
+	<ul>
+<li>fluiddb/about</li>
+
+		<li>fluiddb/username</li>
+
+		<li>fluiddb/name</li>
+
+		<li>fluidinfo/staffpic</li>
+
+	</ul>
+</li>
+
+	</ul>
+<p>In plain English, we're asking FluidDB to return the about value, username, real name and staff picture attached to all objects that represent employees of Fluidinfo Inc. The (truncated) result is some <a href="http://json.org">json</a> like this:</p>
+
+<pre>
+
+{
+
+    "results" : 
+
+        {'id': {
+
+        "05eee31e-fbd1-43cc-9500-0469707a9bc3" : {
+
+            "fluiddb/about" : {
+
+                "value" : "Object for the user named terrycojones"
+
+            },
+
+            "fluiddb/users/username" : {
+
+                "value" : "terrycojones"
+
+            },
+
+            "fluiddb/users/name" : {
+
+                "value" : "Terry Jones"
+
+            },
+
+            "fluidinfo/staffpic" : {
+
+                "value-type" : "image/png",
+
+                "size" : 79393
+
+            }
+
+        },
+
+        "8af015f1-dbe3-46d0-855e-5e3c2b4a2ca5" : {
+
+            "fluiddb/about" : {
+
+                "value" : "Object for the user named esteve"
+
+            },
+
+            "fluiddb/users/username" : {
+
+                "value" : "esteve"
+
+            },
+
+            "fluiddb/users/name" : {
+
+                "value" : "esteve"
+
+            },
+
+            "fluidinfo/staffpic" : {
+
+                "value-type" : "image/png",
+
+                "size" : 61325
+
+            }
+
+        },
+
+        "a694f2d0-428e-4aaf-85d1-58e903f56b30" : {
+
+            "fluiddb/about" : {
+
+                "value" : "Object for the user named ntoll"
+
+            },
+
+            "fluiddb/users/username" : {
+
+                "value" : "ntoll"
+
+            },
+
+            "fluiddb/users/name" : {
+
+                "value" : "Nicholas Tollervey"
+
+            },
+
+            "fluidinfo/staffpic" : {
+
+                "value-type" : "image/png",
+
+                "size" : 81673
+
+            }
+
+        }
+
+    }}
+
+}
+
+</pre>
+
+	<p>The actual data is under the "results" key in the json dictionary. We've used a single key "depth" because we might add further keys in addition to "results" at a later date. These will be used to indicate other useful information. For example, paging or time taken to retrieve the result.</p>
+
+	<p>Each individual result is identified by the object's uuid. Results contain tags that match the values selected in the query. If the tag <strong>does not exist</strong> on an object it will not appear in the result. Tags that do exist will be represented in one of two ways:</p>
+
+	<ol>
+<li>
+<strong>Primitive values</strong> (such as strings, numbers, booleans, null and lists of strings) will contain a single "value" entry that gives the actual value.</li>
+
+		<li>
+<strong>Opaque values</strong> (anything else), will contain two entries:
+
+	<ul>
+<li>"value-type" – an indication of the <a href="http://en.wikipedia.org/wiki/MIME">MIME type</a> of the data.</li>
+
+		<li>"size" – an indication (in bytes) of how big the tag value is. </li>
+
+	</ul>
+</li>
+
+	</ol>
+<p>Should you wish to get the "opaque" value of a tag you'll need to use the original <a href="http://api.fluidinfo.com/html/api.html#objects_GET">/objects based GET request</a>.</p>
+
+	<h3>PUT</h3>
+
+	<p>To continue with our SQL to /values example, to update a record in a traditional relational database you use the appropriately named "update"  statement:</p>
+
+<pre>
+
+UPDATE table_name SET column1=value, column2=value2 WHERE some_column=some_value
+
+</pre>
+
+	<p>In other words, you need to provide values for fields that belong to a record that matches some sort of constraint.</p>
+
+	<p>To do this in FluidDB use a PUT HTTP request with a query in the URL (just like the GET request described above) and a json dictionary of tags and values to add/update on objects that match.</p>
+
+	<p>For example, the URL might be:</p>
+
+<pre>
+
+https://fluiddb.fluidinfo.com/values?query=has+fluidinfo%2Femployee
+
+</pre>
+
+	<p>This contains exactly the same query as the URL used in GET – in other words, I'm interested in all objects that represent employees of Fluidinfo Inc.</p>
+
+	<p>The payload of the request might be a json dictionary like this:</p>
+
+<pre>
+
+{
+
+    "ntoll/met" : {
+
+        "value" : true
+
+    },
+
+    "ntoll/work/colleague" : {
+
+        "value" : "Fluidinfo"
+
+    }
+
+}
+
+</pre>
+
+	<p>Notice how the structure of the dictionary is similar to that of the results returned from a GET request to /values: each tag is associated with a new value to add or update on the matching objects.</p>
+
+	<p>It's only possible to update/create tags with  "primitive" values (strings, numbers, booleans, null and lists of strings). To update/create tags on an object with "opaque" values then use the original <a href="http://api.fluidinfo.com/html/api.html#objects_PUT">/objects based PUT request</a>.</p>
+
+	<h3>DELETE</h3>
+
+	<p>In SQL you delete a record using the "DELETE" statement:</p>
+
+<pre>
+
+DELETE FROM table_name WHERE some_column=some_value
+
+</pre>
+
+	<p>This will remove a record that matches the constraint from the referenced table.</p>
+
+	<p>Unfortunately (for our SQL to /values example), that's not how it works in FluidDB.</p>
+
+	<p>In FluidDB objects are indestructible so they can't be deleted. However, it <strong>is</strong> possible to delete tags from objects and this works in almost exactly the same way as a GET request (hint: just change the HTTP method from GET to DELETE).</p>
+
+	<p>In other words, if you called the following URL with an HTTP DELETE request:</p>
+
+	<p><a href="https://fluiddb.fluidinfo.com/values?query=has+fluidinfo%2Femployee&amp;tag=fluiddb/about&amp;tag=fluiddb/users/username&amp;tag=fluiddb/users/name&amp;tag=fluidinfo/staffpic">https://fluiddb.fluidinfo.com/values?query=has+fluidinfo%2Femployee&amp;tag=fluiddb/about&amp;tag=fluiddb/users/username&amp;tag=fluiddb/users/name&amp;tag=fluidinfo/staffpic</a></p>
+
+	<p>The following tags:</p>
+
+	<ul>
+<li>fluiddb/about</li>
+
+		<li>fluiddb/username</li>
+
+		<li>fluiddb/name</li>
+
+		<li>fluidinfo/staffpic</li>
+
+	</ul>
+<p>... would be deleted from all objects that match the constraint:</p>
+
+<pre>
+
+has fluidinfo/employee
+
+</pre>
+
+	<p>You'll know that the request was a success because you'll get a result with the 204 (No Content) code.</p>
+
+	<p>Simple!</p>
+
+	<h2>Conclusion</h2>
+
+	<p>I've only explained a couple of the new features we've recently rolled out. There are quite a lot more that have arrived or are in the pipeline:</p>
+
+	<ul>
+<li>Text indexing is being phased in (but is definitely a work in progress). We're only taking the very first step: the fluiddb/about tag will be indexed with other tags to follow. This will allow users to search string values within FluidDB.</li>
+
+		<li>MD5 checking of payload data: if you provide an <a href="http://en.wikipedia.org/wiki/MD5">MD5 Checksum</a> FluidDB will validate your data.</li>
+
+		<li>Cross Origin Resource Sharing (CORS) makes it possible to make <a href="http://www.w3.org/TR/cors/">cross origin requests</a> from your browser rather than rely on JSONP. FluidDB will have an almost complete implementation of this emerging standard although we expect to make changes and improvements as the specification matures.</li>
+
+		<li>
+<a href="http://oauth.net/2/">OAuth</a> support for third party applications will be arriving soon. If you're familiar with the way Twitter works with third party applications you'll know what to expect.</li>
+
+		<li>Updates and improvements to the /values API will also arrive soon. </li>
+
+		<li>We're starting to look at providing notifications of events within FluidDB, e.g. a certain tag has been used, a particular user has tagged something or an interesting object has been tagged (probably via <a href="http://www.webhooks.org/">webhooks</a> – but it's early days).</li>
+
+	</ul>
+<p>Lots of great stuff! I'd better get back to work… ;-)</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/stephen-fry-groks-software/" class="u-url">Stephen Fry Groks Software</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/stephen-fry-groks-software/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-03-25T22:43:00Z" itemprop="datePublished" title="2010-03-25 22:43">2010-03-25 22:43</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I must be on a roll - two blog posts in a matter of hours.</p>
+
+
+
+<p>Like many who live in the UK I know Stephen Fry as a "celebrity" with a love for "gadgets". However, this recent interview demonstrates that he also <a href="http://catb.org/jargon/html/G/grok.html">groks</a> software, design and usability.</p>
+
+
+
+<p>My favourite section contrasts what he calls functional software with Apple's offerings (starting around 6 minutes in):</p>
+
+
+
+<blockquote>
+<p>"[It's] as if these devices are only function objects, and that's what Apple realise, <em>supremely</em>, and others are now beginning to realise. The point is they're made for human beings and human beings are first and foremost emotional creatures. We are creatures of emotion. Our emotion hits the brain, this is study-able - you can see this on encephalographs and things. Emotions hit us before cognitive thought and that means that if we have an object that's in our pocket all the time [...] and we take it out it's something we have a relationship with: we touch it, we feel it, we look at it - whether or not we want [to], that means we have an emotional engagement. And therefore anybody who produces it merely to say, "<quote>press this it does this, press that it does that</quote>" doesn't understand what it is to be human.</p>
+
+
+
+<p>Apple understand that we are all, as human beings, people who want to cradle, stroke, fondle, smile, get annoyed, treat "as alive" an object. That's not pretentious, it's not what Ruskin would call "the pathetic fallacy" it is the way all humans respond to what is around us. Apple got this by making us smile, by making us delight in the things they offered. And now, fortunately, all the other big players: Google and HTC and even Microsoft (god bless them), Motorola and Palm - they're all understanding that users want (to use that terribly hackneyed word) an "experience". Not just a series of functions that "this provides that" as if it's a cupboard, a filing system and <em>that's it</em> - they want to hug it and technology finally allows that."</p>
+</blockquote>
+
+
+
+<p><script type="text/javascript" src="http://www.telecomtv.com/embed/swfobject.js"></script></p>
+<div id="embedplayer"></div> <script type="text/javascript"> var so = new SWFObject('http://www.telecomtv.com/embed/player.swf','mpl','718','423','9'); so.addParam('allowscriptaccess','always'); so.addParam('allowfullscreen','true'); so.addParam('wmode','transparent'); so.addParam('flashvars','file=VT_98-MWC10_Fry_Full&volume=100&autostart=false&streamer=rtmpt://telecomtv.fcod.llnwd.net/a1411/o16&type=video&image=http://video.telecomtv.com/web2/ugc/thumb/VT_98-MWC10_Fry_Full_large.jpg'); so.write('embedplayer'); </script><p>I agree with him: good software puts the human user at the heart of what it does.</p>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-11.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-9.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

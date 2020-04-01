@@ -1,0 +1,108 @@
+---
+title: Taking the Long Term View
+slug: long-term-view
+date: 2013-03-28 08:00:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+<p>The <a href="http://www.britishmuseum.org/">British Museum</a> is one of my
+favourite places because it forces me to take on a perspective of 5000 years
+or more. Take the
+<a href="http://www.britishmuseum.org/explore/highlights/highlight_objects/me/t/tablet,_allocation_of_beer.aspx">Mesopotamian clay tablet</a>
+shown below: it records the allocation of beer by administrators in the city
+of <a href="https://en.wikipedia.org/wiki/Uruk">Uruk</a>. The symbol
+representing beer is apparently an upright jar with a pointed base, amounts
+are notated by circles and semi-circles and, at the bottom left, there is a
+figure drinking from a bowl.</p>
+
+<img src="/static/images/15_writingtablet_l.jpg" alt="Mesopotamian tablet"/>
+
+<p>It's about 5100 years old. Now, pause for a moment to consider its age.</p>
+
+<p>The difference in time between today and the era of
+<a href="https://en.wikipedia.org/wiki/Julius_Caesar">Julius Caesar</a> and
+<a href="https://en.wikipedia.org/wiki/Cleopatra_VII_of_Egypt">Cleopatra</a>
+is 1000 years less than the period between the creation of the Mesopotamian
+tablet and the era of Caesar and Cleopatra. Put simply, Caesar and Cleopatra
+are closer in time to us (by 1000 years) than they are to the Mesopotamian
+scribe who recorded the allocation of beer to citizens of Uruk.</p>
+
+<p>It is intriguing that the tablet is political in nature, an instance
+of a new technology and of economic interest. Not only is it evidence of the
+machinations of the state in Uruk but it demonstrates how a new technology
+(writing) changed the capabilities of such a state: for the first time it was
+possible to keep records and thus run a bureaucracy on a large scale.
+Furthermore, it records receipt of payment requiring concepts such as balance,
+debt and a measure of value (in beer).</p>
+
+<p>Such concepts (writing, state bureaucracy and fundamental economics) are
+unremarkable in today's world, making it difficult for us to appreciate how
+important, strange or unusual they must have seemed when they first appeared. I
+wonder what important, strange or unusual aspects of our time will be
+unremarkable to our descendants. Furthermore, what aspects of our lives that
+seem fixed today will be completely different 5000 years hence?</p>
+
+<p>Guessing the future is a fool's game. As
+<a href="http://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a> famously
+stated,</p>
+
+<blockquote>"The best way to predict the future is to invent it."</blockquote>
+
+<p>Something from today that "<em>invents the future</em>" is
+programming, and I'm guessing the
+<a href="http://www.informatimago.com/develop/lisp/com/informatimago/small-cl-pgms/wang.html">Lisp program from 1960</a>
+copied below is our Mesopotamian tablet for future generations:</p>
+
+<p><pre><code class="lisp">(shadow '(trace untrace))
+(defun trace   (functions) (eval `(cl:trace   ,@functions)))
+(defun untrace (functions) (eval `(cl:untrace ,@functions)))
+
+(defun define (definitions)
+  (dolist (def definitions)
+    (eval (if (and (consp (second def)) (eq 'lambda (car (second def))))
+              `(progn (defun        ,(first def) ,@(cdr (second def)))
+                      (defparameter ,(first def) ,(second def)))
+              `(defparameter ,(first def) ,(second def))))))
+
+(defun stop (arguments) (throw 'driver-end-of-deck nil))
+(defun fin  (arguments) (throw 'driver-end-of-deck nil))
+(defun test (arguments) (princ arguments) (terpri))
+
+(defun driver (path)
+  (with-open-file (cards path)
+    (catch 'driver-end-of-deck
+      (loop (let ((first-char (read-char cards)))
+              (if (char= #\* first-char)
+                  (read-line cards)     ; comment
+                  (progn
+                    (unread-char first-char cards)
+                    (let* ((command   (read cards))
+                           (arguments (if (member command '(stop fin test))
+                                          (list (read-line cards))
+                                          (read cards))))
+                      (print (apply command arguments))))))))))</code></pre></p>
+
+
+<p>Despite this code being more than 50 years old, it is still understandable
+to anyone who has read my
+<a href="/article/lisp-concise-and-simple">recent Lisp article</a>. Furthermore
+it forces me to wonder what the computational world will be like in 5000 years.
+I hope the <a href="/article/the-web-concise-and-simple">world wide web</a>
+will be long gone and replaced with something much more capable and better
+engineered and I guess that new computer architectures will arise to replace
+the
+<a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann</a>
+/ <a href="https://en.wikipedia.org/wiki/Harvard_architecture">Harvard</a>
+based models in current use.</p>
+
+<p>Perhaps the final word should be another Alan Kay quote:</p>
+
+<blockquote>"I believe that the only kind of science computing can be is like
+the science of bridge building. Somebody has to build the bridges and other
+people have to tear them down and make better theories, and you have to keep
+on building bridges."</blockquote>
+
+<p><small>Image credits: Mesopotamian tablet
+&copy; <a href="http://www.britishmuseum.org/">Trustees of the British Museum</a>
+</small></p>

@@ -1,0 +1,108 @@
+---
+title: Augmented Reality - A Developer's Perspective
+slug: augmented-reality-a-developers-perspective
+date: 2009-08-10 10:21:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+
+	<p>I've been amazed at the <a href="http://www.mobilizy.com/endeveloper-highlight-nicholas-htollervey">various</a> <a href="http://venturebeat.com/2009/08/09/augmented-reality-meets-scavenger-hunt-with-geobeagle-wikitude/">reactions</a> to my <a href="http://ntoll.org/article/hello-android">last post</a>. Since then I've been collecting my thoughts about <a href="http://en.wikipedia.org/wiki/Augmented_reality">Augmented Reality</a> (AR). What follows is a first attempt to distil them into a coherent commentary on AR and its potential.</p>
+
+	<h2>What is Augmented Reality?</h2>
+
+	<p>Augmented Reality is a means of superimposing digital assets upon the "real" world as seen through an appropriately configured device. </p>
+
+	<p>For example, in my last post I described how I put the locations of "real world" <a href="http://www.geocaching.com/">geocaches</a> as digital representations into the <a href="http://www.wikitude.org/">Wikitude</a> AR viewer provided by <a href="http://www.mobilizy.com/">Mobilizy</a>. </p>
+
+	<p>Alternatively, an AR enabled device might recognise the face of a new acquaintance, retrieve their contact details and display them or import them into your address book. Something similar to this is demonstrated in the following video (from the Swedish company <a href="http://www.tat.se/">TAT</a>):</p>
+
+	<p><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/tb0pMeg1UN0&#38;hl=en&#38;fs=1&#38;"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/tb0pMeg1UN0&#38;hl=en&#38;fs=1&#38;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object></p>
+
+	<p>In both cases, within an augmented reality digital assets have two essential qualities:</p>
+
+	<ol>
+
+		<li>A location in the real world &#8211; identified by longitude/latitude/altitude (as with the geocaches) or by some other means (such as facial recognition).</li>
+
+		<li>A context to give them meaning &#8211; provided by the digital asset's representation in the augmented world.</li>
+
+	</ol>
+
+	<h2>How does it work?</h2>
+
+	<p>The basic recipe for Wikitude is simply&#8230;</p>
+
+	<ul>
+
+		<li>An AR enabled device (like my <a href="http://www.android.com/">Android</a> based <a href="http://www.htc.com/www/product/magic/overview.html">mobile phone</a>) has GPS capabilities, a compass and accelerometers that enable it to work out where I am, where I'm pointing and how I'm moving / holding the device in the real world.</li>
+
+		<li>Given this information it is possible to work out what digital assets are close by, if I'm facing in their direction and if the device is being held in such a way that it is looking at them. </li>
+
+		<li>Finally, by capturing the output of the device's camera it is possible to add such digital assets to the image displayed on the screen of the device.</li>
+
+	</ul>
+
+	<p>...but there is more&#8230;</p>
+
+	<p>Digital assets need to be understood as representing something. This can be achieved in several ways:</p>
+
+	<ul>
+
+		<li><strong>The context of the application</strong>. For example, it's obvious that you're looking at geocaches in the AR view of <a href="http://code.google.com/p/geobeagle/">GeoBeagle</a>.</li>
+
+		<li><strong>Visual clues</strong>. To continue with the geocaching example, one might represent different types of cache with different icons in the AR view. One might even represent distance with alpha compositing &#8211; as an asset gets further away it becomes more transparent until, finally, it disappears. Other dimensions that could be represented include relative speed of an asset via blue/red shift and an asset's "importance" related to its on-screen size. I suspect conventions to emerge as AR technology matures. </li>
+
+		<li><strong>Layers/feeds/channels</strong> that filter assets. Imagine you're looking at a scene that is cluttered with many assets but you only want to see telephone kiosks (how ironic). One might filter out the "shops", "attractions", "hotels" and "transport" layers leaving only the "utilities" layer that shows things like public toilets and telephone kiosks. Companies should be able to make money by providing subscription based layers.</li>
+
+	</ul>
+
+	<h2>The current state (for developers)</h2>
+
+	<p>I've only had experience of using Wikitude so I'll limit my comments to that platform.</p>
+
+	<p>Wikitude is beta software but if you want to play with an existing version to see how it performs then download the <a href="http://www.wikitude.org/world_browser">Wikitude World Browser</a> application available in the Android market.</p>
+
+	<p>Wikitude is also in "closed" beta &#8211; meaning you'll have to <a href="http://www.wikitude.org/developers">register</a> in order to get the documents and associated code / libraries. It is my understanding that eventually one will need a developer key to use the API.</p>
+
+	<p>Wikitude already seems to be very stable &#8211; I've not had it crash (yet) but I'm sure as more people start to use it more opportunity will exist for breakage.</p>
+
+	<p>The API is very simple. As I explained in my previous post, this is both good and bad. To paraphrase Albert Einstein: <em>"As simple as possible, but no simpler"</em>. Wikitude is currently <em>too</em> simple (but in a good way). I'd like to be able to:</p>
+
+	<ul>
+
+		<li>Define the menus and associated event handlers associated with each PoI (Point of Interest &#8211; a digital asset within the AR world) so that I can customise what happens when a user clicks a specific PoI.</li>
+
+		<li>Define areas rather than just points and choose how such areas are "filled" &#8211; colour, texture etc&#8230;</li>
+
+		<li>Have an elegant solution for missing altitude information. For example, geocaches only have a longitude and latitude but no altitude. Wikitude assumes 0 meters altitude if none is provided so an early version of the geocaching application had nearby geocaches appearing underground (as I'm at an altitude of 157 meters). My solution was to make the world flat by giving everything within 6000 meters the same altitude as the current user &#8211; although this isn't at all ideal.</li>
+
+		<li>Be able to display pathways based on data from <a href="http://www.openstreetmap.org/">OpenStreetMap.org</a> (for example). It'd be good to superimpose public rights of way, footpaths and other navigation information. Something like an AR SatNav.</li>
+
+		<li>Add 3d models to the AR. Imagine visiting an ancient monument and being able to see an artist's impression that could be viewed in situ. What a great educational resource <em>that</em> would be and Architects would find it useful on site during the pre-build phase.</li>
+
+	</ul>
+
+	<p>Nevertheless, Mobilizy have the right attitude because "simple" is a good place to start. I can only assume they have various features up their sleeves that they'll add when finished and properly tested. </p>
+
+	<p>I don't want to give the wrong impression because one can already do quite a lot: </p>
+
+	<ul>
+
+		<li>Add points according to longitude / latitude / altitude.</li>
+
+		<li>Change the label associated with the PoI and the description that is displayed when the item is tapped. </li>
+
+		<li>Change the icon displayed in the AR view.</li>
+
+	</ul>
+
+	<h2>Potential</h2>
+
+	<p>So what happens now..? I can imagine all sorts of uses for this technology and I'll work my ideas out into a blog post in the not-too-distant future. </p>
+
+	<p>However, I'd caution against making every location based application viewable via AR. Often the top-down Google Maps view is all that is needed. For example, why show houses for sale in AR when houses for sale (in the UK at least) always have an estate agent's "For Sale" sign placed prominently outside the property? One should only use a technology because it is the best fit for a problem, <strong>not</strong> because it is the latest and greatest.</p>
+
+
+
+ 

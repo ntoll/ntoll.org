@@ -1,0 +1,46 @@
+---
+title: Metaclasses
+slug: metaclasses
+date: 2012-08-27 01:00:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+<p><a href="http://python.org/">Python</a> is an easy-to-learn modern
+programming language with a simple yet elegant implementation of object
+orientation. This post explains one dark corner of Python's implementation of
+object orientation: metaclasses (but does so as if explaining the <a
+href="http://www.bbc.co.uk/blogs/learningenglish/2011/09/howzat.shtml">rules
+of cricket</a>).</p>
+
+<p>Objects represent things. Type, <code>type(my_object)</code> to find out
+what type of thing your object is. The type of thing an object represents is
+defined by its "type". Classes define types of things to be instantiated as
+objects. To be absolutely clear, objects represent types of things defined by
+classes.</p>
+
+<p>Now, listen carefully!</p>
+
+<p>In Python, classes <strong>are also</strong> objects. This raises
+an important question: what type of thing is a class?</p>
+
+<p>The answer is that a class is a type of thing that can instantiate objects.
+This type of thing (a class's class) is a class's metaclass which, incidently,
+in Python defaults to a special class called <code>type</code> ~ whose type
+is, circularly, <code>type</code> (i.e. itself).</p>
+
+<p>You can change the metaclass of a class by setting it's
+<code>__metaclass__</code> attribute to a class that inherits from the
+<code>type</code> class. With this sleight-of-hand you can control how classes
+instantiate objects.</p>
+
+<p>How? I'm so pleased you asked!</p>
+
+<p>Override the new metaclass's <code>__new__</code> method.
+Remember, this <code>__new__</code> method must return the return of a call
+to the <code>type</code> class's <code>__new__</code> method so your new class
+correctly instantiates a new object of the correct type.</p>
+
+<p>Got it? Good!</p>
+
+<p>:-)</p>

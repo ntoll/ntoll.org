@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Programming Minecraft on the RaspberryPi | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/minecraft-pi/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../lisp-concise-and-simple/" title="Lisp ~ Concise and Simple" type="text/html">
+<link rel="next" href="../long-term-view/" title="Taking the Long Term View" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Programming Minecraft on the RaspberryPi">
+<meta property="og:url" content="https://ntoll.org/article/minecraft-pi/">
+<meta property="og:description" content="Minecraft is a sort of digital Lego.
+Players explore a blocky computer generated world and have the ability to build
+new terrain, buildings and other features. Many users have generated creative
+and c">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-03-16T22:45:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Programming Minecraft on the RaspberryPi</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-03-16T22:45:00Z" itemprop="datePublished" title="2013-03-16 22:45">2013-03-16 22:45</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MmB9b5njVbA?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p><a href="http://minecraft.net/">Minecraft</a> is a sort of digital Lego.
+Players explore a blocky computer generated world and have the ability to build
+new terrain, buildings and other features. Many users have generated creative
+and complicated structures within their games by carefully placing individual
+bricks (just like Lego). A quick
+<a href="https://www.google.com/search?q=minecraft&amp;hl=en&amp;source=lnms&amp;tbm=isch">Google image search for Minecraft</a> will return lots of amazing results.</p>
+
+<p>The <a href="http://www.raspberrypi.org/">RaspberryPi</a> is a cheap
+computer designed to encourage kids (of all ages) to learn how to program.
+Apparently, the "pi" part of the name is a misspelled reference to the
+<a href="http://python.org">Python</a> programming language - the RaspberryPi's
+principal programming language for education.</p>
+
+<p>Minecraft is amazingly popular among kids (my own included). I guess, like
+Lego, it's the potential for creative generative play that is so appealing.
+Wouldn't it be great if there were a version of Minecraft that you could
+program in Python that ran on the RaspberryPi..?</p>
+
+<p><a href="http://pi.minecraft.net/">THERE IS!</a></p>
+
+<p>I'm currently at <a href="https://us.pycon.org/2013/">PyconUS 2013</a> in
+California, every attendee has been given a RaspberryPi and there's a
+RaspberryPi lab in which attendees are encouraged to try their new piece of
+kit. I just spent a fun morning programming Minecraft with Python. What follows
+is a quick "how to" guide to get you started.</p>
+
+<p>I'll assume you've got a RaspberryPi to hand and that it's connected to the
+internet. (If you're unsure how to do this I suggest you visit the main
+<a href="http://raspberrypi.org/">RaspberryPi website</a> for more
+information.)</p>
+
+<p>First you should <a href="http://pi.minecraft.net/?page_id=10">download the
+RaspberryPi version of Minecraft</a> and follow the instructions at the web
+page to which I just linked.</p>
+
+<p>Next, once you have Minecraft running on your RaspberryPi I suggest you play
+for a while. Create a world and have a look around. Here's a run-down of the
+commands you can use:</p>
+
+<ul>
+<li>Keyboard
+        <ul>
+<li>W,A,S,D - Move (or navigate inventory)</li>
+            <li>SPACE - Jump, double tap to start/stop flying, hold to fly
+            higher</li>
+            <li>SHIFT - Sneak, hold to fly lower</li>
+            <li>E - Open inventory</li>
+            <li>1-8 - Select inventory slot item to use</li>
+            <li>ESC - Show/hide menu</li>
+            <li>TAB - Release mouse without showing menu</li>
+            <li>ENTER - Confirm menu selection</li>
+        </ul>
+</li>
+    <li>Mouse
+        <ul>
+<li>Steer - Look/turn around</li>
+            <li>Left mouse button - Remove block (hold)</li>
+            <li>Right mouse button - Place block, hit block with sword</li>
+            <li>Mouse wheel - Select inventory slot item to use</li>
+        </ul>
+</li>
+</ul>
+<p>Cool huh..?</p>
+
+<p>But wouldn't it be fun to be able to program and automate the manipulation
+of the game world with Python..?</p>
+
+<p>Here's how to get started...</p>
+
+<p>Open a terminal and change in to the Minecraft directory
+(<code>mcpi</code>) within which you'll see a child directory called
+<code>api</code> within which is yet another called <code>python</code>. From
+within the <code>python</code> directory start Python by typing,
+<code>python</code>.</p>
+
+<p>Now, type in the following:</p>
+
+<p></p>
+<pre><code class="python">&gt;&gt;&gt; from mcpi import minecraft
+&gt;&gt;&gt; mc = minecraft.Minecraft.create("127.0.0.1")
+&gt;&gt;&gt; mc.postToChat("Hello, World!")
+</code></pre>
+
+<p>You should see the message <em>Hello, World!</em> pop up in the Minecraft
+world. Congratulations, you've just programmed Minecraft!</p>
+
+<p>The first command imported all the things that Python needs to talk to the
+Minecraft game. The second line creates an object called <code>mc</code> that
+represents a connection to your game. The third line sends the chat message
+to the game.</p>
+
+<p>How about building things within the Minecraft world..? Check this out...</p>
+
+<p></p>
+<pre><code class="python">&gt;&gt;&gt; from mcpi import block
+&gt;&gt;&gt; mc.player.getTilePos()
+Vec3(37,0,-39)
+&gt;&gt;&gt; mc.setBlock(38, 0, -38, block.STONE_BRICK.id)
+</code></pre>
+
+<p>On the first line I import information Python needs about the blocks that
+you can place within the Minecraft world. Next, I ask the game where in the
+world my player is located. The game responds with an <em>x</em>, <em>y</em>
+and <em>z</em> based location expressed as a vector. Finally, I use the
+<code>setBlock</code> method to place a stone brick on an adjacent square.
+If you take a look around you'll see it right next to you!</p>
+
+<p>Actually, you will see different results to me because your player will be
+stood in a different location. See if you can change the final line to place
+a block close to your own player's location.</p>
+
+<p>That's it (for now) and covers pretty much all I found out in the first 15
+minutes of hacking about. If you want to explore the API further I suggest you
+look at the <code>mcpi_protocol_spec.txt</code> file in the
+<code>mcpi/api/spec</code> directory.</p>
+
+<p>Personally, I think this is a gift horse that teachers everywhere should be
+looking at in the mouth.</p>
+
+<p>I'll blog some more about this when I get back to the UK.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../lisp-concise-and-simple/" rel="prev" title="Lisp ~ Concise and Simple">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../long-term-view/" rel="next" title="Taking the Long Term View">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

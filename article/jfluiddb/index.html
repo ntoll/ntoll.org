@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>JFluidDB | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/jfluiddb/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../code-dojo-what-really-happened/" title="Code Dojo - What Really Happened" type="text/html">
+<link rel="next" href="../london-python-code-dojo-2/" title="London Python Code Dojo" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="JFluidDB">
+<meta property="og:url" content="https://ntoll.org/article/jfluiddb/">
+<meta property="og:description" content="If you read this blog regularly you'll already know about FluidDB from FluidInfo. Well, I've written a Java based client library for it (I started from the excellent work by Ross Jones).
+
+	&quot;FluidDB..?">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2009-10-12T16:09:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">JFluidDB</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2009-10-12T16:09:00Z" itemprop="datePublished" title="2009-10-12 16:09">2009-10-12 16:09</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><img src="../../static/images/71.jpg" align="left" title="FluidEiffle" alt="FluidEiffle" style="padding-right: 8px;"> If you read this blog regularly you'll already <a href="http://ntoll.org/article/fluiddb-101">know</a> <a href="http://ntoll.org/article/europython-2009">about</a> <a href="http://www.fluidinfo.com/fluiddb">FluidDB</a> from <a href="http://www.fluidinfo.com/">FluidInfo</a>. Well, I've written a <a href="http://github.com/ntoll/JFluidDB">Java based client library</a> for it (I started from the excellent work by <a href="http://blog.teeko.org/">Ross Jones</a>).</p>
+
+	<p><em>"FluidDB..?"</em></p>
+
+	<p>In a nutshell, FluidDB is a wonderfully simple yet powerful web based database that lives <em>"in the cloud"</em>. Objects exist in the database (there is only one instance of FluidDB), users tag objects and (optionally) associate values with the tags. A tag's "value" can be anything: a number, a string of characters or even something more exotic like a picture, document or sound recording. Tags are organised with "namespaces" – hierarchies for organizing names – and can be searched using a minimalist query language.</p>
+
+	<p><em>"So far, so simple…"</em> </p>
+
+	<p>Now here's the interesting bit: <strong>all</strong> objects are public and never get deleted; it's the namespaces, tags and their associated values that are covered by an elegantly simple permission system. FluidDB is open <em>to write</em> but powerful enough to enforce privacy.</p>
+
+	<p><em>"So what?"</em></p>
+
+	<p>I'd like to draw your attention to the adjectives I use in relation to FluidDB: "Simple", "Elegant", "Powerful", "Minimalist", "Open".</p>
+
+	<p>If you're a developer you'll know that one of the most difficult aspects of software development is getting the abstraction and conceptual framework right. For example, you might think you're reading a "document" in a "browser" on your "desktop" but these are just convenient names we use to make sense of our interactions with the computer. Such abstractions are layered from the lowest (1s and 0s) to the highest level that everyday users mostly see ("document", "browser", "desktop" etc). Abstractions in these layers of code are often (although not exclusively) expressed through an API ("Application Programming Interface" for you non-programmers, the public face a piece of software shows in order to interact with the outside world). </p>
+
+	<p>It is FluidDB's API to which I refer when using the adjectives listed above. Any developer can create a badly designed API with lots of "features" and confusing terminology but it takes a rare discerning discipline to keep things as simple as possible but not too simple to be useless (to paraphrase Albert Einstein).</p>
+
+	<p>It is upon this API that I have written a Java library to allow developers to easily interact with FluidDB. JFluidDB is an evening and weekend project and my first stab at working with Java so all feedback is most welcome – especially if you find un-idiomatic Java. Below is an example that encapsulates all you need to know in order to work with it and FluidDB:</p>
+
+<pre name="code" class="Java">
+
+import java.io.IOException;
+
+import com.fluidinfo.*;
+
+import com.fluidinfo.fom.*;
+
+import com.fluidinfo.fom.Object;
+
+import org.json.*;
+
+public class fluidTest {
+
+    /**
+
+     * Some example code for using the Fluid Object Model (FOM) classes with 
+
+     * FluidDB
+
+     * @throws JSONException 
+
+     * @throws IOException 
+
+     * @throws FluidException 
+
+     * @throws FOMException 
+
+     */
+
+    public static void main(String[] args) throws FOMException, FluidException, IOException, JSONException {
+
+        // The FluidDB class represents the instance of FluidDB you're connecting to.
+
+        // The default constructor is set to use http://fluiddb.fluidinfo.com/ but we're
+
+        // passing the URI to the sandbox here.
+
+        FluidDB fdb = new FluidDB(FluidConnector.SandboxURL);
+
+        // Login to FluidDB with your credentials
+
+        String username = "username";
+
+        String password = "password";
+
+        fdb.Login(username, password);
+
+        // Get the User object representing me
+
+        User u = fdb.getLoggedInUser();
+
+        // My root namespace
+
+        Namespace root = u.RootNamespace();
+
+        // Create a new namespace underneath my root namespace (name, description)
+
+        Namespace books = root.createNamespace("books", "For storing tags about books I might be reading.");
+
+        // Add some tags to the new namespace (name, description, indexed)
+
+        Tag title = books.createTag("Title", "The title of a book I've read", true);
+
+        Tag authors = books.createTag("Authors", "The author list", true);
+
+        Tag hasRead = books.createTag("HasRead", "Indicates I've read this book", true);
+
+        Tag rating = books.createTag("Rating", "Marks out of ten", true);
+
+        Tag comment = books.createTag("Comment", "Some notes and commentary", false);
+
+        // Create a new object in FluidDB (the argument is the "fluiddb/about" tag)
+
+        // An object can represent ANYTHING
+
+        Object seven_pillars = fdb.createObject("ISBN:0954641809");
+
+        // Associate some tag/values with it
+
+        // The first tag is only associating a tag but NOT a value
+
+        seven_pillars.tag(hasRead);
+
+        // We're associating values with these tags
+
+        seven_pillars.tag(title, "Seven Pillars of Wisdom");
+
+        seven_pillars.tag(authors, new String[]{"T.E.Lawrence"});
+
+        seven_pillars.tag(rating, 8);
+
+        seven_pillars.tag(comment, "The dreamers of the day are dangerous men, for they may act out their dreams with open eyes, to make it possible.");
+
+        // A search of all objects that I have read (returns matching object's unique IDs)
+
+        String[] result = fdb.searchObjects("has "+username+"/books/HasRead");
+
+        // result will contain only one result... the id for the seven_pillars Object
+
+        // Lets instantiate it and get a list of the available tags I have permission to see
+
+        Object newObj = fdb.getObject(result[0]);
+
+        String[] tagPaths = newObj.getTagPaths();
+
+        // tagPaths will include my tags I created above...
+
+        // Lets get the first tag and find out what is in it...
+
+        Tag newTag = fdb.getTag(tagPaths[0]);
+
+        FluidResponse r = newObj.getTagValue(newTag);
+
+        // Assuming all is well the result is returned by calling r.getResponseContent(); 
+
+        // Lets set / get some permissions
+
+        // This will only give the current user and the fluiddb "superuser" account the ability
+
+        // to CREATE namespaces underneath the namespace "book".
+
+        // Permissions can have either OPEN or CLOSED policy and a list of exceptions, so this
+
+        // Permission is CLOSED to everyone but fluiddb and username
+
+        Permission p = new Permission(Policy.CLOSED, new String[]{"fluidDB", username});
+
+        books.setPermission(Namespace.Actions.CREATE, p);
+
+        // Lets get the permission policy for our user for updating the "books/rating"
+
+        // tag
+
+        Permission updateTag = rating.getTagPermission(Tag.TagActions.UPDATE);
+
+        // Calling GetPolicy() and GetExceptions() on an instance of the Permission class will
+
+        // tell you what the permissions are (as described in the FluidDB docs)
+
+        // Lets do some cleanup...
+
+        // Remove the tags from the object that we created to represent the seven pillars
+
+        newObj.deleteTag(title);
+
+        newObj.deleteTag(authors);
+
+        newObj.deleteTag(hasRead);
+
+        newObj.deleteTag(rating);
+
+        newObj.deleteTag(comment);
+
+        // Now delete the tags
+
+        title.delete();
+
+        authors.delete();
+
+        hasRead.delete();
+
+        rating.delete();
+
+        comment.delete();
+
+        // and finally the namespace
+
+        books.delete();
+
+    }
+
+}
+
+</pre>
+
+	<p><em>"But Nicholas, you're a Python/.NET guy! Why Java?"</em></p>
+
+	<p>Good question! I <em>have</em> helped out with one of the early <a href="http://bitbucket.org/sanxiyn/fluidfs/">Python libraries</a> and have written a <a href="http://github.com/ntoll/FluidDB.NET">functional .NET library</a> (which will be brought up-to-date with JFluidDB), but I went for Java because of <a href="http://www.android.com/">Android</a> (Java is the development language for such mobile devices).</p>
+
+	<p>It strikes me that FluidDB would be an excellent database for lots of mobile applications and a good excuse to get into this field. </p>
+
+	<p>For example:</p>
+
+	<ul>
+<li>One could use the excellent <a href="http://code.google.com/p/zxing/">ZXing</a> barcode reader to scan objects (books?) in the real world to read and add tags (ratings, reviews, notes etc). </li>
+
+		<li>Should an object in FluidDB be tagged with a geo-location I should be able to display it on <a href="http://www.google.com/mobile/products/maps.html#p=default">Google Maps</a> or even an Augmented Reality viewer such as <a href="http://www.wikitude.org/">Wikitude</a> (see my <a href="http://ntoll.org/article/hello-android">GeoCache project</a> for an example of what this might be like).</li>
+
+		<li>I should be able to use my mobile device's GPS, microphone and camera to add geo-location information, recordings, pictures and video to an object in FluidDB.</li>
+
+		<li>As FluidDB can easily be adapted to be a social network I'll be able to use it just like one might use a mobile Twitter or Facebook client.</li>
+
+	</ul>
+<p>So, my next evening and weekend project is to create some simple Android applications as described above.</p>
+
+	<p>I'll let you know when there's something to show…</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../code-dojo-what-really-happened/" rel="prev" title="Code Dojo - What Really Happened">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../london-python-code-dojo-2/" rel="next" title="London Python Code Dojo">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

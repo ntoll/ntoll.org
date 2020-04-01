@@ -1,0 +1,66 @@
+---
+title: Django Microformats
+slug: django-microformats
+date: 2009-04-19 15:11:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+
+	<p>I've just created a new Django application that makes it easier to integrate and use Microformats in your web-application. I'm hosting it on <a href="http://github.com/">GitHub</a>:</p>
+
+	<p><a href="http://github.com/ntoll/microformats/tree/master">http://github.com/ntoll/microformats/tree/master</a></p>
+
+	<p>All you need to do is run the following command from within your own Django project:</p>
+
+<pre>
+
+<code>
+
+git clone git://github.com/ntoll/microformats.git
+
+</code>
+
+</pre>
+
+	<p>... and remember to add it to the INSTALLED_APPS section of your settings.py file.</p>
+
+	<p><a href="http://microformats.org/">Microformats</a> are a means of adding semantic information that is both human and machine readable to a web-site. In order to work with Microformats you need to use a toolkit such as <a href="http://visitmix.com/Lab/oomph">Oomph</a> or the <a href="https://addons.mozilla.org/en-US/firefox/addon/4106">Operator Add-on</a> for Firefox (that supports more types of microformat).</p>
+
+	<p>The following YouTube video from the Oomph team pretty much explains the basics:</p>
+
+	<p><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/zx2f2Z9MMQ8&#38;hl=en&#38;fs=1&#38;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/zx2f2Z9MMQ8&#38;hl=en&#38;fs=1&#38;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object></p>
+
+	<p>By using the Django microformats application you get the following:</p>
+
+	<ul>
+
+		<li>Models relating to the geo, hCard, adr, hCalendar and XFN microformats.</li>
+
+		<li>Simplified forms for the geo, hCard, adr, org, email, tel and hCalendar microformats and fragments.</li>
+
+		<li>The bare minimum admin functionality.</li>
+
+		<li>Template filters for the geo, hCard, adr, hCalendar and XFN microformats.</li>
+
+	</ul>
+
+	<p>To use the template filters you need to register the application and add:</p>
+
+<pre><code>{{ "{% load microformat_extras %}" }}</code></pre>
+
+	<p>to the top of the template you're using.</p>
+
+	<p>For an example of this in use check out the end of the following test file:</p>
+
+<pre><code>microformats/unit_tests/test_templatetags.py</code></pre>
+
+	<p>Running the unit tests (./manage.py test microformats) will result in an example file demonstrating the HTML markup produced by the template filters:</p>
+
+<pre><code>microformats/unit_tests/html_test/microformat_test.html</code></pre>
+
+	<p>I've included the Oomph javascript library so you can play with the microformats if you open the file in your browser. If you're using Firefox try it with the Operator add-on. IE8 supports Microformats natively.</p>
+
+	<p>This is a first shot at integrating Microformats into Django. There are missing microformats and I'm pretty sure some of the models could be improved as could the template filters. Inevitably the code needs to be cleaned up too. I'll be using this library in a new web-application so expect this code to change as I find flaws and gremlins through using it "in anger".</p>
+
+	<p>Feedback would be most welcome.</p>

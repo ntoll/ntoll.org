@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Programming ~ Concise and Simple | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/programming-concise-and-simple/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../northackton-marbles/" title="Northackton Magic Marble Machines" type="text/html">
+<link rel="next" href="../databases-concise-and-simple/" title="Data and Databases ~ Concise and Simple" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Programming ~ Concise and Simple">
+<meta property="og:url" content="https://ntoll.org/article/programming-concise-and-simple/">
+<meta property="og:description" content='(As with all "concise and simple"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)
+
+This is a personal reflection on programming: the creation and cura'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-01-30T08:00:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Programming ~ Concise and Simple</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-01-30T08:00:00Z" itemprop="datePublished" title="2013-01-30 08:00">2013-01-30 08:00</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>(As with all "<a href="../concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p>This is a personal reflection on programming: the creation and curation of
+instructions that make computers do things. Instructions (also known as
+"<a href="https://en.wikipedia.org/wiki/Source_code">source code</a>" or just
+"code") are organised into
+<a href="https://en.wikipedia.org/wiki/Computer_program">programs</a> (or
+"<a href="https://en.wikipedia.org/wiki/Software">software</a>") that fulfil
+specific tasks. People who write programs are called
+<a href="https://en.wikipedia.org/wiki/Programmer">programmers</a>,
+developers, software engineers or (colloquially)
+<a href="https://en.wikipedia.org/wiki/Hacker_(term)">hackers</a>.</p>
+
+<p><img src="../../static/images/code.png" alt="code"></p>
+
+<p>Instructions are expressed in
+<a href="https://en.wikipedia.org/wiki/Programming_language">programming languages</a>
+that make it easier for humans to comprehend what is going on. So-called "high
+level" languages are easier for humans to work with than "low level" languages
+that express things in a way that is closer to how the computer works. In
+all cases programs are transformed from the original programming language into
+the <a href="https://en.wikipedia.org/wiki/Machine_code">binary
+instructions</a> that cause the computer to function in a particular way.
+This transformation can happen in two ways:</p>
+
+<ul>
+<li>The program is "compiled" in to binary instructions by a special
+    program called a
+    <a href="https://en.wikipedia.org/wiki/Compiler">compiler</a>. The result
+    is an "<a href="https://en.wikipedia.org/wiki/Executable">executable</a>"
+    run by the end user.</li>
+    <li>The program is "interpreted" by an <em>executable</em>
+    <a href="https://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a>
+    whose function is to act as a sort of on-the-fly translator of the
+    instructions.</li>
+</ul>
+<p>Both mechanisms have strengths and weaknesses. Because compiled programs
+have already been transformed in to the computer's binary instructions they
+are often much faster than interpreted programs where such
+transformations happen as the program is running. Yet interpreted programs
+offer the flexibility of adapting and changing themselves while they are run by
+the interpreter which makes it easier to solve certain sorts of programming
+problem. Sometimes a combination of these techniques is used:
+A <a href="https://en.wikipedia.org/wiki/Just-in-time_compilation">JIT</a>
+compiler will interpret until certain sets of instructions are
+obviously more frequently used, at which point <em>only the popular sets of
+instructions</em> get compiled "just in time" to make them faster.</p>
+
+<p>Sometimes programs work as expected and produce valuable results. More often
+they do not. The failure to make a computer work usefully is called a
+<a href="https://en.wikipedia.org/wiki/Computer_bug">bug</a>.
+There are generally two sorts of bug: the wrong outcome is correctly
+implemented (the design is wrong) or the expected outcome is wrongly
+implemented (the instructions are wrong). In any case, because computers are
+complex machines, making them do something useful is surprisingly hard.</p>
+
+<p>Managing and taming complexity is one of the core tasks of a programmer. A
+common piece of advice given to junior developers is
+"<a href="https://en.wikipedia.org/wiki/Keep_it_simple_stupid">kiss</a>"
+(keep it simple, stupid!), for there are fewer things that could go wrong. As
+computing pioneer <a href="https://en.wikipedia.org/wiki/Tony_Hoare">Tony
+Hoare</a> explains,</p>
+
+<blockquote>"There are two ways of constructing a software design: One way is
+to make it so simple that there are obviously no deficiencies, and the other
+way is to make it so complicated that there are no obvious deficiencies. The
+first method is far more difficult."</blockquote>
+
+<p>Personally, I think creating simple and useful software is more like
+writing succinct yet powerful prose than opaque logical wizardry. This has
+an important side effect: simple and coherent code is easy to understand. Code
+that is easy to understand is easy to maintain. Maintaining code is the act of
+fixing bugs and curating instructions so things work efficiently (also known
+as <a href="https://en.wikipedia.org/wiki/Code_refactoring">re-factoring</a>).
+In this way a program is easy to improve as bugs are found and new features
+implemented.</p>
+
+<p>Some languages have been created with the explicit aim of making code
+easy to read and understand (such as <a href="http://python.org">Python</a>).
+Some developers promote certain development styles that they claim encourages
+programmers to produce high quality software. A classic example of this is
+<a href="https://en.wikipedia.org/wiki/Test-driven_development">test driven
+development</a> where developers write a failing test encapsulating a feature
+of their program before actually implementing the feature itself to make the
+test eventually pass. Others (such as
+<a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a>)
+promote a
+<a href="https://en.wikipedia.org/wiki/Literate_programming">literate style of
+programming</a> where code is interspersed with natural language explanations
+that tell the "story" of the code.</p>
+
+<p>Another core skill of a programmer is de-constructing and analysing
+problems. Often the problem is expressed in a
+vague and open-ended way and it is the task of the developer to precisely
+constrain the scope of the problem so they create some
+useful outcome. A personal example, from my first programming class, illustrates
+this beautifully: my tutor explained that programs were merely instructions
+and that we had five minutes to provide instructions telling him how to switch
+on the classroom's lights. How hard could it be to write such
+instructions? Take a minute to imagine what <em>you</em> would write (you
+may assume that the person following them knows about directions, actions and
+names of things).</p>
+
+<p>I can still remember my list:</p>
+
+<ul>
+<li>Stand up.</li>
+    <li>Look around until you locate the light switch.</li>
+    <li>Walk in the direction of the switch.</li>
+    <li>Press the switch with your fingers.</li>
+    <li>Retrace your steps.</li>
+    <li>Sit down.</li>
+</ul>
+<p>Of course, I failed miserably. My tutor pointed out that he was already
+stood up, there were desks between him and the light switch and the damn lights
+were already on anyway.</p>
+
+<p>Time and resources are also essential elements of software development:</p>
+
+<p>First, the developer needs to have a feel of how best to organise a
+program. This means analysing their implementation of the
+<a href="https://en.wikipedia.org/wiki/Algorithm">algorithm</a> (the
+instructions at a conceptual level) to ensure that it is both timely and makes
+efficient use of resources like the computer's memory and
+<a href="https://en.wikipedia.org/wiki/Cpu">CPU</a>. Often
+this is expressed using <a href="https://en.wikipedia.org/wiki/Big_O_notation">big-O</a> notation.</p>
+
+<p>Second, programming usually involves a deadline. Customers need to know how
+much time it will take to finish software given a certain number of developers
+and some sort of collaborative development process. I've heard this described
+as "the cat herding problem". Fred Brooks
+<a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month">famously observed</a>
+that adding developers to a struggling project only slows it down further.
+Furthermore, clients change their minds mid-project (in addition to providing
+vague problems like the one mentioned above) and there are always
+<a href="https://en.wikipedia.org/wiki/There_are_known_knowns">unknown
+unknowns</a> that add unforeseen time and effort to the project. If this were
+not enough, how do you coordinate teams of programmers who are all working on
+the same software?  It's like trying to get ten people to co-compose a symphony
+<em>at the same time</em>.</p>
+
+<p>Happily, developers have created methods and tools to help them work
+together. Small autonomous
+"<a href="https://en.wikipedia.org/wiki/Agile_software_development">agile</a>"
+teams are preferred over large managed cohorts of developers.
+<a href="https://en.wikipedia.org/wiki/Issue_tracking_system">Issue tracking
+systems</a> make it easy for clients to request and prioritise features,
+report bugs and give developers a clear audit trail upon which to base
+development decisions. Code is stored in
+<a href="https://en.wikipedia.org/wiki/Revision_control">version control
+systems</a> that allow developers to track each other's changes and
+resolve any conflicts in the software (for example, when two people edit the
+same piece of code). In fact, developers have become so good at this sort of
+thing that others borrow these tools and techniques: lawyers have been known to
+collaborate on complex legal documents with a version control system.</p>
+
+<p>Finally, programming is a political activity: making software
+means defining the laws that dictate how the digital world should be. Often
+this obvious fact is left unacknowledged. However, incumbent interests affected
+by the rise of digital culture (for example, the so-called "creative"
+industries represented by organisations such as the
+<a href="https://en.wikipedia.org/wiki/RIAA">RIAA</a>,
+<a href="https://en.wikipedia.org/wiki/MPAA">MPAA</a> and their ilk)
+have attempted, with some success, to change the law to limit the use of file
+sharing software used to distribute pirated content.</p>
+
+<p>Yet, programmers have turned the law to their advantage.
+<a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>,
+founder of the <a href="http://fsf.org/">Free Software Foundation</a> (FSF),
+became disillusioned with locked down dis-empowering software so set out
+<a href="https://www.gnu.org/philosophy/free-sw">four essential
+freedoms</a>:</p>
+
+<ul>
+<li>The freedom to run the program, for any purpose (freedom 0).</li>
+    <li>The freedom to study how the program works, and change it so it does
+    your computing as you wish (freedom 1). Access to the source code is a
+    precondition for this.</li>
+    <li>The freedom to redistribute copies so you can help your neighbor
+    (freedom 2).</li>
+    <li>The freedom to distribute copies of your modified versions to others
+    (freedom 3). By doing this you can give the whole community a chance to
+    benefit from your changes. Access to the source code is a precondition for
+    this.</li>
+</ul>
+<p>These freedoms are enshrined in the
+<a href="https://www.gnu.org/licenses/gpl">General Public License</a> (GPL) -
+a license that subverts copyright (that seeks to
+<a href="https://en.wikipedia.org/wiki/All_rights_reserved">expand the rights
+of creators</a> at the expense of the rights of others) in to
+<a href="https://en.wikipedia.org/wiki/Copyleft">copy<em>left</em></a> (that
+seeks to <a href="https://en.wikipedia.org/wiki/All_rights_reversed">expand the
+rights</a> of everyone). There is one important exception that limits
+everyone: any modifications to source code covered by the GPL must also be
+freely available under the GPL. While the GPL has been described as
+<a href="http://www.zdnet.com/blog/open-source/the-commie-smear-against-open-source/946">communist</a> and
+<a href="http://www.theregister.co.uk/2001/06/02/ballmer_linux_is_a_cancer/">cancerous</a>
+it is not anti-commerce and (I think intentionally) does not mention any
+political affiliations. Code covered by the GPL can be sold (see sections
+<a href="https://www.gnu.org/licenses/gpl#section10">10</a> and
+<a href="https://www.gnu.org/licenses/gpl#section11">11</a>). It's how the FSF
+first raised money for their cause.</p>
+
+<p>There's a sentiment gaining in popularity:
+<a href="https://www.youtube.com/watch?v=imV3pPIUy1k">program, or be
+programmed</a>. If you would like to learn to program, there are
+<a href="https://www.khanacademy.org/cs/tutorials/programming-basics">plenty</a> of
+<a href="https://www.udacity.com/courses">resources</a> available
+<a href="https://www.coursera.org/category/cs-programming">online</a>.
+
+</p>
+<p><small>1497 words. Image credits: © 2013 the author with
+<a href="http://instacode.linology.info/17689">this service</a>.</small></p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../northackton-marbles/" rel="prev" title="Northackton Magic Marble Machines">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../databases-concise-and-simple/" rel="next" title="Data and Databases ~ Concise and Simple">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+---
+title: How to Build a Drogulus
+slug: build-a-drogulus
+date: 2013-11-03 15:00:00 UTC
+description: How to make a global, decentralized data store.
+author: Nicholas H.Tollervey
+---
+<p>The <a href="http://drogul.us">drogulus</a> is a programmable peer-to-peer
+data store. It's my "fun" programming project <em>du jour</em> and a thought
+experiment in code. This article is both a story of the drogulus and a
+high-level technical overview of what I'm attempting to build (I don't assume
+too much technical knowledge on the part of the reader).</p>
+
+<img src="/static/images/softwarebox.jpg" alt="software fig.1"/>
+
+<p>The overriding aim of the drogulus is to simply promote the autonomy of its
+users. This aim informs all the technical choices outlined below.</p>
+
+<p>What do I mean by autonomy (and why is it so important)?</p>
+
+<p>When someone is autonomous they are self-directing, free to act of their
+own accord and lack imposition from others. Autonomy also suggests
+intelligence and awareness enough to be able to enjoy and make use of such
+freedom. Furthermore, such intelligence entails decision making so people
+become accountable for their actions. Autonomy is also the opposite of such
+undesirable states as tyranny, slavery, ignorance and apathy.</p>
+
+<p>Unfortunately, many aspects of today's web are contrary to the promotion of
+user's autonomy:</p>
+
+<ul>
+    <li>users are not in control of their data or online identity (websites
+    act as walled gardens)</li>
+    <li>to make the web work programmers have to use quirky and complicated
+    technology defined in a top-down manner by committee (OAuth, CORS,
+    Javascript date objects and Internet Explorer all spring to mind)</li>
+    <li>there are many inadvertent points of control, lock-in and authority
+    built into the web (DNS, the client/server model of the web and censorship
+    by governments and other entities via "firewalls")</li>
+</ul>
+
+<p>I asked myself, how would software designed to promote autonomy function?
+I tried to imagine the simplest possible solution, started to write code and
+the drogulus was born.</p>
+
+<h2>Three Pillars of the Drogulus</h2>
+
+<p>The client/server model of the web (where browsers [the clients] connect to
+websites [the servers and custodians of data]) is a fundamental problem simply
+because the server always has power over the client. Furthermore, the server
+is a single point of failure that is open to attack. So I decided to look at
+peer-to-peer (P2P) architectures as an antidote to such potential mechanisms
+of imposition and control. Typically, in a peer to peer network peers of
+equal status (computers running appropriate software) cooperate in a loose
+decentralised network for mutual benefit. Peer to peer is the antithesis of
+hierarchy (where some have elevated status and power over others as in the
+client/server model). Furthermore, the loose and decentralised organisation
+of computing resources make it very hard for third parties to control users.
+The drogulus is, in fact, many computers collaborating together over the
+internet.</p>
+
+<p>Assuming a P2P architecture, what should users be able to do with such
+a resource? At a most fundamental level, users should be able to name things.</p>
+
+<p>Being able to name things is a fundamental aspect of autonomy. In his work,
+"Pedagogy of the Oppressed", the philosopher
+<a href="https://en.wikipedia.org/wiki/Paulo_Freire">Paulo Freire</a>
+says,</p>
+
+<blockquote>to exist, humanly, is to name the world, to change it</blockquote>
+
+<p>Naming is a fundamental aspect of computing because it's a foundation for
+abstraction: naming a thing hides what it is or how it works, it is merely
+<em>"X"</em>. Naming things (abstracting) is a way to make sense of the
+world. To be able to do so without imposition is liberating and an example of
+every-day autonomy.</p>
+
+<p>Therefore, the drogulus is a data store: a place where knowledge is named
+and stored in its latent digital form as data. "Data" are simply values that
+convey meaningful information about something. Meaning is implied by the
+name, context and structure of the data. Structure is formed from the way
+data is represented. The drogulus is a data store because users are able to
+create, retrieve, update and delete named pieces of data. Importantly, once
+data is named it may also be referenced. This is the essential requirement
+for <a href="https://en.wikipedia.org/wiki/Hypertext">hypertext</a>.</p>
+
+<p>Data is latent. To make it useful you need to do something. In the digital
+realm that means programming. Programming is the creation and curation of
+instructions that produce results. Both programs and results may be stored as
+data in the drogulus. But what if you're not in control of the computer
+you're using or don't have access to a machine that's capable of running such
+programs? That's hardly an autonomous state. I want the drogulus to be
+trivially programmable ~ a sort of distributed programming environment.
+Imagine it as a re-configurable
+<a href="http://setiathome.ssl.berkeley.edu/">SETI@home</a> on steroids: by
+running a node in the drogulus network you are sharing a small and highly
+controlled amount of your potential computing power with everyone else on the
+network.</p>
+
+<p>Finally, users need to be able to trust the data found in the drogulus
+and be able to check its provenance. Furthermore, it should be possible to
+identify who's who (although the <em>who</em> aspect may be an anonymous
+<a href="https://en.wikipedia.org/wiki/Pen_name">nom de plume</a>). On the web
+such things are dealt with by a central authority such as DNS (in the case of
+working out who a certain URL refers to), or services such as Google, Twitter
+and Facebook (when working out who's who on a social network). However, this
+is not a state of affairs that promotes autonomy. How can we make decisions
+based upon some piece of data without being able to check its provenance? The
+current centralised brokers of identity are yet another inadvertent point of
+control and authority. Furthermore, sometimes it is important
+to have the choice of becoming anonymous: you may face personal, political or
+economic retribution if certain data is connected with your offline identity.
+It is certainly an imposition to force the use of real names and identifiable
+data in order to use a digital service.</p>
+
+<p>Is there an alternative?</p>
+
+<p>Yes! By using public key cryptography to sign data the drogulus ensures the
+provenance of the data and that it has not been tampered with. Importantly,
+there is no central authority to prove who's who. Identity is built on the
+far more humane mechanism of a
+<a href="https://en.wikipedia.org/wiki/Web_of_trust">web of trust</a>.</p>
+
+<p>These aspects of promoting autonomy translate in to three technical
+"pillars" with which the drogulus is built:</p>
+
+<ol>
+    <li>a distributed hash table provides a P2P data store</li>
+    <li>a cryptographic layer based on public key cryptography is used to
+    ensure the provenance and ownership of data</li>
+    <li>A simple programming language called Logos
+    (<a href="https://en.wikipedia.org/wiki/Logos">&#955;&#972;&#947;&#959;&#962;</a>)
+    uses the available computing power of the P2P network to compute
+    results</li>
+</ol>
+
+<p>Each of these pillars is described, in some detail, below.</p>
+
+<h2>Distributed Hash Tables</h2>
+
+<p>A
+<a href="https://en.wikipedia.org/wiki/Distributed_hash_table">distributed hash table</a>
+(DHT) is a P2P key/value store. I suggest you look at my
+<a href="http://drogul.us/presentations/dhtcs">presentation given at this year's PyconUK</a>
+for a quick introduction to DHT.</p>
+
+<img src="/static/images/distributed.jpg" alt="Encyclopedia Britannica"/>
+
+<p>At a high level (a not entirely accurate analogy, although close enough for
+illustrative purposes) a distributed hash table works like a sort of
+peer-to-peer dictionary/encyclopedia: a unique key is used to identify (name)
+a value (the data). In a traditional dictionary/encyclopedia, the key is a
+word and the value is its definition or article. Being a data store, a
+distributed hash table allows users to create, retrieve, update and delete
+their own keys and associated digital values.</p>
+
+<p>The hash table is distributed because it is split into the equivalent of
+the many volumes of a traditional encyclopedia (where each volume covers a
+particular part of the whole). Each person who ever uses the DHT has a copy of
+just one volume with many copies of a volume being distributed to many
+different users.</p>
+
+<p>Users keep track of which of their friends on the network hold what volume.
+Users interact with the distributed hash table by contacting the friend with
+the correct volume for the desired item. If they don't know anyone with the
+right volume they play a sort of six-degrees-of-separation game with their
+friends and friends-of-friends until someone with the correct volume is
+found.</p>
+
+<p>Distributed hash tables also share an interesting property with Bittorrent:
+the more popular an entry is the more widespread it becomes, thus improving
+performance since popular items are easier to find.</p>
+
+<p>Distributed hash tables are eventually consistent (meaning changes made to
+the items stored in the DHT are not immediate: they may take some amount of
+time to propagate to relevant peers) and interactions with a DHT are
+asynchronous (the result may not be immediately available since the
+machinations of the six-degrees-of-separation game may take an unpredictable
+amount of time).</p>
+
+<p>Nevertheless, distributed hash tables contain no single point of failure
+nor inadvertent point of control, scale to huge numbers of nodes, have a
+relatively efficient lookup procedure (the afore mentioned
+six-degrees-of-separation like process), are good at handling fluid network
+membership (nodes can be constantly joining and leaving the network) and have
+been tested in the real world (in projects such as Bittorrent, Freenet and
+others).</p>
+
+<p>The drogulus's DHT is based upon but is not the same as the
+<a href="https://en.wikipedia.org/wiki/Kademlia">Kademlia</a>
+distributed hash table algorithm. The innovation the drogulus brings is that
+keys and values are cryptographically signed in such a way that their
+provenance can be proven and content shown to be intact. Furthermore, users
+cannot interfere with each other's items stored within the distributed hash
+table unless they have access to the same private key.</p>
+
+<p>Items are self contained and any that do not pass the cryptographic checks
+are ignored. Nodes that attempt to propagate such values are blocked
+(punished / ostracized) by their peers. The section about the cryptographic
+layer, below, explains how this works in greater detail.</p>
+
+<p>The core aspects of a DHT are:</p>
+
+<ul>
+    <li>generating keys within a finite "key space" (the set of all
+    possible keys)</li>
+    <li>keeping track of peers within the key space with a routing table</li>
+    <li>discovering peers within a particular part of the key space with whom
+    you interact to set and retrieve values (lookups and distance)</li>
+    <li>ensuring the DHT performs well via caching, persisting data between
+    nodes and keeping things up to date</li>
+    <li>communicating asynchronously</li>
+</ul>
+
+<p>These are explained below.</p>
+
+<h3>Key Space</h3>
+
+<p>A hash function is an algorithm that takes some arbitrary input block of
+data and turns it in to a fixed size output. Any change to the input data will
+change the resulting output. The name of the hash function currently used by
+the drogulus is SHA-512. Good hash functions are deterministic, cannot be
+reversed, generate different values from different seed data, uniformly
+distribute output values within the output range and attempt to avoid
+collisions (that are, unfortunately, inevitable).</p>
+
+<p>Keys are SHA-512 values computed from two concatenated values provided by
+the user storing the data: their public key and a meaningful name identifying
+the item.</p>
+
+<p>Every node in the DHT has a unique id that is also a SHA-512 value.
+This is computed from the node's own public key (used to facilitate
+communication with other nodes on the network). The public key is used as a
+seed for the hash to ensure a node has no way to position itself in a
+certain location in the range of all hashes.</p>
+
+<p><em>Nodes store items whose keys are "close" to their ids</em>
+(see the section on lookups and distance, below, for how this works). This
+isn't such a hard concept to understand: it's simply a way of knowing where a
+thing ought to be found, just like knowing that in an encyclopedia
+<em>aardvark</em> will be found in the volume containing entries for
+<em>A</em>.</p>
+
+<img src="/static/images/aardvark.jpg" alt="An aardvark"/>
+
+<h3>Routing Table</h3>
+
+<p>The routing table is the data structure a node uses to keep track of its
+peers in the distributed hash table. It is a binary tree whose leaves are
+k-buckets.</p>
+
+<p>A k-bucket lists contact information about other nodes in a particular
+region of the key space. The k-bucket is ordered from oldest to youngest node
+in terms of last connection time. None of the k-buckets overlap, but together
+they cover the whole key space.</p>
+
+<p>A k-bucket can not contain more than K contacts - where K is a system wide
+replication parameter. K represents the number of nodes that are unlikely to
+fail within an hour of each other - typically, this value is set to 20.</p>
+
+<p>Contact information consists of each peer's unique SHA-512 id within the
+DHT, its network address, the drogulus version the peer is running, a
+timestamp indicating when the last connection was made with the peer and a
+counter tracking the number of failed calls made from the local node to the
+peer represented by the contact.</p>
+
+<p>When a node joins the network it starts with a routing table containing
+just a single k-bucket covering the whole key space. The routing table grows
+and changes dynamically as more peers are encountered or drop off the
+network.</p>
+
+<p>When a new peer is encountered on the network the local node attempts to
+add it to the appropriate k-bucket that covers the area in the key space that
+the new peer's id falls in to. Initially this will be the original single
+k-bucket. If that k-bucket is not full (i.e. there are less than K contacts
+in it already) then the new peer's contact information is simply added.</p>
+
+<p>If the k-bucket is full and its range includes the local node's ID then it
+is replaced by two new k-buckets each covering half the key space of the
+original (full) k-bucket. The contact information for peers originally held in
+the replaced k-bucket is divided between the two new k-buckets so peers are
+found in the correct new k-bucket. The new peer, whose insertion caused the
+split, has its contact information inserted in to the appropriate new
+k-bucket.</p>
+
+<p>If the k-bucket covering the new peer is full and does <em>not</em> include
+the local node's id then its contact information is added to a replacement
+cache for the full k-bucket. If a peer in a full k-bucket has some arbitrary
+number of failed calls then it is removed from the k-bucket and the oldest
+member of the replacement cache that is still contactable is added to the
+k-bucket to replace it.</p>
+
+<p>The routing-table is usually kept up-to-date by the normal network traffic
+between the local node and its peers. However, to guard against the odd case
+when network traffic has not refreshed all the k-buckets the local node will
+automatically refresh a k-bucket after some arbitrary amount of time (usually
+an hour) by picking a random ID within the range of the stale k-bucket and
+performing a node lookup for that ID (lookups are described below).</p>
+
+<p>The local routing table may be asked for the K nearest peers to a certain
+SHA-512 id value. Sometimes it may return peers from different k-buckets if
+the desired id value is close to the "border" between k-buckets.</p>
+
+<img src="/static/images/seatingplan.jpg" alt="seating plan"/>
+
+<p>A helpful analogy for the routing table is that it's like a seating
+plan at a very large table where diners know more diners who are sat closer
+to them than further away.</p>
+
+<h3>Lookups and Distance</h3>
+
+<p>Every message between peers includes the SHA-512 node id of the sender.
+This permits peers to learn of each other's existence.</p>
+
+<p>As has been mentioned before, keys are also SHA-512 values. To work out
+what nodes may store a given key a notion of distance is required. This allows
+the DHT to search for peers close to a target key and retrieve its associated
+value. Nodes found to be closest to the target key are used to store the
+target key/value item.</p>
+
+<p>The DHT defines the distance between a node id and key as simply an integer
+representation of their bitwise exclusive or (XOR). This is both a simple and
+uniform measure of distance.</p>
+
+<p>Given such a mechanism for measuring distance between keys and ids it is
+possible to navigate the DHT to look up keys and peers given a target
+SHA-512.</p>
+
+<p>A lookup is an asynchronous operation that either calls back with a valid
+result or an "errback". It's also possible to define a timeout for the lookup
+in the drogulus's implementation of the DHT.</p>
+
+<p>The lookup operation can be used to either find the K closest nodes to a
+particular target in the key space, in order to find candidate nodes that will
+store an item in the DHT, or retrieve a value for a given key likely to be
+found in a certain target area of the key space.</p>
+
+<p>A lookup is both parallel (in that more than one request at a time can be
+made to fulfil the lookup) and recursive (in that such parallel requests
+return peers closer to the target that are re-used to request yet closer peers
+until a suitable result is found).</p>
+
+<p>What follows is a brief description of the lookup algorithm.</p>
+
+<p>The following values are used in the lookup implemented by the drogulus
+(some of the names are derived from the original Kademlia paper):</p>
+
+<ul>
+    <li>the target key for the lookup</li>
+    <li>the message type (either FindNode or FindValue)</li>
+    <li>the routing table of the local node</li>
+    <li>an ordered shortlist containing nodes close to the target</li>
+    <li>a set of nodes that have been contacted during the lookup</li>
+    <li>the id of the node nearest to the target (encountered so far)</li>
+    <li>a dictionary of currently pending requests</li>
+    <li>ALPHA - the number of concurrent asynchronous calls allowed</li>
+    <li>K - the number of closest nodes to return when complete</li>
+    <li>LOOKUP_TIMEOUT - the default maximum duration for a lookup</li>
+</ul>
+
+<p>Given these values the lookup proceeds with the following steps:</p>
+
+<ol start="0">
+    <li>If "timeout" number of seconds elapse before the lookup is finished
+    then cancel any pending requests and errback with an OutOfTime error. The
+    "timeout" value can be overridden but defaults to LOOKUP_TIMEOUT
+    seconds.</li>
+    <li>Nodes from the local routing table seed the shortlist.</li>
+    <li>The nearest node to the target in the shortlist is set as nearest
+    node.</li>
+    <li>No more than ALPHA nearest nodes that are in the shortlist but have
+    not been contacted are sent a message that is an instance of the message
+    type. Each request is added to the pending request dictionary. The number
+    of pending requests must never be more than ALPHA.</li>
+    <li>As each node is contacted it is added to the "contacted" set.</li>
+    <li>If a node doesn't reply or an error is encountered it is removed from
+    the shortlist and pending requests dictionary. Start from step 3
+    again.</li>
+    <li>When a response to a request is returned successfully remove the
+    request from the pending requests dictionary.</li>
+    <li>If the lookup is for a FindValue message and a suitable value is
+    returned (see note at the end of these comments) cancel all the other
+    pending calls in the pending requests dictionary and fire a callback with
+    the returned value. If the value is invalid remove the node from the short
+    list and start from step 3 again without cancelling the other pending
+    calls.</li>
+    <li>If a list of closer nodes is returned by a peer add them to the short
+    list and sort - making sure nodes in the "contacted" set are not
+    mistakenly re-added to the shortlist.</li>
+    <li>If the nearest node in the newly sorted shortlist is closer to the
+    target than the current nearest node then set the nearest node to be the
+    new closer node and start from step 3 again.</li>
+    <li>If the nearest node remains unchanged DO NOT start a new call.</li>
+    <li>If there are no other requests in the pending requests dictionary then
+    check that the K nearest nodes in the "contacted" set are all closer
+    than the nearest node in the shortlist. If they are, and it's a FindNode
+    based lookup then call back with the K nearest nodes in the "contacted"
+    set. If the lookup is for a FindValue message, errback with a
+    ValueNotFound error.</li>
+    <li>If there are still nearer nodes in the shortlist to some of those in
+    the K nearest nodes in the "contacted" set then start from step 3 again
+    (forcing the local node to contact the close nodes that have yet to be
+    contacted).</li>
+</ol>
+
+<p>Note on validating values: in the future there may be constraints added to
+the FindValue query (such as only accepting values created after time T).</p>
+
+<p>To continue the (inaccurate yet friendly) dinner table analogy, a lookup is
+like asking people to pass the salt from the far end of the table. You ask a
+person you know sat closest to the salt pot, they introduce you to the next
+person <em>they</em> know sat even closer to the salt pot. This process
+continues until you get introduced to the person next to the salt pot who
+retrieves it for you.</p>
+
+<img src="/static/images/saltshaker.jpg" alt="salt pot"/>
+
+<p>(Nota Bene: please take these analogies with a pinch of salt.)</p>
+
+<h3>Caching, Persistence and "Uptodatedness"</h3>
+
+<p>Some items stored in the DHT will be more popular than others. It is
+possible to spread the effort for serving popular items to nodes other than
+those that originally stored the popular item. Furthermore, nodes can join or
+leave the DHT at any time. Items are persisted to new nodes and steps are
+taken to ensure there is no loss of data. Finally, items may be updated so it
+is important that newer versions replace older items.</p>
+
+<p>The DHT achieves these objectives in the following way:</p>
+
+<p>For caching purposes (to ensure the availability of popular items), once a
+FindValue lookup for an item succeeds, the requesting node stores the item at
+the closest node it observed to the target key that did <em>not</em> return
+the value. In this way the number of nodes storing the popular item grows
+and the distance from the target key to the most distant ids of nodes storing
+the popular item grows (so lookups find the item sooner since it's spread
+over a wider area of the key space that is "close" to the target key).</p>
+
+<p>To guard against lost data and to ensure new nodes obtain items with keys
+close to their ids, nodes attempt to republish items every hour. This simply
+involves storing the item at the k currently closest nodes to the item's key.
+To avoid excessive network traffic a node will not persist the value if it has
+itself had the value republished to it within the hourly cycle.</p>
+
+<p>To avoid over caching and before persisting an item this hourly process
+checks how close the item's key is to host node's own id and when the item was
+last requested. If they find the item has not been requested within the hour
+and its key is far away (some arbitrary distance that may change over time as
+the item becomes more out of date) then the item is removed from the local
+node. If the item is still "close enough" and within its expiry date then
+nodes within this area of the key space will continue to store the item no
+matter what.</p>
+
+<p>If the item is found to have exceeded its expiry date then all nodes, no
+matter where they are in the key space, will delete the item.</p>
+
+<p>Every item contains a creation date generated by the creator of the value
+to ensure more recent items take precedence over older versions that may be
+encountered in the network. If a node attempts to republish an old version of
+an item to a node with a more up-to-date version then the older version is
+replaced by the newer one and the republication activity is immediately
+repeated with the new (up-to-date) value.</p>
+
+<h3>Asynchronous Communication</h3>
+
+<p>All interactions with the DHT are asynchronous in nature and identified via
+a
+<a href="https://en.wikipedia.org/wiki/Universally_Unique_Identifier">UUID</a>
+used by all the nodes involved in the interaction. Locally, a
+<a href="https://en.wikipedia.org/wiki/Promise_%28programming%29">promise</a>
+(representing the interaction) is returned by the drogulus to the application
+layer. At some unknown time in the future the promise will either resolve
+with a result or an error (which may be a timeout if the interaction took too
+long).</p>
+
+<h2>Cryptographic Trust</h2>
+
+<p>The drogulus uses cryptography in two ways:</p>
+
+<ol>
+    <li>Communication between nodes is encrypted</li>
+    <li>Items stored in the DHT are cryptographically signed</li>
+</ol>
+
+<p>It is important to note that this doesn't mean that values stored in the
+drogulus are encrypted. It simply means messages are sent in encrypted
+"digital envelopes" that can't be opened by third parties. The content of the
+envelopes may still be unencrypted. It is left to the user to manage the
+encryption of their data.</p>
+
+<p>Both uses of cryptography use public key cryptography. If you're unsure
+what this means I've already
+<a href="/article/public-key-crypto-concise-and-simple">written a blog post introducing public key cryptography</a>.</p>
+
+<h3>Signing Items</h3>
+
+<p>Items stored in the distributed hash table are designed to stand on their
+own and be self-verifiable through cryptographic signing.</p>
+
+<p>An item stored in the DHT is a collection of named fields and associated
+values:</p>
+
+<ul>
+    <li>value - the actual value to store.</li>
+    <li>timestamp - a UNIX timestamp representing when the creator of the item
+    thinks the item was created (so it's easy to discern the latest
+    version).</li>
+    <li>expires - a UNIX timestamp beyond which the creator of the item would
+    like the item to expire, be ignored and deleted.</li>
+    <li>name - a meaningful name given by the creator for the key.</li>
+    <li>meta - key/value strings for creator
+    defined metadata about the item.</li>
+    <li>created_with - the version of the protocol the creator used to
+    generate the item.</li>
+    <li>public_key - the creator's public key.</li>
+    <li>sig - a cryptographic signature generated using the creator's private
+    key with the value, timestamp, expires, name, meta and created_with
+    values.</li>
+    <li>key - the SHA-512 value of the compound key (based upon the
+    public_key and name fields) used as the actual key on the distributed
+    hash table.</li>
+</ul>
+
+<p>The public_key field is used to validate the sig value. If this is OK then
+the compound SHA-512 key is checked using the obviously valid public_key and
+name fields.</p>
+
+<p>This ensures both the provenance of the data and that it hasn't been
+tampered with. Any items that don't pass the cryptographic checks are ignored
+and nodes that propagate them are punished by being blocked. It also confirms
+that the generated SHA-512 key for the item is correct given the public_key
+and meaningful name ensuring no other entity may set items with this unique
+key (assuming no key collision vulnerability in the hashing function).</p>
+
+<h2>Logos / &#955;&#972;&#947;&#959;&#962;</h2>
+
+<p>Logos (say, "log-oss") is the least developed aspect of the drogulus and
+is likely to change quite a bit as development proceeds. As a result I only
+want to describe its requirements and how these relate to the over-arching
+aim of autonomy. It's all a bit "blue-sky" and "hand-wavey" at the moment but
+you'll at least get a flavour of what I'm thinking of implementing. Think of
+it as a raw "brain dump".</p>
+
+<p>When I say that the drogulus is programmable I mean users are able to
+use the Logos language to manipulate data found in the drogulus (including
+Logos code too), save any results both locally and within the drogulus and
+either run such computations locally <em>or remotely on other nodes on the
+network</em>.</p>
+
+<p>The Logos language should be simple enough for a ten year old to
+understand and find useful but powerful enough to be of interest to a
+professional programmer. There's no point promoting autonomy if the tool that
+users work with is incomprehensible.</p>
+
+<h3>Lisp-y</h3>
+
+<p>With the exception of Lisp, programmers have no control over how their
+language works and often find niggles that they wish they could change and
+usually long for features that may not ever be implemented. Why is Lisp
+different? Lisp is a programmable programming language: it is possible to
+bend Lisp to your own requirements and style of programming. There is no
+<a href="https://en.wikipedia.org/wiki/Benevolent_Dictator_for_Life">BDFL</a>
+for Lisp who you have to convince to implement your changes. Using Lisp's
+<a href="https://en.wikipedia.org/wiki/Macro_%28computer_science%29#Syntactic_macros">macro system</a>
+the programmer is free to enhance and change Lisp itself. The key is that
+Lisp is a homoiconic language: programs are expressed in the language's own
+data structures (in the case of Lisp, as lists).</p>
+
+<img src="/static/images/lisplogo.png" alt="lisp logo"/>
+
+<p>Lisp is a simple yet very beautiful language - an opinion I try to
+justify in <a href="/article/lisp-concise-and-simple">this blog post</a>. An
+important realisation I've had is that Lisp like languages can act as the
+<a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a> for
+other languages should the Lisp-y parenthesis-heavy syntax <em>not</em>
+appeal to programmers.</p>
+
+<p>Such flexibility, simplicity and re-usability make a Lisp-like language a
+good candidate given my emphasis on autonomy. Therefore, Logos will be
+a small Lisp-like language that contains just enough simple features to make
+it useful and understandable to a ten year old yet, because it will be a
+programmable programming language, it should be powerful enough that
+professional programmers can build and share new more powerful features.</p>
+
+<h3>Remote Computation</h3>
+
+<p>Remember, Logos programs can be evaluated both locally or, if required,
+remotely.</p>
+
+<p>To understand remote computation in the drogulus try to answer the
+following two questions:
+
+<ol>
+    <li>How can I tell if the result of my (remotely executed) program is
+    correct?</li>
+    <li>How do I ensure that I don't spend an inordinately expensive amount
+    of <em>my time and resources</em> computing results for others?</li>
+</ol>
+
+<p>Perhaps a story will help us ponder this problem...</p>
+
+<p>If I find myself in an unfamiliar town and I require some
+information, say, directions to the cinema, then I have two choices: I can
+work out the answer (I'd consult a map and work out a route myself - assuming
+I have access to a map) or I could ask one of the locals - other people I find
+in this unfamiliar town - to tell me. Perhaps I already know a local
+and simply trust that they know the answer. Otherwise I usually find
+that "random" locals are very helpful and will give me a correct answer.
+However, sometimes locals are wrong because they don't know the correct answer
+themselves (they have a bug!). Alternatively, they're a nefarious sort who
+intentionally wants to send me on a wild goose chase and gives me wrong
+directions instead. Finally, I know that the locals have a reputation for
+abruptness - don't take up too much of their time or they will just tut
+loudly and walk off. As a result I ensure my request for information is both
+polite and to the point.</p>
+
+<p>This story contains the essence of remotely executing code using the
+drogulus.</p>
+
+<p>I could download the code from such-and-such a key and any data needed as
+input for the computation from such-and-such another key and run the Logos
+program on my local device. I'd only have to contend with bad data or buggy
+code (if that wasn't enough!). However, my device may not be powerful enough
+to run the program <em>or</em> the data may be huge making the download too
+expensive (the equivalent of not being able to find a map of the unfamiliar
+town). Why not get my peers to help me? This would involve working out the
+most efficient means of getting code and data to the same place so the
+computation can be executed and the result returned to me or stored someplace
+on the drogulus for me to retrieve later.</p>
+
+<p>But what happens if the remote node executing code is intentionally trying
+to deceive. Ask yourself, if you had your doubts about the trustworthiness of
+the directions given to you in the unfamiliar town you'd probably ask a
+second or third local for directions and compare the answers. That's precisely
+what should happen for running a computation remotely. Ask <em>n</em> nodes
+for the result of the same computation, compare the results and, by consensus,
+discover, explore and select the answer. Such computations would be
+asynchronous and parallel in nature and, to increase confidence in the result,
+a higher value of <em>n</em> could be set. Since the nodes involved in the
+computation could be any (hopefully nice) node in the network individual
+nasty nodes would soon be out-voted. Furthermore, to hijack a computation an
+attacker would have to ensure that they controlled an inordinate number of
+nodes out of the potential pool of candidate nodes - an almost impossible
+task. Finally, unreliable nodes would face the threat of punishment via
+ostracism as already happens as part of the machinations of the DHT.</p>
+
+<p>What if I'm to compute something? I oblige for the benefit of my fellow
+user of the drogulus (given that others do the same for me) but I set
+conditions in terms of time and space. I limit how long I'll spend computing
+a result and only allow myself to use a certain amount of memory. If these
+boundaries are hit then I respond with a message indicating such a situation
+has arisen.</p>
+
+<h2>You're mad! Stop before it's too late...</h2>
+
+<p>Nope. :-)</p>
+
+<p>As I've mentioned elsewhere, I'm having too much fun to want to stop.
+What's the worse that could happen? I learn a lot of new and interesting
+stuff. That's no bad thing.</p>
+
+<p>Apologies for the brain-dump nature of this post, but it's a good exercise
+to explain such things in a simple and understandable way. Constructive
+feedback, critique and comments most welcome via
+<a href="/contact">email</a>.</p>
+
+<p>Thanks for reading this far..!</p>
+
+<p><small>Image credits:
+FIG 1. &copy; 2011 <a href="https://secure.flickr.com/photos/opensourceway/6554315093/">Opensourceway</a> (under a <a href="http://creativecommons.org/licenses/by-sa/2.0/deed.en_GB">creative commons</a> license).
+Encyclopedia Britannica &copy; 2010 <a href="https://secure.flickr.com/photos/bostontx/4461314652/">BostonTx</a> (under a <a href="https://creativecommons.org/licenses/by-nc/2.0/deed.en_GB">creative commons</a> license).
+Aardvark &copy; 2012 <a href="https://secure.flickr.com/photos/ucumari/7076368057/">Valerie</a> (under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/deed.en_GB">creative commons</a> license).
+Seating Plan &copy; 2010 <a href="https://secure.flickr.com/photos/boston_public_library/5352241407">Boston Public Library</a> (under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/deed.en_GB">creative commons</a> license).
+Salt pot &copy; 2010 <a href="https://secure.flickr.com/photos/avlxyz/5150528445">Alpha</a> (under a <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/deed.en_GB">creative commons</a> license).
+Lisp Warning created by <a href="http://lisperati.com/logo.html">Conrad Barski, M.D.</a> and released to the public domain.
+</small></p>

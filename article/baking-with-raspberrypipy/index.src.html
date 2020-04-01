@@ -1,0 +1,46 @@
+---
+title: Baking with Raspberry[Pi/Py]
+slug: baking-with-raspberrypipy
+date: 2011-09-23 15:02:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+
+	<p><a href="http://raspberrypi.org"><img src="/static/images/98.jpg" alt="Raspberry Pi[e]"  align="right" style="padding-left: 8px;" /></a></p>
+
+	<p>This weekend is <a href="http://pyconuk.org/">PyconUK</a> and I'll be bringing along an alpha version of the <a href="http://raspberrypi.org/">RaspberryPi</a> device. As the RaspberryPi foundation's website <a href="http://www.raspberrypi.org/sample-page/">explains</a>, they "exist to promote the study of computer science and related topics, especially at school level, and to put the fun back into learning computing". They go on to mention that the device will run "open" software and lists <a href="http://python.org">Python</a> as being part of their software stack. </p>
+
+	<p>Given that RaspberryPi is based in the UK I thought it'd be good if the UK's Python community found out about it with a view to community contributions. As a result, I emailed RaspberryPi to ask if they'd like to send someone to PyconUK. Unfortunately no-one from the foundation was available but they did offer to send us the alpha-board so we could play with it during the sprints and hacking that takes place at these types of conference. </p>
+
+	<p>So I have a RaspberryPi device sitting on my desk. I've spent a couple of hours playing to ensure we have something that works which we can hack on/with. What follows is the story of what I've done and what attendees can expect to see at PyconUK.</p>
+
+	<p>The device arrived on Monday and my very first impression was that kids find it fascinating. <strong>My</strong> kids were intrigued when I unpacked it (although I didn't switch it on). Just the look of the board seems to be intrinsically interesting to children (a fact that is often lost on us adults) and they wanted to prod, poke and switch it on. Unfortunately for them, I didn't have the right leads to connect the thing to a monitor. They had to wait. :-(</p>
+
+	<p>I took some photos (see below) and decided to try the device out at Monday's <a href="http://northackton.stdin.co.uk/blog/">NortHACKton</a> meeting since there's quite a number of hardware-hacker types who attend (I'm most definitely a software-hacker type) and they could offer sage advice in the event of a problem.</p>
+
+	<p><img src="/static/images/99.jpg" alt="Raspberry Pi alpha board"  align="center" /></p>
+
+	<p>Given the correct monitor leads and an excited crowd of geeks we booted the device into the <a href="http://wiki.debian.org/DebianSqueeze">Debian Squeeze</a> flavour of Linux, discovered the framebuffer resolution was set to something really weird (so we had the left and right hand sides of the display chopped off) and realised we didn't have a username and password with which to log in. In any case, when the login prompt appeared there were spontaneous "Ooohs" and "Ahhhs" from the assembled geeks (as if they'd never seen a Linux box boot up). </p>
+
+	<p>So my second impression of the RaspberryPi device is that it's a good candidate as the next "shiny" thing to obsess geeks. It's always a good sign if just booting the device up produces a positive response.</p>
+
+	<p>After a bit of head scratching, password guessing and general faffing about with the monitor we switched the device off, removed the <a href="http://en.wikipedia.org/wiki/Secure_Digital">SD card</a> and mounted it on one of our laptops in order to add a user <em>by hand</em>. Unfortunately, we forgot to examine the sudoers file so although we could log in, we couldn't really do anything "dangerous" (i.e. interesting).</p>
+
+	<p>Fast forward to today: now that I've purchased the required leads and other gubbins I've booted the device this afternoon, created a "pyconuk" user, made sure it has a home directory and is in the sudoers list (actually, that just means adding it to the appropriate group).</p>
+
+	<p>Remembering back to my first explorations with Linux back in 1997 I also hesitantly typed <code>startx</code> and waited for things to blow up. Amazingly the thing worked and a desktop appeared (at the rather amazing resolution of 1920&#215;1080). It appears that the window manager is <a href="http://openbox.org/">OpenBox</a> and IceWeasel (Firefox) is also installed.</p>
+
+	<p>I also decided to check out Python support. Turns out Python 2.6.6 is installed. I've made sure we have <code>pip</code> and <code>virtualenv</code> installed, <code>apt-got</code> a whole bunch of other Python related packages and <code>GIT</code> (to allow us to grab code). I even managed to get <a href="http://pygame.org">PyGame</a> working in a stuttery sort of a way. Sound appears <strong>not</strong> to work though. Not sure why and my focus this afternoon has been to get a passable Python environment working rather than investigate hardware problems and configuration issues.</p>
+
+	<p>Finally, I noticed <a href="http://www.raspberrypi.org/2011/09/kidsruby-on-raspberry-pi-another-video-demo/">this post about a bunch of Ruby guys</a> who've managed to get <a href="http://www.kidsruby.com/">KidsRuby</a> running on the device. One of my aims for this weekend is to get something similar done for Python. Hey look, I've even <a href="https://github.com/ntoll/RaspberryPy">got a Github repository</a> set up where we can coordinate.</p>
+
+	<p>Can the UK's Python community create an interactive set of programming lessons for Python, written in Python for the RaspberryPi?</p>
+
+	<p>I'll keep you posted.</p>
+
+	<p><small>Raspberry image credit: <a href="http://www.flickr.com/photos/veganfeast/4295739041">http://www.flickr.com/photos/veganfeast/4295739041</a> used under a <a href="http://creativecommons.org/licenses/by/2.0/deed.en_GB">Creative Commons</a> license.</small></p>
+
+
+
+ 

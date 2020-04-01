@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Everything I say is false...">
+<meta name="viewport" content="width=device-width">
+<title>ntoll.org (old posts, page 14) | ntoll.org</title>
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://ntoll.org/index-14.html">
+<link rel="prev" href="index-15.html" type="text/html">
+<link rel="next" href="index-13.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href=".">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="presentations">Presentations</a></li>
+                <li><a href="cv">CV</a></li>
+                <li><a href="contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/ppdd/" class="u-url">Politics, Programming, Data and the Drogulus</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/ppdd/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-05-18T16:00:00Z" itemprop="datePublished" title="2013-05-18 16:00">2013-05-18 16:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><small>(This article is based upon a short talk I gave at
+<a href="http://www.opentech.org.uk/2013/">Opentech</a> 2013.)</small></p>
+
+<p><img src="static/images/drogulus.png" alt="Drogulus logo"></p>
+
+<p>I'm going to describe the <a href="http://drogul.us">drogulus</a>: a
+programmable peer-to-peer data store that I've been hacking on in my spare
+time.</p>
+
+<p>The problem I have is a growing unease with the current state of the
+<a href="https://en.wikipedia.org/wiki/World_Wide_Web">web</a>. This unease can
+be summed up in three ways:</p>
+
+<ol>
+<li>
+<em>On the web, users are no longer in control of their data or online
+    identity.</em> They're locked in to websites that act as walled gardens of
+    data each of which requires different credentials in order to log in. Once
+    logged in there is often no way to extract data. Furthermore, how can we
+    tell who's who? Is <em>user X</em> on Twitter the same <em>user X</em> on
+    Facebook?</li>
+
+    <li>
+<em>Programmers have to build stuff on the web using complicated and
+    quirky technology defined in a top down manner by committee.</em> Just
+    watch any web developer grimace if you mention
+    <a href="http://tools.ietf.org/html/rfc6749">OAuth</a>,
+    <a href="http://www.w3.org/TR/cors/">CORS</a>, Javascript
+    <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date">date objects</a>
+    or (dare I say it)
+    <a href="http://www.ie6countdown.com/">Internet Explorer</a>.</li>
+
+    <li>
+<em>There are many inadvertent points of control, lock-in and authority
+    built in to the web - each of which is a potential mechanism for
+    dis-empowerment and exploitation</em>. Just look at the
+    <a href="https://en.wikipedia.org/wiki/Great_Firewall_of_China#Technical_implementation">great firewall of China</a>,
+    the censorship of the
+    <a href="http://unblockedpiratebay.com/">Piratebay</a>
+    here in the UK or the kerfuffle over payment to
+    <a href="http://wikileaks.org/">Wikileaks</a>.</li>
+</ol>
+<p>The beautifully simple, open and decentralised hypertext system envisioned
+by Tim Berners-Lee has grown in to a closed, centralised and complicated
+monster beholden to dodgy commercial, political and legal manipulation. More
+worryingly still, our data is analyzed by companies, sold via targeted
+advertising or handed over to governments without our consent.</p>
+
+<p>Unfortunately, many aspects of today's web are contrary to a concept that is
+very important to me: autonomy.</p>
+
+<p>When someone is autonomous they are self-directing, free to act of their own
+accord and lack imposition from others. Autonomy also suggests intelligence and
+awareness enough to be able to enjoy and make use of such freedom. Furthermore,
+such intelligence entails decision making so people become accountable for
+their actions. Autonomy is also the opposite of such undesirable states as
+tyranny, slavery, ignorance and apathy.</p>
+
+<p>I asked myself, how would software designed to promote autonomy function? I
+started to hack and the drogulus was born.</p>
+
+<p>The drogulus is a speculative exercise in
+<a href="article/p2p-concise-and-simple">peer-to-peer</a> decentralisation, a
+political statement (it promotes a certain point of view about technology's
+role in society) and is a place for me to explore fun ideas that have been
+knocking around in my head for a while.</p>
+
+<p>I tell myself, "it'll all come to nothing" but I'm having too much fun to
+stop, so I want to tell you about the drogulus to give you a sense of why I
+find it so fascinating.</p>
+
+<p>So, how is the drogulus designed to promote digital autonomy?</p>
+
+<p>It's a global federated, decentralized and open data store that can be
+programmed by anyone. Identity and provenance is ensured by
+<a href="http://ntoll.org/article/public-key-crypto-concise-and-simple">cryptographically signing</a>
+digital assets.</p>
+
+<p>Being federated (the system consists of many independent but collaborating
+entities) and decentralized (no entity is more important than the others)
+ensures users are free from choke points of authority that may be used to
+control access to data and usage of the system.</p>
+
+<p>Being an open system means all users are free to contribute, change, enhance
+and expand the system without prejudice.</p>
+
+<p>Being programmable means users can do something with the data stored within
+the drogulus. It's a sort of distributed programming environment. Imagine it as
+a re-configurable <a href="http://setiathome.ssl.berkeley.edu/">SETI@home</a>
+on steroids: by running a node in the drogulus network you are sharing a small
+amount of your potential computing power with everyone else on the network.</p>
+
+<p> By using public key cryptography the drogulus ensures the provenance of the
+data and that it has not been tampered with. Importantly, there is no central
+authority to prove who's who. Identity is built on the far more humane
+mechanism of a
+<a href="http://en.wikipedia.org/wiki/Web_of_trust">web of trust</a>.</p>
+
+<p>So how does it work? Well, there are three simple core components:</p>
+
+<ul>
+<li>A
+  <a href="https://en.wikipedia.org/wiki/Distributed_hash_table">distributed
+  hash table</a> (DHT) that provides the data store and allows users to find
+  each other.</li>
+  <li>Trust and identity enforced by the afore mentioned
+  <a href="https://en.wikipedia.org/wiki/Digital_signature">cryptographic
+  signing</a> of digital assets.</li>
+  <li>Logos
+  (<a href="https://en.wikipedia.org/wiki/Logos">λόγος</a>),
+  a simple
+  <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>
+  like programming language for asynchronously working with data stored in the
+  distributed hash table.</li>
+</ul>
+<p>Each component promotes autonomy in the following ways:</p>
+
+<p>A distributed hash table works like a sort of peer-to-peer dictionary: a
+unique key is used to identify a value. In the case of a traditional
+dictionary, the key is a word and the value is its definition. Being a data
+store, the distributed hash table allows users to create, retrieve, update and
+delete their own keys and associated digital values.</p>
+
+<p>The hash table is distributed because it is split in to the equivalent of
+many volumes of a traditional dictionary. Each person who ever uses the
+dictionary has a copy of just one volume with many copies of the same volume
+being distributed to many different users.</p>
+
+<p>Users keep track of which of their friends on the network hold what volume.
+Users interact with the distributed hash table by contacting the friend with
+the correct volume for the desired item. If they don't know anyone with the
+right volume they play a sort of
+<a href="https://en.wikipedia.org/wiki/Six_degrees_of_separation">six-degrees-of-separation</a>
+game with their friends until someone with the correct volume is found.</p>
+
+<p>Distributed hash tables also share an interesting property with
+<a href="http://www.bittorrent.com/">Bittorrent</a>: the more popular an entry
+is the more widespread it becomes, thus improving performance since popular
+items are easier to find.</p>
+
+<p>The drogulus implements a version of the
+<a href="https://en.wikipedia.org/wiki/Kademlia">Kademlia</a> distributed hash
+table algorithm. The innovation the drogulus brings is that keys and values are
+signed in such a way that their provenance can be proven and content shown to
+be intact. Furthermore, users cannot interfere with each other's items stored
+within the distributed hash table unless they have access to the same private
+key.</p>
+
+<p>Items are self contained and any that do not pass the cryptographic checks
+are ignored and nodes on the network that attempt to propagate such values are
+punished by being blocked by their peers.</p>
+
+<p>Programming the drogulus is done via Logos, a
+<a href="https://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a> language:
+this means code and data are the same thing in Logos. This has the interesting
+mind-bending side effect that Logos programs can rewrite other Logos programs
+in order to extend the Logos programming language itself. This is an important
+property: users have the autonomy to grow the Logos programming language to
+suit their own needs.</p>
+
+<p>Since Logos programs are also data they are stored as values within the
+distributed hash table so users can re-use each other's code.</p>
+
+<p>They run in asynchronous "ensembles" on other nodes in the drogulus network.
+The result is delivered when the ensemble eventually arrives at a consensus. To
+protect peers, Logos programs are
+<a href="https://en.wikipedia.org/wiki/Sandbox_(computer_security)">sandboxed</a>
+and intentionally limited in terms of time (how long they can run for) and
+space (how much memory may be used).</p>
+
+<p>At each point in hacking together the drogulus I've tried to build a
+solution whose outcomes reflect my ethical and political considerations: a
+focus on autonomy and openness and the removal of authority and choke
+points.</p>
+
+<p>Unfortunately, the drogulus is unfinished! Currently, the distributed hash
+table is almost done, the cryptographic layer is finished and Logos is in the
+advanced planning stages with some experimental code written.</p>
+
+<p>It's early days and I realise that there are potential contradictions and
+problems that I've not worked out, nor is there anything useful that can be
+achieved with the drogulus at this moment in time. Because I'm working at such
+an abstract level it's hard for me to comprehend what use others may find for a
+programmable peer-to-peer data store. That's why I wanted to present the
+drogulus in its current incomplete state: to gauge what sort of reaction (if
+any) it might get.</p>
+
+<p>I'll finish by pointing out that in 1996
+<a href="https://en.wikipedia.org/wiki/William_Gibson">William Gibson</a>
+described the web as merely the
+<a href="http://www.nytimes.com/1996/07/14/magazine/the-net-is-a-waste-of-time.html?pagewanted=all">test card for 21st century technology</a>.
+I'd like to think we can do better than the web. Thinking outside its confines
+has been a liberating experience and I'd encourage everyone to do the same.
+Obviously the drogulus is the rough and ready result of such pondering by
+me.</p>
+
+<p>We'd only have ourselves to blame if we don't imagine and build something
+better than the test card that is the web. After all, if there's one thing that
+the web has taught us, it is that engineering software is a far more useful,
+tangible and easier agent of change than traditional means of political
+engagement.</p>
+
+<p>The code is on <a href="http://github.com/ntoll/drogulus">GitHub</a> and
+I've created a simple <a href="http://drogul.us">website</a> that explains
+things further. If you have any questions please drop me an
+<a href="contact">email</a>.</p>
+
+<p>Thanks!</p>
+
+<p><strong>EDIT:</strong> Most of the technical questions I was asked resulted
+in me saying, "I don't know". I consider this a good thing. It was interesting
+that someone picked up on etymological fun I've been having with this project.
+;-)</p>
+
+<p><strong>EDIT 2:</strong> I've attempted to give considered answers to the
+questions raised at Opentech in <a href="article/drogulus-questions-and-clarifications">this blog post</a>.</p>
+
+<p><small>Image credits: © the author.</small></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/doitreatthisimmigrant/" class="u-url">App for Doctors - Do I Treat This Immigrant?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/doitreatthisimmigrant/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-05-11T18:30:00Z" itemprop="datePublished" title="2013-05-11 18:30">2013-05-11 18:30</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I've just built (in all of 20 minutes) a
+helpful cross-platform website that automatically detects if a doctor
+in the UK should treat an immigrant asking for treatment. It's a fully
+responsive HTML5 application that works with *all* devices that
+connect to the web (although it's untested on IE6).</p>
+
+<p>The <a href="http://www.bbc.co.uk/news/uk-politics-22437884">BBC reports</a>
+that, "Migrants' access to the NHS would be
+restricted" after the Queen's speech of 8th May 2013. Jeremy Hunt,
+health secretary, has identified that immigrants are
+<a href="http://www.telegraph.co.uk/health/healthnews/9952929/Jeremy-Hunt-Immigrants-are-clogging-up-UK-hospitals.html">clogging up UK hospitals</a>.</p>
+
+<p>Obviously, this application can't come soon enough:</p>
+
+<p><a href="http://doitreatthisimmigrant.com/">http://doitreatthisimmigrant.com</a></p>
+
+<p>The source code can be found
+<a href="https://github.com/ntoll/doitreatthisimmigrant">here</a>
+(pull requests welcome!):</p>
+
+<p>For the "BIG DATA" people, there's even a RESTful API:
+<a href="http://doitreatthisimmigrant.com/doi.json">JSON</a>
+or <a href="http://doitreatthisimmigrant.com/doi.xml">XML</a>.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/long-term-view/" class="u-url">Taking the Long Term View</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/long-term-view/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-03-28T08:00:00Z" itemprop="datePublished" title="2013-03-28 08:00">2013-03-28 08:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>The <a href="http://www.britishmuseum.org/">British Museum</a> is one of my
+favourite places because it forces me to take on a perspective of 5000 years
+or more. Take the
+<a href="http://www.britishmuseum.org/explore/highlights/highlight_objects/me/t/tablet,_allocation_of_beer.aspx">Mesopotamian clay tablet</a>
+shown below: it records the allocation of beer by administrators in the city
+of <a href="https://en.wikipedia.org/wiki/Uruk">Uruk</a>. The symbol
+representing beer is apparently an upright jar with a pointed base, amounts
+are notated by circles and semi-circles and, at the bottom left, there is a
+figure drinking from a bowl.</p>
+
+<img src="static/images/15_writingtablet_l.jpg" alt="Mesopotamian tablet"><p>It's about 5100 years old. Now, pause for a moment to consider its age.</p>
+
+<p>The difference in time between today and the era of
+<a href="https://en.wikipedia.org/wiki/Julius_Caesar">Julius Caesar</a> and
+<a href="https://en.wikipedia.org/wiki/Cleopatra_VII_of_Egypt">Cleopatra</a>
+is 1000 years less than the period between the creation of the Mesopotamian
+tablet and the era of Caesar and Cleopatra. Put simply, Caesar and Cleopatra
+are closer in time to us (by 1000 years) than they are to the Mesopotamian
+scribe who recorded the allocation of beer to citizens of Uruk.</p>
+
+<p>It is intriguing that the tablet is political in nature, an instance
+of a new technology and of economic interest. Not only is it evidence of the
+machinations of the state in Uruk but it demonstrates how a new technology
+(writing) changed the capabilities of such a state: for the first time it was
+possible to keep records and thus run a bureaucracy on a large scale.
+Furthermore, it records receipt of payment requiring concepts such as balance,
+debt and a measure of value (in beer).</p>
+
+<p>Such concepts (writing, state bureaucracy and fundamental economics) are
+unremarkable in today's world, making it difficult for us to appreciate how
+important, strange or unusual they must have seemed when they first appeared. I
+wonder what important, strange or unusual aspects of our time will be
+unremarkable to our descendants. Furthermore, what aspects of our lives that
+seem fixed today will be completely different 5000 years hence?</p>
+
+<p>Guessing the future is a fool's game. As
+<a href="http://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a> famously
+stated,</p>
+
+<blockquote>"The best way to predict the future is to invent it."</blockquote>
+
+<p>Something from today that "<em>invents the future</em>" is
+programming, and I'm guessing the
+<a href="http://www.informatimago.com/develop/lisp/com/informatimago/small-cl-pgms/wang.html">Lisp program from 1960</a>
+copied below is our Mesopotamian tablet for future generations:</p>
+
+<p></p>
+<pre><code class="lisp">(shadow '(trace untrace))
+(defun trace   (functions) (eval `(cl:trace   ,@functions)))
+(defun untrace (functions) (eval `(cl:untrace ,@functions)))
+
+(defun define (definitions)
+  (dolist (def definitions)
+    (eval (if (and (consp (second def)) (eq 'lambda (car (second def))))
+              `(progn (defun        ,(first def) ,@(cdr (second def)))
+                      (defparameter ,(first def) ,(second def)))
+              `(defparameter ,(first def) ,(second def))))))
+
+(defun stop (arguments) (throw 'driver-end-of-deck nil))
+(defun fin  (arguments) (throw 'driver-end-of-deck nil))
+(defun test (arguments) (princ arguments) (terpri))
+
+(defun driver (path)
+  (with-open-file (cards path)
+    (catch 'driver-end-of-deck
+      (loop (let ((first-char (read-char cards)))
+              (if (char= #\* first-char)
+                  (read-line cards)     ; comment
+                  (progn
+                    (unread-char first-char cards)
+                    (let* ((command   (read cards))
+                           (arguments (if (member command '(stop fin test))
+                                          (list (read-line cards))
+                                          (read cards))))
+                      (print (apply command arguments))))))))))</code></pre>
+
+
+<p>Despite this code being more than 50 years old, it is still understandable
+to anyone who has read my
+<a href="article/lisp-concise-and-simple">recent Lisp article</a>. Furthermore
+it forces me to wonder what the computational world will be like in 5000 years.
+I hope the <a href="article/the-web-concise-and-simple">world wide web</a>
+will be long gone and replaced with something much more capable and better
+engineered and I guess that new computer architectures will arise to replace
+the
+<a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann</a>
+/ <a href="https://en.wikipedia.org/wiki/Harvard_architecture">Harvard</a>
+based models in current use.</p>
+
+<p>Perhaps the final word should be another Alan Kay quote:</p>
+
+<blockquote>"I believe that the only kind of science computing can be is like
+the science of bridge building. Somebody has to build the bridges and other
+people have to tear them down and make better theories, and you have to keep
+on building bridges."</blockquote>
+
+<p><small>Image credits: Mesopotamian tablet
+© <a href="http://www.britishmuseum.org/">Trustees of the British Museum</a>
+</small></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/minecraft-pi/" class="u-url">Programming Minecraft on the RaspberryPi</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/minecraft-pi/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-03-16T22:45:00Z" itemprop="datePublished" title="2013-03-16 22:45">2013-03-16 22:45</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MmB9b5njVbA?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p><a href="http://minecraft.net/">Minecraft</a> is a sort of digital Lego.
+Players explore a blocky computer generated world and have the ability to build
+new terrain, buildings and other features. Many users have generated creative
+and complicated structures within their games by carefully placing individual
+bricks (just like Lego). A quick
+<a href="https://www.google.com/search?q=minecraft&amp;hl=en&amp;source=lnms&amp;tbm=isch">Google image search for Minecraft</a> will return lots of amazing results.</p>
+
+<p>The <a href="http://www.raspberrypi.org/">RaspberryPi</a> is a cheap
+computer designed to encourage kids (of all ages) to learn how to program.
+Apparently, the "pi" part of the name is a misspelled reference to the
+<a href="http://python.org">Python</a> programming language - the RaspberryPi's
+principal programming language for education.</p>
+
+<p>Minecraft is amazingly popular among kids (my own included). I guess, like
+Lego, it's the potential for creative generative play that is so appealing.
+Wouldn't it be great if there were a version of Minecraft that you could
+program in Python that ran on the RaspberryPi..?</p>
+
+<p><a href="http://pi.minecraft.net/">THERE IS!</a></p>
+
+<p>I'm currently at <a href="https://us.pycon.org/2013/">PyconUS 2013</a> in
+California, every attendee has been given a RaspberryPi and there's a
+RaspberryPi lab in which attendees are encouraged to try their new piece of
+kit. I just spent a fun morning programming Minecraft with Python. What follows
+is a quick "how to" guide to get you started.</p>
+
+<p>I'll assume you've got a RaspberryPi to hand and that it's connected to the
+internet. (If you're unsure how to do this I suggest you visit the main
+<a href="http://raspberrypi.org/">RaspberryPi website</a> for more
+information.)</p>
+
+<p>First you should <a href="http://pi.minecraft.net/?page_id=10">download the
+RaspberryPi version of Minecraft</a> and follow the instructions at the web
+page to which I just linked.</p>
+
+<p>Next, once you have Minecraft running on your RaspberryPi I suggest you play
+for a while. Create a world and have a look around. Here's a run-down of the
+commands you can use:</p>
+
+<ul>
+<li>Keyboard
+        <ul>
+<li>W,A,S,D - Move (or navigate inventory)</li>
+            <li>SPACE - Jump, double tap to start/stop flying, hold to fly
+            higher</li>
+            <li>SHIFT - Sneak, hold to fly lower</li>
+            <li>E - Open inventory</li>
+            <li>1-8 - Select inventory slot item to use</li>
+            <li>ESC - Show/hide menu</li>
+            <li>TAB - Release mouse without showing menu</li>
+            <li>ENTER - Confirm menu selection</li>
+        </ul>
+</li>
+    <li>Mouse
+        <ul>
+<li>Steer - Look/turn around</li>
+            <li>Left mouse button - Remove block (hold)</li>
+            <li>Right mouse button - Place block, hit block with sword</li>
+            <li>Mouse wheel - Select inventory slot item to use</li>
+        </ul>
+</li>
+</ul>
+<p>Cool huh..?</p>
+
+<p>But wouldn't it be fun to be able to program and automate the manipulation
+of the game world with Python..?</p>
+
+<p>Here's how to get started...</p>
+
+<p>Open a terminal and change in to the Minecraft directory
+(<code>mcpi</code>) within which you'll see a child directory called
+<code>api</code> within which is yet another called <code>python</code>. From
+within the <code>python</code> directory start Python by typing,
+<code>python</code>.</p>
+
+<p>Now, type in the following:</p>
+
+<p></p>
+<pre><code class="python">&gt;&gt;&gt; from mcpi import minecraft
+&gt;&gt;&gt; mc = minecraft.Minecraft.create("127.0.0.1")
+&gt;&gt;&gt; mc.postToChat("Hello, World!")
+</code></pre>
+
+<p>You should see the message <em>Hello, World!</em> pop up in the Minecraft
+world. Congratulations, you've just programmed Minecraft!</p>
+
+<p>The first command imported all the things that Python needs to talk to the
+Minecraft game. The second line creates an object called <code>mc</code> that
+represents a connection to your game. The third line sends the chat message
+to the game.</p>
+
+<p>How about building things within the Minecraft world..? Check this out...</p>
+
+<p></p>
+<pre><code class="python">&gt;&gt;&gt; from mcpi import block
+&gt;&gt;&gt; mc.player.getTilePos()
+Vec3(37,0,-39)
+&gt;&gt;&gt; mc.setBlock(38, 0, -38, block.STONE_BRICK.id)
+</code></pre>
+
+<p>On the first line I import information Python needs about the blocks that
+you can place within the Minecraft world. Next, I ask the game where in the
+world my player is located. The game responds with an <em>x</em>, <em>y</em>
+and <em>z</em> based location expressed as a vector. Finally, I use the
+<code>setBlock</code> method to place a stone brick on an adjacent square.
+If you take a look around you'll see it right next to you!</p>
+
+<p>Actually, you will see different results to me because your player will be
+stood in a different location. See if you can change the final line to place
+a block close to your own player's location.</p>
+
+<p>That's it (for now) and covers pretty much all I found out in the first 15
+minutes of hacking about. If you want to explore the API further I suggest you
+look at the <code>mcpi_protocol_spec.txt</code> file in the
+<code>mcpi/api/spec</code> directory.</p>
+
+<p>Personally, I think this is a gift horse that teachers everywhere should be
+looking at in the mouth.</p>
+
+<p>I'll blog some more about this when I get back to the UK.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/lisp-concise-and-simple/" class="u-url">Lisp ~ Concise and Simple</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/lisp-concise-and-simple/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-03-14T22:45:00Z" itemprop="datePublished" title="2013-03-14 22:45">2013-03-14 22:45</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>(As with all "<a href="article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p><img src="static/images/lisplogo_alien.png" alt="Lisp Alien"></p>
+
+<p>Lisp is a beautiful programming language, famous for its hidden depths that
+lead to moments of
+<a href="https://en.wikipedia.org/wiki/Kensho">kensho</a>. I want to give you
+a sense of why I believe this.</p>
+
+<p><img src="static/images/lisp.jpg" alt="Lisp enlightenment"></p>
+
+<p>For me, Lisp's beauty is revealed when its simple core concepts lead to
+moments of sudden insight and shifts of perspective. Lisp's simplicity begins
+with its <em>syntax</em> (how it is written): a simple notation that anyone
+can understand.</p>
+
+<p>Lisp expressions are either <em>atoms</em> or <em>lists</em> (Lisp stands
+for <em>LIS</em>t <em>P</em>rocessor).</p>
+
+<p>Here are five atoms:</p>
+
+<p></p>
+<pre><code>foo bar baz 123 "Hello World"</code></pre>
+
+<p>Atoms are sequences of characters. The penultimate atom is a number and the
+final one is a string (enclosed in quotes).</p>
+
+<p>Here's a list:</p>
+
+<p></p>
+<pre><code>(ham eggs bacon sausages beans)</code></pre>
+
+<p>A list is bounded by parenthesis. Lists can contain other lists:</p>
+
+<p></p>
+<pre><code>((soup salad garlic-mushrooms)
+ (roast-beef chicken-casserole vegetable-lasagne)
+ (cake fruit jam-pudding))</code></pre>
+
+<p>The list above contains three items. Each item is itself another list
+containing three atoms. I've split the contained lists over three lines to aid
+readability.</p>
+
+<p>Lisp's <em>semantics</em> (that define what the syntax means) are equally
+simple:</p>
+
+<ul>
+<li>Code is <em>written as lists</em> that are <em>evaluated</em> by Lisp
+    to produce results.</li>
+    <li>
+<em>Comments</em> begin with a semi-colon and are ignored by Lisp.</li>
+    <li>Lists and atoms that are "<em>quoted</em>" are evaluated as data.</li>
+    <li>Anything else is evaluated as a <em>form</em> ~ a list starting with
+    an atom that Lisp understands (telling it to do something).</li>
+</ul>
+<p>Comments are natural-language annotations added to the code by programmers.
+They're meant to help humans work out how the code works:</p>
+
+<p></p>
+<pre><code class="lisp">; This is a comment in Lisp</code></pre>
+
+<p>Quoting is a simple concept: it's the difference between <em>quoting</em>
+and "quoting" - the former is a word that means something whereas the latter
+refers to the word itself. To quote something, append a single quote
+(<code>'</code>) to it. Here's a quoted list:</p>
+
+<p></p>
+<pre><code class="lisp">'(ham eggs bacon sausages beans)</code></pre>
+
+<p>Lisp evaluates this as just a list of atoms:</p>
+
+<p></p>
+<pre><code>(ham eggs bacon sausages beans)</code></pre>
+
+<p>Here's an example of a <em>form</em>:</p>
+
+<p></p>
+<pre><code class="lisp">(+ 1 2 3)</code></pre>
+
+<p>When Lisp evaluates a form it's told to do something to produce a result. In
+this case, the result is <code>6</code>.</p>
+
+<p>If you guessed the result correctly then you've figured out
+<em>prefix notation</em>: the command comes first (in this case the atom
+representing the <em>operator</em> for summing numbers) and is followed by its
+<em>arguments</em> (the things the operator uses to generate the answer).</p>
+
+<p>Can you work out the answer to the following?</p>
+
+<p></p>
+<pre><code class="lisp">(+ 1 (- 5 (+ 2 3)))</code></pre>
+
+<p>If you answered <code>1</code> then you've worked out the order in which
+Lisp evaluates nested expressions - it starts from the <em>inner</em> most
+expression before evaluating the enclosing <em>outer</em> expressions.</p>
+
+<p>Here's how Lisp evaluated the example above:</p>
+
+<p></p>
+<pre><code class="lisp">(+ 1 (- 5 (+ 2 3)))
+(+ 1 (- 5 5))
+(+ 1 0)
+1</code></pre>
+
+<p>Usually, the first item in a form (the <em>operator</em>) is the name of a
+<em>function</em>. A function is a discrete block of code that receives input
+(its <em>arguments</em>) and returns a result. In the examples above we used
+the functions that sum and subtract numbers. Lisp comes with many useful
+built-in functions including a special one for creating new functions.</p>
+
+<p id="ref1">I want to describe some fundamental Lisp functions; these will
+allow me to reveal a surprise at the heart of
+Lisp<sup><a href="article/lisp-concise-and-simple/#1">1</a></sup>.</p>
+
+<p>The <code>quote</code> function is a long version of quoting mentioned
+above. The example below is equivalent to the abbreviated version
+<code class="lisp">'(foo bar baz)</code>:</p>
+
+<p></p>
+<pre><code class="lisp">(quote (foo bar baz))
+(foo bar baz)</code></pre>
+
+<p>The <code>atom</code> function returns the atom <code class="lisp">t</code>
+(representing <em>true</em>) if its argument is an atom. Otherwise it
+returns <code class="lisp">nil</code> (representing <em>false</em>):</p>
+
+<p></p>
+<pre><code class="lisp">(atom 'foo)
+t
+(atom '(foo bar baz))
+nil</code></pre>
+
+<p>The <code>eq</code> function returns <code class="lisp">t</code> if the two
+arguments have the same value. Otherwise it returns
+<code class="lisp">nil</code>:</p>
+
+<p></p>
+<pre><code class="lisp">(eq 'foo 'foo)
+t
+(eq 'foo 'bar)
+nil</code></pre>
+
+<p>The <code>car</code> function expects its argument to be a list and returns
+the first item therein:</p>
+
+<p></p>
+<pre><code class="lisp">(car '(foo bar baz))
+foo</code></pre>
+
+<p>The <code>cdr</code> function (say kud-r) expects its argument to be a list
+and returns everything after the first element:</p>
+
+<p></p>
+<pre><code class="lisp">(cdr '(foo bar baz))
+(bar baz)</code></pre>
+
+<p>The <code>cons</code> function expects two arguments, the second of which
+must be a list. It returns a new list containing the first argument followed
+by the elements in the second argument:</p>
+
+<p></p>
+<pre><code class="lisp">(cons 'foo '(bar baz))
+(foo bar baz)</code></pre>
+
+<p>The <code>cond</code> (short for <em>conditional</em>) function takes any
+number of lists as arguments. Each list must contain two items: a form that
+evaluates to either <code>t</code> or <code>nil</code> and some other
+expression. Each list is evaluated in order until a form returns <code>t</code>
+at which point the other expression in the list is evaluated and returned by
+<code>cond</code> :</p>
+
+<p></p>
+<pre><code class="lisp">(cond ((eq 'foo 'bar) 'first)
+      ((atom 'baz) 'second)
+      ((atom 'qux) 'third))
+second</code></pre>
+
+<p>In the example above, the first <code class="lisp">eq</code> function
+evaluates to <code class="lisp">nil</code>, whereas the second
+<code class="lisp">atom</code> function is true. Therefore, the second element
+of the list containing the <code class="lisp">atom</code> function is returned
+as the result. Although the third <code class="lisp">atom</code> function is
+also true, it is ignored. This is somewhat similar to
+<code>if ... elif</code> statements in other programming languages.</p>
+
+<p>The <code>lambda</code> function is used to create user defined functions. It
+expects two lists as arguments: the first contains named place-holders for the
+new function's arguments, the second contains the form to be evaluated to
+generate the new function's result:</p>
+
+<p></p>
+<pre><code class="lisp">(lambda (x y) (cons x (cdr y)))</code></pre>
+
+<p>Notice how the argument names are used in the evaluated form to refer to the
+values that may be passed in to the new function. This can be demonstrated by
+defining then immediately calling a function like this:</p>
+
+<p></p>
+<pre><code class="lisp">((lambda (x y) (cons x (cdr y)))
+ 'qux
+ '(foo bar baz))
+(qux bar baz)</code></pre>
+
+<p>The value of <code>x</code> becomes the atom <code>qux</code> and
+<code>y</code> becomes the list <code>(foo bar baz)</code>. It's useful
+to name new functions. Unsurprisingly, there is a way:</p>
+
+<p></p>
+<pre><code class="lisp">(defun replace-head (x y) (cons x (cdr y)))
+(replace-head 'qux '(foo bar baz))
+(qux bar baz)</code></pre>
+
+<p>The function <code>replace-head</code> is defined
+(<code class="lisp">defun</code>) then used to give the result
+<code class="lisp">(qux bar baz)</code>. Being able to name a function makes
+it possible for the function to refer to itself. This very important behaviour
+is called <a href="https://en.wikipedia.org/wiki/Recursion">recursion</a>.
+Assuming <code>&lt;=</code> means <em>less than or equal</em> and
+<code>*</code> means <em>multiply</em>, can you tell how the following
+recursive example works?</p>
+
+<p></p>
+<pre><code class="lisp">; Returns the product of all positive integers less than or equal to n.
+(defun factorial (n)
+  (cond ((&lt;= n 1) 1)
+         ('t (* n (factorial (- n 1))))))
+(factorial 4)
+24</code></pre>
+
+<p>After a useful comment a function called <em>factorial</em> (that takes a
+single argument called <em>n</em>) is defined. The function checks if
+<em>n</em> is less than or equal to 1 and if so returns the number 1.
+Otherwise, it returns <em>n</em> multiplied by the result of calling
+<em>factorial</em> (i.e. itself) of <em>n</em> minus 1. Finally, the new
+function is tested with the number 4, producing the result <code>24</code>.</p>
+<p>
+
+</p>
+<p>Recursion is when the function returns <em>n</em> multiplied by
+<em>factorial</em> of <em>n</em> minus 1. The value of <em>n</em> keeps
+decreasing and is fed back in to the <em>factorial</em> function until
+<em>n</em> equals 1, at which point the number 1 is returned to complete
+the following chain of arithmetic: 1 × 2
+× 3 × 4</p>
+
+<p>Here's the surprise: given the fundamental functions described above, it is
+possible to write a Lisp in Lisp. When Lisp <em>evaluates</em> an expression,
+a list (the code) is itself an argument to a function that returns the result
+of evaluating the code. In Lisp, this function is called <code>eval</code> and
+it is possible to define such a function using only the features described
+above.</p>
+
+<p>First, some shorthand functions need defining: <code>c<em>x</em>r</code> and
+<code>list</code>. The <code>c<em>x</em>r</code> set of functions replace the
+<em>x</em> with a sequence of <code>a</code>s or <code>d</code>s to indicate
+a corresponding sequence of nested <code>car</code> or <code>cdr</code> calls.
+For example,</p>
+
+<p></p>
+<pre><code>(cadr a)</code></pre>
+
+<p>is shorthand for:</p>
+
+<p></p>
+<pre><code>(car (cdr a))</code></pre>
+
+returning the second element of <em>a</em>.
+
+<p>The <code>list</code> function returns a list containing a given sequence
+of expressions:</p>
+
+<p></p>
+<pre><code>(list 'a 'b 'c)</code></pre>
+
+<p>is equivalent to:</p>
+
+<p></p>
+<pre><code>(cons 'a (cons 'b (cons 'c '())))</code></pre>
+
+<p>which returns the list: <code>(a b c)</code>. In many Lisp implementations
+the <code>list</code> function is abbreviated to <code>`</code> (backquote).
+Remember this, we'll use it later!</p>
+
+<p>Next, we define some useful <em>helper</em> functions:</p>
+
+<p></p>
+<pre><code class="lisp">; tests if the argument is an empty list.
+(defun null? (x)
+  (eq x '()))
+
+; returns t if both arguments also return t - otherwise returns nil.
+(defun and. (x y)
+  (cond (x (cond (y 't) ('t nil)))
+        ('t nil)))
+
+; returns t if the argument returns nil, or nil if its argument returns t.
+(defun not. (x)
+  (cond (x nil)
+       ('t 't)))
+
+; concatenates two lists.
+(defun append. (x y)
+  (cond ((null? x) y)
+        ('t (cons (car x) (append. (cdr x) y)))))
+
+; pairs up the elements of two lists of the same length.
+; e.g. (pair. '(x y z) '(a b c)) -&gt; ((x a) (y b) (z c))
+(defun pair. (x y)
+  (cond ((and. (null? x) (null? y)) '())
+        ((and. (not. (atom x)) (not. (atom y)))
+         (cons (list (car x) (car y))
+               (pair. (cdr x) (cdr y))))))
+
+; takes an atom x and list of pairs y and returns the
+; second element of the first list in y whose first
+; element is x.
+; e.g. (assoc. 'x '((x a) (y b))) -&gt; a
+(defun assoc. (x y)
+  (cond ((eq (caar y) x) (cadar y))
+        ('t (assoc. x (cdr y)))))
+</code></pre>
+
+<p>Notice how the final two functions use recursion as the mechanism for
+looping over lists.</p>
+
+<p>Here's the <code>eval</code> function:</p>
+
+<p></p>
+<pre><code class="lisp">; Lisp's eval function written in Lisp.
+; Takes Lisp source code as a list, e, and a context of arguments,
+; a, and returns the result of evaluating e in context a.
+(defun eval. (e a)
+  (cond
+    ((atom e) (assoc. e a))
+    ((atom (car e))
+      (cond
+        ((eq (car e) 'quote) (cadr e))
+        ((eq (car e) 'atom) (atom (eval. (cadr e) a)))
+        ((eq (car e) 'eq) (eq (eval. (cadr e) a)
+                              (eval. (caddr e) a)))
+        ((eq (car e) 'car) (car (eval. (cadr e) a)))
+        ((eq (car e) 'cdr) (cdr (eval. (cadr e) a)))
+        ((eq (car e) 'cons) (cons (eval. (cadr e) a)
+                                  (eval. (caddr e) a)))
+        ((eq (car e) 'cond) (evcon. (cdr e) a))
+        ('t (eval. (cons (assoc. (car e) a)
+                         (cdr e))
+                    a))))
+    ((eq (caar e) 'label)
+      (eval. (cons (caddar e) (cdr e))
+             (cons (list (cadar e) (car e)) a)))
+    ((eq (caar e) 'lambda)
+      (eval. (caddar e)
+             (append. (pair. (cadar e) (evlis. (cdr e) a))
+                       a)))))
+
+; A recursive function to evaluate a conditional.
+(defun evcon. (c a)
+  (cond ((eval. (caar c) a)
+         (eval. (cadar c) a))
+        ('t (evcon. (cdr c) a))))
+
+; A recursive function to evaluate a list.
+(defun evlis. (m A)
+  (cond ((null? m) '())
+        ('t (cons (eval. (car m) a)
+                  (evlis. (cdr m) a)))))
+</code></pre>
+
+<p>The <code>eval</code> function takes two arguments: <em>e</em> (the
+expression to be evaluated) and <em>a</em> (a list of pairs representing the
+named parameters passed in as arguments). It evaluates <em>e</em> in the
+context of <em>a</em>. The function body is relatively simple: a conditional
+containing four clauses for handling atoms, the fundamental functions,
+<code>cond</code> statements and the <code>lambda</code> function. The clause
+for the fundamental functions is itself a conditional containing sub-clauses
+for each fundamental function. The last two clauses call out to the recursive
+<code>evcon</code> and <code>evlis</code> functions that evaluate conditionals
+and lists respectively.</p>
+
+<p>Notice how <code>eval</code> treats the incoming Lisp source code as a list
+to be manipulated like any other data structure. When a language's code is also
+<em>merely</em> data (as it is for the <code>eval</code> function above), it is
+called <a href="https://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a>.
+This introduces the potential for yet another mind bending capability: it
+is possible to change Lisp from within Lisp since all code is written as lists
+and Lisp is a <em>LIS</em>t <em>P</em>rocessor. Therefore, Lisp is able to
+transform and change its own source code in order to add unforeseen
+features.</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Common_Lisp#Macros">macro</a> is
+what makes this possible. Macros look a lot like functions but are different in
+two ways:</p>
+
+<ul>
+<li>Macros generate Lisp code.</li>
+    <li>They are evaluated during <em>macro expansion time</em> - before
+    "regular" code is evaluated.</li>
+</ul>
+<p>For example:</p>
+
+<p></p>
+<pre><code class="lisp">; A simple macro that generates code to square things
+(defmacro square (x)
+  `(* ,x ,x))
+</code></pre>
+
+<p>The <code>`</code> is shorthand for the <code>list</code>
+function. The <code>,</code> (comma) unquotes an expression (in this case the
+argument <em>x</em>). Therefore, the following use of the <code>square</code>
+macro:</p>
+
+<p></p>
+<pre><code class="lisp">(square 3)</code></pre>
+
+<p>results in this generated code,</p>
+
+<p></p>
+<pre><code class="lisp">(* 3 3)</code></pre>
+
+<p>that Lisp evaluates to produce a useful result.</p>
+
+<p><img src="static/images/lisp_cycles.png" alt="Lisp cycles"></p>
+
+<p>Recursion, <code>eval</code> and macros are just three fascinating aspects
+of Lisp. Happily, there are many <a href="http://www.alu.org/alu/res-lisp">great</a>
+<a href="http://cliki.net/Lisp%20books">resources</a> about Lisp (including
+<a href="http://blog.fogus.me/2012/07/25/some-lisp-books-and-then-some/">classic texts</a>
+in computing) if you want to find out more. If you want to learn online, why
+not try
+<a href="http://www.lisperati.com/casting.html">casting SPELs in Lisp</a> or
+the <a href="http://vivid.chengyichao.info/">Vivid Schemer</a>..?</p>
+
+<p id="1"><small><strong>1</strong> This section is based upon
+<a href="http://www.paulgraham.com/">Paul Graham</a>'s article,
+<a href="http://www.paulgraham.com/rootsoflisp.html">The Roots of Lisp</a>
+that is itself derived from
+<a href="http://www-formal.stanford.edu/jmc/index.html">John McCarthy</a>'s
+original 1960 paper on Lisp,
+<a href="http://www-formal.stanford.edu/jmc/recursive.html">Recursive
+Functions of Symbolic Expressions and their Computation by Machine</a>.
+<a href="article/lisp-concise-and-simple/#ref1">⇪ Return to article</a>.</small></p>
+
+<p><small>1498 words (not including code examples or footnotes).
+Image credits: The public
+domain <a href="http://www.lisperati.com/logo.html">Lisp Alien</a> logo was
+created by <a href="http://lisperati.com/">Conrad Barski, M.D.</a>.
+<a href="http://xkcd.com/297/">Lisp Cycles</a> and
+<a href="http://xkcd.com/224/">Lisp Enlightenment</a> cartoons ©
+<a href="http://xkcd.com/">Randall Munroe</a> under a Creative Commons
+license.</small></p>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-15.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-13.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

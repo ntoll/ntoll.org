@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Public Key Cryptography ~ Concise and Simple | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/public-key-crypto-concise-and-simple/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../internet-concise-and-simple/" title="The Internet ~ Concise and Simple" type="text/html">
+<link rel="next" href="../the-web-concise-and-simple/" title="The World Wide Web ~ Concise and Simple" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Public Key Cryptography ~ Concise and Simple">
+<meta property="og:url" content="https://ntoll.org/article/public-key-crypto-concise-and-simple/">
+<meta property="og:description" content='(As with all "concise and simple"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)
+
+Sometimes people need privacy: intimate declarations of love, docto'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-12-12T08:30:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Public Key Cryptography ~ Concise and Simple</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2012-12-12T08:30:00Z" itemprop="datePublished" title="2012-12-12 08:30">2012-12-12 08:30</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>(As with all "<a href="../concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p>Sometimes people need privacy: intimate declarations of love, doctors
+discussing a patient, engineers developing a new top secret world changing
+product and journalists planning an exposé of government
+corruption are just a few scenarios where privacy is both a reasonable and
+legitimate requirement.</p>
+
+<p>This need extends to our digital lives. For example, sensitive credit card
+information is privately shared to complete on-line purchases. Furthermore,
+<em>you</em> may be that lover, doctor, engineer or political journalist in
+need of private communication via the Internet. Maybe you simply don't like
+the idea of others reading your personal digital communications.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Public key
+cryptography</a> is probably the most widespread solution to ensure
+privacy on-line. This article briefly explains what it is and how it works
+before concentrating on its uses.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Cryptography">Cryptography</a> is
+the study and application of techniques that secure
+communication in the presence of third parties (some of whom may wish to
+eavesdrop). It is
+<a href="https://en.wikipedia.org/wiki/Alice_and_Bob#List_of_characters">
+traditional</a> to identify the various parties involved in a cryptographic
+communication as Alice (the sender), Bob (the recipient) and Eve (the
+[sometimes nefarious] eavesdropper). In the specific case of communications
+sent via <a href="../internet-concise-and-simple">the Internet</a>,
+messages may be handled by a large number of intermediary devices en-route to
+their destination. Any of these intermediaries may read the content of the
+message; in fact, they may need to in order to correctly route it to the
+intended recipient. To put it another way, the Internet is a public broadcast
+mechanism and its constituent devices are all Eve.</p>
+
+<img src="http://imgs.xkcd.com/comics/alice_and_bob.png" alt="Eve explains why she's interested in Alice and Bob's communication."><p>To overcome this problem, the meaningful content of messages (usually called
+the plaintext) is encrypted (in to something called the ciphertext) before
+being sent via the Internet. Such content appears as gobbledegook to
+devices handling the message on its journey to the recipient. Once
+received the recipient decrypts the ciphertext to retrieve the original
+meaningful plaintext message.</p>
+
+<p>The process of encryption and decryption is done by a
+<a href="https://en.wikipedia.org/wiki/Cipher">cipher</a> -
+instructions that explain how to transform plaintext into ciphertext. An
+additional secret
+<a href="https://en.wikipedia.org/wiki/Key_(cryptography)">key</a>, known only
+to the sender and recipients, is also used by the cipher to ensure only those
+with the key can read such communication.</p>
+<p>
+
+</p>
+<p>Within a computing context the plaintext, ciphertext and key are all
+<a href="https://en.wikipedia.org/wiki/Digital">digital</a> assets - things
+that are ultimately represented by binary values. In
+other words, such assets are merely very large numbers. Therefore, the cipher
+is only a mathematical function. It encrypts by using the key (a number) to
+turn the plaintext (a number) into the ciphertext (also a number). Decryption
+is similar in that it uses the key to turn the ciphertext into the original
+plaintext.</p>
+
+<p>For cryptography to work both sender and receiver[s] must share information
+about the cipher and key to be used for secure communication. This presents a
+problem: how should Alice and Bob share such fundamental information? Any
+communication between them at this stage is insecure because they are yet to
+share and agree upon the cryptographic means for secure communication.
+Furthermore, Eve may be listening in to intercept such details and could use
+what she learns to listen in on the supposed secure communication. Alice and Bob
+find themselves in a crypto-chicken-and-egg situation.</p>
+
+<p>This is where public key cryptography provides an elegant solution. Rather
+than use a single key, participants have two: a public key that they
+share with the whole world and a private key that they keep for themselves.
+Because of the mathematical relationship between the two keys it is only
+possible to decrypt a ciphertext with the <em>other</em> key in the pair. If
+Alice wants to send information to Bob she uses Bob's <em>public</em> key to
+encrypt her message and sends the resulting ciphertext. Importantly, only Bob
+can decrypt the message since only his <em>private</em> key can turn the
+ciphertext into plaintext. Eve can observe the complete exchange without
+gaining the information she needs to decrypt the message from Alice to Bob
+because Bob's private key is never transmitted.</p>
+
+<p>Public key cryptography (specifically the
+<a href="https://en.wikipedia.org/wiki/RSA_(algorithm)">RSA</a> algorithm) is
+thought secure because it depends upon integer factorization - the process of
+decomposing a number into its constituent prime-number divisors. In other
+words, every whole number is the result of multiplying a unique set
+of prime numbers together. For example, to get the number 12
+use 2×2×3. As the number gets larger finding the constituent
+prime numbers becomes too hard to be solved in a realistic amount of time.
+Public key cryptography uses two huge prime numbers that result in
+<em><code>n</code></em>, an even longer number whose length is measured in
+"bits" (the longer the better) and whose value is used by the cipher.
+Currently, <em><code>n</code></em> of 2048 bits length is considered secure
+given currently available computing power (i.e. given a huge amount of
+computing power it would still take an inordinate amount of time to crack).</p>
+
+<p>In terms of the modus operandi of public key cryptography, that's about all
+you need to know without going in to technical details. There are many
+excellent explanations of how public key cryptography works "under to hood" and
+constraints of space stop me from going in to more detail. However, the video
+embedded below provides an engaging and comprehensive explanation and is part
+of the excellent series
+<a href="https://www.youtube.com/course?list=ECB4D701646DAF0817">Gambling with
+Secrets</a> by <a href="https://www.youtube.com/user/ArtOfTheProblem">Art of
+the Problem</a>.</p>
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/vgTtHV04xRI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>An interesting side effect of public key cryptography is that it can be
+used to "sign" digital assets to prove provenance or identity. Given that any
+digital asset is simply a large number it is possible to use a
+<a href="https://en.wikipedia.org/wiki/Hash_function">hash function</a> - a
+means of mapping variable length numbers to relatively small, fixed
+length numbers - to create a unique "signature" that can be cryptographically
+verified. Consider the following
+snippet of Python code (don't worry if you can't program, it's easy to
+follow):</p>
+
+<p></p>
+<pre><code class="python">from hashlib import sha1
+my_digital_asset = open('war-and-peace.txt').read()
+hash = sha1(my_digital_asset)
+print int(hash.hexdigest().encode('hex'), 16)
+</code></pre>
+
+<p>This simply loads the complete text of
+<a href="http://www.gutenberg.org/cache/epub/2600/pg2600.txt">War and Peace</a>
+and uses a hashing
+algorithm called <a href="https://en.wikipedia.org/wiki/SHA-1">SHA1</a> to
+generate the <code>hash</code> that is printed on the screen as an
+integer (whole number). The resulting hash for War and Peace is the number:</p>
+
+<p><code>435515005527869578462696388723361351836071321997289162047109517397984640443675003720894549210723</code></p>
+
+<p>Alice encodes this number with her private key
+and sends the resulting signature to Bob. Bob uses Alice's <em>public</em> key
+to
+decrypt the signature and retrieve the hash we generated above. Then <em>he</em>
+attempts to create <em>his own hash</em> of the complete text of War and
+Peace. If
+his hash matches Alice's he knows that both he and Alice are referencing the
+<em>same</em> digital asset. If the text for War and Peace had only one letter
+changed (either by mistake or because someone was tampering with it) then the
+hashes would have been different. As Bob knows only Alice has access to
+her private key, and only Alice's <em>public key</em> can decrypt such
+a signature then he can trust the provenance of the digital asset "signed"
+by Alice since only she could have created such a signature with her
+private key. In this way, Alice can also cryptographically sign her own
+messages to Bob.</p>
+
+<p>It is important to acknowledge the political aspect of public key
+cryptography. Politicians, the Police and security services complain that
+terrorists and criminals use strong cryptography to hide
+their illegal activities. Laws such as the U.K.'s
+<a href="https://en.wikipedia.org/wiki/Regulation_of_Investigatory_Powers_Act_2000">RIPA</a>
+give the government and other public authorities (such as the Police or local
+council) powers to force you to hand over your private keys. When challenged
+about this curtailment of civil liberties (see article 12 of the UN's
+<a href="https://www.un.org/en/documents/udhr/">Universal Declaration of Human
+Rights</a>) a common response is, "if you have nothing to hide, you have
+nothing to fear". This is, of course, a dangerous attitude: the authorities get
+to decide what "nothing to hide" means and this changes all the time. For
+example, since the introduction of RIPA the list of authorities empowered by
+the act has increased four times (in 2003, 2005, 2006 and 2010). How would you
+feel if the recording industry became an authority and insisted you hand over
+keys so they can check your audio collection?</p>
+
+<p>An <a href="https://en.wikipedia.org/wiki/Orwellian">Orwellian</a> prospect
+if ever there was one.</p>
+
+<p>Finally, development of such cryptographic technology is usually done in
+public by experts. It is open and public because problems and bugs are spotted
+quicker. Furthermore, designing and implementing cryptographic systems
+requires significant domain expertise. This convention ensures there are
+always freely available, well tested and well designed cryptographic libraries
+for non-expert programmers to re-use in their projects.</p>
+
+<p>The challenge for programmers and cryptographers is to make the use of
+strong encryption the norm. It is ubiquitous for on-line financial transactions
+but most other things (email, web browsing, chat and other such digital
+interactions) are usually <em>not</em> secured. I suspect this will remain the
+case until people realise that their on-line life is currently like living in a
+house with no curtains.</p>
+
+<p><small>Word count: 1439.
+Thanks to <a href="https://twitter.com/terrycojones">Terry Jones</a> for typo
+spotting.
+Image attribution: © <a href="http://xkcd.com/177/">
+Randall Munroe</a> licensed under a
+<a href="http://creativecommons.org/licenses/by-nc/2.5/">Creative
+Commons BY-NC</a> licence.</small></p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../internet-concise-and-simple/" rel="prev" title="The Internet ~ Concise and Simple">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../the-web-concise-and-simple/" rel="next" title="The World Wide Web ~ Concise and Simple">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

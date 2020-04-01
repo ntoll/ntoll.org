@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="A concise and simple exploration of Python's new asyncio module.">
+<meta name="viewport" content="width=device-width">
+<title>Asynchronous Python | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/asyncio/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<link rel="prev" href="../autonomy/" title="Autonomy" type="text/html">
+<link rel="next" href="../hide/" title="Nothing to hide..?" type="text/html">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Asynchronous Python">
+<meta property="og:url" content="https://ntoll.org/article/asyncio/">
+<meta property="og:description" content="A concise and simple exploration of Python's new asyncio module.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-04-28T12:30:00Z">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Asynchronous Python</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2014-04-28T12:30:00Z" itemprop="datePublished" title="2014-04-28 12:30">2014-04-28 12:30</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><a href="http://python.org/">Python</a> version 3.4 was recently released.
+For me, the most interesting
+<a href="https://docs.python.org/3.4/whatsnew/3.4.html">update</a>
+was the inclusion of the
+<code><a href="http://legacy.python.org/dev/peps/pep-3156/">asyncio</a></code>
+module. The
+<a href="https://docs.python.org/3.4/library/asyncio.html">documentation</a>
+states it,</p>
+
+<blockquote>...provides infrastructure for writing single-threaded concurrent
+code using coroutines, multiplexing I/O access over sockets and other
+resources, running network clients and servers, and other related primitives.
+</blockquote>
+
+<p>While I understand all the terminology from the documentation I don't yet
+have a <em>feel</em> for the module nor do I yet comprehend when to use one
+feature rather than another. Writing about this module and examining
+concrete examples is my way to
+<a href="https://en.wikipedia.org/wiki/Grok">grok</a>
+<code>asyncio</code>. I'll be concise and only assume familiarity with
+Python.</p>
+
+<p>So, what is <code>asyncio</code>?</p>
+
+<p>It's a module that enables you to write code that concurrently handles
+asynchronous network based interactions.</p>
+
+<p>What precisely do I mean?</p>
+
+<p>Concurrency is when several things happen simultaneously. When something is
+asynchronous it is literally not synchronised: there is no way to tell when
+some <em>thing</em> may happen (in this case, network based I/O).
+<a href="https://en.wikipedia.org/wiki/Input/output">I/O</a> (input/output)
+is when a program communicates with the "outside world" and network based I/O
+simply means the program communicates with another device (usually) on the
+internet. Messages arrive and depart via the network at unpredictable times -
+<code>asyncio</code> helps you write programs that deal with all these
+interactions simultaneously.</p>
+
+<p>How does it work?</p>
+
+<p>At the core of <code>asyncio</code> is an
+<a href="http://hg.python.org/cpython/file/4ab2d8fac52b/Lib/asyncio/base_events.py#l176">event loop</a>.
+This is simply code that keeps looping (I'm trying to avoid the
+temptation of using a racing car analogy). Each "lap" of the loop (dammit)
+checks for new I/O events and does various other "stuff" that we'll come onto
+in a moment. Within the <code>asyncio</code> module, the
+<a href="http://hg.python.org/cpython/file/4ab2d8fac52b/Lib/asyncio/base_events.py#l761">_run_once</a>
+method encapsulates a full iteration of the loop. Its documentation
+explains:</p>
+
+<blockquote>This calls all currently ready callbacks, polls for I/O,
+schedules the resulting callbacks, and finally schedules
+'call_later' callbacks.
+</blockquote>
+
+<p>A <em>callback</em> is code to be run when some event has occurred and
+<em>polling</em> is discovering the status of something external to the
+program (in this case network based I/O activity). When a small child
+constantly asks, "are we there yet..?" on a long car journey, that's polling.
+When the unfortunate parent replies, "I'll tell you when we arrive" they are
+creating a sort of callback (i.e. they promise to do something when some
+condition is met). The <code>_run_once</code> method processes the
+I/O events that occurred during the time it took to complete the
+<em>previous</em> "lap", ensures any callbacks that need to be run are done so
+during <em>this</em> lap and carries out "housekeeping" needed for callbacks
+that have <em>yet to be called</em>.</p>
+
+<p>Importantly, the pending callbacks are executed one after the other
+- stopping the loop from continuing. In other words, the next "lap" cannot
+start <em>until all the sequentially executed callbacks finish</em> (in some
+sense).</p>
+
+<p>I imagine you're thinking, "Hang on, I thought you said
+<code>asyncio</code> works concurrently?" I did and it does. Here's the
+problem: concurrency is hard and there's more than one way to do it. So it's
+worth taking some time to examine why <code>asyncio</code> works in the
+way that it does.</p>
+
+<p>If concurrent tasks interact with a shared resource they run the risk of
+interfering with each other. For example, task A reads a
+record, task B reads the same record, both A and B change the retrieved
+record in different ways, task B writes the record, then task A writes the
+record (causing the changes made by task B to be lost). Such interactions
+between indeterminate
+"<a href="https://en.wikipedia.org/wiki/Thread_%28computer_science%29">threaded</a>"
+tasks result in painfully hard-to-reproduce bugs and complicated
+mechanisms required to mitigate such situations. This is bad because the
+<a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> (keep it
+simple, stupid) principle is abandoned.</p>
+
+<p>One solution is to program in a synchronous manner: tasks
+executed one after the other so they have no chance to interfere with
+each other. Such programs are easy to understand since they're simply
+a deterministic sequential list of things to do: first A, then B,
+followed by C and so on. Unfortunately, if A needs to wait for something, for
+example, a reply from a machine on the network, then the whole program waits.
+As a result, the program can't handle any other events that may occur
+while it waits for A's network call to complete - in such a case,
+the program is described as
+"<a href="https://en.wikipedia.org/wiki/Blocking_%28computing%29">blocked</a>".
+The program becomes potentially slow and unresponsive - an unacceptable
+condition if we're writing something that needs to react quickly to things
+(such as a server - precisely the sort of program <code>asyncio</code> is
+intended to help with).</p>
+
+<p>Because <code>asyncio</code> is event driven, network related I/O is
+<em>non-blocking</em>. Instead of waiting for a reply from a network call
+before continuing with a computation, programmers define callbacks to be run
+only when the result of the network call becomes known. In the meantime,
+the program continues to respond to other things: the event loop keeps polling
+for and responding to network I/O events (such as when the reply to our
+network call arrives and the specified callbacks are executed).</p>
+
+<p>This may sound abstract and confusing but it's remarkably close to how we
+make plans in real life: when <em>X</em> happens, do <em>Y</em>. More
+concretely, "when the tumble dryer finishes, fold the clothes and put them
+away". Here, "the tumble dryer finishes" is some <em>event</em> we're
+expecting and "fold the clothes and put them away" is a callback that
+specifies what to do when the event happens. Once this plan is made, we're
+free to get on with other things <em>until</em> we discover the tumble dryer
+has finished.</p>
+
+<p>Furthermore, as humans we work on concurrent tasks in a similar
+non-blocking manner. We skip between the things we need to do while we wait
+for other things to happen: we know we'll have time to squeeze the orange
+juice while the toast and eggs are cooking when we make breakfast. Put in a
+programmatic way, execute B while waiting on the result of the network call
+made by A.</p>
+
+<p><img src="http://ntoll.org/static/images/breakfast.jpg" alt="Orange juice, toast and eggs"></p>
+
+<p>Such familiar concepts mean <code>asyncio</code> avoids potentially
+confusing and complicated "threaded" concurrency while retaining the benefits
+of strictly sequential code. In fact, the
+<a href="http://legacy.python.org/dev/peps/pep-3156/">specification</a> for
+<code>asyncio</code> states that callbacks are,</p>
+
+<blockquote>[...] strictly serialized: one callback must finish before the
+next one will be called. This is an important guarantee: when two or more
+callbacks use or modify shared state, each callback is guaranteed that while
+it is running, the shared state isn't changed by another callback.
+</blockquote>
+
+<p>Therefore, from a programmer's perspective, it is important to understand
+<em>how</em> asynchronous concurrent tasks are created, how such tasks
+<em>pause while waiting</em> for non-blocking I/O, and how the callbacks that
+<em>handle the eventual results</em> are defined. In other words, you need to
+understand coroutines, futures and tasks.</p>
+
+<p>The <code>asyncio</code> module is helpfully simple about these
+abstractions:</p>
+
+<ul>
+<li>
+<code>asyncio.coroutine</code> - a
+    <a href="http://legacy.python.org/dev/peps/pep-0318/">decorator</a> that
+    indicates a function is a coroutine. A coroutine is simply
+    a type of
+    <a href="http://legacy.python.org/dev/peps/pep-0255/">generator</a> that
+    uses the <code>yield from</code>, <code>return</code> or
+    <code>raise</code> syntax to generate results.</li>
+    <li>
+<code>asyncio.Future</code> - a class used to represent a result that
+    may not be available yet. It is an abstraction of something that has yet
+    to be realised. Callback functions that process the eventual result are
+    added to instances of this class (like a sort of to-do list of functions
+    to be executed when the result is known). If you're familiar with
+    <a href="https://twistedmatrix.com/trac/">Twisted</a> they're called
+    <em>deferreds</em> and elsewhere they're sometimes called
+    <em>promises</em>.</li>
+    <li>
+<code>asyncio.Task</code> - a subclass of <code>asyncio.Future</code>
+    that wraps a coroutine. The resulting object is realised when the
+    coroutine completes.</li>
+</ul>
+<p>Let's examine each one of these abstractions in more detail:</p>
+
+<p>A coroutine is a sort of generator function. A task defined
+by a coroutine may be suspended; thus allowing the event loop to get on with
+other things (as described above). The
+<a href="http://legacy.python.org/dev/peps/pep-0380/"><code>yield from</code></a>
+syntax is used to suspend a coroutine. A coroutine can <code>yield from</code>
+other coroutines <em>or</em> instances of the <code>asyncio.Future</code>
+class. When the <em>other</em>
+coroutine has a result or the pending <code>Future</code> object is realised,
+execution of the coroutine continues from the <code>yield from</code>
+statement that originally suspended the coroutine (this is sometimes referred
+to as re-entry). The result of a <code>yield from</code> statement will be
+either the return value of the <em>other</em> coroutine or the result of the
+<code>Future</code> instance. If the referenced coroutine
+or <code>Future</code> instance raise an exception this will be propagated.
+Ultimately, at the end of the <code>yield from</code> chain, will be a
+coroutine that actually returns a result or raises an exception (rather than
+yielding from some other coroutine).</p>
+
+<p>A helpful (yet not entirely accurate) metaphor is the process of calling a
+customer support line. Perhaps you want to know why your order for goods
+is late. The person at the end of the phone explains they can't continue with
+your query because they need to check something with their accounts
+department. They promise to call you back. This pause is similar to the
+<code>yield from</code> statement: they're suspending the work while they
+wait for something else, thus allowing you to get on with other stuff. At some
+point, their accounts department will provide a result and the customer
+support agent will re-enter the process of handling your query and when
+they're done, will fulfil their promise and give you a call (hopefully with
+good news about your order).</p>
+
+<p>The important concept to remember is that <code>yield from</code> suspends
+coroutines pending a result so the event loop is able to get on with other
+things. When the result becomes known, the coroutine resumes.</p>
+
+<p>The following example (like many of the examples in this post, it's an
+annotated modification of code in the
+<a href="https://docs.python.org/3.4/library/asyncio-task.html#example-chain-coroutines">Python documentation</a>
+on <code>asyncio</code>) illustrates these concepts by chaining coroutines
+that ultimately add two numbers together:</p>
+
+<p></p>
+<pre><code class="python">"""
+Two coroutines chained together.
+
+The compute() coroutine is chained to the print_sum() coroutine. The
+print_sum() coroutine waits until compute() is completed before it returns a
+result.
+"""
+import asyncio
+
+
+# Notice the decorator!
+@asyncio.coroutine
+def compute(x, y):
+    print("Compute %s + %s ..." % (x, y))
+    # Pause the coroutine for 1 second by yielding from asyncio's built in
+    # sleep coroutine. This simulates the time taken by a non-blocking I/O
+    # call. During this time the event loop can get on with other things.
+    yield from asyncio.sleep(1.0)
+    # Actually return a result!
+    return x + y
+
+
+@asyncio.coroutine
+def print_sum(x, y):
+    # Pause the coroutine until the compute() coroutine has a result.
+    result = yield from compute(x, y)
+    # The following print() function won't be called until there's a result.
+    print("%s + %s = %s" % (x, y, result))
+
+
+# Reference the event loop.
+loop = asyncio.get_event_loop()
+# Start the event loop and continue until print_sum() is complete.
+loop.run_until_complete(print_sum(1, 2))
+# Shut down the event loop.
+loop.close()
+</code></pre>
+
+<p>Notice that the coroutines only execute when the loop's
+<code>run_until_complete</code> method is called.
+<a href="http://hg.python.org/cpython/file/4ab2d8fac52b/Lib/asyncio/base_events.py#l190">Under the hood</a>,
+the coroutine is wrapped in a <code>Task</code> instance and a callback is
+added to this task that
+<a href="http://hg.python.org/cpython/file/4ab2d8fac52b/Lib/asyncio/base_events.py#l72">raises the appropriate exception</a> needed to stop the loop (since
+the task is realised because the coroutine completed). The task instance is
+conceptually the same as the promise the customer support agent gave to
+call you back when they finished processing your query (in the helpful
+yet inaccurate metaphor described above). The return value of
+<code>run_until_complete</code> is the task's result or, in the event of a
+problem, its exception will be raised. In this example, the result is
+<code>None</code> (since <code>print_sum</code> doesn't actually return
+anything to become the result of the task).</p>
+
+<p>The following sequence diagram illustrates the flow of activity:</p>
+
+<p><img src="http://ntoll.org/static/images/tulip_coro.png" alt="Sequence diagram of a coroutine"></p>
+
+<p>So far we've discovered that coroutines suspend and resume tasks in such
+a way that the event loop can get on with other things. Yet this only
+addresses how concurrent tasks co-exist through time given a single event
+loop.  It doesn't tell us how to deal with the end result of such concurrent
+tasks when they complete and the result of their computation becomes
+known.</p>
+
+<p>As has been already mentioned, the results of such pending concurrent
+tasks are represented by instances of the <code>async.Future</code> class.
+Callback functions are added to such instances via the
+<code>add_done_callback</code> method. Callback functions have a single
+argument: the <code>Future</code> instance to which they have been added.
+They are executed when their <code>Future</code>'s result eventually becomes
+known (we say the <code>Future</code> is resolved). Resolution involves
+setting the result using the <code>set_result</code> method or, in the case
+of a problem, setting the appropriate exception via
+<code>set_exception</code>. The callback can access the
+<code>Future</code>'s result (be it something valid or an exception) via the
+<code>result</code> method: either the result will be returned or the
+exception will be raised.</p>
+
+<p>Another example (again, an annotated modification of code from the
+<a href="https://docs.python.org/3.4/library/asyncio-task.html#example-future-with-run-forever">Python documentation</a>)
+illustrates how this works:</p>
+
+<p></p>
+<pre><code class="python">"""
+A future and coroutine interact. The future is resolved with the result of
+the coroutine causing the specified callback to be executed.
+"""
+import asyncio
+
+
+@asyncio.coroutine
+def slow_operation(future):
+    """
+    This coroutine takes a future and resolves it when its own result is
+    known
+    """
+    # Imagine a pause from some non-blocking network based I/O here.
+    yield from asyncio.sleep(1)
+    # Resolve the future with an arbitrary result (for the purposes of
+    # illustration).
+    future.set_result('A result set by the slow_operation coroutine!')
+
+
+def got_result(future):
+    """
+    This function is a callback. Its only argument is the resolved future
+    whose result it prints. It then causes the event loop to stop.
+    """
+    print(future.result())
+    loop.stop()
+
+
+# Get the instance of the event loop (also referenced in got_result).
+loop = asyncio.get_event_loop()
+# Instantiate the future we're going to use to represent the as-yet unknown
+# result.
+future = asyncio.Future()
+# Wrap the coroutine in a task to schedule it for execution when the
+# event loop starts.
+asyncio.Task(slow_operation(future))
+# Add the callback to the future. The callback will only be executed when the
+# future is resolved by the coroutine. The future object is passed into the
+# got_result callback.
+future.add_done_callback(got_result)
+
+# Run the event loop until loop.stop() is called (in got_result).
+try:
+    loop.run_forever()
+finally:
+    loop.close()
+</code></pre>
+
+<p>This example of futures and coroutines interacting probably feels awkward
+(at least, it does to me). As a result, and because such interactions are so
+fundamental to working with <code>asyncio</code>, one should use the
+<code>asyncio.Task</code> class (a subclass of <code>asyncio.Future</code>)
+to avoid such boilerplate code. The example above can be simplified and made
+more readable as follows:</p>
+
+<p></p>
+<pre><code class="python">"""
+A far simpler and easy-to-read way to do things!
+
+A coroutine is wrapped in a Task instance. When the coroutine returns a result
+the task is automatically resolved causing the specified callback to be
+executed.
+"""
+import asyncio
+
+
+@asyncio.coroutine
+def slow_operation():
+    """
+    This coroutine *returns* an eventual result.
+    """
+    # Imagine a pause from some non-blocking network based I/O here.
+    yield from asyncio.sleep(1)
+    # A *lot* more conventional and no faffing about with future instances.
+    return 'A return value from the slow_operation coroutine!'
+
+
+def got_result(future):
+    """
+    This function is a callback. Its only argument is a resolved future
+    whose result it prints. It then causes the event loop to stop.
+
+    In this example, the resolved future is, in fact, a Task instance.
+    """
+    print(future.result())
+    loop.stop()
+
+
+# Get the instance of the event loop (also referenced in got_result).
+loop = asyncio.get_event_loop()
+# Wrap the coroutine in a task to schedule it for execution when the event
+# loop starts.
+task = asyncio.Task(slow_operation())
+# Add the callback to the task. The callback will only be executed when the
+# task is resolved by the coroutine. The task object is passed into the
+# got_result callback.
+task.add_done_callback(got_result)
+
+# Run the event loop until loop.stop() is called (in got_result).
+try:
+    loop.run_forever()
+finally:
+    loop.close()
+</code></pre>
+
+<p>To my eyes, this is a lot more comprehensible, easier to read and far
+simpler to write. The <code>Task</code> class also makes it trivial to execute
+tasks in parallel, as the following example (again,
+<a href="http://docs.python.org/3.4/library/asyncio-task.html?highlight=asyncio.sleep#example-parallel-execution-of-tasks">taken from the Python documentation</a>)
+shows:</p>
+
+<p></p>
+<pre><code class="python">"""
+Three tasks running the same factorial coroutine in parallel.
+"""
+import asyncio
+
+
+@asyncio.coroutine
+def factorial(name, number):
+    """
+    https://en.wikipedia.org/wiki/Factorial
+    """
+    f = 1
+    for i in range(2, number+1):
+        print("Task %s: Compute factorial(%s)..." % (name, i))
+        yield from asyncio.sleep(1)
+        f *= i
+    print("Task %s: factorial(%s) = %s" % (name, number, f))
+
+
+# Instantiating tasks doesn't cause the coroutine to be run. It merely
+# schedules the tasks.
+tasks = [
+    asyncio.Task(factorial("A", 2)),
+    asyncio.Task(factorial("B", 3)),
+    asyncio.Task(factorial("C", 4)),
+]
+
+
+# Get the event loop and cause it to run until all the tasks are done.
+loop = asyncio.get_event_loop()
+loop.run_until_complete(asyncio.wait(tasks))
+loop.close()
+</code></pre>
+
+<p>So far, all our examples have used the <code>asyncio.sleep</code> function
+to simulate arbitrary amounts of time to represent the wait one might expect
+for non-blocking network I/O. This is convenient for examples, but now that we
+understand coroutines, futures and tasks we'd better examine how networking
+fits into the picture.</p>
+
+<p>There are two approaches one can take to network based operations: the
+high level
+<a href="https://docs.python.org/3.4/library/asyncio-stream.html">Streams</a>
+API or the lower level
+<a href="https://docs.python.org/3.4/library/asyncio-protocol.html">Transports
+and Protocols</a> API. The following example (based on
+<a href="https://docs.python.org/3.4/library/asyncio-stream.html#example">this original implementation</a>)
+shows how a coroutine works with non-blocking network I/O in order to
+retrieve HTTP headers using the stream based API:
+
+</p>
+<p></p>
+<pre><code class="python">"""
+Use a coroutine and the Streams API to get HTTP headers. Usage:
+
+python headers.py http://example.com/path/page.html
+"""
+import asyncio
+import urllib.parse
+import sys
+
+
+@asyncio.coroutine
+def print_http_headers(url):
+    url = urllib.parse.urlsplit(url)
+    # An example of yielding from non-blocking network I/O.
+    reader, writer = yield from asyncio.open_connection(url.hostname, 80)
+    # Re-entry happens when the connection is made. The reader and writer
+    # stream objects represent what you'd expect given their names.
+    query = ('HEAD {url.path} HTTP/1.0\r\n'
+             'Host: {url.hostname}\r\n'
+             '\r\n').format(url=url)
+    # Write data out (does not block).
+    writer.write(query.encode('latin-1'))
+    while True:
+        # Another example of non-blocking network I/O for reading asynchronous
+        # input.
+        line = yield from reader.readline()
+        if not line:
+            break
+        line = line.decode('latin1').rstrip()
+        if line:
+            print('HTTP header&gt; %s' % line)
+
+
+# None of the following should be at all surprising.
+url = sys.argv[1]
+loop = asyncio.get_event_loop()
+task = asyncio.async(print_http_headers(url))
+loop.run_until_complete(task)
+loop.close()
+</code></pre>
+
+<p>Note how, instead of yielding from <code>asyncio.sleep</code>, the
+coroutine yields from the built in <code>open_connection</code> and
+<code>readline</code> coroutines that handle the asynchronous networking I/O.
+Importantly, the call to <code>write</code> does not block, but buffers the
+data and sends it out asynchronously.</p>
+
+<p>The lower level API should feel familiar to anyone who has written code
+using the <a href="https://twistedmatrix.com/">Twisted framework</a>. What
+follows is a trivial server (based on
+<a href="https://docs.python.org/3.4/library/asyncio-protocol.html#echo-server">this example</a>)
+that uses transports and protocols.</p>
+
+<p>Transports are classes provided by <code>asyncio</code> to abstract
+<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP</a>,
+<a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a>,
+<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">TLS/SSL</a>
+and
+<a href="https://en.wikipedia.org/wiki/Pipeline_%28Unix%29">subprocess pipes</a>.
+Instances of such classes are responsible for the actual
+I/O and buffering. However, you don't usually instantiate such classes
+yourself; rather, you call the event loop instance to set things up (and
+it'll call you back when it succeeds).</p>
+
+<p>Once the connection is established, a
+transport is always paired with an instance of the <code>Protocol</code>
+class. You subclass <code>Protocol</code> to implement your own network
+protocols; it parses incoming data and writes outgoing data by calling the
+associated transport's methods for such purposes. Put simply, the
+transport handles the sending and receiving of things down the wire, while
+the protocol works out what the actual message means.</p>
+
+<p>To implement a protocol override appropriate methods from the
+<code>Protocol</code> parent class. Each time a connection is made (be it
+incoming or outgoing) a new instance of the protocol is instantiated and
+the various overridden methods are called depending on what network events
+have been detected. For example, every protocol class will have its
+<code>connection_made</code> and <code>connection_lost</code> methods
+called when the connection begins and ends. Between these two calls one might
+expect to handle <code>data_received</code> events and use the paired
+<code>Transport</code> instance to send data. The following simple echo
+server demonstrates the interaction between protocol and transport without
+the distraction of coroutines and futures.</p>
+
+<p></p>
+<pre><code class="python">"""
+A simple (yet poetic) echo server. ;-)
+
+- ECHO -
+
+Use your voice - say what you mean
+Do not stand in the shadow
+Do not become an echo of someone else's opinion
+We must accept ourselves and each other
+Even the perfect diamond
+may have cracks and faults
+
+A-L Andresen, 2014. (<a href="http://bit.ly/1nvhr8T">http://bit.ly/1nvhr8T</a>)
+"""
+import asyncio
+
+
+class EchoProtocol(asyncio.Protocol):
+    """
+    Encapsulates the behaviour of the echo protocol. A new instance of this
+    class is created for each new connection.
+    """
+
+    def connection_made(self, transport):
+        """
+        Called only once when the new connection is made. The transport
+        argument represents the connection to the client.
+        """
+        self.transport = transport
+
+    def data_received(self, data):
+        """
+        Called when the client sends data (represented by the data argument).
+        """
+        # Write the incoming data immediately back to the client connection.
+        self.transport.write(data)
+        # Calling self.transport.close() disconnects. If you want the
+        # connection to persist simply comment out the following line.
+        self.transport.close()
+
+
+loop = asyncio.get_event_loop()
+# Create the coroutine used to establish the server.
+echo_coroutine = loop.create_server(EchoProtocol, '127.0.0.1', 8888)
+# Run the coroutine to actually establish the server.
+server = loop.run_until_complete(echo_coroutine)
+
+try:
+    # Run the event loop forever, waiting for new connections.
+    loop.run_forever()
+except KeyboardInterrupt:
+    # Unless we get Ctrl-C keyboard interrupt.
+    print('exit')
+finally:
+    # Stop serving (existing connections remain open).
+    server.close()
+    # Shut down the loop.
+    loop.close()
+</code></pre>
+
+<p>An example interaction with this server using
+<a href="https://en.wikipedia.org/wiki/Netcat">netcat</a>
+is shown below:</p>
+
+<p></p>
+<pre><code>$ python echo.py &amp;
+[1] 7486
+$ nc localhost 8888
+Hello, World!
+Hello, World!
+$ fg
+python echo.py
+^Cexit
+</code></pre>
+
+<p>Yet, this only scratches the surface of <code>asyncio</code> and I'm
+cherry-picking the parts that most interest me. If you want to find out more
+the
+<a href="https://docs.python.org/3.4/library/asyncio.html">Python documentation</a>
+for the module is a great place to start, as is
+<a href="http://legacy.python.org/dev/peps/pep-3156/">PEP 3156</a> used to
+specify the module.</p>
+
+<p>In conclusion <code>asyncio</code> feels like Twisted on a diet with the
+added fun and elegance of coroutines. I've generally had good experiences
+using Twisted but always felt uncomfortable with its odd naming conventions
+(for example, calling the
+<a href="https://twistedmatrix.com/trac/wiki/TwistedConch">secure shell implementation</a>
+"conch" is the world's worst programming pun) and I suffer from an uneasy
+feeling that it exists in a slightly different parallel Pythonic universe.
+Personally, I feel <code>asyncio</code> is a step in the right direction
+because such a lot of the "good stuff" from Twisted has made it into the
+core language in a relatively small and obvious module. I'm also looking
+forward to using it in my own projects (specifically,
+<a href="http://drogul.us">the drogulus</a>).
+
+</p>
+<p>As I become more adept at using this module I may write up more.</p>
+
+<p><small>Image credits:
+<a href="https://flic.kr/p/8TQSAL">Breakfast</a>
+© 2010
+<a href="https://secure.flickr.com/photos/pankaj/">Pankaj Kaushal</a>
+under a
+<a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Creative Commons</a>
+License.
+Sequence Diagram
+<a href="https://docs.python.org/3.4/copyright.html">© 2014</a>
+<a href="http://python.org">The Python Software Foundation</a>.
+</small></p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../autonomy/" rel="prev" title="Autonomy">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../hide/" rel="next" title="Nothing to hide..?">Next post</a>
+            </li>
+        </ul></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

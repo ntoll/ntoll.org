@@ -1,0 +1,146 @@
+---
+title: FluidDB is not CouchDB (and FluidDB's secret sauce)
+slug: fluiddb-is-not-couchdb
+date: 2010-02-05 22:11:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+
+	<p><img src="/static/images/91.png" title="FluidDBWordle" alt="FluidDBWordle" /></p>
+
+	<p>My <a href="http://ntoll.org/article/introducing-flow-on-fluiddb">last post</a> resulted in the following question from <a href="http://bitwacker.wordpress.com">John Erickson</a>.</p>
+
+	<blockquote>
+
+		<p>"I've only just discovered <a href="http://www.fluidinfo.com">FluidDB</a> and the reoccurring question is, &#8216;how is FluidDB different/better than <a href="http://couchdb.apache.org/">CouchDB</a>??'"</p>
+
+	</blockquote>
+
+	<p>I'll try to answer as best I can.</p>
+
+	<p>The usual caveat applies when using a loaded word like "better" &#8211; it depends on what you want/need. As I can't speak for anyone else I'll only do a compare and contrast.</p>
+
+	<p>Lets concentrate on the similarities first&#8230; both databases are flat collections of items ("documents" in CouchDB, "objects" in FluidDB) with a structure based upon the classic subject/predicate/value triple:</p>
+
+	<p>CouchDB: Documents have fields with values.<br />
+
+FluidDB: Objects are tagged (often with values)</p>
+
+	<p>Documents <=> Objects (both are identified by a <acronym title="Universally Unique ID">UUID</acronym>),<br />
+
+Fields <=> Tags (both are dynamically typed),<br />
+
+Values <=> Values</p>
+
+	<p>A simple difference in terminology.</p>
+
+	<p>(Actually, in FluidDB an object/tag pair does not need to have an associated value. Simply associating a tag with an object can provide enough information. For example, the object that represents the book <a href="http://en.wikipedia.org/wiki/Dune_(novel)">Dune</a> might have the "ntoll/has_read" tag associated with it and as <strong>I</strong> am the only person within FluidDB to have permission to associate this tag with objects <strong>you</strong> can infer from the name of the tag that I once read the referenced book. I'm getting ahead of myself here, but it's important to point out that a tag-value is optional in FluidDB.) </p>
+
+	<p>The other obvious similarity is that both DBs have a <a href="http://en.wikipedia.org/wiki/REST">RESTful</a> API (hence the potential for <a href="http://jchrisa.net/drl/_design/sofa/_show/post/my_couch_or_yours__shareable_ap">CouchApps</a> and <a href="http://fluiddb.fluidinfo.com/objects/e127475b-eb93-48e1-a24f-dde6825b9ed8/ntoll/fluidapp/flow/index.html">Flow</a> &#8211; web-applications as data hosted within their own database).</p>
+
+	<p>Now for the differences in no particular order:</p>
+
+	<ol>
+
+		<li>There is only one FluidDB floating "up there" in the cloud and it holds <strong>everyone's</strong> data. With CouchDB companies and individuals are responsible for hosting their own instance(s) and such instances are usually created for a specific purpose/application.</li>
+
+		<li>The predicate part of the triple is very different. Fields in CouchDB are simply names of values. In FluidDB tags can be organised with namespaces. You start with an empty root namespace named after your username and create tags and namespaces underneath this. Just to be clear here, you can't associate an object with a tag that isn't yet defined &#8211; and yes, tags and namespaces are also objects in FluidDB so you can meta-tag. ;-)</li>
+
+		<li>Querying data is very different. CouchDB's "Views" are pre-defined map/reduce based algorithms. FluidDB provides an uber-minimalist (yet still evolving) <a href="http://doc.fluidinfo.com/fluidDB/queries.html">SQL-like declarative language</a>. </li>
+
+		<li>Security and permissions in CouchDB are document centric and define who can read data and what validation steps a user needs to pass before they can write data to a document (CouchDB also has the concept of an admin account). The "model of control" (as <a href="http://blogs.fluidinfo.com/terry/">Terry Jones</a> [creator of FluidDB] calls it) is FluidDB's <strong>killer</strong> feature: permissions apply <strong>only</strong> to tags, namespaces and tag-values. <strong>All</strong> objects are public and can be tagged by anyone.</li>
+
+	</ol>
+
+	<p>The implications of point four are not at first obvious but it is definitely this feature that sets FluidDB apart from CouchDB and every other database that I know of. Because of this I'll spend the rest of this post illustrating why the model of control is so important.</p>
+
+	<p>Because all objects can be tagged by anyone lots of interesting information/behaviour begins to emerge and become possible.</p>
+
+	<p><img src="/static/images/92.jpg" align="right" title="Dune" alt="Dune" style="padding-left: 8px;" /></p>
+
+	<p>Remember the "Dune" example? Because only <strong>I</strong> have permission to associate the "ntoll/has_read" tag with an object you can be pretty certain only those objects with this tag have been read by me. I can also control who sees my tags, their values and even allow other trusted users the ability to add, edit, and delete namespaces, tags and tag-values (in a similar way to being able to set permissions on a filesystem). This is important because it allows people to collaborate: users who are food enthusiasts could all agree to use the "foodies/rating" and "foodies/review" tags on objects representing restaurants. Only those users enthusiastic/trusted enough would be allowed into the group with permission to associate such tags. Furthermore, as "insiders" they might also have created a tag called "foodies/discount" that is only visible to them and, when attached to an object representing a restaurant, explains how to get a discount.</p>
+
+	<p>Even though some objects have an optional "fluiddb/about" tag (holding a unique value and set by the object's creator to provide some guidance as to what the object is <strong>supposed</strong> to represent) the only way to find out what an object <strong>really</strong> represents is to look at what tags and values are associated with it. The tags and associated values cast an outline of a sort of "data-shadow" identifying the object's referent. </p>
+
+	<p>For example, the object with the fluiddb/about tag-value "book:DUNE" might have the following subset of tags/values associated with it:</p>
+
+<pre>
+
+{
+
+fluiddb/about: "book:DUNE",
+
+ntoll/has_read, 
+
+tim_oreilly/has_read, 
+
+amazon.com/type: "Paperback Book",
+
+amazon.com/title: "Dune", 
+
+amazon.com/author: "Frank Herbert", 
+
+amazon.com/isbn: "ISBN123456789", 
+
+amazon.com/price: "$9.99", 
+
+amazon.com/genre: "Sci-Fi", 
+
+amazon.com/cover: (BINARY DATA FOR A PNG FILE),
+
+tom/comment: "I really like the Sandworms", 
+
+dick/opinion: "Far fetched and obtuse", 
+
+sally/rating: 5,
+
+books/other_editions: ['UUID for object x', 'UUID for object y', 'UUID for object z'],
+
+books/isbn: "ISBN 123456789",
+
+books/title: "Dune",
+
+books/author: ['UUID of object representing Frank Herbert']
+
+books/publisher: "Chilton Books",
+
+books/first_published: "1965"
+
+...
+
+} 
+
+</pre>
+
+	<p>Now, consider the following:</p>
+
+	<ul>
+
+		<li>In the same way that #hashtags and @username conventions have emerged on <a href="http://twitter.com">Twitter</a> so conventions such as "username/has_read" will emerge within FluidDB (for example). <strong>I</strong> use it because a well known publisher of tech books might use it, along with many other people. Put simply, the schema of FluidDB evolves.</li>
+
+		<li>Organisations that can verify they own a domain name can claim it as a root namespace within FluidDB. As a result <a href="http://www.amazon.com/">Amazon</a> has tagged the book with useful information.</li>
+
+		<li>Tag values do not have to be strings&#8230; they can be anything and the <a href="http://en.wikipedia.org/wiki/MIME">mime-type</a> used when <a href="http://www.w3.org/QA/2008/10/understanding-http-put.html">HTTP PUTting</a> them into FluidDB is what is used when retrieving them. As a result, the amazon.com/cover value is an image/png file (presumably of the book's cover). Actually there are two types of tag value: primitive and opaque &#8211; the difference is explained <a href="http://doc.fluidinfo.com/fluidDB/api/tag-values.html">here</a> (put simply, you can search against primitive values). </li>
+
+		<li>The tags from the "books" namespace provide lots of useful information, much of it the same as that provided by amazon.com.</li>
+
+		<li>The books/other_editions tag-value is a list of UUIDs identifying other objects related to this one in a similar way to how foreign keys are used to reference related tables/rows in relational databases.</li>
+
+		<li>Lots of different people, organisations and applications have added tags to the object.</li>
+
+		<li>I'll never see some of the tags associated with this object because I don't have permission to.</li>
+
+		<li>If Amazon.com decide to delete their tags from this object it is still useful and all the other data is unaffected.</li>
+
+	</ul>
+
+	<p>Another side-effect of the FluidDB model of control is that completely unrelated applications will be able to share data. This is already happening: Terry has written an application called <a href="http://tickery.net/">Tickery</a> that has imported lots of information from Twitter under the "twitter.com" namespace in FluidDB. Because this data is open for everyone to read <strong>I</strong> can make use of it from within <a href="http://fluiddb.fluidinfo.com/objects/e127475b-eb93-48e1-a24f-dde6825b9ed8/ntoll/fluidapp/flow/index.html">Flow</a> and carry out exactly the same searches as Tickery does (e.g. "has twitter.com/friends/jack and has twitter.com/friends/ev"). </p>
+
+	<p>Suddenly the potential for mashing up data becomes huge and very interesting &#8211; especially as <strong>anyone</strong> can add further data to the objects Tickery and Flow have tagged.</p>
+
+	<p>In conclusion, we're all familiar with social networks &#8211; FluidDB is simply a social database &#8216;in the cloud' with its model of control as the secret magic sauce. </p>
+
+
+
+ 

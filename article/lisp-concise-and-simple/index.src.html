@@ -1,0 +1,431 @@
+---
+title: Lisp ~ Concise and Simple
+slug: lisp-concise-and-simple
+date: 2013-03-14 22:45:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+<p>(As with all "<a href="/article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p><img src="/static/images/lisplogo_alien.png" alt="Lisp Alien"/></p>
+
+<p>Lisp is a beautiful programming language, famous for its hidden depths that
+lead to moments of
+<a href="https://en.wikipedia.org/wiki/Kensho">kensho</a>. I want to give you
+a sense of why I believe this.</p>
+
+<p><img src="/static/images/lisp.jpg" alt="Lisp enlightenment"/></p>
+
+<p>For me, Lisp's beauty is revealed when its simple core concepts lead to
+moments of sudden insight and shifts of perspective. Lisp's simplicity begins
+with its <em>syntax</em> (how it is written): a simple notation that anyone
+can understand.</p>
+
+<p>Lisp expressions are either <em>atoms</em> or <em>lists</em> (Lisp stands
+for <em>LIS</em>t <em>P</em>rocessor).</p>
+
+<p>Here are five atoms:</p>
+
+<p><pre><code>foo bar baz 123 "Hello World"</code></pre></p>
+
+<p>Atoms are sequences of characters. The penultimate atom is a number and the
+final one is a string (enclosed in quotes).</p>
+
+<p>Here's a list:</p>
+
+<p><pre><code>(ham eggs bacon sausages beans)</code></pre></p>
+
+<p>A list is bounded by parenthesis. Lists can contain other lists:</p>
+
+<p><pre><code>((soup salad garlic-mushrooms)
+ (roast-beef chicken-casserole vegetable-lasagne)
+ (cake fruit jam-pudding))</code></pre></p>
+
+<p>The list above contains three items. Each item is itself another list
+containing three atoms. I've split the contained lists over three lines to aid
+readability.</p>
+
+<p>Lisp's <em>semantics</em> (that define what the syntax means) are equally
+simple:</p>
+
+<ul>
+    <li>Code is <em>written as lists</em> that are <em>evaluated</em> by Lisp
+    to produce results.</li>
+    <li><em>Comments</em> begin with a semi-colon and are ignored by Lisp.</li>
+    <li>Lists and atoms that are "<em>quoted</em>" are evaluated as data.</li>
+    <li>Anything else is evaluated as a <em>form</em> ~ a list starting with
+    an atom that Lisp understands (telling it to do something).</li>
+</ul>
+
+<p>Comments are natural-language annotations added to the code by programmers.
+They're meant to help humans work out how the code works:</p>
+
+<p><pre><code class="lisp">; This is a comment in Lisp</code></pre></p>
+
+<p>Quoting is a simple concept: it's the difference between <em>quoting</em>
+and "quoting" - the former is a word that means something whereas the latter
+refers to the word itself. To quote something, append a single quote
+(<code>'</code>) to it. Here's a quoted list:</p>
+
+<p><pre><code class="lisp">'(ham eggs bacon sausages beans)</code></pre></p>
+
+<p>Lisp evaluates this as just a list of atoms:</p>
+
+<p><pre><code>(ham eggs bacon sausages beans)</code></pre></p>
+
+<p>Here's an example of a <em>form</em>:</p>
+
+<p><pre><code class="lisp">(+ 1 2 3)</code></pre></p>
+
+<p>When Lisp evaluates a form it's told to do something to produce a result. In
+this case, the result is <code>6</code>.</p>
+
+<p>If you guessed the result correctly then you've figured out
+<em>prefix notation</em>: the command comes first (in this case the atom
+representing the <em>operator</em> for summing numbers) and is followed by its
+<em>arguments</em> (the things the operator uses to generate the answer).</p>
+
+<p>Can you work out the answer to the following?</p>
+
+<p><pre><code class="lisp">(+ 1 (- 5 (+ 2 3)))</code></pre></p>
+
+<p>If you answered <code>1</code> then you've worked out the order in which
+Lisp evaluates nested expressions - it starts from the <em>inner</em> most
+expression before evaluating the enclosing <em>outer</em> expressions.</p>
+
+<p>Here's how Lisp evaluated the example above:</p>
+
+<p><pre><code class="lisp">(+ 1 (- 5 (+ 2 3)))
+(+ 1 (- 5 5))
+(+ 1 0)
+1</code></pre></p>
+
+<p>Usually, the first item in a form (the <em>operator</em>) is the name of a
+<em>function</em>. A function is a discrete block of code that receives input
+(its <em>arguments</em>) and returns a result. In the examples above we used
+the functions that sum and subtract numbers. Lisp comes with many useful
+built-in functions including a special one for creating new functions.</p>
+
+<p id="ref1">I want to describe some fundamental Lisp functions; these will
+allow me to reveal a surprise at the heart of
+Lisp<sup><a href="#1">1</a></sup>.</p>
+
+<p>The <code>quote</code> function is a long version of quoting mentioned
+above. The example below is equivalent to the abbreviated version
+<code class="lisp">'(foo bar baz)</code>:</p>
+
+<p><pre><code class="lisp">(quote (foo bar baz))
+(foo bar baz)</code></pre></p>
+
+<p>The <code>atom</code> function returns the atom <code class="lisp">t</code>
+(representing <em>true</em>) if its argument is an atom. Otherwise it
+returns <code class="lisp">nil</code> (representing <em>false</em>):</p>
+
+<p><pre><code class="lisp">(atom 'foo)
+t
+(atom '(foo bar baz))
+nil</code></pre></p>
+
+<p>The <code>eq</code> function returns <code class="lisp">t</code> if the two
+arguments have the same value. Otherwise it returns
+<code class="lisp">nil</code>:</p>
+
+<p><pre><code class="lisp">(eq 'foo 'foo)
+t
+(eq 'foo 'bar)
+nil</code></pre></p>
+
+<p>The <code>car</code> function expects its argument to be a list and returns
+the first item therein:</p>
+
+<p><pre><code class="lisp">(car '(foo bar baz))
+foo</code></pre></p>
+
+<p>The <code>cdr</code> function (say kud-r) expects its argument to be a list
+and returns everything after the first element:</p>
+
+<p><pre><code class="lisp">(cdr '(foo bar baz))
+(bar baz)</code></pre></p>
+
+<p>The <code>cons</code> function expects two arguments, the second of which
+must be a list. It returns a new list containing the first argument followed
+by the elements in the second argument:</p>
+
+<p><pre><code class="lisp">(cons 'foo '(bar baz))
+(foo bar baz)</code></pre></p>
+
+<p>The <code>cond</code> (short for <em>conditional</em>) function takes any
+number of lists as arguments. Each list must contain two items: a form that
+evaluates to either <code>t</code> or <code>nil</code> and some other
+expression. Each list is evaluated in order until a form returns <code>t</code>
+at which point the other expression in the list is evaluated and returned by
+<code>cond</code> :</p>
+
+<p><pre><code class="lisp">(cond ((eq 'foo 'bar) 'first)
+      ((atom 'baz) 'second)
+      ((atom 'qux) 'third))
+second</code></pre></p>
+
+<p>In the example above, the first <code class="lisp">eq</code> function
+evaluates to <code class="lisp">nil</code>, whereas the second
+<code class="lisp">atom</code> function is true. Therefore, the second element
+of the list containing the <code class="lisp">atom</code> function is returned
+as the result. Although the third <code class="lisp">atom</code> function is
+also true, it is ignored. This is somewhat similar to
+<code>if ... elif</code> statements in other programming languages.</p>
+
+<p>The <code>lambda</code> function is used to create user defined functions. It
+expects two lists as arguments: the first contains named place-holders for the
+new function's arguments, the second contains the form to be evaluated to
+generate the new function's result:</p>
+
+<p><pre><code class="lisp">(lambda (x y) (cons x (cdr y)))</code></pre></p>
+
+<p>Notice how the argument names are used in the evaluated form to refer to the
+values that may be passed in to the new function. This can be demonstrated by
+defining then immediately calling a function like this:</p>
+
+<p><pre><code class="lisp">((lambda (x y) (cons x (cdr y)))
+ 'qux
+ '(foo bar baz))
+(qux bar baz)</code></pre></p>
+
+<p>The value of <code>x</code> becomes the atom <code>qux</code> and
+<code>y</code> becomes the list <code>(foo bar baz)</code>. It's useful
+to name new functions. Unsurprisingly, there is a way:</p>
+
+<p><pre><code class="lisp">(defun replace-head (x y) (cons x (cdr y)))
+(replace-head 'qux '(foo bar baz))
+(qux bar baz)</code></pre></p>
+
+<p>The function <code>replace-head</code> is defined
+(<code class="lisp">defun</code>) then used to give the result
+<code class="lisp">(qux bar baz)</code>. Being able to name a function makes
+it possible for the function to refer to itself. This very important behaviour
+is called <a href="https://en.wikipedia.org/wiki/Recursion">recursion</a>.
+Assuming <code>&lt;=</code> means <em>less than or equal</em> and
+<code>*</code> means <em>multiply</em>, can you tell how the following
+recursive example works?</p>
+
+<p><pre><code class="lisp">; Returns the product of all positive integers less than or equal to n.
+(defun factorial (n)
+  (cond ((&lt;= n 1) 1)
+         ('t (* n (factorial (- n 1))))))
+(factorial 4)
+24</code></pre></p>
+
+<p>After a useful comment a function called <em>factorial</em> (that takes a
+single argument called <em>n</em>) is defined. The function checks if
+<em>n</em> is less than or equal to 1 and if so returns the number 1.
+Otherwise, it returns <em>n</em> multiplied by the result of calling
+<em>factorial</em> (i.e. itself) of <em>n</em> minus 1. Finally, the new
+function is tested with the number 4, producing the result <code>24</code>.<p>
+
+<p>Recursion is when the function returns <em>n</em> multiplied by
+<em>factorial</em> of <em>n</em> minus 1. The value of <em>n</em> keeps
+decreasing and is fed back in to the <em>factorial</em> function until
+<em>n</em> equals 1, at which point the number 1 is returned to complete
+the following chain of arithmetic: 1 &times; 2
+&times; 3 &times; 4</p>
+
+<p>Here's the surprise: given the fundamental functions described above, it is
+possible to write a Lisp in Lisp. When Lisp <em>evaluates</em> an expression,
+a list (the code) is itself an argument to a function that returns the result
+of evaluating the code. In Lisp, this function is called <code>eval</code> and
+it is possible to define such a function using only the features described
+above.</p>
+
+<p>First, some shorthand functions need defining: <code>c<em>x</em>r</code> and
+<code>list</code>. The <code>c<em>x</em>r</code> set of functions replace the
+<em>x</em> with a sequence of <code>a</code>s or <code>d</code>s to indicate
+a corresponding sequence of nested <code>car</code> or <code>cdr</code> calls.
+For example,</p>
+
+<p><pre><code>(cadr a)</code></pre></p>
+
+<p>is shorthand for:</p>
+
+<p><pre><code>(car (cdr a))</code></pre></p>
+
+returning the second element of <em>a</em>.</p>
+
+<p>The <code>list</code> function returns a list containing a given sequence
+of expressions:</p>
+
+<p><pre><code>(list 'a 'b 'c)</code></pre></p>
+
+<p>is equivalent to:</p>
+
+<p><pre><code>(cons 'a (cons 'b (cons 'c '())))</code></pre></p>
+
+<p>which returns the list: <code>(a b c)</code>. In many Lisp implementations
+the <code>list</code> function is abbreviated to <code>`</code> (backquote).
+Remember this, we'll use it later!</p>
+
+<p>Next, we define some useful <em>helper</em> functions:</p>
+
+<p><pre><code class="lisp">; tests if the argument is an empty list.
+(defun null? (x)
+  (eq x '()))
+
+; returns t if both arguments also return t - otherwise returns nil.
+(defun and. (x y)
+  (cond (x (cond (y 't) ('t nil)))
+        ('t nil)))
+
+; returns t if the argument returns nil, or nil if its argument returns t.
+(defun not. (x)
+  (cond (x nil)
+       ('t 't)))
+
+; concatenates two lists.
+(defun append. (x y)
+  (cond ((null? x) y)
+        ('t (cons (car x) (append. (cdr x) y)))))
+
+; pairs up the elements of two lists of the same length.
+; e.g. (pair. '(x y z) '(a b c)) -&gt; ((x a) (y b) (z c))
+(defun pair. (x y)
+  (cond ((and. (null? x) (null? y)) '())
+        ((and. (not. (atom x)) (not. (atom y)))
+         (cons (list (car x) (car y))
+               (pair. (cdr x) (cdr y))))))
+
+; takes an atom x and list of pairs y and returns the
+; second element of the first list in y whose first
+; element is x.
+; e.g. (assoc. 'x '((x a) (y b))) -&gt; a
+(defun assoc. (x y)
+  (cond ((eq (caar y) x) (cadar y))
+        ('t (assoc. x (cdr y)))))
+</code></pre></p>
+
+<p>Notice how the final two functions use recursion as the mechanism for
+looping over lists.</p>
+
+<p>Here's the <code>eval</code> function:</p>
+
+<p><pre><code class="lisp">; Lisp's eval function written in Lisp.
+; Takes Lisp source code as a list, e, and a context of arguments,
+; a, and returns the result of evaluating e in context a.
+(defun eval. (e a)
+  (cond
+    ((atom e) (assoc. e a))
+    ((atom (car e))
+      (cond
+        ((eq (car e) 'quote) (cadr e))
+        ((eq (car e) 'atom) (atom (eval. (cadr e) a)))
+        ((eq (car e) 'eq) (eq (eval. (cadr e) a)
+                              (eval. (caddr e) a)))
+        ((eq (car e) 'car) (car (eval. (cadr e) a)))
+        ((eq (car e) 'cdr) (cdr (eval. (cadr e) a)))
+        ((eq (car e) 'cons) (cons (eval. (cadr e) a)
+                                  (eval. (caddr e) a)))
+        ((eq (car e) 'cond) (evcon. (cdr e) a))
+        ('t (eval. (cons (assoc. (car e) a)
+                         (cdr e))
+                    a))))
+    ((eq (caar e) 'label)
+      (eval. (cons (caddar e) (cdr e))
+             (cons (list (cadar e) (car e)) a)))
+    ((eq (caar e) 'lambda)
+      (eval. (caddar e)
+             (append. (pair. (cadar e) (evlis. (cdr e) a))
+                       a)))))
+
+; A recursive function to evaluate a conditional.
+(defun evcon. (c a)
+  (cond ((eval. (caar c) a)
+         (eval. (cadar c) a))
+        ('t (evcon. (cdr c) a))))
+
+; A recursive function to evaluate a list.
+(defun evlis. (m A)
+  (cond ((null? m) '())
+        ('t (cons (eval. (car m) a)
+                  (evlis. (cdr m) a)))))
+</code></pre></p>
+
+<p>The <code>eval</code> function takes two arguments: <em>e</em> (the
+expression to be evaluated) and <em>a</em> (a list of pairs representing the
+named parameters passed in as arguments). It evaluates <em>e</em> in the
+context of <em>a</em>. The function body is relatively simple: a conditional
+containing four clauses for handling atoms, the fundamental functions,
+<code>cond</code> statements and the <code>lambda</code> function. The clause
+for the fundamental functions is itself a conditional containing sub-clauses
+for each fundamental function. The last two clauses call out to the recursive
+<code>evcon</code> and <code>evlis</code> functions that evaluate conditionals
+and lists respectively.</p>
+
+<p>Notice how <code>eval</code> treats the incoming Lisp source code as a list
+to be manipulated like any other data structure. When a language's code is also
+<em>merely</em> data (as it is for the <code>eval</code> function above), it is
+called <a href="https://en.wikipedia.org/wiki/Homoiconicity">homoiconic</a>.
+This introduces the potential for yet another mind bending capability: it
+is possible to change Lisp from within Lisp since all code is written as lists
+and Lisp is a <em>LIS</em>t <em>P</em>rocessor. Therefore, Lisp is able to
+transform and change its own source code in order to add unforeseen
+features.</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Common_Lisp#Macros">macro</a> is
+what makes this possible. Macros look a lot like functions but are different in
+two ways:</p>
+
+<ul>
+    <li>Macros generate Lisp code.</li>
+    <li>They are evaluated during <em>macro expansion time</em> - before
+    "regular" code is evaluated.</li>
+</ul>
+
+<p>For example:</p>
+
+<p><pre><code class="lisp">; A simple macro that generates code to square things
+(defmacro square (x)
+  `(* ,x ,x))
+</code></pre></p>
+
+<p>The <code>`</code> is shorthand for the <code>list</code>
+function. The <code>,</code> (comma) unquotes an expression (in this case the
+argument <em>x</em>). Therefore, the following use of the <code>square</code>
+macro:</p>
+
+<p><pre><code class="lisp">(square 3)</code></pre></p>
+
+<p>results in this generated code,</p>
+
+<p><pre><code class="lisp">(* 3 3)</code></pre></p>
+
+<p>that Lisp evaluates to produce a useful result.</p>
+
+<p><img src="/static/images/lisp_cycles.png" alt="Lisp cycles"/></p>
+
+<p>Recursion, <code>eval</code> and macros are just three fascinating aspects
+of Lisp. Happily, there are many <a href="http://www.alu.org/alu/res-lisp">great</a>
+<a href="http://cliki.net/Lisp%20books">resources</a> about Lisp (including
+<a href="http://blog.fogus.me/2012/07/25/some-lisp-books-and-then-some/">classic texts</a>
+in computing) if you want to find out more. If you want to learn online, why
+not try
+<a href="http://www.lisperati.com/casting.html">casting SPELs in Lisp</a> or
+the <a href="http://vivid.chengyichao.info/">Vivid Schemer</a>..?</p>
+
+<p id="1"><small><strong>1</strong> This section is based upon
+<a href="http://www.paulgraham.com/">Paul Graham</a>'s article,
+<a href="http://www.paulgraham.com/rootsoflisp.html">The Roots of Lisp</a>
+that is itself derived from
+<a href="http://www-formal.stanford.edu/jmc/index.html">John McCarthy</a>'s
+original 1960 paper on Lisp,
+<a href="http://www-formal.stanford.edu/jmc/recursive.html">Recursive
+Functions of Symbolic Expressions and their Computation by Machine</a>.
+<a href="#ref1">&#8682; Return to article</a>.</small></p>
+
+<p><small>1498 words (not including code examples or footnotes).
+Image credits: The public
+domain <a href="http://www.lisperati.com/logo.html">Lisp Alien</a> logo was
+created by <a href="http://lisperati.com/">Conrad Barski, M.D.</a>.
+<a href="http://xkcd.com/297/">Lisp Cycles</a> and
+<a href="http://xkcd.com/224/">Lisp Enlightenment</a> cartoons &copy;
+<a href="http://xkcd.com/">Randall Munroe</a> under a Creative Commons
+license.</small></p>

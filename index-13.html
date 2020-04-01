@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Everything I say is false...">
+<meta name="viewport" content="width=device-width">
+<title>ntoll.org (old posts, page 13) | ntoll.org</title>
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://ntoll.org/index-13.html">
+<link rel="prev" href="index-14.html" type="text/html">
+<link rel="next" href="index-12.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href=".">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="presentations">Presentations</a></li>
+                <li><a href="cv">CV</a></li>
+                <li><a href="contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/databases-concise-and-simple/" class="u-url">Data and Databases ~ Concise and Simple</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/databases-concise-and-simple/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-02-14T08:00:00Z" itemprop="datePublished" title="2013-02-14 08:00">2013-02-14 08:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>(As with all "<a href="article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<blockquote>
+"Scientia potentia est." (Knowledge is power.)
+</blockquote>
+
+<p><a href="https://en.wikipedia.org/wiki/Francis_Bacon">Sir Francis Bacon</a>.</p>
+<p>In the digital world knowledge is stored, in its latent form, as data in
+databases. Everyone from your local
+<a href="http://www.tesco.com/clubcard/clubcard/">supermarket</a> to the
+<a href="https://www.gov.uk/">government</a> collects data about <em>all of
+us</em>. Information and knowledge is extracted about all aspects of
+our lives, from our shopping habits to whether we've paid our taxes (it is no
+accident that the examples above relate to extracting money from us). According
+<a href="http://techcrunch.com/2010/08/04/schmidt-data/"> to Google</a> it
+currently takes just two days for us to generate as much information as was
+created by all of humanity from the dawn of time until 2003.</p>
+
+<p>This article is about data and databases - the technology that makes the
+accumulation and analysis of this flood of information possible. It starts with
+a simple question: what is data?</p>
+
+<p>"Data" are values that convey meaningful information about something.
+Meaning is implied by the context and structure of the data. Structure is
+formed from the way data is represented. Databases simply store and provide
+mechanisms for working with structured data.</p>
+
+<p>The most fundamental data-related act is to name a value:</p>
+
+<p></p>
+<pre><code class="python">my_name = "Nicholas Tollervey"</code></pre>
+
+<p>My name <em>is</em> Nicholas Tollervey. This is shown by
+"<code>my_name</code>" being assigned the value "<em>Nicholas Tollervey</em>".
+Assignment happens when a <em>token name</em> is followed by an <em>equals
+</em> sign that is, in turn, followed by a <em>value</em>. Notice the three
+layers: meaning, structure and representation.</p>
+
+<p>Another example:</p>
+
+<p></p>
+<pre><code class="python">nicholas = {
+    "first_name": "Nicholas",
+    "middle_name": "Harry",
+    "surname": "Tollervey",
+    "birthday": {
+        "year": 1973,
+        "month": 8,
+        "day": 19
+    }
+    "height": 180,
+    "weight": 76.9
+}</code></pre>
+
+<p>After reading the above I'm certain you'll know when to send me a birthday
+card. Something called <code>nicholas</code> has a single value associated with
+it: an
+<a href="https://en.wikipedia.org/wiki/Associative_array">associative
+array</a>. Associative arrays are <em>key / value</em> pairs - like a
+dictionary of words or a subject index at the back of a book. In this case it
+has six entries, one of which is itself a nested associative array with three
+entries. It's an associative array because it is enclosed by
+curly braces and contains a list of <code>"key_name": value</code> pairs
+separated by commas. The associative array is assigned to <code>nicholas</code>
+in exactly the same way as the first example (<em>token name</em> followed by
+<em>equals</em> followed by <em>value</em>).</p>
+
+<p>Incidentally, I can retrieve my data like this:</p>
+
+<p></p>
+<pre><code>&gt;&gt;&gt; my_name
+"Nicholas Tollervey"
+&gt;&gt;&gt; nicholas["height"]
+180</code></pre>
+
+<p>(This example uses the <a href="http://python.org/">Python</a>
+programming language: I type in commands after the <code>&gt;&gt;&gt;</code>
+prompt and the Python interpreter replies on the new line.)</p>
+
+<p>A final example:</p>
+
+<table>
+<caption>People</caption>
+    <tr>
+<th>id</th>
+        <th>first_name</th>
+        <th>middle_name</th>
+        <th>surname</th>
+        <th>nationality_id</th>
+    </tr>
+<tr>
+<td>1</td>
+        <td>Nicholas</td>
+        <td>Harry</td>
+        <td>Tollervey</td>
+        <td>2</td>
+    </tr>
+<tr>
+<td>2</td>
+        <td>Terry</td>
+        <td>Charles Oliver</td>
+        <td>Jones</td>
+        <td>1</td>
+    </tr>
+<tr>
+<td>3</td>
+        <td>Esteve</td>
+        <td></td>
+        <td>Fernandez</td>
+        <td>3</td>
+    </tr>
+</table>
+<table>
+<caption>Nationalities</caption>
+    <tr>
+<th>id</th>
+        <th>name</th>
+    </tr>
+<tr>
+<td>1</td>
+        <td>Australian</td>
+    </tr>
+<tr>
+<td>2</td>
+        <td>British</td>
+    </tr>
+<tr>
+<td>3</td>
+        <td>Spanish</td>
+    </tr>
+</table>
+<p>Obviously, I'm British and my buddies
+<a href="https://twitter.com/terrycojones">Terry</a> and
+<a href="https://twitter.com/esteve">Esteve</a> are
+Australian and Spanish (respectively). You know this because you understand how
+to read tabular information and spot the relationship between the values in the
+<code>nationality_id</code> column of the <em>People</em> table and the values
+in the <code>id</code> column of the <em>Nationalities</em> table. You know
+it's tabular information because it's a two dimensional grid with the
+vertical columns indicating named fields and horizontal rows representing
+individual records. Once again: meaning, structure, representation.</p>
+
+<p>Each example is more complex than the one preceding it. The first is a
+single key / value pair (where <code>my_name</code> is the key and
+"<em>Nicholas Tollervey</em>" is the value), the second is a key
+(<code>nicholas</code>) associated with a value that is itself key / value
+pairs (the associative array). Finally, the third example contains rows of
+items that all share the same keys (a.k.a. columns) but different values. Each
+type of record (people, nationalities etc) has its own table.</p>
+
+<p>How do such meaningful data structures / representations relate to
+databases?</p>
+
+<p>There are four basic actions that all databases may perform on data:
+<em>create</em>, <em>read</em>, <em>update</em> and <em>delete</em> (often
+expressed as
+<a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>).
+There are many types of database that meet this minimum functionality. The
+three data examples illustrate the types of data structure stored in three of
+the most popular types of database: key / value stores (such as
+<a href="http://redis.io/">Redis</a> or
+<a href="http://www.memcached.org/">Memcached</a>), document oriented databases
+(like <a href="http://www.mongodb.org/">MongoDB</a> or
+<a href="https://couchdb.apache.org/">CouchDB</a>) and relational databases
+(for example, <a href="http://www.postgresql.org/">Postgres</a> or
+<a href="https://www.mysql.com/">MySQL</a>).</p>
+
+<p>Key / value databases are, at heart, associative arrays. They provide three
+basic actions:</p>
+
+<ul>
+<li>Assign a value to a key (both creating and updating).</li>
+    <li>Read a value associated with a known key.</li>
+    <li>Delete a value using a known key.</li>
+</ul>
+<p>Such simple databases are extremely fast and well suited for tasks where
+speed is of the essence. However, there isn't a simple way to search the stored
+values and keys must be known before being used to retrieve or delete
+associated values. Nevertheless, they are extremely useful as caches of
+arbitrary values. If you want to try such a database you should visit the
+<a href="http://try.redis.io/">try redis tutorial</a> tutorial ~ a gentle yet
+comprehensive tour of a popular key / value store.</p>
+
+<p>Document oriented databases store arbitrarily structured documents
+expressed as associative arrays. Every document has a unique ID created by the
+database and used as a key to reference the document.</p>
+
+<p>However, documents are not opaque values as in key / value databases.
+Rather, it is possible to <em>reach in to the documents</em> and construct
+queries that reference the document's named attributes (keys). For example,
+given a <em>people</em> database I could create a query to retrieve all
+documents that have a <em>height</em> attribute with a value greater or equal
+to 180.  Since the structure of the documents is arbitrary, such queries rely
+on conventions (all <em>people</em> documents have a <em>height</em> attribute
+whose value is expressed in centimetres).</p>
+
+<p>Because document structure is not fixed (except by convention), new fields
+can be added at any time and document oriented databases specify default
+handling for missing fields - usually they'll evaluate to <code>null</code>
+(unknown).</p>
+
+<p>To play with a document oriented database, explore the MongoDB
+tutorial on the project's
+<a href="http://www.mongodb.org/">homepage</a>.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Relational_database">Relational
+databases</a> developed from the work of
+<a href="https://en.wikipedia.org/wiki/E.F._Codd">Edgar Codd</a>. They store
+data in rows
+(<a href="https://en.wikipedia.org/wiki/Tuple">tuples</a>) that share the same
+columns
+(<a href="https://en.wikipedia.org/wiki/Attribute_(computing)">attributes</a>)
+defined in tables
+(<a href="https://en.wikipedia.org/wiki/Relation_(database)">relations</a>) -
+bracketed words are the formal terminology for the colloquially named
+concepts. Each row contains a special field called the
+<a href="https://en.wikipedia.org/wiki/Primary_Key">primary key</a> (the
+<code>id</code> column in the example) that uniquely identifies the record.
+Tables, representing different sorts of things, are related to each other with
+special fields called
+<a href="https://en.wikipedia.org/wiki/Foreign_key">foreign keys</a> that
+reference primary keys of rows in different tables (the
+<code>nationality_id</code>). Many relational databases also enforce
+constraints such as
+<a href="https://en.wikipedia.org/wiki/Referential_integrity">referential
+integrity</a> - where foreign keys may not refer to non-existent primary
+keys.</p>
+
+<p>To work efficiently, data in relational databases should be
+<a href="https://en.wikipedia.org/wiki/Database_normalization">normalised</a>
+to avoid duplication. Data need only be stored in one table
+representing a specific type of thing. Therefore, modifications only happen
+once and are propagated via the relationships between tables. For example, the
+<em>nationalities</em> table is the only place where nationalities may be
+defined. Tables for things with nationalities (such as <em>people</em>) need
+only reference the single <em>nationalities</em> table via a foreign key rather
+than duplicate such information. The process of normalisation usually has
+three steps of increasing efficiency:
+<a href="https://en.wikipedia.org/wiki/First_normal_form">first</a>,
+<a href="https://en.wikipedia.org/wiki/Second_normal_form">second</a> and
+<a href="https://en.wikipedia.org/wiki/Third_normal_form">third</a> normal
+forms. Sometimes it is necessary to de-normalise a database for performance
+reasons - it's faster to retrieve a single row than it is to retrieve several
+related rows from different tables.</p>
+
+<p>Structured Query Language
+(<a href="https://en.wikipedia.org/wiki/SQL">SQL</a>) is the programming
+language used by relational databases to work with data. Based upon
+<a href="https://en.wikipedia.org/wiki/Relational_algebra">relational
+algebra</a>, it provides CRUD functionality and capabilities for
+specifying the structure and relationships between data. It's easy to create
+powerful queries:</p>
+
+<p></p>
+<pre><code class="sql">SELECT people.first_name, people.surname, nationalities.name
+FROM people
+JOIN nationalities ON nationalities.id = people.nationality_id
+WHERE people.surname = "Jones"</code></pre>
+
+<p>The result of which is:</p>
+
+<table>
+<tr>
+<th>people.first_name</th>
+        <th>people.surname</th>
+        <th>nationalities.name</th>
+    </tr>
+<tr>
+<td>Terry</td>
+        <td>Jones</td>
+        <td>Australian</td>
+    </tr>
+</table>
+<p>The query asks: give me the first name, surname and nationality (line 1) of
+people whose surname is "Jones" (line 4). We have to specify where to collect
+this data (line 2) and how to join the related tables together (line 3). Notice
+that SQL doesn't specify how to run the query but describes what the expected
+result should be.</p>
+
+<p>Interactions with a database happen as
+<a href="https://en.wikipedia.org/wiki/Database_transaction">transactions</a>.
+Transactions can contain many different commands and should have several
+desirable properties:</p>
+
+<ul>
+<li>
+<em>Atomicity</em> - transactions are an all-or-nothing affair that
+    cannot be abandoned in an incomplete state.</li>
+    <li>
+<em>Consistency</em> - transactions fail if they attempt to
+    put the database in to an invalid state such as breaking referential
+    integrity or some other constraint.</li>
+    <li>
+<em>Isolation</em> - each transaction is independent of and cannot
+    interfere with any of the others.</li>
+    <li>
+<em>Durability</em> - once complete a transaction's effect will
+    remain despite catastrophic events like power failure, crashes or
+    errors.</li>
+</ul>
+<p>A database is
+<a href="https://en.wikipedia.org/wiki/ACID">ACID</a> compliant if its
+transactions meet these standards.</p>
+
+<p>The pace of change in data-based technology is fast. Relatively recent
+trends, such as <a href="https://en.wikipedia.org/wiki/Big_data">big
+data</a> (huge data sets and the technology needed to manage them), deserve
+their own article. Yet, even the technology described above allows
+companies and governments to build frighteningly accurate pictures of our
+lives (how do you think Amazon is able to make such useful suggestions?).</p>
+
+<p>Personally, I find the ubiquitous analysis and measurement of our behaviour
+inadvertently Orwellian. Furthermore, there is a tendency to trust the results
+obtained from databases without recognizing the <em>meaning</em> level of
+data relies on interpretation (of which there are many varieties).
+Nevertheless, there are great opportunities to do good and I am reminded of the
+Buddhist proverb,</p>
+
+<blockquote>
+"To every man is given the key to the gates of heaven; the same key opens the
+gates of hell."
+</blockquote>
+
+<p>I hope we choose the right gate.</p>
+
+<p><small>1499 words (not including code examples).</small></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/programming-concise-and-simple/" class="u-url">Programming ~ Concise and Simple</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/programming-concise-and-simple/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-01-30T08:00:00Z" itemprop="datePublished" title="2013-01-30 08:00">2013-01-30 08:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>(As with all "<a href="article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p>This is a personal reflection on programming: the creation and curation of
+instructions that make computers do things. Instructions (also known as
+"<a href="https://en.wikipedia.org/wiki/Source_code">source code</a>" or just
+"code") are organised into
+<a href="https://en.wikipedia.org/wiki/Computer_program">programs</a> (or
+"<a href="https://en.wikipedia.org/wiki/Software">software</a>") that fulfil
+specific tasks. People who write programs are called
+<a href="https://en.wikipedia.org/wiki/Programmer">programmers</a>,
+developers, software engineers or (colloquially)
+<a href="https://en.wikipedia.org/wiki/Hacker_(term)">hackers</a>.</p>
+
+<p><img src="static/images/code.png" alt="code"></p>
+
+<p>Instructions are expressed in
+<a href="https://en.wikipedia.org/wiki/Programming_language">programming languages</a>
+that make it easier for humans to comprehend what is going on. So-called "high
+level" languages are easier for humans to work with than "low level" languages
+that express things in a way that is closer to how the computer works. In
+all cases programs are transformed from the original programming language into
+the <a href="https://en.wikipedia.org/wiki/Machine_code">binary
+instructions</a> that cause the computer to function in a particular way.
+This transformation can happen in two ways:</p>
+
+<ul>
+<li>The program is "compiled" in to binary instructions by a special
+    program called a
+    <a href="https://en.wikipedia.org/wiki/Compiler">compiler</a>. The result
+    is an "<a href="https://en.wikipedia.org/wiki/Executable">executable</a>"
+    run by the end user.</li>
+    <li>The program is "interpreted" by an <em>executable</em>
+    <a href="https://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a>
+    whose function is to act as a sort of on-the-fly translator of the
+    instructions.</li>
+</ul>
+<p>Both mechanisms have strengths and weaknesses. Because compiled programs
+have already been transformed in to the computer's binary instructions they
+are often much faster than interpreted programs where such
+transformations happen as the program is running. Yet interpreted programs
+offer the flexibility of adapting and changing themselves while they are run by
+the interpreter which makes it easier to solve certain sorts of programming
+problem. Sometimes a combination of these techniques is used:
+A <a href="https://en.wikipedia.org/wiki/Just-in-time_compilation">JIT</a>
+compiler will interpret until certain sets of instructions are
+obviously more frequently used, at which point <em>only the popular sets of
+instructions</em> get compiled "just in time" to make them faster.</p>
+
+<p>Sometimes programs work as expected and produce valuable results. More often
+they do not. The failure to make a computer work usefully is called a
+<a href="https://en.wikipedia.org/wiki/Computer_bug">bug</a>.
+There are generally two sorts of bug: the wrong outcome is correctly
+implemented (the design is wrong) or the expected outcome is wrongly
+implemented (the instructions are wrong). In any case, because computers are
+complex machines, making them do something useful is surprisingly hard.</p>
+
+<p>Managing and taming complexity is one of the core tasks of a programmer. A
+common piece of advice given to junior developers is
+"<a href="https://en.wikipedia.org/wiki/Keep_it_simple_stupid">kiss</a>"
+(keep it simple, stupid!), for there are fewer things that could go wrong. As
+computing pioneer <a href="https://en.wikipedia.org/wiki/Tony_Hoare">Tony
+Hoare</a> explains,</p>
+
+<blockquote>"There are two ways of constructing a software design: One way is
+to make it so simple that there are obviously no deficiencies, and the other
+way is to make it so complicated that there are no obvious deficiencies. The
+first method is far more difficult."</blockquote>
+
+<p>Personally, I think creating simple and useful software is more like
+writing succinct yet powerful prose than opaque logical wizardry. This has
+an important side effect: simple and coherent code is easy to understand. Code
+that is easy to understand is easy to maintain. Maintaining code is the act of
+fixing bugs and curating instructions so things work efficiently (also known
+as <a href="https://en.wikipedia.org/wiki/Code_refactoring">re-factoring</a>).
+In this way a program is easy to improve as bugs are found and new features
+implemented.</p>
+
+<p>Some languages have been created with the explicit aim of making code
+easy to read and understand (such as <a href="http://python.org">Python</a>).
+Some developers promote certain development styles that they claim encourages
+programmers to produce high quality software. A classic example of this is
+<a href="https://en.wikipedia.org/wiki/Test-driven_development">test driven
+development</a> where developers write a failing test encapsulating a feature
+of their program before actually implementing the feature itself to make the
+test eventually pass. Others (such as
+<a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a>)
+promote a
+<a href="https://en.wikipedia.org/wiki/Literate_programming">literate style of
+programming</a> where code is interspersed with natural language explanations
+that tell the "story" of the code.</p>
+
+<p>Another core skill of a programmer is de-constructing and analysing
+problems. Often the problem is expressed in a
+vague and open-ended way and it is the task of the developer to precisely
+constrain the scope of the problem so they create some
+useful outcome. A personal example, from my first programming class, illustrates
+this beautifully: my tutor explained that programs were merely instructions
+and that we had five minutes to provide instructions telling him how to switch
+on the classroom's lights. How hard could it be to write such
+instructions? Take a minute to imagine what <em>you</em> would write (you
+may assume that the person following them knows about directions, actions and
+names of things).</p>
+
+<p>I can still remember my list:</p>
+
+<ul>
+<li>Stand up.</li>
+    <li>Look around until you locate the light switch.</li>
+    <li>Walk in the direction of the switch.</li>
+    <li>Press the switch with your fingers.</li>
+    <li>Retrace your steps.</li>
+    <li>Sit down.</li>
+</ul>
+<p>Of course, I failed miserably. My tutor pointed out that he was already
+stood up, there were desks between him and the light switch and the damn lights
+were already on anyway.</p>
+
+<p>Time and resources are also essential elements of software development:</p>
+
+<p>First, the developer needs to have a feel of how best to organise a
+program. This means analysing their implementation of the
+<a href="https://en.wikipedia.org/wiki/Algorithm">algorithm</a> (the
+instructions at a conceptual level) to ensure that it is both timely and makes
+efficient use of resources like the computer's memory and
+<a href="https://en.wikipedia.org/wiki/Cpu">CPU</a>. Often
+this is expressed using <a href="https://en.wikipedia.org/wiki/Big_O_notation">big-O</a> notation.</p>
+
+<p>Second, programming usually involves a deadline. Customers need to know how
+much time it will take to finish software given a certain number of developers
+and some sort of collaborative development process. I've heard this described
+as "the cat herding problem". Fred Brooks
+<a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month">famously observed</a>
+that adding developers to a struggling project only slows it down further.
+Furthermore, clients change their minds mid-project (in addition to providing
+vague problems like the one mentioned above) and there are always
+<a href="https://en.wikipedia.org/wiki/There_are_known_knowns">unknown
+unknowns</a> that add unforeseen time and effort to the project. If this were
+not enough, how do you coordinate teams of programmers who are all working on
+the same software?  It's like trying to get ten people to co-compose a symphony
+<em>at the same time</em>.</p>
+
+<p>Happily, developers have created methods and tools to help them work
+together. Small autonomous
+"<a href="https://en.wikipedia.org/wiki/Agile_software_development">agile</a>"
+teams are preferred over large managed cohorts of developers.
+<a href="https://en.wikipedia.org/wiki/Issue_tracking_system">Issue tracking
+systems</a> make it easy for clients to request and prioritise features,
+report bugs and give developers a clear audit trail upon which to base
+development decisions. Code is stored in
+<a href="https://en.wikipedia.org/wiki/Revision_control">version control
+systems</a> that allow developers to track each other's changes and
+resolve any conflicts in the software (for example, when two people edit the
+same piece of code). In fact, developers have become so good at this sort of
+thing that others borrow these tools and techniques: lawyers have been known to
+collaborate on complex legal documents with a version control system.</p>
+
+<p>Finally, programming is a political activity: making software
+means defining the laws that dictate how the digital world should be. Often
+this obvious fact is left unacknowledged. However, incumbent interests affected
+by the rise of digital culture (for example, the so-called "creative"
+industries represented by organisations such as the
+<a href="https://en.wikipedia.org/wiki/RIAA">RIAA</a>,
+<a href="https://en.wikipedia.org/wiki/MPAA">MPAA</a> and their ilk)
+have attempted, with some success, to change the law to limit the use of file
+sharing software used to distribute pirated content.</p>
+
+<p>Yet, programmers have turned the law to their advantage.
+<a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>,
+founder of the <a href="http://fsf.org/">Free Software Foundation</a> (FSF),
+became disillusioned with locked down dis-empowering software so set out
+<a href="https://www.gnu.org/philosophy/free-sw">four essential
+freedoms</a>:</p>
+
+<ul>
+<li>The freedom to run the program, for any purpose (freedom 0).</li>
+    <li>The freedom to study how the program works, and change it so it does
+    your computing as you wish (freedom 1). Access to the source code is a
+    precondition for this.</li>
+    <li>The freedom to redistribute copies so you can help your neighbor
+    (freedom 2).</li>
+    <li>The freedom to distribute copies of your modified versions to others
+    (freedom 3). By doing this you can give the whole community a chance to
+    benefit from your changes. Access to the source code is a precondition for
+    this.</li>
+</ul>
+<p>These freedoms are enshrined in the
+<a href="https://www.gnu.org/licenses/gpl">General Public License</a> (GPL) -
+a license that subverts copyright (that seeks to
+<a href="https://en.wikipedia.org/wiki/All_rights_reserved">expand the rights
+of creators</a> at the expense of the rights of others) in to
+<a href="https://en.wikipedia.org/wiki/Copyleft">copy<em>left</em></a> (that
+seeks to <a href="https://en.wikipedia.org/wiki/All_rights_reversed">expand the
+rights</a> of everyone). There is one important exception that limits
+everyone: any modifications to source code covered by the GPL must also be
+freely available under the GPL. While the GPL has been described as
+<a href="http://www.zdnet.com/blog/open-source/the-commie-smear-against-open-source/946">communist</a> and
+<a href="http://www.theregister.co.uk/2001/06/02/ballmer_linux_is_a_cancer/">cancerous</a>
+it is not anti-commerce and (I think intentionally) does not mention any
+political affiliations. Code covered by the GPL can be sold (see sections
+<a href="https://www.gnu.org/licenses/gpl#section10">10</a> and
+<a href="https://www.gnu.org/licenses/gpl#section11">11</a>). It's how the FSF
+first raised money for their cause.</p>
+
+<p>There's a sentiment gaining in popularity:
+<a href="https://www.youtube.com/watch?v=imV3pPIUy1k">program, or be
+programmed</a>. If you would like to learn to program, there are
+<a href="https://www.khanacademy.org/cs/tutorials/programming-basics">plenty</a> of
+<a href="https://www.udacity.com/courses">resources</a> available
+<a href="https://www.coursera.org/category/cs-programming">online</a>.
+
+</p>
+<p><small>1497 words. Image credits: © 2013 the author with
+<a href="http://instacode.linology.info/17689">this service</a>.</small></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/northackton-marbles/" class="u-url">Northackton Magic Marble Machines</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/northackton-marbles/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-01-21T22:45:00Z" itemprop="datePublished" title="2013-01-21 22:45">2013-01-21 22:45</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>This evening I attended another friendly
+<a href="http://northackton.stdin.co.uk/blog/">Northackton</a> meeting (my
+local <a href="https://en.wikipedia.org/wiki/Hackerspace">hackerspace</a>). It
+was great to see so many people turn out for a "build your own marble machine"
+workshop. I took along two of my kids to join in the fun: Penelope
+(11) and Sam (8).</p>
+
+<p>As with the previous
+<a href="article/northackton-useless-machine">useless machine</a> workshop we
+were joined by friend-of-Northackton and maker-extraordinaire
+<a href="https://sites.google.com/site/msraynsford/">Martin Raynsford</a>
+who has set himself the task of providing 365 laser cut items in 365 days. He
+provided us with a nifty
+<a href="http://msraynsford.blogspot.co.uk/2012/12/project-7-marble-machine-1.html">marble machine</a>
+~ a laser cut wooden mechanism that's easy to assemble with just a craft
+knife, wood glue and a screw driver. If you email Martin he'll supply the
+necessary files for you to cut your own mechanism or will sell you the pre-cut
+kits that we were using. Furthermore, his blog is definitely worth a read and
+packed full of all sorts of interesting projects (the
+<a href="http://msraynsford.blogspot.co.uk/2012/08/lizard-spiral.html">Escher Lizards</a>
+particularly caught my eye).</p>
+
+<p>Both Penelope and Sam had a great time to the extent that Penelope was
+trying to work out how she could attend again despite having a string
+orchestra rehearsal on Monday evenings.</p>
+
+<p>Here's Sam demonstrating the contraption we built together:</p>
+
+<p><iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/vsFu_dt73tY?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<p>I love how he's so engrossed in tweaking the spiral and chute (especially at
+the end of the clip). Penelope was also rather distracted by last minute
+adjustments to her solo effort:</p>
+
+<p><iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/t6LKPgWuel4?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<p>Why don't schools make use of such fun, easy-to-build and interesting
+models? It certainly beats the plastic key ring I "made" over six weeks when I
+was at school.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/p2p-concise-and-simple/" class="u-url">Peer to Peer ~ Concise and Simple</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/p2p-concise-and-simple/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-01-14T08:00:00Z" itemprop="datePublished" title="2013-01-14 08:00">2013-01-14 08:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>(As with all "<a href="article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p>What is the <a href="https://en.wikipedia.org/wiki/Aret%C4%93">best way</a>
+to organise diverse entities co-existing together in large dynamic groups? How
+are such arrangements created? Who is responsible for making things work?</p>
+
+<p>These are important questions in
+<a href="https://en.wikipedia.org/wiki/Political_philosophy">political philosophy</a>
+and
+<a href="article/internet-concise-and-simple">Internet</a> engineering and
+show that both subjects, at an abstract level, share much in common.
+From a political perspective the first question can be answered with
+different forms of government, the second by investigating concepts like
+justice, rights and law while the third question concerns the role of power
+and authority. From a technological perspective the first question concerns
+"architecture" (how computational resources fit together), the second is
+answered by process, requirements and design while the third question concerns
+capability, roles, standards and (again) authority.</p>
+
+<p>This post concerns
+<a href="https://en.wikipedia.org/wiki/Peer-to-peer">peer to peer</a>
+(P2P) architecture ~ where peers of
+equal status (devices running appropriate software) cooperate in a loose
+decentralised network for mutual benefit. Peer to peer is the antithesis of
+hierarchy - where some have elevated status and power over others. The image
+below illustrates how this changes the way devices connect and communicate. The
+peer to peer network on the left is simply a collection of devices (in blue)
+with different numbers of connections between them (in grey). The right hand
+image is the classic client (blue) / server (red) hierarchy where many
+clients rely on a single server to fulfil their functionality.</p>
+
+<p><img src="static/images/topology.png" alt="p2p v client/server topology"></p>
+
+<p>Sometimes it is important to have hierarchy: it is best that a consultant
+surgeon is in charge of an operation rather than a well-meaning democracy of
+volunteers. In an ideal world, hierarchy is best when the obvious skill,
+knowledge and capabilities of an entity are acknowledged to bring about
+greater benefit for all. In an ideal world, those with elevated status and
+authority would have earned it via reliable and consistent public displays of
+such skill, knowledge and capabilities. In an ideal world, the responsibility
+and trust associated with status and authority would be a serious yet welcome
+obligation. Unfortunately, we do not live in an ideal world and hierarchy is
+often the cause of much that is bad and frustrating.</p>
+
+<p>Some technologies, such as
+<a href="article/the-web-concise-and-simple">the web</a>,
+are hierarchical and inadvertently introduce leverage points used to
+exploit or gain power over users. The web has a <em>client/server</em>
+architecture where information and the capabilities to change information
+are firmly within the realm of the server (the website). The client, using a
+browser, has to request the server deliver information <em>to them</em> and
+make changes <em>for them</em>. Unfortunately, user's data is often stored and
+delivered in a way that makes it hard to migrate between services. Personal
+data is analyzed by websites and sold via targeted advertising or (worse)
+handed to governments and other third parties without explicit consent.
+Disruption ensues when websites break: there's no way to get important
+documents if the server is down. The client/server model is centralisation of
+power and websites are single points of failure.</p>
+
+<p>Contrast the web with peer to peer architecture where the loose and
+decentralised organisation of computing resources make it <em>very hard for
+third parties to control</em> users. This simple idea can be illustrated
+by two popular yet different peer to peer systems:
+<a href="http://www.bittorrent.com/">Bittorrent</a> (for sharing
+large digital assets such as audio and video files) and
+<a href="http://bitcoin.org/">Bitcoin</a> (a decentralised digital
+currency).</p>
+
+<p>For Bittorrent, Bitcoin and many other peer to peer systems the three
+questions I asked at the start can be answered thus:</p>
+
+<ol>
+<li>The most effective way to organise a diverse and dynamic group of
+    participants is with peer to peer architecture (this can be for both
+    technical and political reasons).</li>
+    <li>The means of creating such a network is via an open protocol describing
+    the expected behaviour of participants (including checks to ensure
+    correctness).</li>
+    <li>It is the participant's responsibility that they correctly implement
+    the protocol in order to make the system function correctly.</li>
+</ol>
+<p>Bittorrent is an incredibly efficient way to share large files <em>because
+of</em> its peer to peer architecture. Imagine that you wanted me to copy
+a paper edition of
+<a href="https://en.wikipedia.org/wiki/War_and_Peace">War and Peace</a>.
+I'd probably photocopy and give you every page in order. It's how
+large files are usually downloaded: linearly from server to client.
+Unfortunately, if I were busy or, worse still, had lost my
+original you wouldn't get a copy. Bittorrent works differently: it's better if
+I told you who else had a copy so you could ask them to provide <em>different
+pieces</em> of the original that you then collated. This is faster because your
+peers share the work concurrently. Furthermore, if one of the peers failed to
+deliver their piece you'd notice it was missing and request it from another.
+Therefore, there is no single point of failure. Finally, if someone else wanted
+a copy then <em>you</em> could provide pieces even if you'd not yet received
+the complete work. As a result peers <em>give as well as take</em> value from
+the network.</p>
+
+<p>In reality, users download a "torrent" file containing details of the
+resource they're interested in and who to ask for it. They become a node on the
+bittorrent network and request pieces from the identified peers. As
+clients download and re-assemble the pieces of the file, others on the network
+request pieces in turn. Thus, it takes a relatively short time
+for large files to be delivered. Furthermore, popular files spread around the
+network and become easier to deliver since there are more peers to provide
+pieces.</p>
+
+<p> Some websites (most famously the
+<a href="http://thepiratebay.se/">PirateBay</a>) collect torrent files and
+provide search facilities. Other sites, called "trackers", monitor which peers
+have what files - although more recent versions of bittorrent
+allow peers to do this themselves. The video below, made by the
+creators of bittorrent, provides a good summary:</p>
+
+<p><iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/NYTvTPrgSiM?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<p>The superior performance,
+<a href="http://www.ipoque.com/sites/default/files/mediafiles/documents/internet-study-2008-2009.pdf">huge</a>
+<a href="http://www.bittorrent.com/intl/es/company/about/ces_2012_150m_users">number</a> of
+<a href="http://www.fastcompany.com/1714001/bittorrent-has-more-users-netflix-and-hulu-combined-and-doubled">users</a>
+and uncontrollable availability of pirated content
+has led the incumbent "creative" industry to disrupt illegal sharing
+through legal, economic and political means (for example, the PirateBay is
+censored within the UK). This is
+<a href="http://tpb.piraten.lu/">easier said than done</a> and in no way
+changes the effectiveness of the Bittorrent network itself. Users quickly find
+<a href="http://www.ichi.co.uk/post/22269260925/bypassing-the-uk-pirate-bay-blocks-via-proxies-mirrors">other means</a> of finding torrent files.</p>
+
+<p>Bittorrent uses a peer to peer architecture because it is the best technical
+solution. The legal, economic and political fallout emerged later. In contrast,
+Bitcoin had political and economic motivations from the start and peer to peer
+enables such ends.</p>
+
+<p>Bitcoin is a decentralised digital currency based upon an
+<a href="https://en.bitcoin.it/wiki/Protocol_specification">open protocol</a>.
+Unlike regular currency, controlled by banks and governments, Bitcoin is
+designed to have <em>no central issuing authority and instead relies on the
+machinations of the protocol to regulate balances, transactions and the issuing
+of currency</em>. Like cash, transactions can be anonymous. Bitcoins can be
+subdivided into 100-million smaller units called "satoshis" and, at the time of
+writing, one bitcoin is worth just over
+<a href="http://bitcoincharts.com/charts/mtgoxGBP">£8.82</a>.</p>
+
+<p>Transactions reference Bitcoin addresses created by the potential recipient.
+A Bitcoin user can have many Bitcoin addresses and may even decide to use one
+address per transaction. They simply identify the recipient:</p>
+
+<p></p>
+<pre><code>1HcrwtLrbe97aRBD5KCn5izumXp8N7nXcS</code></pre>
+
+<p>Sometimes they are displayed as QR-codes to be scanned by mobile
+phones: </p>
+
+<p><img src="static/images/bitcoin-address.png" alt="A bitcoin address"></p>
+
+<p>Assuming a positive balance you can transfer bitcoins to me using the
+Bitcoin address above (you can't have a negative Bitcoin balance). Your
+Bitcoin software publishes and
+<a href="article/public-key-crypto-concise-and-simple">cryptographically
+signs</a> the details of the transaction and peers check and verify the
+details before adding it to a set of recent transactions called a "block".
+Blocks are distributed around the network so balances and transfers
+are tracked to avoid double spending. The protocol is designed so attackers
+would need impossibly large amounts of time and computing power in order
+to subvert the chain of blocks tracking transactions.</p>
+
+<p>New Bitcoins are "discovered" by peers on the network as a reward for
+solving the computationally hard problem that is part of the process for
+creating new transaction blocks. The difficulty of the problem is adjusted by
+the protocol to ensure that bitcoins are issued at a consistent rate. This
+process is called "mining" and the supply of bitcoins will never exceed 21
+million. When this limit is reached miner's efforts will be rewarded with a
+small transaction fee. The video below explains Bitcoin from an end user's
+perspective:</p>
+
+<p><iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/Um63OQz3bjo?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<p>Bitcoin is complex and many details have been hidden in my explanation.
+However, it is an open and audited technology and hundreds of thousands of
+people trust it enough to use it every day.</p>
+
+<p>Concerns have been raised about tax-avoidance, anonymous payment for illegal
+goods and fraud via the use of Bitcoin but this also applies to traditional
+currencies. Ultimately, the peer to peer nature of Bitcoin is the mechanism for
+liberating users from the interference of banks and governments. It remains to
+be seen if Bitcoin will become popular and disrupt the financial system in the
+same way that Bittorrent has done with content delivery.</p>
+
+<p>Peer to peer systems challenge the status-quo with a decentralising power
+shift. Furthermore, creating such technology is far easier and more effective
+than traditional means of political change.</p>
+
+<p><a href="https://www.youtube.com/watch?v=NV51gU00oqc">The times, they are
+a-changin'</a>.</p>
+
+<p>:-)</p>
+
+<p><small>1499 words. Image credits: © 2013 the author.</small></p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/the-web-concise-and-simple/" class="u-url">The World Wide Web ~ Concise and Simple</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/the-web-concise-and-simple/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-12-21T20:30:00Z" itemprop="datePublished" title="2012-12-21 20:30">2012-12-21 20:30</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>(As with all "<a href="article/concise-and-simple">concise and simple</a>"
+articles I assume no prior knowledge of the subject and keep the length to
+less than 1500 words.)</p>
+
+<p>The World Wide Web (or just "the web") is a global hypertext
+system invented by <a href="http://www.w3.org/People/Berners-Lee/">Sir Tim
+Berners-Lee</a> in 1989. The web is <strong>not</strong>
+<a href="article/internet-concise-and-simple">the Internet</a>. Rather, it
+is an application that sends messages via the Internet. You're using it
+now!</p>
+
+<p><img src="static/images/internet.png" alt="A map of the Internet"></p>
+
+<p>Hypertext is <em>the</em> core concept of the web: pages
+containing text and other media reference each other via so-called
+hyperlinks. In this way, pages connect to form a nebulous web of
+relationships. Hypertext was coined in the 1960s by
+<a href="http://ted.hyperland.com/">Ted Nelson</a> although the basic concept
+dates back to
+<a href="https://en.wikipedia.org/wiki/Vannevar_Bush">Vannevar Bush's</a> 1945
+article,
+<a href="http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/?single_page=true">As We May Think</a>
+where he describes an intriguing device called the
+<a href="https://en.wikipedia.org/wiki/Memex">Memex</a>
+(MEMory indEX). Various pre-web hypertext systems were developed in the 1960s,
+70s and 80s, but it was only until the early 1990s that Berners-Lee's version
+of hypertext became popular.</p>
+
+<p>The web is made with these concepts:</p>
+
+<ul>
+<li>
+<a href="https://en.wikipedia.org/wiki/Web_page">Page</a> - a document
+    on the web. Web pages can contain text, images, sound, video and forms
+    (to facilitate limited interactivity).</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/Hyperlink">Hyperlink</a> -
+    something in a page that, when activated, takes the user
+    to another page on the web. Often abbreviated to "link".</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/Url">URL</a> - a uniform
+    resource location identifies a page or other resource on the web.</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/Web_browser">Browser</a> -
+    software on the user's computer that downloads web pages, displays them
+    and handles user interactions (such as filling in a form or clicking a
+    link).</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/Server_(computing)">Server</a> -
+    a device on the Internet that runs software to deliver web pages and other
+    resources to browsers.</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/HTTP">HTTP</a> - HyperText
+    Transfer Protocol describes how browsers and servers interact.</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/HTML">HTML</a> - HyperText
+    Markup Language defines the structure of web pages identifying such things
+    as paragraphs, links and headings.</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a>
+    - Cascading Style Sheets describe how a page should look by defining
+    layout, colour scheme, typesetting and other presentation information.</li>
+
+    <li>
+<a href="https://en.wikipedia.org/wiki/Javascript">Javascript</a> -
+    a ubiquitous programming language for browsers. It defines the behaviour
+    of a page beyond the basics of clicking links or submitting forms.</li>
+</ul>
+<p>In the early days of the web HTML was the only way to create pages (CSS
+and Javascript were later developments). The essence of HTML has not changed
+over the years:</p>
+
+<p>HTML is written as a series of <em>elements</em>. Elements are defined with
+named <em>tags</em> between less-than (&lt;) and greater-than
+(&gt;) symbols. The scope of an element is defined by an opening and
+closing tag. For example, a heading is defined by the
+<code>h1</code> element:</p>
+
+<p></p>
+<pre><code class="html">&lt;h1&gt;Hello&lt;/h1&gt;</code></pre>
+
+<p>The closing tag is just like the opening one apart from the prepended
+back-slash (/). The tags are a balanced pair: the scope
+of the heading element is defined as the text "Hello" and displayed as:</p>
+
+<h1>Hello</h1>
+
+<p>Elements can contain other elements but are not allowed to overlap:</p>
+
+<p></p>
+<pre><code class="html">&lt;p&gt;this is &lt;strong&gt;valid&lt;/strong&gt;&lt;/p&gt;</code></pre>
+
+<p>but,</p>
+
+<p></p>
+<pre><code class="html">&lt;p&gt;this is &lt;strong&gt;not&lt;/p&gt;&lt;/strong&gt;</code></pre>
+
+<p>HTML has a certain structure: two elements, <code>head</code> and
+<code>body</code>, are contained within an <code>html</code> element.
+Information about the document is expressed by elements within the
+<code>head</code> tags. Elements within the <code>body</code>
+tags define the structure of the page. For example:</p>
+
+<p></p>
+<pre><code class="html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Web Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/static/css/styles.css"/&gt;
+    &lt;meta name="author" content="Nicholas H.Tollervey"/&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    &lt;p&gt;This is some text enclosed within a paragraph tag.
+    I can link to &lt;a href="http://ntoll.org/"&gt;other docs&lt;/a&gt;
+    using an anchor tag.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>HTML is currently at version five (HTML5). Actually, HTML5 is
+a collection of standards. Some add capabilities for embedding media while
+others add new tags. HTML5 colloquially refers to specifications for new
+browser behaviour too, such as local data storage.</p>
+
+<p>Browsers were originally simple and merely text based applications, as
+shown in the screenshot below. Despite these shortcomings the structure of the
+page is very clear and easy to read (hyperlinks are green).</p>
+
+<p><img src="static/images/lynx.png" alt="Old skool web"></p>
+
+<p>The web "happens" in two places: the client's browser and the website's
+server.</p>
+
+<p>Clicking a link or typing in a URL makes your browser send a request
+over the Internet using HTTP (as
+<a href="article/internet-concise-and-simple">described here</a>).
+The server identified within the URL responds with HTML for the web page, CSS
+describing how to display it and any Javascript needed for the page to function
+correctly.</p>
+
+<p>Before rendering the page to the screen the browser transforms the HTML
+in to the
+<a href="https://en.wikipedia.org/wiki/Document_Object_Model">document object
+model</a> (DOM). The DOM is a data structure used to match HTML elements
+with CSS rules. Furthermore, snippets of Javascript run at certain points
+in the page's existence and manipulate the DOM as events occur (such
+as when the page finishes loading, a button is clicked or a form is
+submitted).</p>
+
+<p>As you interact with the browser it repeats this process to fetch new pages
+from the websites you visit. Sometimes your browser <em>posts</em> information
+back to a website (when you fill in a form). The website responds
+with a page that reflects the information you submitted.</p>
+
+<p>This happens within the realm of your "client" computer. However, an
+equally interesting story happens on the server.</p>
+
+<p>In the simplest case web pages are static so the server responds with
+pre-existing content. However, many websites are dynamic and allow you to
+change them on-the-fly. For example, as you browse a shopping website you may
+click buttons that add items to a virtual shopping basket. If you visit the
+web page that represents your basket you expect it to be up-to-date and list
+the correct number of items.</p>
+
+<p>For this to happen several things must be in place.</p>
+
+<p><em>The server should know who you are</em>. You are authenticated in
+some way, usually with a username and secret password, and authorised to
+interact with certain pages. For example, only you should be able to view and
+change your settings. Furthermore, the server must not confuse you with other
+users, so your interaction with the website is associated with a unique
+<a href="https://en.wikipedia.org/wiki/Session_(computer_science)">session</a>
+linked to your identity so the server can track who is making requests.</p>
+
+<p><em>The server should keep track of state</em>. When you add an item to a
+shopping cart this should be reflected in the way the website behaves. Such
+state is stored in a
+<a href="https://en.wikipedia.org/wiki/Database">database</a> "backend".</p>
+
+<p><em>The HTML should reflect the state stored in the database</em>. This is
+achieved with
+<a href="https://en.wikipedia.org/wiki/Template_processor">templates</a>:
+snippets of HTML combined with data specific to the client.
+Rendering templates to HTML is "frontend".
+The following snippet is for a simple shopping basket (anything enclosed
+within <code>{% raw %}{% %}{% endraw %}</code> is replaced):</p>
+
+<p></p>
+<pre><code class="html">{% raw %}&lt;h1&gt;Hi, {% user.username %}!&lt;/h1&gt;
+&lt;p&gt;Your shopping cart contains:&lt;/p&gt;
+&lt;ul&gt;
+{% for item in user.cart %}
+  &lt;li&gt;{{item.name}} - {{item.description}}&lt;/li&gt;
+{% endfor %}{% endraw %}
+&lt;/ul&gt;
+</code></pre>
+
+<p><em>The server should be reliable</em>. Between the front and back ends
+is a <em>logic</em> layer checking requests, interacting
+with the database and ensuring the correct HTML is served. This needs to work
+correctly (imagine if, when clicking a "buy this item" button, a
+website added two items rather than one).</p>
+
+<p><em>The server should perform well</em>. A website should quickly
+handle a great many requests at once. Two common ways to achieve good
+performance are
+<a href="https://en.wikipedia.org/wiki/Cache_(computing)">caching</a> (store
+and re-use things that take time to compute but don't change that much over
+time) and
+<a href="https://en.wikipedia.org/wiki/Load_balancing_(computing)">load
+balancing</a> (route incoming calls to a pool of servers so the
+workload is shared). Popular websites consist of many servers
+handling specific tasks (such as the database, rendering templates or
+the logic) hidden behind layers of load balancers and caches.</p>
+
+<p>If this sounds complicated, that's because it is. However, the description
+given above is a simplification of the amazing engineering that takes place
+to display a web page on your screen.</p>
+
+<p>However, all is not well.</p>
+
+<p>Browsers implement web-standards in different ways:
+<a href="https://en.wikipedia.org/wiki/Internet_Explorer">Internet Explorer</a>
+is famous for getting things wrong. HTML and CSS are more complex
+with each revision - gone are the days of a beautifully simple hypertext
+system. Competing technical standards are promoted for commercial rather than
+engineering reasons and some are so complex they're practically useless. Alas,
+Javascript is <a href="https://www.destroyallsoftware.com/talks/wat">hopelessly
+unintuitive</a> and provides developers with plenty of rope with which to hang
+themselves.</p>
+
+<p>Finally, there are political problems.</p>
+
+<p>You can't publish on the web unless you know how to
+set up a website or you use a third party service such as a social
+network. Social networks are hugely popular but turn the
+web into a handful of walled gardens - the antithesis of the decentralised
+early web. Furthermore, such websites track and analyse user
+behaviour and sell it (via advertising). They also provide services for
+storing user's digital assets (in order to harvest yet more data to
+sell). As has been
+<a href="http://www.wired.com/opinion/2012/11/feudal-security/">pointed out
+before</a>, this is deeply worrying.</p>
+
+<p>Ultimately, it is a question of who controls the infrastructure.
+Many users are happy to sacrifice privacy and control for ease of use and
+convenience. Yet I wonder how many realise that they are tracked and
+influenced by only a handful of very powerful technology companies.</p>
+
+<p><img src="http://imgs.xkcd.com/comics/infrastructures.png" alt="Infrastructure"></p>
+
+<p>What of the future? I like to think that
+<a href="https://en.wikipedia.org/wiki/William_Gibson">William Gibson</a> was
+right when, in 1996
+<a href="http://www.nytimes.com/1996/07/14/magazine/the-net-is-a-waste-of-time.html?pagewanted=all&amp;src=pm">he said</a>,</p>
+
+<blockquote>[T]he World Wide Web [is] the test pattern for whatever will become the dominant global medium.</blockquote>
+
+<p>(Who knows what will happen next?)</p>
+
+<small>1486 words. Image credit: © 2005
+<a href="http://www.opte.org/">opte.org</a> under a Creative Commons
+license. Image of Lynx browser © 2012 by the author. "Infrastructure"
+cartoon © <a href="http://xkcd.com/743/">Randall Munroe</a> under a
+Creative Commons license.</small>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-14.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-12.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

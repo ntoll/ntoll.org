@@ -1,0 +1,1626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ntoll.org</title><link>https://ntoll.org/</link><description>Everything I say is false...</description><atom:link href="https://ntoll.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:ntoll@ntoll.org"&gt;Nicholas H.Tollervey&lt;/a&gt; 
+&lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 01 Apr 2020 12:48:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sponsorship</title><link>https://ntoll.org/article/sponsorship/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;The majority of the code I write is given away for free for the benefit of
+others. This is unsustainable so I often think about how such voluntary work
+could be supported. One solution is related to my
+&lt;a href="http://codegrades.com/"&gt;CodeGrades&lt;/a&gt; idea. But this is a slow
+burn project that has involved, and continues to demand, a huge amount of
+time, effort and money before I'll have anything to show for it.&lt;/p&gt;
+
+&lt;p&gt;Another solution is simply to ask folks for money.&lt;/p&gt;
+
+&lt;p&gt;Having been a musician, I'm used to this feeling. I used to busk with some
+buddies as a way of trying to make ends meet. However, as my grandmother once
+pointed out, it's a form of begging. In one sense, this is a tragedy: begging
+is a last resort because nothing else you do is of value. You're forced to
+rely on the compassion and generosity of others. Yet in another sense it's like
+the activity of a mendicant asking for alms for their service or contributions
+to society. In any case, no matter how you "spin" it, it's a precarious
+situation to find oneself in ~ be you a musician or free software developer
+(and I'm both!).&lt;/p&gt;
+
+&lt;p&gt;While there are some kind hearted individuals and (even rarer) companies or
+organisations who are happy to help support such work, most think, "meh, I'll
+just use the software" (without so much as a thank you). Even worse (and I have
+personal experience of this) some folks will pass off such voluntary work as
+their own and reap the rewards for such a lie. This is why I actually earn
+money-to-live by writing software as a freelance developer (it gives me the
+flexibility I need to work on my own coding projects).&lt;/p&gt;
+
+&lt;p&gt;Therefore, it was with some interest that I noticed GitHub had created what
+they describe as account sponsorship. "Sponsorship" is an interesting word
+to use because it makes the begging / mendicant aspect of the situation more
+palatable. It also cheerfully suggests that the free/open-source software world
+is full of generous hearted folks or organisations just waiting to give back to
+the selfless volunteers who make all this code available via their GitHub
+account.&lt;/p&gt;
+
+&lt;p&gt;This is, of course, a fiction. It's also normalising begging as a solution
+to funding free software volunteers.&lt;/p&gt;
+
+&lt;p&gt;But I'm open minded and willing to give anything a go, especially if it
+means it'll cover my costs. So I've signed up and now &lt;em&gt;you&lt;/em&gt; can give me
+money for my efforts. As of the time of writing, and after tweeting about this
+to my 3,000+ followers, this is what my account looks like:&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://ntoll.org/static/images/github_sponsors.png" style="border: 1px solid #ccc;"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I can't help but think that in six months time, it'll still look the same.
+But at least I can say I gave it a go. Despite my misgivings, I feel it
+important to give ideas a chance to flower and I'm trying very hard (yet
+failing) to view this as a mendicant rather than beggar.&lt;/p&gt;
+
+&lt;p&gt;So, if you've ever found my work or activities useful, beneficial or
+supportive, please consider helping me sustain my efforts. You can do so by
+visiting my "&lt;a href="https://github.com/sponsors/ntoll"&gt;sponsorship&lt;/a&gt;"
+page to find out more about what I do and how to give "alms". The summary is
+that I focus on education: I develop software that helps folks learn the
+skills and knowledge they need to imagine, develop and program the stuff they
+want. If you believe this is important work, sponsor me with a monthly
+contribution.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, and many thanks to the small number of you who have already
+done this, you can send me a virtual hug-as-a-book by buying me
+something from my &lt;a href="https://www.amazon.co.uk/hz/wishlist/ls/3B63FUSVDIJJS"&gt;Amazon wish list&lt;/a&gt;
+(none of the items are particularly expensive). Small gestures, such as gifting
+books or music with a supportive message, can actually mean a lot.&lt;/p&gt;
+
+&lt;p&gt;I'll report back in a few months to let you know how I get on. I have to
+admit, I don't hold out much hope. Best knuckle down on CodeGrades.&lt;/p&gt;
+
+&lt;p&gt;Well... what are you waiting for..? Go on... get your wallets out. :-)&lt;/p&gt;
+
+&lt;p&gt;(Honestly, I quite understand if you don't. I have the same misgivings
+you're probably having after reading the sentence above. Such a feeling is the
+nub of what I want to demonstrate in this blog post.)&lt;/p&gt;</description><guid>https://ntoll.org/article/sponsorship/</guid><pubDate>Thu, 23 Jan 2020 08:30:00 GMT</pubDate></item><item><title>CircuitPython 2020</title><link>https://ntoll.org/article/circuitpython-2020/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;
+&lt;img src="https://ntoll.org/static/images/blinka-computer.png"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;My buddy &lt;a href="http://tannewt.org/"&gt;Scott&lt;/a&gt;, one of the wonderful
+people at &lt;a href="https://adafruit.com/"&gt;Adafruit&lt;/a&gt;, recently asked folks
+in the wider CircuitPython community to
+&lt;a href="https://blog.adafruit.com/2020/01/01/what-do-you-want-from-circuitpython-in-2020-circuitpython2020-circuitpython/"&gt;share their thoughts&lt;/a&gt;
+about what they'd like to see for the project and community during 2020. This
+is my contribution to the conversation.&lt;/p&gt;
+
+&lt;p&gt;There are three aspects to my hopes for CircuitPython in 2020:&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Things I hope will continue,&lt;/li&gt;
+    &lt;li&gt;Developments I hope to happen,&lt;/li&gt;
+    &lt;li&gt;"Moon on a stick" wishes for the future.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I want to start by reaffirming my belief that Adafruit, and those
+involved with CircuitPython in particular, do inspiring stuff when it
+comes to fostering an open, welcoming, supportive and collaborative tech
+community. This is an extraordinary achievement. My own experience in the
+wider Python community is that it takes a huge amount of effort, patience,
+compassion and thoughtfulness to grow and sustain such a
+"&lt;a href="https://www.wired.com/2008/06/scenius-or-comm/"&gt;scenius&lt;/a&gt;"
+(and, sadly, this can be destroyed very quickly by only a few bad actors). So
+my wish for continuation in 2020 is that everyone involved in the
+CircuitPython community grasp opportunities to enlarge positive aspects of
+ourselves such as mutual appreciation, the sharing of tools and techniques,
+latent network effects, and a spirit of tolerance, compassion and fun.&lt;/p&gt;
+
+&lt;p&gt;What I hope happens this year is a broadening of CircuitPython's horizons.
+My passion for tech can be summed up by a quote from David Allen, the producer
+on the original BBC micro from the 1980s -- my first computer. He
+&lt;a href="https://www.nesta.org.uk/report/the-legacy-of-bbc-micro/"&gt;explained&lt;/a&gt;
+that, "[t]he aim was to democratise computing. We didn't want people to be
+controlled by it, but to control it." CircuitPython feels to me like it sits
+very much in the hobbyist / enthusiast "segment" of users who already know
+something of programming. I'd love CircuitPython to make inroads into
+beginner related education. This probably involves a focus on
+learning what teachers would like from a coding platform, honest appraisals of
+how beginner coders (no matter their age or background) find their first steps
+with CircuitPython and Adafruit boards, as well as making the results of such
+findings accessible to all. This final point is important. Learning to code
+shouldn't just be an option for English speaking, able bodied folk from a
+cultural background that means examples and cultural assumptions are
+easily understood. I hope you agree that education should be an inclusive
+endeavour, and this takes concerted and conscientious effort. I hope the
+CircuitPython community find the time and space to invest in the (never
+finished) work such a focus entails.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;img src="https://ntoll.org/static/images/moon_stick.png"&gt;
+&lt;/p&gt;
+
+&lt;p&gt;My "moon on a stick" is a CircuitPython based mobile phone with a touch
+screen and a simple
+(&lt;a href="https://pypercard.readthedocs.io/en/latest/"&gt;PyperCard&lt;/a&gt; like?)
+Python UI that's easily hackable. Think
+of it as the open, easy-to-assemble, relatively cheap and "hack friendly"
+version of something like the
+&lt;a href="https://www.thelightphone.com/"&gt;Light Phone&lt;/a&gt; with all the
+schematics and design assets (e.g. files for 3d printing the case) available
+under open source licenses so folks can go mod-crazy. Now wouldn't that
+be a turn up for the books..?&lt;/p&gt;
+
+&lt;p&gt;I'll finish by wishing everyone in the CircuitPython a flourishing and
+happy new year. Here's to wonderful things in 2020.&lt;/p&gt;
+
+&lt;p&gt;Let's go..!&lt;/p&gt;
+
+&lt;p&gt;:-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-2020/</guid><pubDate>Tue, 07 Jan 2020 17:30:00 GMT</pubDate></item><item><title>A Classical Playlist of Love</title><link>https://ntoll.org/article/playlist-love/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;When my Canadian buddies &lt;a href="https://twitter.com/AndreaMcInnes21"&gt;Andrea&lt;/a&gt;
+and &lt;a href="https://snarky.ca/"&gt;Brett&lt;/a&gt; visited the UK in
+the summer, we visited the &lt;a href="https://en.wikipedia.org/wiki/Royal_Albert_Hall"&gt;Royal Albert Hall&lt;/a&gt; to hear a classical music
+concert that was part of
+&lt;a href="https://en.wikipedia.org/wiki/The_Proms"&gt;the Proms&lt;/a&gt; -- the world's largest
+classical music festival. I think they must have enjoyed themselves because
+they recently got in touch asking me to suggest a playlist of
+classical music. What follows is my response along with videos of performances
+of the pieces I chose.&lt;/p&gt;
+
+&lt;p&gt;Rather than put together a playlist of apparently random
+choices, I decided it would be interesting to assemble a set of pieces
+related to a particular feeling. In this case, I chose love.&lt;/p&gt;
+
+&lt;p&gt;Why love?&lt;/p&gt;
+
+&lt;p&gt;Because love is complicated, tragic, happy, joyful, funny, raunchy and many
+more aspects too numerous to list here. The western classical
+tradition has around 900 years of musical reactions, settings and descriptions
+of love -- plenty of opportunity to reveal a breadth and depth of music. So,
+I'm going to associate each piece with some aspect of love, provide
+a short commentary and embedded a video of a performance of
+the selected piece.&lt;/p&gt;
+
+&lt;p&gt;I want to draw your attention to my sharing videos of performances. Ideally,
+you'd listen to these pieces in person at a concert. Only in such a live
+situation can you really experience the fleeting moment of the performance,
+executed by highly trained musicians and feel that sense of being in a
+particular unique moment, together with all the others in attendance. The
+videos are a less than perfect replacement, yet still have the potential to
+move you.&lt;/p&gt;
+
+&lt;p&gt;For convenience I've put them into a
+&lt;a href="https://www.youtube.com/watch?v=yjz2TvC2TT4&amp;amp;list=PLzCYc445IVNTPApt_F6PkGCRRPNfG-JmA"&gt;playlist on YouTube&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since this is classical music, it may sound strange to modern ears not
+familiar with styles and mannerisms from hundreds of years ago or it uses sung
+or instrumental techniques that sound odd because they're not used much in
+contemporary popular music. If classical music isn't your thing, consider
+this an invitation to explore a new musical world -- a world that rewards
+repeated engagement, an open mind and long term listening. This is music that
+makes demands of the listener, but will reveal depths one cannot even imagine
+until you experience them for yourself. For those of you who are already
+immersed in classical music you'll find none of my choices particularly
+challenging. In fact, you may even roll your eyes and think, "oh, not that old
+chestnut again". Please remember, this is an introductory playlist, but know
+that I'm open to suggestions.&lt;/p&gt;
+
+&lt;p&gt;I sincerely hope you are moved by the pieces I've selected.&lt;/p&gt;
+
+&lt;h3&gt;Tender Love&lt;/h3&gt;
+
+&lt;p&gt;Gustav Mahler - Adagietto from Symphony No. 5&lt;/p&gt;
+
+&lt;p&gt;This is a musical representation of Mahler's love for his wife Alma. Their
+friend Wilem Engelberg recollects, "In place of a letter, he sent her this in
+manuscript form, not adding a further word. She understood and wrote to him
+telling him to come!!! They both told me this."&lt;/p&gt;
+
+&lt;p&gt;Alma later revealed Gustav left her the following poem with the score.&lt;/p&gt;
+
+&lt;blockquote&gt;In which way I love you, my sunbeam,&lt;br&gt;
+I cannot tell you with words.&lt;br&gt;
+Only my longing, my love and my bliss&lt;br&gt;
+can I with anguish declare.&lt;/blockquote&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/P8LZ43LA2nY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Tragic Love&lt;/h3&gt;
+
+&lt;p&gt;Pyotr Ilyich Tchaikovsky - Fantasy Overture to Romeo and Juliet&lt;/p&gt;
+
+&lt;p&gt;Tchaikovsky was well acquainted with tragic love: he was a gay man in 19th
+century Russia (a time and place full of prejudice towards someone such as
+himself).&lt;/p&gt;
+
+&lt;p&gt;Such tragedy and pain as well as an overflowing sense of passion are
+skilfully captured in this piece or "musical impressions" loosely assembled to
+follow the story of Romeo and Juliet. Listen out for the overwhelming "love
+theme" which has become a musical cliché for inevitably doomed lovers.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3x69wuewkJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Romantic Love&lt;/h3&gt;
+
+&lt;p&gt;Sergei Rachmaninoff - Piano Concerto No.2&lt;/p&gt;
+
+&lt;p&gt;Rachmaninoff, another Russian, is widely considered one of the greatest
+pianists of all time, as well as one of the greatest composers for the
+piano. This piano concerto is full of yearning melodies, gushing outpourings of
+emotion, tender moments and joyful exuberance. Just like falling in love!&lt;/p&gt;
+
+&lt;p&gt;It was effectively used in the David Lean romance from 1945, "Brief
+Encounters", thus cementing it as a "romantic" classic.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rEGOihjqO9w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love Denied&lt;/h3&gt;
+
+&lt;p&gt;Puccini - O Mio Babbino Caro&lt;/p&gt;
+
+&lt;p&gt;This aria, from Puccini's opera "Gianni Schicchi", comes at the moment where
+the daughter of Gianni tells him that she's fallen in love, wants to get
+married, and if he won't let her go to her true love, she'll throw herself off
+the Ponte Vecchio bridge in Florence.&lt;/p&gt;
+
+&lt;p&gt;If you imagine this sounds like a musical tantrum in the making, get ready
+with the hankies and prepare for something absolutely not tantrum like at
+all.&lt;/p&gt;
+
+&lt;p&gt;The soprano singer in the video, Montserrat Caballé, is simply stunning. Her
+charisma, presence, musicianship and vocal control is awe inspiring. Yes, she's
+the one who sang with Freddie Mercury on his single "Barcelona".&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RxZSP1Dc78Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Platonic Love&lt;/h3&gt;
+
+&lt;p&gt;Brahms - Intermezzo Op. 118 No. 2&lt;/p&gt;
+
+&lt;p&gt;Brahms wrote this beautiful piece for his friend Clara Schumann (Clara is
+another musician considered one of the greatest pianists of all time and a
+wonderful composer in her own right). I describe it as "Platonic" because Clara
+was married to Brahms's mentor and friend Robert Schumann, who eventually
+succumbed to mental health issues. Brahms and Clara were undoubtedly close and
+shared a deep love for each other, but it was only ever a love between dear
+friends. Imagine how you'd feel if you had been gifted such a piece of
+music.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/78OO5v0lNtI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Fantastical Love&lt;/h3&gt;
+
+&lt;p&gt;Berlioz - Symphonie Fantastique&lt;/p&gt;
+
+&lt;p&gt;This is sex, drugs and classical music with an added dose of musical story
+telling.&lt;/p&gt;
+
+&lt;p&gt;The video is of the concert Andrea, Brett and I attended. I won't
+say any more, since the performers do a fantastic job of explaining what's
+going on. It's quite a spectacle (and watch out for the mirror balls).&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FqTU8m8BJwQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love Transformed&lt;/h3&gt;
+
+&lt;p&gt;Schoenberg - Verklärte Nacht&lt;/p&gt;
+
+&lt;p&gt;Schoenberg wrote this piece to closely follow the structure of the poem upon
+which it is based, to the extent that the different sections in the musical
+score map directly to lines in the poem. The poem, by Richard Dehmel, whose
+title is translated as "Transfigured Night", tells of two lovers walking in the
+woods. The woman opens up about a terrible burden she carries. Her lover is
+full of compassion, love and support which transforms her burden into a shared
+aspect of their life together. I'm being necessarily vague here so I don't
+spoil the poem for you... just read it as
+&lt;a href="https://allpoetry.com/Transfigured-Night-(Verklrte-Nacht)"&gt;translated here&lt;/a&gt;
+and then listen to the piece. My favourite lines (and part of the piece)
+are:&lt;/p&gt;
+
+&lt;blockquote&gt;Just see how brightly the universe is gleaming!&lt;br&gt;
+There’s a glow around everything;&lt;br&gt;
+You are floating with me on a cold ocean,&lt;br&gt;
+But a special warmth flickers&lt;br&gt;
+From you into me, from me into you.&lt;/blockquote&gt;
+
+&lt;p&gt;At this point the music sounds as if it's gleaming..! One other thing you
+may hear, the violin (a high instrument) is prominent in the sections
+representing the woman speaking, whereas the cello (a low instrument) is
+prominent in the sections representing the man speaking.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yzSaOWPBFqA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love's Dream&lt;/h3&gt;
+
+&lt;p&gt;Fauré - Après un rêve&lt;/p&gt;
+
+&lt;p&gt;This is simply a song about a dream of the poet's beloved. The words of the
+poem (and their English translation) can be found &lt;a href="https://www.oxfordlieder.co.uk/song/15"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FlT1QhK4Wto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Erotic Love&lt;/h3&gt;
+
+&lt;p&gt;Wagner - Prelude and Liebestod from 'Tristan Und Isolde'&lt;/p&gt;
+
+&lt;p&gt;Where do I start with this one..? This is erotic music. I don't mean humping
+or "having a shag". Rather, it's a musical version of a passionate embrace
+(between the protagonists, Tristan and Isolde).&lt;/p&gt;
+
+&lt;p&gt;In music theory we use the term "climax" to describe the point at which all
+the tension in the music is released. There's a reason we call it a climax.
+This piece has a famously ecstatic climax that takes a while to build, after
+lots of tender pauses, gradually intensifying musical moments, soaring strings
+and throbbing horns (no pun intended).&lt;/p&gt;
+
+&lt;p&gt;I'm sure you'll hear what I mean.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W8EQcMurhAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Orgasmic Love&lt;/h3&gt;
+
+&lt;p&gt;Orff - Dulcissime (from Carmina Burana)&lt;/p&gt;
+
+&lt;p&gt;Just watch and listen. No further explanation needed.&lt;/p&gt; 
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BFq8vH7tPxs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Marriage&lt;/h3&gt;
+
+&lt;p&gt;Mendelssohn - Wedding March from A Midsummer Night's Dream&lt;/p&gt;
+
+&lt;p&gt;You'll hear this in pretty much every church wedding you ever attend - and
+quite rightly, it's very uplifting, celebratory and joyful music. Just what you
+need for such an occasion.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rIM5cWB2wmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;A Moment of Love&lt;/h3&gt;
+
+&lt;p&gt;Vaughan Williams - Silent Noon&lt;/p&gt;
+
+&lt;p&gt;Dante Gabriel Rossetti's poem "Silent Noon" recollects an intimate shared
+moment of love that was both fleeting and intense. Vaughan Williams music
+beautifully complements the nostalgic, thoughtful and timeless nature of the
+moment in question.&lt;/p&gt;
+
+&lt;blockquote&gt;Your hands lie open in the long fresh grass,--&lt;br&gt;
+The finger-points look through like rosy blooms:&lt;br&gt;
+Your eyes smile peace. The pasture gleams and glooms&lt;br&gt;
+'Neath billowing skies that scatter and amass.&lt;br&gt;
+All round our nest, far as the eye can pass,&lt;br&gt;
+Are golden kingcup-fields with silver edge&lt;br&gt;
+Where the cow-parsley skirts the hawthorn-hedge.&lt;br&gt;
+'Tis visible silence, still as the hour-glass.&lt;br&gt;
+Deep in the sun-searched growths the dragon-fly&lt;br&gt;
+Hangs like a blue thread loosened from the sky:--&lt;br&gt;
+So this wing'd hour is dropt to us from above.&lt;br&gt;
+Oh! clasp we to our hearts, for deathless dower,&lt;br&gt;
+This close-companioned inarticulate hour&lt;br&gt;
+When twofold silence was the song of love.&lt;br&gt;
+&lt;/blockquote&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rvl4Qo-z_KM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love's Yearning&lt;/h3&gt;
+
+&lt;p&gt;Gluck - Che farò senza Euridice&lt;/p&gt;
+
+&lt;p&gt;The story of Orfeo and Euridice is popular among composers. The hero,
+Orpheus, is a master musician who can tame nature with his music. His beloved
+Euridice dies and is taken to the Greek underworld. Missing his lover,
+Orpheus travels into the underworld and charms Hades, the god of the
+dead, with his music. As a result, Hades promises that Euridice can live and
+return to the world of the living so long as Orpheus doesn't look back to see
+if she follows him on the way home. Inevitably, Orpheus looks back and Euridice
+is, once again, struck dead. It's at this point in the opera that we hear the
+following aria for counter-tenor (the highest natural voice for a man to
+sing). The title means, "What shall I do without Euridice?".&lt;/p&gt;
+
+&lt;blockquote&gt;What will I do without Euridice&lt;br&gt;
+Where will I go without my wonderul one.&lt;br&gt;
+Euridice, oh God, answer&lt;br&gt;
+I am entirely your loyal one.&lt;br&gt;
+Euridice! Ah, it doesn´t give me&lt;br&gt;
+any help, any hope&lt;br&gt;
+neither this world, neither heaven.&lt;/blockquote&gt;
+
+&lt;p&gt;I'll leave you to work out what happens next.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0mEKeaXST2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love's Pain&lt;/h3&gt;
+
+&lt;p&gt;Strozzi - Che si può fare&lt;/p&gt;
+
+&lt;p&gt;Barbara Strozzi was a remarkable woman. Born in Venice in 1619, she was one
+of the most well known musicians of her age. It is claimed she had more music
+in print than any other composer of the era. This success was of her own doing
+since she had no support from the usual sources of the church or nobility.&lt;/p&gt;
+
+&lt;p&gt;I imagine that if Bridget Jones were from Baroque era Venice, she'd be
+listening to this instead of Céline Dion's "All By Myself".&lt;/p&gt;
+
+&lt;blockquote&gt;What can I do?&lt;br&gt;
+The stars have no pity and work against me;&lt;br&gt;
+If heaven will give me no gesture&lt;br&gt;
+Of peace for my pain,&lt;br&gt;
+What can I do?&lt;br&gt;
+&lt;br&gt;
+What can I say?&lt;br&gt;
+The heavens are raining disasters on me;&lt;br&gt;
+If Love will not grant me a moment of breath,&lt;br&gt;
+to relieve all my suffering,&lt;br&gt;
+What can I say?&lt;/blockquote&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1F458aC_FUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love of Home&lt;/h3&gt;
+
+&lt;p&gt;Smetana - Vltava (The Moldau) from Má vlast&lt;/p&gt;
+
+&lt;p&gt;This is the musical antidote to nationalism.&lt;/p&gt;
+
+&lt;p&gt;The Czech composer Smetana uses music to represent the river Moldau as it
+runs through his country in a celebration of the landscape, activity, folk
+music, dance and industry of the people of the Czech republic.&lt;/p&gt;
+
+&lt;p&gt;It works well as a musical metaphor, starting with the trickle of notes
+from the opening flutes and building up to a flowing melody surrounded by
+melodic eddys and currents in the strings. The river music keeps returning
+throughout the piece as different musical interludes interject to describe
+some aspect of where the river flows.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/l6kqu2mk-Kw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love of Nature&lt;/h3&gt;
+
+&lt;p&gt;Beethoven - Pastoral Symphony&lt;/p&gt;
+
+&lt;p&gt;This piece is an old friend of mine. Forget the Disney version from the
+animated film "Fantasia" -- this is Beethoven musically representing a visit to
+the country and the emotional impact that has on him.&lt;/p&gt;
+
+&lt;p&gt;In the latter part of the work he paints a picture of a country dance
+interrupted by a storm which he concludes with a hymn to nature. Beethoven
+wasn't conventionally religious, but this is a certainly a spiritual reaction
+to nature.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/iQGm0H9l9I4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love of Humanity&lt;/h3&gt;
+
+&lt;p&gt;Beethoven - Choral Symphony&lt;/p&gt;
+
+&lt;p&gt;Beethoven's 9th is full of different emotions and a real journey of the soul
+in musical form. But the part I want to particularly highlight is the finale,
+the "Ode to Joy".&lt;/p&gt;
+
+&lt;p&gt;Beethoven was famously misanthropic and that's how the finale starts with
+the rather annoyed sounding cellos and double basses. But once the "joy" theme
+is found the instruments try their hardest to make something of it. Yet
+Beethoven's genius is to interrupt the finale at this point, and start again
+with human voices. Schiller's words are a celebration of brotherhood,
+togetherness and humanity.&lt;/p&gt;
+
+&lt;p&gt;Yes, it really does have the line, "here's a giant kiss for all" sung by the
+massed choir. Thank you Ludwig.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-suf9BL9xRA?start=2663" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Parental Love&lt;/h3&gt;
+
+&lt;p&gt;Shostakovich - Piano Concerto No.2 (Second Movement)&lt;/p&gt;
+
+&lt;p&gt;Dimitri Shostakovich wrote this concerto for his son Maxim. Maxim used it as
+an audition piece for music conservatoire when he was a teenager. This second
+movement is both sad yet hopeful, as a parent lets go and reflects on the child
+leaving and growing into adulthood. The music full of love and sadness. Perhaps
+if the orchestra is Dimitri, then Maxim is the piano.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TPqMvoR2Buo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love Ending&lt;/h3&gt;
+
+&lt;p&gt;Strauss - "Im Abendrot" from Four Last Songs&lt;/p&gt;
+
+&lt;p&gt;This is a musical and poetic meditation on two lovers coming to the end of
+their long life together.&lt;/p&gt;
+
+&lt;blockquote&gt;Through sorrow and joy&lt;br&gt;
+we have gone hand in hand;&lt;br&gt;
+we are both at rest from our wanderings&lt;br&gt;
+now above the quiet land.&lt;br&gt;
+&lt;br&gt;
+Around us, the valleys bow,&lt;br&gt;
+the air already darkens.&lt;br&gt;
+Only two larks soar&lt;br&gt;
+musingly into the haze.&lt;br&gt;
+&lt;br&gt;
+Come close, and let them flutter,&lt;br&gt;
+soon it will be time to sleep -&lt;br&gt;
+so that we don't get lost&lt;br&gt;
+in this solitude.&lt;br&gt;
+&lt;br&gt;
+O vast, tranquil peace,&lt;br&gt;
+so deep in the afterglow!&lt;br&gt;
+How weary we are of wandering--&lt;br&gt;
+Is this perhaps death?&lt;/blockquote&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Giaf3qSqDHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;Love Lost&lt;/h3&gt;
+
+&lt;p&gt;Elgar - Cello Concerto&lt;/p&gt;
+
+&lt;p&gt;My wife, Mary, once played this in a concerto competition (and won).&lt;/p&gt;
+
+&lt;p&gt;Elgar wrote the piece soon after his wife, Alice, passed away. The cello is,
+of course, Alice and the music Elgar creates reflects all the different
+feelings he has now that she is gone.&lt;/p&gt;
+
+&lt;p&gt;This very old performance, by Jacqueline du Pré on cello and Daniel
+Barenboim conducting, is poignant. They were married but Jackie's playing
+succumbed to multiple sclerosis soon after this recording was made. The MS
+eventually killed her around a decade or so later.&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OPhkZW_jwc0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description><guid>https://ntoll.org/article/playlist-love/</guid><pubDate>Thu, 28 Nov 2019 14:30:00 GMT</pubDate></item><item><title>Testing CircuitPython Modules</title><link>https://ntoll.org/article/circuitpython-tests/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;&lt;a href="https://micropython.org/"&gt;MicroPython&lt;/a&gt;, a project by my
+buddy &lt;a href="http://dpgeorge.net/"&gt;Damien George&lt;/a&gt;, is a
+complete reimplementation of the Python programming language for
+microcontrollers and embedded systems. Put simply, it's Python for extremely
+small computers (and I once
+&lt;a href="http://shop.oreilly.com/product/0636920056515.do"&gt;wrote a book about it&lt;/a&gt;).
+&lt;a href="https://circuitpython.org/"&gt;CircuitPython&lt;/a&gt;, a friendly fork of
+MicroPython, is sponsored by the fantastic folks
+at &lt;a href="https://adafruit.com/"&gt;Adafruit&lt;/a&gt;, a company who make playful and
+easy-to-use "hackable" technology while promoting a welcoming, friendly and
+diverse community of makers. They are led by legendary founder and electrical
+engineer extraordinaire, &lt;a href="http://www.ladyada.net/"&gt;Limor "ladyada" Fried&lt;/a&gt;.
+CircuitPython is MicroPython for Adafruit's line of boards and with a
+consistent API for accessing the numerous bits of cool hardware you can use
+with such devices.&lt;/p&gt;
+
+&lt;p&gt;I was privileged to recently complete a block of work for Adafruit: I've
+written a CircuitPython module called &lt;code&gt;adafruit_radio&lt;/code&gt; that makes it
+easy for
+&lt;a href="https://en.wikipedia.org/wiki/Bluetooth"&gt;Bluetooth&lt;/a&gt; enabled
+Adafruit boards to communicate with each other. The API is
+a simplified version of the work myself and a number of other volunteers did on
+the
+&lt;a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/radio.html"&gt;equivalent functionality&lt;/a&gt;
+for the BBC micro:bit (&lt;a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/tutorials/radio.html"&gt;here's a tutorial I wrote for the micro:bit
+radio&lt;/a&gt;, to make electronic "fireflies" blink at each other over
+Bluetooth).&lt;/p&gt;
+
+&lt;p&gt;In the new Adafruit module, sending a message is as simple as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
+r = Radio()
+r.send("Hello")
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;Receiving requires a loop (to allow the device to keep checking for
+messages), but is equally as simple:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
+r = Radio()
+
+while True:
+    message = r.receive()
+    if message:
+        # Do something useful with the message.
+        print(message)
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;The best model for thinking about this module is that of kids'
+walkie-talkies. Each
+radio is tuned to a certain channel upon which it broadcasts and receives.
+If you send a message, anyone else listening in on that channel and within
+range will receive it. You'll also receive messages broadcast on that
+channel from others within range. 
+This is an ideal network topology because it's both familiar
+yet capable since other, more specialised, network topologies can be built on
+top of it. There is potential for users to grow from a simple "walkie-talkie"
+model of networking to something more sophisticated and of their own
+devising.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ntoll.org/static/images/walkie-talkie.jpg" alt="Kids on walkie-talkies"&gt;&lt;/p&gt;
+
+&lt;p&gt;The channels in the module are numbered between 0-255 and can be set when
+creating a &lt;code&gt;Radio&lt;/code&gt; object (the default channel number is 42 in
+honour of
+&lt;a href="https://en.wikipedia.org/wiki/Douglas_Adams"&gt;Douglas Adams&lt;/a&gt;, who
+saw so much humane potential in new technology yet mischievously warned of the
+polluting effect of technology for technology's sake via the inept
+work of the
+&lt;a href="https://en.wikipedia.org/wiki/Technology_in_The_Hitchhiker%27s_Guide_to_the_Galaxy#Sirius_Cybernetics_Corporation"&gt;Sirius Cybernetics Corporation&lt;/a&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
+r = Radio(channel=123)
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;Alternatively, you can change channel at any time via the &lt;code&gt;Radio&lt;/code&gt;
+object's &lt;code&gt;configure&lt;/code&gt; method (continuing the example above):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;r.configure(channel=7)
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;Finally, in addition to sending strings of characters it's also possible to
+send and receive arbitrary bytes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
+r = Radio()
+r.send_bytes(b"Hello")
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;Receiving bytes gives you the full context of the message expressed as a
+Python tuple consisting of three values: the raw bytes, the RSSI reading (i.e.
+strength of the signal, from 0 [max] to -255 [min]), and a timestamp
+representing the number (and fraction of) seconds since the device powered up,
+as demonstrated in the following REPL based example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from adafruit_radio import Radio
+&amp;gt;&amp;gt;&amp;gt; r = Radio()
+&amp;gt;&amp;gt;&amp;gt; r.receive_full()
+(b'Hello', -40, 3245.155408037)
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;That's it! You can find the code in &lt;a href="https://github.com/ntoll/Adafruit_CircuitPython_Radio"&gt;this GitHub repository&lt;/a&gt;.
+Special mention and thanks must be made to Adafruit's
+&lt;a href="http://tannewt.org/"&gt;Scott Shawcroft&lt;/a&gt; and
+&lt;a href="https://danhalbert.org/"&gt;Dan Halbert&lt;/a&gt; who
+wrote the Bluetooth API I used. Because of their
+work I was able to create my module with less than a hundred lines of Python
+(at time of writing). Thanks chaps!&lt;/p&gt;
+
+&lt;p&gt;Armed with this context, I'm going to explain why and how I created a
+comprehensive test suite for the &lt;code&gt;adafruit_radio&lt;/code&gt; module.&lt;/p&gt;
+
+&lt;p&gt;I'd summarise my approach to testing as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Testing is fundamental for creating and maintaining well designed
+    software. My experience is that it tends to produce code that is both
+    simple and easy to understand because nobody wants to write complicated
+    tests to exercise equally complicated code. The process of exercising code
+    through tests forces a developer to think carefully about how their code
+    is written while having the added benefit of demonstrating it works as
+    expected. Simplicity and ease of understanding are
+    desirable properties because such code is easier to read, correct and
+    maintain and also indicates the author's own clarity of thought (a good
+    sign). I also believe it helpful and friendly to write code that's easy
+    for others to read and understand (I often imagine my code will be read by
+    an intelligent beginner coder, because it forces me to explain and address
+    my own assumptions about my code).&lt;/li&gt;
+
+    &lt;li&gt;I personally don't practice strict test-driven development, where one
+    writes tests before writing the implementation. I prefer to explore,
+    improvise, extemporise and play at first. I often try various different
+    approaches to the task in hand and regularly re-draft. I'll often seek
+    advice and comments from collaborators, colleagues and potential users of
+    my code as soon as possible. Therefore, my highest priority when I start a
+    new project is making my code simple enough so that it is very easy to
+    change. Often this step in the coding process is called a "spike".&lt;/li&gt;
+
+    &lt;li&gt;Only when a project settles on a certain architecture, implementation
+    or foundation of code do I add tests. I think of this as a sort of
+    "hardening" process. When I'm happy with an approach I'll often re-draft
+    the exploratory code I've already written, alongside writing tests to
+    exercise that specific piece of code. I aim for, and often achieve, 100%
+    test coverage (every line of my code is exercised in some way by a test).
+    This process allows me to get a feel for how my API works from the point of
+    view of a fellow coder encountering it for the first time.&lt;/li&gt;
+
+    &lt;li&gt;The hardening has another effect: I've baked in an expectation for how
+    the code should behave via the tests. I also make sure my tests are
+    commented in such a way that a meaningful intention behind the test is
+    revealed. They're also a useful source of information for future users
+    and/or maintainers of my code. Finally, and perhaps most importantly, they
+    help manage change.&lt;/li&gt;
+
+    &lt;li&gt;No useful software is ever finished simply because the universe changes
+    (and so must software). Despite our best efforts, software is often
+    complicated and it's easy to forget something or not realise how a change
+    in one part of the
+    code may break another apparently unrelated part. Having a suite of
+    tests to check all the aspects of a codebase helps future maintainers make
+    changes with confidence.&lt;/li&gt;
+
+    &lt;li&gt;Being pragmatic, I sometimes don't follow the playful explorations
+    outlined above. If I'm dealing with a well defined or mature protocol
+    (for example), I'll quickly settle on an approach, usually based upon
+    research into how other folks have solved the same problem, and proceed by
+    writing tests based upon the protocol in order to measure the completeness,
+    accuracy and progress of my resulting implementation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The problem for developers writing for CircuitPython is that such code is
+usually to be run on microcontrollers with certain hardware capabilities. Yet
+such code is invariably written on conventional computers running operating
+systems such as Windows, OSX or Linux. The only way to know your code works is
+to try it on the target device. This is, to say the least, laborious compared
+to having the benefits of running an extensive test suite in a matter of
+seconds.&lt;/p&gt;
+
+&lt;p&gt;Having written my small and simple &lt;code&gt;adafruit_radio&lt;/code&gt; module I
+found myself missing the benefits of a comprehensive test suite. After asking
+around, I found most Python modules for CircuitPython don't have a test suite
+and there hadn't been much (if any) exploration for how to address this. Scott
+suggested I add what I thought best in terms of testing to my module.&lt;/p&gt;
+
+&lt;p&gt;I wanted my solution to meet the following requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;It works with existing Python testing tools so non-specialist Python
+    developers feel at home and can bring their existing skills to
+    CircuitPython with little effort.&lt;/li&gt;
+
+    &lt;li&gt;It runs on a conventional computer, because that's where developers do
+    the majority of their work. (I'm constantly running and re-running my
+    test-suite as I make changes to code.)&lt;/li&gt;
+
+    &lt;li&gt;It handles the problem of using CircuitPython-only modules in a
+    test-suite run on a conventional computer with standard Python.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I decided to focus on using an existing, well known and mature Python
+testing tool called &lt;a href="http://pytest.org/en/latest/"&gt;PyTest&lt;/a&gt; (the
+creation of another friend of mine, the extraordinarily prolific and very
+thoughtful &lt;a href="https://holgerkrekel.net/"&gt;Holger Krekel&lt;/a&gt;). The
+advantage of using PyTest is that it has a large number of plug-ins that are
+both useful and familiar to a large number of Python programmers. One such
+plug-in I use a lot is the
+&lt;a href="https://github.com/pytest-dev/pytest-cov"&gt;Pytest coverage tool&lt;/a&gt;,
+which makes it easy to spot areas of a code base that are &lt;em&gt;not&lt;/em&gt; 
+exercised by a test suite. PyTest also has a well defined mechanisms to extend
+it to work in specialist testing situations (such as our own CircuitPython
+based context).&lt;/p&gt;
+
+&lt;p&gt;As far as I was concerned, using PyTest met the first two of my self-imposed
+requirements. I was left with the final problem of dealing with CircuitPython
+only modules that wouldn't work on a conventional computer.&lt;/p&gt;
+
+&lt;p&gt;This is where I need to introduce the concept of "mocking" in a test suite
+(as in "mocked up" rather than poking fun). Mocking is a way to replace parts
+of your system under test with "mocked up" objects and then make assertions
+about how such objects have been used. Thanks to another friend of mine (the
+huge hearted, funny and rather hairy
+&lt;a href="http://www.voidspace.org.uk/"&gt;Michael Foord&lt;/a&gt;), mocking is built
+right into Python's standard library.&lt;/p&gt;
+
+&lt;p&gt;My idea was simple: automatically mock away those parts of CircuitPython
+that don't work on a conventional computer. Such objects give the developer a
+way to check and ensure the module under test is working as expected with
+CircuitPython. It's even possible to specify how such mock objects should
+behave under certain conditions (such as when they may be the source of some
+sort of data which the module under test will use). However, this aspect of
+mocking should be used with great care -- more on which later.&lt;/p&gt;
+
+&lt;p&gt;If a developer creates a &lt;code&gt;conftest.py&lt;/code&gt; file in their test suite
+PyTest will import it before running any of the test code and use various
+functions found therein to configure the test suite. For example, if PyTest
+finds a function called &lt;code&gt;pytest_runtest_setup&lt;/code&gt; in the
+&lt;code&gt;conftest.py&lt;/code&gt; file, then this function will always be called
+immediately prior to any test function. Just what we need!&lt;/p&gt;
+
+&lt;p&gt;My &lt;a href="https://github.com/ntoll/Adafruit_CircuitPython_Radio/blob/master/tests/conftest.py"&gt;&lt;code&gt;conftest.py file&lt;/code&gt;&lt;/a&gt;
+is very short and simply mocks away named aspects of CircuitPython which cannot
+be run on a conventional computer immediately before any test is run, via the
+aforementioned &lt;code&gt;pytest_runtest_setup&lt;/code&gt; convention.&lt;/p&gt;
+
+&lt;p&gt;It means I can write conventional looking PyTest based unit tests like the
+following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def test_radio_receive_full_no_messages(radio):
+    """
+    If no messages are detected by receive_full then it returns None.
+    """
+    radio.ble.start_scan.return_value = []
+    assert radio.receive_full() is None
+    radio.ble.start_scan.assert_called_once_with(
+        adafruit_radio.AdafruitRadio, minimum_rssi=-255, timeout=1
+    )
+    radio.ble.stop_scan.assert_called_once_with()
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;Some things you should know: &lt;code&gt;radio.ble&lt;/code&gt; is a mocked away part of
+CircuitPython. As a result, on the first line of my test function, I've been
+able to tell the mock that the result of calling the &lt;code&gt;start_scan&lt;/code&gt;
+method is an empty list. Then I can assert that the method I want to test (the
+&lt;code&gt;radio.receive_full&lt;/code&gt; method returns &lt;code&gt;None&lt;/code&gt; in this
+context. Furthermore, I'm able to check in the final two statements of the
+function that the &lt;code&gt;start_scan&lt;/code&gt; method was called with the expected
+arguments, and that an additional &lt;code&gt;stop_scan&lt;/code&gt; method was called
+too.&lt;/p&gt;
+
+&lt;p&gt;When I run the test suite, I see something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pytest --cov-report term-missing --cov=adafruit_radio tests/
+============================= test session starts ==============================
+platform linux -- Python 3.7.5, pytest-5.3.0, py-1.8.0, pluggy-0.13.0
+rootdir: /home/ntoll/src/adafruit_radio
+plugins: cov-2.8.1
+collected 12 items                                                             
+
+tests/test_adafruit_radio.py ............                                [100%]
+
+----------- coverage: platform linux, python 3.7.5-final-0 -----------
+Name                Stmts   Miss  Cover   Missing
+-------------------------------------------------
+adafruit_radio.py      61      0   100%
+
+
+============================== 12 passed in 0.09s ==============================
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+
+&lt;p&gt;Note all the feedback about code coverage..! Neat, huh?&lt;/p&gt;
+
+&lt;p&gt;A mock object, by its very nature, is a mock-up of something else... it's
+not the real thing..! So what happens when the real thing (that has been
+mocked-up in the test suite) changes? For instance let's imagine that the
+result of a call to &lt;code&gt;start_scan&lt;/code&gt; is no longer an empty list, but
+something else. The tests will still pass because the mocked-up object doesn't
+reflect the real object, yet when the module under test is used on a real
+device with the changed version of CircuitPython then it won't work
+correctly.&lt;/p&gt;
+
+&lt;p&gt;This is obviously not a good situation and why I mention mocks should be
+used with great care and attention.&lt;/p&gt;
+
+&lt;p&gt;The most obvious solution is for the developer in charge of the test
+suite to be careful and check API updates in the release notes of the modules
+being mocked away. However, this becomes a burden if the test suite mocks away
+a huge number of modules. It's also open to human error.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to mitigate this problem, but because it's early days
+I've not been able to investigate these potential solutions properly. The best
+I can do at this point in time is shrug my shoulders, say things are under
+construction and invite folks to dive in and help. Our community would
+certainly be enriched by such collaborations.&lt;/p&gt;
+
+&lt;p&gt;In conclusion, I'm quite pleased with this first step in equipping
+CircuitPython modules with comprehensive test suites. Yet there's still plenty
+to do -- most notably, ways to address the problems mentioned with mocking.&lt;/p&gt;
+
+&lt;p&gt;As always, comments, constructive criticism and ideas expressed in a
+friendly, collaborative and supportive manner are most welcome.&lt;/p&gt;
+
+&lt;p&gt;Over to you... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-tests/</guid><pubDate>Mon, 25 Nov 2019 13:30:00 GMT</pubDate></item><item><title>PyWeek Retrospective</title><link>https://ntoll.org/article/pyweek/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;&lt;a href="https://pyweek.org/"&gt;PyWeek&lt;/a&gt; is a simple idea: write a game,
+using the Python programming language, from scratch, on a given theme, within a
+week. Take part as either an individual or a member of a team entry. At the end
+of the week play, feedback and score each others' entries. After which, an
+individual and team are crowned respective champions for their category of
+entry.&lt;/p&gt;
+
+&lt;p&gt;I have taken part in three different iterations of PyWeek. Each one has
+been extraordinarily good fun.&lt;/p&gt;
+
+&lt;p&gt;My first PyWeek was as an individual entry. The theme was "two worlds", so
+I imagined a paper based battle between the worlds of blue biros and red biros
+(it felt like a good idea at the time...). I wanted to push the limits of my
+&lt;a href="https://codewith.mu/"&gt;Mu code editor&lt;/a&gt; for beginner programmers and
+&lt;a href="https://pygame-zero.readthedocs.io/en/stable/"&gt;PyGameZero&lt;/a&gt; (a
+gaming framework for beginner programmers integrated into Mu, developed by my
+buddy [and organiser of PyWeek] &lt;a href="https://ntoll.org/article/pyweek/" http:&gt;&lt;/a&gt;Dan Pope).
+The end result was a side-scrolling chase game called
+&lt;a href="https://github.com/ntoll/paperchase"&gt;PaperChase&lt;/a&gt;. This video shows
+me testing the game with my (then) thirteen year old son... you'll quickly
+get the idea:&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z_wGpJubVwI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My next entry was as part of a team. I'd been helping author and
+journalist
+&lt;a href="https://andrewsmithauthor.com/"&gt;Andrew Smith&lt;/a&gt; to
+&lt;a href="https://www.1843magazine.com/features/code-to-joy"&gt;take his
+first steps into coding&lt;/a&gt;. Making a game seemed like a fun vehicle for
+further learning. The theme was "flow" and so we devised a simple
+&lt;a href="https://en.wikipedia.org/wiki/Frogger"&gt;Frogger&lt;/a&gt; clone
+where you avoided traffic flow whilst being chased by lumbering zombies.
+I did the code and Andrew did the sound and music. The end result
+(&lt;a href="https://github.com/ntoll/traffic_flowmageddon"&gt;Trafficflowmageddon&lt;/a&gt;)
+is, I feel, quite cute... as zombie relate games go...&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/08mvNmhOVG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And so we come to the most recent PyWeek.&lt;/p&gt;
+
+&lt;p&gt;Once again, Andrew and I teamed up. We chatted before hand about the sort
+of game we might want to make. Since we both have a love of the written word we
+decided to go with a text-based (rather than graphical) game -- the theory
+being it would play to our "strengths" with the written word.&lt;/p&gt;
+
+&lt;p&gt;In the end, this was (by far and away) my favourite PyWeek so far. Here's
+why...&lt;/p&gt;
+
+&lt;p&gt;Graphical games show, text based games describe. Graphical games have an
+added cost of "asset" development (the graphical stuff shown on the screen)
+whereas text based games only need typed characters. Graphical games tend to
+focus on hand/eye skill to progress gameplay, whereas textual games necessarily
+put narrative, meaning and intent at the centre of their process.&lt;/p&gt;
+
+&lt;p&gt;Obviously, these are broad generalisations. But what I want to get to is
+the idea of a player engaging with a game imaginatively, emotionally and
+intellectually via the medium of words. If done properly, the depth of
+engagement is potentially greater. I'm not saying one can't be engaged in such
+a way with graphical games, rather that textual games are perhaps a medium
+which more easily lend themselves to this end. It's similar to the difference
+between a book and a film.&lt;/p&gt;
+
+&lt;p&gt;I want to be clear, I'm not saying one is better than the other, these are
+very different ways to tell a story or play a game, but I can't help but feel a
+"reader" has to do more (and the reward is therefore greater) than a
+"viewer".&lt;/p&gt;
+
+&lt;p&gt;I also think that text-based games are, in a sense, more egalitarian and
+accessible. Again, to continue the book/film similarity, while no mean feat,
+writing a book is within the realms of a single author armed with just a pen
+and paper, whereas making a film requires a cast of collaborators and
+specialists, equipment, facilities, locations and deep pockets. For similar
+reasons, the generation and manipulation of textual game content is far simpler
+and affordable than for graphical games.&lt;/p&gt;
+
+&lt;p&gt;So what sort of games are textual?&lt;/p&gt;
+
+&lt;p&gt;Easy! &lt;a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure"&gt;Adventure games&lt;/a&gt;!
+If you're interested in finding out more about this style of text-based game
+you should watch &lt;a href="https://www.youtube.com/watch?v=o15itQ_EhRo"&gt;GET LAMP&lt;/a&gt;,
+a fascinating documentary about the genre. Alternatively, if you want to try
+playing an example of such a game, I've embedded one of my favourites below
+(just click on it and type some commands). It's based on Douglas Adams'
+"Hitchhiker's Guide to the Galaxy" (the game itself was co-authored by
+Adams).&lt;/p&gt;
+
+&lt;div class="video-container" style="border: 1px #ccc solid !important;"&gt;
+&lt;iframe src="http://iplayif.com/?story=http%3A%2F%2Fwww.douglasadams.com%2Fcreations%2Fhhgg.z3"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here's where it gets interesting.&lt;/p&gt;
+
+&lt;p&gt;Such games don't have to be single player, solo efforts. While this is a fun
+way to play, things get far more interesting if you can play with others. This
+is not a new idea and I remember playing such games (commonly called
+&lt;a href="https://en.wikipedia.org/wiki/MUD"&gt;MUD&lt;/a&gt; "Multi-User Dungeons") via
+surreptitious use of my school's single 1200 baud modem when the teacher wasn't
+looking. These were often Tolkien-esque fantasy themed virtual worlds where
+players could wander about exploring, socialising and cooperating to achieve
+some in-game outcome (usually a quest of some sort). Later, when I was at
+university in the mid-1990s, I began using a type of multi-user textual world
+called a &lt;a href="https://en.wikipedia.org/wiki/MOO"&gt;MOO&lt;/a&gt; (Multi-user Object
+Oriented). The wonderful thing about MOO based textual worlds is that they are
+programmable by users (I first got to grips with object-orientation via
+learning to program MOO). In a sense the MOO is both the game and a platform
+for creating textual games collaboratively. It was this sense of a creative
+textual virtual world that Andrew and I wanted to recreate.&lt;/p&gt;
+
+&lt;p&gt;Et voilà, "TextSmith" was born.&lt;/p&gt;
+
+&lt;p&gt;The theme for this most recent PyWeek was announced as "six". This
+fitted our idea for an interactive textual platform. It could contain six
+different literary worlds which players collaboratively create, inhabit and
+explore together. The six literary worlds we "seeded" in our game were:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Jane Austen: Recreate Netherfield, go to a ball, affect regency period
+    manners and etiquette.&lt;/li&gt;
+    &lt;li&gt;Poetic Passions: Everything is a poem, haiku or rhymes, speak in
+    riddles or chat in rhyming couplets.&lt;/li&gt;
+    &lt;li&gt;Hardboiled Detectives: It was about eleven o'clock in the morning, with
+    the sun not shining. The client asked, "Well, will you take the case or
+    not, bud?"&lt;/li&gt;
+    &lt;li&gt;J.R.R.Fantasy: Orcs! Elves! Wizards! Bleak locations! Ancient mystery!
+    Quests! (And impenetrable prose.)&lt;/li&gt;
+    &lt;li&gt;SciFi and Future Worlds: As the service droids efficiently cleaned up
+    the remains of the ship's captain, I wondered how long it would take to
+    make planet-fall on the alien world of Zaonce.&lt;/li&gt;
+    &lt;li&gt;Parry Hotter: Inspired by everyone's favourite boy wizard, but in such
+    a way that Warner Brothers don't go after us for copyright infringement.
+    :-)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Programming the game was a lot of fun. I managed to build everything mostly
+from scratch (except for the web based front-end which uses the
+&lt;a href="https://gitlab.com/pgjones/quart"&gt;Quart&lt;/a&gt; web microframework).
+Sadly, most of it was unfinished, broken and clunkily implemented. The
+important thing is that it has &lt;em&gt;potential&lt;/em&gt;. Below is a screenshot of
+an early version of the game:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ntoll.org/static/images/textsmith.png" alt="The TextSmith client."&gt;&lt;/p&gt;
+
+&lt;p&gt;Happily, despite the unfinished and rather shonky nature of the end result,
+we placed 4th in the team category..! Our highest result..! The
+&lt;a href="https://pyweek.org/e/CodeToJoy/ratings/"&gt;feedback&lt;/a&gt;
+from fellow PyWeekers was encouraging too and, as a result, I've decided to
+continue to develop TextSmith. In the immediate term this will involve plugging
+in the almost-finished scripting language I created and knock off some of the
+hard edges. More importantly, once this aspect of the "platform" settles down,
+I'm looking forward to creating and exploring interactive literary worlds.&lt;/p&gt;
+
+&lt;p&gt;Finally, programming, creating and playing with TextSmith has been a very
+rich seam of reflection in terms of both technical and playful contexts. I've
+had lots of fun thinking about the architecture and implementation of such a
+platform while also doing a philosophical deep-dive into what on earth is going
+on when "players" connect to, create within and interact with such a
+platform.&lt;/p&gt;
+
+&lt;p&gt;Who knows where this may lead..?&lt;/p&gt;</description><guid>https://ntoll.org/article/pyweek/</guid><pubDate>Tue, 23 Apr 2019 16:00:00 GMT</pubDate></item><item><title>Make a Joyful Noise</title><link>https://ntoll.org/article/joyful-noise/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;I have a new tuba!&lt;/p&gt;
+
+&lt;p&gt;If my mention of a tuba is a surprise (it
+&lt;a href="https://ntoll.org/article/remembering-john"&gt;shouldn't&lt;/a&gt;
+&lt;a href="https://ntoll.org/article/vaughan-williams-tuba-concerto-programme-notes"&gt;be&lt;/a&gt;),
+check out this short student-film, by my buddy
+&lt;a href="https://twitter.com/cluttercup"&gt;Jane&lt;/a&gt;, which explains all:&lt;/p&gt;
+
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YlS9lpybYxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My new tuba isn't a replacement for my current instrument (which I got when
+I was sixteen years old). Rather, the instruments complement each other. What's
+the difference? If my current tuba is a professional "all rounder", my new
+instrument is a sort of "heavy duty" tuba for big orchestral pieces (most of my
+current playing is orchestral).&lt;/p&gt;
+
+&lt;p&gt;The tuba works by amplifying the buzzing sound I make with my lips
+into a mouthpiece. I change notes by tensing or relaxing my lips (so the
+buzzing sound gets higher or lower) which gives me a limited series of notes
+that are &lt;a href="https://en.wikipedia.org/wiki/Overtone"&gt;overtones&lt;/a&gt; to the
+"fundamental" (lowest) note produced by blowing down the length of the tube of
+the instrument. I use valves to add tubing to the length of the instrument to
+fill in the notes between the overtones so I can play all the notes I need
+(i.e. a chromatic scale).&lt;/p&gt;
+
+&lt;p&gt;What's interesting is how the two instruments are different.&lt;/p&gt;
+
+&lt;p&gt;My original instrument is pitched in Eb (E flat) -- which means the
+instrument's fundamental note is the Eb more than an octave below the bass
+clef (i.e. very low). My new instrument is pitched in C, so its fundamental
+note is &lt;em&gt;even lower&lt;/em&gt;, thus making it an instrument more suited to lower
+sounding music.&lt;/p&gt;
+
+&lt;p&gt;The valves on each instrument are different. I have "piston" valves on my
+original instrument. These are spring loaded and when pressed fully down add
+additional lengths of tubing to the instrument. The photograph below is of the
+inside of the valve so you can see the holes in the piston used to connect 
+the different pipes, depending on the valve's position (up or down).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ntoll.org/static/images/piston_valve.jpg" alt="The inside of a piston valve."&gt;&lt;/p&gt;
+
+&lt;p&gt;My new instrument uses "rotary" valves. These, as the diagram below shows,
+rotate to connect additional lengths of tubing (the passage of air is indicated
+by the hatched area). A sort of lever is used to actuate each valve. They're
+generally much quieter and more reliable than piston valves (less moving parts
+to make clanking sounds) although they can be slower to "engage".&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ntoll.org/static/images/rotary_valve.jpg" alt="A diagramatic view of a rotary valve."&gt;&lt;/p&gt;
+
+&lt;p&gt;The picture below shows the rotary valves on my new tuba. Notice the
+levers I press with my fingers to engage the valves.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ntoll.org/static/images/rotary_valves.jpg" alt="Rotary valves on my new tuba."&gt;&lt;/p&gt;
+
+&lt;p&gt;While both tubas look "tuba shaped" my original tuba points to the right
+(as the player is looking at the instrument) whereas my new instrument points
+to the left. This simply means I have to hold them differently and there's not
+really any change in sound. You can see this difference in the picture
+below (the new tuba is on the right):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ntoll.org/static/images/two_tubas.jpg" alt="My two tubas."&gt;&lt;/p&gt;
+
+&lt;p&gt;The final major difference is in the number of valves each instrument has.
+My original instrument has four "compensating" valves which allow me to get a
+full chromatic scale. The new instrument has five "non-compensating" valves:
+the first four work like my original instrument and allow me to play a full
+chromatic scale, but the fifth valve is used to help tune the very lowest
+notes.&lt;/p&gt;
+
+&lt;p&gt;Why does the new tuba need a special extra "tuning" valve and what on earth
+am I talking about when I say "compensating"..? This, dear reader, is where
+maths, acoustics, logic and music come together in a spectacular fashion.&lt;/p&gt;
+
+&lt;p&gt;My new tuba is approximately 524.9 cm in length without any valves engaged.
+This produces the note, "C". The first valve adds enough pipe to lower the
+pitch by a tone, giving me a "Bb" (B flat) which requires the total length of
+tube to be 589.2 cm. Simple arithmetic tells us the total length of the tube
+added by using the first valve is therefore 64.3 cm (the "open" length of the
+instrument with the added tube should give the correct length to play a tone
+lower). The second valve drops the pitch by a semitone to the note "B" which
+requires a total length of 556.1 cm. Similarly, the third valve lowers the
+pitch by one and a half tones, giving me an "A" which requires the total length
+of tube to be 624.2 cm. Again, the simple arithmetic tells me that the length
+of tube added by the second valve is 31.2 cm while the length added by the
+third valve is 99.3 cm.&lt;/p&gt;
+
+&lt;p&gt;Here's where it gets interesting. If I want to play the note "G" I need to
+make the length of the instrument 700.6 cm. Given the note "G" is two and a
+half tones below "C" I could take the tone provided by the first valve and
+one and a half tones of the third valve and use them together. It means the
+resulting length of additional pipe is 64.3 cm (the first valve) + 99.3 cm 
+(the third valve) giving me a total of 163.6 cm. However, the open length of
+the instrument (524.9 cm) with the additional lengths of pipe (163.6) brings
+the total length to 688.5 cm, which isn't the 700.6 cm needed to play the
+note in tune!&lt;/p&gt;
+
+&lt;p&gt;The solution is to use my fourth valve, which adds 175.7 cm to the length
+of the instrument, thus making it in tune. However, when I need to use my
+fourth valve in combination with my other three valves I still encounter the
+same sort of "wrong length of pipe" problem I describe above. I &lt;em&gt;must&lt;/em&gt;
+use combinations of valves in order to get all the notes I need in the
+chromatic scale. So what can I do?&lt;/p&gt;
+
+&lt;p&gt;This is where the fifth valve on my new tuba comes into play. It has a
+special tuning slide I can adjust "in real time" as I play, thus allowing me
+to tune the fifth valve as and when I need it. It can also be tuned in such a
+way that it "compensates" (remember that word) for the missing lengths of
+tubing when I use the other valves together.&lt;/p&gt;
+
+&lt;p&gt;Which leaves us with the problem of keeping my current tuba (with only four
+valves) in tune. Thankfully, this instrument has "compensating" valves which
+work in a rather ingenious manner. The schematic representation of my current
+tuba is shown below. The mouthpiece is on the left with the bell on the right
+and between are the four valves and associated tubing (not to scale). None of
+the valves are engaged so the column of air blown through the instrument goes
+directly through without any "detours" (as shown by the pipe filled in with
+blue).&lt;/p&gt;
+
+&lt;img src="https://ntoll.org/static/images/compensating_open.png" alt="Compensating system, no valves pressed."&gt;
+
+&lt;p&gt;When I press the first and third valves down the expected two extra lengths
+of tubing are added, as shown by the two loops of pipe filled with blue:&lt;/p&gt;
+
+&lt;img src="https://ntoll.org/static/images/compensating_13.png" alt="Compensating system, valves 1 and 3 pressed."&gt;
+
+&lt;p&gt;Here's where it gets really clever. When the fourth valve is pressed down,
+not only is the expected additional length of tube added to the length of the
+instrument, but this tube is also diverted back through the other three valves
+which have additional "compensating" tubes to bring the instrument in tune:&lt;/p&gt;
+
+&lt;img src="https://ntoll.org/static/images/compensating_134.png" alt="Compensating system, valves 1, 3 and 4 pressed."&gt;
+
+&lt;p&gt;This is, essentially, a logical &lt;code&gt;AND&lt;/code&gt; expressed as pipe-work. If
+the first and fourth valves are pressed then add some new "compensating" length
+of pipe. Clever huh..?&lt;/p&gt;
+
+&lt;p&gt;The disadvantage of this system is the air does two "circuits" around the
+instrument (once through the first three valves, and then again if the fourth
+valve is pressed so the compensating pipes can come into effect). This makes
+the instrument harder to blow (since there are more bends to blow through).
+My new instrument feels like there is less to push against when I'm
+playing.&lt;/p&gt;
+
+&lt;p&gt;Finally, given all the technical tuba-related geekery described above I want
+to end on an artistic note...&lt;/p&gt;
+
+&lt;p&gt;These instruments are beautiful to look at and playing them is a joy. It's
+hard to explain to folks who have never performed music what an amazing
+privilege it is. I get to play beautifully designed and precision engineered
+instruments as part of an orchestra, band or smaller ensemble. By playing with
+my fellow musicians to an audience I'm taking part in a unique social activity.
+No matter the mood or difficulty of the piece I'm playing, I love the sense of
+non-verbal communication I have with my fellow musicians and collectively with
+the audience. I love that I am a part of something creative, challenging,
+expressive, collaborative and most definitely greater than the sum of its
+parts. That the audience appreciate these efforts is a lovely positive
+side effect.&lt;/p&gt;
+
+&lt;p&gt;To me, this is always "joyful noise". :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/joyful-noise/</guid><pubDate>Wed, 13 Feb 2019 16:00:00 GMT</pubDate></item><item><title>CodeGrades</title><link>https://ntoll.org/article/codegrades/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;Lots of people want to learn how to program computers.&lt;/p&gt;
+
+&lt;p&gt;The success of code "boot camps" and devices aimed at the education sector
+(Raspberry Pi and the BBC's micro:bit spring to mind) is evidence of this
+desire for folks to learn "coding".&lt;/p&gt;
+
+&lt;p&gt;At a time when technology is finding its way into every aspect of our lives
+many folks appear to want to be more than just passive consumers of technology.
+They feel a desire to become creators of technology. They want to take control
+of their digital world. They want the skills to make their technology reflect
+their own needs.&lt;/p&gt;
+
+&lt;p&gt;Recently I've been experimenting with how I could use my background and
+expertise in music education in a way that helps folks address this desire for
+learning to program. The first experiment took place over the autumn and
+involved a group of complete beginners preparing for a "code grade".&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://codegrades.com/"&gt;CodeGrades&lt;/a&gt; are a programming version
+of time-proven techniques like music grades, belts in martial arts or lifeguard
+certification. Learners level up by applying the knowledge and skills needed
+for each grade to their own fun, interesting and challenging coding projects.
+Learners present their projects to professional software developers who
+assess the projects against the criteria for the grade being taken and provide
+a set of marks and written feedback so the learner can see where they're doing
+well, what needs to improve and what their next steps may be.&lt;/p&gt;
+
+&lt;p&gt;The autumnal experiment proved this concept worked. The initial group of
+learners were able to learn enough to create a "grade 1" level project in the
+Python programming language in about ten weeks. Furthermore, after completing
+their grading the vast majority asked when they can take their next grade.
+This outcome was far better than I had ever imagined.&lt;/p&gt;
+
+&lt;p&gt;Like music grades, code grades are eight cumulative steps for learning how
+to write code. The first grade (as taken by our "test subjects") is easy
+enough for most people to take as a first step into programming. The eighth
+grade is of equivalent standard to the skills and knowledge needed to be an
+effective junior professional software developer. The middle grades bridge
+the way so the skill gaps between each of the grades is
+achievable. They're like stepping stones into coding, or perhaps a modern
+day "&lt;a href="https://en.wikipedia.org/wiki/Gradus_ad_Parnassum"&gt;Gradus ad
+Parnassum&lt;/a&gt;". ;-)&lt;/p&gt;
+
+&lt;p&gt;Perhaps the most important aspect of CodeGrades is how it is different to
+other educational offerings.&lt;/p&gt;
+
+&lt;p&gt;Code boot-camps will charge you north of £10k for a three month course and
+a guaranteed "job" as a junior developer. This is, frankly, a terrible idea.
+Not only are people throwing huge sums of money over a cliff edge before they
+make the jump themselves, but learning to code requires a long term investment
+of time. You cannot learn how to write effective code in just three months.
+What the boot-camps have realised is that you can learn enough
+&lt;em&gt;information&lt;/em&gt; in just three months to appear as if you can code. It has
+been my unhappy experience to interview graduates of such schemes and have them
+answer my questions about the niceties of some aspect of coding with text-book
+answers; yet most have been unable to apply such "text book answers" in any
+useful or even credible way. Those who did create something made what can
+only be described as "spaghetti code". This is the equivalent of claiming that
+it's possible to train musicians to a professional level in just three months.
+Can you imagine how an orchestra would sound with musicians trained in this
+way? Would you want to hire such musicians to play for your wedding party?&lt;/p&gt;
+
+&lt;p&gt;Other educational efforts are mostly aimed at beginner developers. As a
+result, all their educational resources are at the beginner end of the scale
+and there is hardly any guidance for how to move onto more challenging
+programming. Put another way, it's like getting a piano with lots of beginner
+level music to learn, but nothing which will stretch you after you've got the
+basics in place. There is simply no continuity nor access to the fun
+"advanced" stuff.&lt;/p&gt;
+
+&lt;p&gt;The syllabus for CodeGrades is written by professional software developers.
+The grades reflect current best practice found in the software industry. They
+offer a framework for sustained and structured long term learning to write
+code. All the resources associated with CodeGrades are free, learners only pay
+to take the grading. CodeGrades will be priced in a way equivalent to music and
+ballet grades or martial arts belts.&lt;/p&gt;
+
+&lt;p&gt;CodeGrades help you learn to code with the confidence you need to make
+the stuff you want.&lt;/p&gt;
+
+&lt;p&gt;The upshot is that it's the start of the year, and I've decided that the
+outcomes from the experiment in the autumn have been so positive that I want to
+invest some of my own time into developing the concept further.&lt;/p&gt;
+
+&lt;p&gt;So, here's to an interesting
+2019... I hope to work with friends (old and new) in making something that
+helps people learn and grow while also providing employment for developers
+who feel they're at a stage in their career where they want to acquire and
+practice the skills needed to be effective and inspiring mentors.&lt;/p&gt;
+
+&lt;p&gt;Happy new year.&lt;/p&gt;</description><guid>https://ntoll.org/article/codegrades/</guid><pubDate>Sat, 05 Jan 2019 15:30:00 GMT</pubDate></item><item><title>Compassion.py</title><link>https://ntoll.org/article/compassion/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;I write from a place of love and respect for the UK Python programming community.
+Some of what follows may make painful reading (sorry). But I want to be clear:
+if you misconstrue my words as aggressive, nasty or hurtful, then you have
+completely misunderstood my intent. I will never knowingly be a source of
+vindictive pain.&lt;/p&gt;
+
+&lt;p&gt;I'm going to shine a light on the (usually hidden) problems I have encountered
+in the UK Python community over the ten years that I've been volunteering.&lt;/p&gt;
+
+&lt;p&gt;It's hard to do this without appearing as if mud slinging or trying to diminish
+the considerable public-facing achievements of the UK Python community in doing
+genuinely wonderful things. I am anxious to avoid a situation that undermines
+all the good stuff.&lt;/p&gt;
+
+&lt;p&gt;But only by highlighting and acknowledging such hidden problems can action be
+taken to address them. I hope you bear with me as I try to find the words to
+explain things in a constructive, non-confrontational yet honest way.&lt;/p&gt;
+
+&lt;p&gt;The problems of which I speak are many in number and range from the
+institutional (a woman of limited means put into the humiliating position of
+having to beg for financial support), and petty (describing the John Pinner
+awards as "just a popularity contest") to plagiarism (members of
+the community claiming the work and intellectual property of others as their
+own) and an exercise of power and control for organisational gain (a sponsor
+taking steps to exclude others from fully participating in a community event
+-- they threatened to pull out if they didn't get their way). Sadly, I have a
+list as long as my arm full of such things.&lt;/p&gt;
+
+&lt;p&gt;Above and beyond these problems are personal attacks, slights and snark aimed
+directly at me (more on this later). Having said that, I want you to know that
+I bear no ill-will nor grudges.&lt;/p&gt;
+
+&lt;p&gt;I'm necessarily vague about the details: I don't believe finger pointing or
+blame is a useful or constructive way forward. Far better to honestly and
+constructively highlight such problems in the hope that they are acknowledged
+and can be avoided in the future.&lt;/p&gt;
+
+&lt;p&gt;If you're thinking, "that's not the UK Python community I know", then I am
+happy for you. You know the joyous, supportive and friendly place that
+welcomed and sustained me as a new Python programmer in 2007. I wish you good
+fortune and hope you cherish, advance and grow this aspect of the community.&lt;/p&gt;
+
+&lt;p&gt;However, such problems are themselves problematic because they are so often
+hidden. Furthermore, I've observed that those involved often don't appear to realise they are
+causing a problem. Upon reflection, I believe such situations are caused by a
+lack of just one thing: compassion (an awareness of and sympathy for another's
+feelings and suffering, mixed with a pro-active desire to help).&lt;/p&gt;
+
+&lt;p&gt;So my plea to members of the UK Python community is to show more compassion.&lt;/p&gt;
+
+&lt;p&gt;If you remain unconvinced of my plea, I want to explain what happens when we
+lack compassion.&lt;/p&gt;
+
+&lt;p&gt;Over the past three years I have grown despondent about the problems I have
+encountered in the UK's Python community. This past year the
+feeling became unbearable, to the extent that I sought professional help to
+deal with mental health problems solely arising from my contact with the UK
+Python community.&lt;/p&gt;
+
+&lt;p&gt;Last weekend a straw broke the camel's back and, after a considerable amount of
+thought and reflection, I finally decided to publicly reveal how I felt 
+&lt;a href="https://twitter.com/ntoll/status/1051134675064897538"&gt;via&lt;/a&gt;
+&lt;a href="https://twitter.com/ntoll/status/1051195641727242241"&gt;Twitter&lt;/a&gt;.
+I'd been sitting on a huge amount of pent up frustration and sadness,
+and there needed to be a controlled release. I came to the realisation that
+only by "coming clean" and honestly describing my feelings would I be able to
+heal, move on and allow my life to return to some normality.&lt;/p&gt;
+
+&lt;p&gt;To say the reaction has been "interesting" is an understatement.&lt;/p&gt;
+
+&lt;p&gt;I'd like to start by thanking the many people who took the time to reach out
+with kind messages of support. You are the best of us, and the reason why the
+UK Python community is often an amazing place. Your compassion and
+thoughtfulness is an example to us all. Thank you.&lt;/p&gt;
+
+&lt;p&gt;However, I was reduced to tears of hurt by the initial reaction of one member
+of our community who went for the jugular (and it saddens me deeply that this
+reaction was "liked" by a number of other people in the UK Python community).
+I have been asked to justify my feelings to others (how dare I feel this way
+about the UK Python community) and I have had my words picked over in public
+leading to unwanted, unhelpful and upsetting comments.&lt;/p&gt;
+
+&lt;p&gt;These latter reactions inadvertently demonstrate why I've been feeling
+despondent. They show a complete lack of compassion and suppress hoped-for
+constructive dialogue or catharsis.&lt;/p&gt;
+
+&lt;p&gt;My despondency and poor mental health is directly linked to encountering and
+dealing with an excessive number of such problems: a sort of death by a
+thousand paper cuts.&lt;/p&gt;
+
+&lt;p&gt;"But why didn't you reach out for help?" you may ask.&lt;/p&gt;
+
+&lt;p&gt;I did.&lt;/p&gt;
+
+&lt;p&gt;I was rebuffed when I tried to find support from several individuals in the UK
+Python community. This led me to a downward spiral of frustration, self doubt
+and sadness: "What have I done to deserve this? Am I such an obnoxious person
+that people would refrain from showing support? Why am I not able to speak of
+my pain?"&lt;/p&gt;
+
+&lt;p&gt;I felt a complete failure, rejected and disempowered by the whole situation.&lt;/p&gt;
+
+&lt;p&gt;My only choice has been to step away from the UK Python community. It's not the
+ending I would have wanted and it makes me feel extraordinarily sad.&lt;/p&gt;
+
+&lt;p&gt;But my tweets brought acknowledgement from others in the international Python
+community. I'm not on my own in encountering such problems or the associated
+feelings of despondency. This is definitely not only a UK Python issue.
+My far flung friends highlighted patterns, features and common ground which,
+in turn, helped me realise, "I am not the only one".&lt;/p&gt;
+
+&lt;p&gt;Personally, by speaking of these things I feel I have turned a corner and have
+felt a great sense of release, although I still carry a huge amount of sadness
+and pain about how things turned out. For what it's worth, I hope people in the
+UK Python community never treat one of their own like this ever again.&lt;/p&gt;
+
+&lt;p&gt;What will I do next?&lt;/p&gt;
+
+&lt;p&gt;For me, this boils down to a positive assertion, through deeds and words, of
+humanity, honesty, compassion, patience, love and respect. What that entails
+depends on all sorts of complicated variables: who, what, where, when and how
+a situation is. Ironically for a conversation about a programming community,
+it's not a case of following an algorithm -- I'll have to exercise that
+unique and precious spark which means I'm not an unfeeling machine: my
+humanity.&lt;/p&gt;</description><guid>https://ntoll.org/article/compassion/</guid><pubDate>Mon, 22 Oct 2018 13:00:00 GMT</pubDate></item><item><title>(Anti)Social Media</title><link>https://ntoll.org/article/antisocial-media/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;At the start of 2018 I will delete my account and all associated content
+from &lt;a href="http://facebook.com/"&gt;Facebook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I joined Facebook to work with their public API as part of my work at
+Fluidinfo. After a while people started to find me (with a surname like
+"Tollervey" I'm easy to find online). As a result, I've reconnected with many
+friends. This has been a lovely and positive experience: anything that brings
+people together in friendship is to be applauded.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Facebook makes me uncomfortable: it makes it easy to bring
+people together, yet drives a wedge between friends.&lt;/p&gt;
+
+&lt;p&gt;Posts and responses may appear like conversations between people, but they
+introduce a layer of indirection -- they are always done via Facebook rather
+than directly between friends. To analogise, it would be like going to a bar
+where all interactions between the patrons were made via the bar tender.
+Facebook acts like a really efficient and multi-media aware version of the bar
+tender from my analogy.&lt;/p&gt;
+
+&lt;p&gt;This is problematic for several reasons.&lt;/p&gt;
+
+&lt;p&gt;Our socialising on Facebook is reduced to interactions that
+standardise, process and normalise our lives into a digital production line of
+uniform social outputs ("like" something, post a picture, reply with a comment,
+set your mood). The messy, complicated and raw aspects of life, which I would
+argue are the most valuable, fun and interesting are lost or have no way to
+manifest themselves. We commoditize ourselves into a dribble of systematized
+digital assets (photos, posts, likes etc...).&lt;/p&gt;
+
+&lt;p&gt;Once commoditized, Facebook insinuates itself into our friendships. For
+example, after chatting with a particular friend (let's call them "X") you
+appear to see more "X likes Y" content interleved into your timeline. Facebook
+even tries to guess things about your background (where did you go to school? X
+attended Y university). Our commoditzation makes it easy to be measured and
+analysed which, in turn, allows Facebook to work out who we are from the way we
+behave on the website. Remember, the bar tender in my analogy knows the
+content of all the conversations between the customers as well as everyone's
+drink and snack preferences, favourite seat and usual arrival time.&lt;/p&gt;
+
+&lt;p&gt;To be fair, &lt;a href="https://www.facebook.com/business/overview"&gt;Facebook
+are up front&lt;/a&gt; about how they make money: they sell access to our accounts
+to the highest bidder who wants to advertise at us. As
+&lt;a href="https://www.facebook.com/business/products/ads"&gt;their website
+explains&lt;/a&gt;: "&lt;em&gt;Find people easily; you can choose your audience based on
+demographics, behaviours or contact information. Get their attention; our
+advert formats are eye-catching, flexible and work on every device and
+connection speed. See the results; our advert reporting tools show you how
+your adverts have impacted your business in visual, easy-to-read reports.&lt;/em&gt;"
+It's obvious that their customers find this a valuable service (note: as users,
+we are not their customers, but, as is often pointed out, the product on
+offer): "&lt;em&gt;We can target adverts to people based on how and when they
+engaged, and create an experience that is relevant to where they are in the
+process of investigating our products.&lt;/em&gt;"&lt;/p&gt;
+
+&lt;p&gt;So, here's why I'm leaving Facebook: I don't want my friendships reduced to
+pre-canned types of interaction. I want to look my friends in the eye, smile
+at them, make music, laugh and give them a hug or shoulder to cry on. I want to
+welcome them to my home, make them a meal, share a drink and get lost in
+conversation. I want to shake their hands, listen to their tone of voice, raise
+my eyebrow at a silly comment or make a joke so we laugh together. Put simply,
+I want to spend quality time with my friends in real life, rather than watch a
+stream of mediated content in a sterilised digital life.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, I don't want to be measured, analysed, prodded and poked for
+the purpose of brand engagement. I don't want my friendships interrupted
+for the sake of a commercial break in my timeline. It's troubling to be reduced
+to a means to an end by virtue of simply being me (my friendships make me a way
+for Facebook to make money). Put simply, I find Facebook's openly Orwellian
+platform troubling.&lt;/p&gt;
+
+&lt;p&gt;Many people, including maybe even you, don't have a problem with such a
+state of affairs. I completely respect that, as I hope you respect my
+discomfort with Facebook and my decision to leave. Facebook is, after all, an
+opt-in personal choice.&lt;/p&gt;
+
+&lt;p&gt;So, what will I do post-Facebook?&lt;/p&gt;
+
+&lt;p&gt;I'll concentrate on fostering friendships unmediated by Facebook. That will
+take time as I try to stay in touch via email, phone calls or face-to-face,
+but I'm confident such efforts will be worth it.&lt;/p&gt;
+
+&lt;p&gt;Finally, if we are friends on Facebook and Facebook is the only way we
+interact, please don't lose touch.
+&lt;a href="mailto:ntoll@ntoll.org?Subject=Hello%2C%20Nicholas..%21&amp;amp;Body=Hi%20Nicholas%2C%0A%0AType%20your%20message%20here...%20%3A-%29%0A%0ALots%20of%20love%2C%0A%0AInsert%20your%20name%20here"&gt;Drop me an email&lt;/a&gt;
+and never doubt that I'll be pleased to hear from you. If you
+find yourself wondering if you should get in touch with me, the answer is
+always, "yes, you should definitely get in touch".&lt;/p&gt;
+
+&lt;p&gt;I look forward to hearing from you soon... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/antisocial-media/</guid><pubDate>Sun, 17 Dec 2017 21:30:00 GMT</pubDate></item><item><title>Advice for a Beginner Coder</title><link>https://ntoll.org/article/advice/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;Last week was &lt;a href="http://2017.pyconuk.org/"&gt;PyCon UK 2017&lt;/a&gt;. It was
+perhaps the best PyCon yet and, as usual, I met many old friends and made
+plenty of new ones. Many thanks to Peter Inglesby (chair) and the other
+volunteers who put so much work into making this such a wonderful space for
+bringing together a community.&lt;/p&gt;
+
+&lt;p&gt;A highlight of the conference for me was the number of young people who were
+&lt;strong&gt;not part of the young coders' day&lt;/strong&gt; but who were attending the
+conference as regular attendees (and accompanied by ever-supportive
+parents). I got chatting to one such combination of young person and
+accompanying parent and they asked for advice on how to develop as
+a beginner programmer in the Python community.&lt;/p&gt;
+
+&lt;p&gt;What follows is based upon my response:&lt;/p&gt;
+
+&lt;p&gt;What you get out of the Python community is directly related to how
+much you put in. The Python community has a huge number of interesting projects
+with which you could engage and learn from.&lt;/p&gt;
+
+&lt;p&gt;Put simply, look for a project that you find interesting and start to
+contribute.&lt;/p&gt;
+
+&lt;p&gt;Don't dive in and submit thousands of lines of code - rather, do something
+small, easy and/or trivial. It'll introduce you to the current maintainers of
+the project and demonstrate you're competent while allowing you to get used to
+their modus operandi. Be polite and ask questions that demonstrate you've read
+their documentation.&lt;/p&gt;
+
+&lt;p&gt;Don't be afraid to ask questions - good developers are
+always asking questions. Knowing how to ask and what the right questions are is
+an essential skill to develop. &lt;strong&gt;Asking questions is NOT a sign you
+don't know what you're doing&lt;/strong&gt;. To good developers it's evidence
+that you're exploring the problem and a signal that you're engaged and
+interested.&lt;/p&gt;
+
+&lt;p&gt;To be clear, it takes time to get involved in a project and the quickest
+way is often to take small (but secure) steps. Your collaborators, if they're
+any good, will provide advice about your contributions. This is invaluable
+mentorship and it also means you'll get to know people in the community. When
+you go to conferences, you'll have allies and colleagues!&lt;/p&gt;
+
+&lt;p&gt;Be careful to separate criticism of your code from criticism of you. The
+very best developers are humble, listen to advice and understand that code can
+always be improved. Sometimes it's hard to hear that your code is not very
+good, but this also helps us to appreciate how to give good (constructive)
+advice.&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, if you don't get support, if people are rude or there's a bad
+smell around the project, just leave. Life is too short to have to deal with
+idiots, and if you have no choice, find experienced, thoughtful and
+conscientious allies to help support you (you'll find plenty of them in the
+Python community).&lt;/p&gt;
+
+&lt;p&gt;A good project will have a code of conduct that sets expectations of how
+collaborators are to interact. &lt;strong&gt;This is far more important than
+you may at first realise&lt;/strong&gt; and, happily, many in the Python community
+take this aspect of programming very seriously.&lt;/p&gt;
+
+&lt;p&gt;In a similar vein, one of the best activities to help you learn new things
+is to teach. Being able to explain things indicates you know the craft of
+programming at a deep level. For example, you appreciate what to leave in or
+how much to leave out of an explanation. You have clear enough mental models
+of the concepts of programming that you can accurately analogize and
+summarise. Furthermore, to explain yourself in simple and easy-to-understand
+language demonstrates your own clarity of thought. Perhaps most importantly,
+finding the opportunities to practice the skill of teaching is a sign of
+moral and professional value: you're putting something back into the wider
+community and you have shown initiative.&lt;/p&gt;
+
+&lt;p&gt;Our community is at its best when people take the time to create a space
+where others, no matter their background or differences, can flourish
+together. You should endeavour to follow this example. Why? Because inclusion
+that celebrates difference and diversity exercises our capacity for empathy
+and understanding of others' lives, problems and interests. As a developer,
+how can you be sure what people need from your software? Only by listening to
+others, reflecting, evaluating and experimenting is such valuable knowledge
+revealed. Only then will you know what important problems to solve.
+&lt;strong&gt;This is (also) far more important than you may at first
+realise&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, make sure you're having fun. Writing code is often a very
+frustrating activity, but when you make something work, the elation at seeing
+something you've created solve a problem makes all the hours of frustration
+worth it.&lt;/p&gt;</description><guid>https://ntoll.org/article/advice/</guid><pubDate>Wed, 01 Nov 2017 12:30:00 GMT</pubDate></item></channel></rss>

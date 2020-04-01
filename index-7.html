@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Everything I say is false...">
+<meta name="viewport" content="width=device-width">
+<title>ntoll.org (old posts, page 7) | ntoll.org</title>
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://ntoll.org/index-7.html">
+<link rel="prev" href="index-8.html" type="text/html">
+<link rel="next" href="index-6.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href=".">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="presentations">Presentations</a></li>
+                <li><a href="cv">CV</a></li>
+                <li><a href="contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/fluiddb-101/" class="u-url">FluidDB 101</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/fluiddb-101/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-08-19T13:04:00Z" itemprop="datePublished" title="2009-08-19 13:04">2009-08-19 13:04</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>On Monday <a href="http://jon.es/terry.html">Terry</a> and <a href="http://twitter.com/esteve">Esteve</a> "switched on" the alpha version of their <a href="http://www.fluidinfo.com/fluiddb">FluidDB</a> offering. Congratulations guys!</p>
+
+	<p>I've written about FluidDB <a href="http://ntoll.org/article/europython-2009">before</a> – I find the philosophy behind the project so interesting. Now that I (and you) can get to play with it I'm recording some quick take-aways for the sake of my memory and hopefully your education (I'm assuming you're au fait with FluidDB). ;-)</p>
+
+	<p>Currently, FluidDB is in read-only mode as none of the pillaging horde that are the alpha testers have been given access to their user's details so can't make any "writes". According to Terry, alpha testers will get their account details by the end of the week.</p>
+
+	<p>Nevertheless, we can still "read" what little is in there to get a feel of what interacting with FluidDB is like:</p>
+
+	<h2>Example Interactions</h2>
+
+	<p>FluidDB currently communicates with the outside world via an <a href="http://doc.fluidinfo.com/fluidDB/api/http.html">HTTP based API</a>. You <em>could</em> use tools like <a href="http://www.gnu.org/software/wget/">wget</a> or <a href="http://curl.haxx.se/">curl</a> to interact with FluidDB but simple libraries are <a href="http://bitbucket.org/sanxiyn/fluidfs/">already being written</a> (kudos to Sanghyeon Seo for the quick work – <a href="http://bitbucket.org/ntoll/fluidfs/">my fork</a> includes fixes for Python &lt; 2.6). I'll use my fork in the following Python doctest like example:</p>
+
+	<p>Return a list of objects that have the tag "username" from the "fluiddb/users" namespace</p>
+
+<pre>
+
+<code>
+
+&gt;&gt;&gt; import fluiddb
+
+&gt;&gt;&gt; fluiddb.call('GET', '/objects', query='has fluiddb/users/username')
+
+(200, {'ids': ['8b57277a-09f6-485d-9108-761b7848c913', ...SNIP... '62fe2cca-7ad2-4dd8-9b0a-b3909c0709e8']})
+
+</code>
+
+</pre>
+
+	<p>Return an object where the tag "username" from the "fluiddb/users" namespace has the value "ntoll"</p>
+
+<pre>
+
+<code>
+
+&gt;&gt;&gt; fluiddb.call('GET', '/objects', query='fluiddb/users/username = "ntoll"')
+
+(200, {'ids': ['5873e7cc-2a4a-44f7-a00e-7cebf92a7332']})
+
+</code>
+
+</pre>
+
+	<p>Find out about a specific object:</p>
+
+<pre>
+
+<code>
+
+&gt;&gt;&gt; fluiddb.call('GET', '/objects/5873e7cc-2a4a-44f7-a00e-7cebf92a7332', {"showAbout": True})
+
+(200, {'about': 'Object for the user named ntoll', 'tagPaths': ['fluiddb/about', 'fluiddb/users/name', 'fluiddb/users/username']})
+
+</code>
+
+</pre>
+
+	<p>Get the value of the tag "fluiddb/users/username" from the object with the uuid "5873e7cc-2a4a-44f7-a00e-7cebf92a7332"</p>
+
+<pre>
+
+<code>
+
+&gt;&gt;&gt; fluiddb.call('GET', '/objects/5873e7cc-2a4a-44f7-a00e-7cebf92a7332/fluiddb/users/name')
+
+(200, 'ntoll')
+
+</code>
+
+</pre>
+
+	<p>Get the result as json (GET and PUT responses default to raw HTML payload)</p>
+
+<pre>
+
+<code>
+
+&gt;&gt;&gt; fluiddb.call('GET', '/objects/5873e7cc-2a4a-44f7-a00e-7cebf92a7332/fluiddb/users/name', body=None, format='json')
+
+(200, {'value': 'ntoll'})
+
+</code>
+
+</pre>
+
+	<p>So far so good…</p>
+
+	<p>Until we get our API keys that allow us to "write" stuff in our namespaces then this is all we've got to play with. I suspect that we might be able to create new objects (I've not tested this yet) as these don't "belong" to anyone – remember it's the namespaces/tags and the associated values that make FluidDB so interesting.</p>
+
+	<p>Finally, you might be asking where one might find out more… the most useful pages I've found are:</p>
+
+	<ul>
+<li><a href="http://api.fluidinfo.com/fluidDB/api/*/*/*">FluidDB API Specification</a></li>
+
+		<li><a href="http://doc.fluidinfo.com/fluidDB/api/index.html">FluidDB API Documentation</a></li>
+
+		<li>
+<a href="http://doc.fluidinfo.com/fluidDB/index.html">High Level Documentation</a> (especially the section <a href="http://doc.fluidinfo.com/fluidDB/queries.html">describing the very simple query language</a>)</li>
+
+	</ul>
+<p>You might also want to join the #fluiddb channel on <a href="http://freenode.net/">Freenode IRC</a> or subscribe to the two <a href="http://groups.google.com/group/fluiddb-discuss">Google</a> <a href="http://groups.google.com/group/fluiddb-users">groups</a>.</p>
+
+	<p>I'll update with more as soon as I've worked it out / been given access… :-)</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/augmented-reality-a-developers-perspective/" class="u-url">Augmented Reality - A Developer's Perspective</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/augmented-reality-a-developers-perspective/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-08-10T10:21:00Z" itemprop="datePublished" title="2009-08-10 10:21">2009-08-10 10:21</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I've been amazed at the <a href="http://www.mobilizy.com/endeveloper-highlight-nicholas-htollervey">various</a> <a href="http://venturebeat.com/2009/08/09/augmented-reality-meets-scavenger-hunt-with-geobeagle-wikitude/">reactions</a> to my <a href="http://ntoll.org/article/hello-android">last post</a>. Since then I've been collecting my thoughts about <a href="http://en.wikipedia.org/wiki/Augmented_reality">Augmented Reality</a> (AR). What follows is a first attempt to distil them into a coherent commentary on AR and its potential.</p>
+
+	<h2>What is Augmented Reality?</h2>
+
+	<p>Augmented Reality is a means of superimposing digital assets upon the "real" world as seen through an appropriately configured device. </p>
+
+	<p>For example, in my last post I described how I put the locations of "real world" <a href="http://www.geocaching.com/">geocaches</a> as digital representations into the <a href="http://www.wikitude.org/">Wikitude</a> AR viewer provided by <a href="http://www.mobilizy.com/">Mobilizy</a>. </p>
+
+	<p>Alternatively, an AR enabled device might recognise the face of a new acquaintance, retrieve their contact details and display them or import them into your address book. Something similar to this is demonstrated in the following video (from the Swedish company <a href="http://www.tat.se/">TAT</a>):</p>
+
+	<p><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/tb0pMeg1UN0&amp;hl=en&amp;fs=1&amp;">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/tb0pMeg1UN0&amp;hl=en&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object></p>
+
+	<p>In both cases, within an augmented reality digital assets have two essential qualities:</p>
+
+	<ol>
+<li>A location in the real world – identified by longitude/latitude/altitude (as with the geocaches) or by some other means (such as facial recognition).</li>
+
+		<li>A context to give them meaning – provided by the digital asset's representation in the augmented world.</li>
+
+	</ol>
+<h2>How does it work?</h2>
+
+	<p>The basic recipe for Wikitude is simply…</p>
+
+	<ul>
+<li>An AR enabled device (like my <a href="http://www.android.com/">Android</a> based <a href="http://www.htc.com/www/product/magic/overview.html">mobile phone</a>) has GPS capabilities, a compass and accelerometers that enable it to work out where I am, where I'm pointing and how I'm moving / holding the device in the real world.</li>
+
+		<li>Given this information it is possible to work out what digital assets are close by, if I'm facing in their direction and if the device is being held in such a way that it is looking at them. </li>
+
+		<li>Finally, by capturing the output of the device's camera it is possible to add such digital assets to the image displayed on the screen of the device.</li>
+
+	</ul>
+<p>...but there is more…</p>
+
+	<p>Digital assets need to be understood as representing something. This can be achieved in several ways:</p>
+
+	<ul>
+<li>
+<strong>The context of the application</strong>. For example, it's obvious that you're looking at geocaches in the AR view of <a href="http://code.google.com/p/geobeagle/">GeoBeagle</a>.</li>
+
+		<li>
+<strong>Visual clues</strong>. To continue with the geocaching example, one might represent different types of cache with different icons in the AR view. One might even represent distance with alpha compositing – as an asset gets further away it becomes more transparent until, finally, it disappears. Other dimensions that could be represented include relative speed of an asset via blue/red shift and an asset's "importance" related to its on-screen size. I suspect conventions to emerge as AR technology matures. </li>
+
+		<li>
+<strong>Layers/feeds/channels</strong> that filter assets. Imagine you're looking at a scene that is cluttered with many assets but you only want to see telephone kiosks (how ironic). One might filter out the "shops", "attractions", "hotels" and "transport" layers leaving only the "utilities" layer that shows things like public toilets and telephone kiosks. Companies should be able to make money by providing subscription based layers.</li>
+
+	</ul>
+<h2>The current state (for developers)</h2>
+
+	<p>I've only had experience of using Wikitude so I'll limit my comments to that platform.</p>
+
+	<p>Wikitude is beta software but if you want to play with an existing version to see how it performs then download the <a href="http://www.wikitude.org/world_browser">Wikitude World Browser</a> application available in the Android market.</p>
+
+	<p>Wikitude is also in "closed" beta – meaning you'll have to <a href="http://www.wikitude.org/developers">register</a> in order to get the documents and associated code / libraries. It is my understanding that eventually one will need a developer key to use the API.</p>
+
+	<p>Wikitude already seems to be very stable – I've not had it crash (yet) but I'm sure as more people start to use it more opportunity will exist for breakage.</p>
+
+	<p>The API is very simple. As I explained in my previous post, this is both good and bad. To paraphrase Albert Einstein: <em>"As simple as possible, but no simpler"</em>. Wikitude is currently <em>too</em> simple (but in a good way). I'd like to be able to:</p>
+
+	<ul>
+<li>Define the menus and associated event handlers associated with each PoI (Point of Interest – a digital asset within the AR world) so that I can customise what happens when a user clicks a specific PoI.</li>
+
+		<li>Define areas rather than just points and choose how such areas are "filled" – colour, texture etc…</li>
+
+		<li>Have an elegant solution for missing altitude information. For example, geocaches only have a longitude and latitude but no altitude. Wikitude assumes 0 meters altitude if none is provided so an early version of the geocaching application had nearby geocaches appearing underground (as I'm at an altitude of 157 meters). My solution was to make the world flat by giving everything within 6000 meters the same altitude as the current user – although this isn't at all ideal.</li>
+
+		<li>Be able to display pathways based on data from <a href="http://www.openstreetmap.org/">OpenStreetMap.org</a> (for example). It'd be good to superimpose public rights of way, footpaths and other navigation information. Something like an AR SatNav.</li>
+
+		<li>Add 3d models to the AR. Imagine visiting an ancient monument and being able to see an artist's impression that could be viewed in situ. What a great educational resource <em>that</em> would be and Architects would find it useful on site during the pre-build phase.</li>
+
+	</ul>
+<p>Nevertheless, Mobilizy have the right attitude because "simple" is a good place to start. I can only assume they have various features up their sleeves that they'll add when finished and properly tested. </p>
+
+	<p>I don't want to give the wrong impression because one can already do quite a lot: </p>
+
+	<ul>
+<li>Add points according to longitude / latitude / altitude.</li>
+
+		<li>Change the label associated with the PoI and the description that is displayed when the item is tapped. </li>
+
+		<li>Change the icon displayed in the AR view.</li>
+
+	</ul>
+<h2>Potential</h2>
+
+	<p>So what happens now..? I can imagine all sorts of uses for this technology and I'll work my ideas out into a blog post in the not-too-distant future. </p>
+
+	<p>However, I'd caution against making every location based application viewable via AR. Often the top-down Google Maps view is all that is needed. For example, why show houses for sale in AR when houses for sale (in the UK at least) always have an estate agent's "For Sale" sign placed prominently outside the property? One should only use a technology because it is the best fit for a problem, <strong>not</strong> because it is the latest and greatest.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/hello-android/" class="u-url">Hello Android!</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/hello-android/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-08-05T23:55:00Z" itemprop="datePublished" title="2009-08-05 23:55">2009-08-05 23:55</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><img src="static/images/65.jpg" title="Android" alt="Android"></p>
+
+	<p>Last month I bought my first new mobile phone since 2001 (honest). </p>
+
+	<p>As a developer I wanted something I could play with, so after looking at the iPhone, Blackberry and Windows based offerings I ended up going for the <a href="http://www.htc.com/www/product/magic/overview.html">HTC Magic</a> running <a href="http://www.android.com/">Google's Android platform</a>. </p>
+
+	<p>So far, I've found it to be a fantastic phone: easy to use, lots of very cool features and small enough to fit in your pocket. It's definitely on a par with <a href="http://developer.apple.com/iphone/">Apple's OS</a> (I own an iPod Touch) – and with <a href="http://www.htc.com/www/product/hero/overview.html">other</a> Android devices coming to market it looks like Google is onto a winner (again).</p>
+
+	<p>There are several fantastic applications available for Android phones. Two of may favourites are <a href="http://code.google.com/p/geobeagle/">GeoBeagle</a> and <a href="http://www.wikitude.org/">Wikitude – World Browser</a> (both available in the <a href="http://www.android.com/market/">Marketplace</a>). </p>
+
+	<h2>GeoBeagle</h2>
+
+	<p>GeoBeagle is an open-source <a href="http://www.geocaching.com/">Geocaching</a> application. What is Geocaching..? As the website explains:</p>
+
+	<blockquote>
+
+		<p>"Geocaching is a high-tech treasure hunting game played throughout the world by adventure seekers equipped with GPS devices. The basic idea is to locate hidden containers, called geocaches, outdoors and then share your experiences online. Geocaching is enjoyed by people from all age groups, with a strong sense of community and support for the environment."</p>
+
+	</blockquote>
+
+	<p>As Android phones come with <a href="http://en.wikipedia.org/wiki/Global_Positioning_System">GPS</a> (Global Positioning System) built it – just like the SatNav in your car – they can be used to determine your location and how far away you are from a cache. GeoBeagle is an excellent application that makes this easy – and it's what I use when <a href="http://www.geocaching.com/profile/?guid=8e89fca9-6863-4d8a-98f6-d5a1e3281ee3">I go geocaching</a> with my kids.</p>
+
+	<h2>Wikitude</h2>
+
+	<p>Wikitude World Browser is an example of augmented reality. I'll let their website explain,</p>
+
+	<blockquote>
+
+		<p>"[It] presents the user with data about their surroundings, nearby landmarks, and other points of interest by overlaying information on the real-time camera view of a smart-phone."</p>
+
+	</blockquote>
+
+	<p>When colleagues have asked about my new phone this is the one application I always show quite simply because it raises such incredulity and positive feedback that it is hard not to feel like a time-traveller from the future demonstrating a gizmo from Star Trek.</p>
+
+	<p>Happily, <a href="http://www.mobilizy.com/">Mobilizy</a>, the creators of Wikitude, have <a href="http://www.wikitude.org/developers">released an API</a> (currently in closed Beta) and I requested to get on board. My intention was to <a href="http://en.wikipedia.org/wiki/Mashup_%28digital%29">mashup</a> GeoBeagle and Wikitude as a means of learning Android development.</p>
+
+	<p>Yesterday evening I started experimenting. <em>This</em> evening I finished it off and managed to find enough time before sunset to run to my nearest geocache for testing, the results of which can be seen in the video below:</p>
+
+	<p><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/sd_h0vynlNM&amp;hl=en&amp;fs=1&amp;rel=0">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/sd_h0vynlNM&amp;hl=en&amp;fs=1&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object></p>
+
+	<p>What does this show..?</p>
+
+	<ol>
+<li>The freedom to learn from open-source projects such as GeoBeagle is invaluable for a newcomer to a platform such as Android. Bottom line: being open is an immediate win.</li>
+
+		<li>Wikitude is an amazingly simple API to use. As you'll read below, the Mobilizy guys have made developer's lives very easy – my only concern being that such a simple API will make customisation difficult (although this is only the very first Beta release – I'm mentioning this for the purposes of feedback and fully expect Wikitude to mature).</li>
+
+		<li>The Android platform is incredibly easy to learn, use, develop against and deploy to. </li>
+
+	</ol>
+<h2>How..?</h2>
+
+	<p>My background in software development includes C/C++, C#/.NET and Python. Android applications are written in Java and deployed to a Dalvik virtual machine – a "sandbox" for running Java especially designed for mobile devices. As a result I didn't know what to expect. I got from nothing to the content of the video above with the following steps:</p>
+
+	<h3>Step 1</h3>
+
+	<p>You'll need to download and install the Android SDK. Full instructions can be found on <a href="http://developer.android.com/index.html">Android's developer site</a>. This will probably involve installing and configuring the <a href="http://www.eclipse.org/">Eclipse IDE</a>. Don't worry, the instructions are very clear and <em>I</em> managed to do it… ;-) (Also, the Android developer site is excellent with lots of tutorials, documentation and videos for the hungry mind.)</p>
+
+	<h3>Step 2</h3>
+
+	<p>Once you have the basic development environment installed you'll probably need to tweak it and check it with a simple "Hello World" application. In my case I needed to make sure that Eclipse was targeting Java 1.6 (I'm on OS X where Java 1.5 seemed to be the default choice). I bought an e-book version of <a href="http://www.pragprog.com/titles/eband/hello-android">Hello, Android</a> and chugged through the opening chapters happy that things seemed to be building and working as expected. I also made sure I could deploy / develop against my "real life" mobile phone (rather than the emulator provided). This simply involved plugging it into the computer. You'll need to go to Settings -&gt; Applications on your phone and make sure "Unknown Sources" is checked and that the appropriate settings are ticked under "Development" (I have "USB debugging" and "Stay awake" both checked). </p>
+
+	<h3>Step 3</h3>
+
+	<p>Get hold of GeoBeagle. The <a href="http://code.google.com/p/geobeagle/w/list">website's wiki</a> has excellent instructions but you need to be aware of the following:</p>
+
+	<ul>
+<li>You'll need to have <a href="http://subversion.tigris.org/">Subversion</a> installed in order to get the source.</li>
+
+		<li>Don't use the "trunk" as suggested in the documents. Use the "sng" branch. Grab the code by issuing the following command:</li>
+
+	</ul>
+<pre>
+
+<code>
+
+svn checkout http://geobeagle.googlecode.com/svn/branches/sng GeoBeagle
+
+</code>
+
+</pre>
+
+	<ul>
+<li>Follow <a href="http://code.google.com/p/geobeagle/wiki/SVNCheckout">the instructions on the wiki</a> but be aware that you'll have to make sure the di, gen and src directories are <strong>all</strong> referenced in the project's build path (Properties for GeoBeagle -&gt; Java Build Path -&gt; Source). </li>
+
+		<li>The same goes for when you set up the unit tests. I found that the Android 1.5 jar wasn't referenced in the Libraries section of the unit test project's Build Path configuration.</li>
+
+		<li>I could only get GeoBeagle to run on my phone, not in the emulator. I'm assuming the lack of appropriate hardware emulation (such as GPS) is the problem here. In any case, developing on a "real" phone is a breeze.</li>
+
+	</ul>
+<h3>Step 4</h3>
+
+	<p>Sign up for the <a href="http://www.wikitude.org/developers">Wikitude Beta programme</a> and wait for the code and documentation to arrive via email. To get Wikitude and GeoBeagle to play nicely together I simply did the following:</p>
+
+	<ul>
+<li>Reference wikitudearintent.jar in the Libraries section of the Java build path for GeoBeagle.</li>
+
+		<li>Add an appropriate button (I put mine in the menu for the cache list) and join up the event handling code.</li>
+
+		<li>In the event handling code do something like this:</li>
+
+	</ul>
+<pre>
+
+<code>
+
+// create the intent
+
+WikitudeARIntent intent = new WikitudeARIntent(myActivity.getApplication(), null, null);
+
+// add the POIs (points of interest)
+
+Collection&lt;WikitudePOI&gt; pois = new ArrayList&lt;WikitudePOI&gt;();
+
+for(GeocacheVector gv : this.mGeocacheVectors.getGeocacheVectorsList()){
+
+        Geocache geocache = gv.getGeocache();
+
+        float longitude = (float) geocache.getLongitude();
+
+        float latitude = (float) geocache.getLatitude();
+
+        String name = (String)geocache.getIdAndName();
+
+        String description = "A description - grab info from geocache instance";
+
+        WikitudePOI poi = new WikitudePOI(latitude, longitude, 0, name, description, null, null);
+
+        pois.add(poi);
+
+    }
+
+    intent.addPOIs(pois);
+
+}
+
+// Add a title
+
+intent.addTitleText("Augmented Reality View");
+
+// Launch the intent
+
+myActivity.startActivity(intent);
+
+</code>
+
+</pre>
+
+	<p>There are only two types of object a developer need worry about:</p>
+
+	<ol>
+<li>WikitudeARIntent – the "intent" for the Wikitude World Browser (in Android an "intent" represents something that does a specific sort of thing – like display information using augmented reality as in this case).</li>
+
+		<li>WikitudePOI – a Point Of Interest to display with the Wikitude intent. You supply information such as the longitude / latitude, altitude, name, description and so on.</li>
+
+	</ol>
+<p>I'm sure the code example above and description of the two classes is more than enough to see how the API works. Even the Wikitude documentation is only three pages long (as it doesn't need to be any longer). </p>
+
+	<p>As I mentioned earlier, my main concern is that with such simplicity comes a lack of potential for customisation. For example, it would be great to override the menu that pops up if you double-tap a POI (as mistakenly happens in the video). Also, I'd like to be able to define area as well as individual points. Why? Consider the following use-case: wouldn't it be great to be standing at the top of the Eiffel Tower and look down on Paris with all the various neighbourhoods highlighted and perhaps colour coded (indicating traffic congestion, for example)?</p>
+
+	<h2>Wrapping Up…</h2>
+
+	<p>Many thanks to Stephen Ng whose advice and patient help was most gratefully received when trying to get GeoBeagle to build. Without open-source developers like Stephen great tools like GeoBeagle would never exist. He's worth his weight in gold! ;-)</p>
+
+	<p>Over the past two evenings I've had a lot of fun. I suppose the reason for this is both applications share the same outlook expressed in Wikitude's tag-line:</p>
+
+	<blockquote>
+
+		<p>"The World <strong>IS</strong> the Platform!"</p>
+
+	</blockquote>
+
+	<p>...and who wouldn't want to develop for <strong>that</strong> platform..?</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/counterpoint-in-c-and-code/" class="u-url">Counterpoint, "In C" and Code</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/counterpoint-in-c-and-code/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-07-19T16:06:00Z" itemprop="datePublished" title="2009-07-19 16:06">2009-07-19 16:06</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I recently found some old teaching materials I used to use for an adult-education class in beginners musical theory. It was targeted at interested non-musicians so everything was simply defined with concise examples. I'd forgotten I'd written my own musical fragments for explaining counterpoint and was pleasantly surprised at what I'd produced (inevitably in the style of <a href="http://en.wikipedia.org/wiki/Bach">J.S.Bach</a>). Yesterday I had reason to use the free music typesetting programme <a href="http://lilypond.org/web/">Lilypond</a> for the first time in five years. I was having so much fun that I decided to input my old examples into Lilypond and here are the results (with appropriate commentary):</p>
+
+	<h2>Counterpoint…</h2>
+
+	<p>...is the pleasing combination of two (or more) different melodies, often of contrasting nature (for example, melodic shape or rhythmic texture). The first melody to be introduced is called the "Subject" with additional melodies being called "Counter Subjects" (often numbered 1..n if there are more than one).</p>
+
+	<p>Here are two melodies:</p>
+
+	<h3>Subject</h3>
+
+	<p><img src="static/images/60.png" title="Contrapuntal Subject" alt="Contrapuntal Subject"></p>
+
+	<p><a href="http://ntoll.org/static/files/crab_subject.midi">Listen to example as MIDI</a></p>
+
+	<h3>Counter Subject</h3>
+
+	<p><img src="static/images/61.png" title="Counter-subject" alt="Counter-subject"></p>
+
+	<p><a href="http://ntoll.org/static/files/similar.mid0">Listen to example as MIDI</a></p>
+
+	<p>Notice how they differ from each other: the "Subject" usually moves by leaps and contains many quaver notes making it sound very "busy" whereas the Counter Subject usually moves by step and has an altogether less urgent rhythmic feel to it (lots of minims). Notice also that the shapes of the melodies are similar in the first four bars (a general rise then fall) and contrary in the final bars.</p>
+
+	<p>It is these differences between the melodies that make the resulting counterpoint interesting to listen to:</p>
+
+	<h3>Combined Melodies</h3>
+
+	<p><img src="static/images/62.png" title="Counterpoint" alt="Counterpoint"></p>
+
+	<p><a href="http://ntoll.org/static/files/similar.mid1">Listen to example as MIDI</a></p>
+
+	<p>This is all very clever and hopefully sounds good, but there is more! In contrapuntal musical forms such as the <a href="http://en.wikipedia.org/wiki/Fugue">Fugue</a> once the melodies have been introduced the composer will often "develop" the material in cunning and surprising ways. Below is a rather incomplete list of melodic transformations one might employ to keep the listener on their toes (you need to know what you're listening for – but it can turn into quite a good game):</p>
+
+	<ul>
+<li>Inversion – the original melody is turned upside down. Where the pitch moves up by three notes in the original, it moves down by three notes in the inversion.</li>
+
+		<li>Retrograde – the melody is played backwards. </li>
+
+		<li>Augmentation – the duration of the notes in the original melody is lengthened by a constant amount (for example, all note lengths are doubled).</li>
+
+		<li>Diminution – the opposite of augmentation, the notes are shortened by a constant amount.</li>
+
+	</ul>
+<p>Obviously, these tricks can be combined to get transformations such as retrograde-inversion (backwards and upside-down) or augmented-retrograde (lengthened and backwards), for example. </p>
+
+	<p>Composers will then start to combine these combinations so you might end up with the subject being played in counterpoint to itself as a retrograde-inversion above a third part that is an augmentation of the counter subject. Fantastic stuff!</p>
+
+	<p>To illustrate this point, here is our original contrapuntal example followed by itself in retrograde with the parts swapped between bass and treble (making it a musical palindrome):</p>
+
+	<h3>With Retrograde</h3>
+
+	<p><img src="static/images/63.png" title="Counterpoint with retrograde" alt="Counterpoint with retrograde"></p>
+
+	<p><a href="http://ntoll.org/static/files/similar.mid2">Listen to example as MIDI</a></p>
+
+	<p>Notice how I make sure the melodies conform to the melodic-minor and introduce a <a href="http://en.wikipedia.org/wiki/Picardy_third">Tierce de Picardie</a> at the end so some of the notes are not <em>exactly</em> the same in either direction.</p>
+
+	<h2>"In C"</h2>
+
+	<p>Fast forward to yesterday. I recently discovered a great musical experiment on YouTube called: <a href="http://inbflat.net/">In Bb</a></p>
+
+	<p>As you'll see when you click the link, you are presented with YouTube clips of performers playing improvised fragments in the key of B flat major. As the visitor to the site <strong>you</strong> create the "counterpoint" by starting, pausing and stopping the videos in a sequence of your choosing. You may even "mix" them – to a limited extent – by changing the volumes associated with each video. </p>
+
+	<p>Although not the formal "classical" counterpoint I describe above, this is definitely the pleasing combination of two (or more) contrasting melodies. I was very impressed. </p>
+
+	<p>After <a href="http://twitter.com/ntoll/status/2684909316">mentioning this on Twitter</a> I was helpfully reminded that it was similar to <a href="http://en.wikipedia.org/wiki/Terry_Riley">Terry Riley's</a> <a href="http://www.otherminds.org/SCORES/InC.pdf">In C</a> (the second link is to the score). I was a big fan of this piece when I was at music college and it explained why "In Bb" sounded so familiar.</p>
+
+	<p><a href="http://en.wikipedia.org/wiki/In_C">In C</a> is an aleatorical composition (i.e. it includes elements of chance in its performance) and consists of fifty-three short musical "subjects" to be performed repeatedly an arbitrary number of times <em>but</em> in sequence. Riley suggests that musicians keep within two-three fragments of each other. </p>
+
+	<p>Once again, this isn't the formal "classical" counterpoint I described above, but it is the combination of thematic subjects into what has been described as the world's first minimalist piece.</p>
+
+	<p>I've found several performances on the Internet: <a href="http://www.flagmusic.com/work.php?r=trjhinc">this one</a> is a midi realisation whereas the following excerpt from a live concert is performed by a symphony orchestra.</p>
+
+	<p><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/vJSEcoeCgus&amp;hl=en&amp;fs=1&amp;">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/vJSEcoeCgus&amp;hl=en&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object></p>
+
+	<h2>Code</h2>
+
+	<p>This brings me onto my current vocation (software developer)...</p>
+
+	<p>You can't have failed to notice that what makes counterpoint (and music in general) interesting is the introduction of melodies (fragments, subjects or whatever) and their combination and transformation through time. If I replaced the word "melody" with "data structure" in the preceding sentence then you have a pretty close analogy to how software works. </p>
+
+	<p>Like any analogy, I accept that it isn't a completely "sane" mapping from one world to the other, but I can't help but want to be able to compose music in code. Something along the lines of this (in Python):</p>
+
+<pre>
+
+<code>
+
+subject = melody([ c(4), c(4), g(4), g(4), a(4), a(4), g(2)])
+
+subject.rhythm()
+
+[4, 4, 4, 4, 4, 4, 2] # 6 crotchets followed by a minim
+
+subject.pitch()
+
+[c, c, g, g, a, a, g]
+
+subject.intervals[ 0, 7, 0, 2, 0, -2 ] # intervals between the notes in semi-tones
+
+subject.invert()
+
+[ g, a, a, g, g, c, c ]
+
+</code>
+
+</pre>
+
+	<p>Obviously, I'd need to work out the <acronym title="Application Programming Interface">API</acronym> in a lot more detail – the above example is just from the top of my head – but I think it'd be great fun to implement something like this.</p>
+
+	<p>Hang on… <a href="http://github.com/jtauber/sebastian/tree/master">what's this..?</a> :-)</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/europython-2009/" class="u-url">Europython 2009</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/europython-2009/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-07-03T16:26:00Z" itemprop="datePublished" title="2009-07-03 16:26">2009-07-03 16:26</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><img src="static/images/57.png" title="Europython logo" alt="Europython logo"></p>
+
+	<p>I've recently got back from this year's <a href="http://www.europython.eu/">Europython</a> conference. It's a bit of a long post (there was so much good stuff), but here's my round-up of what I learned, found interesting, intriguing and cool.</p>
+
+	<h2>FluidDB</h2>
+
+	<p><a href="http://fluidinfo.com/">FluidDB</a> is a fascinating (if unintentionally secretive) project that I've known about since watching <a href="http://www.kyte.tv/ch/6118/284759">this video</a>. The "talking head" is one of the founders, <a href="http://jon.es/terry.html">Terry Jones</a>. I was <strong>so</strong> intrigued by what I saw that I emailed Terry a bunch of daft questions and he was kind enough to reply.</p>
+
+	<p>As a result, I was looking forward to two talks about FluidDB: Terry's own <a href="http://www.europython.eu/talks/talk_abstracts/#talk46">Introducing FluidDB</a> and Esteve Fernandez's <a href="http://www.europython.eu/talks/talk_abstracts/#talk47">Twisted, AMQP and Thrift</a>. The former being a high level "philosophical" view of whilst the latter being more concerned with some of the underlying (Python based) technology.</p>
+
+	<p>I have to admit that it is the "philosophical" aspect of this project that has me hooked. <em>"A database with the heart of a wiki"</em> is the tag line of the project, but, as far as I can tell, that only scratches the surface (Terry also describes it as a metadata engine for everyone and everything). If I understand Terry correctly…</p>
+
+	<ul>
+<li>FluidDB is <em>not</em> a relational database but stores sets of tag / value pairs. </li>
+
+		<li>Each set represents a "thing". All "things" are public in that anyone can add tag / value pairs to it.</li>
+
+		<li>All tag / value pairs are protected by a strong yet simple permissions based system.</li>
+
+		<li>Tags are also "things" that can themselves be tagged (higher order / meta tagging).</li>
+
+		<li>Tags are organised in namespaces that are owned by an account (for a person, organisation or application [for example]).</li>
+
+		<li>It is schema-less in that the tag / value pairs associated with a "thing" are not predefined.</li>
+
+		<li>It is an "open" system in that any account can add data without having to ask permission.</li>
+
+		<li>Retrieving data is easy through the use of a simple query language.</li>
+
+		<li>It's been designed to scale.</li>
+
+	</ul>
+<p>Given such a back-of-a-postcard (and probably inaccurate) description – why is FluidDB so interesting? Two things immediately strike me:</p>
+
+	<ol>
+<li>Free to write, with finely grained contributions (by looking at the tag/namespace one can tell who has contributed what).</li>
+
+		<li>Evolution as a means of database development.</li>
+
+	</ol>
+<p><strong>Free to Write</strong> – Anyone can add a tag / value pair to a "thing". However, you might not <em>be able to</em> nor <em>want</em> to see everything associated with a "thing": you might not have permission to view some of the tags from certain namespaces and you might only be interested in those from other namespaces.</p>
+
+	<p><strong>Evolutionary development</strong> – Because of the "fluid" nature of FluidDB conventions and practices emerge due to evolutionary pressure in exactly the same way they do for our wider social conventions. This is important because, until now, database development (and thus, the way information is organised / presented) has been decided by the likes of <em>me</em> – a software developer – and there isn't any guarantee I'll do this in a way that is useful for <em>you</em> (either because of <em>my</em> lack of skill or because <em>I</em> want to retain / impose control and also because it's impossible to anticipate what people will want to do with things).</p>
+
+	<p>Perhaps an example might shed some light… </p>
+
+	<p>So a "thing" (Set) consists of tag / value pairs from various namespaces..? </p>
+
+	<p>Absolutely! </p>
+
+	<p>But what does it represent? </p>
+
+	<p>Whatever the tag / value pairs seem to imply.</p>
+
+	<p>Actually, there is already a helpful convention for working out what a thing represents: a special immutable tag called <em>"about"</em> whose value is unique and can only be set when the thing to which it refers is created. It allows you [and everyone else] to ask for an object about <em>X</em> where <em>X</em> is something helpfully unique like "NASDAQ:GOOG".</p>
+
+	<p>So, if a "thing" had a "nicholas/title" tag with the associated value "Seven Pillars of Wisdom", a "nicholas/author" tag with the associated value "T.E.Lawrence" and another tag called "nicholas/ISBN" with the value "0954641809" then you can be pretty sure that <em>I</em> am attempting to describe a book (the tags exist within <em>my</em> "nicholas" namespace). Furthermore, the special <em>"about"</em> tag might have been set to "ISBN:0954641809" when the "thing" was first created – indicating the thing is a book with a particular ISBN.</p>
+
+	<p>Contrast this with a regular database schema or API (such as that from Amazon.com) and you'll notice that they have already defined the concept of a "book" as represented in a "books" table with certain fields defined with certain types and perhaps a many-to-many relation to an "authors" table or other "helpful" stuff. The conventional system is imposing structure whereas FluidDB does not: you invent your own.</p>
+
+	<p>For example, the same set might also contain the following additional tag / value pairs along the lines of:</p>
+
+	<table style="border:1px solid grey;">
+<tr>
+<th>Tag</th>
+
+			<th>Value</th>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">wahida/location</td>
+
+			<td style="vertical-align:top;">"Wadi Rum"</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">wahida/long</td>
+
+			<td style="vertical-align:top;">29.5765</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">wahida/lat</td>
+
+			<td>35.419928</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">amazon.com/Product Description</td>
+
+			<td style="vertical-align:top;">"Seven Pillars of Wisdom is the monumental work that assured T.E. Lawrence's place in history as "Lawrence of Arabia." Not only a consummate military history, but also a colorful epic and a lyrical exploration of the mind of a great man, this is one of the indisputable classics of 20th century English literature. Line drawings throughout."</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">amazon.com/Average Customer Review</td>
+
+			<td style="vertical-align:top;">4.5</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">fred/rating</td>
+
+			<td style="vertical-align:top;">"10/10"</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">jill/score</td>
+
+			<td style="vertical-align:top;">"5 stars"</td>
+
+		</tr>
+<tr>
+<td style="vertical-align:top;">bill/genre</td>
+
+			<td style="vertical-align:top;">"Autobiography, War"</td>
+
+		</tr>
+</table>
+<p>Wahida is obviously describing the rock formation that is <em>also</em> called the Seven Pillars of Wisdom and has provided the coordinates for the location.</p>
+
+	<p>Amazon.com and Bill have attached some product information and Fred and Jill have both indicated positive opinions.</p>
+
+	<p>How do we know the namespace Amazon.com is associated with the bookseller with that domain name?  I'll let Terry answer that question (quoted from an email):</p>
+
+	<blockquote>
+
+		<p lang="en">"Fluidinfo will only give namespaces that match domains to the actual domain owner, [so] you'll know that's an official amazon tag. That's part of allowing the evolution of reputation and trust – with a giant headstart seeing as we get to import the trust associated with internet domain names."</p>
+
+	</blockquote>
+
+	<p>Interestingly, Fred and Jill use different tag-names and scoring systems to represent their opinions. Furthermore, they don't make it clear to what they refer that has the name "Seven Pillars of Wisdom" (although we'll probably assume they're referring to the book rather than the location). </p>
+
+	<p>By adding such information we have an example of <em>"Free to write"</em> and an evolving schema. </p>
+
+	<p>Assuming all these tag / value pairs are public, then I could start to cross reference information such as the rather obvious "best reviewed books by T.E.Lawrence" to the not-so-obvious "books associated with places in Arabia". I might also be buddies with Fred and would like to find out what <em>he</em> likes to read but find the publicity bumph from Amazon misleading so select to search using only Fred's tags.</p>
+
+	<p>Over a period of time Wahida might create a new thing about the rock formation, move her tags / values over and associate the original thing (the book by T.E.Lawrence) with the new one via a tag called "named after" that stores the unique ID of her new "thing". She does this because she's noticed that other people are making a distinction between a place and things associated with that place. </p>
+
+	<p>Also, Jill decides to use the tag name "rating" rather than "score" and to give her marks "out of ten" because that's just what more people do. Notice that the database "schema" changes as conventions become apparent over time. This is evolution at work as the fitness of the convention is determined by how <em>useful it is</em> to the people <em>namespace authors</em> care about.</p>
+
+	<p>Is this such a strange idea? Absolutely not, it's exactly how we get stuff done in our wider "social" world – for example, like the philosopher <a href="http://socrates.berkeley.edu/~jsearle/">John Searle</a> talks about when he refers to <a href="http://en.wikipedia.org/wiki/Social_construction#Social_constructs_and_language">social reality</a>.</p>
+
+	<p>I'm pretty sure I've missed something or not fully understood everything. But then, with no documentation or implementation to explore I'm doing nothing more than recollecting and guessing. Nevertheless, we were told we would get both these things "in a month". <ins>[Edit – Terry has been in touch and given me a sneak peek at the docs – unfortunately I haven't had chance to read them yet.]</ins></p>
+
+	<p>Finally, I spoke to both Terry (just after his talk) and Esteve (in one of those really interesting corridor conversations) and their attitude reminds me of a quote from the introduction to T.E.Lawrence's book mentioned above:</p>
+
+	<blockquote>
+
+		<p lang="en">"All men dream; but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that it was vanity; but the dreamers of the day are dangerous men, for they may act out their dreams with open eyes, to make it possible."</p>
+
+	</blockquote>
+
+	<p>Terry and Esteve are dangerous men!</p>
+
+	<p>Best of luck with your venture guys and I look forward to playing with it in the not-too-distant future.</p>
+
+	<h2>Pythonic Music</h2>
+
+	<p>I'm a classically trained musician so so I'm always interested to hear about tools for musical composition / development. There were two examples of this at the conference: <a href="http://rjdj.me/">RjDj</a> <a href="http://www.europython.eu/talks/talk_abstracts/#talk83">presented by Chris McCormick</a> and a display in the foyer for <a href="http://www.ableton.com/">Ableton Live</a> (who were looking for developers to join their team). </p>
+
+	<p>RjDj is an iPhone application that uses "scenes" (akin to musical "recipes" that act as proxies for the original composer) to take input (via the microphone or motion sensors) and mix it with other sounds provided by the composer to produce what I'd call an "auditory experience" that is always unique.</p>
+
+	<p>Chris's boss demonstrates the product in this video (at about 4 minutes in you get to see him use pens, staplers and his mug as the sources of input sounds into a scene):</p>
+
+	<p><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/WPrIPcyemdM&amp;hl=en&amp;fs=1&amp;rel=0">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/WPrIPcyemdM&amp;hl=en&amp;fs=1&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object></p>
+
+	<p>All very cool. </p>
+
+	<p>What has this to do with Python..? Whilst the audio libraries are coded in C++ and the iPhone application is obviously in Obj-C all the glue code is in Python (including a Django based website). </p>
+
+	<p>I get the impression that Chris hates developing for the iPhone as we were treated to a very entertaining rant targeted at Apple (I can't wait to get this on Android!).</p>
+
+	<p>I also ended up chatting to the Ableton guys during lunch on Thursday. When I explained I had a musical background they gave me a quick demo, handed me a demo CD and told me to check out the site. Apparently, much of their software is written in Python with only the high-performance audio functionality being written in C/C++.  </p>
+
+	<p>I've had a lot of fun playing with the demo version – I followed a couple of tutorials and then did my own thing. I also had a look around the web-site and <a href="http://www.ableton.com/live">their promo-video</a> pretty much sums up what their product is capable of. </p>
+
+	<h2>Un-conference / Corridor Chats</h2>
+
+	<p>For me, it is often the corridor chats and conversations over lunch that are the most rewarding aspects of a conference. Europython 2009 was no exception: speech recognition and natural language processing, Zen Buddhism, FOSS in a corporate environment, Django / Pinax, music and software apprenticeship were just some of the topics covered.</p>
+
+	<p><a href="http://www.europython.eu/talks/speakers/index.html#eckel_bruce">Bruce Eckel</a> gave a quick pre-keynote presentation on <a href="http://en.wikipedia.org/wiki/Unconference">unconferences</a> – conferences based around a theme and consisting of participant-led talks and presentations. Sounds like my kind of place and, happily, PyConUK this year will be organised along these principles (happening at the same location at EuroPython sometime in September). Can't wait!</p>
+
+	<h2>Bletchley Park</h2>
+
+	<p><img src="static/images/58.jpg" title="Enigma" alt="Enigma"></p>
+
+	<p>I live about 12 miles north of <a href="http://www.bletchleypark.org.uk/">Bletchley Park</a> (in Towcester) and visit several times a year with my kids. As well as being important from a historical perspective (the centre of British code-breaking during WWII and home of the world's first programmable digital computer) it is also a "grand day out" with lots of things to see and do.</p>
+
+	<p>So I was especially pleased to hear the keynote by <a href="http://www.europython.eu/talks/speakers/index.html#black_sue">Sue Black</a> and <a href="http://www.europython.eu/talks/speakers/index.html#greenish_simon">Simon Greenish</a> about Bletchely Park. Unfortunately, not enough people know about this gem of a museum or its continuing financial woes. The attendees of EuroPython strike me as a sympathetic audience to pitch to and the resulting interest in the authentic Enigma machine (see photo above) and a trip to Bletchley organised on the conference mailing list demonstrated Sue and Simon are onto something.</p>
+
+	<p>Lets hope they continue to make progress with their fundraising efforts.</p>
+
+	<h2>Turtle</h2>
+
+	<p>As <a href="http://ntoll.org/article/ada-lovelace-day-2009">you might have noticed</a>, my daughter and I have an interest in Logo, turtles and other such fun. I was especially pleased to attend the talk <a href="http://www.europython.eu/talks/talk_abstracts/index.html#talk52">turtle.py – a Teaching Tool</a> given by turtle.py's creator <a href="http://www.europython.eu/talks/speakers/index.html#lingl_gregor">Gregor Lingl</a>. </p>
+
+	<p>Put simply, Python now has a module that engages with kids like my daughter. Furthermore, she can play – as kids should – in an environment that encourages play as a means of learning. Finally, she can "graduate", should she choose to do so, into other modules and the wider Python language. Turtle.py is worth its weight in gold (yeah – I know source code doesn't weigh anything) simply because it facilitates the transition from childlike playfulness to the playful creativity that is programming.</p>
+
+	<p>I was also entertained by Gregor's examples: As he showed off ever increasingly complex software written with the turtle.py module I came to the realisation that everything in Gregor's world <em>is a turtle</em>. This appealed to my sense of humour – especially when he put up a slide with the text "A Website" and I mistakenly thought he'd written a simple web-server "out of turtles" (I was wrong – he was asking for help with the project website).</p>
+
+	<h2>IronPython</h2>
+
+	<p>Prior to my Python work I was a .NET guy so I was particularly looking forward to <a href="http://www.europython.eu/talks/speakers/index.html#foord_michael">Michael Foord's</a> <a href="http://www.europython.eu/talks/talk_abstracts/index.html#talk3">Introduction to IronPython</a> (it turns out Michael lives quite close to me: two Pythonistas in rural Northamptonshire..? There must be something in the water). </p>
+
+	<p>I have a little knowledge of IronPython from my days at Barclays Capital: we looked at including it in a tool I had built so our end customers (other developers in the bank) could customize various aspects of the software. In the end we had other priorities and I left the bank to learn Python.</p>
+
+	<p>Michael managed to pitch it just right to newbies like me with feet in both "camps". I was especially interested to hear how IronPython consolidates itself with non-Pythonic aspects of the CLR (method overloading for example) and integrates with the wider .NET framework. It certainly whetted my appetite and I'm now chomping my way through some of the chapters in his recently published <a href="http://www.manning.com/foord/">IronPython in Action</a> (a very good read – although I'm still trying to work out what the guy on the front cover is all about, there isn't a colophon like in O'Reilly books).</p>
+
+	<h2>Thanks</h2>
+
+	<p>I want to end with a big "thank you" to all those involved in the organisation and execution of the conference – I had a great time and I'm already looking forward to next year. ;-)</p>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-8.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-6.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

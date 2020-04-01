@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Everything I say is false...">
+<meta name="viewport" content="width=device-width">
+<title>ntoll.org (old posts, page 11) | ntoll.org</title>
+<link href="assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://ntoll.org/index-11.html">
+<link rel="prev" href="index-12.html" type="text/html">
+<link rel="next" href="index-10.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href=".">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="presentations">Presentations</a></li>
+                <li><a href="cv">CV</a></li>
+                <li><a href="contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/tdd-cargo-cult/" class="u-url">Test Driven Development Cargo Cult</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/tdd-cargo-cult/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-11-05T08:00:00Z" itemprop="datePublished" title="2012-11-05 08:00">2012-11-05 08:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>The <a href="article/how-to-run-an-awesome-code-dojo">London Python Code
+Dojo</a> is a great place to share ideas and collaborate
+with an enthusiastic and friendly group of peers. I'm going to tell the story
+of an interesting outcome from last Thursday's dojo - organised with great
+aplomb by Python core developer and Windows guru
+<a href="https://twitter.com/tjguk">Tim Golden</a>.</p>
+
+<p>We departed from the usual democratic method of choosing a dojo task: Tim
+decided that as we regularly solved problems concerning board games it would
+be good to produce a "one true board" code library to re-use in future dojos.
+To this end Tim created a <a href="https://github.com/ldnpydojo/board">Github
+repository</a> containing a single README.rst file containing requirements.
+We were to fork the repository, create a directory for our team's code and send
+a pull request after the dojo so posterity could have a good laugh at our
+solutions.</p>
+
+<p>I found myself in a team with general all-round-nice-guy-and-man-about-the-technological-town <a href="https://twitter.com/rrees">Robert Rees</a>.
+He's a hugely experienced, well read and thoughtful senior developer
+/ architect at <a href="http://guardian.co.uk">The Guardian</a>. He's also
+always ready to step up to share his successes, failures and discoveries with
+others (he opened the evening with an excellent lightning talk on functional
+programming with Python). Once again, he proved to have an excellent eye
+for a learning opportunity...</p>
+
+<p>During the team discussion Robert suggested we work using strict test
+driven development (TDD): focus on a specific thing that needed implementing,
+write a test for just that thing, make it pass then rinse and repeat until all
+requirements are met with no failing tests. We took it in turns to write code.
+At the end of each turn the "programmer" wrote a failing test for the next
+person in the group to solve, and so the cycle continued. Given that we had
+very clear requirements in the form of Tim's README file this was an excellent
+suggestion on Robert's part.</p>
+
+<p>Thanks to Robert, what happened next was both funny and educational...</p>
+
+<p>I set up the basic scaffolding for the project and Robert quickly created a
+"Board" class containing some stubbed out yet obvious methods and an associated
+test stub. Team-mate and <a href="http://www.pygame.org/">Pygame</a> core
+developer <a href="https://twitter.com/renedudfield">Rene Dudfield</a> read
+out the next requirement,</p>
+
+<blockquote>"You should be able to put something at a coordinate on the
+board."</blockquote>
+
+<p>A suitable test was written and the next team member (another Nick) sat in
+the hot seat. Rather than implement a complex or complete solution to the
+requirement he was encouraged, in true TDD fashion, to do the minimum to make
+the test pass. So, he hard coded the return value expected by the test, in this
+case the string <code>"Foo"</code>.</p>
+
+<p>It was at this point that I made the mistake of opening my big mouth
+(again). I said something along the lines of, "the problem with unit tests are
+that they're behaviourist in outlook: they don't ensure that the internal
+quality of the solution is any good - simply that the solution passes some
+tests" i.e. it displays such-and-such a behaviour.</p>
+
+<p>I was referring to the <a href="https://en.wikipedia.org/wiki/Behaviorism">
+behaviourist movement</a> founded by
+<a href="https://en.wikipedia.org/wiki/John_B._Watson">J.B.Watson</a> where
+things can only be defined in terms of observable behaviours - there is no room
+for introspection. When taken to an extreme, behaviourist philosophy claims
+that a person has no consciousness but is simply a thing that behaves. Of
+course, there are problems with this outlook. The obvious question of what is
+meant by "behaviour" is far more difficult to answer than it at first appears.
+More problematic, behaviourism seems counter to personal "internal" experience:
+pain, love, sadness and joy are common feelings yet may not be manifested in
+externally observable behaviour. Furthermore, behaviours associated with such
+feelings can be easily and convincingly aped (for example, by actors or con
+artists) which may even be a requirement for more complex interactions such as
+irony (where you act one way but mean something else - often the opposite to
+how you act).</p>
+
+<p>Given that we were enjoying the silly exercise of making tests pass with the
+minimum of effort Robert stepped up with a new challenge: he would write a
+test to force the development of something sensible. This would show that test
+driven development inevitably leads to a good solution by forcing us to make
+the failing test pass.</p>
+
+<p>We found Robert had written the following:</p>
+
+<pre><code class="python">def test_pieces_are_placed_and_restored(self):
+    width = 4000
+    height = 4000
+    board = Board(width, height)
+    pieces = [(random.randint(0, width), random.randint(0, height),
+              {"i": random.randint(0, 5000)}) for x in
+              range(0, random.randint(0, 57000))]
+    for piece in pieces:
+        board.place(piece[0], piece[1], piece[2])
+        self.assertEquals(board.get(piece[0], piece[1])["i"], piece[2])
+    self.assertEquals(len(board.contents()), len(pieces))</code></pre>
+
+<p>His test creates a huge board, places random pieces at random locations on
+the board, checks that expected pieces are found in the correct location on the
+board and finally ensures the board's "contents" contain the same number of
+pieces that the test randomly created.</p>
+
+<p>Surely we had to write a quality solution to make such a test pass?</p>
+
+<p>I'm ashamed to say that we met Robert's challenge by intentionally creating
+a monster (including suggestions from Robert himself). At the top of our board
+module we wrote this:</p>
+
+<pre><code class="python">import random
+random.seed('robert rees was here')</code></pre>
+
+<p>Then we updated the <code>Board</code> class's <code>get</code> method
+to:</p>
+
+<pre><code class="python">def get(self, x, y):
+    if self.max_x == 4000:
+       # Take that @rrees
+       if not hasattr(self, 'rrees'):
+           random.seed('robert rees was here')
+           width = self.max_x
+           height = self.max_y
+           self.rrees = [(random.randint(0, width), random.randint(0, height),
+                         {"i": random.randint(0, 5000)}) for x in
+                         range(0, random.randint(0, 57000))]
+           self.counter = 0
+       result = self.rrees[self.counter]
+       self.counter += 1
+       return {'i': result[2]}
+   else:
+       return "Foo"</code></pre>
+
+<p>Our solution re-set the random number generator's seed to <code>"robert
+rees was here"</code> so the resulting sequence of "random" numbers was
+deterministic (i.e. they would always be the same set of random-ish numbers -
+one of the reasons why it's more correct to call these sorts of things a
+pseudo-random number generator). Then we copied the code from Robert's unit
+test to return the result that the test expected. The outer <code>if</code>
+statement ensured that we return the correct result depending on different
+tests that set the board to different sizes - Robert's test set the dimensions
+to 4000x4000 whereas another, as was mentioned before, expected the result
+<code>"Foo"</code>.</p>
+
+<p>This is, of course, an abomination.</p>
+
+<p>However, it allowed us to play our parts in the ruse that started our
+"show-and-tell" presentation. We explained we had carefully linked tests to
+requirements in Tim's README file and talked through the programming cycle I
+explained earlier to ensure everyone had a go at writing code. We even audited
+the unit tests in front of the assembled dojo and ran the test suite so people
+could see that everything was working in accordance with the tests. It was only
+until we revealed the code for the actual <code>Board</code> class that the
+joke was discovered.</p>
+
+<p>And so we get to the point of this blog post: test driven development is
+promoted as the <em>one true way to great code</em>. Our activity in the dojo
+shows that this is not the case. Although we were nefarious in our intent a
+similar result (abominable code) could easily be produced through inexperience,
+laziness or lack of care and attention while still <em>doing</em> TDD.</p>
+
+<p>The "test-driven" dogma is dangerous: it claims to improve the quality of
+code so long as you follow its modus operandi. At best this fosters a false
+sense of security, at worse it's simply a cargo cult.</p>
+
+<p>I think having <strong>well tested code is a useful and often essential
+element of great software</strong>. I'm not saying "you shouldn't test code!"
+(you most definitely should). Rather, I'm concerned that TDD apologists do more
+harm than good by promoting a cargo cult. Testing software is a good thing
+and sometimes writing tests before implementing a feature is the right thing
+to do. But this is simply evidence of the most important element that leads to
+great code - an element that, unfortunately, is not mentioned by TDD - the
+wisdom of the programmer.</p>
+
+<p>What do I mean?</p>
+
+<p>I mean the state where knowledge, experience and trust coincide with the
+understanding and confidence to do the "right thing" rather than follow a list
+of precepts.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/pyconuk2012/" class="u-url">PyconUK 2012</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/pyconuk2012/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-10-09T21:30:00Z" itemprop="datePublished" title="2012-10-09 21:30">2012-10-09 21:30</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <img src="static/images/snakes.png" alt="PyconUK snakes" style="float:right; padding: 8px;"><p>It was <a href="http://pyconuk.org">PyconUK</a> 2012 over the final weekend
+of September.</p>
+
+<p>PyconUK is a community organised conference focussed on the
+<a href="http://python.org/">Python programming language</a> for UK based
+developers and other interested parties. This year I was both an attendee and
+organiser and this post is a review of my personal highlights.</p>
+
+<p>Actually, I'd like to start by explaining the work that's required to
+organise a conference such as PyconUK. First, PyconUK has a great reputation:
+it is great value for money (£100 a ticket if you booked as an early bird),
+packed full of excellent talks and has a very friendly atmosphere. This is
+due to the "tone" set by the originators of the conference back when it
+first started five or six years ago. Happily many of the original team are
+still involved and it has been an education watching what and how they
+organise things.</p>
+
+<p>Since this is a community organised conference all organisers are
+volunteers. Most of our interaction was via weekly IRC meetings, although
+sometimes we'd find a pub in a vaguely central location (we're
+all based in the Midlands) and conduct business
+over a friendly pint. In either case, meetings were business like, tended to
+be waffle free and always ended in clearly defined and delegated tasks.
+There's no room for fanny-annying around when organising PyconUK!</p>
+
+<p>I was principally involved in three tasks:</p>
+
+<ol>
+<li>The <a href="http://www.pyconuk.net/CodeOfConduct">diversity and code
+of conduct statement</a>
+</li>
+    <li>The <a href="http://2012.pyconuk.net/PyConUKsong">conference song</a>
+(!)</li>
+    <li>The education track (see below).</li>
+</ol>
+<p>It is a sad fact that having a diversity statement and/or code of conduct
+for a free software conference is becoming the norm. One would hope that
+attendees at free software conferences (whose communities value openness, merit
+and collaboration) would understand that sexism, racism and all
+other forms of prejudicial behaviours are completely unacceptable. Unfortunately,
+recent and very public cases at other free software related conferences have
+shown that some people are clueless idiots. It is through their moronic
+actions that our communities are brought into disrepute
+(happily, to my knowledge, PyconUK has never had to deal with such
+misdemeanours). We acknowledged the need for such a statement: it would
+clearly state the expectations of the wider Python community within the UK and
+give us, the organisers, a set of options for dealing with potential idiots.
+However, we strongly felt that we <em>didn't</em> want to follow the example of
+some other conferences with a list of condescending rules that curtailed
+freedom of expression in all its glorious manifestations. These are complex
+issues that a mere set of rules would simply aggravate. I contacted a couple
+of other "Pycons" (our Italian friends at
+<a href="http://europython.eu/">Europython</a> and antipodean cousins at
+<a href="http://pycon-au.org">PyconAu</a>) for advice and drafted something
+that attempted to walk the fine line between expectation and curtailment. After
+feedback from both the other PyconUK organisers and the wider Python community
+in the UK, it was adopted. In case you're interested, it's released under a
+<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">creative
+commons</a> license and is
+<a href="http://www.pyconuk.net/CodeOfConduct">available here</a>. Feedback is
+always most welcome.</p>
+
+<img src="static/images/programmerpythonical.jpg" style="float: right; margin: 8px;"><p>I never imagined I'd be writing, arranging and recording a conference song,
+but, thanks to fellow organiser, design guru and "bloke in charge of publicity"
+<a href="https://twitter.com/hawkz">Steve Hawkes</a>, it was decided that one
+was needed. Given that I have a musical background I was drafted in to help.
+Steve's idea was to do a version of the
+<a href="https://en.wikipedia.org/wiki/The_Elements_(song)">elements song</a>
+but for all the Python language's keywords. This is a classic "patter" song
+and is itself based upon the famous
+<a href="https://en.wikipedia.org/wiki/Major-General%27s_Song">Major General's Song</a>
+from Gilbert and Sullivan's comic opera
+<a href="https://en.wikipedia.org/wiki/The_Pirates_of_Penzance">The Pirates of
+Penzance</a>. It also fitted quite nicely with the "Victorian" snakes vibe that
+Steve was using in his designs - Gilbert and Sullivan are very much a Victorian
+phenomenon. A couple of Skype calls and various emails later we had the words
+sorted out. We attempted to engage the services of a "proper singer" but in the
+end it fell to me to sing the damn thing (and many thanks to my mate,
+<a href="https://twitter.com/darrengoldsmith">Darren Goldsmith</a>, who acted
+as sound engineer and producer). You can find the results
+<a href="https://github.com/ntoll/programmer_pythonical">at this GitHub
+repository</a>. Please feel free to suggest new lines and verses via pull
+requests! At some point in the not-too-distant future we hope to record a group
+of Pythonistas singing the chorus (watch out London Python Code Dojo). We were
+hoping to do this at the conference itself but lack of time and the fact that I
+lost my voice meant we were unable to fulfil this desire.</p>
+
+<p>In any case, Steve caught the G&amp;S vibe and produced some quite brilliant
+t-shirts and personalised mugs quoting lines from the song (see the example on
+the right). I really can't wait
+to see what he comes up with for next year's conference. I suspect finding a
+strong UK based theme is an essential element. We did "The Blitz" last year,
+Victorians this year and I'm starting to worry we're turning into something
+akin to a Blackadder version of British history given the choices we've been
+making. ;-)</p>
+
+<p>How about a bonnets and blouses Jane Austen theme or perhaps something
+Elizabethan? Maybe we could go more modern and adopt the swinging sixties as
+a touchstone (Austin Powers..?) or Punk?</p>
+
+<p>It remains to be seen what Steve's thoughts on the matter are...</p>
+
+<p>Given the interest in <a href="http://www.raspberrypi.org/">RaspberryPi</a>
+(apparently so called because it runs a programming language called "Python"
+- just fancy that?) and the teaching of programming in schools (see my blog
+posts <a href="http://ntoll.org/article/baking-with-raspberrypipy">here</a>
+and <a href="http://ntoll.org/article/teach-our-kids-to-code-or-not">here</a>)
+it was suggested that "education" would be a good theme. As I used to
+be a teacher I stepped up to bring my colleagues past and present together in
+an "education" track.</p>
+
+<p>We, the Python community, have been presented with an opportunity: the
+resurgence of interest in the teaching of programming to children
+has caused a lot of people to look to Python. Many teachers of ICT (that'd be
+Information and Communication Technology) don't have any programming experience
+and the thought of teaching such a weird, abstract and potentially
+complex activity to a room of thirty kids of mixed ability is likely to fill
+them with horror. The question of what should be taught is also moot (hence the
+interest in Python). I personally think the promotion and practice of
+"computational thinking" facilitated via a language such as Python (but done in
+as language neutral way as possible) is the way to go. Obviously (and I'm being
+very cynical here), incumbent interests in educational ICT and companies within
+the IT industry will be interested in promoting their platform as the mechanism
+to "teach the kids to code" (whatever that may mean).</p>
+
+<p>At PyconUK we simply wanted to find out how best to meet the needs of
+teachers and show them what it's like to be a part of a free software community
+with all that entails: collaboration, debate, openness, meritocracy, sharing of
+resources and learning from the examples of others.</p>
+
+<p>So our aim was simple: if you bring two diverse groups of intelligent and
+motivated people together interesting things are bound to happen. It turns out
+we were correct! I'm especially grateful to
+<a href="https://twitter.com/teknoteacher">Alan O'Donohoe</a> for helping me
+get the word out (most of the teachers I know are music, rather than ICT,
+teachers) and Alan has quite a cult status among those "in the know" about all
+things ICT. This culminated in a Google hangout where I was given
+the opportunity to promote our event to anyone who happened to drop by:</p>
+
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/PAqQklpZXGc?version=3&amp;hl=en_GB&amp;rel=0">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/PAqQklpZXGc?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+<p>It turns out that quite a number of teachers were interested but getting
+them to come along was quite hard - the current squeeze on school budgets
+and indifference of management being the two primary causes. Nevertheless, we
+almost had a whole cohort of 30 trainee ICT teachers turn up but, alas, funding
+nipped that in the bud.</p>
+
+<p>In the end we had about ten teachers in total turn up over the weekend and
+an abundance of developers who wanted to dive in and help.
+On the Saturday morning was an
+"<a href="https://github.com/ntoll/pyintro">Introducing Python</a>" workshop that
+<a href="https://twitter.com/JohnPinner">John Pinner</a> and I ran and there
+were also a handful of talks on several education related projects over the
+duration of the conference (for example, Mike Sandford's
+<a href="http://pyconuk.net/Talks/TurtleModule">talk</a> about the
+<a href="http://docs.python.org/library/turtle.html">turtle</a> module).</p>
+
+<p>Sunday morning was perhaps the highlight of the weekend for me as both
+teachers and developers rolled up their collective sleeves and took part in an
+"education sprint" (a sprint, in the context of a free software conference, is
+an intense period of work and collaboration on a specific and clearly defined
+project). Here's a group shot of the participants:</p>
+
+<img src="static/images/pycon2012teachers.jpg" alt="PyconUK 2012 Teachers"><p>We were very lucky to have
+<a href="https://twitter.com/MissPhilbin">Carrie Anne Philbin</a> (well
+known for her infectious enthusiasm and excellent blog,
+<a href="http://www.ictwithmissp.co.uk/">ICT with Miss P</a>) who stepped up
+to run a post-it note led session for discovering attendee's interests. It was
+a case of worlds colliding. I don't think any of the
+developers were aware of the conditions that teachers have to deal with: troll
+like network administrators with no interest in helping to promote learning,
+locked down laptops that are unusable unless you want to use Word, out-of-date
+versions of software that put teachers in the technological stone-age (Internet
+Explorer 6!) and all this in
+addition to the burden of teaching, marking, planning, social work, behaviour
+management, OFSTED inspections and extra-curricular clubs, groups and
+activities that form the day to day activities of a teacher.</p>
+
+<p>Once the developers had picked their collective jaws up from the floor,
+we agreed to split in to mixed groups of teachers and
+developers with a view to quickly drafting outlines of schemes of work, lesson
+plans and other educational resources (I spent an enjoyable hour creating a
+draft for a scheme of work about text based adventure games). At the end we
+came together for a show-and-tell feedback session. The results of the
+morning can be found
+<a href="https://github.com/ntoll/pyconuk-education-sprint-2012">in this
+github repository</a>.</p>
+
+<p>A welcome addition to our ranks was PSF chairperson
+<a href="https://twitter.com/VanL">Van Lindberg</a> who made significant
+contributions to the discussion about adventure games as a vehicle for
+learning. Great stuff! In addition, during the Saturday evening PSF member's
+meeting Carrie Anne somehow smuggled herself in resulting in much of the ensuing
+conversation to be centred around how the PSF could help teachers use
+Python (nice one Miss P!). Happily, it looks like an education portal will
+become part of the scope for the redesign of the
+<a href="http://python.org/">python.org</a> website and hopefully
+Carrie-Anne, Alan and teaching colleagues around the world will have a chance
+to shape its development.</p>
+
+<p>Actually, there is an <a href="https://us.pycon.org/2013/events/edusummit/">education summit</a> at
+Pycon in California in March and it would be wonderful if both Carrie-Anne and
+Alan could be the recipients of grants so they can attend. One thing that
+frustrates me about the world of education is the lack of global coordination:
+teachers all over the world duplicate, rather than share, each other's efforts.
+No matter the local education system, surely an international
+community such as Python can bring teachers together to promote the creative
+fun that is programming? If we don't, there's a danger that there won't be a
+Pycon left in twenty five year's time. After all, when you have teachers as
+enthusiastic as Carrie Anne (see her video response to PyconUK below) and Alan
+we'd be fools not to support them in their efforts to help the next generation
+of hackers discover their programming chops.</p>
+
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/cDBjHBXJ-SE?version=3&amp;hl=en_GB&amp;rel=0">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/cDBjHBXJ-SE?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+<p>If you are a teacher or developer interested in collaborating on Python as
+a vehicle for learning then you should join Carrie Anne's
+<a href="https://groups.google.com/forum/?fromgroups=#!forum/pythonedu">Python
+EDU</a> mailing list or get in touch with the
+<a href="http://www.python.org/community/sigs/current/edu-sig/">Python in
+Education Special Interest Group</a>.</p>
+
+<p>Finally, there was the rest of the conference: the lightning talks
+(<a href="http://autoview.autotrain.org/mod/autoview/view.php?id=259">video
+here</a>) were as funny as ever with
+<a href="https://twitter.com/lordmauve">Dan Pope's</a> talk on his gaming
+creations bringing the house down (at around the 31 minute mark). I had a lot
+of fun parping on my Tuba with
+<a href="https://twitter.com/CrostonBen">Ben Croston</a> (who has the excellent
+job of brewing beer in a brewery that's automated by Python). You can hear us
+at around the 1h:17m mark.
+It was great to catch up with so many old friends in the pub or at the
+impromptu curry outing (I'm sure I overheard, "can we have a table for 22
+please?") and, of course, there were the talks. I think my favourite slide of
+the conference is this one from <a href="https://twitter.com/antocuni">Antonio
+Cuni</a> who seems to be channelling Teenage Mutant Ninja Turtles in this
+graph explaining the phases of a tracing JIT compiler:</p>
+
+<img src="static/images/pyconukpypy.jpg" alt="PyconUK PyPy talk"><p>I'm already looking forward to next year (just you wait to see what we have
+planned).</p>
+<p>:-)</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/nhsitfubar/" class="u-url">A Deadly Equation of Acronyms - NHS+IT=FUBAR</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/nhsitfubar/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-09-28T19:00:00Z" itemprop="datePublished" title="2012-09-28 19:00">2012-09-28 19:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I've recently had the pleasure of taking part in two hacker
+events organised within the context of healthcare and, specifically, the UK's
+National Health Service (note for Americans who missed the opening of the
+Olympics: it's the state sponsored monopoly of "death panels" we use to
+decide which of our senior citizens are to be terminated). To be clear (and
+more seriously), I am using the term
+<em>"hacker"</em> in the way it is used within Information Technology
+circles: a hacker is a person with a passion for exploring and solving
+problems through writing and sharing software.</p>
+
+<p>Over last weekend I was in Liverpool to attend the second
+<a href="http://nhshackday.com">NHS Hackday</a> - a gathering of doctors,
+designers and developers. Here's my buddy and the originator of the event,
+<a href="http://twitter.com/drcjar">Carl</a>, providing more details about the
+aims and objectives of NHS Hackday:</p>
+
+<div>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/sgCgszvGAfI?version=3&amp;hl=en_GB&amp;rel=0">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed src="http://www.youtube.com/v/sgCgszvGAfI?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+</div>
+
+<p>After this, on the Monday and Tuesday, I was invited to take part in a
+hackathon organised by the UK's
+<a href="http://www.dh.gov.uk/en/index.htm">Department of Health</a>. Officials
+and big-wigs from the DoH provided a diverse group of ten developers and
+designers with a problem: to build an "innovation platform" in 48 hours. Said
+big-wigs were on hand to answer questions, provide guidance and give feedback
+throughout Monday. On Tuesday afternoon we presented our work to a couple of
+them.</p>
+
+<p>Both events were positive, energetic and fun. Unfortunately, they also led
+me to the conclusion that Information Technology (IT) provision within the
+National Health Service (NHS) is Fucked Up Beyond All Recognition (FUBAR).
+While I concede this assertion is intentionally couched in a provocative way,
+I doubt the sentiment will come as a surprise to those working within the
+NHS.</p>
+
+<p>Taking each event in turn, I'd like to explain why I've reached this
+conclusion since it's important to back up such negative assertions with
+concrete evidence (unfortunately, these two events provide plenty of material).
+</p>
+
+<h2>NHS Hackday - The ePortfolio Data Liberation Front</h2>
+
+<p>The modus operandi of the weekend was simple: anyone
+could pitch an idea as a lightning talk on the Saturday morning (lightning
+talks are strictly time bound - in this case, two minutes), people came
+together to investigate and work on the most interesting things presented and,
+on the Sunday afternoon, presented the fruits of their labours to a panel of
+experts and big-wigs from the worlds of health and technology. If they were
+lucky, they got a prize.</p>
+
+<p>Somehow, I got involved in a group called the ePortfolio Data Liberation
+Front...</p>
+
+<p>Every junior doctor working as a physician within the UK's hospitals has to
+demonstrate that they're at least competent given their level of
+training. As a result the Royal Colleges require trainees to undergo
+observation and assessment.</p>
+
+<p>This is essential for ensuring patient safety (I, for one, wouldn't
+want to be treated by a doctor who couldn't show the required competencies in
+order to practice). It is also an important pillar of a hospital doctor's
+continuing professional development: a mechanism for feedback, advice and
+noting areas for improvement.</p>
+
+<p>The results of this process, the evidence the doctor needs in order to
+progress to the next level of training, are currently stored in one mandatory
+location: the <a href="http://www.nhseportfolios.org">nhs-eportfolio</a>.
+Trainees are obliged to pay £18 a year to use this service, usually as part
+of their annual membership fee for whichever of the Royal Colleges they happen
+to belong to. The
+<a href="https://www.nhseportfolios.org/Anon/AboutUs.aspx">ePortfolio's about
+Page</a> states that they have over 35,000 trainees registered. So at a
+conservative guess (35000 times 18) their annual income is at least £630,000.
+</p>
+
+<p>One would hope that such an important and widely used service would be great
+value for money and the beneficiary of continued investment, improvement and
+updates.</p>
+
+<p>Unfortunately, this is not the case.</p>
+
+<p>It appears that ePortfolio is loathed by its users to the
+extent that there are even
+<a href="http://nhseportfoliorevolution.wordpress.com/">blogs</a> about how
+awful it is. Users complain that it's unintuitive, disorganised, ugly to look
+at and, at times of peak usage, slow. Results from a quick straw poll of doctors
+and consultants at the hack day were unanimously negative (and sometimes
+venomous).</p>
+
+<p>I happened to meet the author of the afore mention blog, <a href="http://twitter.com/_elljay_">LJ</a> and another doctor, <a href="http://twitter.com/marcus_baw">Marcus Baw</a>, on the first morning of the
+hack day. We discussed the various problems with the current offering and
+quickly came to the conclusion that helping trainee's to get to their data was a
+fundamental issue. Unfortunately, there appears to be a conflict
+between what is in the ePortfolio's best interest and the interests of their
+users.</p>
+
+<p>If a trainee can easily download their data (after all, who else's data is
+it?) in a widely used and open
+format then there's nothing to stop them from taking their data to a different
+service. This is obviously bad news for ePortfolio who are sitting pretty as
+a mandatory monopoly. They are not exposed to the pressure of dealing with
+a cheaper, better, faster competitor.</p>
+
+<p>We asked ourselves, how hard would it be to extract data from the
+ePortfolio and dump it in an industry standard structured data format like,
+for example, <a href="http://json.org/">JSON</a>? The answer is that it's both
+easy and hard.</p>
+
+<p>Given a doctor's credentials it's very easy to fool ePortfolio into letting
+you in so you're in a position to automate the "scraping" (a colloquial term
+to mean downloading, parsing and cleaning) of data. Here's
+how I did it using Python (it would have been a lot shorter had their log-in
+form not been such a mess):</p>
+
+<pre><code class="python">import requests
+import lxml.html
+import getpass
+
+LOGIN = 'https://nhseportfolios.org/Anon/Login/Login.aspx'
+
+def getCredentials():
+    """
+    Asks for user's credentials and returns a (username, password) tuple.
+    """
+    username = raw_input("Username: ").strip()
+    password = getpass.getpass("Password: ").strip()
+    return (username, password)
+
+
+def signIn(username, password):
+    """
+    Given the username and password of a user will return a correctly
+    configured requests.session object to use for subsequent requests.
+
+    This is a slight faff because they include a token in the form to avoid
+    naive automated POSTing attacks so we have to HTTP GET the form, extract
+    the token and POST back for the session cookies. I'm being lazy and
+    returning *everything* they expect in the request (but I guess they're
+    just checking the token).
+    """
+    # Grab the login page to get the form values we need.
+    raw = requests.get(LOGIN)
+    session_left_slice = raw.headers['set-cookie'].find('=') + 1
+    session_right_slice = raw.headers['set-cookie'].find(';')
+    session_id = raw.headers['set-cookie'][session_left_slice:session_right_slice]
+    html = lxml.html.fromstring(raw.text)
+    db_viewstate = html.cssselect("input#__DATABASE_VIEWSTATE")[0].value
+    ev_validation = html.cssselect("input#__EVENTVALIDATION")[0].value
+    # Create the form payload, many of these fields are empty, but using them
+    # so we look *exactly* like a browser.
+    username_key = 'ctl00$ContentPlaceHolderMain$ucUserLoginBox$ePortfolioLogin$UserName'
+    password_key = 'ctl00$ContentPlaceHolderMain$ucUserLoginBox$ePortfolioLogin$Password'
+    login_button = 'ctl00$ContentPlaceHolderMain$ucUserLoginBox$ePortfolioLogin$LoginButton'
+    form_payload = {
+        'ctl00_ScriptManager1_HiddenField': '',
+        '__LASTFOCUS': '',
+        '__EVENTTARGET': '',
+        '__EVENTARGUMENT': '',
+        '__DATABASE_VIEWSTATE': db_viewstate,
+        '__VIEWSTATE': '',
+        '__SCROLLPOSITIONX': '',
+        '__SCROLLPOSITIONY': '',
+        '__EVENTVALIDATION': ev_validation,
+        username_key: username,
+        password_key: password,
+        login_button: 'Please wait...',
+        'ctl00$ContentPlaceHolderMain$ucCodeLoginBox$txtLoginCode': ''
+    }
+    session = requests.session()
+    session.post(PATHS['login'], data = form_payload)
+    return session
+
+if __name__ == '__main__':
+    print "Enter user credentials"
+    username, password = getCredentials()
+    print "Validating user credentials"
+    session = signIn(username, password)
+</code></pre>
+
+<p>So far, so good. Given the <code>session</code> object created above, it's
+simple to download the HTML as if you were a logged in user:</p>
+
+<pre><code class="python"># Get the user's home page.
+home = session.get('https://nhseportfolios.org/Auth/SitePages/Trainee/Default.aspx')
+</code></pre>
+
+<p>Unfortunately, the HTML that ePortfolio returns is terrible.</p>
+
+<img src="static/images/shit.jpg" style="float: left; margin-right: 16px;"><p>It is inconsistent, un-idiomatic (I saw at least one nested table), contains
+little or no semantic stylesheet or id attributes and is a veritable tag soup of
+awfulness. As a result, extracting the important data from the raw HTML was
+a tale of woe. It was the cause of most of my frustrations over the weekend.
+I'd have had more fun sticking forks in my eyes.</p>
+
+<p>My immediate reaction was a feeling of <a href="http://www.quora.com/wordsthatshouldexistinenglish/Fremdsch%C3%A4men-German-to-feel-ashamed-for-somebody-else-but-also-instead-of-somebody-else-who-actually-should-feel">fremdschämen</a>.
+Surely the developers at ePortfolio were aware that from both a non-technical
+"external" point of view and a technical "internal" view (of their HTML) the site
+sucked harder than a black hole? How could who-ever is in charge of ePortfolio
+allow this to happen?</p>
+
+<p>Then I remembered that the reason ePortfolio is allowed to continue in this
+state is that they have no external pressure for them to change. Whoever
+decided to make the system a mandatory monopoly was, not to put too finer point
+on it, hugely misinformed, unconcerned with trainee doctor's requirements and
+foolish.</p>
+
+<p>Happily, working with such a smart, motivated and jolly couple of doctors
+was the highlight of the weekend because they are a beacon of hope. LJ and
+Marcus understand technology and care passionately that it becomes a force for
+good: improving healthcare in the UK rather than continuing to be the root of so
+much frustration. Obviously, people like them should be in charge of making
+IT precurement decisions.</p>
+
+<p>I'm also pleased that we were awarded second place by the judges.
+A better prize would be to open-source the ePortfolio
+and give trainee doctors free access to their own data.</p>
+
+<p>For LJ's perspective on the weekend check out
+<a href="http://nhseportfoliorevolution.wordpress.com/2012/09/24/nhs-hackday-and-the-eportfolio-data-liberation-front/">her blog post</a>
+and the resulting exchange of comments with one of ePortfolio's developers.</p>
+
+<h2>Sonar - Surfacing Innovation from within the NHS</h2>
+
+<p>Arriving home, hot foot from Liverpool, I was immediately travelling down to
+London for, well, I wasn't sure what...</p>
+
+<p>Ten developers and designers gathered at the Design Council in London under
+the auspices of the Department of Health. We also met managers from the health
+care sector. The managers had decided that the NHS needed an
+"innovation platform to surface best practice" (or something like that). Once we'd parsed the
+<a href="http://www.bullshitbingo.net/">buzzword bingo</a> it became clear that
+they wanted something akin to
+<a href="http://news.ycombinator.com/">Hacker News</a> (the premier website
+where hackers and tech start-ups share innovation) or
+<a href="http://www.reddit.com/">Reddit</a> (a news website containing content
+submitted by its members). In both instances, attention is given to those
+stories that the site's members vote as most interesting.</p>
+
+<p>Given the amount of "surfacing" jargon going on in the room we (the hackers)
+decided to create <a href="http://nhs-innovation.herokuapp.com/">NHSonar</a>,
+a site for surfacing innovation within the NHS.</p>
+
+<img src="static/images/sonar.jpg" style="float: right; margin-left: 16px;"><p>It was a lot of fun and we managed to build something close to the manager's
+original vision (you should be able to submit innovations upon which
+other users could vote and comment with the most popular innovations on the
+front page). All this was done within two working days.</p>
+
+<p>So we come to the crux of this blog post: expensive, badly written software
+that's foisted on healthcare professionals via a top-down style of management
+results in the terrible state we're in
+right now. Happily, despite having their collective legs pulled about the
+over use of business buzzwords, enlightened healthcare managers understand that
+"surfacing innovation" is an essential part of stopping the rot.</p>
+
+<p>If a handful of hacker-types working in an agile manner with
+open-source tools can create an innovation site in 48 hours, can you imagine
+what might be achieved if the government, senior healthcare professionals
+and managers engaged with the free software community?</p>
+
+<p>One positive outcome would be managers that don't speak "buzzword" - they'd
+be fluent in "techno-babble" instead. Perhaps, on second thoughts...</p>
+
+<p>:-)</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/metaclasses/" class="u-url">Metaclasses</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/metaclasses/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-08-27T01:00:00Z" itemprop="datePublished" title="2012-08-27 01:00">2012-08-27 01:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p><a href="http://python.org/">Python</a> is an easy-to-learn modern
+programming language with a simple yet elegant implementation of object
+orientation. This post explains one dark corner of Python's implementation of
+object orientation: metaclasses (but does so as if explaining the <a href="http://www.bbc.co.uk/blogs/learningenglish/2011/09/howzat.shtml">rules
+of cricket</a>).</p>
+
+<p>Objects represent things. Type, <code>type(my_object)</code> to find out
+what type of thing your object is. The type of thing an object represents is
+defined by its "type". Classes define types of things to be instantiated as
+objects. To be absolutely clear, objects represent types of things defined by
+classes.</p>
+
+<p>Now, listen carefully!</p>
+
+<p>In Python, classes <strong>are also</strong> objects. This raises
+an important question: what type of thing is a class?</p>
+
+<p>The answer is that a class is a type of thing that can instantiate objects.
+This type of thing (a class's class) is a class's metaclass which, incidently,
+in Python defaults to a special class called <code>type</code> ~ whose type
+is, circularly, <code>type</code> (i.e. itself).</p>
+
+<p>You can change the metaclass of a class by setting it's
+<code>__metaclass__</code> attribute to a class that inherits from the
+<code>type</code> class. With this sleight-of-hand you can control how classes
+instantiate objects.</p>
+
+<p>How? I'm so pleased you asked!</p>
+
+<p>Override the new metaclass's <code>__new__</code> method.
+Remember, this <code>__new__</code> method must return the return of a call
+to the <code>type</code> class's <code>__new__</code> method so your new class
+correctly instantiates a new object of the correct type.</p>
+
+<p>Got it? Good!</p>
+
+<p>:-)</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/europython-2012/" class="u-url">Europython 2012</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/europython-2012/" rel="bookmark">
+            <time class="published dt-published" datetime="2012-08-09T12:00:00Z" itemprop="datePublished" title="2012-08-09 12:00">2012-08-09 12:00</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>Europython was a month ago (early July) and I've been meaning to pull
+together a write-up since. So here goes...</p>
+
+<p>First of all, <a href="http://www.python.it/">Python Italia</a> are some
+<em>seriously well organised</em> folks. I can't think of another programming
+conference that was so smoothly executed. Add to that the food (yes, the FOOD!)
+and location (Florence is a city everyone should take the time to visit) and
+you have something akin to programmer utopia. I especially enjoyed several
+UK Pythonistas and London Dojo attendees giving talks: Mike Sandford's talk on
+<a href="https://ep2012.europython.eu/conference/talks/getting-the-logging-module-to-do-your-bidding">the logging module</a> was especially useful and Peter
+Inglesby's "<a href="https://ep2012.europython.eu/conference/talks/discovering-descriptors">Discovering Descriptors</a>" was a fascinating dive into attribute access
+(for non-geeks: yeah, I know... sounds <em>really</em> interesting right..?).</p>
+
+<p>I gave a talk that combined my love of programming and music:</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/OTHggyZAot0" frameborder="0" allowfullscreen></iframe>
+
+<p>It seemed to go quite well and the attendees (standing room only) seemed to
+enjoy it. I was secretly pleased to have
+<a href="https://en.wikipedia.org/wiki/Rickrolling">rickrolled</a> them all
+(in Latin!) without any of them noticing (watch the video and see if you can
+spot the offending slide). I was also delighted that many of the attendees
+couldn't tell the difference between my computer generated music and that
+composed by Mozart or Fux. In any case, all the code and the HTML/CSS for the
+slides can be found <a href="https://github.com/ntoll/foox">on github</a>.</p>
+
+<p>Finally, the best part of Europython was being able to attend with Mary
+(but without our three children who were staying with grandparents). Not only
+did we have a lot of of fun discovering Florence together but we were out
+every evening enjoying the tastes, sights and sounds of that great city with
+friends old and new. It was also fun for me because it gave Mary a
+window into my (often quite abstract and inaccessible) world and see me give
+my talk. Given that Europython 2013 will be in Florence again I suspect we'll
+both be back next year.</p>
+
+<p>What's next? Well, <a href="http://pyconuk.org">PyconUK</a> is just around
+the corner and there's another <a href="http://nhshackday.com">NHSHackday</a>
+soon! If you're going, say hi!</p>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-12.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-10.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav></main><footer id="footer"><p></p>
+<p>Contents © 2020         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

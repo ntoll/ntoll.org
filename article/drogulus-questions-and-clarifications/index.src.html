@@ -1,0 +1,241 @@
+---
+title: Drogulus - Questions and Clarifications
+slug: drogulus-questions-and-clarifications
+date: 2013-05-22 08:00:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+<p>Last weekend I gave a very short (15 minute)
+<a href="/article/ppdd">talk on the drogulus</a>: a programmable peer-to-peer
+data store that I've been working on in my own time. Pretty much all my answers
+in the short Q/A that followed were a variation of "I don't know". I consider
+this a success since it provided evidence for future avenues of investigation
+that others have proposed about the drogulus (one of the purposes for giving
+the talk).</p>
+
+<p>I prefer to say "I don't know" then think about the problem and write a
+considered response. I've had a couple of days to ponder the questions and
+comments from the Q/A (and later discussions in the bar), and in this post I'll
+attempt to answer, clarify or admit that, even upon reflection, I still don't
+know.</p>
+
+<p>I'll assume you've read the <a href="/article/ppdd">blog post of the
+talk</a> before reading the following.</p>
+
+<p><strong>What about flooding the network with Logos jobs? (or) How do you
+solve the problem of the tragedy of the commons?</strong></p>
+
+<p>Upon reflection I think this <em>is</em> a solvable problem. Put simply,
+there must be costs for misbehaviour and rewards for collaboration. I
+think a mechanism that uses both carrot and stick could be a solution (note
+that I didn't say, <em>is the answer</em>). My guess is that the specifics of
+a solution will become clearer if/when the drogulus gets used.</p>
+
+<p>The drogulus is a peer-to-peer system: by virtue of the way the system works
+peers have evidence of how each other behave. The ultimate punishment is to
+ostracise misbehaving nodes from the network, cutting them off from data and
+the latent computing power within the drogulus.</p>
+
+<p>Therefore, in order to run Logos jobs, nodes must have shown evidence that
+they are "good citizens" of the network. Furthermore, there is the threat that
+evidence of "bad" behaviour will result in punishment.</p>
+
+<p>To some extent this feature already exists within the drogulus: every node
+maintains a simple data structure called a
+<a href="https://github.com/ntoll/drogulus/blob/master/drogulus/dht/routingtable.py">routing table</a>
+- the means of keeping track of peers on the network. To get in to another
+node's routing table you must have been in contact with the node and
+provided some useful information in a timely fashion. The number of
+available slots in the routing table is limited by a constant called
+<code>K</code>. Only the most reliable nodes get included in node's routing
+tables and those that do not maintain good performance are removed and quickly
+replaced.</p>
+
+<p>In this way, the distributed hash table's nodes attempt to use the most
+reliable peers to maintain the system's performance. Furthermore, if a node is
+found to propagate a value that fails the cryptographic checks it is
+immediately removed from routing tables no matter how reliable its prior
+performance.</p>
+
+<p>Something similar could be achieved for running Logos scripts. For example,
+peers may only run Logos jobs from remote nodes that have already run a Logos
+job for them (you scratch my back, I'll scratch yours) or from nodes that have
+existed within the routing table and fulfilled a certain number of successful
+interactions with the local node.</p>
+
+<p>My aim is simply to think up a mechanism by which it costs nothing to be
+a good citizen yet is fatally expensive to be disruptive.</p>
+
+<p><strong>What happens if a third party attempts to block by IP
+address?</strong></p>
+
+<p>As I mentioned in the talk, areas of the key space are covered by many
+different nodes. The IP address of a node has nothing to do with the key space
+it covers. I presume a third party would be attempting to block access to a
+key/value item stored in the drogulus rather than a specific machine. To block
+an area of the key space a third party would have to take down
+<strong>all</strong> nodes containing the target key/value item.</p>
+
+<p>Unfortunately, this is easier said than done because:</p>
+
+<ul>
+    <li>There is no central list tracking which nodes contain what values.
+    There's a pretty good chance you won't discover them all at any single
+    point in time.</li>
+    <li>Nodes are constantly joining and leaving the drogulus and replicating
+    data between each other. The set of nodes containing a certain item is
+    constantly changing.
+    &#928;&#940;&#957;&#964;&#945; &#8165;&#949;&#8150;.</li>
+    <li>If nodes <em>are</em> blocked then the drogulus quickly routes around
+    the failing nodes through the mechanism of the routing table (see
+    above).</li>
+</ul>
+
+<p>I imagine some of the properties of the drogulus are like a
+swarming flock of starlings: a dynamic system consisting of a multitude of
+independent parts that are constantly acting on and reacting to each other.</p>
+
+<p><img src="/static/images/swarm.jpg" alt="Swarm of starlings"/></p>
+
+<p><strong>What is the etymology of "drogulus" and "logos"?</strong></p>
+
+<p>A drogulus is an entity whose presence is unverifiable, because it has no
+physical effects. The atheist philosopher
+<a href="https://en.wikipedia.org/wiki/A._J._Ayer">A.J.Ayer</a>
+coined it as a way of ridiculing the belief system of his friend, the Jesuit
+philosopher,
+<a href="https://en.wikipedia.org/wiki/Frederick_Copleston">Frederick
+Copleston</a>.</p>
+
+<p>In 1949 Ayer and Copleston took part in a radio debate about the existence of
+God. The debate then went back and forth, until Ayer came up with the following
+as a way of illustrating the point that Copleston's
+<a href="https://en.wikipedia.org/wiki/Metaphysics">metaphysics</a>
+had no content
+because there was no way of testing the truth of metaphysical assertions. He
+said:</p>
+
+<blockquote>"I say, 'There's a "drogulus" over there,' and you say, 'What?' and
+I say, 'drogulus' and you say 'What's a drogulus?' Well, I say, 'I can't
+describe what a drogulus is, because it's not the sort of thing you can see or
+touch, it has no physical effects of any kind, but it's a disembodied
+being.' And you say, 'Well how am I to tell if it's there or it's not
+there?' and I say, 'There's no way of telling. Everything's just the same
+if it's there or it's not there. But the fact is it's there. There's a
+drogulus there standing just behind you, spiritually behind you.' Does that
+makes sense?"</blockquote>
+
+<p>Of course, the natural answer Ayer was waiting for was "No, of course it
+doesn't make sense." Therefore, the implication would be that metaphysics is
+like the "drogulus" ~ a being which cannot be seen and has no perceptible
+effects. If Ayer can get to that point, he can claim that any kind of belief
+in the Christian God or in metaphysical principles in general is really
+contrary to our logical and scientific understanding of the world.</p>
+
+<p>This appeals greatly to my sense of humour and I've always thought it'd be
+a fun name for a software project. Especially a project like this one. :-)</p>
+
+<p><img src="/static/images/ajayer.jpg" alt="Portrait of A.J.Ayer"/><br/>
+<small>A.J.Ayer</small></p>
+
+<p>Logos
+(<a href="https://en.wikipedia.org/wiki/Logos">&#955;&#972;&#947;&#959;&#962;</a>)
+is a term used by the pre-Socratic philosopher,
+<a href="https://en.wikipedia.org/wiki/Heraclitus">Heraclitus</a>, to mean
+several different things: account, explanation, reason, organising principle,
+wisdom, nature or saying. It's the etymological root of the modern
+English word "logic". I do not use it in the biblical sense where it means
+the word of God (I refer readers to the explanation of "drogulus" above).</p>
+
+<p>It seems to me an appropriate choice of name for a computer language.</p>
+
+<p><strong>It's a complex problem and you don't know what you're
+doing!</strong></p>
+
+<p>I won't contest that!</p>
+
+<p>It's a fun personal project. If it is useful then people will use
+it. At the very least it's a helpful learning exercise for me (which is, in
+itself, a positive outcome).</p>
+
+<p>However, a complex problem may not entail a complex solution. Rather, it
+only needs to work. Furthermore, while thinking about the drogulus I've
+attempted to work out the simplest possible solution given whatever the
+abstract problem I've needed to solve.</p>
+
+<p>As computing pioneer <a href="https://en.wikipedia.org/wiki/Tony_Hoare">Tony
+Hoare</a> explains,</p>
+
+<blockquote>"There are two ways of constructing a software design: One way is
+to make it so simple that there are obviously no deficiencies, and the other
+way is to make it so complicated that there are no obvious deficiencies. The
+first method is far more difficult."</blockquote>
+
+<p>I'm aiming for Hoare's first method of constructing software.</p>
+
+<p><strong>What's being sent down the wire?</strong></p>
+
+<p>Dictionary like objects (that are themselves valid statements in Logos) are
+encoded using <a href="http://msgpack.org/">msgpack</a> and sent as a
+<a href="http://cr.yp.to/proto/netstrings.txt">netstring</a> to remote nodes
+over
+<a href="https://en.wikipedia.org/wiki/Internet_Protocol_Suite">TCP/IP</a>.</p>
+
+<p><strong>How does the cryptographic signing work?</strong></p>
+
+<p>The relevant code can be found in the
+<a href="https://github.com/ntoll/drogulus/blob/master/drogulus/crypto.py">crypto.py</a>
+module. I use the popular
+<a href="https://github.com/dlitz/pycrypto">PyCrypto</a> library for all
+cryptographic functionality.</p>
+
+<p>Put simply, each item encompassing a key/value pair includes the following
+fields:</p>
+
+<ul>
+    <li><code>value</code> - the value to store</li>
+    <li><code>timestamp</code> - a UNIX timestamp representing when the item
+    was created (so it's easy to discern the latest version of an item)</li>
+    <li><code>expires</code> - a UNIX timestamp beyond which the item is
+    expired and should be ignored</li>
+    <li><code>name</code> - a meaningful name for the key</li>
+    <li><code>meta</code> - a list of tuples containing key/value strings for
+    user defined metadata about the item</li>
+    <li><code>public_key</code> - the originator's public key</li>
+    <li><code>sig</code> - a cryptographic signature created using the
+    originator's private key with the <code>value</code>,
+    <code>timestamp</code>, <code>expires</code>, <code>name</code> and
+    <code>meta</code> values</li>
+    <li><code>key</code> - the SHA512 value of the compound key (based upon the
+    <code>public_key</code> and <code>name</code> fields) used as the actual
+    key on the distributed hash table</li>
+</ul>
+
+<p>The <code>public_key</code> field is used to validate the <code>sig</code>
+value. If this is OK then the compound key is checked using the obviously valid
+<code>public_key</code> and <code>name</code> fields.</p>
+
+<p>This ensures both the provenance of the data and that it hasn't been
+tampered with.</p>
+
+<p>Any items that don't pass the cryptographic checks are ignored and nodes
+that propagate them are punished by being blocked.</p>
+
+<p><strong>How is it licensed?</strong></p>
+
+<p>Under the
+<a href="https://github.com/ntoll/drogulus/blob/master/LICENSE">GNU Affero
+general public license version 3</a>. I usually license my code under a more
+liberal license (e.g. the <a href="http://opensource.org/licenses/MIT">MIT</a>
+license) but decided to use the AGPLv3 because this is the reference version of
+the drogulus and should always remain open (if anything comes of the drogulus,
+I hope many different implementations will exist).</p>
+
+<p><strong>Do you want or need help?</strong></p>
+
+<p><a href="https://github.com/ntoll/drogulus/blob/master/CONTRIBUTING.rst">YES</a>!</p>
+
+<p><small>Image credits: Swarm of Starlings &copy; 2008 <a href="http://www.flickr.com/photos/68259253@N00/2312416690/">Gail Johnson</a> (under a <a href="http://creativecommons.org/licenses/by-nc/2.0/deed.en_GB">creative commons</a> license).
+Portrait of A.J.Ayer sourced from <a href="https://en.wikipedia.org/wiki/File:Alfred_Jules_Ayer.jpg">Wikipedia</a> as <a href="https://en.wikipedia.org/wiki/Fair_use">fair use</a>.
+</small></p>

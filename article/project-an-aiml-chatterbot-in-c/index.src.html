@@ -1,0 +1,156 @@
+---
+title: Program# - An AIML Chatterbot in C#
+slug: project-an-aiml-chatterbot-in-c
+date: 2005-08-24 22:00:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+
+	<h1>Nota Bene: This project is now obselete because there is a <a href="http://ntoll.org/article/program-20">new version of Program#</a></h1>
+
+	<p>This is a .NET implementation of the <a href="http://www.alicebot.org/">ALICE</a> chatterbot using the <a href="http://www.alicebot.org/TR/2001/WD-aiml/">AIML</a> specification. Put simply, this software will allow you to chat (by entering text) with your computer using natural language.</p>
+
+	<p>Program# is a complete re-write of an earlier C# AIML implementation called AIMLBot. It is available under the <a href="http://www.gnu.org/copyleft/gpl.html">Gnu GPL</a>. This means that you are free to download, modify and share it. Links to download Program# can be found at the bottom of the page.</p>
+
+	<h2>Acknowledgments</h2>
+
+	<p>First, thanks to Dr.Richard S.Wallace the inventor of AIML.</p>
+
+	<p>Thanks also to the many free software developers who have already implemented an AIML bot. The liberty to study how it was done is much appreciated.</p>
+
+	<h2>Project description</h2>
+
+	<p>The <a href="http://www.alicebot.org/TR/2001/WD-aiml/">AIML specification</a> was used as the vade mecum for this project. Read it to understand how this project and AIML works. For a less formal introduction, read on&#8230;</p>
+
+	<p>"AIML: Artificial Intelligence Markup Language</p>
+
+	<p>AIML (Artificial Intelligence Markup Language) is an XML-compliant language that's easy to learn, and makes it possible for you to begin customizing an Alicebot or creating one from scratch within minutes.</p>
+
+	<p>The most important units of AIML are:</p>
+
+	<ul>
+
+		<li><code>&lt;aiml&gt;</code> : the tag that begins and ends an AIML document</li>
+
+		<li><code>&lt;category&gt;</code> : the tag that marks a "unit of knowledge" in an Alicebot's knowledge base</li>
+
+		<li><code>&lt;pattern&gt;</code> : used to contain a simple pattern that matches what a user may say or type to an Alicebot</li>
+
+		<li><code>&lt;template&gt;</code> : contains the response to a user input</li>
+
+	</ul>
+
+	<p>There are also 20 or so additional more tags often found in AIML files, and it's possible to create your own so-called "custom predicates". Right now, a beginner's guide to AIML can be found in the AIML Primer.</p>
+
+	<p>The free A.L.I.C.E. AIML includes a knowledge base of approximately 41,000 categories. Here's an example of one of them:</p>
+
+<code>&lt;category&gt;</code><br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;pattern&gt;</code>WHAT ARE YOU<code>&lt;/pattern&gt;</code><br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;template&gt;</code><br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;think&gt;</code><code>&lt;set  name="topic"&gt;</code>Me<code>&lt;/set&gt;</code><code>&lt;/think&gt;</code><br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am the latest result in artificial intelligence,<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;which can reproduce the capabilities of the human brain<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with greater speed and accuracy.<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;/template&gt;</code><br/>
+
+<code>&lt;/category&gt;</code>
+
+	<p>(The opening and closing <code>&lt;aiml&gt;</code> tags are not shown here, because this is an excerpt from the middle of a document.)</p>
+
+	<p>Everything between <code>&lt;category&gt;</code> and <code>&lt;/category&gt;</code> is&#8212;you guessed it&#8212;a category. A category can have one pattern and one template. (It can also contain a <code>&lt;that&gt;</code> tag, but we won't get into that here.)</p>
+
+	<p>The pattern shown will match only the exact phrase "what are you" (capitalization is ignored).</p>
+
+	<p>But it's possible that this category may be invoked by another category, using the <code>&lt;srai&gt;</code> tag (not shown) and the principle of reductionism.</p>
+
+	<p>In any case, if this category is called, it will produce the response "I am the latest result in artificial intelligence&#8230;" shown above. In addition, it will do something else interesting. Using the <code>&lt;think&gt;</code> tag, which causes Alicebot to perform whatever it contains but hide the result from the user, the Alicebot engine will set the "topic" in its memory to "Me". This allows any categories elsewhere with an explicit "topic" value of "ME" to match better than categories with the same patterns that are not given an explicit topic. This illustrates one mechanism whereby a botmaster can exercise precise control over a conversational flow."</p>
+
+	<p>The above text is Copyright&#169; A.L.I.C.E. AI Foundation, Inc.</p>
+
+	<p><a href="http://www.alicebot.org">http://www.alicebot.org</a></p>
+
+	<h2>Minimum requirements</h2>
+
+	<p>Written and tested on .NET runtime v1.1</p>
+
+	<p>Also tested on Mono (http://www.mono-project.com/Main_Page)</p>
+
+	<p>The directory structure of the Program# project follows the standard Visual Studio 2003 template.</p>
+
+	<p>When the cBot class is instantiated for the first time from within another program it searches for two directories in the application's root directory:</p>
+
+	<ul>
+
+		<li>aiml &#8211; where you put the aiml files</li>
+
+		<li>bots &#8211; where you put the DEFAULT.bot (predicate) file (and in future versions any other bot settings files)</li>
+
+	</ul>
+
+	<p>If these directories are not found the bot will attempt to create them and populate them with a default predicate file and a copy of the Salutations.aiml file (so your bot can at least say hello!).</p>
+
+	<h2>Usage instructions</h2>
+
+	<p>To use in your own projects add the DLL as a reference. All the classes are found under the AIMLBot namespace.</p>
+
+	<p>Instantiate the cBot class thus:</p>
+
+<code>cBot myBot = new cBot(false);</code>
+
+	<p>or</p>
+
+<code>cBot myBot = new cBot(PathToAIMLFiles,false);</code>
+
+	<p>The boolean value designates if debug mode is on. Setting this to true will output lots of useful information to the console.</p>
+
+	<p>The time the cBot class takes to initialize, like all the other AIML implementations, depends upon the number of nodes to be read and mapped into the cGraphmaster object. This can vary from a few seconds to minutes. This is an area where the code can definitely be made more efficient.</p>
+
+	<p>To chat to the bot simply call the "chat" method thus:</p>
+
+<code>cResponse reply = myBot.chat(InputString,"UserID");</code>
+
+	<p>InputString is obviously the input from the user and "UserID" can be changed to uniquely identify them. The cResponse encapsulates all sorts of useful information about how the "InputString" was processed.</p>
+
+	<p>To get the actual reply simply call the "getOutput" method:</p>
+
+<code>Console.WriteLine(reply.getOutput());</code>
+
+	<p>And thats about it!</p>
+
+	<h2>Download</h2>
+
+	<p>Two downloads are provided:</p>
+
+	<ul>
+
+		<li><a href="/static/files/intervals.mid8">AIMLBot.zip</a> (978kb) &#8211; Containing the documentation, project files, source code and some zipped up default aiml files for the AIMLBot dll.</li>
+
+		<li><a href="/static/files/intervals.mid9">AIMLGui.zip</a> (656kb) &#8211; The source-code for a .NET windows application using Program# to provide a simple chatterbot.</li>
+
+	</ul>
+
+	<h2>Notice of GPL / copyleft</h2>
+
+	<p>Program# &#8211; An implementation of the AIML specification found at http://www.alicebot.org/</p>
+
+	<p>Copyright&#169; 2006 Nicholas H.Tollervey</p>
+
+	<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+
+	<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+
+	<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place &#8211; Suite 330, Boston, MA 02111-1307, USA.</p>
+
+
+
+
+
+ 

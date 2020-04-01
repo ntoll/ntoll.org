@@ -1,0 +1,130 @@
+---
+title: Programming Minecraft on the RaspberryPi
+slug: minecraft-pi
+date: 2013-03-16 22:45:00 UTC
+description: 
+author: Nicholas H.Tollervey
+---
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MmB9b5njVbA?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p><a href="http://minecraft.net/">Minecraft</a> is a sort of digital Lego.
+Players explore a blocky computer generated world and have the ability to build
+new terrain, buildings and other features. Many users have generated creative
+and complicated structures within their games by carefully placing individual
+bricks (just like Lego). A quick
+<a href="https://www.google.com/search?q=minecraft&hl=en&source=lnms&tbm=isch">Google image search for Minecraft</a> will return lots of amazing results.</p>
+
+<p>The <a href="http://www.raspberrypi.org/">RaspberryPi</a> is a cheap
+computer designed to encourage kids (of all ages) to learn how to program.
+Apparently, the "pi" part of the name is a misspelled reference to the
+<a href="http://python.org">Python</a> programming language - the RaspberryPi's
+principal programming language for education.</p>
+
+<p>Minecraft is amazingly popular among kids (my own included). I guess, like
+Lego, it's the potential for creative generative play that is so appealing.
+Wouldn't it be great if there were a version of Minecraft that you could
+program in Python that ran on the RaspberryPi..?</p>
+
+<p><a href="http://pi.minecraft.net/">THERE IS!</a></p>
+
+<p>I'm currently at <a href="https://us.pycon.org/2013/">PyconUS 2013</a> in
+California, every attendee has been given a RaspberryPi and there's a
+RaspberryPi lab in which attendees are encouraged to try their new piece of
+kit. I just spent a fun morning programming Minecraft with Python. What follows
+is a quick "how to" guide to get you started.</p>
+
+<p>I'll assume you've got a RaspberryPi to hand and that it's connected to the
+internet. (If you're unsure how to do this I suggest you visit the main
+<a href="http://raspberrypi.org/">RaspberryPi website</a> for more
+information.)</p>
+
+<p>First you should <a href="http://pi.minecraft.net/?page_id=10">download the
+RaspberryPi version of Minecraft</a> and follow the instructions at the web
+page to which I just linked.</p>
+
+<p>Next, once you have Minecraft running on your RaspberryPi I suggest you play
+for a while. Create a world and have a look around. Here's a run-down of the
+commands you can use:</p>
+
+<ul>
+    <li>Keyboard
+        <ul>
+            <li>W,A,S,D - Move (or navigate inventory)</li>
+            <li>SPACE - Jump, double tap to start/stop flying, hold to fly
+            higher</li>
+            <li>SHIFT - Sneak, hold to fly lower</li>
+            <li>E - Open inventory</li>
+            <li>1-8 - Select inventory slot item to use</li>
+            <li>ESC - Show/hide menu</li>
+            <li>TAB - Release mouse without showing menu</li>
+            <li>ENTER - Confirm menu selection</li>
+        </ul>
+    </li>
+    <li>Mouse
+        <ul>
+            <li>Steer - Look/turn around</li>
+            <li>Left mouse button - Remove block (hold)</li>
+            <li>Right mouse button - Place block, hit block with sword</li>
+            <li>Mouse wheel - Select inventory slot item to use</li>
+        </ul>
+    </li>
+</ul>
+
+<p>Cool huh..?</p>
+
+<p>But wouldn't it be fun to be able to program and automate the manipulation
+of the game world with Python..?</p>
+
+<p>Here's how to get started...</p>
+
+<p>Open a terminal and change in to the Minecraft directory
+(<code>mcpi</code>) within which you'll see a child directory called
+<code>api</code> within which is yet another called <code>python</code>. From
+within the <code>python</code> directory start Python by typing,
+<code>python</code>.</p>
+
+<p>Now, type in the following:</p>
+
+<p><pre><code class="python">&gt;&gt;&gt; from mcpi import minecraft
+&gt;&gt;&gt; mc = minecraft.Minecraft.create("127.0.0.1")
+&gt;&gt;&gt; mc.postToChat("Hello, World!")
+</code></pre></p>
+
+<p>You should see the message <em>Hello, World!</em> pop up in the Minecraft
+world. Congratulations, you've just programmed Minecraft!</p>
+
+<p>The first command imported all the things that Python needs to talk to the
+Minecraft game. The second line creates an object called <code>mc</code> that
+represents a connection to your game. The third line sends the chat message
+to the game.</p>
+
+<p>How about building things within the Minecraft world..? Check this out...</p>
+
+<p><pre><code class="python">&gt;&gt;&gt; from mcpi import block
+&gt;&gt;&gt; mc.player.getTilePos()
+Vec3(37,0,-39)
+&gt;&gt;&gt; mc.setBlock(38, 0, -38, block.STONE_BRICK.id)
+</code></pre></p>
+
+<p>On the first line I import information Python needs about the blocks that
+you can place within the Minecraft world. Next, I ask the game where in the
+world my player is located. The game responds with an <em>x</em>, <em>y</em>
+and <em>z</em> based location expressed as a vector. Finally, I use the
+<code>setBlock</code> method to place a stone brick on an adjacent square.
+If you take a look around you'll see it right next to you!</p>
+
+<p>Actually, you will see different results to me because your player will be
+stood in a different location. See if you can change the final line to place
+a block close to your own player's location.</p>
+
+<p>That's it (for now) and covers pretty much all I found out in the first 15
+minutes of hacking about. If you want to explore the API further I suggest you
+look at the <code>mcpi_protocol_spec.txt</code> file in the
+<code>mcpi/api/spec</code> directory.</p>
+
+<p>Personally, I think this is a gift horse that teachers everywhere should be
+looking at in the mouth.</p>
+
+<p>I'll blog some more about this when I get back to the UK.</p>
+
