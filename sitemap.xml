@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ntoll.org/</loc>
-  <lastmod>2020-04-01T12:48:00Z</lastmod>
+  <lastmod>2020-04-01T13:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/2004/</loc>
@@ -522,10 +522,6 @@
   <lastmod>2020-04-01T12:48:00Z</lastmod>
  </url>
  <url>
-  <loc>https://ntoll.org/galleries/</loc>
-  <lastmod>2020-04-01T12:48:00Z</lastmod>
- </url>
- <url>
   <loc>https://ntoll.org/index-1.html</loc>
   <lastmod>2020-04-01T12:48:00Z</lastmod>
  </url>
@@ -607,10 +603,6 @@
  </url>
  <url>
   <loc>https://ntoll.org/index-9.html</loc>
-  <lastmod>2020-04-01T12:48:00Z</lastmod>
- </url>
- <url>
-  <loc>https://ntoll.org/listings/</loc>
   <lastmod>2020-04-01T12:48:00Z</lastmod>
  </url>
  <url>
