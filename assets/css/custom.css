@@ -1,7 +1,12 @@
 body {
     font-family: 'Linux Libertine','Georgia','Times',serif;
-    font-size: 1.4em;
     font-weight: 400;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.4em;
+  }
 }
 
 #menu ul li,
