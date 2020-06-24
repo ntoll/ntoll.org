@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>CodeGrades - Education for a Coding Culture</title>
+
+		<meta name="description" content="BCS LDSG slides.">
+		<meta name="author" content="Nicholas H.Tollervey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/asyncio.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>CodeGrades</h1>
+					<h2>Educating for a Coding Culture</h2>
+          <p>(A lazy engineer's long term view)</p>
+					<p>
+						<a href="http://ntoll.org/">Nicholas H.Tollervey</a> / <a href="http://twitter.com/ntoll">@ntoll</a>
+					</p>
+                    <aside class="notes">
+                        <ul>
+                            <li>Thanks for invite.</li>
+                            <li>My name is Nicholas - I'm a freelance Python
+                            developer from England!</li>
+                        </ul>
+                    </aside>
+				</section>
+
+
+                <!-- Nicholas -->
+                <section>
+                    <img src="images/tuba.jpg" alt="Me armed with my tuba"/>
+                    <aside class="notes">
+                    <p>Who am I? Mention music education.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/teacher_me.jpg" alt="Me as a teacher"/>
+                    <aside class="notes">
+                    <p>At 23 a head of department. MA in philosophy of
+                    education.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/ntoll_europython.jpg" alt="Me at EuroPython 2019"/>
+                    <aside class="notes">
+                    <p>Describe all the Python / programming things I do.</p>
+                    <p>I'm here to tell you the story of CodeGrades - a project
+                    to help folks acquire the coding skills they need to create
+                    the stuff they want.</p>
+                    <p>I'm going to do this as a "lazy developer", doing as
+                    little original work as possible.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <h1>The Narrative</h1>
+                    <aside class="notes">
+                      <p>So where are we now..? Let's examine the usual reasons
+                      folks use for promoting coding education.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <img src="images/eating_the_world.png"/>
+                  <p>Software is eating the world. ~ <a href="https://www.wsj.com/articles/SB10001424053111903480904576512250915629460">Marc Andreessen</a></p>
+                    <aside class="notes">
+                      <p>Marc A.'s famous quote from the Wall Street Journal
+                      article. He created the first popular graphical web
+                      browser and is now one of the most successful Silicon
+                      Valley venture capitalists.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <img src="images/program_or_be_programmed.jpg" style="float: left; margin-right: 48px;"/>
+                  <p style="margin-top: 128px;">The real question is, do we direct technology, or do we
+                  let ourselves be directed by it and those who have mastered
+                  it? ~ <a href="https://rushkoff.com/books/program-or-be-programmed/">Doug Rushkoff</a></p>
+                    <aside class="notes">
+                      <p>Doug's point is that ignorance of coding disempowers
+                      you in today's world. If you can code, you have autonomy
+                      to make the digital world as you see fit.</p>
+                      <p>Autonomy is an important aim for all educators (all
+                      teachers are trying to do themselves out of a job).</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <img src="images/industry_needs_programmers.png" style="float: left; margin-right: 48px;"/>
+                  <p>[B]usinesses across a wide range of industries are seeking
+                  professionals with programming and coding experience, even if
+                  their company’s work is not directly related to
+                  technology. ~ <a href="https://www.forbes.com/sites/forbestechcouncil/2019/05/01/11-surprising-industries-that-will-soon-have-a-demand-for-programmers/">Forbes</a></p>
+                    <aside class="notes">
+                      <p>Coding disrupts everything. No matter the industry,
+                      it'll need to use computers. For the sake of the economy
+                      we don't want to be the illiterate ones in the
+                      library.</p> 
+                    </aside>
+                </section>
+
+                <section>
+                  <img src="images/code_mess.png"/>
+                  <p>Stereotypes stop you doing stuff.</p>
+                    <aside class="notes">
+                      <p>Coding has an image problem: white, straight, dudes
+                      write code. Hollywood doesn't help. David Heinnemar
+                      Hanson says it well: we're software authors, not
+                      software engineers. We write for a living. Coders don't
+                      need to be misfits, or know kung fu.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <h1>Current Solutions</h1>
+                    <aside class="notes">
+                      <p>Given this skills based narrative, what are folks
+                      doing at the moment..?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/rpi.jpg"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>Worldwide success... millions of units
+                            sold.</li>
+                            <li>But what do you do with it..?</li>
+                            <li>Explain Girl Guides story from PyCon UK.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/microbit.jpg"/>
+                    <aside class="notes">
+                        <ul>
+                            <li>BBC recapturing the gloy days of the 1980s.</li>
+                            <li>But what do you do with it?</li>
+                            <li>Nobody asked teachers what they wanted! (I
+                            should know, I helped make this.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <video preload="auto" muted="" loop="loop" autoplay="" width="100%">
+<source src="images/playground.mp4">
+</video>
+                    <aside class="notes">
+                        <p>Others are creating more complicated and friendly
+                        devices (for example Adafruit). These are open source
+                        boards containing a huge number of sensors and
+                        outputs.</p>
+                        <p>Still... "how do I do stuff?"</p>
+                        <p>Answer... "you write software"</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/dawn.jpg"/>
+
+                    <aside class="notes">
+                    <p>Introduce Dawn. Too many blinking LED and magic 8 ball
+                    examples. Where's the progression..?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/8ball.jpg"/>
+                    <aside class="notes">
+                    <p>Also, such problems are solved problems which often
+                    don't speak to beginner programmers.</p>
+                    <p>Beginner programmers are presented with projects but
+                    little opportunity for play and experimentation.</p>
+                    <p>What's the UK education system doing to help..?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <p>GCSE/A levels?</p>
+                    <img src="images/GCSE_exam1.png"/>
+                    <aside class="notes">
+                    <p>While GCSE Computing is a broader subject than just
+                    coding, all of the marks are obtained via written exams in
+                    a closed book situation.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <p>GCSE/A levels?</p>
+                    <img src="images/GCSE_exam2.png"/>
+                </section>
+
+                <section>
+                    <p>GCSE/A levels?</p>
+                    <img src="images/GCSE_exam3.png"/>
+                    <aside class="notes">
+                    <p>This looks more interesting and allows students to
+                    actually practice creating a project. But they get zero
+                    marks for it.</p>
+                    <p>Legitimate to ask: what's the point..?</p>
+                    <p>I realise exam boards have their hands tied to some
+                    extent by the government, but as a "person from industry"
+                    this looks like a very bad joke.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/bootcamp.jpg"/>
+                    <p>Between £8k-£10k to attend a bootcamp.</p>
+                    <aside class="notes">
+                    <p>If you're an older learner or you want to change careers
+                    then Bootcamps are one option if you can afford them.</p>
+                    <p>Typically, they're around three months of intensive
+                    learning. I've trained many graduates of such schemes.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/lost_at_computer.jpg"/>
+                    <p>Or you're on your own... :-(</p>
+                    <aside class="notes">
+                      <p>While the internet is a wonderful resource, nobody is
+                      there to show, help, encourage or support.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Thought Experiment</h1>
+                </section>
+
+                <section>
+                    <p>What if we taught music like we teach programming?</p>
+                    <aside class="notes">
+                    <p>On a train from NY to Boston. Not Rhapsody in Blue
+                    but... a thought experiment.</p>
+                    <p>"I heard it as a sort of musical kaleidoscope of
+                    America, of our vast melting pot, of our unduplicated
+                    national pep, of our metropolitan madness."</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/bootcamp.png" alt="Bootcamp"/>
+                    <aside class="notes">
+                    <p>Obviously learning to play music takes no time at all
+                    and there's a wonderful job waiting for you!</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/breaking-news.png" alt="Tubas"/>
+                    <aside class="notes">
+                    <p>Just give everyone arbitrary instruments. They'll pick
+                    it up (eventually).</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/GCSE_music1.png" alt="GCSE"/>
+                    <aside class="notes">
+                    <p>Dammit, standards require we have written exams for
+                    music.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/getting_started_tuba.png" alt="Tuba"/>
+                    <aside class="notes">
+                    <p>Or you could just read the book about it and wing it.
+                    Nothing beats book reading right..?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/programming24hrs.jpeg" alt="24hr Programming"/>
+                    <aside class="notes">
+                    <p>You mean I don't have to take 12 weeks? ZOMG!</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/guido.png" alt="Tuba"/>
+                    <aside class="notes">
+                    <p>Back in the land of coding...</p>
+                    <p>WAT? 30 minutes? Who is this Guido person anyway...
+                    what does HE know...!?!?!?!</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <p>If you have £10k, there's nothing wrong with a three
+                    month bootcamp.</p>
+                    <p class="fragment">But you'll program like someone who has
+                    only been coding for three months.</p>
+                    <aside class="notes">
+                      <p>Like learning to play music, learning to code takes
+                      time, effort, discipline and practice.</p>
+                      <p>Furthermore, please believe me when I say learning
+                      to code means picking up a certain sort of culture,
+                      heuristics, practices and history (don't re-invent the
+                      wheel). It's not just about knowledge acquisition.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <h1>Can you code like a Pirate?</h1>
+                    <aside class="notes">
+                      <p>This is a simple fun question that's often used to
+                      break the ice in coding interviews or dojos.</p>
+                      <p>Think about it for a moment. How would YOU do
+                      it..?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <video preload="auto" controls="" width="100%">
+<source src="images/pirate.mp4">
+</video>
+                </section>
+
+                <section>
+                  <p>Simple Pirate Python</p>
+                  <pre><code>import random
+
+pirate_dictionary = {
+    "hello": "ahoy",
+    "you": "ye",
+    "my": "me",
+    "where": "whar",
+    "is": "be",
+}
+
+pirate_phrases = ["thar she blows!", "arrr!", "avast ye!", ]
+
+def translate(english):
+    words = english.lower().split(" ")
+    pirate = [pirate_dictionary.get(word, word) for word in words]
+    if random.randint(0, 5) == 0:
+        pirate.append(random.choice(pirate_phrases))
+    return " ".join(pirate)</code></pre>
+                <p><a href="https://arrr.readthedocs.io/en/latest/">https://arrr.readthedocs.io/en/latest/</a></p>
+                    <aside class="notes">
+                      <p>I've never met a bootcamp graduate that could do
+                      this. No disrespect to bootcamps or their graduates, but
+                      while they have the knowledge, they don't have the
+                      culture, practices or perspectives to quickly solve
+                      this.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <h1>Thought Experiment #2</h1>
+                    <aside class="notes">
+                      <p>Learning to play music is like coding:</p>
+                      <ul>
+                        <li>A difficult skill that takes a lifetime to
+                        master</li>
+                        <li>Lots of theory</li>
+                        <li>You have to practice to improve</li>
+                        <li>There are so many ways to do it (diversity is a
+                        strength)</li>
+                      </ul>
+                    </aside>
+                </section>
+
+                <section>
+                  <p>What if we taught programming like we teach music..?</p>
+                </section>
+
+                <section>
+                    <img src="images/fiddle_kid.jpg"/>
+                    <p>How do we get from this...</p>
+                    <aside class="notes">
+                        <p>When I show you the following pictures, think about
+                        how this maps onto computing education -- especially
+                        programming.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/benedetti.jpg"/>
+                    <p>... to this ...</p>
+                </section>
+
+                <section>
+                    <img src="images/ally_bain.jpg"/>
+                    <p>... this ...</p>
+                </section>
+
+                <section>
+                    <img src="images/bbc_scottish.jpg"/>
+                    <p>... this ...</p>
+                </section>
+
+                <section>
+                    <img src="images/pub_fiddle.jpg"/>
+                    <p>... or this ...</p>
+                </section>
+
+                <section>
+                    <img src="images/rock_cello.jpg"/>
+                    <p>... or even this ..?</p>
+                </section>
+
+                <section>
+                    <h2>900 years of music education</h2>
+                    <p>Good artists copy, great artists steal</p>
+                    <p class="fragment">(Lazy engineers don't reinvent the
+                    wheel...)</p>
+                    <aside class="notes">
+                        <p>It works..! I am a product of this education.</p>
+                        <p>What could I steal from music education and re-apply
+                        to coding education..?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/music_grade1.jpg"/>
+                    <aside class="notes">
+                        <p>The grading system.</p>
+                        <ul>
+                          <li>8 steps from beginner to not-so-dangerous-beginner</li>
+                          <li>Syllabus is created by professional musicians</li>
+                          <li>Examiners are professional musicians</li>
+                          <li>A grading contains practical assessments that
+                          reflect what a musician actually does and requires
+                          knowledge of what a musician needs to understand.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/music_grade2.png"/>
+                    <aside class="notes">
+                        <p>The grading system.</p>
+                        <ul>
+                          <li>For learners of all ages</li>
+                          <li>There is a focus on the cultural practices</li>
+                          <li>It is a friendly and supportive (if nerve
+                          racking) experience.</li>
+                          <li>Supportive feedback is given, written commentary
+                          provided and suggestions for improvement or further
+                          development.</li>
+                          <li>Getting a grade is validation of attainment by
+                          an expert in the field.</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/codegrades.svg" style="border: 0px; background: none;" width="100%"/>
+                    <p><a href="https://codegrades.com/">https://codegrades.com/</a></p>
+                    <aside class="notes">
+                      <p>What happens?</p>
+                      <p>How far are we in?</p>
+                      <p>Where to next?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <p>"Asking what sort of education and learning our community
+                    supports is how we decide what sort of community we
+                    become.</p>
+
+                    <p>For it is through education and learning that we engage
+                    with our future colleagues, friends and supporters."</p>
+                    <p><small>Nicholas Tollervey, 2015. :-)</small></p>
+                    <aside class="notes">
+                        <p>Why is education important?</p>
+                        <p>Learning Python is one way to promote digital
+                        autonomy. We want beginner programmers to learn about
+                        our wonderfully diverse and international community
+                        built using a model of open collaboration.</p>
+                        <p>How have the UK Python community engaged in
+                        education to further this aim?</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Questions... :-)</h1>
+                    <p>Please feel free to get in touch..!</p>
+                    <p>Email: <a href="mailto:ntoll@ntoll.org">ntoll@ntoll.org</a>
+                    Twitter: <a href="https://twitter.com/ntoll">@ntoll</a>
+                    Blog: <a href="https://ntoll.org/">ntoll.org</a></p>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
