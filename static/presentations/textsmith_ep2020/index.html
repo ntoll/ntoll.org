@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>How to Run a Corridor Track in a Remote Conference with Python</title>
+
+		<meta name="description" content="EuroPython 2020 slides.">
+		<meta name="author" content="Nicholas H.Tollervey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/asyncio.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>TextSmith</h1>
+          <p>or...</p>
+          <p>How to Run a Corridor Track in a Remote Conference<br/>(with Python)</p>
+					<p>
+						<a href="http://ntoll.org/">Nicholas H.Tollervey</a> / <a href="http://twitter.com/ntoll">@ntoll</a>
+					</p>
+                    <aside class="notes">
+                        <ul>
+                            <li>Thanks for invite.</li>
+                            <li>My name is Nicholas - I'm a freelance Python
+                            developer from England!</li>
+                        </ul>
+                    </aside>
+				</section>
+
+
+                <!-- Nicholas -->
+                <section>
+                    <img src="images/tuba.jpg" alt="Me armed with my tuba"/>
+                    <aside class="notes">
+                    <p>Who am I? Mention music education.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/teacher_me.jpg" alt="Me as a teacher"/>
+                    <aside class="notes">
+                    <p>At 23 a head of department. MA in philosophy of
+                    education.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/ntoll_europython.jpg" alt="Me at EuroPython 2019"/>
+                    <aside class="notes">
+                    <p>Describe all the Python / programming things I do.</p>
+                    <p>I'm here to tell you the story of CodeGrades - a project
+                    to help folks acquire the coding skills they need to create
+                    the stuff they want.</p>
+                    <p>I'm going to do this as a "lazy developer", doing as
+                    little original work as possible.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <img src="images/ep_corridor.jpg"/>
+                    <aside class="notes">
+                      <p>Photo from EuroPython 2011 in Florence. Captures the
+                      wonderful nature of the corridor track.</p>
+                      <ul>
+                        <li>Informal</li>
+                        <li>Friendly</li>
+                        <li>Diverse</li>
+                        <li>Fun</li>
+                      </ul>
+                      <p>This is why I love EuroPython. It's a nice place to
+                      hang out, I see the friends I want to see, and I get to
+                      make new friends.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <img src="images/virus.jpg"/>
+                  <aside class="notes">
+                    <p>Yet 2020 is the year we all learned to try to stay
+                      close while remaining (at least 2 meters) apart.</p>
+                    <p>This has been a difficult time as we learn to change
+                      and adapt to the new circumstances.</p>
+                    <p>I'm extremely grateful for the volunteers who put on
+                      EuroPython, their efforts are often taken for granted and
+                      you wouldn't believe the amount of stress and number of
+                      problems they have to put up with. Especially now that
+                      EuroPython is remote.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Remote Corridor Track..?</h2>
+                  <aside class="notes">
+                    <p>So how could folks remotely recreate the opportunity for
+                    chance encounters, unexpected conversation and exploration
+                    of a venue and new city with friends..?</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/ep_discord.png"/>
+                  <aside class="notes">
+                    <p>EuroPython has decided to use Discord - a community chat
+                    service written for gamers.</p>
+                    <p>This feels to me like IRC on steroids.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/ep_discord_annotated.png"/>
+                  <aside class="notes">
+                    <p>There's a LOT going on.</p>
+                    <p>Discord is a very transactional way to interact.</p>
+                    <p>Lots of stuff going on, metadata and transactions are
+                    the norm for remote written interactions.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/twitter.png"/>
+                  <aside class="notes">
+                    <p>Familiar patterns in Twitter.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/facebook.jpg"/>
+                  <aside class="notes">
+                    <p>Familiar patterns in Facebook.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <ul>
+                    <li>Interactions are digital transactions.</li>
+                    <li class="fragment">Transactions have metadata for analysis.</li>
+                    <li class="fragment">Transactions are dislocated (no sense of place).</li>
+                    <li class="fragment">Transactions are impersonal (shouting into the void).</li>
+                    <li class="fragment">Transactions are evaluated (likes, retweets, reactions).</li>
+                  </ul>
+                  <aside class="notes">
+                  <p>Our socialising is reduced to interactions that
+                  standardise, process and normalise our lives into a digital
+                  production line of uniform social outputs ("like" something,
+                  post a picture, reply with a comment, set your mood). The
+                  messy, complicated and raw aspects of life, which I would
+                  argue are the most valuable, fun and interesting are lost or
+                  have no way to manifest themselves. We commoditize ourselves
+                  into a dribble of systematized digital assets (photos, posts,
+                  likes etc...).</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/peppa.jpg"/>
+                  <p>&lt;/rant&gt; ✨ 💩 🐯 👍</p>
+                  <aside class="notes">
+                    <p>Also, is it just me, but why do I always get the
+                    impression that the design of social media has been
+                    designed by Peppa Pig (soft colours, cute, neutral and.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <p>Could there be a more...</p>
+                  <p class="fragment">natural way?</p>
+                  <p class="fragment">creative way?</p>
+                  <p class="fragment">expressive way?</p>
+                  <p class="fragment">authentic way?</p>
+                </section>
+
+                <section>
+                  <p>Less is more..?</p>
+                  <aside class="notes">
+                    <p>Where's the story..?</p>
+                    <p>How do we remotely recreate the opportunity for chance
+                    encounters, unexpected conversation and exploration of a
+                    venue and new city with friends?</p>
+                    <p>Then I remembered a distant memory from my
+                    childhood.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/mud.png" style="margin: 0px;"/>
+                  <aside class="notes">
+                    <p>A MUD (Multi-User-Dungeon) is a multi-player text based
+                    adventure game. They were, and continue to be, very very
+                    popular.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_sAXxfASUYQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <p><a href="http://mud.co.uk/muse/escape.htm">The original MUD 1</a></p>
+                  <aside class="notes">
+                    <p>This is a video of me playing the origial MUD (just
+                    follow the link for details). It is:</p>
+                    <ul>
+                      <li>Low-tech</li>
+                      <li>Quirky</li>
+                      <li>Literary</li>
+                      <li>Lots and lots of fun</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NgB6S2KQ8qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <p><a href="https://en.wikipedia.org/wiki/LambdaMOO">LambdaMOO</a> - a programmable textual world.</p>
+                  <aside class="notes">
+                    <p>There are many varieties of MUD. In the 1990s, while at
+                    university I would play on MOO - Multi-user Object Oriented
+                    worlds.</p>
+                    <p>The world was a collection of objects. Users could
+                    program the behaviour of the world as well as inhabit
+                    it.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/tiny_life.jpg" style="margin: 0px;"/>
+                  <p><a href="http://www.juliandibbell.com/texts/bungle_vv.html">A Rape in Cyberspace</a></p> 
+                  <aside class="notes">
+                    <p>MOO became very popular. Before all the toxic aspects of
+                    current social media platforms, such behaviours were
+                    manifested in these virtual textual worlds. Yet at the same
+                    time, these were progressive places and I made many friends
+                    all over the world at a time when such things were still
+                    viewed with incredulity.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <p>What would a MUD/MOO written in 2020 look like?</p>
+                  <aside class="notes">
+                    <p>Things I love about MUDs:</p>
+                    <ul>
+                      <li>Tell, don't show. The user's imagination is
+                      paramount.</li>
+                      <li>Playful or serious "games" that tell a story within a
+                      recognisable literary genre.</li>
+                      <li>Very low overhead in technical terms.</li>
+                      <li>Graphical games focus on hand/eye coordination, text
+                      based worlds put narrative, meaning and intent at the
+                      centre of their process.</li>
+                      <li>While the reader may have to do more, the reward is
+                      far greater.</li>
+                      <li>Literary worlds are more egalitarian and accessible -
+                      within the realm of a single developer.</li>
+                    </ul>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/pyweek.png" style="border: 0;"/>
+                  <p><a href="https://pyweek.org/">https://pyweek.org/</a></p>
+                  <aside class="notes">
+                    <p>As it happens, I'd already answered this...</p>
+                    <p>PyWeek is a gamejam for Python developers. I entered
+                    in 2019 with my buddy Andrew Smith.</p>
+                    <p>The theme was six worlds... and we wanted to do
+                    something text based.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/textsmith.png" style="border: 0;"/>
+                  <p>(Et voilà, "TextSmith" was born.)</p>
+                  <aside class="notes">
+                    <p>Asyncio - quart - websockets - overtly "textual"
+                    look.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4vpI3lDfO20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <p>An awful hack <a href="https://github.com/ntoll/textsmith_old">written in a week...</a></p>
+                  <aside class="notes">
+                    <p>We came 4th in the team category!</p>
+                    <p>It was incomplete, but folks could make objects and we
+                    had the start of a Lisp-y scripting language.</p>
+                    <p>In memory database. Argh!</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <p>Mission: Finish TextSmith</p>
+                  <aside class="notes">
+                    <p>I'd had so much fun that I couldn't stop reading about
+                    MUDs or coding on TextSmith.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <h3>Reading List</h3>
+                  <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Designing_Virtual_Worlds">Designing Virtual Worlds</a> ~ Richard Bartle</li>
+                    <li><a href="https://theoryoffun.com/">A Theory of Fun</a> ~ Raph Koster</li>
+                    <li><a href="http://www.juliandibbell.com/mytinylife/index.html">My Tiny Life</a> ~ Julian Dibbell</li>
+                    <li><a href="http://hayseed.net/MOO/manuals/ProgrammersManual.html">The LambdaMoo Programmer's Manual</a> ~ Pavel Curtis</li>
+                  </ul>
+                </section>
+
+
+                <section>
+                  <img src="images/eating_the_world.png"/>
+                  <p>Software is eating the world. ~ <a href="https://www.wsj.com/articles/SB10001424053111903480904576512250915629460">Marc Andreessen</a></p>
+                    <aside class="notes">
+                      <p>Marc A.'s famous quote from the Wall Street Journal
+                      article. He created the first popular graphical web
+                      browser and is now one of the most successful Silicon
+                      Valley venture capitalists.</p>
+                    </aside>
+                </section>
+
+
+                <section>
+                    <h1>Questions... :-)</h1>
+                    <p>Please feel free to get in touch..!</p>
+                    <p>Email: <a href="mailto:ntoll@ntoll.org">ntoll@ntoll.org</a>
+                    Blog: <a href="https://ntoll.org/">ntoll.org</a></p>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

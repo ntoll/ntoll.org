@@ -719,7 +719,7 @@
  </url>
  <url>
   <loc>https://ntoll.org/static/presentations/2020_bcs_codegrades/</loc>
-  <lastmod>2020-06-24T14:28:00Z</lastmod>
+  <lastmod>2020-07-07T10:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/static/presentations/2020_bcs_codegrades/plugin/markdown/example.html</loc>
@@ -991,7 +991,7 @@
  </url>
  <url>
   <loc>https://ntoll.org/static/presentations/edupolprogpeap/</loc>
-  <lastmod>2020-06-24T14:28:00Z</lastmod>
+  <lastmod>2020-07-07T10:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/static/presentations/edupolprogpeap/jsbeeb/</loc>
@@ -1816,6 +1816,58 @@
  <url>
   <loc>https://ntoll.org/static/presentations/rrp2pc/test/test.html</loc>
   <lastmod>2020-04-30T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/</loc>
+  <lastmod>2020-07-20T22:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/plugin/markdown/example.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/plugin/notes-server/notes.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/plugin/notes/notes.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/examples/barebones.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/examples/embedded-media.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/examples/math.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/examples/slide-backgrounds.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/test-markdown-element-attributes.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/test-markdown-slide-attributes.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/test-markdown.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/test-pdf.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/static/presentations/textsmith_ep2020/test/test.html</loc>
+  <lastmod>2020-07-19T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/static/presentations/toolsoftrade/</loc>
