@@ -44,52 +44,47 @@
 				<section>
 					<h1>TextSmith</h1>
           <p>or...</p>
-          <p>How to Run a Corridor Track in a Remote Conference<br/>(with Python)</p>
+          <p>How to Run a <del>Corridor Track in a Remote Conference</del><br/>
+          Maze of Twisty Little Passages (with Python)</p>
 					<p>
-						<a href="http://ntoll.org/">Nicholas H.Tollervey</a> / <a href="http://twitter.com/ntoll">@ntoll</a>
+						<a href="http://ntoll.org/">Nicholas H.Tollervey</a>
 					</p>
                     <aside class="notes">
                         <ul>
                             <li>Thanks for invite.</li>
                             <li>My name is Nicholas - I'm a freelance Python
-                            developer from England!</li>
+                            developer from the UK!</li>
+                            <li>The focus of this talk might not be immediately
+                            apparent from the title, so let me explain a
+                            little...</li>
                         </ul>
                     </aside>
 				</section>
 
-
-                <!-- Nicholas -->
                 <section>
-                    <img src="images/tuba.jpg" alt="Me armed with my tuba"/>
-                    <aside class="notes">
-                    <p>Who am I? Mention music education.</p>
-                    </aside>
-                </section>
-
-                <section>
-                    <img src="images/teacher_me.jpg" alt="Me as a teacher"/>
-                    <aside class="notes">
-                    <p>At 23 a head of department. MA in philosophy of
-                    education.</p>
-                    </aside>
-                </section>
-
-                <section>
-                    <img src="images/ntoll_europython.jpg" alt="Me at EuroPython 2019"/>
-                    <aside class="notes">
-                    <p>Describe all the Python / programming things I do.</p>
-                    <p>I'm here to tell you the story of CodeGrades - a project
-                    to help folks acquire the coding skills they need to create
-                    the stuff they want.</p>
-                    <p>I'm going to do this as a "lazy developer", doing as
-                    little original work as possible.</p>
-                    </aside>
+                  <p>The Focus of this Talk:</p>
+                  <ul>
+                    <li class="fragment">How humans communicate via computers.</li>
+                    <li class="fragment">How software influences the nature of
+                    that communication.</li>
+                    <li class="fragment">Digital archaeology of old technical solutions.</li>
+                    <li class="fragment">Show and tell a fun (brain break)
+                    experiment in recreating these solutions with modern
+                    technology.</li>
+                  </ul>
+                  <aside class="notes">
+                    <p>In this talk we're going to explore...</p>
+                    <p>... it's as if we're looking at an alternative timeline
+                    or evolution of text based social media on the
+                    internet.</p>
+                  </aside>
                 </section>
 
                 <section>
                   <img src="images/ep_corridor.jpg"/>
                     <aside class="notes">
-                      <p>Photo from EuroPython 2011 in Florence. Captures the
+                      <p>I want to set the scene with this photo from
+                      EuroPython 2011 in Florence. It captures the
                       wonderful nature of the corridor track.</p>
                       <ul>
                         <li>Informal</li>
@@ -98,8 +93,8 @@
                         <li>Fun</li>
                       </ul>
                       <p>This is why I love EuroPython. It's a nice place to
-                      hang out, I see the friends I want to see, and I get to
-                      make new friends.</p>
+                      hang out, I see my friends, and I get to make new
+                      friends.</p>
                     </aside>
                 </section>
 
@@ -113,50 +108,84 @@
                     <p>I'm extremely grateful for the volunteers who put on
                       EuroPython, their efforts are often taken for granted and
                       you wouldn't believe the amount of stress and number of
-                      problems they have to put up with. Especially now that
-                      EuroPython is remote.</p>
+                      problems they will have had to put up with. Especially
+                      now that EuroPython is remote.</p>
                   </aside>
                 </section>
 
                 <section>
                   <h2>Remote Corridor Track..?</h2>
                   <aside class="notes">
-                    <p>So how could folks remotely recreate the opportunity for
+                    <p>The current situation has also brought into a focus an
+                    important question:</p>
+                    <p>How could folks remotely recreate the opportunity for
                     chance encounters, unexpected conversation and exploration
                     of a venue and new city with friends..?</p>
+                    <p>How is such bonhomie, warmth and friendship expressed
+                    most effectively through a digital medium?</p>
+                    <p>Perhaps more importantly, how do we foster tolerance,
+                    compassion, corrections-of-misunderstanding and all that
+                    other good stuff needed so a diverse community, full of
+                    differences and unique perspectives, is able to live
+                    with itself without becoming fractured and toxic?</p>
                   </aside>
                 </section>
 
                 <section>
                   <img src="images/ep_discord.png"/>
                   <aside class="notes">
-                    <p>EuroPython has decided to use Discord - a community chat
+                    <p>EuroPython has decided to use Discord - a chat
                     service written for gamers.</p>
-                    <p>This feels to me like IRC on steroids.</p>
+                    <p>I like Discord a LOT and I'm really pleased the
+                    EuroPython organisers chose it over, say, Slack or, heaven
+                    forbid, Microsoft Teams or Google Hangouts.</p>
+                    <p>Yet Discord is typical of the current state-of-the-art
+                    (they all look and function similarly).</p>
+                    <p>Yet I don't feel comfortable with the current
+                    state-of-the-art.</p>
+                    <p>So let's start by exploring my problems and discomfort
+                    with these platforms.</p>
+                    <p>Let's also try to imagine more expressive, simpler or
+                    perhaps "humane" alternatives.</p>
+                    <p>So let's take Discord to pieces to see what's going on.</p>
                   </aside>
                 </section>
 
                 <section>
                   <img src="images/ep_discord_annotated.png"/>
                   <aside class="notes">
-                    <p>There's a LOT going on.</p>
-                    <p>Discord is a very transactional way to interact.</p>
-                    <p>Lots of stuff going on, metadata and transactions are
-                    the norm for remote written interactions.</p>
+                    <p>There's a LOT going on in this application. For those
+                    of us used to computers this is often easy to miss.</p>
+                    <p>We are literally bombarded with data: metadata, icons,
+                    timestamps, reactions, labels and silos are the norm for
+                    remote written interactions.</p>
+                    <p>Discord is also, ultimately, a very transactional way to
+                    interact.</p>
+                    <p>This is also the case with other social platforms...</p>
                   </aside>
                 </section>
 
                 <section>
                   <img src="images/twitter.png"/>
                   <aside class="notes">
+                    <p><strong>QUICK</strong></p>
                     <p>Familiar patterns in Twitter.</p>
+                    <p>This isn't so much a conversation as shouting into the
+                    void, through the inconvenience of a 280 character
+                    limit.</p>
                   </aside>
                 </section>
 
                 <section>
                   <img src="images/facebook.jpg"/>
                   <aside class="notes">
-                    <p>Familiar patterns in Facebook.</p>
+                    <p><strong>QUICK</strong></p>
+                    <p>Facebook feels the most "mediated" platform to me. This
+                    is, most blatently, an exercise in retaining my attention
+                    at all costs rather than fostering a place for
+                    conversation.</p>
+                    <p>Most problematic for me is the nature of our
+                    interactions with such platforms.</p>
                   </aside>
                 </section>
 
@@ -167,6 +196,7 @@
                     <li class="fragment">Transactions are dislocated (no sense of place).</li>
                     <li class="fragment">Transactions are impersonal (shouting into the void).</li>
                     <li class="fragment">Transactions are evaluated (likes, retweets, reactions).</li>
+                    <li class="fragment">Transactions are curated to capture attention (Click here, react, reply, share)</li>
                   </ul>
                   <aside class="notes">
                   <p>Our socialising is reduced to interactions that
@@ -187,7 +217,16 @@
                   <aside class="notes">
                     <p>Also, is it just me, but why do I always get the
                     impression that the design of social media has been
-                    designed by Peppa Pig (soft colours, cute, neutral and.</p>
+                    designed by Peppa Pig (soft colours, cute, neutral and
+                    just a little bit infantile in tone).</p>
+                    <p>Perhaps I'm just getting old..? (The digital version of,
+                    "Damn kids, get off my lawn").</p>
+                    <p>Or perhaps current technical solutions to remote
+                    collaboration, community and friendship feel like I'm
+                    being analysed, my attention is being manipulated and I
+                    either have to pay or see adverts? None of which is
+                    condusive to making a place to have humane
+                    conversations and make friends.</p>
                   </aside>
                 </section>
 
@@ -195,56 +234,94 @@
                   <p>Could there be a more...</p>
                   <p class="fragment">natural way?</p>
                   <p class="fragment">creative way?</p>
+                  <p class="fragment">simple way?</p>
                   <p class="fragment">expressive way?</p>
+                  <p class="fragment">respectful way?</p>
                   <p class="fragment">authentic way?</p>
+
+                  <p class="fragment">...to meet, make friends and interact
+                  online.</p>
+                  <aside class="notes">
+                    <p>Given the lock-down situation, I asked myself...</p>
+                  </aside>
                 </section>
 
                 <section>
                   <p>Less is more..?</p>
+                  <p class="fragment">Xyzzy</p>
                   <aside class="notes">
-                    <p>Where's the story..?</p>
-                    <p>How do we remotely recreate the opportunity for chance
+                    <p>How *do* we remotely recreate the opportunity for chance
                     encounters, unexpected conversation and exploration of a
-                    venue and new city with friends?</p>
-                    <p>Then I remembered a distant memory from my
-                    childhood.</p>
+                    venue and new city with friends? (BUT ONLINE!!!)</p>
+
+                    <p>How *could* we recreate the online equivalent of our
+                    beloved corridor track?</p>
+
+                    <p>Then, as if by magic, I remembered a distant memory from
+                    my childhood... text based worlds with epic stories,
+                    curious locations and imaginative adventures.</p>
+                    <p>This got me thinking...</p>
                   </aside>
                 </section>
 
                 <section>
-                  <img src="images/mud.png" style="margin: 0px;"/>
+                  <iframe src="https://iplayif.com/?story=http%3A%2F%2Fwww.douglasadams.com%2Fcreations%2Fhhgg.z3" style="width:100%; height: 100%; min-height: 500px;"></iframe>
+                  <p>Mazes of twisty passages...</p>
                   <aside class="notes">
-                    <p>A MUD (Multi-User-Dungeon) is a multi-player text based
-                    adventure game. They were, and continue to be, very very
-                    popular.</p>
-                  </aside>
-                </section>
-
-                <section>
-                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_sAXxfASUYQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  <p><a href="http://mud.co.uk/muse/escape.htm">The original MUD 1</a></p>
-                  <aside class="notes">
-                    <p>This is a video of me playing the origial MUD (just
-                    follow the link for details). It is:</p>
+                    <p><strong>RIGHT-CLICK / RELOAD FRAME</strong></p>
+                    <p>Bear with me as we go on an adventure in computer
+                    history...</p>
+                    <p>For young'uns, this is what a text based adventure game
+                    looks and feels like. This is Douglas Adams's own
+                    recreation of his novel "The Hitchhikers Guide to the
+                    Galaxy" as a text based yet interactive virtual world.</p>
+                    <p>Explain the mechanics.</p>
                     <ul>
-                      <li>Low-tech</li>
-                      <li>Quirky</li>
-                      <li>Literary</li>
-                      <li>Lots and lots of fun</li>
+                      <li>look</li>
+                      <li>switch on light</li>
+                      <li>stand up</li>
+                      <li>get all</li>
+                      <li>wear gown</li>
+                      <li>examine gown</li>
+                      <li>open pocket</li>
+                      <li>take tablet</li>
+                      <li>s</li>
+                      <li>get mail</li>
                     </ul>
                   </aside>
                 </section>
 
+
                 <section>
-                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NgB6S2KQ8qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  <p><a href="https://en.wikipedia.org/wiki/LambdaMOO">LambdaMOO</a> - a programmable textual world.</p>
+                  <iframe width="1008" height="567" src="https://www.youtube-nocookie.com/embed/_sAXxfASUYQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <p><a href="http://mud.co.uk/muse/escape.htm">The original MUD 1</a></p>
                   <aside class="notes">
-                    <p>There are many varieties of MUD. In the 1990s, while at
-                    university I would play on MOO - Multi-user Object Oriented
-                    worlds.</p>
-                    <p>The world was a collection of objects. Users could
-                    program the behaviour of the world as well as inhabit
-                    it.</p>
+                    <p><strong>PLAY VIDEO</strong></p>
+                    <p>But that was a single-player text based virtual
+                    world. Soon after the appearance of such games some
+                    university students in the UK invented MUD.</p>
+                    <p>A MUD (Multi-User-Dungeon) is a multi-player text based
+                    adventure game. They were, and continue to be, very very
+                    popular in certain parts of the net.</p>
+                    <p>This is a video of me playing the origial MUD yesterday.
+                    In it you'll have seen I've just finished chatting
+                    with a Wizard called Pyewacket, and come acropper with
+                    some rats. It is:</p>
+                    <ul>
+                      <li>Low-tech - telnet (proper clients are available)</li>
+                      <li>Quirky - humour, imagination, playfulness and
+                      sometimes serious.</li>
+                      <li>Literary - narrative driven, sense of place, time
+                      and genre (usually fantasy or sci-fi).</li>
+                      <li>Lots and lots of fun</li>
+                    </ul>
+                    <p>There are also many varieties of MUD. In the mid-1990s,
+                    while at
+                    university I would play on MOO - Multi-user-dungeon Object
+                    Oriented worlds.</p>
+                    <p>In a MOO the textual world is a collection of user
+                    generated objects. Users program the behaviour of the world
+                    as well as inhabit it.</p>
                   </aside>
                 </section>
 
@@ -252,25 +329,53 @@
                   <img src="images/tiny_life.jpg" style="margin: 0px;"/>
                   <p><a href="http://www.juliandibbell.com/texts/bungle_vv.html">A Rape in Cyberspace</a></p> 
                   <aside class="notes">
-                    <p>MOO became very popular. Before all the toxic aspects of
+                    <p>MUD/MOO became very popular. Before all the toxic aspects of
                     current social media platforms, such behaviours were
                     manifested in these virtual textual worlds. Yet at the same
                     time, these were progressive places and I made many friends
                     all over the world at a time when such things were still
                     viewed with incredulity.</p>
+                    <p>Social scientists, psychologists, literary critics,
+                    artists and educators all got interested. MIT Professor
+                    Sherry Turkle famously analysed such online role playing
+                    as a way for folks to explore different aspects of their
+                    identity in a relatively safe manner. Challenges that arise
+                    allow folks to reflect upon their behaviour and to
+                    know more of themselves. A sort of narrative development of
+                    their lives.</p>
+                    <p>Being British I spent most of my time asking my fellow
+                    players what the weather was like where they were (San
+                    Francisco, Paris, Tel Aviv, Singapore). This was strangely 
+                    satisfying and it made me feel like a true citizen of
+                    the global village delivered via the information superhighway
+                    that was my 56k modem.</p>
+                    <p>I also built a textual interactive
+                    representation of a remote Scottish island my girlfriend
+                    (now wife) and I visited over the summer of 1995. I still
+                    have a backup, and it's an interactive digital momento
+                    from my 21 yo self.</p>
+                    <p>It was, and continues to be, fun to write, explore
+                    and interact within such worlds.</p>
                   </aside>
                 </section>
 
                 <section>
                   <p>What would a MUD/MOO written in 2020 look like?</p>
                   <aside class="notes">
-                    <p>Things I love about MUDs:</p>
+                    <p>This all feels very low-tech, but I like that. I don't
+                    miss the transactional and manipulative nature of the
+                    current state of the art, and the focus is definitely on
+                    being in a specific place, at a certain moment, with
+                    particular people.</p>
+                    <p>Things I love about MUDs are that they:</p>
                     <ul>
-                      <li>Tell, don't show. The user's imagination is
-                      paramount.</li>
-                      <li>Playful or serious "games" that tell a story within a
-                      recognisable literary genre.</li>
-                      <li>Very low overhead in technical terms.</li>
+                      <li>Tell, rather than show. The user's imagination is
+                      paramount. And this is reflected in the simple and
+                      uncluttered user interfaces where the text is
+                      most important.</li>
+                      <li>They can be playful or serious but always tell a
+                      story within a recognisable literary genre that sets the
+                      scene for interactions between users.</li>
                       <li>Graphical games focus on hand/eye coordination, text
                       based worlds put narrative, meaning and intent at the
                       centre of their process.</li>
@@ -278,19 +383,33 @@
                       far greater.</li>
                       <li>Literary worlds are more egalitarian and accessible -
                       within the realm of a single developer.</li>
+                      <li>Very low overhead in technical terms.</li>
+                      <li>Difference between making a film or writing a
+                      novel.</li>
                     </ul>
+                    <p>So, what would a MUD/MOO written in 2020 look like?</p>
                   </aside>
                 </section>
 
                 <section>
-                  <img src="images/pyweek.png" style="border: 0;"/>
+                  <img src="images/pyweek.png" style="border: 0; background: none;"/>
                   <p><a href="https://pyweek.org/">https://pyweek.org/</a></p>
                   <aside class="notes">
                     <p>As it happens, I'd already answered this...</p>
-                    <p>PyWeek is a gamejam for Python developers. I entered
-                    in 2019 with my buddy Andrew Smith.</p>
-                    <p>The theme was six worlds... and we wanted to do
-                    something text based.</p>
+                    <p>PyWeek is a gamejam for Python developers. Organised by
+                    Dan Pope, it's a wonderful hidden gem of the Python
+                    community. You should try..!</p>
+                    <p>I entered in 2019 with my buddy Andrew Smith. Andrew is
+                    an author and journalist - so we wanted to do something
+                    text based.</p>
+                    <p>The theme was six worlds... and we decided to create a
+                    simple MOO-like game where folks could build things and
+                    interact with each other in the style
+                    of six different literary genres: Jane Austen, Poetic
+                    Passions, Hardboiled detective novels, J.R.R.Fantasy,
+                    Sci-fi and future worlds, and, of course, "Parry Hotter" -
+                    so called so we didn't infringe copyright (but you get the
+                    idea).</p>
                   </aside>
                 </section>
 
@@ -298,52 +417,245 @@
                   <img src="images/textsmith.png" style="border: 0;"/>
                   <p>(Et voilà, "TextSmith" was born.)</p>
                   <aside class="notes">
-                    <p>Asyncio - quart - websockets - overtly "textual"
-                    look.</p>
+                    <p>Written in a week of furious coding.</p>
+                    <p>Note the minial, "book like" UI.</p>
+                    <p>Focus on creativity, exploration, a sense a place and
+                    genuine textual interactions with others.</p>
                   </aside>
                 </section>
 
                 <section>
-                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4vpI3lDfO20" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="1008" height="567" src="https://www.youtube-nocookie.com/embed/9FtByLau6_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   <p>An awful hack <a href="https://github.com/ntoll/textsmith_old">written in a week...</a></p>
                   <aside class="notes">
-                    <p>We came 4th in the team category!</p>
+                    <p><strong>START VIDEO</strong></p>
                     <p>It was incomplete, but folks could make objects and we
                     had the start of a Lisp-y scripting language.</p>
-                    <p>In memory database. Argh!</p>
+                    <p>The video is a short exploration through the
+                    world. It's browser based (with websockets handling
+                    everything in the background), and while familiar in
+                    modus operandi (the user is moving between places and
+                    meeting other users), we've added a multi-media spin to
+                    things too.</p>
                   </aside>
                 </section>
 
                 <section>
-                  <p>Mission: Finish TextSmith</p>
+                  <blockquote style="text-align: left; width: 100%">
+                  <p>&ldquo;The idea for this is unique, and I had some good fun messing around in a couple of the worlds.&rdquo;</p>
+                  <p>&ldquo;This has great potential. The object attributes system is neat and the choice of font and markdown really invites creating a rich literary world.&rdquo;</p>
+                  <p>&ldquo;Really cool entry, I like the idea of a multimedia MUD.&rdquo;</p>
+                  <p>&ldquo;REALLY would have liked to see that "scheme-like scripting" bit mentioned in the help text. I think that would have pushed this over into "Extremely cool no matter what" territory and also would have inclined me to play with it way more.&rdquo;</p>
+                  </blockquote>
+                  <aside class="notes">
+                    <p>We came 4th in the team category!</p>
+                    <p>But folks liked it..!</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/textsmith_logo.png" style="border: 0; background: white;"/>
+                  <p>Mission: Finish TextSmith :-)</p>
                   <aside class="notes">
                     <p>I'd had so much fun that I couldn't stop reading about
                     MUDs or coding on TextSmith.</p>
+                    <p>My desire to write, create, imagine, play and explore
+                    fueled my enthusiasm... as did my growing disatissfaction
+                    and unease with the current state-of-the-art.</p>
+                    <p>Since the UK was in lock-down, I decided to entertain
+                    myself after work by re-writing TextSmith "properly".
+                    It has full test coverage, docs, a scalable architecture
+                    and so on... in other words, code I'd want to show the
+                    world (like here at EuroPython).</p>
                   </aside>
                 </section>
 
                 <section>
-                  <h3>Reading List</h3>
+                  <h3>Research List</h3>
                   <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Designing_Virtual_Worlds">Designing Virtual Worlds</a> ~ Richard Bartle</li>
-                    <li><a href="https://theoryoffun.com/">A Theory of Fun</a> ~ Raph Koster</li>
-                    <li><a href="http://www.juliandibbell.com/mytinylife/index.html">My Tiny Life</a> ~ Julian Dibbell</li>
-                    <li><a href="http://hayseed.net/MOO/manuals/ProgrammersManual.html">The LambdaMoo Programmer's Manual</a> ~ Pavel Curtis</li>
+                    <li><a href="https://en.wikipedia.org/wiki/Designing_Virtual_Worlds">Designing Virtual Worlds</a> ~ Richard Bartle (very good)</li>
+                    <li><a href="https://theoryoffun.com/">A Theory of Fun</a> ~ Raph Koster (also very good)</li>
+                    <li><a href="http://www.juliandibbell.com/mytinylife/index.html">My Tiny Life</a> ~ Julian Dibbell (good historical context)</li>
+                    <li><a href="http://hayseed.net/MOO/manuals/ProgrammersManual.html">The LambdaMoo Programmer's Manual</a> ~ Pavel Curtis (technical inspiration)</li>
+                    <li><a href="http://getlamp.com/">Get Lamp</a> ~ A CC licensed documentary
+                    about adventure games (<a href="https://www.youtube.com/watch?v=o15itQ_EhRo">watch here</a>)
                   </ul>
+                  <aside class="notes">
+                    <p>I did my research, which was remarkably good fun
+                    (see the slides linked from the EuroPython website to
+                    grab the links).</p>
+                  </aside>
                 </section>
 
 
                 <section>
-                  <img src="images/eating_the_world.png"/>
-                  <p>Software is eating the world. ~ <a href="https://www.wsj.com/articles/SB10001424053111903480904576512250915629460">Marc Andreessen</a></p>
+                  <img src="images/add_up.png"/>
                     <aside class="notes">
-                      <p>Marc A.'s famous quote from the Wall Street Journal
-                      article. He created the first popular graphical web
-                      browser and is now one of the most successful Silicon
-                      Valley venture capitalists.</p>
+                     <p>So, how does the revised TextSmith add up..?</p>
+                     <p>What parts become the sum total of TextSmith?</p>
                     </aside>
                 </section>
 
+
+                <section>
+                  <img src="images/components.png"/>
+                    <aside class="notes">
+                      <ul>
+                        <li>Quart - Asyncio web framework a la Flask. Provides
+                        websocket support. Phil Jones, does an amazing job, and
+                        it has been a joy to use.</li>
+                        <li>Output to the user is framed within Jinja
+                        templates.</li>
+                        <li>Babel - slots into Quart. TextSmith is fully
+                        translateable. Text based virtual worlds are not just
+                        English virtual worlds. I want my code to respect and
+                        acknowledge the diversity of folks who may use it.</li>
+                        <li>The middleware of the app is Python asyncio and I
+                        use some really wonderful libraries to help make this
+                        easy to code. Structlog is really helpful for letting
+                        me see what the application is doing, and the asyncio
+                        related libraries have "just worked" for me.</li>
+                        <li>Dave Beazley's SLY (Sly Lex Yacc) is used to
+                        process the nascent LISP-y scripting language used by
+                        players to create the behaviour of the textual world.
+                        Dave's work has been a fun way for me to learn about
+                        language design and implementation. Still lots of work
+                        to do.</li>
+                        <li>Finally, Redis is used as an object store (where
+                        Python dictionaries become JSON objects stored against
+                        a key). Redis is a fantastic key/value datastore with
+                        a host of simple yet powerful features. It also comes
+                        with a message queue used by TextSmith for inter-object
+                        communication.</li>
+                        <li>For example, if a user (an object) says something
+                        in a room (another object), then a message from the
+                        user, describing what's been said, is sent to the room
+                        via the message queue.
+                        Then the room itself will send messages to objects
+                        representing the other users in the room, telling
+                        them someone has said something. It is these messages
+                        that are sent to the user's browser via
+                        websockets.</li>
+                      </ul>
+                      <p>TextSmith is also designed to be scalable.</p>
+                      <ul>
+                        <li>Python instances of the app can scale
+                        horizontally.</li>
+                        <li>All interactions between instances are via the
+                        Redis message queue.</li>
+                        <li>There is, of course, a Redis cluster sitting behind
+                        all this.</li>
+                      </ul>
+                      <p>However, you could always just run it as a single
+                      app with Redis on the same machine.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/ntoll/textsmith/blob/main/textsmith/parser.py">Steps for Parsing User Input</a>:</p>
+                  <ul>
+                    <li>Escape any HTML in the user input. ;-)</li>
+                    <li class="fragment">Handle special shortcuts (", !, :, @).</li>
+                    <li class="fragment">Check if first word is a built-in verb (get, drop, build etc).</li>
+                    <li class="fragment">Break sentence into: verb, direct-object, preposition, indirect-object.</li>
+                    <li class="fragment">Match verb to an attribute name of objects in the room: user, room, direct object, indirect object.</li>
+                    <li class="fragment">Place the attribute value in the necessary message queues. If the value is a string starting with #!, evaluate as a script.</li>
+                  </ul>
+                  <aside class="notes">
+                    <p>How is user input handled..? Via the following
+                    workflow:</p>
+                    <p>For instance if the "whistle" object had a "blow"
+                    attribute with the value, "The whistle toots". Then the
+                    command "blow whistle" will result in "The whistle toots"
+                    being displayed to everyone in the room.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <h3><span style="color: green">stack</span>
+                  <span style="color: red">treasure</span>
+                  <span style="color: magenta">on</span>
+                  <span style="color: orange">table</span></h3>
+                  <ul>
+                    <li style="color: green">verb</li>
+                    <li style="color: red">direct object</li>
+                    <li style="color: magenta">preposition</li>
+                    <li style="color: orange">indirect-object</li>
+                  </ul>
+                  <aside class="notes">
+                    <p>This changes depending on the locale / natural
+                    language.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <p><a href="https://github.com/ntoll/textsmith/tree/main/textsmith/script">Script Evaluation</a> (work in progress):</p>
+                  <ul>
+                    <li>Scripts are evaluated in a context containing: user, room, exits, other users, things, this, direct_object, preposition, indirect object, raw user input.</li>
+                    <li class="fragment">Scripts must complete within a certain period of time.</li>
+                    <li class="fragment">Scripts may only update objects within the context.</li>
+                    <li class="fragment">Scripts execute with the privileges of the user who caused them to run.</li>
+                    <li class="fragment">Scripts may only emit messages to objects in the context.</li>
+                    <li class="fragment">If the script fails, users get a meaningful error message / stack trace.</li>
+                  </ul>
+                  <aside class="notes">
+                    <p>So, what's the current status..?</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <p>TextSmith is 80% finished</p>
+                  <p class="fragment">Only the other 80% to go... ;-)</p>
+                  <p class="fragment">(The worlds built <em>in</em> TextSmith)</p>
+                  <aside class="notes">
+                    <p>I'm having fun, and speculating about how people could
+                    creatively connect with each other through code that
+                    promotes a space for playful interactions.</p>
+                  </aside>
+                </section>
+
+                <section>
+                  <img src="images/escher.jpg"/>
+                  <p>Nested textual systems...</p>
+                    <aside class="notes">
+                      <p>There a textual systems within textual systems.</p>
+                      <ul>
+                        <li>Python (text based programming)</li>
+                        <li>TextSmith (a multi-user platform for building interactive textual worlds)</li>
+                        <li>The textual world (inhabited by and meaningful to users)</li>
+                      </ul>
+                      <p>On this slide...</p>
+                      <ul>
+                        <li>We see a picture.</li>
+                        <li>We see a hand holding a ball in the picture.</li>
+                        <li>We see the artist reflected in a ball held by a
+                          hand in a picture.</li>
+                      </ul>
+                      <p>Abstractions all the way down.</p>
+                    </aside>
+                </section>
+
+                <section>
+                  <h3>In Conclusion</h3>
+                  <p>TextSmith is a multi-user collaborative development
+                  platform for creating and inhabiting interactive textual and
+                  multi-media literary worlds. All this without transactions,
+                  analysis of your social graph, manipulation of your
+                  attention or click bait adverts tailored to your user
+                  profile.</p>
+                  <ul>
+                    <li>Code: <a href="https://github.com/ntoll/textsmith">https://github.com/ntoll/textsmith</a></li>
+                    <li>Docs: <a href="https://textsmith.readthedocs.io/">https://textsmith.readthedocs.io/</a></li>
+                    <li>Site: <a href="https://textsmith.org/">https://textsmith.org/</a> (eventually)</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h3>Find out about MUDs</h3>
+                  <p><a href="https://www.titansoftext.com/">Titans of Text</a> ~ US based podcast.</p>
+                  <p><a href="https://mudcoders.com/">The MUD Coders Guild</a> ~ I'm not the only one.</p>
+                  <p>(There's also a "Multi User Dungeon" server on Discord)</p>
+                </section>
 
                 <section>
                     <h1>Questions... :-)</h1>
