@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ntoll.org/</loc>
-  <lastmod>2020-06-24T14:28:00Z</lastmod>
+  <lastmod>2020-08-09T15:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/2004/</loc>
@@ -83,7 +83,7 @@
  </url>
  <url>
   <loc>https://ntoll.org/archive.html</loc>
-  <lastmod>2020-06-24T14:28:00Z</lastmod>
+  <lastmod>2020-08-15T18:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/article/12-days-of-python/</loc>
@@ -490,6 +490,10 @@
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
  <url>
+  <loc>https://ntoll.org/article/twisty-passages-at-europython%20/</loc>
+  <lastmod>2020-08-15T18:09:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://ntoll.org/article/vaughan-williams-tuba-concerto-programme-notes/</loc>
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
@@ -504,6 +508,22 @@
  <url>
   <loc>https://ntoll.org/article/whither-aimlbot-30/</loc>
   <lastmod>2020-06-24T14:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-1_2/</loc>
+  <lastmod>2020-08-09T13:13:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-2/</loc>
+  <lastmod>2020-08-09T13:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-3/</loc>
+  <lastmod>2020-08-09T13:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-4/</loc>
+  <lastmod>2020-08-09T15:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/article/wordle-play/</loc>
@@ -579,7 +599,11 @@
  </url>
  <url>
   <loc>https://ntoll.org/index-21.html</loc>
-  <lastmod>2020-06-24T14:28:00Z</lastmod>
+  <lastmod>2020-08-15T18:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/index-22.html</loc>
+  <lastmod>2020-08-09T15:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/index-3.html</loc>

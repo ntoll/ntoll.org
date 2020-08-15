@@ -3,7 +3,75 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 24 Jun 2020 14:28:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>2020 Changes</title><link>https://ntoll.org/article/2020-changes/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I've spent today updating everything to do with ntoll.org. Many
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Sat, 15 Aug 2020 21:13:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Twisty Passages at EuroPython 2020 </title><link>https://ntoll.org/article/twisty-passages-at-europython%20/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://ep2020.europython.eu/"&gt;EuroPython&lt;/a&gt; took place last month and the
+raw video footage of the talks has just been published online. EuroPython has
+always been one of my favourite conferences and is a special place for me:
+it's where I gave my first ever programming talk back in 2010. It's also one of
+the most culturally cosmopolitan programming conferences and was the world's
+first community organised Python programming conference. I always come away
+feeling enriched by EuroPython - it feels like the programming antidote to
+Silicon Valley culture.&lt;/p&gt;
+&lt;p&gt;Thanks, as always, to the volunteer organisers who work so hard to bring about
+this remarkable event. Such thanks are especially well deserved in 2020 since
+it was held online due to the spread of the COVID-19 virus. The potential for
+technical mishaps and problems was huge, yet the friendly and supportive team
+behind the conference ensured a slick and engaging event.&lt;/p&gt;
+&lt;p&gt;I was delighted to make two contributions to this year's conference.&lt;/p&gt;
+&lt;p&gt;The first was a wonderful opportunity to bring some music to the conference. My
+friend and EuroPython's own force of nature,
+&lt;a href="https://www.malemburg.com/marc-andre-lemburg"&gt;Marc-André&lt;/a&gt; got in touch
+to say that they were looking for musical contributions to a "jam session". I
+have, on several occasions, inflicted my love of tubas on Marc-André so
+he knew I used to be a professional classical musician. I can only assume his 
+&lt;a href="https://www.youtube.com/watch?v=hzJZObBSU7E"&gt;Germanic inclination for oompah-bands&lt;/a&gt;
+was at the back of his mind when he reached out. I responded that tuba music is
+"rather niche" at the best of times, let alone as part of a "jam session".
+Nevertheless, I agreed to contribute something, "perhaps a piece of classical
+piano music?" (since I'd been playing lots of piano during lock-down here in
+the UK).&lt;/p&gt;
+&lt;p&gt;In the end, I went for some
+&lt;a href="https://en.wikipedia.org/wiki/Johannes_Brahms"&gt;Brahms&lt;/a&gt; ~ an
+&lt;a href="https://www.mfiles.co.uk/scores/brahms-intermezzo-op118-no2.pdf"&gt;Intermezzo&lt;/a&gt;
+written "as a token of friendship" for his friend, the concert pianist and
+composer &lt;a href="https://en.wikipedia.org/wiki/Clara_Schumann"&gt;Clara Schumann&lt;/a&gt;. It's
+my musical token of friendship towards everyone at EuroPython.&lt;/p&gt;
+&lt;p&gt;I hope you like it.&lt;/p&gt;
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V2nCyL0hZko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;My second contribution was
+&lt;a href="https://ep2020.europython.eu/talks/AGaSaW8-how-to-run-a-corridor-track-in-a-remote-conference-with-python/"&gt;a presentation&lt;/a&gt;
+which you can &lt;a href="https://www.youtube.com/watch?v=WAsIhG_ZlG4&amp;amp;t=15467"&gt;watch here&lt;/a&gt;
+(EuroPython have disabled the embedding of their videos).&lt;/p&gt;
+&lt;p&gt;I think the presentation speaks for itself (honestly, go watch it, I had a lot
+of fun preparing and presenting it).&lt;/p&gt;
+&lt;p&gt;The summary is that I feel deeply uncomfortable about the way friendships,
+conversation and community are mediated in a technical context at this moment
+in time. This is something we should be especially concerned about given how
+much of our interactions have taken place online during these times of virus
+related lock-down.&lt;/p&gt;
+&lt;p&gt;I offer a quick explanation of what I find so uncomfortable about the current
+state of the art and look into the history of computing for other, more humane,
+respectful (of users) and creative means of communication via computers.&lt;/p&gt;
+&lt;p&gt;Ultimately, I describe how I'm using Python to recreate a programmable
+&lt;a href="https://en.wikipedia.org/wiki/MUD"&gt;MUD&lt;/a&gt; (a multi-user, realtime text based
+virtual world) based upon ideas first explored in the late 1970s and which I
+encountered in both the 1980s (while at school) and in the mid-1990s when I was
+at university.&lt;/p&gt;
+&lt;p&gt;If you've never heard of MUDs before, here's
+&lt;a href="https://mud.co.uk/richard/"&gt;Richard Bartle&lt;/a&gt; (one of the authors of the
+original MUD and author of the
+&lt;a href="https://mud.co.uk/dvw/"&gt;bible for virtual worlds&lt;/a&gt;) describing an old
+technology for talking directly to the imagination...  &lt;/p&gt;
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Zctp972y_Eg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As always, I love feedback, comments and constructive criticism offered in good
+faith. Assuming the lock-downs have eased, next year's EuroPython will be in
+Dublin, Éire.&lt;/p&gt;
+&lt;p&gt;I love Ireland. Can't wait. See you at next year's EuroPython.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/twisty-passages-at-europython%20/</guid><pubDate>Sat, 15 Aug 2020 21:00:00 GMT</pubDate></item><item><title>2020 Changes</title><link>https://ntoll.org/article/2020-changes/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I've spent today updating everything to do with ntoll.org. Many
 thanks to my buddy &lt;a href="https://kushaldas.in/"&gt;Kushal Das&lt;/a&gt; for the invaluable
 advice on various technical matters.&lt;/p&gt;
 &lt;p&gt;Here's what I've done:&lt;/p&gt;
@@ -1514,92 +1582,4 @@ depends on all sorts of complicated variables: who, what, where, when and how
 a situation is. Ironically for a conversation about a programming community,
 it's not a case of following an algorithm -- I'll have to exercise that
 unique and precious spark which means I'm not an unfeeling machine: my
-humanity.&lt;/p&gt;</description><guid>https://ntoll.org/article/compassion/</guid><pubDate>Mon, 22 Oct 2018 13:00:00 GMT</pubDate></item><item><title>(Anti)Social Media</title><link>https://ntoll.org/article/antisocial-media/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;At the start of 2018 I will delete my account and all associated content
-from &lt;a href="http://facebook.com/"&gt;Facebook&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I joined Facebook to work with their public API as part of my work at
-Fluidinfo. After a while people started to find me (with a surname like
-"Tollervey" I'm easy to find online). As a result, I've reconnected with many
-friends. This has been a lovely and positive experience: anything that brings
-people together in friendship is to be applauded.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, Facebook makes me uncomfortable: it makes it easy to bring
-people together, yet drives a wedge between friends.&lt;/p&gt;
-
-&lt;p&gt;Posts and responses may appear like conversations between people, but they
-introduce a layer of indirection -- they are always done via Facebook rather
-than directly between friends. To analogise, it would be like going to a bar
-where all interactions between the patrons were made via the bar tender.
-Facebook acts like a really efficient and multi-media aware version of the bar
-tender from my analogy.&lt;/p&gt;
-
-&lt;p&gt;This is problematic for several reasons.&lt;/p&gt;
-
-&lt;p&gt;Our socialising on Facebook is reduced to interactions that
-standardise, process and normalise our lives into a digital production line of
-uniform social outputs ("like" something, post a picture, reply with a comment,
-set your mood). The messy, complicated and raw aspects of life, which I would
-argue are the most valuable, fun and interesting are lost or have no way to
-manifest themselves. We commoditize ourselves into a dribble of systematized
-digital assets (photos, posts, likes etc...).&lt;/p&gt;
-
-&lt;p&gt;Once commoditized, Facebook insinuates itself into our friendships. For
-example, after chatting with a particular friend (let's call them "X") you
-appear to see more "X likes Y" content interleved into your timeline. Facebook
-even tries to guess things about your background (where did you go to school? X
-attended Y university). Our commoditzation makes it easy to be measured and
-analysed which, in turn, allows Facebook to work out who we are from the way we
-behave on the website. Remember, the bar tender in my analogy knows the
-content of all the conversations between the customers as well as everyone's
-drink and snack preferences, favourite seat and usual arrival time.&lt;/p&gt;
-
-&lt;p&gt;To be fair, &lt;a href="https://www.facebook.com/business/overview"&gt;Facebook
-are up front&lt;/a&gt; about how they make money: they sell access to our accounts
-to the highest bidder who wants to advertise at us. As
-&lt;a href="https://www.facebook.com/business/products/ads"&gt;their website
-explains&lt;/a&gt;: "&lt;em&gt;Find people easily; you can choose your audience based on
-demographics, behaviours or contact information. Get their attention; our
-advert formats are eye-catching, flexible and work on every device and
-connection speed. See the results; our advert reporting tools show you how
-your adverts have impacted your business in visual, easy-to-read reports.&lt;/em&gt;"
-It's obvious that their customers find this a valuable service (note: as users,
-we are not their customers, but, as is often pointed out, the product on
-offer): "&lt;em&gt;We can target adverts to people based on how and when they
-engaged, and create an experience that is relevant to where they are in the
-process of investigating our products.&lt;/em&gt;"&lt;/p&gt;
-
-&lt;p&gt;So, here's why I'm leaving Facebook: I don't want my friendships reduced to
-pre-canned types of interaction. I want to look my friends in the eye, smile
-at them, make music, laugh and give them a hug or shoulder to cry on. I want to
-welcome them to my home, make them a meal, share a drink and get lost in
-conversation. I want to shake their hands, listen to their tone of voice, raise
-my eyebrow at a silly comment or make a joke so we laugh together. Put simply,
-I want to spend quality time with my friends in real life, rather than watch a
-stream of mediated content in a sterilised digital life.&lt;/p&gt;
-
-&lt;p&gt;Furthermore, I don't want to be measured, analysed, prodded and poked for
-the purpose of brand engagement. I don't want my friendships interrupted
-for the sake of a commercial break in my timeline. It's troubling to be reduced
-to a means to an end by virtue of simply being me (my friendships make me a way
-for Facebook to make money). Put simply, I find Facebook's openly Orwellian
-platform troubling.&lt;/p&gt;
-
-&lt;p&gt;Many people, including maybe even you, don't have a problem with such a
-state of affairs. I completely respect that, as I hope you respect my
-discomfort with Facebook and my decision to leave. Facebook is, after all, an
-opt-in personal choice.&lt;/p&gt;
-
-&lt;p&gt;So, what will I do post-Facebook?&lt;/p&gt;
-
-&lt;p&gt;I'll concentrate on fostering friendships unmediated by Facebook. That will
-take time as I try to stay in touch via email, phone calls or face-to-face,
-but I'm confident such efforts will be worth it.&lt;/p&gt;
-
-&lt;p&gt;Finally, if we are friends on Facebook and Facebook is the only way we
-interact, please don't lose touch.
-&lt;a href="mailto:ntoll@ntoll.org?Subject=Hello%2C%20Nicholas..%21&amp;amp;Body=Hi%20Nicholas%2C%0A%0AType%20your%20message%20here...%20%3A-%29%0A%0ALots%20of%20love%2C%0A%0AInsert%20your%20name%20here"&gt;Drop me an email&lt;/a&gt;
-and never doubt that I'll be pleased to hear from you. If you
-find yourself wondering if you should get in touch with me, the answer is
-always, "yes, you should definitely get in touch".&lt;/p&gt;
-
-&lt;p&gt;I look forward to hearing from you soon... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/antisocial-media/</guid><pubDate>Sun, 17 Dec 2017 21:30:00 GMT</pubDate></item></channel></rss>
+humanity.&lt;/p&gt;</description><guid>https://ntoll.org/article/compassion/</guid><pubDate>Mon, 22 Oct 2018 13:00:00 GMT</pubDate></item></channel></rss>
