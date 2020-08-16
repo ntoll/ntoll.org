@@ -1,6 +1,6 @@
 <!--
 .. title: Twisty Passages at EuroPython 2020 
-.. slug: twisty-passages-at-europython 
+.. slug: twisty-passages-at-europython
 .. date: 2020-08-15 22:00:00 UTC+01:00
 .. tags: 
 .. category: 
