@@ -65,15 +65,17 @@ I hope you like it.
 </div>
 
 My second contribution was
-[a presentation](https://ep2020.europython.eu/talks/AGaSaW8-how-to-run-a-corridor-track-in-a-remote-conference-with-python/)
-which you can [watch here](https://www.youtube.com/watch?v=WAsIhG_ZlG4&t=15467)
-(EuroPython have disabled the embedding of their videos). The slides I
-prepared, including the links to all the resources I mention
+[a presentation](https://ep2020.europython.eu/talks/AGaSaW8-how-to-run-a-corridor-track-in-a-remote-conference-with-python/).
+The slides I prepared, including the links to all the resources I mention
 [can be found here](/static/presentations/textsmith_ep2020/index.html#/).
 
 The presentation is an exploration of how one might recreate a remote corridor
 track via the internet. I think it speaks for itself (honestly, go watch it, I
 had a lot of fun preparing and presenting it).
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WAsIhG_ZlG4?start=15467" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The summary is that I feel deeply uncomfortable about the way friendships,
 conversation and community are mediated in a technical context at this moment
@@ -86,7 +88,7 @@ state of the art and look into the history of computing for other, more humane,
 respectful (of users) and creative means of communication via computers.
 
 Ultimately, I describe how I'm using Python to recreate a programmable
-[MUD](https://en.wikipedia.org/wiki/MUD) (a multi-user, realtime text based
+[MUD](https://en.wikipedia.org/wiki/MUD) (a multi-user, real time text based
 virtual world) based upon ideas first explored in the late 1970s and which I
 encountered in both the 1980s (while at school) and in the mid-1990s (when I
 was at university). Such creations were famous for their mazes of twisty
@@ -106,4 +108,6 @@ As always, I love feedback, comments and constructive criticism offered in good
 faith. Assuming the lock-downs have eased, next year's EuroPython will be in
 Dublin, Éire.
 
-I love Ireland. Can't wait. See you at next year's EuroPython.
+I love Ireland. Can't wait!
+
+See you at next year's EuroPython!
