@@ -3,7 +3,165 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Sun, 16 Aug 2020 11:10:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Twisty Passages at EuroPython 2020 </title><link>https://ntoll.org/article/twisty-passages-at-europython/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://ep2020.europython.eu/"&gt;EuroPython&lt;/a&gt; took place last month and the
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Fri, 21 Aug 2020 16:46:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
+&lt;p&gt;Being together with people I love and who love me in return is a source of
+great joy and solace.&lt;/p&gt;
+&lt;p&gt;Yet being with people can also lead to distress.&lt;/p&gt;
+&lt;p&gt;Like many, I've encountered rejection and resulting feelings of loneliness,
+I've been the target of ignorant nastiness, and some make it clear I am of no
+value while others happily place unreasonable burdens upon me. My own
+experiences are but a small selection from the menu of unwelcome situations
+that could be, and often are, meted out to people.&lt;/p&gt;
+&lt;p&gt;Dealing with complicated experiences and finding a way to work through
+challenging encounters often feels painful and can lead to a sense of failure
+or hopelessness. But I believe this process is also an opportunity for growth,
+albeit through small, difficult, and often misplaced, steps. Allowing
+complicated feelings, pain and failure to manifest is certainly better than the
+alternative: sweeping things out of sight means the distress is never
+addressed, explored or dealt with.&lt;/p&gt;
+&lt;p&gt;So, being together requires conscious work and reflection.&lt;/p&gt;
+&lt;p&gt;The good stuff can take as much effort as the bad. To be loving, compassionate,
+tolerant and forgiving towards others requires great strength of character. The
+bad stuff shows we are all flawed sensitive beings whose strength often fails
+us. We have an endless capacity to hurt and be hurt by each other. This is
+especially true if we don't allow ourselves the time and energy to reflect upon
+and consciously adjust our behaviour towards each other.&lt;/p&gt;
+&lt;p&gt;Sadly, some simply don't care for others or for such self reflection.&lt;/p&gt;
+&lt;p&gt;For example, narcissists (by definition) lack empathy or compassion and only
+make an effort in relationships if they see a benefit to themselves. This is a
+tragic form of ignorance, for they will never know the joy of relationships
+shared with loved ones who reciprocate emotional investment and mutual care.
+For them, being together is an exercise in self aggrandisement, domination or
+profit.&lt;/p&gt;
+&lt;p&gt;The origins of such self-centredness are complicated. Ironically, introspection
+and self-reflection - the very traits such people fail to exercise - would help
+address and overcome such origins.&lt;/p&gt;
+&lt;p&gt;I believe everyone has a unique and valuable journey through life, even if
+their current location or direction of travel is deeply problematic.
+Recognising this applies to a narcissist or other difficult individual takes
+(the afore mentioned) strength of character. But it means it is possible to be
+together without getting crushed by the weight of their ego or toxic behaviour.
+Sadly, sometimes this is simply not possible and you have to cut your losses
+and move on.&lt;/p&gt;
+&lt;p&gt;I often wonder how to respond to the difficulties that arise from being
+together with others. I continue to believe that being together is often a
+privilege and a source of happiness and growth. Yet some of my recent
+collaborations have also been a source of great pain (interactions with aspects
+of the Python community
+&lt;a href="https://ntoll.org/article/compassion/"&gt;spring to mind&lt;/a&gt;). As a result, my
+feelings about about being together have changed significantly over the past
+couple of years. &lt;/p&gt;
+&lt;p&gt;I used to be all about promoting "the community" as a way of being together.
+An immediate problem is "the community" is an amorphous blob of a term that
+folks never pin down. This is a significant cause of many problems as
+misunderstanding is rife. In any case, I naively contributed and volunteered my
+code, time, effort and money. In short, I tried very hard to be a positive part
+of "something". For the past 12 years or so, this "something" was the Python
+programming community.&lt;/p&gt;
+&lt;p&gt;There are two common contrasting ways of describing "community": top-down
+(meaning the community is managed) and bottom-up (where the community emerges
+through participation). &lt;/p&gt;
+&lt;p&gt;I've always been reticent about top-down bureaucratic, formal and
+hierarchical notions of community. Often they are well meaning yet ineffectual
+(or sometimes even damaging) self defeating processes. They can also easily
+turn into toxic dumpster fires full of malice (politics and power plays being
+well known examples). Finally, they tend to gain a momentum that makes it
+easy to squash rather than cherish individuals and creative innovation. While
+my experience of the "formal" Python community has mostly been extraordinarily
+positive, there has been enough not-so-good-stuff that I've chosen to step
+away. I can only but wish the Python community well, but it's a ship in which I
+no longer sail.&lt;/p&gt;
+&lt;p&gt;But I don't want to find myself in a chaotic bottom-up community either.
+While these are ad hoc, improvised and informal, there is still a hierarchy,
+along with impositions of power and other negative political machinations.
+These are lived out through hidden communication channels, gossip or because
+the loudest or most charismatic folks hold the floor. People are either "in"
+or "out" of the circle of these "movers and shakers".&lt;/p&gt;
+&lt;p&gt;At least more formal communities appear to be up front about hierarchy, the
+exercise of power, the scope and relations of roles and how one assumes
+positions therein..! Perhaps this is a false dichotomy? Communities could
+incorporate aspects of both approaches.&lt;/p&gt;
+&lt;p&gt;I can't help but feel that something is missing if we view communities as
+structures. Communities are collections of individual people and, perhaps, the
+missing aspect is an explicit focus on the "character" of these participants.
+Just how do individuals reflect and choose to behave when being together?&lt;/p&gt;
+&lt;p&gt;I'm reminded of &lt;a href="https://www.lewissociety.org/innerring/"&gt;this rather interesting essay&lt;/a&gt;,
+by C.S.Lewis. I first read it when I was a music undergraduate and found it via
+my Christian room-mate. Lewis describes an "Inner Ring", something akin to the
+circle of "movers and shakers" vying for influence, power and prestige that I
+describe above. The part of the essay that most speaks to me comes at the very
+end:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"And if in your spare time you consort simply with the people you like, you
+will again find that you have come unawares to a real inside: that you are
+indeed snug and safe at the centre of something which, seen from without,
+would look exactly like an Inner Ring. But the difference is that the secrecy
+is accidental, and its exclusiveness a by-product, and no one was led thither
+by the lure of the esoteric: for it is only four or five people who like one
+another meeting to do things that they like. This is friendship. Aristotle
+placed it among the virtues. It causes perhaps half of all the happiness in
+the world, and no Inner Ring can ever have it."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Reaching back in time to feel like my 18 year old undergraduate self, I want to
+be with folks who are open to compassionate, collaborative, cooperative
+ways of working but without any extra problematic notions of "community" (as
+described above). I simply want to bring myself, and welcome others who want to
+join me, in a place where there's recognition, a connection, frisson or
+creative energy from which we can mutually grow.&lt;/p&gt;
+&lt;p&gt;In other words, I am inviting friendship.&lt;/p&gt;
+&lt;p&gt;Friendship requires trust, honesty, tolerance, compassion and forgiveness...
+all those things that depend upon strength of character. Putting in such effort
+for others is the antipode of the machinations needed to become one of the "in"
+crowd or a member of the organisational elite.&lt;/p&gt;
+&lt;p&gt;So here's the thing... the tech world has its fair share of folks who forget or
+don't understand what I believe makes a place positive, friendly and safe when
+being with each other. Such folks see collaboration in terms of gaining
+prestige and power. This is the stuff of narcissistic day dreams.&lt;/p&gt;
+&lt;p&gt;In an organised community such behaviour is addressed by a code of conduct (and
+the Python community spend a lot of time and energy acting on this with varying
+degrees of success, from [alas] hollow virtue signalling through to very
+effective networks of support centred on extraordinarily kind and caring
+individuals). Conversely, informal communities tend to lack this sort of
+public or explicit "framework" often with detrimental results (folks are able
+to capitalize, abuse or manipulate the informal "hidden" networks and
+relationships to selfish or unpleasant ends with no clear way to call them
+out).&lt;/p&gt;
+&lt;p&gt;My focus on self-reflection and things within my own control explins why I've
+found myself writing a sort of poetic personal code I call
+"&lt;a href="https://github.com/ntoll/being_together"&gt;on being together&lt;/a&gt;".
+I'll make it a part of all my future coding projects (and encountering
+&lt;a href="https://github.com/Xe/creators-code"&gt;Xe's Creator's Code&lt;/a&gt;
+inspired this effort). It's very much a work in progress and has become an
+expression of what you can expect from me and what I hope from you should we
+find ourselves "being together" in a place to collaborate with each other.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;br&gt;
+When working together or if things go wrong,&lt;br&gt;
+we acknowledge and work through differences.&lt;br&gt;
+In so doing, we transform and enlarge each other.&lt;br&gt;
+&lt;br&gt;
+To nurture our mutual growth,&lt;br&gt;
+&lt;br&gt;
+    this is a place of&lt;br&gt;
+        learning, understanding, and sharing;&lt;br&gt;
+&lt;br&gt;
+    this is a place to&lt;br&gt;
+        affirm tolerance and compassion;&lt;br&gt;
+&lt;br&gt;
+    this is a place for&lt;br&gt;
+        collaborative creativity.&lt;br&gt;
+&lt;br&gt;
+All the aspects of yourself you choose to bring to this place&lt;br&gt;
+are welcome here.&lt;br&gt;
+&lt;br&gt;
+Reciprocate! Welcome, embrace and learn from others&lt;br&gt;
+(even in the face of apparent hostility or misunderstanding).&lt;br&gt;
+&lt;br&gt;
+To act against this spirit invites ostracism,&lt;br&gt;
+a loss that diminishes us all.&lt;br&gt;
+&lt;br&gt;
+Thank you.&lt;br&gt;&lt;br&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/on-being-together/</guid><pubDate>Fri, 21 Aug 2020 16:45:00 GMT</pubDate></item><item><title>Twisty Passages at EuroPython 2020 </title><link>https://ntoll.org/article/twisty-passages-at-europython/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://ep2020.europython.eu/"&gt;EuroPython&lt;/a&gt; took place last month and the
 raw video footage of the talks has just been published online. EuroPython has
 always been one of my favourite conferences and is a special place for me:
 it's where I gave my first ever programming talk back in 2010. It's also one of
@@ -1474,128 +1632,4 @@ helps people learn and grow while also providing employment for developers
 who feel they're at a stage in their career where they want to acquire and
 practice the skills needed to be effective and inspiring mentors.&lt;/p&gt;
 
-&lt;p&gt;Happy new year.&lt;/p&gt;</description><guid>https://ntoll.org/article/codegrades/</guid><pubDate>Sat, 05 Jan 2019 15:30:00 GMT</pubDate></item><item><title>Compassion.py</title><link>https://ntoll.org/article/compassion/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;I write from a place of love and respect for the UK Python programming community.
-Some of what follows may make painful reading (sorry). But I want to be clear:
-if you misconstrue my words as aggressive, nasty or hurtful, then you have
-completely misunderstood my intent. I will never knowingly be a source of
-vindictive pain.&lt;/p&gt;
-
-&lt;p&gt;I'm going to shine a light on the (usually hidden) problems I have encountered
-in the UK Python community over the ten years that I've been volunteering.&lt;/p&gt;
-
-&lt;p&gt;It's hard to do this without appearing as if mud slinging or trying to diminish
-the considerable public-facing achievements of the UK Python community in doing
-genuinely wonderful things. I am anxious to avoid a situation that undermines
-all the good stuff.&lt;/p&gt;
-
-&lt;p&gt;But only by highlighting and acknowledging such hidden problems can action be
-taken to address them. I hope you bear with me as I try to find the words to
-explain things in a constructive, non-confrontational yet honest way.&lt;/p&gt;
-
-&lt;p&gt;The problems of which I speak are many in number and range from the
-institutional (a woman of limited means put into the humiliating position of
-having to beg for financial support), and petty (describing the John Pinner
-awards as "just a popularity contest") to plagiarism (members of
-the community claiming the work and intellectual property of others as their
-own) and an exercise of power and control for organisational gain (a sponsor
-taking steps to exclude others from fully participating in a community event
--- they threatened to pull out if they didn't get their way). Sadly, I have a
-list as long as my arm full of such things.&lt;/p&gt;
-
-&lt;p&gt;Above and beyond these problems are personal attacks, slights and snark aimed
-directly at me (more on this later). Having said that, I want you to know that
-I bear no ill-will nor grudges.&lt;/p&gt;
-
-&lt;p&gt;I'm necessarily vague about the details: I don't believe finger pointing or
-blame is a useful or constructive way forward. Far better to honestly and
-constructively highlight such problems in the hope that they are acknowledged
-and can be avoided in the future.&lt;/p&gt;
-
-&lt;p&gt;If you're thinking, "that's not the UK Python community I know", then I am
-happy for you. You know the joyous, supportive and friendly place that
-welcomed and sustained me as a new Python programmer in 2007. I wish you good
-fortune and hope you cherish, advance and grow this aspect of the community.&lt;/p&gt;
-
-&lt;p&gt;However, such problems are themselves problematic because they are so often
-hidden. Furthermore, I've observed that those involved often don't appear to realise they are
-causing a problem. Upon reflection, I believe such situations are caused by a
-lack of just one thing: compassion (an awareness of and sympathy for another's
-feelings and suffering, mixed with a pro-active desire to help).&lt;/p&gt;
-
-&lt;p&gt;So my plea to members of the UK Python community is to show more compassion.&lt;/p&gt;
-
-&lt;p&gt;If you remain unconvinced of my plea, I want to explain what happens when we
-lack compassion.&lt;/p&gt;
-
-&lt;p&gt;Over the past three years I have grown despondent about the problems I have
-encountered in the UK's Python community. This past year the
-feeling became unbearable, to the extent that I sought professional help to
-deal with mental health problems solely arising from my contact with the UK
-Python community.&lt;/p&gt;
-
-&lt;p&gt;Last weekend a straw broke the camel's back and, after a considerable amount of
-thought and reflection, I finally decided to publicly reveal how I felt 
-&lt;a href="https://twitter.com/ntoll/status/1051134675064897538"&gt;via&lt;/a&gt;
-&lt;a href="https://twitter.com/ntoll/status/1051195641727242241"&gt;Twitter&lt;/a&gt;.
-I'd been sitting on a huge amount of pent up frustration and sadness,
-and there needed to be a controlled release. I came to the realisation that
-only by "coming clean" and honestly describing my feelings would I be able to
-heal, move on and allow my life to return to some normality.&lt;/p&gt;
-
-&lt;p&gt;To say the reaction has been "interesting" is an understatement.&lt;/p&gt;
-
-&lt;p&gt;I'd like to start by thanking the many people who took the time to reach out
-with kind messages of support. You are the best of us, and the reason why the
-UK Python community is often an amazing place. Your compassion and
-thoughtfulness is an example to us all. Thank you.&lt;/p&gt;
-
-&lt;p&gt;However, I was reduced to tears of hurt by the initial reaction of one member
-of our community who went for the jugular (and it saddens me deeply that this
-reaction was "liked" by a number of other people in the UK Python community).
-I have been asked to justify my feelings to others (how dare I feel this way
-about the UK Python community) and I have had my words picked over in public
-leading to unwanted, unhelpful and upsetting comments.&lt;/p&gt;
-
-&lt;p&gt;These latter reactions inadvertently demonstrate why I've been feeling
-despondent. They show a complete lack of compassion and suppress hoped-for
-constructive dialogue or catharsis.&lt;/p&gt;
-
-&lt;p&gt;My despondency and poor mental health is directly linked to encountering and
-dealing with an excessive number of such problems: a sort of death by a
-thousand paper cuts.&lt;/p&gt;
-
-&lt;p&gt;"But why didn't you reach out for help?" you may ask.&lt;/p&gt;
-
-&lt;p&gt;I did.&lt;/p&gt;
-
-&lt;p&gt;I was rebuffed when I tried to find support from several individuals in the UK
-Python community. This led me to a downward spiral of frustration, self doubt
-and sadness: "What have I done to deserve this? Am I such an obnoxious person
-that people would refrain from showing support? Why am I not able to speak of
-my pain?"&lt;/p&gt;
-
-&lt;p&gt;I felt a complete failure, rejected and disempowered by the whole situation.&lt;/p&gt;
-
-&lt;p&gt;My only choice has been to step away from the UK Python community. It's not the
-ending I would have wanted and it makes me feel extraordinarily sad.&lt;/p&gt;
-
-&lt;p&gt;But my tweets brought acknowledgement from others in the international Python
-community. I'm not on my own in encountering such problems or the associated
-feelings of despondency. This is definitely not only a UK Python issue.
-My far flung friends highlighted patterns, features and common ground which,
-in turn, helped me realise, "I am not the only one".&lt;/p&gt;
-
-&lt;p&gt;Personally, by speaking of these things I feel I have turned a corner and have
-felt a great sense of release, although I still carry a huge amount of sadness
-and pain about how things turned out. For what it's worth, I hope people in the
-UK Python community never treat one of their own like this ever again.&lt;/p&gt;
-
-&lt;p&gt;What will I do next?&lt;/p&gt;
-
-&lt;p&gt;For me, this boils down to a positive assertion, through deeds and words, of
-humanity, honesty, compassion, patience, love and respect. What that entails
-depends on all sorts of complicated variables: who, what, where, when and how
-a situation is. Ironically for a conversation about a programming community,
-it's not a case of following an algorithm -- I'll have to exercise that
-unique and precious spark which means I'm not an unfeeling machine: my
-humanity.&lt;/p&gt;</description><guid>https://ntoll.org/article/compassion/</guid><pubDate>Mon, 22 Oct 2018 13:00:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Happy new year.&lt;/p&gt;</description><guid>https://ntoll.org/article/codegrades/</guid><pubDate>Sat, 05 Jan 2019 15:30:00 GMT</pubDate></item></channel></rss>
