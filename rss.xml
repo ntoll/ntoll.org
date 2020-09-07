@@ -3,7 +3,7 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Fri, 21 Aug 2020 16:46:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Mon, 07 Sep 2020 08:51:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
 &lt;p&gt;Being together with people I love and who love me in return is a source of
 great joy and solace.&lt;/p&gt;
 &lt;p&gt;Yet being with people can also lead to distress.&lt;/p&gt;
@@ -49,7 +49,7 @@ privilege and a source of happiness and growth. Yet some of my recent
 collaborations have also been a source of great pain (interactions with aspects
 of the Python community
 &lt;a href="https://ntoll.org/article/compassion/"&gt;spring to mind&lt;/a&gt;). As a result, my
-feelings about about being together have changed significantly over the past
+feelings about being together have changed significantly over the past
 couple of years. &lt;/p&gt;
 &lt;p&gt;I used to be all about promoting "the community" as a way of being together.
 An immediate problem is "the community" is an amorphous blob of a term that
@@ -58,15 +58,16 @@ misunderstanding is rife. In any case, I naively contributed and volunteered my
 code, time, effort and money. In short, I tried very hard to be a positive part
 of "something". For the past 12 years or so, this "something" was the Python
 programming community.&lt;/p&gt;
-&lt;p&gt;There are two common contrasting ways of describing "community": top-down
-(meaning the community is managed) and bottom-up (where the community emerges
-through participation). &lt;/p&gt;
+&lt;p&gt;In my experience, there are two common contrasting ways folks describe or
+think about the notion of "community": top-down (meaning the community is
+managed) and bottom-up (where the community emerges through participation). &lt;/p&gt;
 &lt;p&gt;I've always been reticent about top-down bureaucratic, formal and
 hierarchical notions of community. Often they are well meaning yet ineffectual
 (or sometimes even damaging) self defeating processes. They can also easily
 turn into toxic dumpster fires full of malice (politics and power plays being
-well known examples). Finally, they tend to gain a momentum that makes it
-easy to squash rather than cherish individuals and creative innovation. While
+well known examples of contributing factors to such a sorry state of affairs).
+Finally, they tend to gain a momentum that makes it easy to squash and ignore
+rather than cherish and nourish individuals and creative innovation. While
 my experience of the "formal" Python community has mostly been extraordinarily
 positive, there has been enough not-so-good-stuff that I've chosen to step
 away. I can only but wish the Python community well, but it's a ship in which I
@@ -79,12 +80,12 @@ the loudest or most charismatic folks hold the floor. People are either "in"
 or "out" of the circle of these "movers and shakers".&lt;/p&gt;
 &lt;p&gt;At least more formal communities appear to be up front about hierarchy, the
 exercise of power, the scope and relations of roles and how one assumes
-positions therein..! Perhaps this is a false dichotomy? Communities could
-incorporate aspects of both approaches.&lt;/p&gt;
-&lt;p&gt;I can't help but feel that something is missing if we view communities as
-structures. Communities are collections of individual people and, perhaps, the
-missing aspect is an explicit focus on the "character" of these participants.
-Just how do individuals reflect and choose to behave when being together?&lt;/p&gt;
+positions therein..!&lt;/p&gt;
+&lt;p&gt;I can't help but feel that something is missing when we view communities as
+such formal structures. Communities are collections of individual people and,
+perhaps, the missing element to make sense of being together is an explicit
+focus on the "character" of participants. Just how do individuals reflect and
+choose to behave when being together?&lt;/p&gt;
 &lt;p&gt;I'm reminded of &lt;a href="https://www.lewissociety.org/innerring/"&gt;this rather interesting essay&lt;/a&gt;,
 by C.S.Lewis. I first read it when I was a music undergraduate and found it via
 my Christian room-mate. Lewis describes an "Inner Ring", something akin to the
@@ -126,7 +127,7 @@ public or explicit "framework" often with detrimental results (folks are able
 to capitalize, abuse or manipulate the informal "hidden" networks and
 relationships to selfish or unpleasant ends with no clear way to call them
 out).&lt;/p&gt;
-&lt;p&gt;My focus on self-reflection and things within my own control explins why I've
+&lt;p&gt;My focus on self-reflection and things within my own control explains why I've
 found myself writing a sort of poetic personal code I call
 "&lt;a href="https://github.com/ntoll/being_together"&gt;on being together&lt;/a&gt;".
 I'll make it a part of all my future coding projects (and encountering

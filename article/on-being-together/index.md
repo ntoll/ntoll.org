@@ -67,7 +67,7 @@ privilege and a source of happiness and growth. Yet some of my recent
 collaborations have also been a source of great pain (interactions with aspects
 of the Python community
 [spring to mind](https://ntoll.org/article/compassion/)). As a result, my
-feelings about about being together have changed significantly over the past
+feelings about being together have changed significantly over the past
 couple of years. 
 
 I used to be all about promoting "the community" as a way of being together.
@@ -78,16 +78,17 @@ code, time, effort and money. In short, I tried very hard to be a positive part
 of "something". For the past 12 years or so, this "something" was the Python
 programming community.
 
-There are two common contrasting ways of describing "community": top-down
-(meaning the community is managed) and bottom-up (where the community emerges
-through participation). 
+In my experience, there are two common contrasting ways folks describe or
+think about the notion of "community": top-down (meaning the community is
+managed) and bottom-up (where the community emerges through participation). 
 
 I've always been reticent about top-down bureaucratic, formal and
 hierarchical notions of community. Often they are well meaning yet ineffectual
 (or sometimes even damaging) self defeating processes. They can also easily
 turn into toxic dumpster fires full of malice (politics and power plays being
-well known examples). Finally, they tend to gain a momentum that makes it
-easy to squash rather than cherish individuals and creative innovation. While
+well known examples of contributing factors to such a sorry state of affairs).
+Finally, they tend to gain a momentum that makes it easy to squash and ignore
+rather than cherish and nourish individuals and creative innovation. While
 my experience of the "formal" Python community has mostly been extraordinarily
 positive, there has been enough not-so-good-stuff that I've chosen to step
 away. I can only but wish the Python community well, but it's a ship in which I
@@ -102,13 +103,13 @@ or "out" of the circle of these "movers and shakers".
 
 At least more formal communities appear to be up front about hierarchy, the
 exercise of power, the scope and relations of roles and how one assumes
-positions therein..! Perhaps this is a false dichotomy? Communities could
-incorporate aspects of both approaches.
+positions therein..!
 
-I can't help but feel that something is missing if we view communities as
-structures. Communities are collections of individual people and, perhaps, the
-missing aspect is an explicit focus on the "character" of these participants.
-Just how do individuals reflect and choose to behave when being together?
+I can't help but feel that something is missing when we view communities as
+such formal structures. Communities are collections of individual people and,
+perhaps, the missing element to make sense of being together is an explicit
+focus on the "character" of participants. Just how do individuals reflect and
+choose to behave when being together?
 
 I'm reminded of [this rather interesting essay](https://www.lewissociety.org/innerring/),
 by C.S.Lewis. I first read it when I was a music undergraduate and found it via
@@ -156,7 +157,7 @@ to capitalize, abuse or manipulate the informal "hidden" networks and
 relationships to selfish or unpleasant ends with no clear way to call them
 out).
 
-My focus on self-reflection and things within my own control explins why I've
+My focus on self-reflection and things within my own control explains why I've
 found myself writing a sort of poetic personal code I call
 "[on being together](https://github.com/ntoll/being_together)".
 I'll make it a part of all my future coding projects (and encountering
