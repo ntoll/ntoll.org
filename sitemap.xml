@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ntoll.org/</loc>
-  <lastmod>2020-08-16T08:35:00Z</lastmod>
+  <lastmod>2020-09-09T17:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/2004/</loc>
@@ -83,7 +83,7 @@
  </url>
  <url>
   <loc>https://ntoll.org/archive.html</loc>
-  <lastmod>2020-08-17T16:39:00Z</lastmod>
+  <lastmod>2020-09-15T11:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/article/12-days-of-python/</loc>
@@ -514,6 +514,22 @@
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
  <url>
+  <loc>https://ntoll.org/article/why-computers-1_2/</loc>
+  <lastmod>2020-09-09T17:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-2/</loc>
+  <lastmod>2020-09-09T17:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-3/</loc>
+  <lastmod>2020-09-09T17:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/article/why-computers-4/</loc>
+  <lastmod>2020-09-09T17:43:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://ntoll.org/article/wordle-play/</loc>
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
@@ -587,7 +603,11 @@
  </url>
  <url>
   <loc>https://ntoll.org/index-21.html</loc>
-  <lastmod>2020-08-17T16:39:00Z</lastmod>
+  <lastmod>2020-09-15T11:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ntoll.org/index-22.html</loc>
+  <lastmod>2020-09-09T17:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/index-3.html</loc>
