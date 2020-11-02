@@ -3,7 +3,24 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 15 Sep 2020 11:58:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Mon, 02 Nov 2020 08:34:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Social Media Hermit </title><link>https://ntoll.org/article/social-media-hermit%20/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I have deleted my Twitter account.&lt;/p&gt;
+&lt;p&gt;Why?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I no longer use it.&lt;/li&gt;
+&lt;li&gt;Social media isn't fun.&lt;/li&gt;
+&lt;li&gt;There are better ways to connect.&lt;/li&gt;
+&lt;li&gt;Retaining my account feels hypocritical.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Honestly, that's all there is to it (and it feels good).&lt;/p&gt;
+&lt;p&gt;Twitter encourages infantile, reactionary and shallow discourse. What do you
+expect from a technology that enforces a 280 character limit and trains us to
+read in bite size chunks? Twitter may as well enforce &lt;a href="https://en.wikipedia.org/wiki/Newspeak"&gt;other arbitrary
+limitations&lt;/a&gt;, for example the exclusive
+use of monosyllabic words.&lt;/p&gt;
+&lt;p&gt;I want no part of it.&lt;/p&gt;
+&lt;p&gt;If folks genuinely want to connect with me, they'll be in touch (as I will be
+with them).&lt;/p&gt;
+&lt;p&gt;Peace.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/social-media-hermit%20/</guid><pubDate>Mon, 02 Nov 2020 07:30:00 GMT</pubDate></item><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
 &lt;p&gt;Being together with people I love and who love me in return is a source of
 great joy and solace.&lt;/p&gt;
 &lt;p&gt;Yet being with people can also lead to distress.&lt;/p&gt;
@@ -1544,93 +1561,4 @@ expressive, collaborative and most definitely greater than the sum of its
 parts. That the audience appreciate these efforts is a lovely positive
 side effect.&lt;/p&gt;
 
-&lt;p&gt;To me, this is always "joyful noise". :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/joyful-noise/</guid><pubDate>Wed, 13 Feb 2019 16:00:00 GMT</pubDate></item><item><title>CodeGrades</title><link>https://ntoll.org/article/codegrades/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;Lots of people want to learn how to program computers.&lt;/p&gt;
-
-&lt;p&gt;The success of code "boot camps" and devices aimed at the education sector
-(Raspberry Pi and the BBC's micro:bit spring to mind) is evidence of this
-desire for folks to learn "coding".&lt;/p&gt;
-
-&lt;p&gt;At a time when technology is finding its way into every aspect of our lives
-many folks appear to want to be more than just passive consumers of technology.
-They feel a desire to become creators of technology. They want to take control
-of their digital world. They want the skills to make their technology reflect
-their own needs.&lt;/p&gt;
-
-&lt;p&gt;Recently I've been experimenting with how I could use my background and
-expertise in music education in a way that helps folks address this desire for
-learning to program. The first experiment took place over the autumn and
-involved a group of complete beginners preparing for a "code grade".&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://codegrades.com/"&gt;CodeGrades&lt;/a&gt; are a programming version
-of time-proven techniques like music grades, belts in martial arts or lifeguard
-certification. Learners level up by applying the knowledge and skills needed
-for each grade to their own fun, interesting and challenging coding projects.
-Learners present their projects to professional software developers who
-assess the projects against the criteria for the grade being taken and provide
-a set of marks and written feedback so the learner can see where they're doing
-well, what needs to improve and what their next steps may be.&lt;/p&gt;
-
-&lt;p&gt;The autumnal experiment proved this concept worked. The initial group of
-learners were able to learn enough to create a "grade 1" level project in the
-Python programming language in about ten weeks. Furthermore, after completing
-their grading the vast majority asked when they can take their next grade.
-This outcome was far better than I had ever imagined.&lt;/p&gt;
-
-&lt;p&gt;Like music grades, code grades are eight cumulative steps for learning how
-to write code. The first grade (as taken by our "test subjects") is easy
-enough for most people to take as a first step into programming. The eighth
-grade is of equivalent standard to the skills and knowledge needed to be an
-effective junior professional software developer. The middle grades bridge
-the way so the skill gaps between each of the grades is
-achievable. They're like stepping stones into coding, or perhaps a modern
-day "&lt;a href="https://en.wikipedia.org/wiki/Gradus_ad_Parnassum"&gt;Gradus ad
-Parnassum&lt;/a&gt;". ;-)&lt;/p&gt;
-
-&lt;p&gt;Perhaps the most important aspect of CodeGrades is how it is different to
-other educational offerings.&lt;/p&gt;
-
-&lt;p&gt;Code boot-camps will charge you north of £10k for a three month course and
-a guaranteed "job" as a junior developer. This is, frankly, a terrible idea.
-Not only are people throwing huge sums of money over a cliff edge before they
-make the jump themselves, but learning to code requires a long term investment
-of time. You cannot learn how to write effective code in just three months.
-What the boot-camps have realised is that you can learn enough
-&lt;em&gt;information&lt;/em&gt; in just three months to appear as if you can code. It has
-been my unhappy experience to interview graduates of such schemes and have them
-answer my questions about the niceties of some aspect of coding with text-book
-answers; yet most have been unable to apply such "text book answers" in any
-useful or even credible way. Those who did create something made what can
-only be described as "spaghetti code". This is the equivalent of claiming that
-it's possible to train musicians to a professional level in just three months.
-Can you imagine how an orchestra would sound with musicians trained in this
-way? Would you want to hire such musicians to play for your wedding party?&lt;/p&gt;
-
-&lt;p&gt;Other educational efforts are mostly aimed at beginner developers. As a
-result, all their educational resources are at the beginner end of the scale
-and there is hardly any guidance for how to move onto more challenging
-programming. Put another way, it's like getting a piano with lots of beginner
-level music to learn, but nothing which will stretch you after you've got the
-basics in place. There is simply no continuity nor access to the fun
-"advanced" stuff.&lt;/p&gt;
-
-&lt;p&gt;The syllabus for CodeGrades is written by professional software developers.
-The grades reflect current best practice found in the software industry. They
-offer a framework for sustained and structured long term learning to write
-code. All the resources associated with CodeGrades are free, learners only pay
-to take the grading. CodeGrades will be priced in a way equivalent to music and
-ballet grades or martial arts belts.&lt;/p&gt;
-
-&lt;p&gt;CodeGrades help you learn to code with the confidence you need to make
-the stuff you want.&lt;/p&gt;
-
-&lt;p&gt;The upshot is that it's the start of the year, and I've decided that the
-outcomes from the experiment in the autumn have been so positive that I want to
-invest some of my own time into developing the concept further.&lt;/p&gt;
-
-&lt;p&gt;So, here's to an interesting
-2019... I hope to work with friends (old and new) in making something that
-helps people learn and grow while also providing employment for developers
-who feel they're at a stage in their career where they want to acquire and
-practice the skills needed to be effective and inspiring mentors.&lt;/p&gt;
-
-&lt;p&gt;Happy new year.&lt;/p&gt;</description><guid>https://ntoll.org/article/codegrades/</guid><pubDate>Sat, 05 Jan 2019 15:30:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;To me, this is always "joyful noise". :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/joyful-noise/</guid><pubDate>Wed, 13 Feb 2019 16:00:00 GMT</pubDate></item></channel></rss>
