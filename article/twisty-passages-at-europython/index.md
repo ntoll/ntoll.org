@@ -14,8 +14,8 @@
 raw video footage of the talks has just been published online. EuroPython has
 always been one of my favourite conferences and is a special place for me:
 it's where I gave my first ever programming talk back in 2010. It's also one of
-the most culturally cosmopolitan programming conferences and was the world's
-first community organised Python programming conference. I always come away
+the most culturally cosmopolitan coding conferences and was the world's
+first community organised Python software conference. I always come away
 feeling enriched by EuroPython.
 
 Thanks, as always, to the volunteer organisers who work so hard to bring about

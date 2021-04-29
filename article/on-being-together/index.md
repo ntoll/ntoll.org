@@ -168,7 +168,7 @@ find ourselves "being together" in a place to collaborate with each other.
 
 <blockquote>
 <br/>
-When working together or if things go wrong,<br/>
+When being together, especially if things go wrong,<br/>
 we acknowledge and work through differences.<br/>
 In so doing, we transform and enlarge each other.<br/>
 <br/>

@@ -1,6 +1,6 @@
 <!--
-.. title: A Social Media Hermit 
-.. slug: social-media-hermit 
+.. title: A Social Media Hermit
+.. slug: social-media-hermit
 .. date: 2020-11-02 08:30:00 UTC+01:00
 .. tags: 
 .. category: 

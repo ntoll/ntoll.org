@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ntoll.org</title><link>https://ntoll.org/</link><description>Everything I say is false...</description><atom:link href="https://ntoll.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:ntoll@ntoll.org"&gt;Nicholas H.Tollervey&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ntoll.org</title><link>https://ntoll.org/</link><description>Everything I say is false...</description><atom:link href="https://ntoll.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:ntoll@ntoll.org"&gt;Nicholas H.Tollervey&lt;/a&gt; 
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Thu, 12 Nov 2020 15:17:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Social Media Hermit </title><link>https://ntoll.org/article/social-media-hermit%20/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I have deleted my Twitter account.&lt;/p&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Thu, 29 Apr 2021 16:54:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Social Media Hermit</title><link>https://ntoll.org/article/social-media-hermit/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I have deleted my Twitter account.&lt;/p&gt;
 &lt;p&gt;Why?&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;I no longer use it.&lt;/li&gt;
@@ -20,7 +20,7 @@ use of monosyllabic words.&lt;/p&gt;
 &lt;p&gt;I want no part of it.&lt;/p&gt;
 &lt;p&gt;If folks genuinely want to connect with me, they'll be in touch (as I will be
 with them).&lt;/p&gt;
-&lt;p&gt;Peace.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/social-media-hermit%20/</guid><pubDate>Mon, 02 Nov 2020 07:30:00 GMT</pubDate></item><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
+&lt;p&gt;Peace.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/social-media-hermit/</guid><pubDate>Mon, 02 Nov 2020 07:30:00 GMT</pubDate></item><item><title>On Being Together</title><link>https://ntoll.org/article/on-being-together/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;(Some raw thoughts I've written down solely to help me clarify my thinking.)&lt;/p&gt;
 &lt;p&gt;Being together with people I love and who love me in return is a source of
 great joy and solace.&lt;/p&gt;
 &lt;p&gt;Yet being with people can also lead to distress.&lt;/p&gt;
@@ -154,7 +154,7 @@ expression of what you can expect from me and what I hope from you should we
 find ourselves "being together" in a place to collaborate with each other.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;br&gt;
-When working together or if things go wrong,&lt;br&gt;
+When being together, especially if things go wrong,&lt;br&gt;
 we acknowledge and work through differences.&lt;br&gt;
 In so doing, we transform and enlarge each other.&lt;br&gt;
 &lt;br&gt;
@@ -183,8 +183,8 @@ Thank you.&lt;br&gt;&lt;br&gt;
 raw video footage of the talks has just been published online. EuroPython has
 always been one of my favourite conferences and is a special place for me:
 it's where I gave my first ever programming talk back in 2010. It's also one of
-the most culturally cosmopolitan programming conferences and was the world's
-first community organised Python programming conference. I always come away
+the most culturally cosmopolitan coding conferences and was the world's
+first community organised Python software conference. I always come away
 feeling enriched by EuroPython.&lt;/p&gt;
 &lt;p&gt;Thanks, as always, to the volunteer organisers who work so hard to bring about
 this remarkable event. Such thanks are especially well deserved in 2020 since
