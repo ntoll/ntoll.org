@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ntoll.org/</loc>
-  <lastmod>2021-04-16T08:29:00Z</lastmod>
+  <lastmod>2021-04-29T16:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/2004/</loc>
@@ -76,10 +76,6 @@
  <url>
   <loc>https://ntoll.org/2020/</loc>
   <lastmod>2020-06-24T14:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://ntoll.org/2021/</loc>
-  <lastmod>2021-01-30T15:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/about/</loc>
@@ -438,10 +434,6 @@
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://ntoll.org/article/social-media-hermit%20/</loc>
-  <lastmod>2020-11-02T08:25:00Z</lastmod>
- </url>
- <url>
   <loc>https://ntoll.org/article/social-media-hermit/</loc>
   <lastmod>2021-01-13T12:23:00Z</lastmod>
  </url>
@@ -526,10 +518,6 @@
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
  <url>
-  <loc>https://ntoll.org/article/why-computers-1_2/</loc>
-  <lastmod>2020-11-12T15:20:00Z</lastmod>
- </url>
- <url>
   <loc>https://ntoll.org/article/wordle-play/</loc>
   <lastmod>2020-06-24T14:28:00Z</lastmod>
  </url>
@@ -604,10 +592,6 @@
  <url>
   <loc>https://ntoll.org/index-21.html</loc>
   <lastmod>2021-04-29T16:52:00Z</lastmod>
- </url>
- <url>
-  <loc>https://ntoll.org/index-22.html</loc>
-  <lastmod>2021-04-16T09:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://ntoll.org/index-3.html</loc>
