@@ -91,13 +91,13 @@ This applies to other encounters with the world too.
 
 Our perception of time depends on a sense of scale or, perhaps more
 accurately, tempo. Each of the following eight images shows a different
-snapshot of a stick man running.
+snapshot of a stick man.
 
 ![Individual frames for a running man animation](/images/running_frames.png)
 
 Yet if we repeatedly and speedily place them on top of each other, we no longer
 see eight individual images, but a single image **in motion**. In fact, because
-we can't help but add meaning, we see a stick man in motion.
+we can't help but add meaning, we see a stick man running.
 
 ![Running stick man animation](/images/running.gif)
 
@@ -457,8 +457,8 @@ relationship with (or to) computers.
 To use a musical metaphor, this series of blog posts is like explaining why a
 piano works (the tuning, acoustic properties, action of the keyboard and
 hammers) and showing why this relates to musical theory. Yet I've said nothing
-about music, the emotions we feel when we hear or perform music, or that music
-speaks to us at a fundamental level.
+about the art of music, the emotions we feel when we hear or perform music, or
+that music moves us at a fundamental and human level.
 
 We are missing the "music" of computers (and we miss it at our peril).
 
@@ -476,32 +476,42 @@ Wittgenstein best sums up my feeling:
 >
 > ~ Ludwig Wittgenstein, [Culture and Value](https://en.wikipedia.org/wiki/Culture_and_Value) (MS 124:93)
 
-We should, rightly, be amazed by the technical aspects of computers; but I
-think it all too easy to be overwhelmed by the apparent cleverness (or
+We should, rightly, be amazed by the technical marvel of computers; but it is
+all too easy to be overwhelmed by and focus on the apparent cleverness (or
 [Rube Goldberg](https://en.wikipedia.org/wiki/Rube_Goldberg_machine)-iness) of
-it all and miss the opportunity for an enlarged, more creative encounter with
-computing.
+it all. Sadly, in so doing we miss the opportunity for an enlarged, more
+creative and expressive encounter with computing.
 
-Computers are not just magic machines for rapidly evaluating logical
-instructions. They are a medium through which we share and express our values,
-culture, social world and forms of life. They are only useful because we
-create and express things of significance _through computers_.
+Computers are not just machines for rapidly evaluating logical instructions.
+They are a medium through which we share and express our values, culture,
+social world and forms of life. They are only useful because we create and
+express things of significance _through computers_. Computing for the sake of
+computers is a diminished, sad, in-humane and insular outlook. Computers work
+because of humanity, and shine when they enlarge us in a humane, creative and
+expressive way.
 
-Perhaps the missing part of our relationship with computers relates to
-contemplation, culture and creativity ~ activities and aspects of our lives
-that make life worth living, raise up our existence or provoke useful
-reflection and personal growth. I look at how we currently use and think of
-computers and can't help but feel disappointed. Social media is anything but
-social... it's actually an efficient advertising laboratory with us as lab
-rats. "Artificial intelligence", "machine learning" and other such buzzwords
-are nerdy PR to hide clever use of mathematics to unsatisfactorily ape human
-activity. Computer games are mostly beautiful looking yet formulaic variations
-on a theme, target driven and hardly allow a player to express themselves.
+Perhaps the missing part of our relationship with computers is an emphasis on
+things like contemplation, culture and creativity ~ activities and aspects of
+our lives that make life worth living, raise up our existence or provoke useful
+reflection and personal growth.
 
-I hope we can look beyond the "why" of computers, brain twist our currently
-deficient computer-related perspectives, and be
-[affirmative](https://democracyclub.org.uk/),
+I look at how we currently use and think of computers and can't help but feel
+disappointed. Social media is anything but social... it's an efficient
+advertising laboratory that turns humanity into lab rats caged in echo chambers
+of digitally digested packets of small mindedness. "Artificial intelligence",
+"machine learning", "blockchain" and other such buzzwords are nerdy PR for the
+clever use of code to unsatisfactorily ape human activity (including our latent
+prejudices). Computer games are mostly beautiful looking yet formulaic
+variations on a theme, target driven and hardly allow a player to express
+themselves.
+
+I hope we look beyond the "why" of computers.
+
+I hope we re-appraise incumbent small minded computing perspectives.
+
+I hope we become more [affirmative](https://democracyclub.org.uk/),
 [liberated](https://freedom.press/)
-and [expressive](http://inbflat.net/) through these rather clunky tools.
+and [artistic](http://inbflat.net/) through the things we create, express and
+emphasize with computers and with each other.
 
 After all, we are [only just getting started](/article/thought-in-motion/).
