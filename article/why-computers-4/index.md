@@ -250,7 +250,7 @@ When I say that such and such must happen, I mean clear and unambiguous
 instructions describe how the machine proceeds given a certain state of
 affairs.
 
-This is how I described the game of SNAP in the first article!
+This is how I described the game of Snap in the first article!
 
 It turns out that computing a result is not that different to playing a
 children's game. Computing a result is the same as following a set of
@@ -259,7 +259,7 @@ are called algorithms.
 
 Since the rules in the "what to do next" table are logical, they can be 
 represented by the sorts of electrical circuitry described in the previous
-post. Such circuitry recieves input signals from the components in the head,
+post. Such circuitry receives input signals from the components in the head,
 and controls other components such as the motors that control the tape.
 
 For this machine to do anything meaningful, someone will have carefully

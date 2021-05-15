@@ -110,8 +110,10 @@ transistor is controlled by another electrical component via the "gate".
 Transistors work because they're made from two different types of silicon, a
 material that only conducts electricity under certain conditions (which is why
 it's called a semi-conductor). The silicon is mixed with certain impurities to
-create p-type and n-type silicon. In the diagram below the p-type silicon is
-shown in blue, the n-type silicon in red and the gate connection in green.
+create p-type and n-type silicon. In the diagram below the
+<span style="color: #586796;">p-type silicon is shown in blue</span>,
+the <span style="color: #b03030;">n-type silicon in red</span>
+and the gate connection in green.
 
 ![Transistor off](/images/transistor_off_as_diagram.png)
 
@@ -198,7 +200,7 @@ operations or traffic lights. The brain twist is to realise where and when such
 human interventions assign meaning to the physical world, such as in the case
 of the logic circuits I've described.
 
-Imagine an arrangement of many transistor based circuits (representing various
+Imagine an arrangement of many transistor-based circuits (representing various
 logical operations), chained together so the output of one circuit provides the
 input to the next. This yet-more-complicated arrangement of logical circuits
 defines the meaningful behaviour of a device. Such a device, like its

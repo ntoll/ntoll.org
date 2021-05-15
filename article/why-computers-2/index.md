@@ -16,7 +16,7 @@
 Just as one can describe rules for a game of cards, it is possible to describe
 rules for thinking: rules for movement of thought.
 
-This is the study of *Logic*, and using these rules is called reasoning.
+This is the study of *Logic*, and using these rules is called *reasoning*.
 Reasoning with logical rules allows others, who know such rules, to follow the
 movements of thought that brought you to a certain conclusion. Furthermore,
 because there are rules, it's possible to notice when they're ignored or used
@@ -47,7 +47,7 @@ may not, at first, appear obvious:
 * The sentence is in the form of a *conditional* ("if [premises], then
   [conclusion]"). A conditional is a rule saying that if its premises are true
   then the conclusion **must be true**.
-* The premises are related to each other by a *logical operator* called
+* The premises are related to each other by a *logical operator* called a
   *conjunction* ("and"). This is another rule: if the related premises are
   evaluated together, **collectively they are true only if all of them are
   true**.
@@ -79,8 +79,9 @@ The brain twist is divorcing yourself from meaning -- just concern yourself
 with truth values of the propositions, the structure of the sentence and
 following the rules.
 
-In the same way the rules of Snap explain what must happen, given card related
-states of affairs, so the rules of propositional logic do the same with
+In the same way the
+[rules of Snap explain what must happen](/articles/why-computers-1), given card
+related states of affairs, so the rules of propositional logic do the same with
 propositions and sentences. The rules of Snap don't care what the specific
 values of cards are, just that such values may match. Similarly, propositional
 logic doesn't care what the specific meanings of the propositions may be, only

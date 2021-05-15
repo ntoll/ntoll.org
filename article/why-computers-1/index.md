@@ -1,5 +1,5 @@
 <!--
-.. title: Why Computers Work: An Introduction and Following Rules
+.. title: Why Computers Work: An Introduction to Following Rules
 .. slug: why-computers-1
 .. date: 2021-04-03 09:00:00 UTC+01:00
 .. status: private
@@ -197,7 +197,7 @@ technology and explore the nature and use of such devices. The alternative is
 churn and the recycling of existing ideas within the current system resulting
 in a lack of innovation or positive change.
 
-The computing related rules and states of affairs I'm going to describe are not
+The computing-related rules and states of affairs I'm going to describe are not
 much more complicated than the game of Snap explained above. However, what
 follows may include a few *brain twists* where I expect you to use your
 imagination to see things in a seemingly unusual or unintuitive way! I'm
