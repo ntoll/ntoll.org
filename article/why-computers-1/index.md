@@ -45,7 +45,8 @@ Most importantly, I hope to stimulate your thinking about computers by creating
 a place to explore ideas.
 
 I hope you enjoy these articles and, as always, I love getting constructive
-feedback [via email](/contact).
+feedback [via email](/contact). Unless otherwise stated, all images and
+diagrams were created by the author.
 
 <hr class="section_break"/>
 
@@ -63,9 +64,10 @@ They touch all aspects of our lives, from mediating our social interactions to
 modelling aspects of our culture and managing the everyday infrastructure of
 society.
 
-Therefore, computers are interesting and, understandably, folks want to know
-**how** the machines that automate and control so much of our world work.
-[This is a typical response](https://www.youtube.com/watch?v=tpIctyqH29Q).
+<p>Therefore, computers are interesting and, understandably, folks want to
+know <strong>how</strong> the machines that automate and control so much of our world work.
+<a href=" https://www.youtube.com/watch?v=tpIctyqH29Q" target="_blank">This is
+a typical response</a>.</p>
 
 I'm going to take a different approach.
 
@@ -97,13 +99,16 @@ With the scene suitably set, to start our journey, we'll learn all about...
 
 ## Following Rules
 
-Do you know how to play children's card game, Snap? (Bear with me, I promise
-it'll be worth it.) Using a standard deck of cards, the aim is to win all the
-cards by _taking turns to play_.
+Do you know how to play children's card game, Snap?
+
+(Bear with me, I promise it'll be worth it.)
+
+Using a standard deck of cards, the aim is to win all the cards by _taking
+turns to play_.
 
 Let's follow along as siblings Penelope (11), Sam (8) and Will (5) play a game:
 
-Penelope (for no other reason than she's the oldest) acts a dealer. She
+Penelope (for no other reason than she's the oldest) acts as dealer. She
 shuffles the deck of cards so they're in a random order and deals them, face
 down and in equal quantity, to each player until there are none left to deal.
 This is the starting state from which all games of Snap begin.
@@ -118,7 +123,14 @@ face-down cards.
 
 So ends Sam's turn.
 
-![Snap!](/images/snap.jpg)
+<figure>
+<img src="/images/snap.jpg" alt="A game of Snap!"/>
+<figcaption>
+  <a href="https://www.wikihow.com/Play-Snap" target="_blank">Source</a> - From
+  <a href="https://www.wikihow.com" target="_blank">WikiHow</a> and licensed
+  under
+  <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en" target="_blank">CC BY-NC-SA 3.0</a>
+</figure>
 
 The next player to the left, William, takes his turn in a similar fashion and
 so the game continues from one player to the next.
@@ -161,12 +173,12 @@ himself with all the cards and he's declared the winner of the game.
 
 That's how you play Snap..!
 
-These deliberately precise rules describe *how*, given certain states of
-affairs, such-and-such things must happen. States of affairs unambiguously
-describe how things are in the world. For example, "there are two stacks of
-face-up cards whose top cards are of matching value". When I describe how
-such-and-such must happen, I mean clear and unambiguous instructions describe
-*how* play proceeds given a certain state of affairs.
+The rules illustrated in this deliberately precise story describe *how*, given
+certain states of affairs, such-and-such things must happen. States of affairs
+unambiguously describe how things are in the world. For example, "there are two
+stacks of face-up cards whose top cards are of matching value". When I describe
+how such-and-such must happen, I mean clear and unambiguous instructions
+describe *how* play proceeds given a certain state of affairs.
 
 Put simply, this is *how* the game of Snap is played.
 
@@ -180,22 +192,23 @@ very young children. But, as my description shows, children discover it's lots
 of fun to informally learn and skillfully follow rules that bring about
 exciting situations in games.
 
-Knowing how to play Snap is analogous to knowing how computers work. Looking
+<p>Knowing how to play Snap is analogous to knowing how computers work. Looking
 beyond the rules of Snap to appreciate that human behaviour and enjoyment
-motivates people to follow the rules of the game, shows us _why_ Snap is
+motivates people to follow the rules of the game, shows us <em>why</em> Snap is
 played. This insight may also inspire us to invent new games. Perhaps we become
-inspired to explore further aspects of [human behaviour relating to following
-rules](https://en.wikipedia.org/wiki/Milgram_experiment), or we may even
-[reflect upon the nature of play or games](https://theoryoffun.com/). In any
-case, knowing *why* rather than *how* provides a fascinating perspective from
-outside the system (of Snap, in this case).
+inspired to explore further aspects of
+<a href="https://en.wikipedia.org/wiki/Milgram_experiment" target="_blank">human behaviour relating to following rules</a>,
+or we may even
+<a href="https://theoryoffun.com/" target="_blank">reflect upon the nature of play or games</a>.
+In any case, exploring <em>why</em> rather than <em>how</em> provides a
+fascinating perspective from outside the system (of Snap, in this case).</p>
 
 We need to achieve an analogous enlargement of perspective beyond _how_
 computers work in order to understand _why_ computers work. Only by acquiring a
 perspective outside current norms can we possibly hope to invent or improve
 technology and explore the nature and use of such devices. The alternative is
-churn and the recycling of existing ideas within the current system resulting
-in a lack of innovation or positive change.
+churn and recycling of existing ideas within the current system ~ stifling
+innovation or positive change.
 
 The computing-related rules and states of affairs I'm going to describe are not
 much more complicated than the game of Snap explained above. However, what

@@ -15,13 +15,18 @@
 
 It's easy to imagine one thing representing another. We do this all the time.
 
-For example, in the UK the
-[Royal Standard](https://en.wikipedia.org/wiki/Royal_Standard_of_the_United_Kingdom)
-always flies from buildings containing the monarch. This flag is understood to
-represent the Queen's presence and somebody ensures it is flown at the right
-moment from the buildings she visits.
+For example, in the UK the Royal Standard always flies from buildings
+containing the monarch. This flag is understood to represent the Queen's
+presence and somebody ensures it is flown at the right moment from the
+buildings she visits.
 
-![Royal Standard over Buckingham Palace](/images/royal_standard.jpg)
+<figure>
+<img src="/images/royal_standard.jpg" alt="The Royal Standard over Buckingham Palace"/>
+<figcaption>
+  <a href="https://commons.wikimedia.org/wiki/File:Buckingham_Palace_-_Royal_Standard.jpg" target="_blank">Source</a>
+  - Licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank">CC BY-SA 3.0</a>.
+</figure>
 
 Here's a twist...
 
@@ -42,9 +47,10 @@ Such a device could be built using the circuit shown in the diagram below:
 
 At the top is the symbol representing a battery that supplies current for
 the other components. Lines show how the battery and other components connect.
-The circle containing a cross represents a bulb and the gap created
-by the line veering off at an angle represents a switch. The actual components
-are shown below.
+The circle containing a cross represents a bulb and the gap created by the line
+veering off at an angle represents a switch. In the following photograph the
+real-world components, shown next to their symbols, connect to form the
+circuit:
 
 ![Electrical components](/images/components.png)
 
@@ -136,26 +142,34 @@ extraordinarily small components etched onto silicon (i.e. microchips). The
 image below was taken by an electron microscope and shows a transistor on a
 microchip with the parts labelled.
 
-![Transistor on a microchip](/images/transistor_on_chip.png)
+<figure>
+<img src="/images/transistor_on_chip.png" alt="A Transistor on a microchip"/>
+<figcaption><a href="https://www.quora.com/Why-is-the-transistor-so-crucial-to-computers-and-what-role-does-it-play-in-computing" target="_blank">Source</a> - educational fair use.
+</figure>
 
 Back to the "not" circuit: remember that electricity will always flow the
 shortest way to "ground" (for instance via a lightning rod). The following
 (very simplified) circuit diagram shows how a transistor and ground is used to
 make something that behaves like a logical "not".
 
-On the left, the button labelled "A" is attached to the "gate" of the
-transistor. Since the button is off (representing false) then current is unable
-to pass through the transistor to ground. As a result, the electrical current
-(in red) flows through the lamp to illuminate it (representing true). On the
-right, the button is on (in green, representing voltage applied to the
-transistor's "gate"). The current is now able to flow through the transister
-from the "source" to the "drain" and then to ground (so no current flows to the
-bulb to illuminate it).
+The transistor is represented by a circle pierced by three lines. The source is
+represented by the line entering the circle at the 1 o'clock position, the
+drain by the line at the 5 o'clock position and the gate buy the line at 9
+o'clock.
 
 ![Not circuit](/images/not_circuit.png)
 
-As a result the lamp is always in the opposite logical state to the switch and
-so the circuit mirrors the behaviour of a logical "not". If the switch is off,
+On the left, the button labelled "A", attached to the gate, is off
+(representing false) so current is unable to pass through the transistor to
+ground. As a result, the electrical current (in red) flows through the lamp to
+illuminate it (representing true). On the right, the button is on (in green,
+representing voltage applied to the transistor's gate). The current is able
+to flow through the transistor from the source to the drain and then to
+ground (so no current flows to the bulb to illuminate it). The red arrows make
+it clear how the current flows.
+
+Thus, the lamp is always in the opposite logical state to the switch and
+the circuit mirrors the behaviour of a logical "not". If the switch is off,
 the light is on and if the switch is on, the light is off.
 
 The important brain twist is understanding that we can design physical systems

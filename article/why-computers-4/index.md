@@ -42,16 +42,22 @@ Imagine a strange looking contraption sitting before you on a table.
 
 It consists of an exceptionally long reel-to-reel tape that passes through an
 electro-mechanical device of some sort. The tape is subdivided into square
-"frames". Some of the squares contain characters, others are empty. As it
+"frames". Some of the squares contain symbols, others are empty. As it
 operates, the tape moves through the device both to the left or to the right,
 like a badly behaved cinema projector.
 
-![A Turing Machine](/images/turing_machine.jpg)
+<figure>
+<img src="/images/turing_machine.jpg" alt="A Turing Machine"/>
+<figcaption>
+  <a href="https://commons.wikimedia.org/wiki/File:Turing_Machine_Model_Davey_2012.jpg" target="_blank">Source</a>
+  - Licensed under
+  <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank">CC BY 3.0</a>
+</figure>
 
 The "head" (where the tape passes through the device) covers exacty one
 square's worth of the tape. There's a flash of light from the head when a new
 square is completely contained therein. Sometimes this is followed by a
-clicking sound. When the click is heard the character in the square is changed:
+clicking sound. When the click is heard the symbol in the square is changed:
 it's either different or completely rubbed out. Then the tape moves to the left
 or right to a new square before continuing its strange flashing and clicking
 operation.
@@ -61,8 +67,8 @@ On the front of the machine is a little window. The window is labelled
 the head.
 
 After a while the machine comes to a stop. The state window contains the number
-0 (zero). By the head, on the tape, are a sequence of squares containing the
-familiar characters:
+0 (zero). By the head, on the tape, are a sequence of squares containing some
+familiar looking symbols:
 
 <table class="tape">
     <tr>
@@ -102,23 +108,24 @@ familiar characters:
     </tr>
 </table>
 
-Two other objects are on the table. On one side of the contraption is a
-photograph of a thoughtful looking man with an old fashioned side parting and
-_enigmatic_ smile. On the other is a thick ring-bound pile of paper whose title
-you can just make out: "Instructions".
+Two other objects are on the table. On one side of the contraption is a black
+and white photograph of a thoughtful looking man with an old fashioned side
+parting and _enigmatic_ smile, sitting in a sturdy deck chair. On the other is
+a thick ring-bound pile of paper whose title you can just make out:
+"Instructions".
 
 The instructions listed on the front page consist of just four rules:
 
 <ol>
   <li>Set the machine to state "1".</li>
-  <li>Read the character in the current frame on the tape.</li>
-  <li>Given the current state of the machine and the character read from the
+  <li>Read the symbol in the current frame on the tape.</li>
+  <li>Given the current state of the machine and the symbol read from the
   current frame, look up what to do next. "What to do next" is defined by three
   transitions:
 
     <ul>
       <li>Change to a new numbered state.</li>
-      <li>Replace or delete the character in the current frame.</li>
+      <li>Replace or delete the symbol in the current frame.</li>
       <li>Move the tape by some number of frames to the left or the right.</li>
     </ul>
 
@@ -198,11 +205,11 @@ A note, just above the table, explains:
 > row.
 
 Therefore, the first line of the extract means that if the machine is in state
-_1_ and the head reads the character _"A"_ then the next state is _785_, the
-character _"5"_ should be written to the current square, and the tape should
+_1_ and the head reads the symbol _"A"_ then the next state is _785_, the
+symbol _"5"_ should be written to the current square, and the tape should
 move _1 square to the left_. The final line of the extract means that if the
-machine is in state _1023_ and the head reads the character _"#"_ then the next
-state is _1020_, the _character should be deleted from the current square_ and
+machine is in state _1023_ and the head reads the symbol _"#"_ then the next
+state is _1020_, the _symbol should be deleted from the current square_ and
 the tape should move _23 squares to the right_.
 
 This is propositional logic..!
@@ -214,9 +221,9 @@ values). `IF` the state is _this_ `AND` the value read by the head is _that_
 `THEN` go to the specified _next state_, write _such-and-such_ to the tape and
 move the tape by _however many squares in a certain direction_.
 
-If you look carefully, hidden within the extract are also disjuntions (logical
+If you look carefully, hidden within the extract are also disjunctions (logical
 `OR`). The middle two lines (for state _516_) have the same state and outcome,
-but different characters read from the head. This is the same as checking `IF`
+but different symbols read from the head. This is the same as checking `IF`
 (the state is _516_ `AND` the head reading is _empty_) `OR` (the state is _516_
 AND the head reading is _"#"_) `THEN` the next state is _657_, write _"!"_ to
 the tape and the tape should move _86 squares to the right_.
@@ -225,7 +232,7 @@ But what is the purpose of this machine? What does it do?
 
 It follows the four rules, that start the instruction manual, to repeatedly
 perform the logical steps defined in the "What to do next" table. The steps in
-the table react to and change the state of the characters on the tape in order
+the table react to and change the state of the symbols on the tape in order
 to arrive at a desired end result. What that end result is depends upon what's
 on the tape when the machine is switched on and how the steps in the table
 interact with that starting state and subsequent states of affairs.
@@ -238,7 +245,7 @@ It is **a computer!**
 If you had the instructions, a copy of the table, a physical tape, a pencil and
 an eraser you might follow the rules from the start state (state _1_) until the
 end state (state _0_) was achieved. But the machine would do it much faster and
-wouldn't get tired or bored.
+wouldn't get tired, bored or make mistakes.
 
 ![A cardboard computer](/images/cardboard_computer.jpg)
 
@@ -255,7 +262,7 @@ This is how I described the game of Snap in the first article!
 It turns out that computing a result is not that different to playing a
 children's game. Computing a result is the same as following a set of
 instructions for changing states of affairs. Such unambiguous instructions
-are called algorithms.
+are called _algorithms_.
 
 Since the rules in the "what to do next" table are logical, they can be 
 represented by the sorts of electrical circuitry described in the previous
@@ -271,7 +278,13 @@ circuitry. The machine transitions from state 1 and what may be found on the
 tape at that moment, via a huge number of intervening states, to state 0 and a
 computed result written on the tape.
 
-![Alan Turing](/images/alan_turing.jpg)
+<figure>
+<img src="/images/alan_turing.jpg" alt="Alan Turing"/>
+<figcaption>
+  <a href="https://commons.wikimedia.org/wiki/File:Alan_Turing_az_1930-as_%C3%A9vekben.jpg" target="_blank">Source</a>
+  - this image is in the
+  <a href="https://en.wikipedia.org/wiki/Public_domain" target="_blank">public domain</a>.
+</figure>
 
 What I've described is a Turing machine. Such an imaginary device was invented
 by the British mathematician Alan Turing (the chap in the photograph). It turns
@@ -281,6 +294,14 @@ works in a way that is equivalent to a Turing machine is described as Turing
 complete because it, too, is able to compute outcomes from an algorithm. To be
 Turing complete is to be a programmable computer.
 
+<p>Turing
+<a href="https://londmathsoc.onlinelibrary.wiley.com/doi/pdf/10.1112/plms/s2-42.1.230" target="_blank">explained how computation works</a>
+by describing his machine. If you create something that can work like a Turing
+machine then you have also created a computer. You don't have to prove your
+computer is complete, because Turing already did that for you. This equivalence
+of capability is <em>why</em> we learn about Turing machines: they make it
+clear what it is to be a computer.</p>
+
 There are many variations on a Turing machine. The one I've described could be
 simplified in a couple of ways:
 
@@ -288,8 +309,8 @@ simplified in a couple of ways:
    single tape and a single head. The information used to make a computation
    is available in concurrent squares on several tapes, rather than as a
    sequence of individual values on one single tape.
-2. The alphabet of characters that could be written to or read from the tape
-   need only consist of two characters: one representing "on", and the other
+2. The alphabet of symbols that could be written to or read from the tape
+   need only consist of two symbols: one representing "on", and the other
    representing "off". Put simply, information is represented in a binary
    fashion as shown in the following illustration (white or "1" is on, black or
    "0" is off).
@@ -318,7 +339,8 @@ simplified in a couple of ways:
 </table>
 
 Each of these changes wouldn't make the machine any more powerful than the one
-I've described, but they may make the machine easier to build and program.
+I've described, but they may make the machine easier to build and program. The
+important property of the machine is its Turing completeness.
 
 The computer you're using to read this article obviously works in a completely
 different way to the seemingly ramshackle contraption I describe. While there
@@ -326,7 +348,7 @@ is no tape or head inside your computing device, there are transistors
 etched into silicon chips that react to and change the state of values stored
 in memory, billions of times a second. The chips connect to other parts of your
 device via input/output pins. The other parts of your device, connected via
-spacialist hardware, might include things like a screen, keyboard, mouse,
+specialist hardware, might include things like a screen, keyboard, mouse,
 speaker or microphone.
 
 Just as a Turing machine iterates over the same cycle of reading from the head,
@@ -336,13 +358,14 @@ instruction after another. In fact, the clock speed of your machine's CPU tells
 you how many instructions the chip will carry out each second (for instance, a
 3Ghz chip will manage 3 billion instructions a second).
 
-If you're interested in how an actual chip behaves,
-[this link takes you to a simulation of an ARM1 chip](http://www.visual6502.org/sim/varm/armgl.html)
--- a forerunner to those that run your mobile phone. Click on the "play" button
+<p>If you're interested in how an actual chip behaves,
+<a href=" http://www.visual6502.org/sim/varm/armgl.html" target="_blank">this
+link takes you to a simulation of an ARM1 chip</a> -- a forerunner to those
+that run your mobile phone. Click on the "play" button
 (<img src="/images/play.png" target="_blank" style="display: inline;vertical-align: middle;"/>)
 to watch the chip "operate". It's possible to zoom in and out, move around,
 speed up or slow down the clock and see how individual transistors are
-connected to and interact with each other.
+connected to and interact with each other.</p>
 
 If a computer is simply something that is Turing complete, why is it that we're
 able to use such devices to read and write words, hear music, draw pictures,
@@ -350,4 +373,4 @@ watch videos and all the other meaningful stuff for which we find computers so
 useful?
 
 The answer relates to how we perceve things, our talent for abstraction and our
-cultural context.
+cultural context. The next and final post will explore these concepts.

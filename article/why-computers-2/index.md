@@ -25,13 +25,13 @@ incorrectly (when movements of thought don't make logical sense).
 There are many types of logic, but the one we're going to examine is called
 propositional (or sentential, or boolean) logic.
 
-"Propositional" and "sentential" are just descriptive names for a type of logic
-that concerns forming sentences by combining propositions. In logic,
-*propositions make assertions that are either true or false*.
-[George Boole](https://en.wikipedia.org/wiki/George_Boole) (1815-1864) invented
-a system of mathematical algebra that works like propositional logic (it also
-deals with values that are either true or false) and so the term "boolean" is
-often used synonymously.
+<p>"Propositional" and "sentential" are just descriptive names for a type of
+logic that deals with forming sentences by combining propositions. In logic,
+<em>propositions make assertions that are either true or false</em>.
+<a href="https://en.wikipedia.org/wiki/George_Boole" target="_blank">George
+Boole</a> (1815-1864) invented a system of mathematical algebra that works like
+propositional logic (it also deals with values that are either true or false)
+and so the term "boolean" is often used synonymously.</p>
 
 Here's a contrived example of a sentence in propositional logic:
 
@@ -52,18 +52,18 @@ may not, at first, appear obvious:
   evaluated together, **collectively they are true only if all of them are
   true**.
 
-Propositional logic describes the rules of a game to construct sentences that
+Propositional logic describes the rules of a "game" to construct sentences that
 make logical sense. Playing by the rules of logic forces everyone to reach the
 same inevitable conclusion: if we accept that the premises are true (it is
 sunny and I am wearing a coat) propositional logic dictates the conclusion must
 be true (I am hot). The object of propositional logic is to use the rules to
-work out if a sentence is true or false.
+evaluate (work out) if a sentence is true or false.
 
 Here's the brain twist: propositional logic doesn't care about meaning. The
 important logical aspects of the example above don't concern my state in the
-real world (which is why the sentence sounds slightly odd).
-*Propositional logic only cares about truth and how propositions fit together*.
-I could revise the example to:
+real world (which is why the sentence sounds slightly odd). *Propositional
+logic only cares about truth and how propositions fit together*. I could
+revise the example to:
 
 > "If A and B then C."
 
@@ -88,9 +88,10 @@ logic doesn't care what the specific meanings of the propositions may be, only
 that such propositions connect in a sentence that can be evaluated with rules
 dealing in just two possible states: **true** and **false**.
 
-The simplest way to express the rules that govern logical operations for
-connecting propositions is with a
-[truth table](https://en.wikipedia.org/wiki/Truth_table).
+<p>The simplest way to express the rules that govern such logical operations
+for connecting propositions is with a
+<a href="https://en.wikipedia.org/wiki/Truth_table" target="_blank">truth
+table</a>.
 
 Here's the definition of "and" (conjunction):
 
@@ -149,24 +150,30 @@ only works on a single proposition:
 It's easy to see what the "not" (negation) operation does to a proposition: it
 flips its truth value so false becomes true, and true becomes false.
 
-While these logical operations have familiar names ("and", "or" and "not")
-that **appear to relate to how they work**, it is the truth table **and only
-the truth table** that defines how they behave in propositional logic, not any
-similarity to how we may use such words in everyday English. There are further
-rules, expressed as truth tables, for connecting propositions that you may
-wish to look into. They are [XOR](https://en.wikipedia.org/wiki/Exclusive_or)
-(eXclusive OR), [NAND](https://en.wikipedia.org/wiki/Sheffer_stroke) (Not AND),
-[NOR](https://en.wikipedia.org/wiki/Logical_NOR) (Not OR)
-and [XNOR](https://en.wikipedia.org/wiki/Logical_equality) (eXclusive Not OR).
+<p>While these logical operations have familiar names ("and", "or" and "not")
+that <strong>appear to relate to how they work</strong>, it is the truth table
+<strong>and only the truth table</strong> that defines how they behave in
+propositional logic, not any similarity to how we may use such words in
+everyday English. There are further rules, expressed as truth tables, for
+connecting propositions that you may wish to look into. They are
+<a href="https://en.wikipedia.org/wiki/Exclusive_or" target="_blank">XOR</a>
+(eXclusive OR),
+<a href="https://en.wikipedia.org/wiki/Sheffer_stroke" target="_blank">NAND</a>
+(Not AND),
+<a href="https://en.wikipedia.org/wiki/Logical_NOR" target="_blank">NOR</a>
+(Not OR) and
+<a href="https://en.wikipedia.org/wiki/Logical_equality" target="_blank">XNOR</a>
+(eXclusive Not OR).</p>
 
 Logical puzzles become fun when you combine such logical operations to build
 more complicated structures. Take for example:
 
 > (A and B) or (C or not D)
 
-I've put parenthesese around propositions so you can see how they relate to the
-logical operators. If we pretend all the propositions represented by letters
-are false, what is the overall truth value of the sentence?
+I've put parenthesese (`(` and `)`) around propositions so you can see how they
+relate to the logical operators (the `and`, `or` and `not`). If we pretend all
+the propositions represented by letters are false, what is the overall truth
+value of the sentence?
 
 To find the answer we play the logical "game" in the same way we would with
 Snap: we follow the rules.
@@ -212,6 +219,15 @@ propositional logic (the aim of playing this sort of logic game). Furthermore,
 by pretending propositions represent states of affairs in the real world, we
 can use logic to describe and, in a sense, encode aspects of the real world.
 For instance, we could describe the rules of Snap _with logic_.
+
+But *why* is logic useful?
+
+Because logic clearly and unambiguously describes the relationships between
+current states of affairs and a new next state. Consider, for example, this
+conditional statement: if the card on top of stack A is the same as the card on
+top of stack B, then shout "SNAP!". Logic encodes the movement of thought
+needed to participate in the card game (or any other useful structured
+activity).
 
 Here's a final "brain twist" for you:
 

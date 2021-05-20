@@ -92,3 +92,7 @@ hResume Styles
     margin-right: auto !important;
     display: block;
 }
+
+figcaption {
+    font-size: 0.8em;
+}

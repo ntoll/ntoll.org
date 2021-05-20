@@ -47,7 +47,10 @@ thought provoking visual brain twist. It shows a pipe, under which is written
 in French, "this is not a pipe". Magritte is correct, it is _not_ a pipe, but
 actually a painting:
 
-![This is not a painting](/images/treachery_of_images.jpg)
+<figure>
+<img src="/images/treachery_of_images.jpg" alt="This is not a painting"/>
+<figcaption><a href="https://www.lacma.org/art/exhibition/magritte-and-contemporary-art-treachery-images" target="_blank">Source</a> - educational fair use.
+</figure>
 
 In a similar vein, you're not currently looking at a painting ~ rather, you're
 looking at a multitude of pixels, each one acting like a small tile in a huge
@@ -62,17 +65,20 @@ your screen actually consists of repeating cells, each in turn split
 into red, green and blue (RGB) sections. If you used a magnifying glass
 to look at your screen, you'd see something similar to this:
 
-![This is definitely not a painting](/images/treachery_of_pixels.jpg)
+<figure>
+<img src="/images/treachery_of_pixels.jpg" alt="This is definitely not a painting"/>
+<figcaption><a href="https://en.wikipedia.org/wiki/File:LCD_pixels_on_Acer_Extensa_5620Z_20090124.jpg" target="_blank">Source</a> - Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank">CC BY-SA 3.0</a>.
+</figure>
 
 The upper half of the image contains blocks of the RGB cells arranged to
 display the basic colours: red, green and blue. The lower half contains RGB
 cells arranged into two blocks for white and black. By adjusting the amount
-of constituent red, green and blue emitted in each individual RGB cell many
+of constituent red, green and blue emitted in each individual RGB cell, many
 millions of colours can be generated. If you step back from your screen,
 squint your eyes and look at the blocks of colour you'll see this effect in
 action.
 
-For completeness, here's an individual RGB cell:
+For completeness, here's close-up of an individual RGB cell:
 
 ![An RGB square pixel](/images/rgb_pixel.jpg)
 
@@ -93,7 +99,10 @@ Our perception of time depends on a sense of scale or, perhaps more
 accurately, tempo. Each of the following eight images shows a different
 snapshot of a stick man.
 
-![Individual frames for a running man animation](/images/running_frames.png)
+<figure>
+<img src="/images/running_frames.png" alt="Individual frames for a running stick figure animation"/>
+<figcaption><a href="https://steemit.com/art/@magiccleatus/magiccleatus-animates-2d-running-stickman-an-animated-template" target="_blank">Source</a> - educational fair use.
+</figure>
 
 Yet if we repeatedly and speedily place them on top of each other, we no longer
 see eight individual images, but a single image **in motion**. In fact, because
@@ -161,9 +170,9 @@ a larger concept.
 
 Such diverse dexterous details, through careful practice and familiarity,
 become a single named activity. In a sense, we have zoomed out in the scale of
-our thinking. This is useful because such generalisations are used as
-placeholders in further thoughts... the building blocks of our thinking are at
-a different scale.
+our thinking. Such generalisations are useful as placeholders in further
+thoughts... the building blocks of our generalised thinking are at a
+_different scale_.
 
 For instance, I could say "I'm just going to cycle to the shops, do you want me
 to get anything for you?". The concept of _cycling to the shops_ is a place
@@ -175,7 +184,7 @@ This is, in a computing sense, what we mean by "abstraction".
 In this sense of "abstraction", functional units that fulfil a certain role are
 organised into larger, or are composed of yet smaller, functional units. Such
 units are used together to achieve some valuable end when their relative scale
-allows such complementary usage.
+allows complementary usage.
 
 Because computers process billions of instructions a second, this hierarchy of
 abstraction is hidden in the blink of an eye with the end result being
@@ -187,16 +196,17 @@ Often the skill of the programmer or engineer is to work out the arrangement
 and coordination of such abstractions to achieve something meaningful at the
 human scale.
 
-A wonderful visual example of such an arrangement and coordination of
-abstraction is Conway's
-[Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
+<p>A wonderful visual example of such an arrangement and coordination of
+abstraction is
+<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life"
+   target="_blank">Conway's Game of Life</a>.</p>
 
 The Game of Life is an automata: rules that define a process for how certain
-states of affairs transition to a new state (does this sound familiar?). In the
-case of the Game of Life, the states of affairs describe a huge grid. Each
-square cell in the grid can be alive (white) or dead (black). Another way to
-imagine the Game of Life is as many parallel tapes lined up on a huge Turing
-machine with some squares white (on) and others black (off).
+states of affairs transition to a new state (sound familiar?). In the case of
+the Game of Life, the states of affairs describe a huge grid. Each square cell
+in the grid can be alive (white) or dead (black). Another way to imagine the
+Game of Life is as many parallel tapes lined up on a huge Turing machine with
+some squares white (on) and others black (off).
 
 There are only three rules to work out the next state of affairs, and they are
 disarmingly simple:
@@ -395,11 +405,13 @@ upside down:
 A further outcome of such mirroring is that this final state *must* transition
 back to the first state of affairs but moved left by one cell.
 
-Such an arrangement and coordination of cells, combined with the rules of
+<p>Such an arrangement and coordination of cells, combined with the rules of
 the Game of Life, create a looping pattern of four steps that always moves in a
 single direction until it bumps into another pattern of cells. It appears to
 humans as if something is flying across the grid of squares (which is why this
-pattern is called [a spaceship](https://www.conwaylife.com/wiki/Spaceship)).
+pattern is called
+<a href="https://www.conwaylife.com/wiki/Spaceship" target="_blank">a
+spaceship</a>.
 
 Skillful combination and arrangement of such small groups of cells in the Game
 of Life show how abstraction, scale and perspective interact. In the following
@@ -413,46 +425,47 @@ structures within structures, and something rather amazing.
 A similar stack of abstraction is required for you to read this blog post
 on _your computer_.
 
-My website is created using an easy-to-read-and-write programming language
-called [Python](https://python.org/). Python is, itself, written in another
-programming language called
-[C](https://en.wikipedia.org/wiki/C_(programming_language)). C is less easy to
-read but still comprehensible to a trained software engineer. Yet C has to be
-[compiled](https://en.wikipedia.org/wiki/Compiler) for it to work. When C code
-is compiled, the relatively understandable C code is translated into
-instructions written in
-[assembly langauge](https://en.wikipedia.org/wiki/Assembly_language),
+<p>My website is created using an easy-to-read-and-write programming language
+called <a href="https://python.org" target="_blank">Python</a>. Python is,
+itself, written in another programming language called
+<a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">C</a>.
+C is less easy to read but still comprehensible to a trained software engineer.
+Yet C has to be
+<a href="https://en.wikipedia.org/wiki/Compiler" target="_blank">compiled</a>
+for it to work. When C code is compiled, the relatively understandable C code
+is translated into instructions written in
+<a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank">assembly language</a>,
 that works in a way that is closer to how the circuitry of the computer works.
 But we're not finished yet..! The assembly language is itself translated into
-[machine code](https://en.wikipedia.org/wiki/Machine_code), a representation of
-assembly language instructions as binary numbers. This is the lowest level
-software engineers tend to go when it comes to zooming-in to the computer. But
-the numeric machine code instructions physically stored on the computer
-hardware are usually further refined into
-[microcode](https://en.wikipedia.org/wiki/Microcode) - a series of
-circuit-level instructions that describe how the hardware should behave to
-complete the computation. Of course, someone will have organised and designed
-the millions of transistors and other microscopic components that make up
-the hardware. This is the level of computing at which electrical engineers,
-chip designers and, ultimately, physicists can be found.
+<a href="https://en.wikipedia.org/wiki/Machine_code" target="_blank">machine code</a>,
+a representation of assembly language instructions as binary numbers. This is
+the lowest level software engineers tend to go when it comes to zooming-in to
+the computer. But the numeric machine code instructions physically stored on
+the computer hardware are usually further refined into
+<a href="https://en.wikipedia.org/wiki/Microcode" target="_blank">microcode</a>
+- a series of circuit-level instructions that describe how the hardware should
+behave to complete the computation. Of course, someone will have organised and
+designed the millions of transistors and other microscopic components that make
+up the hardware. This is the level of computing at which electrical engineers,
+chip designers and, ultimately, physicists can be found.</p>
 
-Along the way, I didn't have to write everything from scratch. Coders use
-[software libraries](https://pypi.org/) in the same way a chef may re-use
-pre-existing recipes. Someone else will have figured out how to do some
-valuable task and organised the steps needed to fulfil it into, say, a module
-of re-usable Python code. Just like the bundle of thinking needed to ride a
-bike becomes subsumed into the concept of cycling, I don't have to know the
-implementation details, but can refer to the relevant re-usable code when it is
-needed in my own program. Such re-use of existing instructions happens in all
-the levels of the computing stack I describe above.
+<p>Along the way, I didn't have to write everything from scratch. Coders use
+<a href="https://pypi.org/" target="_blank">software libraries</a> in the same
+way a chef may re-use pre-existing recipes. Someone else will have figured out
+how to do some valuable task and organised the steps needed to fulfil it into,
+say, a module of re-usable Python code. Just like the bundle of thinking needed
+to ride a bike becomes subsumed into the concept of cycling, I don't have to
+know the implementation details, but can refer to the relevant re-usable code
+when it is needed in my own program. Such re-use of existing instructions
+happens in all the levels of the computing stack I describe above.</p>
 
 All these levels of abstraction are required to get to this fragment of Python:
 
 ![Hello World in Python](/images/hello_world.gif)
 
-As I come to the end of this exploration of why computers work, I can't help
-but feel like there's something missing or yet undiscovered about our
-relationship with (or to) computers.
+As I come to the end of this exploration of computing, I can't help but feel
+there's something missing or yet undiscovered about our relationship with (or
+to) computers.
 
 To use a musical metaphor, this series of blog posts is like explaining why a
 piano works (the tuning, acoustic properties, action of the keyboard and
@@ -477,7 +490,7 @@ Wittgenstein best sums up my feeling:
 > ~ Ludwig Wittgenstein, [Culture and Value](https://en.wikipedia.org/wiki/Culture_and_Value) (MS 124:93)
 
 We should, rightly, be amazed by the technical marvel of computers; but it is
-all too easy to be overwhelmed by and focus on the apparent cleverness (or
+all too easy to be overwhelmed by, and focus on, the apparent cleverness (or
 [Rube Goldberg](https://en.wikipedia.org/wiki/Rube_Goldberg_machine)-iness) of
 it all. Sadly, in so doing we miss the opportunity for an enlarged, more
 creative and expressive encounter with computing.
@@ -505,13 +518,19 @@ prejudices). Computer games are mostly beautiful looking yet formulaic
 variations on a theme, target driven and hardly allow a player to express
 themselves.
 
-I hope we look beyond the "why" of computers.
+So, I want to end by _asking something of you_:
 
-I hope we re-appraise incumbent small minded computing perspectives.
-
-I hope we become more [affirmative](https://democracyclub.org.uk/),
+Look beyond the _why_ of computers. Question and challenge the incumbent
+small-minded use of computing. Most of all, be
+[affirmative](https://democracyclub.org.uk/),
 [liberated](https://freedom.press/)
-and [artistic](http://inbflat.net/) through the things we create, express and
-emphasize with computers and with each other.
+and [expressive](http://inbflat.net/) in the things you create, imagine
+and emphasize with computers.
 
-After all, we are [only just getting started](/article/thought-in-motion/).
+In other words: **make great art**.
+
+[Together](/article/on-being-together/), let's uncover, explore and develop the
+oft-missing "music" of computing. After all, we are
+[only just getting started](/article/thought-in-motion/).
+
+Peace.
