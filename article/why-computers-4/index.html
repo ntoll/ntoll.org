@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Automated Rule Following Machines | ntoll.org</title>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst_base.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ntoll.org/article/why-computers-4/">
+<link rel="apple-touch-icon" href="../../apple-icon-57x57.png" sizes="57x57">
+<link rel="apple-touch-icon" href="../../apple-icon-60x60.png" sizes="60x60">
+<link rel="apple-touch-icon" href="../../apple-icon-72x72.png" sizes="72x72">
+<link rel="apple-touch-icon" href="../../apple-icon-76x76.png" sizes="76x76">
+<link rel="apple-touch-icon" href="../../apple-icon-114x114.png" sizes="114x114">
+<link rel="apple-touch-icon" href="../../apple-icon-120x120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="../../apple-icon-144x144.png" sizes="144x144">
+<link rel="apple-touch-icon" href="../../apple-icon-152x152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="../../apple-icon-180x180.png" sizes="180x180">
+<link rel="icon" href="../../android-icon-192x192.png" sizes="192x192">
+<link rel="icon" href="../../favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="../../favicon-96x96.png" sizes="96x96">
+<link rel="icon" href="../../favicon-16x16.png" sizes="16x16">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+<meta name="author" content="Nicholas H.Tollervey">
+<meta property="og:site_name" content="ntoll.org">
+<meta property="og:title" content="Automated Rule Following Machines">
+<meta property="og:url" content="https://ntoll.org/article/why-computers-4/">
+<meta property="og:description" content=".tape td {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #fafafa;
+    background: #4F5151;
+}
+
+.on {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-04-27T09:00:00+01:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@ntoll">
+<meta name="twitter:creator" content="@ntoll">
+</head>
+<body>
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="container">
+        
+    <header id="header"><h1 id="brand"><a href="https://ntoll.org/" title="ntoll.org" rel="home">
+
+        <span id="blog-title">ntoll.org</span>
+    </a></h1>
+    <p id="blog-description">Everything I say is false...</p>
+
+        
+
+        
+    <nav id="menu"><ul>
+<li><a href="../../">Home</a></li>
+                <li><a href="../../about">About</a></li>
+                <li><a href="../../archive.html">Archive</a></li>
+                <li><a href="../../presentations">Presentations</a></li>
+                <li><a href="../../cv">CV</a></li>
+                <li><a href="../../contact">Contact</a></li>
+
+    
+
+    
+    
+    </ul></nav></header><main id="content"><article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Automated Rule Following Machines</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2021-04-27T09:00:00+01:00" itemprop="datePublished" title="Tue, Apr 27, 2021 9:00 AM">Tue, Apr 27, 2021 9:00 AM</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<style>
+.tape td {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #fafafa;
+    background: #4F5151;
+}
+
+.on {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #4F5151 !important;
+    background: #fafafa !important;
+}
+
+table td, table th {
+    text-align: center;
+}
+</style>
+<h3>Why Computers Work (part 4)</h3>
+<p>What follows isn't so much a brain twist, as an extended make-pretend that
+points the way to what a computer is.</p>
+<p>Imagine a strange looking contraption sitting before you on a table.</p>
+<p>It consists of an exceptionally long reel-to-reel tape that passes through an
+electro-mechanical device of some sort. The tape is subdivided into square
+"frames". Some of the squares contain symbols, others are empty. As it
+operates, the tape moves through the device both to the left or to the right,
+like a badly behaved cinema projector.</p>
+<figure><img src="../../images/turing_machine.jpg" alt="A Turing Machine"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Turing_Machine_Model_Davey_2012.jpg" target="_blank">Source</a>
+  - Licensed under
+  <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank">CC BY 3.0</a>
+</figcaption></figure><p>The "head" (where the tape passes through the device) covers exactly one
+square's worth of the tape. There's a flash of light from the head when a new
+square is completely contained therein. Sometimes this is followed by a
+clicking sound. When the click is heard the symbol in the square is changed:
+it's either different or completely rubbed out. Then the tape moves to the left
+or right to a new square before continuing its strange flashing and clicking
+operation.</p>
+<p>On the front of the machine is a little window. The window is labelled
+"<code>STATE</code>" and contains a number that changes when each square is "processed" by
+the head.</p>
+<p>After a while the machine comes to a stop. The state window contains the number
+0 (zero). By the head, on the tape, are a sequence of squares containing some
+familiar looking symbols:</p>
+<table class="tape"><tr>
+<td class="on">
+            <code>H</code>
+        </td>
+        <td class="on">
+            <code>E</code>
+        </td>
+        <td class="on">
+            <code>L</code>
+        </td>
+        <td class="on">
+            <code>L</code>
+        </td>
+        <td class="on">
+            <code>O</code>
+        </td>
+        <td class="on">
+            <code> </code>
+        </td>
+        <td class="on">
+            <code>W</code>
+        </td>
+        <td class="on">
+            <code>O</code>
+        </td>
+        <td class="on">
+            <code>R</code>
+        </td>
+        <td class="on">
+            <code>L</code>
+        </td>
+        <td class="on">
+            <code>D</code>
+        </td>
+    </tr></table>
+<p>Two other objects are on the table. On one side of the contraption is a black
+and white photograph of a thoughtful looking man with an old fashioned side
+parting and <em>enigmatic</em> smile, sitting in a sturdy deck chair. On the other is
+a thick ring-bound pile of paper whose title you can just make out:
+"Instructions".</p>
+<p>The instructions listed on the front page consist of just four rules:</p>
+<ol>
+<li>Set the machine to state "1".</li>
+  <li>Read the symbol in the current frame on the tape.</li>
+  <li>Given the current state of the machine and the symbol read from the
+  current frame, look up what to do next. "What to do next" is defined by three
+  transitions:
+
+    <ul>
+<li>Change to a new numbered state.</li>
+      <li>Replace or delete the symbol in the current frame.</li>
+      <li>Move the tape by some number of frames to the left or the right.</li>
+    </ul>
+</li>
+  <li>If the new state is "0" then stop, otherwise resume from rule 2.</li>
+</ol>
+<p>On the many pages that follow is a single huge table entitled "What to do
+next". It contains thousands of entries under the same five columns, and all
+look something like these extracts:</p>
+<table>
+<tr>
+<th>CURRENT STATE</th>
+        <th>HEAD READ</th>
+        <th>➔</th>
+        <th>NEXT STATE</th>
+        <th>HEAD WRITE</th>
+        <th>MOVE TAPE</th>
+    </tr>
+<tr>
+<td>1</td>
+        <td>"A"</td>
+        <td></td>
+        <td>785</td>
+        <td>"5"</td>
+        <td>1L</td>
+    </tr>
+<tr>
+<td> </td>
+        <td></td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td>516</td>
+        <td>" "</td>
+        <td></td>
+        <td>657</td>
+        <td>"!"</td>
+        <td>86R</td>
+    </tr>
+<tr>
+<td>516</td>
+        <td>"#"</td>
+        <td></td>
+        <td>657</td>
+        <td>"!"</td>
+        <td>86R</td>
+    </tr>
+<tr>
+<td> </td>
+        <td></td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td>1023</td>
+        <td>"#"</td>
+        <td></td>
+        <td>1020</td>
+        <td>" "</td>
+        <td>23R</td>
+    </tr>
+</table>
+<p>A note, just above the table, explains:</p>
+<blockquote>
+<p>Each combination of the "CURRENT STATE" and "HEAD READ" values is unique.
+There is one row for each possible combination. Identify the row that
+corresponds to the current state of affairs. The new state of affairs is
+defined by the "NEXT STATE", "HEAD WRITE" and "MOVE TAPE" values on the same
+row.</p>
+</blockquote>
+<p>Therefore, the first line of the extract means that if the machine is in state
+<em>1</em> and the head reads the symbol <em>"A"</em> then the next state is <em>785</em>, the
+symbol <em>"5"</em> should be written to the current square, and the tape should
+move <em>1 square to the left</em>. The final line of the extract means that if the
+machine is in state <em>1023</em> and the head reads the symbol <em>"#"</em> then the next
+state is <em>1020</em>, the <em>symbol should be deleted from the current square</em> and
+the tape should move <em>23 squares to the right</em>.</p>
+<p>This is propositional logic..!</p>
+<p>It's a table of conditionals whose two premises (the "CURRENT STATE" and
+"HEAD READ" values) are conjuncted (logical <code>AND</code>) to identify what the
+resulting behaviour should be (the "NEXT STATE", "HEAD WRITE", and "MOVE TAPE"
+values). <code>IF</code> the state is <em>this</em> <code>AND</code> the value read by the head is <em>that</em>
+<code>THEN</code> go to the specified <em>next state</em>, write <em>such-and-such</em> to the tape and
+move the tape by <em>however many squares in a certain direction</em>.</p>
+<p>If you look carefully, hidden within the extract are also disjunctions (logical
+<code>OR</code>). The middle two lines (for state <em>516</em>) have the same state and outcome,
+but different symbols read from the head. This is the same as checking <code>IF</code>
+(the state is <em>516</em> <code>AND</code> the head reading is <em>empty</em>) <code>OR</code> (the state is <em>516</em>
+AND the head reading is <em>"#"</em>) <code>THEN</code> the next state is <em>657</em>, write <em>"!"</em> to
+the tape and the tape should move <em>86 squares to the right</em>.</p>
+<p>But what is the purpose of this machine? What does it do?</p>
+<p>It follows the four rules, that start the instruction manual, to repeatedly
+perform the logical steps defined in the "What to do next" table. The steps in
+the table react to and change the state of the symbols on the tape in order
+to arrive at a desired end result. What that end result is depends upon what's
+on the tape when the machine is switched on and how the steps in the table
+interact with that starting state and subsequent states of affairs.</p>
+<p>In other words, given a certain "what to do next" table, a starting state and
+some input on the tape, it computes a result.</p>
+<p>It is <strong>a computer!</strong></p>
+<p>If you had the instructions, a copy of the table, a physical tape, a pencil and
+an eraser you might follow the rules from the start state (state <em>1</em>) until the
+end state (state <em>0</em>) was achieved. But the machine would do it much faster and
+wouldn't get tired, bored or make mistakes.</p>
+<p><img alt="A cardboard computer" src="../../images/cardboard_computer.jpg"></p>
+<p>This process might feel familiar: deliberately precise rules describe how,
+given certain states of affairs, such and such things must happen. States of
+affairs unambiguously describe how things are in the world. For example, "the
+machine is in state 284 and the current square on the tape contains an <code>H</code>".
+When I say that such and such must happen, I mean clear and unambiguous
+instructions describe how the machine proceeds given a certain state of
+affairs.</p>
+<p>This is how I described the game of Snap <a href="../why-computers-1#rules_of_snap">in the first article</a>!</p>
+<p>It turns out that computing a result is not that different to playing a
+children's game. Computing a result is the same as following a set of
+instructions for changing states of affairs. Such unambiguous instructions
+are called <em>algorithms</em>.</p>
+<p>Since the rules in the "what to do next" table are logical, they can be 
+represented by the sorts of electrical circuitry described
+<a href="../why-computers-3">in the previous post</a>. Such circuitry receives input
+signals from the components in the head, and controls other components such as
+the motors that control the tape.</p>
+<p>For this machine to do anything meaningful, someone will have carefully
+crafted the "what to do next" rules so the symbols on the tape when the machine
+is switched on in state 1, are transformed into a completely-new-yet-useful
+set of symbols when the machine achieves state 0. The algorithm is defined by
+the "what to do next" rules written in the table and encoded in the
+circuitry. The machine transitions from state 1 and what may be found on the
+tape at that moment, via a huge number of intervening states, to state 0 and a
+computed result written on the tape.</p>
+<figure><img src="../../images/alan_turing.jpg" alt="Alan Turing"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Alan_Turing_az_1930-as_%C3%A9vekben.jpg" target="_blank">Source</a>
+  - this image is in the
+  <a href="https://en.wikipedia.org/wiki/Public_domain" target="_blank">public domain</a>.
+</figcaption></figure><p>What I've described is a Turing machine. Such an imaginary device was invented
+by the British mathematician Alan Turing (the chap in the photograph). It turns
+out that anything that can be computed by a set of instructions that manipulate
+symbols (the algorithm), can be computed by a Turing machine. Anything that
+works in a way that is equivalent to a Turing machine is described as Turing
+complete because it, too, is able to compute outcomes from an algorithm. To be
+Turing complete is to be a programmable computer.</p>
+<p>Turing
+<a href="https://londmathsoc.onlinelibrary.wiley.com/doi/pdf/10.1112/plms/s2-42.1.230" target="_blank">explained how computation works</a>
+by describing his machine. If you create something that can work like a Turing
+machine then you have also created a computer. You don't have to prove your
+computer is complete, because Turing already did that for you. This equivalence
+of capability is <em>why</em> we learn about Turing machines: they make it
+clear what it is to be a computer.</p>
+
+<p>There are many variations on a Turing machine. The one I've described could be
+simplified in a couple of ways:</p>
+<ol>
+<li>The machine could use multiple tapes with multiple heads rather than a
+   single tape and a single head. The information used to make a computation
+   is available in concurrent squares on several tapes, rather than as a
+   sequence of individual values on one single tape.</li>
+<li>The alphabet of symbols that could be written to or read from the tape
+   need only consist of two symbols: one representing "on", and the other
+   representing "off". Put simply, information is represented in a binary
+   fashion as shown in the following illustration (white or "1" is on, black or
+   "0" is off).</li>
+</ol>
+<table class="tape"><tr>
+<td class="on">
+            <code>1</code>
+        </td>
+        <td>
+            <code>0</code>
+        </td>
+        <td class="on">
+            <code>1</code>
+        </td>
+        <td class="on">
+            <code>1</code>
+        </td>
+        <td>
+            <code>0</code>
+        </td>
+        <td>
+            <code>0</code>
+        </td>
+    </tr></table>
+<p>Each of these changes wouldn't make the machine any more powerful than the one
+I've described, but they may make the machine easier to build and program. The
+important property of the machine is its Turing completeness.</p>
+<p>The computer you're using to read this article obviously works in a completely
+different way to the seemingly ramshackle contraption I describe. While there
+is no tape or head inside your computing device, there are transistors
+etched into silicon chips that react to and change the state of values stored
+in memory, billions of times a second. The chips connect to other parts of your
+device via input/output pins. The other parts of your device, connected via
+specialist hardware, might include things like a screen, keyboard, mouse,
+speaker or microphone.</p>
+<p>Just as a Turing machine iterates over the same cycle of reading from the head,
+writing to the tape and transitioning to a new state, a microprocessor chip,
+synchronised by a clock, carries out a similar iterative cycle of work one
+instruction after another. In fact, the clock speed of your machine's CPU tells
+you how many instructions the chip will carry out each second (for instance, a
+3Ghz chip will manage 3 billion instructions a second).</p>
+<p>If you're interested in how an actual chip behaves,
+<a href="http://www.visual6502.org/sim/varm/armgl.html" target="_blank">this
+link takes you to a simulation of an ARM1 chip</a> -- a forerunner to those
+that run your mobile phone. Click on the "play" button
+(<img src="../../images/play.png" target="_blank" style="display: inline;vertical-align: middle;">)
+to watch the chip "operate". It's possible to zoom in and out, move around,
+speed up or slow down the clock and see how individual transistors are
+connected to and interact with each other.</p>
+
+<p>If a computer is simply something that is Turing complete, why is it that we're
+able to use such devices to read and write words, hear music, draw pictures,
+watch videos and all the other meaningful stuff for which we find computers so
+useful?</p>
+<p>The answer relates to how we perceive things, our talent for abstraction and our
+cultural context. The next and final post will explore these concepts.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav></nav></aside></article></main><footer id="footer"><p></p>
+<p>Contents © 2021         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 
+<p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></p>
+            
+        </footer>
+</div>
+    
+            <script src="../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
