@@ -28,10 +28,10 @@
 <link rel="icon" href="favicon-32x32.png" sizes="32x32">
 <link rel="icon" href="favicon-96x96.png" sizes="96x96">
 <link rel="icon" href="favicon-16x16.png" sizes="16x16">
-<link rel="next" href="index-21.html" type="text/html">
+<link rel="next" href="index-22.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-<link rel="prefetch" href="article/social-media-hermit/" type="text/html">
+<link rel="prefetch" href="article/why-computers-1/" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -59,7 +59,186 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/social-media-hermit/" class="u-url">A Social Media Hermit</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-1/" class="u-url">Why Computers Work: An Introduction to Following Rules</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/why-computers-1/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-05-24T08:50:00+01:00" itemprop="datePublished" title="Mon, May 24, 2021 8:50 AM">Mon, May 24, 2021 8:50 AM</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<style>
+.section_break {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 50%;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+.section_break:after {
+    background: #fff;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+</style>
+<h3>Why Computers Work (part 1)</h3>
+<p>This is the first of five short blog posts exploring <em>why computers work</em>.</p>
+<p>I'm going to present a friendly introductory overview for laypeople, from zero
+to Turing machines, automata, abstraction and more. My aim is conciseness and
+clarity, so I've necessarily missed out, glossed over and simplified things.
+There are plenty of more advanced resources online should you wish to
+investigate this subject further.</p>
+<p>Most importantly, I hope to stimulate your thinking about computers by creating
+a place to explore ideas.</p>
+<p>I hope you enjoy these articles and, as always, I love getting constructive
+feedback <a href="contact">via email</a>. Unless otherwise stated, all images and
+diagrams were created by the author.</p>
+<hr class="section_break">
+<blockquote>
+<p>αἰὼν παῖς ἐστι παίζων, πεσσεύων· παιδὸς ἡ βασιληίη.</p>
+<p>(The universe is a child's game. A child's kingdom.)</p>
+<p>~ <a href="https://plato.stanford.edu/entries/heraclitus/">Heraclitus</a> (Fragment B52)</p>
+</blockquote>
+<h3>Introduction</h3>
+<p>Computers are ubiquitous.</p>
+<p>They touch all aspects of our lives, from mediating our social interactions to
+modelling aspects of our culture and managing the everyday infrastructure of
+society.</p>
+<p>Therefore, computers are interesting and, understandably, folks want to
+know <strong>how</strong> the machines that automate and control so much of our world work.
+<a href="https://www.youtube.com/watch?v=tpIctyqH29Q" target="_blank">This is
+a typical response</a>.</p>
+
+<p>I'm going to take a different approach.</p>
+<p>I'm going to explore <strong>why</strong> computers work.</p>
+<p>What's the difference?</p>
+<p>Answers to "how?" questions tell us what method or steps make something happen.
+In contrast, the answers to "why?" questions describe what makes something
+possible ~ an opportunity to encounter a more fundamental perspective.</p>
+<p>It's the difference between a car mechanic who may understand <em>how</em> an engine
+works (so they can fix broken engines), and a mechanical engineer who
+understands the physics and chemistry relating to <em>why</em> engines work (so they
+can improve the design of engines). Knowing how something works means your
+frame of reference is <em>within the system</em>, whereas if you understand why
+something works you're not bound by existing products, solutions or cultural
+practices.</p>
+<p>Most importantly, cultivating an understanding of why something is possible is
+an invitation for playful creativity, fearless exploration and careful
+refinement of alternatives to the current crop of answers to "how?". It is an
+opportunity to enlarge and change our world ~ a form of intellectual
+empowerment and growth.</p>
+<p>Knowing <em>how</em> is good, but understanding <em>why</em> is better.</p>
+<p>With the scene suitably set, to start our journey, we'll learn all about...</p>
+<h3>Following Rules</h3>
+<p>Do you know how to play children's card game, Snap?</p>
+<p>(Bear with me, I promise it'll be worth it.)</p>
+<p>Using a standard deck of cards, the aim is to win all the cards by <em>taking
+turns to play</em>.</p>
+<p>Let's follow along as siblings Penelope (11), Sam (8) and Will (5) play a game:</p>
+<p>Penelope (for no other reason than she's the oldest) acts as dealer. She
+shuffles the deck of cards so they're in a random order and deals them, face
+down and in equal quantity, to each player until there are none left to deal.
+This is the starting state from which all games of Snap begin.</p>
+<p>Sam, the player to the left of the dealer, takes the first turn.</p>
+<p>Players take a turn by moving the top card from their face-down stack onto the
+top of an adjacent stack of face-up cards, so the newly moved card is also
+facing up. Since this is Sam's first turn, the face-up stack doesn't exist,
+so a new stack is created with Sam's first face-up card taken from his pile of
+face-down cards.</p>
+<p>So ends Sam's turn.</p>
+<figure><img src="images/snap.jpg" alt="A game of Snap!"><figcaption><a href="https://www.wikihow.com/Play-Snap" target="_blank">Source</a> - From
+  <a href="https://www.wikihow.com" target="_blank">WikiHow</a> and licensed
+  under
+  <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en" target="_blank">CC BY-NC-SA 3.0</a>
+</figcaption></figure><p>The next player to the left, William, takes his turn in a similar fashion and
+so the game continues from one player to the next.</p>
+<p>After a while Sam shouts "SNAP". He's noticed that two face-up cards on top of
+different stacks have the same value (for example, two aces are visible on top
+of Penelope and Will's stacks). Since he was first to shout "SNAP" he wins all
+the cards in the matching stacks of cards. He gleefully scoops up all the cards
+in the face-up stacks belonging to Penelope and Will.</p>
+<p>Play continues to the left of the player who turned up the matching card.</p>
+<p>A few moments later Penelope shouts "SNAP". But there is a problem: there are
+no matching face-up cards! William points this out to Penelope and reminds her
+she has to pay a forfeit by giving one card to each of the other players from
+her face-down stack. Sam and Will get a card each and Penelope is two cards
+down.</p>
+<p>At this point in the game Sam has the most cards. Will and Penelope have less
+with only a few cards difference between the quantities in their face-down
+stacks.</p>
+<p>Things are hotting up and the three children become more excited: when two
+matching face-up cards appear again all three of them shout "SNAP" at the same
+time. Since nobody can claim to have shouted "SNAP" first, and to avoid
+arguments, both the matching stacks are placed in the middle and added to the
+"Snap pool". When "SNAP" is next called unambiguously and correctly, the winner
+will get both the matching stacks and any cards in the "Snap pool". The stakes
+have suddenly got higher.</p>
+<p>Things quieten down for a few rounds until Penelope runs out of face-down cards
+to put onto her face-up stack. At this point she simply flips over her face-up
+stack and it becomes her face-down stack. Play continues as before.</p>
+<p>Eventually, after a few more calls of "SNAP", Penelope finds that she's run out
+of cards and so out of the game.</p>
+<p>Sam and Will play together until, through luck and fast reactions, Sam finds
+himself with all the cards and he's declared the winner of the game.</p>
+<p>That's how you play Snap..!</p>
+<p id="rules_of_snap">The rules illustrated in this deliberately precise story describe
+<em>how</em>, given certain states of affairs, such-and-such things must
+happen. States of affairs unambiguously describe how things are in the world.
+For example, "there are two stacks of face-up cards whose top cards are of
+matching value". When I describe how such-and-such must happen, I mean clear
+and unambiguous instructions describe <em>how</em> play proceeds given a
+certain state of affairs.</p>
+
+<p>Put simply, this is <em>how</em> the game of Snap is played.</p>
+<p>But <em>why</em> is Snap played?</p>
+<p>Because, in addition to knowing the rules, we understand that playing the game
+of Snap means modifying one's behaviour to follow these rules. If everyone
+modifies their behaviour in accordance with the rules then folks can play
+together. Obviously, we don't explain card games in such a formal manner to
+very young children. But, as my description shows, children discover it's lots
+of fun to informally learn and skilfully follow rules that bring about
+exciting situations in games.</p>
+<p>Knowing how to play Snap is analogous to knowing how computers work. Looking
+beyond the rules of Snap to appreciate that human behaviour and enjoyment
+motivates people to follow the rules of the game, shows us <em>why</em> Snap is
+played. This insight may also inspire us to invent new games. Perhaps we become
+inspired to explore further aspects of
+<a href="https://en.wikipedia.org/wiki/Milgram_experiment" target="_blank">human behaviour relating to following rules</a>,
+or we may even
+<a href="https://theoryoffun.com/" target="_blank">reflect upon the nature of play or games</a>.
+In any case, exploring <em>why</em> rather than <em>how</em> provides a
+fascinating perspective from outside the system (of Snap, in this case).</p>
+
+<p>We need to achieve an analogous enlargement of perspective beyond <em>how</em>
+computers work in order to understand <em>why</em> computers work. Only by acquiring a
+perspective outside current norms can we possibly hope to invent or improve
+technology and explore the nature and use of such devices. The alternative is
+churn and recycling of existing ideas within the current system ~ a situation
+that stifles innovation or positive change.</p>
+<p>The computing-related rules and states of affairs I'm going to describe are not
+much more complicated than the game of Snap explained above. However, what
+follows may include a few <em>brain twists</em> where I expect you to use your
+imagination to see things in a seemingly unusual or unintuitive way! I'm
+challenging you to acquire a new perspective about seemingly everyday things.
+The external world remains as it was before, but you will have changed. Your
+newly acquired perspective reveals a deeper understanding of what you're
+observing and why this makes computing possible. It's fun and can result in
+rather pleasant "aha" moments (if you were a cartoon character, it's that
+feeling you get when a lightbulb appears above your head).</p>
+<p>The next chapter in our story is a beautiful brain twist: to think about
+thinking...</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/social-media-hermit/" class="u-url">A Social Media Hermit</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Nicholas H.Tollervey
@@ -433,98 +612,12 @@ a chat..! Social distancing rules don't mean you have to be anti-social.</p>
 <p>:-)</p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/sponsorship/" class="u-url">Sponsorship</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Nicholas H.Tollervey
-            </span></p>
-            <p class="dateline">
-            <a href="article/sponsorship/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-01-23T08:30:00Z" itemprop="datePublished" title="Thu, Jan 23, 2020 8:30 AM">Thu, Jan 23, 2020 8:30 AM</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <p>The majority of the code I write is given away for free for the benefit of
-others. This is unsustainable so I often think about how such voluntary work
-could be supported. One solution is related to my
-<a href="http://codegrades.com/">CodeGrades</a> idea. But this is a slow
-burn project that has involved, and continues to demand, a huge amount of
-time, effort and money before I'll have anything to show for it.</p>
-
-<p>Another solution is simply to ask folks for money.</p>
-
-<p>Having been a musician, I'm used to this feeling. I used to busk with some
-buddies as a way of trying to make ends meet. However, as my grandmother once
-pointed out, it's a form of begging. In one sense, this is a tragedy: begging
-is a last resort because nothing else you do is of value. You're forced to
-rely on the compassion and generosity of others. Yet in another sense it's like
-the activity of a mendicant asking for alms for their service or contributions
-to society. In any case, no matter how you "spin" it, it's a precarious
-situation to find oneself in ~ be you a musician or free software developer
-(and I'm both!).</p>
-
-<p>While there are some kind hearted individuals and (even rarer) companies or
-organisations who are happy to help support such work, most think, "meh, I'll
-just use the software" (without so much as a thank you). Even worse (and I have
-personal experience of this) some folks will pass off such voluntary work as
-their own and reap the rewards for such a lie. This is why I actually earn
-money-to-live by writing software as a freelance developer (it gives me the
-flexibility I need to work on my own coding projects).</p>
-
-<p>Therefore, it was with some interest that I noticed GitHub had created what
-they describe as account sponsorship. "Sponsorship" is an interesting word
-to use because it makes the begging / mendicant aspect of the situation more
-palatable. It also cheerfully suggests that the free/open-source software world
-is full of generous hearted folks or organisations just waiting to give back to
-the selfless volunteers who make all this code available via their GitHub
-account.</p>
-
-<p>This is, of course, a fiction. It's also normalising begging as a solution
-to funding free software volunteers.</p>
-
-<p>But I'm open minded and willing to give anything a go, especially if it
-means it'll cover my costs. So I've signed up and now <em>you</em> can give me
-money for my efforts. As of the time of writing, and after tweeting about this
-to my 3,000+ followers, this is what my account looks like:</p>
-
-<p>
-<img src="static/images/github_sponsors.png" style="border: 1px solid #ccc;"></p>
-
-<p>I can't help but think that in six months time, it'll still look the same.
-But at least I can say I gave it a go. Despite my misgivings, I feel it
-important to give ideas a chance to flower and I'm trying very hard (yet
-failing) to view this as a mendicant rather than beggar.</p>
-
-<p>So, if you've ever found my work or activities useful, beneficial or
-supportive, please consider helping me sustain my efforts. You can do so by
-visiting my "<a href="https://github.com/sponsors/ntoll">sponsorship</a>"
-page to find out more about what I do and how to give "alms". The summary is
-that I focus on education: I develop software that helps folks learn the
-skills and knowledge they need to imagine, develop and program the stuff they
-want. If you believe this is important work, sponsor me with a monthly
-contribution.</p>
-
-<p>Alternatively, and many thanks to the small number of you who have already
-done this, you can send me a virtual hug-as-a-book by buying me
-something from my <a href="https://www.amazon.co.uk/hz/wishlist/ls/3B63FUSVDIJJS">Amazon wish list</a>
-(none of the items are particularly expensive). Small gestures, such as gifting
-books or music with a supportive message, can actually mean a lot.</p>
-
-<p>I'll report back in a few months to let you know how I get on. I have to
-admit, I don't hold out much hope. Best knuckle down on CodeGrades.</p>
-
-<p>Well... what are you waiting for..? Go on... get your wallets out. :-)</p>
-
-<p>(Honestly, I quite understand if you don't. I have the same misgivings
-you're probably having after reading the sentence above. Such a feeling is the
-nub of what I want to demonstrate in this blog post.)</p>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-21.html" rel="next">Older posts</a>
+                <a href="index-22.html" rel="next">Older posts</a>
             </li>
         </ul></nav></main><footer id="footer"><p></p>
 <p>Contents © 2021         <a href="mailto:ntoll@ntoll.org">Nicholas H.Tollervey</a></p> 

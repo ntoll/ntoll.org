@@ -3,7 +3,178 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Thu, 29 Apr 2021 17:08:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Social Media Hermit</title><link>https://ntoll.org/article/social-media-hermit/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I have deleted my Twitter account.&lt;/p&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Mon, 24 May 2021 07:54:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Why Computers Work: An Introduction to Following Rules</title><link>https://ntoll.org/article/why-computers-1/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
+.section_break {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 50%;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+.section_break:after {
+    background: #fff;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+&lt;/style&gt;
+
+&lt;h3&gt;Why Computers Work (part 1)&lt;/h3&gt;
+&lt;p&gt;This is the first of five short blog posts exploring &lt;em&gt;why computers work&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I'm going to present a friendly introductory overview for laypeople, from zero
+to Turing machines, automata, abstraction and more. My aim is conciseness and
+clarity, so I've necessarily missed out, glossed over and simplified things.
+There are plenty of more advanced resources online should you wish to
+investigate this subject further.&lt;/p&gt;
+&lt;p&gt;Most importantly, I hope to stimulate your thinking about computers by creating
+a place to explore ideas.&lt;/p&gt;
+&lt;p&gt;I hope you enjoy these articles and, as always, I love getting constructive
+feedback &lt;a href="https://ntoll.org/contact"&gt;via email&lt;/a&gt;. Unless otherwise stated, all images and
+diagrams were created by the author.&lt;/p&gt;
+&lt;hr class="section_break"&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;αἰὼν παῖς ἐστι παίζων, πεσσεύων· παιδὸς ἡ βασιληίη.&lt;/p&gt;
+&lt;p&gt;(The universe is a child's game. A child's kingdom.)&lt;/p&gt;
+&lt;p&gt;~ &lt;a href="https://plato.stanford.edu/entries/heraclitus/"&gt;Heraclitus&lt;/a&gt; (Fragment B52)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Computers are ubiquitous.&lt;/p&gt;
+&lt;p&gt;They touch all aspects of our lives, from mediating our social interactions to
+modelling aspects of our culture and managing the everyday infrastructure of
+society.&lt;/p&gt;
+&lt;p&gt;Therefore, computers are interesting and, understandably, folks want to
+know &lt;strong&gt;how&lt;/strong&gt; the machines that automate and control so much of our world work.
+&lt;a href="https://www.youtube.com/watch?v=tpIctyqH29Q" target="_blank"&gt;This is
+a typical response&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I'm going to take a different approach.&lt;/p&gt;
+&lt;p&gt;I'm going to explore &lt;strong&gt;why&lt;/strong&gt; computers work.&lt;/p&gt;
+&lt;p&gt;What's the difference?&lt;/p&gt;
+&lt;p&gt;Answers to "how?" questions tell us what method or steps make something happen.
+In contrast, the answers to "why?" questions describe what makes something
+possible ~ an opportunity to encounter a more fundamental perspective.&lt;/p&gt;
+&lt;p&gt;It's the difference between a car mechanic who may understand &lt;em&gt;how&lt;/em&gt; an engine
+works (so they can fix broken engines), and a mechanical engineer who
+understands the physics and chemistry relating to &lt;em&gt;why&lt;/em&gt; engines work (so they
+can improve the design of engines). Knowing how something works means your
+frame of reference is &lt;em&gt;within the system&lt;/em&gt;, whereas if you understand why
+something works you're not bound by existing products, solutions or cultural
+practices.&lt;/p&gt;
+&lt;p&gt;Most importantly, cultivating an understanding of why something is possible is
+an invitation for playful creativity, fearless exploration and careful
+refinement of alternatives to the current crop of answers to "how?". It is an
+opportunity to enlarge and change our world ~ a form of intellectual
+empowerment and growth.&lt;/p&gt;
+&lt;p&gt;Knowing &lt;em&gt;how&lt;/em&gt; is good, but understanding &lt;em&gt;why&lt;/em&gt; is better.&lt;/p&gt;
+&lt;p&gt;With the scene suitably set, to start our journey, we'll learn all about...&lt;/p&gt;
+&lt;h3&gt;Following Rules&lt;/h3&gt;
+&lt;p&gt;Do you know how to play children's card game, Snap?&lt;/p&gt;
+&lt;p&gt;(Bear with me, I promise it'll be worth it.)&lt;/p&gt;
+&lt;p&gt;Using a standard deck of cards, the aim is to win all the cards by &lt;em&gt;taking
+turns to play&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Let's follow along as siblings Penelope (11), Sam (8) and Will (5) play a game:&lt;/p&gt;
+&lt;p&gt;Penelope (for no other reason than she's the oldest) acts as dealer. She
+shuffles the deck of cards so they're in a random order and deals them, face
+down and in equal quantity, to each player until there are none left to deal.
+This is the starting state from which all games of Snap begin.&lt;/p&gt;
+&lt;p&gt;Sam, the player to the left of the dealer, takes the first turn.&lt;/p&gt;
+&lt;p&gt;Players take a turn by moving the top card from their face-down stack onto the
+top of an adjacent stack of face-up cards, so the newly moved card is also
+facing up. Since this is Sam's first turn, the face-up stack doesn't exist,
+so a new stack is created with Sam's first face-up card taken from his pile of
+face-down cards.&lt;/p&gt;
+&lt;p&gt;So ends Sam's turn.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/snap.jpg" alt="A game of Snap!"&gt;
+&lt;figcaption&gt;
+  &lt;a href="https://www.wikihow.com/Play-Snap" target="_blank"&gt;Source&lt;/a&gt; - From
+  &lt;a href="https://www.wikihow.com" target="_blank"&gt;WikiHow&lt;/a&gt; and licensed
+  under
+  &lt;a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en" target="_blank"&gt;CC BY-NC-SA 3.0&lt;/a&gt;
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;The next player to the left, William, takes his turn in a similar fashion and
+so the game continues from one player to the next.&lt;/p&gt;
+&lt;p&gt;After a while Sam shouts "SNAP". He's noticed that two face-up cards on top of
+different stacks have the same value (for example, two aces are visible on top
+of Penelope and Will's stacks). Since he was first to shout "SNAP" he wins all
+the cards in the matching stacks of cards. He gleefully scoops up all the cards
+in the face-up stacks belonging to Penelope and Will.&lt;/p&gt;
+&lt;p&gt;Play continues to the left of the player who turned up the matching card.&lt;/p&gt;
+&lt;p&gt;A few moments later Penelope shouts "SNAP". But there is a problem: there are
+no matching face-up cards! William points this out to Penelope and reminds her
+she has to pay a forfeit by giving one card to each of the other players from
+her face-down stack. Sam and Will get a card each and Penelope is two cards
+down.&lt;/p&gt;
+&lt;p&gt;At this point in the game Sam has the most cards. Will and Penelope have less
+with only a few cards difference between the quantities in their face-down
+stacks.&lt;/p&gt;
+&lt;p&gt;Things are hotting up and the three children become more excited: when two
+matching face-up cards appear again all three of them shout "SNAP" at the same
+time. Since nobody can claim to have shouted "SNAP" first, and to avoid
+arguments, both the matching stacks are placed in the middle and added to the
+"Snap pool". When "SNAP" is next called unambiguously and correctly, the winner
+will get both the matching stacks and any cards in the "Snap pool". The stakes
+have suddenly got higher.&lt;/p&gt;
+&lt;p&gt;Things quieten down for a few rounds until Penelope runs out of face-down cards
+to put onto her face-up stack. At this point she simply flips over her face-up
+stack and it becomes her face-down stack. Play continues as before.&lt;/p&gt;
+&lt;p&gt;Eventually, after a few more calls of "SNAP", Penelope finds that she's run out
+of cards and so out of the game.&lt;/p&gt;
+&lt;p&gt;Sam and Will play together until, through luck and fast reactions, Sam finds
+himself with all the cards and he's declared the winner of the game.&lt;/p&gt;
+&lt;p&gt;That's how you play Snap..!&lt;/p&gt;
+&lt;p id="rules_of_snap"&gt;The rules illustrated in this deliberately precise story describe
+&lt;em&gt;how&lt;/em&gt;, given certain states of affairs, such-and-such things must
+happen. States of affairs unambiguously describe how things are in the world.
+For example, "there are two stacks of face-up cards whose top cards are of
+matching value". When I describe how such-and-such must happen, I mean clear
+and unambiguous instructions describe &lt;em&gt;how&lt;/em&gt; play proceeds given a
+certain state of affairs.&lt;/p&gt;
+
+&lt;p&gt;Put simply, this is &lt;em&gt;how&lt;/em&gt; the game of Snap is played.&lt;/p&gt;
+&lt;p&gt;But &lt;em&gt;why&lt;/em&gt; is Snap played?&lt;/p&gt;
+&lt;p&gt;Because, in addition to knowing the rules, we understand that playing the game
+of Snap means modifying one's behaviour to follow these rules. If everyone
+modifies their behaviour in accordance with the rules then folks can play
+together. Obviously, we don't explain card games in such a formal manner to
+very young children. But, as my description shows, children discover it's lots
+of fun to informally learn and skilfully follow rules that bring about
+exciting situations in games.&lt;/p&gt;
+&lt;p&gt;Knowing how to play Snap is analogous to knowing how computers work. Looking
+beyond the rules of Snap to appreciate that human behaviour and enjoyment
+motivates people to follow the rules of the game, shows us &lt;em&gt;why&lt;/em&gt; Snap is
+played. This insight may also inspire us to invent new games. Perhaps we become
+inspired to explore further aspects of
+&lt;a href="https://en.wikipedia.org/wiki/Milgram_experiment" target="_blank"&gt;human behaviour relating to following rules&lt;/a&gt;,
+or we may even
+&lt;a href="https://theoryoffun.com/" target="_blank"&gt;reflect upon the nature of play or games&lt;/a&gt;.
+In any case, exploring &lt;em&gt;why&lt;/em&gt; rather than &lt;em&gt;how&lt;/em&gt; provides a
+fascinating perspective from outside the system (of Snap, in this case).&lt;/p&gt;
+
+&lt;p&gt;We need to achieve an analogous enlargement of perspective beyond &lt;em&gt;how&lt;/em&gt;
+computers work in order to understand &lt;em&gt;why&lt;/em&gt; computers work. Only by acquiring a
+perspective outside current norms can we possibly hope to invent or improve
+technology and explore the nature and use of such devices. The alternative is
+churn and recycling of existing ideas within the current system ~ a situation
+that stifles innovation or positive change.&lt;/p&gt;
+&lt;p&gt;The computing-related rules and states of affairs I'm going to describe are not
+much more complicated than the game of Snap explained above. However, what
+follows may include a few &lt;em&gt;brain twists&lt;/em&gt; where I expect you to use your
+imagination to see things in a seemingly unusual or unintuitive way! I'm
+challenging you to acquire a new perspective about seemingly everyday things.
+The external world remains as it was before, but you will have changed. Your
+newly acquired perspective reveals a deeper understanding of what you're
+observing and why this makes computing possible. It's fun and can result in
+rather pleasant "aha" moments (if you were a cartoon character, it's that
+feeling you get when a lightbulb appears above your head).&lt;/p&gt;
+&lt;p&gt;The next chapter in our story is a beautiful brain twist: to think about
+thinking...&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/why-computers-1/</guid><pubDate>Mon, 24 May 2021 07:50:00 GMT</pubDate></item><item><title>A Social Media Hermit</title><link>https://ntoll.org/article/social-media-hermit/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;p&gt;I have deleted my Twitter account.&lt;/p&gt;
 &lt;p&gt;Why?&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;I no longer use it.&lt;/li&gt;
@@ -1401,164 +1572,4 @@ platform while also doing a philosophical deep-dive into what on earth is going
 on when "players" connect to, create within and interact with such a
 platform.&lt;/p&gt;
 
-&lt;p&gt;Who knows where this may lead..?&lt;/p&gt;</description><guid>https://ntoll.org/article/pyweek/</guid><pubDate>Tue, 23 Apr 2019 16:00:00 GMT</pubDate></item><item><title>Make a Joyful Noise</title><link>https://ntoll.org/article/joyful-noise/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;I have a new tuba!&lt;/p&gt;
-
-&lt;p&gt;If my mention of a tuba is a surprise (it
-&lt;a href="https://ntoll.org/article/remembering-john"&gt;shouldn't&lt;/a&gt;
-&lt;a href="https://ntoll.org/article/vaughan-williams-tuba-concerto-programme-notes"&gt;be&lt;/a&gt;),
-check out this short student-film, by my buddy
-&lt;a href="https://twitter.com/cluttercup"&gt;Jane&lt;/a&gt;, which explains all:&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YlS9lpybYxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;My new tuba isn't a replacement for my current instrument (which I got when
-I was sixteen years old). Rather, the instruments complement each other. What's
-the difference? If my current tuba is a professional "all rounder", my new
-instrument is a sort of "heavy duty" tuba for big orchestral pieces (most of my
-current playing is orchestral).&lt;/p&gt;
-
-&lt;p&gt;The tuba works by amplifying the buzzing sound I make with my lips
-into a mouthpiece. I change notes by tensing or relaxing my lips (so the
-buzzing sound gets higher or lower) which gives me a limited series of notes
-that are &lt;a href="https://en.wikipedia.org/wiki/Overtone"&gt;overtones&lt;/a&gt; to the
-"fundamental" (lowest) note produced by blowing down the length of the tube of
-the instrument. I use valves to add tubing to the length of the instrument to
-fill in the notes between the overtones so I can play all the notes I need
-(i.e. a chromatic scale).&lt;/p&gt;
-
-&lt;p&gt;What's interesting is how the two instruments are different.&lt;/p&gt;
-
-&lt;p&gt;My original instrument is pitched in Eb (E flat) -- which means the
-instrument's fundamental note is the Eb more than an octave below the bass
-clef (i.e. very low). My new instrument is pitched in C, so its fundamental
-note is &lt;em&gt;even lower&lt;/em&gt;, thus making it an instrument more suited to lower
-sounding music.&lt;/p&gt;
-
-&lt;p&gt;The valves on each instrument are different. I have "piston" valves on my
-original instrument. These are spring loaded and when pressed fully down add
-additional lengths of tubing to the instrument. The photograph below is of the
-inside of the valve so you can see the holes in the piston used to connect 
-the different pipes, depending on the valve's position (up or down).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ntoll.org/static/images/piston_valve.jpg" alt="The inside of a piston valve."&gt;&lt;/p&gt;
-
-&lt;p&gt;My new instrument uses "rotary" valves. These, as the diagram below shows,
-rotate to connect additional lengths of tubing (the passage of air is indicated
-by the hatched area). A sort of lever is used to actuate each valve. They're
-generally much quieter and more reliable than piston valves (less moving parts
-to make clanking sounds) although they can be slower to "engage".&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ntoll.org/static/images/rotary_valve.jpg" alt="A diagramatic view of a rotary valve."&gt;&lt;/p&gt;
-
-&lt;p&gt;The picture below shows the rotary valves on my new tuba. Notice the
-levers I press with my fingers to engage the valves.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ntoll.org/static/images/rotary_valves.jpg" alt="Rotary valves on my new tuba."&gt;&lt;/p&gt;
-
-&lt;p&gt;While both tubas look "tuba shaped" my original tuba points to the right
-(as the player is looking at the instrument) whereas my new instrument points
-to the left. This simply means I have to hold them differently and there's not
-really any change in sound. You can see this difference in the picture
-below (the new tuba is on the right):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ntoll.org/static/images/two_tubas.jpg" alt="My two tubas."&gt;&lt;/p&gt;
-
-&lt;p&gt;The final major difference is in the number of valves each instrument has.
-My original instrument has four "compensating" valves which allow me to get a
-full chromatic scale. The new instrument has five "non-compensating" valves:
-the first four work like my original instrument and allow me to play a full
-chromatic scale, but the fifth valve is used to help tune the very lowest
-notes.&lt;/p&gt;
-
-&lt;p&gt;Why does the new tuba need a special extra "tuning" valve and what on earth
-am I talking about when I say "compensating"..? This, dear reader, is where
-maths, acoustics, logic and music come together in a spectacular fashion.&lt;/p&gt;
-
-&lt;p&gt;My new tuba is approximately 524.9 cm in length without any valves engaged.
-This produces the note, "C". The first valve adds enough pipe to lower the
-pitch by a tone, giving me a "Bb" (B flat) which requires the total length of
-tube to be 589.2 cm. Simple arithmetic tells us the total length of the tube
-added by using the first valve is therefore 64.3 cm (the "open" length of the
-instrument with the added tube should give the correct length to play a tone
-lower). The second valve drops the pitch by a semitone to the note "B" which
-requires a total length of 556.1 cm. Similarly, the third valve lowers the
-pitch by one and a half tones, giving me an "A" which requires the total length
-of tube to be 624.2 cm. Again, the simple arithmetic tells me that the length
-of tube added by the second valve is 31.2 cm while the length added by the
-third valve is 99.3 cm.&lt;/p&gt;
-
-&lt;p&gt;Here's where it gets interesting. If I want to play the note "G" I need to
-make the length of the instrument 700.6 cm. Given the note "G" is two and a
-half tones below "C" I could take the tone provided by the first valve and
-one and a half tones of the third valve and use them together. It means the
-resulting length of additional pipe is 64.3 cm (the first valve) + 99.3 cm 
-(the third valve) giving me a total of 163.6 cm. However, the open length of
-the instrument (524.9 cm) with the additional lengths of pipe (163.6) brings
-the total length to 688.5 cm, which isn't the 700.6 cm needed to play the
-note in tune!&lt;/p&gt;
-
-&lt;p&gt;The solution is to use my fourth valve, which adds 175.7 cm to the length
-of the instrument, thus making it in tune. However, when I need to use my
-fourth valve in combination with my other three valves I still encounter the
-same sort of "wrong length of pipe" problem I describe above. I &lt;em&gt;must&lt;/em&gt;
-use combinations of valves in order to get all the notes I need in the
-chromatic scale. So what can I do?&lt;/p&gt;
-
-&lt;p&gt;This is where the fifth valve on my new tuba comes into play. It has a
-special tuning slide I can adjust "in real time" as I play, thus allowing me
-to tune the fifth valve as and when I need it. It can also be tuned in such a
-way that it "compensates" (remember that word) for the missing lengths of
-tubing when I use the other valves together.&lt;/p&gt;
-
-&lt;p&gt;Which leaves us with the problem of keeping my current tuba (with only four
-valves) in tune. Thankfully, this instrument has "compensating" valves which
-work in a rather ingenious manner. The schematic representation of my current
-tuba is shown below. The mouthpiece is on the left with the bell on the right
-and between are the four valves and associated tubing (not to scale). None of
-the valves are engaged so the column of air blown through the instrument goes
-directly through without any "detours" (as shown by the pipe filled in with
-blue).&lt;/p&gt;
-
-&lt;img src="https://ntoll.org/static/images/compensating_open.png" alt="Compensating system, no valves pressed."&gt;
-
-&lt;p&gt;When I press the first and third valves down the expected two extra lengths
-of tubing are added, as shown by the two loops of pipe filled with blue:&lt;/p&gt;
-
-&lt;img src="https://ntoll.org/static/images/compensating_13.png" alt="Compensating system, valves 1 and 3 pressed."&gt;
-
-&lt;p&gt;Here's where it gets really clever. When the fourth valve is pressed down,
-not only is the expected additional length of tube added to the length of the
-instrument, but this tube is also diverted back through the other three valves
-which have additional "compensating" tubes to bring the instrument in tune:&lt;/p&gt;
-
-&lt;img src="https://ntoll.org/static/images/compensating_134.png" alt="Compensating system, valves 1, 3 and 4 pressed."&gt;
-
-&lt;p&gt;This is, essentially, a logical &lt;code&gt;AND&lt;/code&gt; expressed as pipe-work. If
-the first and fourth valves are pressed then add some new "compensating" length
-of pipe. Clever huh..?&lt;/p&gt;
-
-&lt;p&gt;The disadvantage of this system is the air does two "circuits" around the
-instrument (once through the first three valves, and then again if the fourth
-valve is pressed so the compensating pipes can come into effect). This makes
-the instrument harder to blow (since there are more bends to blow through).
-My new instrument feels like there is less to push against when I'm
-playing.&lt;/p&gt;
-
-&lt;p&gt;Finally, given all the technical tuba-related geekery described above I want
-to end on an artistic note...&lt;/p&gt;
-
-&lt;p&gt;These instruments are beautiful to look at and playing them is a joy. It's
-hard to explain to folks who have never performed music what an amazing
-privilege it is. I get to play beautifully designed and precision engineered
-instruments as part of an orchestra, band or smaller ensemble. By playing with
-my fellow musicians to an audience I'm taking part in a unique social activity.
-No matter the mood or difficulty of the piece I'm playing, I love the sense of
-non-verbal communication I have with my fellow musicians and collectively with
-the audience. I love that I am a part of something creative, challenging,
-expressive, collaborative and most definitely greater than the sum of its
-parts. That the audience appreciate these efforts is a lovely positive
-side effect.&lt;/p&gt;
-
-&lt;p&gt;To me, this is always "joyful noise". :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/joyful-noise/</guid><pubDate>Wed, 13 Feb 2019 16:00:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Who knows where this may lead..?&lt;/p&gt;</description><guid>https://ntoll.org/article/pyweek/</guid><pubDate>Tue, 23 Apr 2019 16:00:00 GMT</pubDate></item></channel></rss>
