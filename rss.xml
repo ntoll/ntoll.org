@@ -3,7 +3,7 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 25 May 2021 08:30:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Movements of Thought</title><link>https://ntoll.org/article/why-computers-2/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 2)&lt;/h3&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 25 May 2021 08:40:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Movements of Thought</title><link>https://ntoll.org/article/why-computers-2/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 2)&lt;/h3&gt;
 &lt;p&gt;Just as one can describe rules for a card game, it is possible to describe
 rules for thinking: rules for movement of thought.&lt;/p&gt;
 &lt;p&gt;This is the study of &lt;em&gt;Logic&lt;/em&gt;, and using these rules is called &lt;em&gt;reasoning&lt;/em&gt;.
@@ -73,13 +73,16 @@ that way!&lt;/p&gt;
 with truth values of the propositions, the structure of the sentence and
 following the rules.&lt;/p&gt;
 &lt;p&gt;In the same way the
-&lt;a href="https://ntoll.org/articles/why-computers-1"&gt;rules of Snap explain what must happen&lt;/a&gt;, given card
+&lt;a href="https://ntoll.org/article/why-computers-1#rules_of_snap"&gt;rules of Snap explain what
+must happen&lt;/a&gt;, given card
 related states of affairs, so the rules of propositional logic do the same with
 propositions and sentences. The rules of Snap don't care what the specific
 values of cards are, just that such values may match. Similarly, propositional
 logic doesn't care what the specific meanings of the propositions may be, only
 that such propositions connect in a sentence that can be evaluated with rules
-dealing in just two possible states: &lt;strong&gt;true&lt;/strong&gt; and &lt;strong&gt;false&lt;/strong&gt;.&lt;/p&gt;
+dealing in just two possible states: &lt;strong&gt;true&lt;/strong&gt; and
+&lt;strong&gt;false&lt;/strong&gt;.&lt;/p&gt;
+
 &lt;p&gt;The simplest way to express the rules that govern such logical operations
 for connecting propositions is with a
 &lt;a href="https://en.wikipedia.org/wiki/Truth_table" target="_blank"&gt;truth

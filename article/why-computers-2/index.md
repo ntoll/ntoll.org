@@ -86,14 +86,16 @@ The brain twist is divorcing yourself from meaning -- just concern yourself
 with truth values of the propositions, the structure of the sentence and
 following the rules.
 
-In the same way the
-[rules of Snap explain what must happen](/articles/why-computers-1), given card
+<p>In the same way the
+<a href="/article/why-computers-1#rules_of_snap">rules of Snap explain what
+must happen</a>, given card
 related states of affairs, so the rules of propositional logic do the same with
 propositions and sentences. The rules of Snap don't care what the specific
 values of cards are, just that such values may match. Similarly, propositional
 logic doesn't care what the specific meanings of the propositions may be, only
 that such propositions connect in a sentence that can be evaluated with rules
-dealing in just two possible states: **true** and **false**.
+dealing in just two possible states: <strong>true</strong> and
+<strong>false</strong>.</p>
 
 <p>The simplest way to express the rules that govern such logical operations
 for connecting propositions is with a
