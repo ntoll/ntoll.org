@@ -98,7 +98,7 @@ With the scene suitably set, to start our journey, we'll learn all about...
 
 ## Following Rules
 
-Do you know how to play children's card game, Snap?
+Do you know how to play the children's card game, Snap?
 
 (Bear with me, I promise it'll be worth it.)
 

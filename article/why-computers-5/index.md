@@ -115,7 +115,7 @@ we can't help but add meaning, we see a stick man running.
 Scale also effects other senses, such as our perception of sound. Consider the
 following musical experiment:
 [Beethoven's mighty 9th Symphony](https://en.wikipedia.org/wiki/Symphony_No._9_(Beethoven))
-stretched to last twenty-four hours. By drasticly slowing down the tempo (all
+stretched to last twenty-four hours. By drastically slowing down the tempo (all
 other aspects of the piece remaining the same ~ notes, instrumentation, and so
 on), it becomes something completely different. It sounds like an ambient
 musical experiment by the likes of
@@ -413,7 +413,7 @@ single direction until it bumps into another pattern of cells. It appears to
 humans as if something is flying across the grid of squares (which is why this
 pattern is called
 <a href="https://www.conwaylife.com/wiki/Spaceship" target="_blank">a
-spaceship</a>.</p>
+spaceship</a>).</p>
 
 Skilful combination and arrangement of such small groups of cells in the Game
 of Life show how abstraction, scale and perspective interact. In the following
@@ -459,7 +459,7 @@ say, a module of re-usable Python code. Just like the bundle of thinking needed
 to ride a bike becomes subsumed into the concept of cycling, I don't have to
 know the implementation details, but can refer to the relevant re-usable code
 when it is needed in my own program. Such re-use of existing instructions
-happens in all the levels of the computing stack I describe above.</p>
+happens in all the levels of the computing _stack_ I describe above.</p>
 
 All these levels of abstraction are required to get to this fragment of Python:
 

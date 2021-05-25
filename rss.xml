@@ -3,7 +3,214 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Mon, 24 May 2021 07:54:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Why Computers Work: An Introduction to Following Rules</title><link>https://ntoll.org/article/why-computers-1/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 25 May 2021 08:30:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Movements of Thought</title><link>https://ntoll.org/article/why-computers-2/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 2)&lt;/h3&gt;
+&lt;p&gt;Just as one can describe rules for a card game, it is possible to describe
+rules for thinking: rules for movement of thought.&lt;/p&gt;
+&lt;p&gt;This is the study of &lt;em&gt;Logic&lt;/em&gt;, and using these rules is called &lt;em&gt;reasoning&lt;/em&gt;.
+Reasoning with logical rules allows others, who know such rules, to follow the
+movements of thought that brought you to a certain conclusion. Furthermore,
+because there are rules, it's possible to notice when they're ignored or used
+incorrectly (when movements of thought don't make logical sense).&lt;/p&gt;
+&lt;p&gt;There are many types of logic, but the one we're going to examine is called
+propositional (or sentential, or boolean) logic.&lt;/p&gt;
+&lt;p&gt;"Propositional" and "sentential" are just descriptive names for a type of
+logic that deals with forming sentences by combining propositions. In logic,
+&lt;em&gt;propositions make assertions that are either true or false&lt;/em&gt;.
+&lt;a href="https://en.wikipedia.org/wiki/George_Boole" target="_blank"&gt;George
+Boole&lt;/a&gt; (1815-1864), shown below, invented a system of mathematical algebra
+that works like propositional logic (it also deals with values that are either
+true or false) and so the term "boolean" is often used synonymously.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/boole.png" alt="George Boole"&gt;
+&lt;figcaption&gt;
+  &lt;a href="https://commons.wikimedia.org/wiki/File:Portrait_of_George_Boole.png" target="_blank"&gt;Source&lt;/a&gt;
+  - this image is in the
+  &lt;a href="https://en.wikipedia.org/wiki/Public_domain" target="_blank"&gt;public domain&lt;/a&gt;.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here's a contrived example of a sentence in propositional logic:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"If it is sunny and I am wearing a thick coat, then I am hot."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I want to draw your attention to some important aspects of this sentence that
+may not, at first, appear obvious:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It contains two propositions called &lt;em&gt;premises&lt;/em&gt; ("it is sunny" and "I am
+  wearing a thick coat"). Premises make assertions about &lt;em&gt;states of affairs&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;It ends with a &lt;em&gt;conclusion&lt;/em&gt; ("I am hot"). A conclusion is a &lt;em&gt;proposition that
+  depends upon the premises&lt;/em&gt; in some way.&lt;/li&gt;
+&lt;li&gt;The sentence is in the form of a &lt;em&gt;conditional&lt;/em&gt; ("if [premises], then
+  [conclusion]"). A conditional is a rule saying that if its premises are true
+  then the conclusion &lt;strong&gt;must be true&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The premises are related to each other by a &lt;em&gt;logical operator&lt;/em&gt; called a
+  &lt;em&gt;conjunction&lt;/em&gt; ("and"). This is another rule: if the related premises are
+  evaluated together, &lt;strong&gt;collectively they are true only if all of them are
+  true&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Propositional logic describes the rules of a "game" to construct sentences that
+make logical sense. Playing by the rules of logic forces everyone to reach the
+same inevitable conclusion: if we accept that the premises are true (it is
+sunny and I am wearing a coat) propositional logic dictates the conclusion must
+be true (I am hot). The object of propositional logic is to use the rules to
+evaluate (work out) if a sentence is true or false.&lt;/p&gt;
+&lt;p&gt;Here's the brain twist: propositional logic doesn't care about meaning. The
+important logical aspects of the example above don't concern my state in the
+real world (which is why the sentence sounds slightly odd). &lt;em&gt;Propositional
+logic only cares about truth and how propositions fit together&lt;/em&gt;. I could
+revise the example to:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"If A and B then C."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It doesn't matter what &lt;em&gt;A&lt;/em&gt;, &lt;em&gt;B&lt;/em&gt; or &lt;em&gt;C&lt;/em&gt; stand for nor what they may mean -- from
+the perspective of propositional logic all that matters is there are two
+conjuncted premises (A and B) and a conclusion (C) expressed in a conditional
+(if ... then ...). If one or both of the premises is false, then the
+conclusion must also be false. Why? Because the logical rules pertaining to
+conditionals and conjunctions (&lt;em&gt;and nothing else outside those rules&lt;/em&gt;) make it
+that way!&lt;/p&gt;
+&lt;p&gt;The brain twist is divorcing yourself from meaning -- just concern yourself
+with truth values of the propositions, the structure of the sentence and
+following the rules.&lt;/p&gt;
+&lt;p&gt;In the same way the
+&lt;a href="https://ntoll.org/articles/why-computers-1"&gt;rules of Snap explain what must happen&lt;/a&gt;, given card
+related states of affairs, so the rules of propositional logic do the same with
+propositions and sentences. The rules of Snap don't care what the specific
+values of cards are, just that such values may match. Similarly, propositional
+logic doesn't care what the specific meanings of the propositions may be, only
+that such propositions connect in a sentence that can be evaluated with rules
+dealing in just two possible states: &lt;strong&gt;true&lt;/strong&gt; and &lt;strong&gt;false&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The simplest way to express the rules that govern such logical operations
+for connecting propositions is with a
+&lt;a href="https://en.wikipedia.org/wiki/Truth_table" target="_blank"&gt;truth
+table&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here's the definition of "and" (conjunction):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; A | B | A and B
+----------------
+ F | F |    F
+ F | T |    F
+ T | F |    F
+ T | T |    T
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;Can you see how it works?&lt;/p&gt;
+&lt;p&gt;The first two columns represent propositions labelled "A" and "B". The third
+column represents the outcome of the "and" operation, given the values of "A"
+and "B" in the first two columns. Each possible combination of truth value for
+"A" and "B" is enumerated as a row with the resulting truth value for the "and"
+operation in the third column. It's a simple tabular way to express the rules
+of propositional logic. If you had any doubt how "and" (conjunction) worked,
+you'd find the definitive answer in this truth table.&lt;/p&gt;
+&lt;p&gt;For instance, take the first row: if propositions "A" and "B" are both false
+(as expressed in the first two columns), then the outcome for this rule
+(expressed in the third column) &lt;strong&gt;must be false&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Here's another truth table that defines the rule for the logical operation
+called "or" (disjunction):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; A | B | A or B
+---------------
+ F | F |   F
+ F | T |   T
+ T | F |   T
+ T | T |   T
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;Let's pretend that "A" is false but "B" is true. How would you evaluate the
+truth value of "A or B"? Is it true or false?&lt;/p&gt;
+&lt;p&gt;The answer is that "A or B" is true. Why? Because the second row tells us so:
+the "A" column is false, the "B" column is true so the result, expressed in the
+third column, is true.&lt;/p&gt;
+&lt;p&gt;Here's one final truth table. It's a bit different to the other two since it
+only works on a single proposition:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; A | not A
+----------
+ T |   F
+ F |   T
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;It's easy to see what the "not" (negation) operation does to a proposition: it
+flips its truth value so false becomes true, and true becomes false.&lt;/p&gt;
+&lt;p&gt;While these logical operations have familiar names ("and", "or" and "not")
+that &lt;strong&gt;appear to relate to how they work&lt;/strong&gt;, it is the truth table
+&lt;strong&gt;and only the truth table&lt;/strong&gt; that defines how they behave in
+propositional logic, not any similarity to how we may use such words in
+everyday English. There are further rules, expressed as truth tables, for
+connecting propositions that you may wish to look into. They are
+&lt;a href="https://en.wikipedia.org/wiki/Exclusive_or" target="_blank"&gt;XOR&lt;/a&gt;
+(eXclusive OR),
+&lt;a href="https://en.wikipedia.org/wiki/Sheffer_stroke" target="_blank"&gt;NAND&lt;/a&gt;
+(Not AND),
+&lt;a href="https://en.wikipedia.org/wiki/Logical_NOR" target="_blank"&gt;NOR&lt;/a&gt;
+(Not OR) and
+&lt;a href="https://en.wikipedia.org/wiki/Logical_equality" target="_blank"&gt;XNOR&lt;/a&gt;
+(eXclusive Not OR).&lt;/p&gt;
+
+&lt;p&gt;Logical puzzles become fun when you combine such logical operations to build
+more complicated structures. Take for example:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(A and B) or (C or not D)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I've put parentheses ("&lt;code&gt;(&lt;/code&gt;" and "&lt;code&gt;)&lt;/code&gt;") around propositions so you can see how they
+relate to the logical operators (the &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;not&lt;/code&gt;). If we pretend all
+the propositions represented by letters are false, what is the overall truth
+value of the sentence?&lt;/p&gt;
+&lt;p&gt;To find the answer we play the logical "game" in the same way we would with
+Snap: we follow the rules.&lt;/p&gt;
+&lt;p&gt;Start by evaluating the operators within the parentheses. If we replace the
+propositions "A" and "B" with their truth values (remember, all the
+propositions are false), we get:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(false and false) or (C or not D)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Given the rule set out in the truth table for "and", the propositions in the
+first parentheses evaluate to false. Here's how the sentence looks as a
+result:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;false or (C or not D)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To evaluate the "or" in the remaining parentheses we should first evaluate the
+"not" operator to find the truth value of the proposition on the right. If "D"
+is false, then the truth table for "not" tells us that "not D" must evaluate to
+true. Since "C" is false, the sentence looks like this when "C" and "not D" are
+replaced by their truth values:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;false or (false or true)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The truth table for "or", when applied to values in the remaining parentheses
+tells us that if one of the propositions is true, then the "or" operation must
+evaluate to true, giving us:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;false or true&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Re-using this rule to evaluate the remaining "or" operation gives the result:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;true&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;only way&lt;/strong&gt; to solve such logical puzzles is by following the inevitable
+steps dictated by the rules. That's &lt;em&gt;how&lt;/em&gt; logic works!&lt;/p&gt;
+&lt;p&gt;But &lt;em&gt;why&lt;/em&gt; does logic work?&lt;/p&gt;
+&lt;p&gt;For the same reason why the game of Snap works: we modify our behaviour to
+follow unambiguous rules because we want to determine the truth of sentences in
+propositional logic (the aim of playing this sort of logic game). Furthermore,
+by pretending propositions represent states of affairs in the real world, we
+can use logic to describe and, in a sense, encode aspects of the real world.
+For instance, we could describe the rules of Snap &lt;em&gt;with logic&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;But &lt;em&gt;why&lt;/em&gt; is logic useful?&lt;/p&gt;
+&lt;p&gt;Because logic clearly and unambiguously describes the relationships between
+states of affairs (premises), and allows us to take action given a resulting
+truth value. Consider, for example, this conditional statement: &lt;code&gt;IF&lt;/code&gt; the card
+on top of stack A is an ace &lt;code&gt;AND&lt;/code&gt; the card on top of stack B is an ace, &lt;code&gt;THEN&lt;/code&gt;
+shout "SNAP!". Logic describes the movement of thought needed to participate in
+the card game (or any other useful structured activity).&lt;/p&gt;
+&lt;p&gt;Here's a final "brain twist" for you:&lt;/p&gt;
+&lt;p&gt;If Logic provides an inevitable, almost mechanical framework for organising and
+describing movements of thought then we should be able to build machines to
+work with such seemingly mechanical logical rules.&lt;/p&gt;
+&lt;p&gt;It turns out that we can, and describing such machines is the next step in
+describing why computers work!&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/why-computers-2/</guid><pubDate>Tue, 25 May 2021 08:30:00 GMT</pubDate></item><item><title>Why Computers Work: An Introduction to Following Rules</title><link>https://ntoll.org/article/why-computers-1/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
 .section_break {
     border: none;
     border-bottom: 1px solid black;
@@ -73,7 +280,7 @@ empowerment and growth.&lt;/p&gt;
 &lt;p&gt;Knowing &lt;em&gt;how&lt;/em&gt; is good, but understanding &lt;em&gt;why&lt;/em&gt; is better.&lt;/p&gt;
 &lt;p&gt;With the scene suitably set, to start our journey, we'll learn all about...&lt;/p&gt;
 &lt;h3&gt;Following Rules&lt;/h3&gt;
-&lt;p&gt;Do you know how to play children's card game, Snap?&lt;/p&gt;
+&lt;p&gt;Do you know how to play the children's card game, Snap?&lt;/p&gt;
 &lt;p&gt;(Bear with me, I promise it'll be worth it.)&lt;/p&gt;
 &lt;p&gt;Using a standard deck of cards, the aim is to win all the cards by &lt;em&gt;taking
 turns to play&lt;/em&gt;.&lt;/p&gt;
@@ -1410,166 +1617,4 @@ to do -- most notably, ways to address the problems mentioned with mocking.&lt;/
 &lt;p&gt;As always, comments, constructive criticism and ideas expressed in a
 friendly, collaborative and supportive manner are most welcome.&lt;/p&gt;
 
-&lt;p&gt;Over to you... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-tests/</guid><pubDate>Mon, 25 Nov 2019 13:30:00 GMT</pubDate></item><item><title>PyWeek Retrospective</title><link>https://ntoll.org/article/pyweek/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;&lt;a href="https://pyweek.org/"&gt;PyWeek&lt;/a&gt; is a simple idea: write a game,
-using the Python programming language, from scratch, on a given theme, within a
-week. Take part as either an individual or a member of a team entry. At the end
-of the week play, feedback and score each others' entries. After which, an
-individual and team are crowned respective champions for their category of
-entry.&lt;/p&gt;
-
-&lt;p&gt;I have taken part in three different iterations of PyWeek. Each one has
-been extraordinarily good fun.&lt;/p&gt;
-
-&lt;p&gt;My first PyWeek was as an individual entry. The theme was "two worlds", so
-I imagined a paper based battle between the worlds of blue biros and red biros
-(it felt like a good idea at the time...). I wanted to push the limits of my
-&lt;a href="https://codewith.mu/"&gt;Mu code editor&lt;/a&gt; for beginner programmers and
-&lt;a href="https://pygame-zero.readthedocs.io/en/stable/"&gt;PyGameZero&lt;/a&gt; (a
-gaming framework for beginner programmers integrated into Mu, developed by my
-buddy [and organiser of PyWeek] &lt;a href="https://ntoll.org/article/pyweek/" http:&gt;&lt;/a&gt;Dan Pope).
-The end result was a side-scrolling chase game called
-&lt;a href="https://github.com/ntoll/paperchase"&gt;PaperChase&lt;/a&gt;. This video shows
-me testing the game with my (then) thirteen year old son... you'll quickly
-get the idea:&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z_wGpJubVwI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;My next entry was as part of a team. I'd been helping author and
-journalist
-&lt;a href="https://andrewsmithauthor.com/"&gt;Andrew Smith&lt;/a&gt; to
-&lt;a href="https://www.1843magazine.com/features/code-to-joy"&gt;take his
-first steps into coding&lt;/a&gt;. Making a game seemed like a fun vehicle for
-further learning. The theme was "flow" and so we devised a simple
-&lt;a href="https://en.wikipedia.org/wiki/Frogger"&gt;Frogger&lt;/a&gt; clone
-where you avoided traffic flow whilst being chased by lumbering zombies.
-I did the code and Andrew did the sound and music. The end result
-(&lt;a href="https://github.com/ntoll/traffic_flowmageddon"&gt;Trafficflowmageddon&lt;/a&gt;)
-is, I feel, quite cute... as zombie relate games go...&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/08mvNmhOVG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;And so we come to the most recent PyWeek.&lt;/p&gt;
-
-&lt;p&gt;Once again, Andrew and I teamed up. We chatted before hand about the sort
-of game we might want to make. Since we both have a love of the written word we
-decided to go with a text-based (rather than graphical) game -- the theory
-being it would play to our "strengths" with the written word.&lt;/p&gt;
-
-&lt;p&gt;In the end, this was (by far and away) my favourite PyWeek so far. Here's
-why...&lt;/p&gt;
-
-&lt;p&gt;Graphical games show, text based games describe. Graphical games have an
-added cost of "asset" development (the graphical stuff shown on the screen)
-whereas text based games only need typed characters. Graphical games tend to
-focus on hand/eye skill to progress gameplay, whereas textual games necessarily
-put narrative, meaning and intent at the centre of their process.&lt;/p&gt;
-
-&lt;p&gt;Obviously, these are broad generalisations. But what I want to get to is
-the idea of a player engaging with a game imaginatively, emotionally and
-intellectually via the medium of words. If done properly, the depth of
-engagement is potentially greater. I'm not saying one can't be engaged in such
-a way with graphical games, rather that textual games are perhaps a medium
-which more easily lend themselves to this end. It's similar to the difference
-between a book and a film.&lt;/p&gt;
-
-&lt;p&gt;I want to be clear, I'm not saying one is better than the other, these are
-very different ways to tell a story or play a game, but I can't help but feel a
-"reader" has to do more (and the reward is therefore greater) than a
-"viewer".&lt;/p&gt;
-
-&lt;p&gt;I also think that text-based games are, in a sense, more egalitarian and
-accessible. Again, to continue the book/film similarity, while no mean feat,
-writing a book is within the realms of a single author armed with just a pen
-and paper, whereas making a film requires a cast of collaborators and
-specialists, equipment, facilities, locations and deep pockets. For similar
-reasons, the generation and manipulation of textual game content is far simpler
-and affordable than for graphical games.&lt;/p&gt;
-
-&lt;p&gt;So what sort of games are textual?&lt;/p&gt;
-
-&lt;p&gt;Easy! &lt;a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure"&gt;Adventure games&lt;/a&gt;!
-If you're interested in finding out more about this style of text-based game
-you should watch &lt;a href="https://www.youtube.com/watch?v=o15itQ_EhRo"&gt;GET LAMP&lt;/a&gt;,
-a fascinating documentary about the genre. Alternatively, if you want to try
-playing an example of such a game, I've embedded one of my favourites below
-(just click on it and type some commands). It's based on Douglas Adams'
-"Hitchhiker's Guide to the Galaxy" (the game itself was co-authored by
-Adams).&lt;/p&gt;
-
-&lt;div class="video-container" style="border: 1px #ccc solid !important;"&gt;
-&lt;iframe src="https://iplayif.com/?story=http%3A%2F%2Fwww.douglasadams.com%2Fcreations%2Fhhgg.z3"&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Here's where it gets interesting.&lt;/p&gt;
-
-&lt;p&gt;Such games don't have to be single player, solo efforts. While this is a fun
-way to play, things get far more interesting if you can play with others. This
-is not a new idea and I remember playing such games (commonly called
-&lt;a href="https://en.wikipedia.org/wiki/MUD"&gt;MUD&lt;/a&gt; "Multi-User Dungeons") via
-surreptitious use of my school's single 1200 baud modem when the teacher wasn't
-looking. These were often Tolkien-esque fantasy themed virtual worlds where
-players could wander about exploring, socialising and cooperating to achieve
-some in-game outcome (usually a quest of some sort). Later, when I was at
-university in the mid-1990s, I began using a type of multi-user textual world
-called a &lt;a href="https://en.wikipedia.org/wiki/MOO"&gt;MOO&lt;/a&gt; (Multi-user Object
-Oriented). The wonderful thing about MOO based textual worlds is that they are
-programmable by users (I first got to grips with object-orientation via
-learning to program MOO). In a sense the MOO is both the game and a platform
-for creating textual games collaboratively. It was this sense of a creative
-textual virtual world that Andrew and I wanted to recreate.&lt;/p&gt;
-
-&lt;p&gt;Et voilà, "TextSmith" was born.&lt;/p&gt;
-
-&lt;p&gt;The theme for this most recent PyWeek was announced as "six". This
-fitted our idea for an interactive textual platform. It could contain six
-different literary worlds which players collaboratively create, inhabit and
-explore together. The six literary worlds we "seeded" in our game were:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;Jane Austen: Recreate Netherfield, go to a ball, affect regency period
-    manners and etiquette.&lt;/li&gt;
-    &lt;li&gt;Poetic Passions: Everything is a poem, haiku or rhymes, speak in
-    riddles or chat in rhyming couplets.&lt;/li&gt;
-    &lt;li&gt;Hardboiled Detectives: It was about eleven o'clock in the morning, with
-    the sun not shining. The client asked, "Well, will you take the case or
-    not, bud?"&lt;/li&gt;
-    &lt;li&gt;J.R.R.Fantasy: Orcs! Elves! Wizards! Bleak locations! Ancient mystery!
-    Quests! (And impenetrable prose.)&lt;/li&gt;
-    &lt;li&gt;SciFi and Future Worlds: As the service droids efficiently cleaned up
-    the remains of the ship's captain, I wondered how long it would take to
-    make planet-fall on the alien world of Zaonce.&lt;/li&gt;
-    &lt;li&gt;Parry Hotter: Inspired by everyone's favourite boy wizard, but in such
-    a way that Warner Brothers don't go after us for copyright infringement.
-    :-)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Programming the game was a lot of fun. I managed to build everything mostly
-from scratch (except for the web based front-end which uses the
-&lt;a href="https://gitlab.com/pgjones/quart"&gt;Quart&lt;/a&gt; web microframework).
-Sadly, most of it was unfinished, broken and clunkily implemented. The
-important thing is that it has &lt;em&gt;potential&lt;/em&gt;. Below is a screenshot of
-an early version of the game:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ntoll.org/static/images/textsmith.png" alt="The TextSmith client."&gt;&lt;/p&gt;
-
-&lt;p&gt;Happily, despite the unfinished and rather shonky nature of the end result,
-we placed 4th in the team category..! Our highest result..! The
-&lt;a href="https://pyweek.org/e/CodeToJoy/ratings/"&gt;feedback&lt;/a&gt;
-from fellow PyWeekers was encouraging too and, as a result, I've decided to
-continue to develop TextSmith. In the immediate term this will involve plugging
-in the almost-finished scripting language I created and knock off some of the
-hard edges. More importantly, once this aspect of the "platform" settles down,
-I'm looking forward to creating and exploring interactive literary worlds.&lt;/p&gt;
-
-&lt;p&gt;Finally, programming, creating and playing with TextSmith has been a very
-rich seam of reflection in terms of both technical and playful contexts. I've
-had lots of fun thinking about the architecture and implementation of such a
-platform while also doing a philosophical deep-dive into what on earth is going
-on when "players" connect to, create within and interact with such a
-platform.&lt;/p&gt;
-
-&lt;p&gt;Who knows where this may lead..?&lt;/p&gt;</description><guid>https://ntoll.org/article/pyweek/</guid><pubDate>Tue, 23 Apr 2019 16:00:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Over to you... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-tests/</guid><pubDate>Mon, 25 Nov 2019 13:30:00 GMT</pubDate></item></channel></rss>

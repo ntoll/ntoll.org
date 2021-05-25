@@ -1,8 +1,7 @@
 <!--
 .. title: Movements of Thought
 .. slug: why-computers-2
-.. date: 2021-04-25 09:00:00 UTC+01:00
-.. status: private
+.. date: 2021-05-25 09:30:00 UTC+01:00
 .. tags: 
 .. category: 
 .. link: 
