@@ -1,8 +1,7 @@
 <!--
 .. title: Representation
 .. slug: why-computers-3
-.. date: 2021-04-26 09:00:00 UTC+01:00
-.. status: private
+.. date: 2021-05-26 08:00:00 UTC+01:00
 .. tags: 
 .. category: 
 .. link: 
@@ -154,7 +153,7 @@ make something that behaves like a logical "not".
 
 The transistor is represented by a circle pierced by three lines. The source is
 represented by the line entering the circle at the 1 o'clock position, the
-drain by the line at the 5 o'clock position and the gate buy the line at 9
+drain by the line at the 5 o'clock position and the gate by the line at 9
 o'clock.
 
 ![Not circuit](/images/not_circuit.png)

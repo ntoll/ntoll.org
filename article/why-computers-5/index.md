@@ -437,7 +437,7 @@ Yet C has to be
 for it to work. When C code is compiled, the relatively understandable C code
 is translated into instructions written in
 <a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank">assembly language</a>,
-that works in a way that is closer to how the circuitry of the computer works.
+that work in a way that is closer to how the circuitry of the computer works.
 But we're not finished yet..! The assembly language is itself translated into
 <a href="https://en.wikipedia.org/wiki/Machine_code" target="_blank">machine code</a>,
 a representation of assembly language instructions as binary numbers. This is
@@ -459,7 +459,7 @@ say, a module of re-usable Python code. Just like the bundle of thinking needed
 to ride a bike becomes subsumed into the concept of cycling, I don't have to
 know the implementation details, but can refer to the relevant re-usable code
 when it is needed in my own program. Such re-use of existing instructions
-happens in all the levels of the computing _stack_ I describe above.</p>
+happens in all the levels of the computing <em>stack</em> I describe above.</p>
 
 All these levels of abstraction are required to get to this fragment of Python:
 
@@ -534,14 +534,14 @@ highlighting such a problematic state of affairs is quite helpful, for then we
 can begin to compensate and re-balance.
 
 Personally, I can't help but feel the missing part of our relationship with
-computers is an emphasis on things like contemplation, culture and creativity ~
+computers is an emphasis on things like culture, contemplation and creativity ~
 activities and aspects of our lives that are affirmative, raise up our
 existence or provoke useful reflection and personal growth.
 
-The final brain twist I have for you is to rise above the merely technical. Try
-to imagine, create and participate in a meaningful, authentic and engaging
-culture expressed with and through computers. One in which computers become a
-medium for
+The final brain twist I have for you is to rise above a merely technical view
+of computers. I hope you imagine, create and participate in a meaningful,
+authentic and engaging culture expressed with and through computers. One in
+which computers become a medium for
 <a href="https://democracyclub.org.uk/" target="_blank">affirmative</a>,
 <a href="https://freedom.press/" target="_blank">liberating</a>
 and
@@ -554,4 +554,6 @@ oft-missing "music" of computing.
 After all, we are [only just getting started](/article/thought-in-motion/) with
 these strange instruments of automation.
 
-Thank you for reading. Peace.
+Thank you for reading.
+
+Peace.

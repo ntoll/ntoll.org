@@ -3,7 +3,175 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Tue, 25 May 2021 08:40:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Movements of Thought</title><link>https://ntoll.org/article/why-computers-2/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 2)&lt;/h3&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 26 May 2021 07:01:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Representation</title><link>https://ntoll.org/article/why-computers-3/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 3)&lt;/h3&gt;
+&lt;p&gt;It's easy to imagine one thing representing another. We do this all the time.&lt;/p&gt;
+&lt;p&gt;For example, in the UK the Royal Standard always flies from buildings
+containing the monarch. This flag is understood to represent the Queen's
+presence and somebody ensures it is flown at the right moment from the
+buildings she visits.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/royal_standard.jpg" alt="The Royal Standard over Buckingham Palace"&gt;
+&lt;figcaption&gt;
+  &lt;a href="https://commons.wikimedia.org/wiki/File:Buckingham_Palace_-_Royal_Standard.jpg" target="_blank"&gt;Source&lt;/a&gt;
+  - Licensed under
+  &lt;a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank"&gt;CC BY-SA 3.0&lt;/a&gt;.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here's a twist...&lt;/p&gt;
+&lt;p&gt;Instead of the Royal Standard, a light on top of a building's flag pole could
+represent the Queen's presence. If it were on, she was present.&lt;/p&gt;
+&lt;p&gt;Notice there are two possible states for the Queen (she's either present or
+not), this is mirrored by the two possible states for the light (it is either
+illuminated or not), and we are playing along in a sort of game that provides
+meaning for such a representation (we understand that the Queen is present if
+the light is illuminated, just like we do when we see the flying of the Royal
+Standard). One thing (a light) is representing something else (the Queen's
+presence).&lt;/p&gt;
+&lt;p&gt;Such a device could be built using the circuit shown in the diagram below:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Simple switch circuit" src="https://ntoll.org/images/simple_circuit.png"&gt;&lt;/p&gt;
+&lt;p&gt;At the top is the symbol representing a battery that supplies current for
+the other components. Lines show how the battery and other components connect.
+The circle containing a cross represents a bulb and the gap created by the line
+veering off at an angle represents a switch. In the following photograph the
+real-world components, shown next to their symbols, connect to form the
+circuit:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Electrical components" src="https://ntoll.org/images/components.png"&gt;&lt;/p&gt;
+&lt;p&gt;The switch can be in two possible states: on (creating a circuit so current
+moves through the components, thus lighting the bulb) or off (where the circuit
+is broken, stopping the current and extinguishing the bulb).&lt;/p&gt;
+&lt;p&gt;Here's a royal brain twist for you: can you think of something else that deals
+with only two possible states?&lt;/p&gt;
+&lt;p&gt;If you thought, "propositional logic" then you deserve a knighthood!&lt;/p&gt;
+&lt;p&gt;The two possible states of the circuit, as controlled by the switch, mirrors
+the two possible states encountered in propositional logic: on/true and
+off/false. We could play along with the logical game and say that the circuit
+represents the truth value of the proposition, "the Queen is present".&lt;/p&gt;
+&lt;p&gt;Here's another royal brain twist: it's also possible to make simple circuits
+that mimic the logical operations found in propositional logic ("and", "or",
+"not" and all the rest).&lt;/p&gt;
+&lt;p&gt;By re-arranging the physical components of the circuit, from a logical point of
+view, the illuminated bulb could represent the presence of both the Queen
+and/or her hier, the Prince of Wales:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Queen is present &lt;em&gt;AND&lt;/em&gt; the Prince of Wales is present.&lt;/li&gt;
+&lt;li&gt;The Queen is present &lt;em&gt;OR&lt;/em&gt; the Prince of Wales is present.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remember, propositional logic doesn't care about the meaning of the
+propositions ("the Queen is present", "the Prince of Wales is present"), so
+the circuits' behaviour could be generalised to represent "A and B" or
+"A or B".&lt;/p&gt;
+&lt;p&gt;Here's the diagram for the "and" circuit:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="And circuit" src="https://ntoll.org/images/and_circuit.png"&gt;&lt;/p&gt;
+&lt;p&gt;The two switches are labelled to show how they represent the propositions "A"
+and "B". Because of the &lt;strong&gt;consecutive&lt;/strong&gt; arrangement of the switches, the states
+of the switches and the resulting behaviour of the bulb match the truth table
+for "and": if both switches are on, then the bulb is on (representing "true"),
+otherwise, in all other combination of switch states, the bulb is off
+(representing "false").&lt;/p&gt;
+&lt;p&gt;Here's the diagram for the "or" circuit:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Or circuit" src="https://ntoll.org/images/or_circuit.png"&gt;&lt;/p&gt;
+&lt;p&gt;In this case, the &lt;strong&gt;parallel&lt;/strong&gt; arrangement of the switches causes the circuit
+to mirror the truth table for the logical "or" operation. If only one (or both)
+of the switches are on, then the bulb is on, otherwise, when both switches are
+off, the bulb is off.&lt;/p&gt;
+&lt;p&gt;The circuit for "not" is slightly different and allows me to introduce a new
+(but important) electrical component: the &lt;em&gt;transistor&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Transistors control flow of electrical current with three connections called
+"gate", "source" and "drain". Electrical current flows between "source" and
+"drain" only if current is also applied to the "gate" connection. Rather than
+controlling the flow of current with a switch operated by a person, a
+transistor is controlled by another electrical component via the "gate".&lt;/p&gt;
+&lt;p&gt;Transistors work because they're made from two different types of silicon, a
+material that only conducts electricity under certain conditions (which is why
+it's called a semi-conductor). The silicon is mixed with certain impurities to
+create p-type and n-type silicon. In the diagram below the
+&lt;span style="color: #586796;"&gt;p-type silicon is shown in blue&lt;/span&gt;,
+the &lt;span style="color: #b03030;"&gt;n-type silicon in red&lt;/span&gt;
+and the gate connection in green.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Transistor off" src="https://ntoll.org/images/transistor_off_as_diagram.png"&gt;&lt;/p&gt;
+&lt;p&gt;In a similar way to how "and" and "or" circuits behave as a result of the
+physical arrangement of their components, the cleverness of transistors comes
+about because of how the p-type and n-type parts are physically arranged. The
+"source" terminal is connected to an n-type layer (in red, on the left of the
+diagram), the "gate" (in green) to the p-type barrier layer (in blue) and
+"drain" to another n-type layer (in red, on the right of the diagram).&lt;/p&gt;
+&lt;p&gt;In very simplistic terms, if a voltage is applied to p-type silicon via the
+"gate" connection, it behaves like n-type silicon. When in this state it is no
+longer an insulating barrier between the "source" and "drain" and electricity
+can flow. This is shown in the diagram below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Transistor on" src="https://ntoll.org/images/transistor_on_as_diagram.png"&gt;&lt;/p&gt;
+&lt;p&gt;Transistors come in many shapes and sizes, but are most common as
+extraordinarily small components etched onto silicon (i.e. microchips). The
+image below was taken by an electron microscope and shows a transistor on a
+microchip with the parts labelled.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/transistor_on_chip.png" alt="A Transistor on a microchip"&gt;
+&lt;figcaption&gt;&lt;a href="https://www.quora.com/Why-is-the-transistor-so-crucial-to-computers-and-what-role-does-it-play-in-computing" target="_blank"&gt;Source&lt;/a&gt; - educational fair use.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Back to the "not" circuit: remember that electricity will always flow the
+shortest way to "ground" (for instance via a lightning rod). The following
+(very simplified) circuit diagram shows how a transistor and ground is used to
+make something that behaves like a logical "not".&lt;/p&gt;
+&lt;p&gt;The transistor is represented by a circle pierced by three lines. The source is
+represented by the line entering the circle at the 1 o'clock position, the
+drain by the line at the 5 o'clock position and the gate by the line at 9
+o'clock.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Not circuit" src="https://ntoll.org/images/not_circuit.png"&gt;&lt;/p&gt;
+&lt;p&gt;On the left, the button labelled "A", attached to the gate, is off
+(representing false) so current is unable to pass through the transistor to
+ground. As a result, the electrical current (in red) flows through the lamp to
+illuminate it (representing true). On the right, the button is on (in green,
+representing voltage applied to the transistor's gate). The current is able
+to flow through the transistor from the source to the drain and then to
+ground (so no current flows to the bulb to illuminate it). The red arrows make
+it clear how the current flows.&lt;/p&gt;
+&lt;p&gt;Thus, the lamp is always in the opposite logical state to the switch and
+the circuit mirrors the behaviour of a logical "not". If the switch is off,
+the light is on and if the switch is on, the light is off.&lt;/p&gt;
+&lt;p&gt;The important brain twist is understanding that we can design physical systems
+(i.e. electrical circuits) that &lt;em&gt;appear to behave as logical ones&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Yet another seemingly contradictory brain twist is to &lt;em&gt;remove "logic" from any
+explanation of the circuits&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;From a scientific point of view of the circuit, an observer can only describe
+physical properties and behaviours in terms of electrical current, the
+mechanical behaviour of switches, the incandescent properties of filament and
+the electrochemical nature of batteries and transistors. You won't find any
+formal rules of propositional logic here, nor meaning ascribed to physical
+states of affairs. The scientific view of the circuit is the "how" of the
+circuit.&lt;/p&gt;
+&lt;p&gt;Yet if we agree the on/off states of the switches represent the true/false
+values of propositions "A" and "B" and the on/off status of the light
+represents a resulting logical outcome (true/false) then the behaviour of the
+first circuit undoubtedly mirrors the truth table for "and". Remember, it's not
+logic that makes the circuit behave in this way (it's actually physics!), but
+because we play along in a game where physical states mirror and thus
+accurately represent logical ones, then the circuit acquires an additional
+layer of meaning in terms of the rules of logic.&lt;/p&gt;
+&lt;p&gt;This is the "why" of the logical circuit: a human is needed to understand what
+the behaviour of a physical object apparently represents. Without the
+meaningful human-ascribed behaviour there is just an object described by
+physics.&lt;/p&gt;
+&lt;p&gt;Here's another instance of this phenomenon: there is no physical law described
+by science that explains why green means "go" and red means "stop" at traffic
+lights - yet the traffic lights are very much a physical system that can be
+described by science. If meaning is involved, then humans and their cultural
+norms are needed to make sense of it to explain what it represents.&lt;/p&gt;
+&lt;p&gt;Teleology (using meaningful purpose or design to explain phenomena) isn't a
+part of the "how" of physics-based descriptions of the world - yet humans
+commonly retrofit purpose or design to describe physical systems that exhibit
+behaviour appearing to represent something meaningful, such as logical
+operations or traffic lights. The brain twist is to realise where and when such
+human interventions assign meaning to the physical world, such as in the case
+of the logic circuits I've described.&lt;/p&gt;
+&lt;p&gt;Imagine an arrangement of many transistor-based circuits (representing various
+logical operations), chained together so the output of one circuit provides the
+input to the next. This yet-more-complicated arrangement of logical circuits
+defines the meaningful behaviour of a device. Such a device, like its
+constituent logical circuits, connects to the outside world via inputs and
+outputs and has a strange capability: to change its own state in order to store
+and process information.&lt;/p&gt;
+&lt;p&gt;The next post will explore such a machine.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/why-computers-3/</guid><pubDate>Wed, 26 May 2021 07:00:00 GMT</pubDate></item><item><title>Movements of Thought</title><link>https://ntoll.org/article/why-computers-2/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 2)&lt;/h3&gt;
 &lt;p&gt;Just as one can describe rules for a card game, it is possible to describe
 rules for thinking: rules for movement of thought.&lt;/p&gt;
 &lt;p&gt;This is the study of &lt;em&gt;Logic&lt;/em&gt;, and using these rules is called &lt;em&gt;reasoning&lt;/em&gt;.
@@ -1299,325 +1467,4 @@ eventually killed her around a decade or so later.&lt;/p&gt;
 
 &lt;div class="video-container"&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OPhkZW_jwc0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description><guid>https://ntoll.org/article/playlist-love/</guid><pubDate>Thu, 28 Nov 2019 14:30:00 GMT</pubDate></item><item><title>Testing CircuitPython Modules</title><link>https://ntoll.org/article/circuitpython-tests/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;&lt;a href="https://micropython.org/"&gt;MicroPython&lt;/a&gt;, a project by my
-buddy &lt;a href="http://dpgeorge.net/"&gt;Damien George&lt;/a&gt;, is a
-complete reimplementation of the Python programming language for
-microcontrollers and embedded systems. Put simply, it's Python for extremely
-small computers (and I once
-&lt;a href="http://shop.oreilly.com/product/0636920056515.do"&gt;wrote a book about it&lt;/a&gt;).
-&lt;a href="https://circuitpython.org/"&gt;CircuitPython&lt;/a&gt;, a friendly fork of
-MicroPython, is sponsored by the fantastic folks
-at &lt;a href="https://adafruit.com/"&gt;Adafruit&lt;/a&gt;, a company who make playful and
-easy-to-use "hackable" technology while promoting a welcoming, friendly and
-diverse community of makers. They are led by legendary founder and electrical
-engineer extraordinaire, &lt;a href="http://www.ladyada.net/"&gt;Limor "ladyada" Fried&lt;/a&gt;.
-CircuitPython is MicroPython for Adafruit's line of boards and with a
-consistent API for accessing the numerous bits of cool hardware you can use
-with such devices.&lt;/p&gt;
-
-&lt;p&gt;I was privileged to recently complete a block of work for Adafruit: I've
-written a CircuitPython module called &lt;code&gt;adafruit_radio&lt;/code&gt; that makes it
-easy for
-&lt;a href="https://en.wikipedia.org/wiki/Bluetooth"&gt;Bluetooth&lt;/a&gt; enabled
-Adafruit boards to communicate with each other. The API is
-a simplified version of the work myself and a number of other volunteers did on
-the
-&lt;a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/radio.html"&gt;equivalent functionality&lt;/a&gt;
-for the BBC micro:bit (&lt;a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/tutorials/radio.html"&gt;here's a tutorial I wrote for the micro:bit
-radio&lt;/a&gt;, to make electronic "fireflies" blink at each other over
-Bluetooth).&lt;/p&gt;
-
-&lt;p&gt;In the new Adafruit module, sending a message is as simple as:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
-r = Radio()
-r.send("Hello")
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;Receiving requires a loop (to allow the device to keep checking for
-messages), but is equally as simple:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
-r = Radio()
-
-while True:
-    message = r.receive()
-    if message:
-        # Do something useful with the message.
-        print(message)
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;The best model for thinking about this module is that of kids'
-walkie-talkies. Each
-radio is tuned to a certain channel upon which it broadcasts and receives.
-If you send a message, anyone else listening in on that channel and within
-range will receive it. You'll also receive messages broadcast on that
-channel from others within range. 
-This is an ideal network topology because it's both familiar
-yet capable since other, more specialised, network topologies can be built on
-top of it. There is potential for users to grow from a simple "walkie-talkie"
-model of networking to something more sophisticated and of their own
-devising.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ntoll.org/static/images/walkie-talkie.jpg" alt="Kids on walkie-talkies"&gt;&lt;/p&gt;
-
-&lt;p&gt;The channels in the module are numbered between 0-255 and can be set when
-creating a &lt;code&gt;Radio&lt;/code&gt; object (the default channel number is 42 in
-honour of
-&lt;a href="https://en.wikipedia.org/wiki/Douglas_Adams"&gt;Douglas Adams&lt;/a&gt;, who
-saw so much humane potential in new technology yet mischievously warned of the
-polluting effect of technology for technology's sake via the inept
-work of the
-&lt;a href="https://en.wikipedia.org/wiki/Technology_in_The_Hitchhiker%27s_Guide_to_the_Galaxy#Sirius_Cybernetics_Corporation"&gt;Sirius Cybernetics Corporation&lt;/a&gt;):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
-r = Radio(channel=123)
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;Alternatively, you can change channel at any time via the &lt;code&gt;Radio&lt;/code&gt;
-object's &lt;code&gt;configure&lt;/code&gt; method (continuing the example above):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;r.configure(channel=7)
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;Finally, in addition to sending strings of characters it's also possible to
-send and receive arbitrary bytes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from adafruit_radio import Radio
-r = Radio()
-r.send_bytes(b"Hello")
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;Receiving bytes gives you the full context of the message expressed as a
-Python tuple consisting of three values: the raw bytes, the RSSI reading (i.e.
-strength of the signal, from 0 [max] to -255 [min]), and a timestamp
-representing the number (and fraction of) seconds since the device powered up,
-as demonstrated in the following REPL based example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from adafruit_radio import Radio
-&amp;gt;&amp;gt;&amp;gt; r = Radio()
-&amp;gt;&amp;gt;&amp;gt; r.receive_full()
-(b'Hello', -40, 3245.155408037)
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;That's it! You can find the code in &lt;a href="https://github.com/ntoll/Adafruit_CircuitPython_Radio"&gt;this GitHub repository&lt;/a&gt;.
-Special mention and thanks must be made to Adafruit's
-&lt;a href="http://tannewt.org/"&gt;Scott Shawcroft&lt;/a&gt; and
-&lt;a href="https://danhalbert.org/"&gt;Dan Halbert&lt;/a&gt; who
-wrote the Bluetooth API I used. Because of their
-work I was able to create my module with less than a hundred lines of Python
-(at time of writing). Thanks chaps!&lt;/p&gt;
-
-&lt;p&gt;Armed with this context, I'm going to explain why and how I created a
-comprehensive test suite for the &lt;code&gt;adafruit_radio&lt;/code&gt; module.&lt;/p&gt;
-
-&lt;p&gt;I'd summarise my approach to testing as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;Testing is fundamental for creating and maintaining well designed
-    software. My experience is that it tends to produce code that is both
-    simple and easy to understand because nobody wants to write complicated
-    tests to exercise equally complicated code. The process of exercising code
-    through tests forces a developer to think carefully about how their code
-    is written while having the added benefit of demonstrating it works as
-    expected. Simplicity and ease of understanding are
-    desirable properties because such code is easier to read, correct and
-    maintain and also indicates the author's own clarity of thought (a good
-    sign). I also believe it helpful and friendly to write code that's easy
-    for others to read and understand (I often imagine my code will be read by
-    an intelligent beginner coder, because it forces me to explain and address
-    my own assumptions about my code).&lt;/li&gt;
-
-    &lt;li&gt;I personally don't practice strict test-driven development, where one
-    writes tests before writing the implementation. I prefer to explore,
-    improvise, extemporise and play at first. I often try various different
-    approaches to the task in hand and regularly re-draft. I'll often seek
-    advice and comments from collaborators, colleagues and potential users of
-    my code as soon as possible. Therefore, my highest priority when I start a
-    new project is making my code simple enough so that it is very easy to
-    change. Often this step in the coding process is called a "spike".&lt;/li&gt;
-
-    &lt;li&gt;Only when a project settles on a certain architecture, implementation
-    or foundation of code do I add tests. I think of this as a sort of
-    "hardening" process. When I'm happy with an approach I'll often re-draft
-    the exploratory code I've already written, alongside writing tests to
-    exercise that specific piece of code. I aim for, and often achieve, 100%
-    test coverage (every line of my code is exercised in some way by a test).
-    This process allows me to get a feel for how my API works from the point of
-    view of a fellow coder encountering it for the first time.&lt;/li&gt;
-
-    &lt;li&gt;The hardening has another effect: I've baked in an expectation for how
-    the code should behave via the tests. I also make sure my tests are
-    commented in such a way that a meaningful intention behind the test is
-    revealed. They're also a useful source of information for future users
-    and/or maintainers of my code. Finally, and perhaps most importantly, they
-    help manage change.&lt;/li&gt;
-
-    &lt;li&gt;No useful software is ever finished simply because the universe changes
-    (and so must software). Despite our best efforts, software is often
-    complicated and it's easy to forget something or not realise how a change
-    in one part of the
-    code may break another apparently unrelated part. Having a suite of
-    tests to check all the aspects of a codebase helps future maintainers make
-    changes with confidence.&lt;/li&gt;
-
-    &lt;li&gt;Being pragmatic, I sometimes don't follow the playful explorations
-    outlined above. If I'm dealing with a well defined or mature protocol
-    (for example), I'll quickly settle on an approach, usually based upon
-    research into how other folks have solved the same problem, and proceed by
-    writing tests based upon the protocol in order to measure the completeness,
-    accuracy and progress of my resulting implementation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The problem for developers writing for CircuitPython is that such code is
-usually to be run on microcontrollers with certain hardware capabilities. Yet
-such code is invariably written on conventional computers running operating
-systems such as Windows, OSX or Linux. The only way to know your code works is
-to try it on the target device. This is, to say the least, laborious compared
-to having the benefits of running an extensive test suite in a matter of
-seconds.&lt;/p&gt;
-
-&lt;p&gt;Having written my small and simple &lt;code&gt;adafruit_radio&lt;/code&gt; module I
-found myself missing the benefits of a comprehensive test suite. After asking
-around, I found most Python modules for CircuitPython don't have a test suite
-and there hadn't been much (if any) exploration for how to address this. Scott
-suggested I add what I thought best in terms of testing to my module.&lt;/p&gt;
-
-&lt;p&gt;I wanted my solution to meet the following requirements:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;It works with existing Python testing tools so non-specialist Python
-    developers feel at home and can bring their existing skills to
-    CircuitPython with little effort.&lt;/li&gt;
-
-    &lt;li&gt;It runs on a conventional computer, because that's where developers do
-    the majority of their work. (I'm constantly running and re-running my
-    test-suite as I make changes to code.)&lt;/li&gt;
-
-    &lt;li&gt;It handles the problem of using CircuitPython-only modules in a
-    test-suite run on a conventional computer with standard Python.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I decided to focus on using an existing, well known and mature Python
-testing tool called &lt;a href="http://pytest.org/en/latest/"&gt;PyTest&lt;/a&gt; (the
-creation of another friend of mine, the extraordinarily prolific and very
-thoughtful &lt;a href="https://holgerkrekel.net/"&gt;Holger Krekel&lt;/a&gt;). The
-advantage of using PyTest is that it has a large number of plug-ins that are
-both useful and familiar to a large number of Python programmers. One such
-plug-in I use a lot is the
-&lt;a href="https://github.com/pytest-dev/pytest-cov"&gt;Pytest coverage tool&lt;/a&gt;,
-which makes it easy to spot areas of a code base that are &lt;em&gt;not&lt;/em&gt; 
-exercised by a test suite. PyTest also has a well defined mechanisms to extend
-it to work in specialist testing situations (such as our own CircuitPython
-based context).&lt;/p&gt;
-
-&lt;p&gt;As far as I was concerned, using PyTest met the first two of my self-imposed
-requirements. I was left with the final problem of dealing with CircuitPython
-only modules that wouldn't work on a conventional computer.&lt;/p&gt;
-
-&lt;p&gt;This is where I need to introduce the concept of "mocking" in a test suite
-(as in "mocked up" rather than poking fun). Mocking is a way to replace parts
-of your system under test with "mocked up" objects and then make assertions
-about how such objects have been used. Thanks to another friend of mine (the
-huge hearted, funny and rather hairy
-&lt;a href="http://www.voidspace.org.uk/"&gt;Michael Foord&lt;/a&gt;), mocking is built
-right into Python's standard library.&lt;/p&gt;
-
-&lt;p&gt;My idea was simple: automatically mock away those parts of CircuitPython
-that don't work on a conventional computer. Such objects give the developer a
-way to check and ensure the module under test is working as expected with
-CircuitPython. It's even possible to specify how such mock objects should
-behave under certain conditions (such as when they may be the source of some
-sort of data which the module under test will use). However, this aspect of
-mocking should be used with great care -- more on which later.&lt;/p&gt;
-
-&lt;p&gt;If a developer creates a &lt;code&gt;conftest.py&lt;/code&gt; file in their test suite
-PyTest will import it before running any of the test code and use various
-functions found therein to configure the test suite. For example, if PyTest
-finds a function called &lt;code&gt;pytest_runtest_setup&lt;/code&gt; in the
-&lt;code&gt;conftest.py&lt;/code&gt; file, then this function will always be called
-immediately prior to any test function. Just what we need!&lt;/p&gt;
-
-&lt;p&gt;My &lt;a href="https://github.com/ntoll/Adafruit_CircuitPython_Radio/blob/master/tests/conftest.py"&gt;&lt;code&gt;conftest.py file&lt;/code&gt;&lt;/a&gt;
-is very short and simply mocks away named aspects of CircuitPython which cannot
-be run on a conventional computer immediately before any test is run, via the
-aforementioned &lt;code&gt;pytest_runtest_setup&lt;/code&gt; convention.&lt;/p&gt;
-
-&lt;p&gt;It means I can write conventional looking PyTest based unit tests like the
-following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def test_radio_receive_full_no_messages(radio):
-    """
-    If no messages are detected by receive_full then it returns None.
-    """
-    radio.ble.start_scan.return_value = []
-    assert radio.receive_full() is None
-    radio.ble.start_scan.assert_called_once_with(
-        adafruit_radio.AdafruitRadio, minimum_rssi=-255, timeout=1
-    )
-    radio.ble.stop_scan.assert_called_once_with()
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;Some things you should know: &lt;code&gt;radio.ble&lt;/code&gt; is a mocked away part of
-CircuitPython. As a result, on the first line of my test function, I've been
-able to tell the mock that the result of calling the &lt;code&gt;start_scan&lt;/code&gt;
-method is an empty list. Then I can assert that the method I want to test (the
-&lt;code&gt;radio.receive_full&lt;/code&gt; method returns &lt;code&gt;None&lt;/code&gt; in this
-context. Furthermore, I'm able to check in the final two statements of the
-function that the &lt;code&gt;start_scan&lt;/code&gt; method was called with the expected
-arguments, and that an additional &lt;code&gt;stop_scan&lt;/code&gt; method was called
-too.&lt;/p&gt;
-
-&lt;p&gt;When I run the test suite, I see something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pytest --cov-report term-missing --cov=adafruit_radio tests/
-============================= test session starts ==============================
-platform linux -- Python 3.7.5, pytest-5.3.0, py-1.8.0, pluggy-0.13.0
-rootdir: /home/ntoll/src/adafruit_radio
-plugins: cov-2.8.1
-collected 12 items                                                             
-
-tests/test_adafruit_radio.py ............                                [100%]
-
------------ coverage: platform linux, python 3.7.5-final-0 -----------
-Name                Stmts   Miss  Cover   Missing
--------------------------------------------------
-adafruit_radio.py      61      0   100%
-
-
-============================== 12 passed in 0.09s ==============================
-&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
-
-&lt;p&gt;Note all the feedback about code coverage..! Neat, huh?&lt;/p&gt;
-
-&lt;p&gt;A mock object, by its very nature, is a mock-up of something else... it's
-not the real thing..! So what happens when the real thing (that has been
-mocked-up in the test suite) changes? For instance let's imagine that the
-result of a call to &lt;code&gt;start_scan&lt;/code&gt; is no longer an empty list, but
-something else. The tests will still pass because the mocked-up object doesn't
-reflect the real object, yet when the module under test is used on a real
-device with the changed version of CircuitPython then it won't work
-correctly.&lt;/p&gt;
-
-&lt;p&gt;This is obviously not a good situation and why I mention mocks should be
-used with great care and attention.&lt;/p&gt;
-
-&lt;p&gt;The most obvious solution is for the developer in charge of the test
-suite to be careful and check API updates in the release notes of the modules
-being mocked away. However, this becomes a burden if the test suite mocks away
-a huge number of modules. It's also open to human error.&lt;/p&gt;
-
-&lt;p&gt;There are several ways to mitigate this problem, but because it's early days
-I've not been able to investigate these potential solutions properly. The best
-I can do at this point in time is shrug my shoulders, say things are under
-construction and invite folks to dive in and help. Our community would
-certainly be enriched by such collaborations.&lt;/p&gt;
-
-&lt;p&gt;In conclusion, I'm quite pleased with this first step in equipping
-CircuitPython modules with comprehensive test suites. Yet there's still plenty
-to do -- most notably, ways to address the problems mentioned with mocking.&lt;/p&gt;
-
-&lt;p&gt;As always, comments, constructive criticism and ideas expressed in a
-friendly, collaborative and supportive manner are most welcome.&lt;/p&gt;
-
-&lt;p&gt;Over to you... :-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-tests/</guid><pubDate>Mon, 25 Nov 2019 13:30:00 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://ntoll.org/article/playlist-love/</guid><pubDate>Thu, 28 Nov 2019 14:30:00 GMT</pubDate></item></channel></rss>
