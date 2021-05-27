@@ -3,7 +3,340 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Wed, 26 May 2021 07:01:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Representation</title><link>https://ntoll.org/article/why-computers-3/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 3)&lt;/h3&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Thu, 27 May 2021 07:34:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automated Rule Following Machines</title><link>https://ntoll.org/article/why-computers-4/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
+.tape td {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #fafafa;
+    background: #4F5151;
+}
+
+.on {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #4F5151 !important;
+    background: #fafafa !important;
+}
+
+table td, table th {
+    text-align: center;
+}
+&lt;/style&gt;
+
+&lt;h3&gt;Why Computers Work (part 4)&lt;/h3&gt;
+&lt;p&gt;What follows isn't so much a brain twist, as an extended make-pretend that
+points the way to what a computer is.&lt;/p&gt;
+&lt;p&gt;Imagine a strange looking contraption sitting before you on a table.&lt;/p&gt;
+&lt;p&gt;It consists of an exceptionally long reel-to-reel tape that passes through an
+electro-mechanical device of some sort. The tape is subdivided into square
+"frames". Some of the squares contain symbols, others are empty. As it
+operates, the tape moves through the device both to the left or to the right,
+like a badly behaved cinema projector.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/turing_machine.jpg" alt="A Turing Machine"&gt;
+&lt;figcaption&gt;
+  &lt;a href="https://commons.wikimedia.org/wiki/File:Turing_Machine_Model_Davey_2012.jpg" target="_blank"&gt;Source&lt;/a&gt;
+  - Licensed under
+  &lt;a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank"&gt;CC BY 3.0&lt;/a&gt;
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;The "head" (where the tape passes through the device) covers exactly one
+square's worth of the tape. There's a flash of light from the head when a new
+square is completely contained therein. Sometimes this is followed by a
+clicking sound. When the click is heard the symbol in the square is changed:
+it's either different or completely rubbed out. Then the tape moves to the left
+or right to a new square before continuing its strange flashing and clicking
+operation.&lt;/p&gt;
+&lt;p&gt;On the front of the machine is a little window. The window is labelled
+"&lt;code&gt;STATE&lt;/code&gt;" and contains a number that changes when each square is "processed" by
+the head.&lt;/p&gt;
+&lt;p&gt;After a while the machine comes to a stop. The state window contains the number
+0 (zero). By the head, on the tape, are a sequence of squares containing some
+familiar looking symbols:&lt;/p&gt;
+&lt;table class="tape"&gt;
+    &lt;tr&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;H&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;E&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;L&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;L&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;O&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt; &lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;W&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;O&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;R&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;L&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;D&lt;/code&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Two other objects are on the table. On one side of the contraption is a black
+and white photograph of a thoughtful looking man with an old fashioned side
+parting and &lt;em&gt;enigmatic&lt;/em&gt; smile, sitting in a sturdy deck chair. On the other is
+a thick ring-bound pile of paper whose title you can just make out:
+"Instructions".&lt;/p&gt;
+&lt;p&gt;The instructions listed on the front page consist of just four rules:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Set the machine to state "1".&lt;/li&gt;
+  &lt;li&gt;Read the symbol in the current frame on the tape.&lt;/li&gt;
+  &lt;li&gt;Given the current state of the machine and the symbol read from the
+  current frame, look up what to do next. "What to do next" is defined by three
+  transitions:
+
+    &lt;ul&gt;
+      &lt;li&gt;Change to a new numbered state.&lt;/li&gt;
+      &lt;li&gt;Replace or delete the symbol in the current frame.&lt;/li&gt;
+      &lt;li&gt;Move the tape by some number of frames to the left or the right.&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;If the new state is "0" then stop, otherwise resume from rule 2.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;On the many pages that follow is a single huge table entitled "What to do
+next". It contains thousands of entries under the same five columns, and all
+look something like these extracts:&lt;/p&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;CURRENT STATE&lt;/th&gt;
+        &lt;th&gt;HEAD READ&lt;/th&gt;
+        &lt;th&gt;➔&lt;/th&gt;
+        &lt;th&gt;NEXT STATE&lt;/th&gt;
+        &lt;th&gt;HEAD WRITE&lt;/th&gt;
+        &lt;th&gt;MOVE TAPE&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;"A"&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;785&lt;/td&gt;
+        &lt;td&gt;"5"&lt;/td&gt;
+        &lt;td&gt;1L&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;...&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;516&lt;/td&gt;
+        &lt;td&gt;" "&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;657&lt;/td&gt;
+        &lt;td&gt;"!"&lt;/td&gt;
+        &lt;td&gt;86R&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;516&lt;/td&gt;
+        &lt;td&gt;"#"&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;657&lt;/td&gt;
+        &lt;td&gt;"!"&lt;/td&gt;
+        &lt;td&gt;86R&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;...&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1023&lt;/td&gt;
+        &lt;td&gt;"#"&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;1020&lt;/td&gt;
+        &lt;td&gt;" "&lt;/td&gt;
+        &lt;td&gt;23R&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;A note, just above the table, explains:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Each combination of the "CURRENT STATE" and "HEAD READ" values is unique.
+There is one row for each possible combination. Identify the row that
+corresponds to the current state of affairs. The new state of affairs is
+defined by the "NEXT STATE", "HEAD WRITE" and "MOVE TAPE" values on the same
+row.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Therefore, the first line of the extract means that if the machine is in state
+&lt;em&gt;1&lt;/em&gt; and the head reads the symbol &lt;em&gt;"A"&lt;/em&gt; then the next state is &lt;em&gt;785&lt;/em&gt;, the
+symbol &lt;em&gt;"5"&lt;/em&gt; should be written to the current square, and the tape should
+move &lt;em&gt;1 square to the left&lt;/em&gt;. The final line of the extract means that if the
+machine is in state &lt;em&gt;1023&lt;/em&gt; and the head reads the symbol &lt;em&gt;"#"&lt;/em&gt; then the next
+state is &lt;em&gt;1020&lt;/em&gt;, the &lt;em&gt;symbol should be deleted from the current square&lt;/em&gt; and
+the tape should move &lt;em&gt;23 squares to the right&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This is propositional logic..!&lt;/p&gt;
+&lt;p&gt;It's a table of conditionals whose two premises (the "CURRENT STATE" and
+"HEAD READ" values) are conjuncted (logical &lt;code&gt;AND&lt;/code&gt;) to identify what the
+resulting behaviour should be (the "NEXT STATE", "HEAD WRITE", and "MOVE TAPE"
+values). &lt;code&gt;IF&lt;/code&gt; the state is &lt;em&gt;this&lt;/em&gt; &lt;code&gt;AND&lt;/code&gt; the value read by the head is &lt;em&gt;that&lt;/em&gt;
+&lt;code&gt;THEN&lt;/code&gt; go to the specified &lt;em&gt;next state&lt;/em&gt;, write &lt;em&gt;such-and-such&lt;/em&gt; to the tape and
+move the tape by &lt;em&gt;however many squares in a certain direction&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If you look carefully, hidden within the extract are also disjunctions (logical
+&lt;code&gt;OR&lt;/code&gt;). The middle two lines (for state &lt;em&gt;516&lt;/em&gt;) have the same state and outcome,
+but different symbols read from the head. This is the same as checking &lt;code&gt;IF&lt;/code&gt;
+(the state is &lt;em&gt;516&lt;/em&gt; &lt;code&gt;AND&lt;/code&gt; the head reading is &lt;em&gt;empty&lt;/em&gt;) &lt;code&gt;OR&lt;/code&gt; (the state is &lt;em&gt;516&lt;/em&gt;
+AND the head reading is &lt;em&gt;"#"&lt;/em&gt;) &lt;code&gt;THEN&lt;/code&gt; the next state is &lt;em&gt;657&lt;/em&gt;, write &lt;em&gt;"!"&lt;/em&gt; to
+the tape and the tape should move &lt;em&gt;86 squares to the right&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;But what is the purpose of this machine? What does it do?&lt;/p&gt;
+&lt;p&gt;It follows the four rules, that start the instruction manual, to repeatedly
+perform the logical steps defined in the "What to do next" table. The steps in
+the table react to and change the state of the symbols on the tape in order
+to arrive at a desired end result. What that end result is depends upon what's
+on the tape when the machine is switched on and how the steps in the table
+interact with that starting state and subsequent states of affairs.&lt;/p&gt;
+&lt;p&gt;In other words, given a certain "what to do next" table, a starting state and
+some input on the tape, it computes a result.&lt;/p&gt;
+&lt;p&gt;It is &lt;strong&gt;a computer!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you had the instructions, a copy of the table, a physical tape, a pencil and
+an eraser you might follow the rules from the start state (state &lt;em&gt;1&lt;/em&gt;) until the
+end state (state &lt;em&gt;0&lt;/em&gt;) was achieved. But the machine would do it much faster and
+wouldn't get tired, bored or make mistakes.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A cardboard computer" src="https://ntoll.org/images/cardboard_computer.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;This process might feel familiar: deliberately precise rules describe how,
+given certain states of affairs, such and such things must happen. States of
+affairs unambiguously describe how things are in the world. For example, "the
+machine is in state 284 and the current square on the tape contains an &lt;code&gt;H&lt;/code&gt;".
+When I say that such and such must happen, I mean clear and unambiguous
+instructions describe how the machine proceeds given a certain state of
+affairs.&lt;/p&gt;
+&lt;p&gt;This is how I described the game of Snap &lt;a href="https://ntoll.org/article/why-computers-1#rules_of_snap"&gt;in the first article&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;It turns out that computing a result is not that different to playing a
+children's game. Computing a result is the same as following a set of
+instructions for changing states of affairs. Such unambiguous instructions
+are called &lt;em&gt;algorithms&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Since the rules in the "what to do next" table are logical, they can be 
+represented by the sorts of electrical circuitry described
+&lt;a href="https://ntoll.org/article/why-computers-3"&gt;in the previous post&lt;/a&gt;. Such circuitry receives input
+signals from the components in the head, and controls other components such as
+the motors that control the tape.&lt;/p&gt;
+&lt;p&gt;For this machine to do anything meaningful, someone will have carefully
+crafted the "what to do next" rules so the symbols on the tape when the machine
+is switched on in state 1, are transformed into a completely-new-yet-useful
+set of symbols when the machine achieves state 0. The algorithm is defined by
+the "what to do next" rules written in the table and encoded in the
+circuitry. The machine transitions from state 1 and what may be found on the
+tape at that moment, via a huge number of intervening states, to state 0 and a
+computed result written on the tape.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/alan_turing.jpg" alt="Alan Turing"&gt;
+&lt;figcaption&gt;
+  &lt;a href="https://commons.wikimedia.org/wiki/File:Alan_Turing_az_1930-as_%C3%A9vekben.jpg" target="_blank"&gt;Source&lt;/a&gt;
+  - this image is in the
+  &lt;a href="https://en.wikipedia.org/wiki/Public_domain" target="_blank"&gt;public domain&lt;/a&gt;.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;What I've described is a Turing machine. Such an imaginary device was invented
+by the British mathematician Alan Turing (the chap in the photograph). It turns
+out that anything that can be computed by a set of instructions that manipulate
+symbols (the algorithm), can be computed by a Turing machine. Anything that
+works in a way that is equivalent to a Turing machine is described as Turing
+complete because it, too, is able to compute outcomes from an algorithm. To be
+Turing complete is to be a programmable computer.&lt;/p&gt;
+&lt;p&gt;Turing
+&lt;a href="https://londmathsoc.onlinelibrary.wiley.com/doi/pdf/10.1112/plms/s2-42.1.230" target="_blank"&gt;explained how computation works&lt;/a&gt;
+by describing his machine. If you create something that can work like a Turing
+machine then you have also created a computer. You don't have to prove your
+computer is complete, because Turing already did that for you. This equivalence
+of capability is &lt;em&gt;why&lt;/em&gt; we learn about Turing machines: they make it
+clear what it is to be a computer.&lt;/p&gt;
+
+&lt;p&gt;There are many variations on a Turing machine. The one I've described could be
+simplified in a couple of ways:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The machine could use multiple tapes with multiple heads rather than a
+   single tape and a single head. The information used to make a computation
+   is available in concurrent squares on several tapes, rather than as a
+   sequence of individual values on one single tape.&lt;/li&gt;
+&lt;li&gt;The alphabet of symbols that could be written to or read from the tape
+   need only consist of two symbols: one representing "on", and the other
+   representing "off". Put simply, information is represented in a binary
+   fashion as shown in the following illustration (white or "1" is on, black or
+   "0" is off).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="tape"&gt;
+    &lt;tr&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;1&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;code&gt;0&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;1&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td class="on"&gt;
+            &lt;code&gt;1&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;code&gt;0&lt;/code&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;code&gt;0&lt;/code&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Each of these changes wouldn't make the machine any more powerful than the one
+I've described, but they may make the machine easier to build and program. The
+important property of the machine is its Turing completeness.&lt;/p&gt;
+&lt;p&gt;The computer you're using to read this article obviously works in a completely
+different way to the seemingly ramshackle contraption I describe. While there
+is no tape or head inside your computing device, there are transistors
+etched into silicon chips that react to and change the state of values stored
+in memory, billions of times a second. The chips connect to other parts of your
+device via input/output pins. The other parts of your device, connected via
+specialist hardware, might include things like a screen, keyboard, mouse,
+speaker or microphone.&lt;/p&gt;
+&lt;p&gt;Just as a Turing machine iterates over the same cycle of reading from the head,
+writing to the tape and transitioning to a new state, a silicon based chip,
+synchronised by a clock, carries out a similar iterative cycle of work one
+instruction after another. In fact, the clock speed of your machine's CPU tells
+you how many instructions the chip will carry out each second (for instance, a
+3Ghz chip will manage 3 billion instructions a second).&lt;/p&gt;
+&lt;p&gt;If you're interested in how an actual chip behaves,
+&lt;a href="http://www.visual6502.org/sim/varm/armgl.html" target="_blank"&gt;this
+link takes you to a simulation of an ARM1 chip&lt;/a&gt; -- a forerunner to those
+that run your mobile phone. Click on the "play" button
+(&lt;img src="https://ntoll.org/images/play.png" target="_blank" style="display: inline;vertical-align: middle;"&gt;)
+to watch the chip "operate". It's possible to zoom in and out, move around,
+speed up or slow down the clock and see how individual transistors are
+connected to and interact with each other.&lt;/p&gt;
+
+&lt;p&gt;If a computer is simply something that is Turing complete, why is it that we're
+able to use such devices to read and write words, hear music, draw pictures,
+watch videos and all the other meaningful stuff for which we find computers so
+useful?&lt;/p&gt;
+&lt;p&gt;The answer relates to how we perceive things, our talent for abstraction and
+our cultural context. The next and final post will explore these concepts.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/why-computers-4/</guid><pubDate>Thu, 27 May 2021 07:30:00 GMT</pubDate></item><item><title>Representation</title><link>https://ntoll.org/article/why-computers-3/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;h3&gt;Why Computers Work (part 3)&lt;/h3&gt;
 &lt;p&gt;It's easy to imagine one thing representing another. We do this all the time.&lt;/p&gt;
 &lt;p&gt;For example, in the UK the Royal Standard always flies from buildings
 containing the monarch. This flag is understood to represent the Queen's
@@ -1020,451 +1353,4 @@ happy new year. Here's to wonderful things in 2020.&lt;/p&gt;
 
 &lt;p&gt;Let's go..!&lt;/p&gt;
 
-&lt;p&gt;:-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-2020/</guid><pubDate>Tue, 07 Jan 2020 17:30:00 GMT</pubDate></item><item><title>A Classical Playlist of Love</title><link>https://ntoll.org/article/playlist-love/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;When my Canadian buddies &lt;a href="https://twitter.com/AndreaMcInnes21"&gt;Andrea&lt;/a&gt;
-and &lt;a href="https://snarky.ca/"&gt;Brett&lt;/a&gt; visited the UK in
-the summer, we visited the &lt;a href="https://en.wikipedia.org/wiki/Royal_Albert_Hall"&gt;Royal Albert Hall&lt;/a&gt; to hear a classical music
-concert that was part of
-&lt;a href="https://en.wikipedia.org/wiki/The_Proms"&gt;the Proms&lt;/a&gt; -- the world's largest
-classical music festival. I think they must have enjoyed themselves because
-they recently got in touch asking me to suggest a playlist of
-classical music. What follows is my response along with videos of performances
-of the pieces I chose.&lt;/p&gt;
-
-&lt;p&gt;Rather than put together a playlist of apparently random
-choices, I decided it would be interesting to assemble a set of pieces
-related to a particular feeling. In this case, I chose love.&lt;/p&gt;
-
-&lt;p&gt;Why love?&lt;/p&gt;
-
-&lt;p&gt;Because love is complicated, tragic, happy, joyful, funny, raunchy and many
-more aspects too numerous to list here. The western classical
-tradition has around 900 years of musical reactions, settings and descriptions
-of love -- plenty of opportunity to reveal a breadth and depth of music. So,
-I'm going to associate each piece with some aspect of love, provide
-a short commentary and embedded a video of a performance of
-the selected piece.&lt;/p&gt;
-
-&lt;p&gt;I want to draw your attention to my sharing videos of performances. Ideally,
-you'd listen to these pieces in person at a concert. Only in such a live
-situation can you really experience the fleeting moment of the performance,
-executed by highly trained musicians and feel that sense of being in a
-particular unique moment, together with all the others in attendance. The
-videos are a less than perfect replacement, yet still have the potential to
-move you.&lt;/p&gt;
-
-&lt;p&gt;For convenience I've put them into a
-&lt;a href="https://www.youtube.com/watch?v=yjz2TvC2TT4&amp;amp;list=PLzCYc445IVNTPApt_F6PkGCRRPNfG-JmA"&gt;playlist on YouTube&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Since this is classical music, it may sound strange to modern ears not
-familiar with styles and mannerisms from hundreds of years ago or it uses sung
-or instrumental techniques that sound odd because they're not used much in
-contemporary popular music. If classical music isn't your thing, consider
-this an invitation to explore a new musical world -- a world that rewards
-repeated engagement, an open mind and long term listening. This is music that
-makes demands of the listener, but will reveal depths one cannot even imagine
-until you experience them for yourself. For those of you who are already
-immersed in classical music you'll find none of my choices particularly
-challenging. In fact, you may even roll your eyes and think, "oh, not that old
-chestnut again". Please remember, this is an introductory playlist, but know
-that I'm open to suggestions.&lt;/p&gt;
-
-&lt;p&gt;I sincerely hope you are moved by the pieces I've selected.&lt;/p&gt;
-
-&lt;h3&gt;Tender Love&lt;/h3&gt;
-
-&lt;p&gt;Gustav Mahler - Adagietto from Symphony No. 5&lt;/p&gt;
-
-&lt;p&gt;This is a musical representation of Mahler's love for his wife Alma. Their
-friend Wilem Engelberg recollects, "In place of a letter, he sent her this in
-manuscript form, not adding a further word. She understood and wrote to him
-telling him to come!!! They both told me this."&lt;/p&gt;
-
-&lt;p&gt;Alma later revealed Gustav left her the following poem with the score.&lt;/p&gt;
-
-&lt;blockquote&gt;In which way I love you, my sunbeam,&lt;br&gt;
-I cannot tell you with words.&lt;br&gt;
-Only my longing, my love and my bliss&lt;br&gt;
-can I with anguish declare.&lt;/blockquote&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/P8LZ43LA2nY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Tragic Love&lt;/h3&gt;
-
-&lt;p&gt;Pyotr Ilyich Tchaikovsky - Fantasy Overture to Romeo and Juliet&lt;/p&gt;
-
-&lt;p&gt;Tchaikovsky was well acquainted with tragic love: he was a gay man in 19th
-century Russia (a time and place full of prejudice towards someone such as
-himself).&lt;/p&gt;
-
-&lt;p&gt;Such tragedy and pain as well as an overflowing sense of passion are
-skilfully captured in this piece or "musical impressions" loosely assembled to
-follow the story of Romeo and Juliet. Listen out for the overwhelming "love
-theme" which has become a musical cliché for inevitably doomed lovers.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3x69wuewkJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Romantic Love&lt;/h3&gt;
-
-&lt;p&gt;Sergei Rachmaninoff - Piano Concerto No.2&lt;/p&gt;
-
-&lt;p&gt;Rachmaninoff, another Russian, is widely considered one of the greatest
-pianists of all time, as well as one of the greatest composers for the
-piano. This piano concerto is full of yearning melodies, gushing outpourings of
-emotion, tender moments and joyful exuberance. Just like falling in love!&lt;/p&gt;
-
-&lt;p&gt;It was effectively used in the David Lean romance from 1945, "Brief
-Encounters", thus cementing it as a "romantic" classic.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rEGOihjqO9w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love Denied&lt;/h3&gt;
-
-&lt;p&gt;Puccini - O Mio Babbino Caro&lt;/p&gt;
-
-&lt;p&gt;This aria, from Puccini's opera "Gianni Schicchi", comes at the moment where
-the daughter of Gianni tells him that she's fallen in love, wants to get
-married, and if he won't let her go to her true love, she'll throw herself off
-the Ponte Vecchio bridge in Florence.&lt;/p&gt;
-
-&lt;p&gt;If you imagine this sounds like a musical tantrum in the making, get ready
-with the hankies and prepare for something absolutely not tantrum like at
-all.&lt;/p&gt;
-
-&lt;p&gt;The soprano singer in the video, Montserrat Caballé, is simply stunning. Her
-charisma, presence, musicianship and vocal control is awe inspiring. Yes, she's
-the one who sang with Freddie Mercury on his single "Barcelona".&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RxZSP1Dc78Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Platonic Love&lt;/h3&gt;
-
-&lt;p&gt;Brahms - Intermezzo Op. 118 No. 2&lt;/p&gt;
-
-&lt;p&gt;Brahms wrote this beautiful piece for his friend Clara Schumann (Clara is
-another musician considered one of the greatest pianists of all time and a
-wonderful composer in her own right). I describe it as "Platonic" because Clara
-was married to Brahms's mentor and friend Robert Schumann, who eventually
-succumbed to mental health issues. Brahms and Clara were undoubtedly close and
-shared a deep love for each other, but it was only ever a love between dear
-friends. Imagine how you'd feel if you had been gifted such a piece of
-music.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/78OO5v0lNtI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Fantastical Love&lt;/h3&gt;
-
-&lt;p&gt;Berlioz - Symphonie Fantastique&lt;/p&gt;
-
-&lt;p&gt;This is sex, drugs and classical music with an added dose of musical story
-telling.&lt;/p&gt;
-
-&lt;p&gt;The video is of the concert Andrea, Brett and I attended. I won't
-say any more, since the performers do a fantastic job of explaining what's
-going on. It's quite a spectacle (and watch out for the mirror balls).&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/t1sEI0JoZ8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love Transformed&lt;/h3&gt;
-
-&lt;p&gt;Schoenberg - Verklärte Nacht&lt;/p&gt;
-
-&lt;p&gt;Schoenberg wrote this piece to closely follow the structure of the poem upon
-which it is based, to the extent that the different sections in the musical
-score map directly to lines in the poem. The poem, by Richard Dehmel, whose
-title is translated as "Transfigured Night", tells of two lovers walking in the
-woods. The woman opens up about a terrible burden she carries. Her lover is
-full of compassion, love and support which transforms her burden into a shared
-aspect of their life together. I'm being necessarily vague here so I don't
-spoil the poem for you... just read it as
-&lt;a href="https://allpoetry.com/Transfigured-Night-(Verklrte-Nacht)"&gt;translated here&lt;/a&gt;
-and then listen to the piece. My favourite lines (and part of the piece)
-are:&lt;/p&gt;
-
-&lt;blockquote&gt;Just see how brightly the universe is gleaming!&lt;br&gt;
-There’s a glow around everything;&lt;br&gt;
-You are floating with me on a cold ocean,&lt;br&gt;
-But a special warmth flickers&lt;br&gt;
-From you into me, from me into you.&lt;/blockquote&gt;
-
-&lt;p&gt;At this point the music sounds as if it's gleaming..! One other thing you
-may hear, the violin (a high instrument) is prominent in the sections
-representing the woman speaking, whereas the cello (a low instrument) is
-prominent in the sections representing the man speaking.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yzSaOWPBFqA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love's Dream&lt;/h3&gt;
-
-&lt;p&gt;Fauré - Après un rêve&lt;/p&gt;
-
-&lt;p&gt;This is simply a song about a dream of the poet's beloved. The words of the
-poem (and their English translation) can be found &lt;a href="https://www.oxfordlieder.co.uk/song/15"&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FlT1QhK4Wto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Erotic Love&lt;/h3&gt;
-
-&lt;p&gt;Wagner - Prelude and Liebestod from 'Tristan Und Isolde'&lt;/p&gt;
-
-&lt;p&gt;Where do I start with this one..? This is erotic music. I don't mean humping
-or "having a shag". Rather, it's a musical version of a passionate embrace
-(between the protagonists, Tristan and Isolde).&lt;/p&gt;
-
-&lt;p&gt;In music theory we use the term "climax" to describe the point at which all
-the tension in the music is released. There's a reason we call it a climax.
-This piece has a famously ecstatic climax that takes a while to build, after
-lots of tender pauses, gradually intensifying musical moments, soaring strings
-and throbbing horns (no pun intended).&lt;/p&gt;
-
-&lt;p&gt;I'm sure you'll hear what I mean.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/W8EQcMurhAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Orgasmic Love&lt;/h3&gt;
-
-&lt;p&gt;Orff - Dulcissime (from Carmina Burana)&lt;/p&gt;
-
-&lt;p&gt;Just watch and listen. No further explanation needed.&lt;/p&gt; 
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BFq8vH7tPxs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Marriage&lt;/h3&gt;
-
-&lt;p&gt;Mendelssohn - Wedding March from A Midsummer Night's Dream&lt;/p&gt;
-
-&lt;p&gt;You'll hear this in pretty much every church wedding you ever attend - and
-quite rightly, it's very uplifting, celebratory and joyful music. Just what you
-need for such an occasion.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rIM5cWB2wmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;A Moment of Love&lt;/h3&gt;
-
-&lt;p&gt;Vaughan Williams - Silent Noon&lt;/p&gt;
-
-&lt;p&gt;Dante Gabriel Rossetti's poem "Silent Noon" recollects an intimate shared
-moment of love that was both fleeting and intense. Vaughan Williams music
-beautifully complements the nostalgic, thoughtful and timeless nature of the
-moment in question.&lt;/p&gt;
-
-&lt;blockquote&gt;Your hands lie open in the long fresh grass,--&lt;br&gt;
-The finger-points look through like rosy blooms:&lt;br&gt;
-Your eyes smile peace. The pasture gleams and glooms&lt;br&gt;
-'Neath billowing skies that scatter and amass.&lt;br&gt;
-All round our nest, far as the eye can pass,&lt;br&gt;
-Are golden kingcup-fields with silver edge&lt;br&gt;
-Where the cow-parsley skirts the hawthorn-hedge.&lt;br&gt;
-'Tis visible silence, still as the hour-glass.&lt;br&gt;
-Deep in the sun-searched growths the dragon-fly&lt;br&gt;
-Hangs like a blue thread loosened from the sky:--&lt;br&gt;
-So this wing'd hour is dropt to us from above.&lt;br&gt;
-Oh! clasp we to our hearts, for deathless dower,&lt;br&gt;
-This close-companioned inarticulate hour&lt;br&gt;
-When twofold silence was the song of love.&lt;br&gt;
-&lt;/blockquote&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rvl4Qo-z_KM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love's Yearning&lt;/h3&gt;
-
-&lt;p&gt;Gluck - Che farò senza Euridice&lt;/p&gt;
-
-&lt;p&gt;The story of Orfeo and Euridice is popular among composers. The hero,
-Orpheus, is a master musician who can tame nature with his music. His beloved
-Euridice dies and is taken to the Greek underworld. Missing his lover,
-Orpheus travels into the underworld and charms Hades, the god of the
-dead, with his music. As a result, Hades promises that Euridice can live and
-return to the world of the living so long as Orpheus doesn't look back to see
-if she follows him on the way home. Inevitably, Orpheus looks back and Euridice
-is, once again, struck dead. It's at this point in the opera that we hear the
-following aria for counter-tenor (the highest natural voice for a man to
-sing). The title means, "What shall I do without Euridice?".&lt;/p&gt;
-
-&lt;blockquote&gt;What will I do without Euridice&lt;br&gt;
-Where will I go without my wonderful one.&lt;br&gt;
-Euridice, oh God, answer&lt;br&gt;
-I am entirely your loyal one.&lt;br&gt;
-Euridice! Ah, it doesn´t give me&lt;br&gt;
-any help, any hope&lt;br&gt;
-neither this world, neither heaven.&lt;/blockquote&gt;
-
-&lt;p&gt;I'll leave you to work out what happens next.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0mEKeaXST2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love's Pain&lt;/h3&gt;
-
-&lt;p&gt;Strozzi - Che si può fare&lt;/p&gt;
-
-&lt;p&gt;Barbara Strozzi was a remarkable woman. Born in Venice in 1619, she was one
-of the most well known musicians of her age. It is claimed she had more music
-in print than any other composer of the era. This success was of her own doing
-since she had no support from the usual sources of the church or nobility.&lt;/p&gt;
-
-&lt;p&gt;I imagine that if Bridget Jones were from Baroque era Venice, she'd be
-listening to this instead of Céline Dion's "All By Myself".&lt;/p&gt;
-
-&lt;blockquote&gt;What can I do?&lt;br&gt;
-The stars have no pity and work against me;&lt;br&gt;
-If heaven will give me no gesture&lt;br&gt;
-Of peace for my pain,&lt;br&gt;
-What can I do?&lt;br&gt;
-&lt;br&gt;
-What can I say?&lt;br&gt;
-The heavens are raining disasters on me;&lt;br&gt;
-If Love will not grant me a moment of breath,&lt;br&gt;
-to relieve all my suffering,&lt;br&gt;
-What can I say?&lt;/blockquote&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1F458aC_FUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love of Home&lt;/h3&gt;
-
-&lt;p&gt;Smetana - Vltava (The Moldau) from Má vlast&lt;/p&gt;
-
-&lt;p&gt;This is the musical antidote to nationalism.&lt;/p&gt;
-
-&lt;p&gt;The Czech composer Smetana uses music to represent the river Moldau as it
-runs through his country in a celebration of the landscape, activity, folk
-music, dance and industry of the people of the Czech republic.&lt;/p&gt;
-
-&lt;p&gt;It works well as a musical metaphor, starting with the trickle of notes
-from the opening flutes and building up to a flowing melody surrounded by
-melodic eddys and currents in the strings. The river music keeps returning
-throughout the piece as different musical interludes interject to describe
-some aspect of where the river flows.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/l6kqu2mk-Kw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love of Nature&lt;/h3&gt;
-
-&lt;p&gt;Beethoven - Pastoral Symphony&lt;/p&gt;
-
-&lt;p&gt;This piece is an old friend of mine. Forget the Disney version from the
-animated film "Fantasia" -- this is Beethoven musically representing a visit to
-the country and the emotional impact that has on him.&lt;/p&gt;
-
-&lt;p&gt;In the latter part of the work he paints a picture of a country dance
-interrupted by a storm which he concludes with a hymn to nature. Beethoven
-wasn't conventionally religious, but this is a certainly a spiritual reaction
-to nature.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/iQGm0H9l9I4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love of Humanity&lt;/h3&gt;
-
-&lt;p&gt;Beethoven - Choral Symphony&lt;/p&gt;
-
-&lt;p&gt;Beethoven's 9th is full of different emotions and a real journey of the soul
-in musical form. But the part I want to particularly highlight is the finale,
-the "Ode to Joy".&lt;/p&gt;
-
-&lt;p&gt;Beethoven was famously misanthropic and that's how the finale starts with
-the rather annoyed sounding cellos and double basses. But once the "joy" theme
-is found the instruments try their hardest to make something of it. Yet
-Beethoven's genius is to interrupt the finale at this point, and start again
-with human voices. Schiller's words are a celebration of brotherhood,
-togetherness and humanity.&lt;/p&gt;
-
-&lt;p&gt;Yes, it really does have the line, "here's a giant kiss for all" sung by the
-massed choir. Thank you Ludwig.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-suf9BL9xRA?start=2663" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Parental Love&lt;/h3&gt;
-
-&lt;p&gt;Shostakovich - Piano Concerto No.2 (Second Movement)&lt;/p&gt;
-
-&lt;p&gt;Dimitri Shostakovich wrote this concerto for his son Maxim. Maxim used it as
-an audition piece for music conservatoire when he was a teenager. This second
-movement is both sad yet hopeful, as a parent lets go and reflects on the child
-leaving and growing into adulthood. The music full of love and sadness. Perhaps
-if the orchestra is Dimitri, then Maxim is the piano.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TPqMvoR2Buo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love Ending&lt;/h3&gt;
-
-&lt;p&gt;Strauss - "Im Abendrot" from Four Last Songs&lt;/p&gt;
-
-&lt;p&gt;This is a musical and poetic meditation on two lovers coming to the end of
-their long life together.&lt;/p&gt;
-
-&lt;blockquote&gt;Through sorrow and joy&lt;br&gt;
-we have gone hand in hand;&lt;br&gt;
-we are both at rest from our wanderings&lt;br&gt;
-now above the quiet land.&lt;br&gt;
-&lt;br&gt;
-Around us, the valleys bow,&lt;br&gt;
-the air already darkens.&lt;br&gt;
-Only two larks soar&lt;br&gt;
-musingly into the haze.&lt;br&gt;
-&lt;br&gt;
-Come close, and let them flutter,&lt;br&gt;
-soon it will be time to sleep -&lt;br&gt;
-so that we don't get lost&lt;br&gt;
-in this solitude.&lt;br&gt;
-&lt;br&gt;
-O vast, tranquil peace,&lt;br&gt;
-so deep in the afterglow!&lt;br&gt;
-How weary we are of wandering--&lt;br&gt;
-Is this perhaps death?&lt;/blockquote&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Giaf3qSqDHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h3&gt;Love Lost&lt;/h3&gt;
-
-&lt;p&gt;Elgar - Cello Concerto&lt;/p&gt;
-
-&lt;p&gt;My wife, Mary, once played this in a concerto competition (and won).&lt;/p&gt;
-
-&lt;p&gt;Elgar wrote the piece soon after his wife, Alice, passed away. The cello is,
-of course, Alice and the music Elgar creates reflects all the different
-feelings he has now that she is gone.&lt;/p&gt;
-
-&lt;p&gt;This very old performance, by Jacqueline du Pré on cello and Daniel
-Barenboim conducting, is poignant. They were married but Jackie's playing
-succumbed to multiple sclerosis soon after this recording was made. The MS
-eventually killed her around a decade or so later.&lt;/p&gt;
-
-&lt;div class="video-container"&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OPhkZW_jwc0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description><guid>https://ntoll.org/article/playlist-love/</guid><pubDate>Thu, 28 Nov 2019 14:30:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;:-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-2020/</guid><pubDate>Tue, 07 Jan 2020 17:30:00 GMT</pubDate></item></channel></rss>

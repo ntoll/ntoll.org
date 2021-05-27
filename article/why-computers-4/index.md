@@ -1,8 +1,7 @@
 <!--
 .. title: Automated Rule Following Machines
 .. slug: why-computers-4
-.. date: 2021-04-27 09:00:00 UTC+01:00
-.. status: private
+.. date: 2021-05-27 08:30:00 UTC+01:00
 .. tags: 
 .. category: 
 .. link: 
@@ -353,7 +352,7 @@ specialist hardware, might include things like a screen, keyboard, mouse,
 speaker or microphone.
 
 Just as a Turing machine iterates over the same cycle of reading from the head,
-writing to the tape and transitioning to a new state, a microprocessor chip,
+writing to the tape and transitioning to a new state, a silicon based chip,
 synchronised by a clock, carries out a similar iterative cycle of work one
 instruction after another. In fact, the clock speed of your machine's CPU tells
 you how many instructions the chip will carry out each second (for instance, a
@@ -373,5 +372,5 @@ able to use such devices to read and write words, hear music, draw pictures,
 watch videos and all the other meaningful stuff for which we find computers so
 useful?
 
-The answer relates to how we perceive things, our talent for abstraction and our
-cultural context. The next and final post will explore these concepts.
+The answer relates to how we perceive things, our talent for abstraction and
+our cultural context. The next and final post will explore these concepts.

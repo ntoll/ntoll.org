@@ -31,7 +31,7 @@
 <link rel="next" href="index-22.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-<link rel="prefetch" href="article/why-computers-3/" type="text/html">
+<link rel="prefetch" href="article/why-computers-4/" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -59,7 +59,335 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-3/" class="u-url">Representation</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-4/" class="u-url">Automated Rule Following Machines</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/why-computers-4/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-05-27T08:30:00+01:00" itemprop="datePublished" title="Thu, May 27, 2021 8:30 AM">Thu, May 27, 2021 8:30 AM</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<style>
+.tape td {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #fafafa;
+    background: #4F5151;
+}
+
+.on {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #4F5151 !important;
+    background: #fafafa !important;
+}
+
+table td, table th {
+    text-align: center;
+}
+</style>
+<h3>Why Computers Work (part 4)</h3>
+<p>What follows isn't so much a brain twist, as an extended make-pretend that
+points the way to what a computer is.</p>
+<p>Imagine a strange looking contraption sitting before you on a table.</p>
+<p>It consists of an exceptionally long reel-to-reel tape that passes through an
+electro-mechanical device of some sort. The tape is subdivided into square
+"frames". Some of the squares contain symbols, others are empty. As it
+operates, the tape moves through the device both to the left or to the right,
+like a badly behaved cinema projector.</p>
+<figure><img src="images/turing_machine.jpg" alt="A Turing Machine"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Turing_Machine_Model_Davey_2012.jpg" target="_blank">Source</a>
+  - Licensed under
+  <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank">CC BY 3.0</a>
+</figcaption></figure><p>The "head" (where the tape passes through the device) covers exactly one
+square's worth of the tape. There's a flash of light from the head when a new
+square is completely contained therein. Sometimes this is followed by a
+clicking sound. When the click is heard the symbol in the square is changed:
+it's either different or completely rubbed out. Then the tape moves to the left
+or right to a new square before continuing its strange flashing and clicking
+operation.</p>
+<p>On the front of the machine is a little window. The window is labelled
+"<code>STATE</code>" and contains a number that changes when each square is "processed" by
+the head.</p>
+<p>After a while the machine comes to a stop. The state window contains the number
+0 (zero). By the head, on the tape, are a sequence of squares containing some
+familiar looking symbols:</p>
+<table class="tape"><tr>
+<td class="on">
+            <code>H</code>
+        </td>
+        <td class="on">
+            <code>E</code>
+        </td>
+        <td class="on">
+            <code>L</code>
+        </td>
+        <td class="on">
+            <code>L</code>
+        </td>
+        <td class="on">
+            <code>O</code>
+        </td>
+        <td class="on">
+            <code> </code>
+        </td>
+        <td class="on">
+            <code>W</code>
+        </td>
+        <td class="on">
+            <code>O</code>
+        </td>
+        <td class="on">
+            <code>R</code>
+        </td>
+        <td class="on">
+            <code>L</code>
+        </td>
+        <td class="on">
+            <code>D</code>
+        </td>
+    </tr></table>
+<p>Two other objects are on the table. On one side of the contraption is a black
+and white photograph of a thoughtful looking man with an old fashioned side
+parting and <em>enigmatic</em> smile, sitting in a sturdy deck chair. On the other is
+a thick ring-bound pile of paper whose title you can just make out:
+"Instructions".</p>
+<p>The instructions listed on the front page consist of just four rules:</p>
+<ol>
+<li>Set the machine to state "1".</li>
+  <li>Read the symbol in the current frame on the tape.</li>
+  <li>Given the current state of the machine and the symbol read from the
+  current frame, look up what to do next. "What to do next" is defined by three
+  transitions:
+
+    <ul>
+<li>Change to a new numbered state.</li>
+      <li>Replace or delete the symbol in the current frame.</li>
+      <li>Move the tape by some number of frames to the left or the right.</li>
+    </ul>
+</li>
+  <li>If the new state is "0" then stop, otherwise resume from rule 2.</li>
+</ol>
+<p>On the many pages that follow is a single huge table entitled "What to do
+next". It contains thousands of entries under the same five columns, and all
+look something like these extracts:</p>
+<table>
+<tr>
+<th>CURRENT STATE</th>
+        <th>HEAD READ</th>
+        <th>➔</th>
+        <th>NEXT STATE</th>
+        <th>HEAD WRITE</th>
+        <th>MOVE TAPE</th>
+    </tr>
+<tr>
+<td>1</td>
+        <td>"A"</td>
+        <td></td>
+        <td>785</td>
+        <td>"5"</td>
+        <td>1L</td>
+    </tr>
+<tr>
+<td> </td>
+        <td></td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td>516</td>
+        <td>" "</td>
+        <td></td>
+        <td>657</td>
+        <td>"!"</td>
+        <td>86R</td>
+    </tr>
+<tr>
+<td>516</td>
+        <td>"#"</td>
+        <td></td>
+        <td>657</td>
+        <td>"!"</td>
+        <td>86R</td>
+    </tr>
+<tr>
+<td> </td>
+        <td></td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td>1023</td>
+        <td>"#"</td>
+        <td></td>
+        <td>1020</td>
+        <td>" "</td>
+        <td>23R</td>
+    </tr>
+</table>
+<p>A note, just above the table, explains:</p>
+<blockquote>
+<p>Each combination of the "CURRENT STATE" and "HEAD READ" values is unique.
+There is one row for each possible combination. Identify the row that
+corresponds to the current state of affairs. The new state of affairs is
+defined by the "NEXT STATE", "HEAD WRITE" and "MOVE TAPE" values on the same
+row.</p>
+</blockquote>
+<p>Therefore, the first line of the extract means that if the machine is in state
+<em>1</em> and the head reads the symbol <em>"A"</em> then the next state is <em>785</em>, the
+symbol <em>"5"</em> should be written to the current square, and the tape should
+move <em>1 square to the left</em>. The final line of the extract means that if the
+machine is in state <em>1023</em> and the head reads the symbol <em>"#"</em> then the next
+state is <em>1020</em>, the <em>symbol should be deleted from the current square</em> and
+the tape should move <em>23 squares to the right</em>.</p>
+<p>This is propositional logic..!</p>
+<p>It's a table of conditionals whose two premises (the "CURRENT STATE" and
+"HEAD READ" values) are conjuncted (logical <code>AND</code>) to identify what the
+resulting behaviour should be (the "NEXT STATE", "HEAD WRITE", and "MOVE TAPE"
+values). <code>IF</code> the state is <em>this</em> <code>AND</code> the value read by the head is <em>that</em>
+<code>THEN</code> go to the specified <em>next state</em>, write <em>such-and-such</em> to the tape and
+move the tape by <em>however many squares in a certain direction</em>.</p>
+<p>If you look carefully, hidden within the extract are also disjunctions (logical
+<code>OR</code>). The middle two lines (for state <em>516</em>) have the same state and outcome,
+but different symbols read from the head. This is the same as checking <code>IF</code>
+(the state is <em>516</em> <code>AND</code> the head reading is <em>empty</em>) <code>OR</code> (the state is <em>516</em>
+AND the head reading is <em>"#"</em>) <code>THEN</code> the next state is <em>657</em>, write <em>"!"</em> to
+the tape and the tape should move <em>86 squares to the right</em>.</p>
+<p>But what is the purpose of this machine? What does it do?</p>
+<p>It follows the four rules, that start the instruction manual, to repeatedly
+perform the logical steps defined in the "What to do next" table. The steps in
+the table react to and change the state of the symbols on the tape in order
+to arrive at a desired end result. What that end result is depends upon what's
+on the tape when the machine is switched on and how the steps in the table
+interact with that starting state and subsequent states of affairs.</p>
+<p>In other words, given a certain "what to do next" table, a starting state and
+some input on the tape, it computes a result.</p>
+<p>It is <strong>a computer!</strong></p>
+<p>If you had the instructions, a copy of the table, a physical tape, a pencil and
+an eraser you might follow the rules from the start state (state <em>1</em>) until the
+end state (state <em>0</em>) was achieved. But the machine would do it much faster and
+wouldn't get tired, bored or make mistakes.</p>
+<p><img alt="A cardboard computer" src="images/cardboard_computer.jpg"></p>
+<p>This process might feel familiar: deliberately precise rules describe how,
+given certain states of affairs, such and such things must happen. States of
+affairs unambiguously describe how things are in the world. For example, "the
+machine is in state 284 and the current square on the tape contains an <code>H</code>".
+When I say that such and such must happen, I mean clear and unambiguous
+instructions describe how the machine proceeds given a certain state of
+affairs.</p>
+<p>This is how I described the game of Snap <a href="article/why-computers-1#rules_of_snap">in the first article</a>!</p>
+<p>It turns out that computing a result is not that different to playing a
+children's game. Computing a result is the same as following a set of
+instructions for changing states of affairs. Such unambiguous instructions
+are called <em>algorithms</em>.</p>
+<p>Since the rules in the "what to do next" table are logical, they can be 
+represented by the sorts of electrical circuitry described
+<a href="article/why-computers-3">in the previous post</a>. Such circuitry receives input
+signals from the components in the head, and controls other components such as
+the motors that control the tape.</p>
+<p>For this machine to do anything meaningful, someone will have carefully
+crafted the "what to do next" rules so the symbols on the tape when the machine
+is switched on in state 1, are transformed into a completely-new-yet-useful
+set of symbols when the machine achieves state 0. The algorithm is defined by
+the "what to do next" rules written in the table and encoded in the
+circuitry. The machine transitions from state 1 and what may be found on the
+tape at that moment, via a huge number of intervening states, to state 0 and a
+computed result written on the tape.</p>
+<figure><img src="images/alan_turing.jpg" alt="Alan Turing"><figcaption><a href="https://commons.wikimedia.org/wiki/File:Alan_Turing_az_1930-as_%C3%A9vekben.jpg" target="_blank">Source</a>
+  - this image is in the
+  <a href="https://en.wikipedia.org/wiki/Public_domain" target="_blank">public domain</a>.
+</figcaption></figure><p>What I've described is a Turing machine. Such an imaginary device was invented
+by the British mathematician Alan Turing (the chap in the photograph). It turns
+out that anything that can be computed by a set of instructions that manipulate
+symbols (the algorithm), can be computed by a Turing machine. Anything that
+works in a way that is equivalent to a Turing machine is described as Turing
+complete because it, too, is able to compute outcomes from an algorithm. To be
+Turing complete is to be a programmable computer.</p>
+<p>Turing
+<a href="https://londmathsoc.onlinelibrary.wiley.com/doi/pdf/10.1112/plms/s2-42.1.230" target="_blank">explained how computation works</a>
+by describing his machine. If you create something that can work like a Turing
+machine then you have also created a computer. You don't have to prove your
+computer is complete, because Turing already did that for you. This equivalence
+of capability is <em>why</em> we learn about Turing machines: they make it
+clear what it is to be a computer.</p>
+
+<p>There are many variations on a Turing machine. The one I've described could be
+simplified in a couple of ways:</p>
+<ol>
+<li>The machine could use multiple tapes with multiple heads rather than a
+   single tape and a single head. The information used to make a computation
+   is available in concurrent squares on several tapes, rather than as a
+   sequence of individual values on one single tape.</li>
+<li>The alphabet of symbols that could be written to or read from the tape
+   need only consist of two symbols: one representing "on", and the other
+   representing "off". Put simply, information is represented in a binary
+   fashion as shown in the following illustration (white or "1" is on, black or
+   "0" is off).</li>
+</ol>
+<table class="tape"><tr>
+<td class="on">
+            <code>1</code>
+        </td>
+        <td>
+            <code>0</code>
+        </td>
+        <td class="on">
+            <code>1</code>
+        </td>
+        <td class="on">
+            <code>1</code>
+        </td>
+        <td>
+            <code>0</code>
+        </td>
+        <td>
+            <code>0</code>
+        </td>
+    </tr></table>
+<p>Each of these changes wouldn't make the machine any more powerful than the one
+I've described, but they may make the machine easier to build and program. The
+important property of the machine is its Turing completeness.</p>
+<p>The computer you're using to read this article obviously works in a completely
+different way to the seemingly ramshackle contraption I describe. While there
+is no tape or head inside your computing device, there are transistors
+etched into silicon chips that react to and change the state of values stored
+in memory, billions of times a second. The chips connect to other parts of your
+device via input/output pins. The other parts of your device, connected via
+specialist hardware, might include things like a screen, keyboard, mouse,
+speaker or microphone.</p>
+<p>Just as a Turing machine iterates over the same cycle of reading from the head,
+writing to the tape and transitioning to a new state, a silicon based chip,
+synchronised by a clock, carries out a similar iterative cycle of work one
+instruction after another. In fact, the clock speed of your machine's CPU tells
+you how many instructions the chip will carry out each second (for instance, a
+3Ghz chip will manage 3 billion instructions a second).</p>
+<p>If you're interested in how an actual chip behaves,
+<a href="http://www.visual6502.org/sim/varm/armgl.html" target="_blank">this
+link takes you to a simulation of an ARM1 chip</a> -- a forerunner to those
+that run your mobile phone. Click on the "play" button
+(<img src="images/play.png" target="_blank" style="display: inline;vertical-align: middle;">)
+to watch the chip "operate". It's possible to zoom in and out, move around,
+speed up or slow down the clock and see how individual transistors are
+connected to and interact with each other.</p>
+
+<p>If a computer is simply something that is Turing complete, why is it that we're
+able to use such devices to read and write words, hear music, draw pictures,
+watch videos and all the other meaningful stuff for which we find computers so
+useful?</p>
+<p>The answer relates to how we perceive things, our talent for abstraction and
+our cultural context. The next and final post will explore these concepts.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-3/" class="u-url">Representation</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Nicholas H.Tollervey
@@ -662,172 +990,6 @@ use of monosyllabic words.</p>
 <p>If folks genuinely want to connect with me, they'll be in touch (as I will be
 with them).</p>
 <p>Peace.</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/on-being-together/" class="u-url">On Being Together</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Nicholas H.Tollervey
-            </span></p>
-            <p class="dateline">
-            <a href="article/on-being-together/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-08-21T17:45:00+01:00" itemprop="datePublished" title="Fri, Aug 21, 2020 5:45 PM">Fri, Aug 21, 2020 5:45 PM</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>(Some raw thoughts I've written down solely to help me clarify my thinking.)</p>
-<p>Being together with people I love and who love me in return is a source of
-great joy and solace.</p>
-<p>Yet being with people can also lead to distress.</p>
-<p>Like many, I've encountered rejection and resulting feelings of loneliness,
-I've been the target of ignorant nastiness, and some make it clear I am of no
-value while others happily place unreasonable burdens upon me. My own
-experiences are but a small selection from the menu of unwelcome situations
-that could be, and often are, meted out to people.</p>
-<p>Dealing with complicated experiences and finding a way to work through
-challenging encounters often feels painful and can lead to a sense of failure
-or hopelessness. But I believe this process is also an opportunity for growth,
-albeit through small, difficult, and often misplaced, steps. Allowing
-complicated feelings, pain and failure to manifest is certainly better than the
-alternative: sweeping things out of sight means the distress is never
-addressed, explored or dealt with.</p>
-<p>So, being together requires conscious work and reflection.</p>
-<p>The good stuff can take as much effort as the bad. To be loving, compassionate,
-tolerant and forgiving towards others requires great strength of character. The
-bad stuff shows we are all flawed sensitive beings whose strength often fails
-us. We have an endless capacity to hurt and be hurt by each other. This is
-especially true if we don't allow ourselves the time and energy to reflect upon
-and consciously adjust our behaviour towards each other.</p>
-<p>Sadly, some simply don't care for others or for such self reflection.</p>
-<p>For example, narcissists (by definition) lack empathy or compassion and only
-make an effort in relationships if they see a benefit to themselves. This is a
-tragic form of ignorance, for they will never know the joy of relationships
-shared with loved ones who reciprocate emotional investment and mutual care.
-For them, being together is an exercise in self aggrandisement, domination or
-profit.</p>
-<p>The origins of such self-centredness are complicated. Ironically, introspection
-and self-reflection - the very traits such people fail to exercise - would help
-address and overcome such origins.</p>
-<p>I believe everyone has a unique and valuable journey through life, even if
-their current location or direction of travel is deeply problematic.
-Recognising this applies to a narcissist or other difficult individual takes
-(the afore mentioned) strength of character. But it means it is possible to be
-together without getting crushed by the weight of their ego or toxic behaviour.
-Sadly, sometimes this is simply not possible and you have to cut your losses
-and move on.</p>
-<p>I often wonder how to respond to the difficulties that arise from being
-together with others. I continue to believe that being together is often a
-privilege and a source of happiness and growth. Yet some of my recent
-collaborations have also been a source of great pain (interactions with aspects
-of the Python community
-<a href="https://ntoll.org/article/compassion/">spring to mind</a>). As a result, my
-feelings about being together have changed significantly over the past
-couple of years. </p>
-<p>I used to be all about promoting "the community" as a way of being together.
-An immediate problem is "the community" is an amorphous blob of a term that
-folks never pin down. This is a significant cause of many problems as
-misunderstanding is rife. In any case, I naively contributed and volunteered my
-code, time, effort and money. In short, I tried very hard to be a positive part
-of "something". For the past 12 years or so, this "something" was the Python
-programming community.</p>
-<p>In my experience, there are two common contrasting ways folks describe or
-think about the notion of "community": top-down (meaning the community is
-managed) and bottom-up (where the community emerges through participation). </p>
-<p>I've always been reticent about top-down bureaucratic, formal and
-hierarchical notions of community. Often they are well meaning yet ineffectual
-(or sometimes even damaging) self defeating processes. They can also easily
-turn into toxic dumpster fires full of malice (politics and power plays being
-well known examples of contributing factors to such a sorry state of affairs).
-Finally, they tend to gain a momentum that makes it easy to squash and ignore
-rather than cherish and nourish individuals and creative innovation. While
-my experience of the "formal" Python community has mostly been extraordinarily
-positive, there has been enough not-so-good-stuff that I've chosen to step
-away. I can only but wish the Python community well, but it's a ship in which I
-no longer sail.</p>
-<p>But I don't want to find myself in a chaotic bottom-up community either.
-While these are ad hoc, improvised and informal, there is still a hierarchy,
-along with impositions of power and other negative political machinations.
-These are lived out through hidden communication channels, gossip or because
-the loudest or most charismatic folks hold the floor. People are either "in"
-or "out" of the circle of these "movers and shakers".</p>
-<p>At least more formal communities appear to be up front about hierarchy, the
-exercise of power, the scope and relations of roles and how one assumes
-positions therein..!</p>
-<p>I can't help but feel that something is missing when we view communities as
-such formal structures. Communities are collections of individual people and,
-perhaps, the missing element to make sense of being together is an explicit
-focus on the "character" of participants. Just how do individuals reflect and
-choose to behave when being together?</p>
-<p>I'm reminded of <a href="https://www.lewissociety.org/innerring/">this rather interesting essay</a>,
-by C.S.Lewis. I first read it when I was a music undergraduate and found it via
-my Christian room-mate. Lewis describes an "Inner Ring", something akin to the
-circle of "movers and shakers" vying for influence, power and prestige that I
-describe above. The part of the essay that most speaks to me comes at the very
-end:</p>
-<blockquote>
-<p>"And if in your spare time you consort simply with the people you like, you
-will again find that you have come unawares to a real inside: that you are
-indeed snug and safe at the centre of something which, seen from without,
-would look exactly like an Inner Ring. But the difference is that the secrecy
-is accidental, and its exclusiveness a by-product, and no one was led thither
-by the lure of the esoteric: for it is only four or five people who like one
-another meeting to do things that they like. This is friendship. Aristotle
-placed it among the virtues. It causes perhaps half of all the happiness in
-the world, and no Inner Ring can ever have it."</p>
-</blockquote>
-<p>Reaching back in time to feel like my 18 year old undergraduate self, I want to
-be with folks who are open to compassionate, collaborative, cooperative
-ways of working but without any extra problematic notions of "community" (as
-described above). I simply want to bring myself, and welcome others who want to
-join me, in a place where there's recognition, a connection, frisson or
-creative energy from which we can mutually grow.</p>
-<p>In other words, I am inviting friendship.</p>
-<p>Friendship requires trust, honesty, tolerance, compassion and forgiveness...
-all those things that depend upon strength of character. Putting in such effort
-for others is the antipode of the machinations needed to become one of the "in"
-crowd or a member of the organisational elite.</p>
-<p>So here's the thing... the tech world has its fair share of folks who forget or
-don't understand what I believe makes a place positive, friendly and safe when
-being with each other. Such folks see collaboration in terms of gaining
-prestige and power. This is the stuff of narcissistic day dreams.</p>
-<p>In an organised community such behaviour is addressed by a code of conduct (and
-the Python community spend a lot of time and energy acting on this with varying
-degrees of success, from [alas] hollow virtue signalling through to very
-effective networks of support centred on extraordinarily kind and caring
-individuals). Conversely, informal communities tend to lack this sort of
-public or explicit "framework" often with detrimental results (folks are able
-to capitalize, abuse or manipulate the informal "hidden" networks and
-relationships to selfish or unpleasant ends with no clear way to call them
-out).</p>
-<p>My focus on self-reflection and things within my own control explains why I've
-found myself writing a sort of poetic personal code I call
-"<a href="https://github.com/ntoll/being_together">on being together</a>".
-I'll make it a part of all my future coding projects (and encountering
-<a href="https://github.com/Xe/creators-code">Xe's Creator's Code</a>
-inspired this effort). It's very much a work in progress and has become an
-expression of what you can expect from me and what I hope from you should we
-find ourselves "being together" in a place to collaborate with each other.</p>
-<blockquote>
-<br>
-When being together, especially if things go wrong,<br>
-we acknowledge and work through differences.<br>
-In so doing, we transform and enlarge each other.<br><br>
-To nurture our mutual growth,<br><br>
-    this is a place of<br>
-        learning, understanding, and sharing;<br><br>
-    this is a place to<br>
-        affirm tolerance and compassion;<br><br>
-    this is a place for<br>
-        collaborative creativity.<br><br>
-All the aspects of yourself you choose to bring to this place<br>
-are welcome here.<br><br>
-Reciprocate! Welcome, embrace and learn from others<br>
-(even in the face of apparent hostility or misunderstanding).<br><br>
-To act against this spirit invites ostracism,<br>
-a loss that diminishes us all.<br><br>
-Thank you.<br><br>
-</blockquote>
 </div>
     </div>
     </article>

@@ -455,7 +455,8 @@ chip designers and, ultimately, physicists can be found.</p>
 <a href="https://pypi.org/" target="_blank">software libraries</a> in the same
 way a chef may re-use pre-existing recipes. Someone else will have figured out
 how to do some valuable task and organised the steps needed to fulfil it into,
-say, a module of re-usable Python code. Just like the bundle of thinking needed
+say, <a href="https://arrr.readthedocs.io/en/latest/" target="_blank">a module
+of re-usable Python code</a>. Just like the bundle of thinking needed
 to ride a bike becomes subsumed into the concept of cycling, I don't have to
 know the implementation details, but can refer to the relevant re-usable code
 when it is needed in my own program. Such re-use of existing instructions
@@ -508,10 +509,9 @@ medium.
 
 Computers shine when they enlarge us in an affirmative, humane, creative and
 expressive way. Yet computing for the sake of computers, with no regard for
-culture, is a diminished, inhumane and insular form of ignorance.
-
-I look at how we currently use and think of computers and can't help but feel
-disappointed.
+culture, is a diminished, inhumane and insular form of ignorance. Sadly, I
+can't help but feel disappointed with how we currently use and think of
+computers.
 
 Social media is anything but social... it's an efficient advertising laboratory
 that turns humanity into lab rats caged in echo chambers of digitally digested
