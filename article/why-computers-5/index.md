@@ -1,8 +1,7 @@
 <!--
 .. title: Perception, Abstraction and Culture
 .. slug: why-computers-5
-.. date: 2021-04-28 09:00:00 UTC+01:00
-.. status: private
+.. date: 2021-05-28 09:00:00 UTC+01:00
 .. tags: 
 .. category: 
 .. link: 
@@ -448,8 +447,9 @@ the computer hardware are usually further refined into
 - a series of circuit-level instructions that describe how the hardware should
 behave to complete the computation. Of course, someone will have organised and
 designed the millions of transistors and other microscopic components that make
-up the hardware. This is the level of computing at which electrical engineers,
-chip designers and, ultimately, physicists can be found.</p>
+up the (<a href="/article/why-computers-4/">Turing complete</a>) hardware. This
+is the level of computing at which electrical engineers, chip designers and,
+ultimately, physicists can be found.</p>
 
 <p>Along the way, I didn't have to write everything from scratch. Coders use
 <a href="https://pypi.org/" target="_blank">software libraries</a> in the same
@@ -507,11 +507,11 @@ expression_ is also of cultural significance. Like other forms of creative
 endeavour, computers reflect those who make, inhabit and consume in such a
 medium.
 
-Computers shine when they enlarge us in an affirmative, humane, creative and
-expressive way. Yet computing for the sake of computers, with no regard for
-culture, is a diminished, inhumane and insular form of ignorance. Sadly, I
-can't help but feel disappointed with how we currently use and think of
-computers.
+Computers shine when they enlarge us in an affirmative, fulfilling, humane,
+creative and expressive way. Yet computing for the sake of computers, with no
+regard for culture, is a diminished, inhumane and insular form of ignorance
+and, sadly, I can't help but feel disappointed with how, in the mainstream, we
+currently use and think of computers.
 
 Social media is anything but social... it's an efficient advertising laboratory
 that turns humanity into lab rats caged in echo chambers of digitally digested
@@ -522,21 +522,21 @@ prejudices). Computer games are mostly beautiful looking yet formulaic
 variations on a theme, target driven and hardly allow a player to express
 themselves. Our world is polluted by complicated and unpleasant computerised
 gizmos: "intelligent" washing machines, programmable coffee makers, automatic
-point-of-sale machines... all of which are frustrating to use. And, of course,
-no aspect of life is too small to be "solved" by an app available on your
-mobile device (a perculiarly problematic outlook ~ it's as if we're all broken
-and need technology to fix us).
+point-of-sale machines... most of which are banal or frustrating to use. And,
+of course, no aspect of life is too small to be "solved" by an app available on
+your mobile device (a perculiarly problematic outlook ~ it's as if we're all
+broken and need technology to fix us).
 
 Such a shallow, invasive and unfulfilling world of computing is perhaps
 inevitable. It reflects our failure to think creatively while we focus on
 automating things in the most trivial, complicated or inconvenient manner. Yet
-highlighting such a problematic state of affairs is quite helpful, for then we
-can begin to compensate and re-balance.
+highlighting such a problematic state of affairs is helpful, for then we can
+compensate and re-balance.
 
 Personally, I can't help but feel the missing part of our relationship with
 computers is an emphasis on things like culture, contemplation and creativity ~
-activities and aspects of our lives that are affirmative, raise up our
-existence or provoke useful reflection and personal growth.
+activities and aspects of our lives that are affirmative, healing, empowering,
+raise up our existence or provoke useful reflection and personal growth.
 
 The final brain twist I have for you is to rise above a merely technical view
 of computers. I hope you imagine, create and participate in a meaningful,
@@ -546,7 +546,7 @@ which computers become a medium for
 <a href="https://freedom.press/" target="_blank">liberating</a>
 and
 <a href="http://inbflat.net/" target="_blank">expressive</a>
-activities that enlarge our world and our place in it.
+activities that enlarge ourselves, our world and our place in it.
 
 In other words, let's [together](/article/on-being-together) compose the
 oft-missing "music" of computing.

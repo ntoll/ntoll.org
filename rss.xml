@@ -3,7 +3,502 @@
 &lt;p&gt;&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Thu, 27 May 2021 07:34:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Automated Rule Following Machines</title><link>https://ntoll.org/article/why-computers-4/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;&lt;/p&gt;</copyright><lastBuildDate>Fri, 28 May 2021 08:06:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Perception, Abstraction and Culture</title><link>https://ntoll.org/article/why-computers-5/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
+.tape td {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #fafafa;
+    background: #4F5151;
+}
+
+.on {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #4F5151 !important;
+    background: #fafafa !important;
+}
+
+.life {
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+table td, table th {
+    text-align: center;
+}
+&lt;/style&gt;
+
+&lt;h3&gt;Why Computers Work (part 5)&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images"&gt;The Treachery of Images&lt;/a&gt;
+by &lt;a href="https://en.wikipedia.org/wiki/Ren%C3%A9_Magritte"&gt;René Magritte&lt;/a&gt; is a
+thought provoking visual brain twist. It shows a pipe, under which is written
+in French, "this is not a pipe". Magritte is correct, it is &lt;em&gt;not&lt;/em&gt; a pipe, but
+actually a painting:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/treachery_of_images.jpg" alt="This is not a painting"&gt;
+&lt;figcaption&gt;&lt;a href="https://www.lacma.org/art/exhibition/magritte-and-contemporary-art-treachery-images" target="_blank"&gt;Source&lt;/a&gt; - educational fair use.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;In a similar vein, you're not currently looking at a painting ~ rather, you're
+looking at a multitude of pixels, each one acting like a small tile in a huge
+&lt;a href="https://en.wikipedia.org/wiki/Roman_mosaic"&gt;mosaic&lt;/a&gt; containing millions of
+tesserae, each tile being one of many millions of possible colours. If you were
+to zoom into the image you'd see something like this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="This is still not a painting" src="https://ntoll.org/images/treachery_of_zoom.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Yet, you're not even looking at an assortment of tessellated pixels! Rather,
+your screen actually consists of repeating cells, each in turn split
+into red, green and blue (RGB) sections. If you used a magnifying glass
+to look at your screen, you'd see something similar to this:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/treachery_of_pixels.jpg" alt="This is definitely not a painting"&gt;
+&lt;figcaption&gt;&lt;a href="https://en.wikipedia.org/wiki/File:LCD_pixels_on_Acer_Extensa_5620Z_20090124.jpg" target="_blank"&gt;Source&lt;/a&gt; - Licensed under &lt;a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank"&gt;CC BY-SA 3.0&lt;/a&gt;.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;The upper half of the image contains blocks of the RGB cells arranged to
+display the basic colours: red, green and blue. The lower half contains RGB
+cells arranged into two blocks for white and black. By adjusting the amount
+of constituent red, green and blue emitted in each individual RGB cell, many
+millions of colours can be generated. If you step back from your screen,
+squint your eyes and look at the blocks of colour you'll see this effect in
+action.&lt;/p&gt;
+&lt;p&gt;For completeness, here's a close-up of one of the individual RGB cells:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An RGB square pixel" src="https://ntoll.org/images/rgb_pixel.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;There are likely to be several hundred of these minute electrical components
+per square-inch of the screen you're using to read this article.&lt;/p&gt;
+&lt;p&gt;Our perception of what we encounter depends on its scale. Furthermore, what
+we
+encounter may not be what we see, as René Magritte forces us to acknowledge
+with The Treachery of Images (we see a pipe when we're actually encountering a
+painting, or pixels, or a screen, and so on). There is a
+&lt;a href="https://plato.stanford.edu/entries/phenomenology/" target="_blank"&gt;phenomenological&lt;/a&gt;
+aspect to our relationship to things: we can't help but add meaning coloured by
+our unique experience of the world. We have a unique and personal
+perspective.&lt;/p&gt;
+
+&lt;p&gt;This applies to other encounters with the world too.&lt;/p&gt;
+&lt;p&gt;Our perception of time depends on a sense of scale or, perhaps more
+accurately, tempo. Each of the following eight images shows a different
+snapshot of a stick man.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="https://ntoll.org/images/running_frames.png" alt="Individual frames for a running stick figure animation"&gt;
+&lt;figcaption&gt;&lt;a href="https://steemit.com/art/@magiccleatus/magiccleatus-animates-2d-running-stickman-an-animated-template" target="_blank"&gt;Source&lt;/a&gt; - educational fair use.
+&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Yet if we repeatedly and speedily place them on top of each other, we no longer
+see eight individual images, but a single image &lt;strong&gt;in motion&lt;/strong&gt;. In fact, because
+we can't help but add meaning, we see a stick man running.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Running stick man animation" src="https://ntoll.org/images/running.gif"&gt;&lt;/p&gt;
+&lt;p&gt;Scale also effects other senses, such as our perception of sound. Consider the
+following musical experiment:
+&lt;a href="https://en.wikipedia.org/wiki/Symphony_No._9_(Beethoven)"&gt;Beethoven's mighty 9th Symphony&lt;/a&gt;
+stretched to last twenty-four hours. By drastically slowing down the tempo (all
+other aspects of the piece remaining the same ~ notes, instrumentation, and so
+on), it becomes something completely different. It sounds like an ambient
+musical experiment by the likes of
+&lt;a href="https://en.wikipedia.org/wiki/Brian_Eno"&gt;Brian Eno&lt;/a&gt; and our recognition of
+melody, form or harmonic structure disintegrates - even though the original
+melody, form and harmonic structures are still present. Such a temporal zoom,
+as well as hiding aspects of the music, also reveals new details: I find myself
+concentrating on the timbre of the instruments and enjoying the indistinct
+transitions between pitches ~ it's like listening through fog.&lt;/p&gt;
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/?listType=playlist&amp;amp;list=PLpJJnhgdCvERiUvfCaVjD0TC8y45MErN5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Why are these examples important..?&lt;/p&gt;
+&lt;p&gt;In the first post I challenged you to acquire new perspectives about seemingly
+everyday things. I called these brain twists because they cause "aha" moments.
+Such subjective shifts provide a new, and hopefully deeper, understanding of
+what we're encountering or how we relate to something. The external world
+remains as it was before, but it is we who have changed perspective.&lt;/p&gt;
+&lt;p&gt;Yet the previous examples show brain twists are something we do naturally,
+even if we're not always aware we're performing such twists. These examples
+were carefully chosen because they bring such &lt;em&gt;changes of perspective into
+focus&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Put simply, I'm inviting you to shift &lt;em&gt;your&lt;/em&gt; perspective about how &lt;em&gt;we change&lt;/em&gt;
+perspective. Or, put another way, can you "brain twist" brain twists..?&lt;/p&gt;
+&lt;p&gt;Our capacity to shift perspective due to scale is a fundamental reason &lt;em&gt;why&lt;/em&gt;
+computers appear to work. They work so fast at such a small scale that our
+sense of time and space means we don't see our computer re-drawing a static
+image on a flat screen made up of millions of RGB cells at a rate of around 64
+images per second. Rather, we see this blog post consisting of words, images,
+sound and video - things that are meaningful to us. The computer is working at
+a completely different scale of time (3 billion instructions a second), space
+(running on microscopic electrical components) and with an absence of meaning
+(it's just physics relating to electrical circuits). Yet you understand the
+words, appreciate the images and engage with the music in this blog post: you
+bring your unique culturally informed and meaningful perspective to the human
+scale of things.&lt;/p&gt;
+&lt;p&gt;Here's the brain twist: such tricks of perspective due to scale &lt;em&gt;also apply to
+thinking&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Consider learning to ride a bike ~ it's a challenge because the learner has to
+think about lots of different things at once. For instance, turning the pedals,
+steering, keeping balance, posture, the brakes and coordinating all these
+things together so the beginner cyclist moves safely in the right direction.
+When we become proficient at cycling, this bundle of thinking simply becomes
+"riding a bike". All the constituent aspects I describe above are subsumed into
+a larger concept.&lt;/p&gt;
+&lt;p&gt;Such diverse dexterous details, through careful practice and familiarity,
+become a single named activity. In a sense, we have zoomed out in the scale of
+our thinking. Such generalisations are useful as placeholders in further
+thoughts... the building blocks of our generalised thinking are at a
+&lt;em&gt;different scale&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;For instance, I could say "I'm just going to cycle to the shops, do you want me
+to get anything for you?". The concept of &lt;em&gt;cycling to the shops&lt;/em&gt; is a place
+holder for the rather complicated activity of riding a bike, but whose specific
+details are not important for the meaning of the sentence.&lt;/p&gt;
+&lt;p&gt;This is, in a computing sense, what we mean by "abstraction".&lt;/p&gt;
+&lt;p&gt;In this sense of "abstraction", functional units that fulfil a certain role are
+organised into larger, or are composed of yet smaller, functional units. Such
+units are used together to achieve some valuable end when their relative scale
+allows complementary usage.&lt;/p&gt;
+&lt;p&gt;Because computers process billions of instructions a second, this hierarchy of
+abstraction is hidden in the blink of an eye with the end result being
+something comprehensible at our human scale (except when things go wrong and
+the computer becomes incomprehensible or appears confused...  commonly known as
+a bug).&lt;/p&gt;
+&lt;p&gt;Often the skill of the programmer or engineer is to work out the arrangement
+and coordination of such abstractions to achieve something meaningful at the
+human scale.&lt;/p&gt;
+&lt;p&gt;A wonderful visual example of such an arrangement and coordination of
+abstraction is
+&lt;a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank"&gt;Conway's Game of Life&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Game of Life is an automata: rules that define a process for how certain
+states of affairs transition to a new state (sound familiar?). In the case of
+the Game of Life, the states of affairs describe a huge grid. Each square cell
+in the grid can be alive (white) or dead (black). Another way to imagine the
+Game of Life is as many parallel tapes lined up on a huge Turing machine with
+some squares white (on) and others black (off).&lt;/p&gt;
+&lt;p&gt;There are only three rules to work out the next state of affairs, and they are
+disarmingly simple:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Any live cell with two or three live neighbours survives.&lt;/li&gt;
+&lt;li&gt;Any dead cell with three live neighbours becomes a live cell.&lt;/li&gt;
+&lt;li&gt;All other live cells die in the next generation. Similarly, all other dead
+   cells stay dead.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It feels as if nothing of much interest could be made with such a game. But
+consider the following Game of Life grid state:&lt;/p&gt;
+&lt;table class="tape life"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt;&lt;/td&gt;
+        &lt;td class="on"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;By following the simple rules, the next state of affairs &lt;em&gt;must&lt;/em&gt; look like
+this (pick a white cell from the first grid, follow the rules in your head, and
+work out if you agree with this second grid):&lt;/p&gt;
+&lt;table class="tape life"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Of course, this grid can transition to a further new state of affairs (notice
+anything interesting? It's an upside-down version of the first grid, but moved
+one cell to the left and one cell up):&lt;/p&gt;
+&lt;table class="tape life"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt;&lt;/td&gt;
+        &lt;td class="on"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The next state of affairs is, unsurprisingly, the same as the second state but
+upside down:&lt;/p&gt;
+&lt;table class="tape life"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class="on"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td class="on"&gt; &lt;/td&gt;
+        &lt;td&gt; &lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;A further outcome of such mirroring is that this final state &lt;em&gt;must&lt;/em&gt; transition
+back to the first state of affairs but moved by one cell to the left.&lt;/p&gt;
+&lt;p&gt;Such an arrangement and coordination of cells, combined with the rules of
+the Game of Life, create a looping pattern of four steps that always moves in a
+single direction until it bumps into another pattern of cells. It appears to
+humans as if something is flying across the grid of squares (which is why this
+pattern is called
+&lt;a href="https://www.conwaylife.com/wiki/Spaceship" target="_blank"&gt;a
+spaceship&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Skilful combination and arrangement of such small groups of cells in the Game
+of Life show how abstraction, scale and perspective interact. In the following
+video, as the camera zooms out the tempo of change speeds up to reveal
+structures within structures, and something rather amazing.&lt;/p&gt;
+&lt;div class="video-container"&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ra14IjqXS1Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A similar stack of abstraction is required for you to read this blog post
+on &lt;em&gt;your computer&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;My website is created using an easy-to-read-and-write programming language
+called &lt;a href="https://python.org" target="_blank"&gt;Python&lt;/a&gt;. Python is,
+itself, written in another programming language called
+&lt;a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank"&gt;C&lt;/a&gt;.
+C is less easy to read but still comprehensible to a trained software engineer.
+Yet C has to be
+&lt;a href="https://en.wikipedia.org/wiki/Compiler" target="_blank"&gt;compiled&lt;/a&gt;
+for it to work. When C code is compiled, the relatively understandable C code
+is translated into instructions written in
+&lt;a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank"&gt;assembly language&lt;/a&gt;,
+that work in a way that is closer to how the circuitry of the computer works.
+But we're not finished yet..! The assembly language is itself translated into
+&lt;a href="https://en.wikipedia.org/wiki/Machine_code" target="_blank"&gt;machine code&lt;/a&gt;,
+a representation of assembly language instructions as binary numbers. This is
+the lowest level software engineers tend to go when it comes to zooming-in to
+the computer. But the numeric machine code instructions physically stored on
+the computer hardware are usually further refined into
+&lt;a href="https://en.wikipedia.org/wiki/Microcode" target="_blank"&gt;microcode&lt;/a&gt;
+- a series of circuit-level instructions that describe how the hardware should
+behave to complete the computation. Of course, someone will have organised and
+designed the millions of transistors and other microscopic components that make
+up the (&lt;a href="https://ntoll.org/article/why-computers-4/"&gt;Turing complete&lt;/a&gt;) hardware. This
+is the level of computing at which electrical engineers, chip designers and,
+ultimately, physicists can be found.&lt;/p&gt;
+
+&lt;p&gt;Along the way, I didn't have to write everything from scratch. Coders use
+&lt;a href="https://pypi.org/" target="_blank"&gt;software libraries&lt;/a&gt; in the same
+way a chef may re-use pre-existing recipes. Someone else will have figured out
+how to do some valuable task and organised the steps needed to fulfil it into,
+say, &lt;a href="https://arrr.readthedocs.io/en/latest/" target="_blank"&gt;a module
+of re-usable Python code&lt;/a&gt;. Just like the bundle of thinking needed
+to ride a bike becomes subsumed into the concept of cycling, I don't have to
+know the implementation details, but can refer to the relevant re-usable code
+when it is needed in my own program. Such re-use of existing instructions
+happens in all the levels of the computing &lt;em&gt;stack&lt;/em&gt; I describe above.&lt;/p&gt;
+
+&lt;p&gt;All these levels of abstraction are required to get to this fragment of Python:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hello World in Python" src="https://ntoll.org/images/hello_world.gif"&gt;&lt;/p&gt;
+&lt;p&gt;As I come to the end of this exploration of computing, I can't help but feel
+there is one final brain twist ~ something missing or yet undiscovered about
+our relationship with computers.&lt;/p&gt;
+&lt;p&gt;To use a musical metaphor, I feel like I've explained why a piano works (the
+tuning, acoustic properties, action of the keyboard and hammers) and shown why
+this relates to musical theory. Yet I've said nothing about the art or
+performance of music, the emotions we feel when we hear or play music, or
+that music moves us at a fundamental and human level.&lt;/p&gt;
+&lt;p&gt;We are missing the "music" of computers (and we miss it at our peril).&lt;/p&gt;
+&lt;p&gt;Wittgenstein best sums up my feeling:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Die Menschen, die immerfort ›warum‹ fragen, sind wie die Touristen, die, im
+&lt;a href="https://de.wikipedia.org/wiki/Baedeker-Reisef%C3%BChrer"&gt;Bädeker&lt;/a&gt; lesend,
+vor einem Gebäude stehen &amp;amp; durch das Lesen der Entstehungsgeschichte etc etc
+daran gehindert werden, das Gebäude zu &lt;em&gt;sehen&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;(People who are constantly asking 'why' are like tourists, who stand in front
+of a building, reading &lt;a href="https://en.wikipedia.org/wiki/Baedeker"&gt;Baedeker&lt;/a&gt;, &amp;amp;
+through reading about the history of the building's construction etc etc are
+prevented from &lt;em&gt;seeing&lt;/em&gt; it.)&lt;/p&gt;
+&lt;p&gt;~ Ludwig Wittgenstein, &lt;a href="https://en.wikipedia.org/wiki/Culture_and_Value"&gt;Culture and Value&lt;/a&gt; (MS 124:93)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We should, rightly, be amazed by the technical marvel of computers; but it
+is all too easy to be overwhelmed by, and focus on, the apparent cleverness (or
+&lt;a href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine" target="_blank"&gt;Rube Goldberg&lt;/a&gt;-iness)
+of it all. Sadly, in so doing we miss the opportunity for an enlarged, more
+creative and expressive encounter with computing.&lt;/p&gt;
+
+&lt;p&gt;Computers are not just machines for rapidly evaluating logical instructions.
+They are a medium through which we share and express our values, culture,
+social world and forms of life. They are only valuable because we are able to
+create and express things of significance &lt;em&gt;through computers&lt;/em&gt;. Furthermore,
+&lt;em&gt;the way we express things with computers&lt;/em&gt;, and &lt;em&gt;that we choose this form of
+expression&lt;/em&gt; is also of cultural significance. Like other forms of creative 
+endeavour, computers reflect those who make, inhabit and consume in such a
+medium.&lt;/p&gt;
+&lt;p&gt;Computers shine when they enlarge us in an affirmative, fulfilling, humane,
+creative and expressive way. Yet computing for the sake of computers, with no
+regard for culture, is a diminished, inhumane and insular form of ignorance
+and, sadly, I can't help but feel disappointed with how, in the mainstream, we
+currently use and think of computers.&lt;/p&gt;
+&lt;p&gt;Social media is anything but social... it's an efficient advertising laboratory
+that turns humanity into lab rats caged in echo chambers of digitally digested
+packets of small-mindedness. "Artificial intelligence", "machine learning",
+"blockchain" and other such buzzwords are nerdy PR for the clever use of
+computers to unsatisfactorily automate human activity (including our latent
+prejudices). Computer games are mostly beautiful looking yet formulaic
+variations on a theme, target driven and hardly allow a player to express
+themselves. Our world is polluted by complicated and unpleasant computerised
+gizmos: "intelligent" washing machines, programmable coffee makers, automatic
+point-of-sale machines... most of which are banal or frustrating to use. And,
+of course, no aspect of life is too small to be "solved" by an app available on
+your mobile device (a perculiarly problematic outlook ~ it's as if we're all
+broken and need technology to fix us).&lt;/p&gt;
+&lt;p&gt;Such a shallow, invasive and unfulfilling world of computing is perhaps
+inevitable. It reflects our failure to think creatively while we focus on
+automating things in the most trivial, complicated or inconvenient manner. Yet
+highlighting such a problematic state of affairs is helpful, for then we can
+compensate and re-balance.&lt;/p&gt;
+&lt;p&gt;Personally, I can't help but feel the missing part of our relationship with
+computers is an emphasis on things like culture, contemplation and creativity ~
+activities and aspects of our lives that are affirmative, healing, empowering,
+raise up our existence or provoke useful reflection and personal growth.&lt;/p&gt;
+&lt;p&gt;The final brain twist I have for you is to rise above a merely technical view
+of computers. I hope you imagine, create and participate in a meaningful,
+authentic and engaging culture expressed with and through computers. One in
+which computers become a medium for
+&lt;a href="https://democracyclub.org.uk/" target="_blank"&gt;affirmative&lt;/a&gt;,
+&lt;a href="https://freedom.press/" target="_blank"&gt;liberating&lt;/a&gt;
+and
+&lt;a href="http://inbflat.net/" target="_blank"&gt;expressive&lt;/a&gt;
+activities that enlarge ourselves, our world and our place in it.&lt;/p&gt;
+&lt;p&gt;In other words, let's &lt;a href="https://ntoll.org/article/on-being-together"&gt;together&lt;/a&gt; compose the
+oft-missing "music" of computing.&lt;/p&gt;
+&lt;p&gt;After all, we are &lt;a href="https://ntoll.org/article/thought-in-motion/"&gt;only just getting started&lt;/a&gt; with
+these strange instruments of automation.&lt;/p&gt;
+&lt;p&gt;Thank you for reading.&lt;/p&gt;
+&lt;p&gt;Peace.&lt;/p&gt;&lt;/div&gt;</description><guid>https://ntoll.org/article/why-computers-5/</guid><pubDate>Fri, 28 May 2021 08:00:00 GMT</pubDate></item><item><title>Automated Rule Following Machines</title><link>https://ntoll.org/article/why-computers-4/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;div&gt;&lt;style&gt;
 .tape td {
     border: 1px solid black;
     width: 2em;
@@ -1281,76 +1776,4 @@ admit, I don't hold out much hope. Best knuckle down on CodeGrades.&lt;/p&gt;
 
 &lt;p&gt;(Honestly, I quite understand if you don't. I have the same misgivings
 you're probably having after reading the sentence above. Such a feeling is the
-nub of what I want to demonstrate in this blog post.)&lt;/p&gt;</description><guid>https://ntoll.org/article/sponsorship/</guid><pubDate>Thu, 23 Jan 2020 08:30:00 GMT</pubDate></item><item><title>CircuitPython 2020</title><link>https://ntoll.org/article/circuitpython-2020/</link><dc:creator>Nicholas H.Tollervey</dc:creator><description>&lt;p&gt;
-&lt;img src="https://ntoll.org/static/images/blinka-computer.png"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;My buddy &lt;a href="http://tannewt.org/"&gt;Scott&lt;/a&gt;, one of the wonderful
-people at &lt;a href="https://adafruit.com/"&gt;Adafruit&lt;/a&gt;, recently asked folks
-in the wider CircuitPython community to
-&lt;a href="https://blog.adafruit.com/2020/01/01/what-do-you-want-from-circuitpython-in-2020-circuitpython2020-circuitpython/"&gt;share their thoughts&lt;/a&gt;
-about what they'd like to see for the project and community during 2020. This
-is my contribution to the conversation.&lt;/p&gt;
-
-&lt;p&gt;There are three aspects to my hopes for CircuitPython in 2020:&lt;/p&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;Things I hope will continue,&lt;/li&gt;
-    &lt;li&gt;Developments I hope to happen,&lt;/li&gt;
-    &lt;li&gt;"Moon on a stick" wishes for the future.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I want to start by reaffirming my belief that Adafruit, and those
-involved with CircuitPython in particular, do inspiring stuff when it
-comes to fostering an open, welcoming, supportive and collaborative tech
-community. This is an extraordinary achievement. My own experience in the
-wider Python community is that it takes a huge amount of effort, patience,
-compassion and thoughtfulness to grow and sustain such a
-"&lt;a href="https://www.wired.com/2008/06/scenius-or-comm/"&gt;scenius&lt;/a&gt;"
-(and, sadly, this can be destroyed very quickly by only a few bad actors). So
-my wish for continuation in 2020 is that everyone involved in the
-CircuitPython community grasp opportunities to enlarge positive aspects of
-ourselves such as mutual appreciation, the sharing of tools and techniques,
-latent network effects, and a spirit of tolerance, compassion and fun.&lt;/p&gt;
-
-&lt;p&gt;What I hope happens this year is a broadening of CircuitPython's horizons.
-My passion for tech can be summed up by a quote from David Allen, the producer
-on the original BBC micro from the 1980s -- my first computer. He
-&lt;a href="https://www.nesta.org.uk/report/the-legacy-of-bbc-micro/"&gt;explained&lt;/a&gt;
-that, "[t]he aim was to democratise computing. We didn't want people to be
-controlled by it, but to control it." CircuitPython feels to me like it sits
-very much in the hobbyist / enthusiast "segment" of users who already know
-something of programming. I'd love CircuitPython to make inroads into
-beginner related education. This probably involves a focus on
-learning what teachers would like from a coding platform, honest appraisals of
-how beginner coders (no matter their age or background) find their first steps
-with CircuitPython and Adafruit boards, as well as making the results of such
-findings accessible to all. This final point is important. Learning to code
-shouldn't just be an option for English speaking, able bodied folk from a
-cultural background that means examples and cultural assumptions are
-easily understood. I hope you agree that education should be an inclusive
-endeavour, and this takes concerted and conscientious effort. I hope the
-CircuitPython community find the time and space to invest in the (never
-finished) work such a focus entails.&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="https://ntoll.org/static/images/moon_stick.png"&gt;
-&lt;/p&gt;
-
-&lt;p&gt;My "moon on a stick" is a CircuitPython based mobile phone with a touch
-screen and a simple
-(&lt;a href="https://pypercard.readthedocs.io/en/latest/"&gt;PyperCard&lt;/a&gt; like?)
-Python UI that's easily hackable. Think
-of it as the open, easy-to-assemble, relatively cheap and "hack friendly"
-version of something like the
-&lt;a href="https://www.thelightphone.com/"&gt;Light Phone&lt;/a&gt; with all the
-schematics and design assets (e.g. files for 3d printing the case) available
-under open source licenses so folks can go mod-crazy. Now wouldn't that
-be a turn up for the books..?&lt;/p&gt;
-
-&lt;p&gt;I'll finish by wishing everyone in the CircuitPython a flourishing and
-happy new year. Here's to wonderful things in 2020.&lt;/p&gt;
-
-&lt;p&gt;Let's go..!&lt;/p&gt;
-
-&lt;p&gt;:-)&lt;/p&gt;</description><guid>https://ntoll.org/article/circuitpython-2020/</guid><pubDate>Tue, 07 Jan 2020 17:30:00 GMT</pubDate></item></channel></rss>
+nub of what I want to demonstrate in this blog post.)&lt;/p&gt;</description><guid>https://ntoll.org/article/sponsorship/</guid><pubDate>Thu, 23 Jan 2020 08:30:00 GMT</pubDate></item></channel></rss>

@@ -31,7 +31,7 @@
 <link rel="next" href="index-22.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="Nicholas H.Tollervey">
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-<link rel="prefetch" href="article/why-computers-4/" type="text/html">
+<link rel="prefetch" href="article/why-computers-5/" type="text/html">
 </head>
 <body>
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -59,7 +59,500 @@
     
     
     </ul></nav></header><main id="content"><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-4/" class="u-url">Automated Rule Following Machines</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-5/" class="u-url">Perception, Abstraction and Culture</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Nicholas H.Tollervey
+            </span></p>
+            <p class="dateline">
+            <a href="article/why-computers-5/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-05-28T09:00:00+01:00" itemprop="datePublished" title="Fri, May 28, 2021 9:00 AM">Fri, May 28, 2021 9:00 AM</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<style>
+.tape td {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #fafafa;
+    background: #4F5151;
+}
+
+.on {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    color: #4F5151 !important;
+    background: #fafafa !important;
+}
+
+.life {
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+table td, table th {
+    text-align: center;
+}
+</style>
+<h3>Why Computers Work (part 5)</h3>
+<p><a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images">The Treachery of Images</a>
+by <a href="https://en.wikipedia.org/wiki/Ren%C3%A9_Magritte">René Magritte</a> is a
+thought provoking visual brain twist. It shows a pipe, under which is written
+in French, "this is not a pipe". Magritte is correct, it is <em>not</em> a pipe, but
+actually a painting:</p>
+<figure><img src="images/treachery_of_images.jpg" alt="This is not a painting"><figcaption><a href="https://www.lacma.org/art/exhibition/magritte-and-contemporary-art-treachery-images" target="_blank">Source</a> - educational fair use.
+</figcaption></figure><p>In a similar vein, you're not currently looking at a painting ~ rather, you're
+looking at a multitude of pixels, each one acting like a small tile in a huge
+<a href="https://en.wikipedia.org/wiki/Roman_mosaic">mosaic</a> containing millions of
+tesserae, each tile being one of many millions of possible colours. If you were
+to zoom into the image you'd see something like this:</p>
+<p><img alt="This is still not a painting" src="images/treachery_of_zoom.jpg"></p>
+<p>Yet, you're not even looking at an assortment of tessellated pixels! Rather,
+your screen actually consists of repeating cells, each in turn split
+into red, green and blue (RGB) sections. If you used a magnifying glass
+to look at your screen, you'd see something similar to this:</p>
+<figure><img src="images/treachery_of_pixels.jpg" alt="This is definitely not a painting"><figcaption><a href="https://en.wikipedia.org/wiki/File:LCD_pixels_on_Acer_Extensa_5620Z_20090124.jpg" target="_blank">Source</a> - Licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" target="_blank">CC BY-SA 3.0</a>.
+</figcaption></figure><p>The upper half of the image contains blocks of the RGB cells arranged to
+display the basic colours: red, green and blue. The lower half contains RGB
+cells arranged into two blocks for white and black. By adjusting the amount
+of constituent red, green and blue emitted in each individual RGB cell, many
+millions of colours can be generated. If you step back from your screen,
+squint your eyes and look at the blocks of colour you'll see this effect in
+action.</p>
+<p>For completeness, here's a close-up of one of the individual RGB cells:</p>
+<p><img alt="An RGB square pixel" src="images/rgb_pixel.jpg"></p>
+<p>There are likely to be several hundred of these minute electrical components
+per square-inch of the screen you're using to read this article.</p>
+<p>Our perception of what we encounter depends on its scale. Furthermore, what
+we
+encounter may not be what we see, as René Magritte forces us to acknowledge
+with The Treachery of Images (we see a pipe when we're actually encountering a
+painting, or pixels, or a screen, and so on). There is a
+<a href="https://plato.stanford.edu/entries/phenomenology/" target="_blank">phenomenological</a>
+aspect to our relationship to things: we can't help but add meaning coloured by
+our unique experience of the world. We have a unique and personal
+perspective.</p>
+
+<p>This applies to other encounters with the world too.</p>
+<p>Our perception of time depends on a sense of scale or, perhaps more
+accurately, tempo. Each of the following eight images shows a different
+snapshot of a stick man.</p>
+<figure><img src="images/running_frames.png" alt="Individual frames for a running stick figure animation"><figcaption><a href="https://steemit.com/art/@magiccleatus/magiccleatus-animates-2d-running-stickman-an-animated-template" target="_blank">Source</a> - educational fair use.
+</figcaption></figure><p>Yet if we repeatedly and speedily place them on top of each other, we no longer
+see eight individual images, but a single image <strong>in motion</strong>. In fact, because
+we can't help but add meaning, we see a stick man running.</p>
+<p><img alt="Running stick man animation" src="images/running.gif"></p>
+<p>Scale also effects other senses, such as our perception of sound. Consider the
+following musical experiment:
+<a href="https://en.wikipedia.org/wiki/Symphony_No._9_(Beethoven)">Beethoven's mighty 9th Symphony</a>
+stretched to last twenty-four hours. By drastically slowing down the tempo (all
+other aspects of the piece remaining the same ~ notes, instrumentation, and so
+on), it becomes something completely different. It sounds like an ambient
+musical experiment by the likes of
+<a href="https://en.wikipedia.org/wiki/Brian_Eno">Brian Eno</a> and our recognition of
+melody, form or harmonic structure disintegrates - even though the original
+melody, form and harmonic structures are still present. Such a temporal zoom,
+as well as hiding aspects of the music, also reveals new details: I find myself
+concentrating on the timbre of the instruments and enjoying the indistinct
+transitions between pitches ~ it's like listening through fog.</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/?listType=playlist&amp;list=PLpJJnhgdCvERiUvfCaVjD0TC8y45MErN5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p>Why are these examples important..?</p>
+<p>In the first post I challenged you to acquire new perspectives about seemingly
+everyday things. I called these brain twists because they cause "aha" moments.
+Such subjective shifts provide a new, and hopefully deeper, understanding of
+what we're encountering or how we relate to something. The external world
+remains as it was before, but it is we who have changed perspective.</p>
+<p>Yet the previous examples show brain twists are something we do naturally,
+even if we're not always aware we're performing such twists. These examples
+were carefully chosen because they bring such <em>changes of perspective into
+focus</em>.</p>
+<p>Put simply, I'm inviting you to shift <em>your</em> perspective about how <em>we change</em>
+perspective. Or, put another way, can you "brain twist" brain twists..?</p>
+<p>Our capacity to shift perspective due to scale is a fundamental reason <em>why</em>
+computers appear to work. They work so fast at such a small scale that our
+sense of time and space means we don't see our computer re-drawing a static
+image on a flat screen made up of millions of RGB cells at a rate of around 64
+images per second. Rather, we see this blog post consisting of words, images,
+sound and video - things that are meaningful to us. The computer is working at
+a completely different scale of time (3 billion instructions a second), space
+(running on microscopic electrical components) and with an absence of meaning
+(it's just physics relating to electrical circuits). Yet you understand the
+words, appreciate the images and engage with the music in this blog post: you
+bring your unique culturally informed and meaningful perspective to the human
+scale of things.</p>
+<p>Here's the brain twist: such tricks of perspective due to scale <em>also apply to
+thinking</em>.</p>
+<p>Consider learning to ride a bike ~ it's a challenge because the learner has to
+think about lots of different things at once. For instance, turning the pedals,
+steering, keeping balance, posture, the brakes and coordinating all these
+things together so the beginner cyclist moves safely in the right direction.
+When we become proficient at cycling, this bundle of thinking simply becomes
+"riding a bike". All the constituent aspects I describe above are subsumed into
+a larger concept.</p>
+<p>Such diverse dexterous details, through careful practice and familiarity,
+become a single named activity. In a sense, we have zoomed out in the scale of
+our thinking. Such generalisations are useful as placeholders in further
+thoughts... the building blocks of our generalised thinking are at a
+<em>different scale</em>.</p>
+<p>For instance, I could say "I'm just going to cycle to the shops, do you want me
+to get anything for you?". The concept of <em>cycling to the shops</em> is a place
+holder for the rather complicated activity of riding a bike, but whose specific
+details are not important for the meaning of the sentence.</p>
+<p>This is, in a computing sense, what we mean by "abstraction".</p>
+<p>In this sense of "abstraction", functional units that fulfil a certain role are
+organised into larger, or are composed of yet smaller, functional units. Such
+units are used together to achieve some valuable end when their relative scale
+allows complementary usage.</p>
+<p>Because computers process billions of instructions a second, this hierarchy of
+abstraction is hidden in the blink of an eye with the end result being
+something comprehensible at our human scale (except when things go wrong and
+the computer becomes incomprehensible or appears confused...  commonly known as
+a bug).</p>
+<p>Often the skill of the programmer or engineer is to work out the arrangement
+and coordination of such abstractions to achieve something meaningful at the
+human scale.</p>
+<p>A wonderful visual example of such an arrangement and coordination of
+abstraction is
+<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank">Conway's Game of Life</a>.</p>
+
+<p>The Game of Life is an automata: rules that define a process for how certain
+states of affairs transition to a new state (sound familiar?). In the case of
+the Game of Life, the states of affairs describe a huge grid. Each square cell
+in the grid can be alive (white) or dead (black). Another way to imagine the
+Game of Life is as many parallel tapes lined up on a huge Turing machine with
+some squares white (on) and others black (off).</p>
+<p>There are only three rules to work out the next state of affairs, and they are
+disarmingly simple:</p>
+<ol>
+<li>Any live cell with two or three live neighbours survives.</li>
+<li>Any dead cell with three live neighbours becomes a live cell.</li>
+<li>All other live cells die in the next generation. Similarly, all other dead
+   cells stay dead.</li>
+</ol>
+<p>It feels as if nothing of much interest could be made with such a game. But
+consider the following Game of Life grid state:</p>
+<table class="tape life">
+<tr>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td></td>
+        <td></td>
+        <td class="on"></td>
+        <td class="on"></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td></td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+    </tr>
+<tr>
+<td></td>
+        <td> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+    </tr>
+<tr>
+<td></td>
+        <td></td>
+        <td></td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td> </td>
+    </tr>
+</table>
+<p>By following the simple rules, the next state of affairs <em>must</em> look like
+this (pick a white cell from the first grid, follow the rules in your head, and
+work out if you agree with this second grid):</p>
+<table class="tape life">
+<tr>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td></td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td></td>
+    </tr>
+<tr>
+<td></td>
+        <td class="on"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td class="on"> </td>
+    </tr>
+<tr>
+<td></td>
+        <td class="on"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+<tr>
+<td></td>
+        <td> </td>
+        <td class="on"> </td>
+        <td> </td>
+        <td> </td>
+        <td class="on"> </td>
+    </tr>
+</table>
+<p>Of course, this grid can transition to a further new state of affairs (notice
+anything interesting? It's an upside-down version of the first grid, but moved
+one cell to the left and one cell up):</p>
+<table class="tape life">
+<tr>
+<td></td>
+        <td></td>
+        <td class="on"></td>
+        <td class="on"></td>
+        <td></td>
+        <td></td>
+    </tr>
+<tr>
+<td> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td></td>
+    </tr>
+<tr>
+<td class="on"> </td>
+        <td class="on"> </td>
+        <td> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td></td>
+    </tr>
+<tr>
+<td> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td> </td>
+        <td> </td>
+        <td></td>
+    </tr>
+<tr>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p>The next state of affairs is, unsurprisingly, the same as the second state but
+upside down:</p>
+<table class="tape life">
+<tr>
+<td></td>
+        <td class="on"></td>
+        <td></td>
+        <td></td>
+        <td class="on"></td>
+        <td></td>
+    </tr>
+<tr>
+<td class="on"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td></td>
+    </tr>
+<tr>
+<td class="on"> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td class="on"> </td>
+        <td></td>
+    </tr>
+<tr>
+<td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td class="on"> </td>
+        <td> </td>
+        <td></td>
+    </tr>
+<tr>
+<td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p>A further outcome of such mirroring is that this final state <em>must</em> transition
+back to the first state of affairs but moved by one cell to the left.</p>
+<p>Such an arrangement and coordination of cells, combined with the rules of
+the Game of Life, create a looping pattern of four steps that always moves in a
+single direction until it bumps into another pattern of cells. It appears to
+humans as if something is flying across the grid of squares (which is why this
+pattern is called
+<a href="https://www.conwaylife.com/wiki/Spaceship" target="_blank">a
+spaceship</a>).</p>
+
+<p>Skilful combination and arrangement of such small groups of cells in the Game
+of Life show how abstraction, scale and perspective interact. In the following
+video, as the camera zooms out the tempo of change speeds up to reveal
+structures within structures, and something rather amazing.</p>
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ra14IjqXS1Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<p>A similar stack of abstraction is required for you to read this blog post
+on <em>your computer</em>.</p>
+
+<p>My website is created using an easy-to-read-and-write programming language
+called <a href="https://python.org" target="_blank">Python</a>. Python is,
+itself, written in another programming language called
+<a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">C</a>.
+C is less easy to read but still comprehensible to a trained software engineer.
+Yet C has to be
+<a href="https://en.wikipedia.org/wiki/Compiler" target="_blank">compiled</a>
+for it to work. When C code is compiled, the relatively understandable C code
+is translated into instructions written in
+<a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank">assembly language</a>,
+that work in a way that is closer to how the circuitry of the computer works.
+But we're not finished yet..! The assembly language is itself translated into
+<a href="https://en.wikipedia.org/wiki/Machine_code" target="_blank">machine code</a>,
+a representation of assembly language instructions as binary numbers. This is
+the lowest level software engineers tend to go when it comes to zooming-in to
+the computer. But the numeric machine code instructions physically stored on
+the computer hardware are usually further refined into
+<a href="https://en.wikipedia.org/wiki/Microcode" target="_blank">microcode</a>
+- a series of circuit-level instructions that describe how the hardware should
+behave to complete the computation. Of course, someone will have organised and
+designed the millions of transistors and other microscopic components that make
+up the (<a href="article/why-computers-4/">Turing complete</a>) hardware. This
+is the level of computing at which electrical engineers, chip designers and,
+ultimately, physicists can be found.</p>
+
+<p>Along the way, I didn't have to write everything from scratch. Coders use
+<a href="https://pypi.org/" target="_blank">software libraries</a> in the same
+way a chef may re-use pre-existing recipes. Someone else will have figured out
+how to do some valuable task and organised the steps needed to fulfil it into,
+say, <a href="https://arrr.readthedocs.io/en/latest/" target="_blank">a module
+of re-usable Python code</a>. Just like the bundle of thinking needed
+to ride a bike becomes subsumed into the concept of cycling, I don't have to
+know the implementation details, but can refer to the relevant re-usable code
+when it is needed in my own program. Such re-use of existing instructions
+happens in all the levels of the computing <em>stack</em> I describe above.</p>
+
+<p>All these levels of abstraction are required to get to this fragment of Python:</p>
+<p><img alt="Hello World in Python" src="images/hello_world.gif"></p>
+<p>As I come to the end of this exploration of computing, I can't help but feel
+there is one final brain twist ~ something missing or yet undiscovered about
+our relationship with computers.</p>
+<p>To use a musical metaphor, I feel like I've explained why a piano works (the
+tuning, acoustic properties, action of the keyboard and hammers) and shown why
+this relates to musical theory. Yet I've said nothing about the art or
+performance of music, the emotions we feel when we hear or play music, or
+that music moves us at a fundamental and human level.</p>
+<p>We are missing the "music" of computers (and we miss it at our peril).</p>
+<p>Wittgenstein best sums up my feeling:</p>
+<blockquote>
+<p>Die Menschen, die immerfort ›warum‹ fragen, sind wie die Touristen, die, im
+<a href="https://de.wikipedia.org/wiki/Baedeker-Reisef%C3%BChrer">Bädeker</a> lesend,
+vor einem Gebäude stehen &amp; durch das Lesen der Entstehungsgeschichte etc etc
+daran gehindert werden, das Gebäude zu <em>sehen</em>.</p>
+<p>(People who are constantly asking 'why' are like tourists, who stand in front
+of a building, reading <a href="https://en.wikipedia.org/wiki/Baedeker">Baedeker</a>, &amp;
+through reading about the history of the building's construction etc etc are
+prevented from <em>seeing</em> it.)</p>
+<p>~ Ludwig Wittgenstein, <a href="https://en.wikipedia.org/wiki/Culture_and_Value">Culture and Value</a> (MS 124:93)</p>
+</blockquote>
+<p>We should, rightly, be amazed by the technical marvel of computers; but it
+is all too easy to be overwhelmed by, and focus on, the apparent cleverness (or
+<a href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine" target="_blank">Rube Goldberg</a>-iness)
+of it all. Sadly, in so doing we miss the opportunity for an enlarged, more
+creative and expressive encounter with computing.</p>
+
+<p>Computers are not just machines for rapidly evaluating logical instructions.
+They are a medium through which we share and express our values, culture,
+social world and forms of life. They are only valuable because we are able to
+create and express things of significance <em>through computers</em>. Furthermore,
+<em>the way we express things with computers</em>, and <em>that we choose this form of
+expression</em> is also of cultural significance. Like other forms of creative 
+endeavour, computers reflect those who make, inhabit and consume in such a
+medium.</p>
+<p>Computers shine when they enlarge us in an affirmative, fulfilling, humane,
+creative and expressive way. Yet computing for the sake of computers, with no
+regard for culture, is a diminished, inhumane and insular form of ignorance
+and, sadly, I can't help but feel disappointed with how, in the mainstream, we
+currently use and think of computers.</p>
+<p>Social media is anything but social... it's an efficient advertising laboratory
+that turns humanity into lab rats caged in echo chambers of digitally digested
+packets of small-mindedness. "Artificial intelligence", "machine learning",
+"blockchain" and other such buzzwords are nerdy PR for the clever use of
+computers to unsatisfactorily automate human activity (including our latent
+prejudices). Computer games are mostly beautiful looking yet formulaic
+variations on a theme, target driven and hardly allow a player to express
+themselves. Our world is polluted by complicated and unpleasant computerised
+gizmos: "intelligent" washing machines, programmable coffee makers, automatic
+point-of-sale machines... most of which are banal or frustrating to use. And,
+of course, no aspect of life is too small to be "solved" by an app available on
+your mobile device (a perculiarly problematic outlook ~ it's as if we're all
+broken and need technology to fix us).</p>
+<p>Such a shallow, invasive and unfulfilling world of computing is perhaps
+inevitable. It reflects our failure to think creatively while we focus on
+automating things in the most trivial, complicated or inconvenient manner. Yet
+highlighting such a problematic state of affairs is helpful, for then we can
+compensate and re-balance.</p>
+<p>Personally, I can't help but feel the missing part of our relationship with
+computers is an emphasis on things like culture, contemplation and creativity ~
+activities and aspects of our lives that are affirmative, healing, empowering,
+raise up our existence or provoke useful reflection and personal growth.</p>
+<p>The final brain twist I have for you is to rise above a merely technical view
+of computers. I hope you imagine, create and participate in a meaningful,
+authentic and engaging culture expressed with and through computers. One in
+which computers become a medium for
+<a href="https://democracyclub.org.uk/" target="_blank">affirmative</a>,
+<a href="https://freedom.press/" target="_blank">liberating</a>
+and
+<a href="http://inbflat.net/" target="_blank">expressive</a>
+activities that enlarge ourselves, our world and our place in it.</p>
+<p>In other words, let's <a href="article/on-being-together">together</a> compose the
+oft-missing "music" of computing.</p>
+<p>After all, we are <a href="article/thought-in-motion/">only just getting started</a> with
+these strange instruments of automation.</p>
+<p>Thank you for reading.</p>
+<p>Peace.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/why-computers-4/" class="u-url">Automated Rule Following Machines</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Nicholas H.Tollervey
@@ -958,38 +1451,6 @@ rather pleasant "aha" moments (if you were a cartoon character, it's that
 feeling you get when a lightbulb appears above your head).</p>
 <p>The next chapter in our story is a beautiful brain twist: to think about
 thinking...</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="article/social-media-hermit/" class="u-url">A Social Media Hermit</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Nicholas H.Tollervey
-            </span></p>
-            <p class="dateline">
-            <a href="article/social-media-hermit/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-11-02T08:30:00+01:00" itemprop="datePublished" title="Mon, Nov 2, 2020 8:30 AM">Mon, Nov 2, 2020 8:30 AM</time></a>
-            </p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div>
-<p>I have deleted my Twitter account.</p>
-<p>Why?</p>
-<ol>
-<li>I no longer use it.</li>
-<li>Social media isn't fun.</li>
-<li>There are better ways to connect.</li>
-<li>Retaining my account feels hypocritical.</li>
-</ol>
-<p>Honestly, that's all there is to it (and it feels good).</p>
-<p>Twitter encourages infantile, reactionary and shallow discourse. What do you
-expect from a technology that enforces a 280 character limit and trains us to
-read in bite size chunks? Twitter may as well enforce <a href="https://en.wikipedia.org/wiki/Newspeak">other arbitrary
-limitations</a>, for example the exclusive
-use of monosyllabic words.</p>
-<p>I want no part of it.</p>
-<p>If folks genuinely want to connect with me, they'll be in touch (as I will be
-with them).</p>
-<p>Peace.</p>
 </div>
     </div>
     </article>
